@@ -2,14 +2,19 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 import { api } from "../api/client";
 
-interface CourseModule {
+export interface CourseUnit {
+  id: string;
+  title: string;
+  estimatedMinutes: number;
+  stepCount: number;
+}
+export interface CourseModule {
   id: string;
   title: string;
   description: string;
   icon: string;
-  units: { id: string; title: string; estimatedMinutes: number; stepCount: number }[];
+  units: CourseUnit[];
 }
-
 interface CourseTree {
   id: string;
   title: string;
@@ -28,6 +33,5 @@ export const useContentStore = defineStore("content", () => {
       loading.value = false;
     }
   }
-
   return { course, loading, load };
 });

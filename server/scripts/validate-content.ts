@@ -23,6 +23,21 @@ async function main() {
         if (ex.type === "word-order" && ex.tokens.length === 0) {
           extraErrors.push(`Lege tokens bij ${ex.id}`);
         }
+        if (ex.type === "conjugate" && !content.verbs.has(ex.verbId)) {
+          extraErrors.push(`verbId "${ex.verbId}" bestaat niet (${ex.id})`);
+        }
+        if (ex.type === "mc-multi" && ex.answers.some((a) => a < 0 || a >= ex.options.length)) {
+          extraErrors.push(`Ongeldig answers-index bij ${ex.id}`);
+        }
+        if (ex.type === "gap-choice" && (ex.answers.length !== ex.options.length || ex.answers.some((a, i) => a >= ex.options[i].length))) {
+          extraErrors.push(`answers/options kloppen niet bij ${ex.id}`);
+        }
+        if (ex.type === "reading") {
+          for (const q of ex.questions) {
+            addId(q.id, unit.id);
+            if (q.type === "mc" && (q.answer < 0 || q.answer >= q.options.length)) extraErrors.push(`Ongeldig answer-index bij ${q.id}`);
+          }
+        }
         if (ex.type === "writing") {
           const n = ex.task.requiredPoints.length;
           if (n < 2 || n > 4) extraErrors.push(`requiredPoints moet 2-4 zijn bij ${ex.id}`);
@@ -30,7 +45,7 @@ async function main() {
       }
     }
     for (const ref of unit.vocabRefs) {
-      if (!content.vocabById.has(ref)) extraErrors.push(`vocabRef "${ref}" bestaat niet (${unit.id})`);
+      if (!content.vocabById.has(ref) && !content.verbs.has(ref)) extraErrors.push(`vocabRef "${ref}" bestaat niet (${unit.id})`);
     }
   }
 

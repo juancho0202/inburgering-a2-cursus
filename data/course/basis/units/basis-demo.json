@@ -1,0 +1,384 @@
+{
+  "id": "basis-demo",
+  "moduleId": "basis",
+  "title": "Demo: alle oefeningen",
+  "goal": "Probeer elk type oefening een keer.",
+  "estimatedMinutes": 10,
+  "tags": [
+    "demo"
+  ],
+  "vocabRefs": [
+    "basis-vocab-wonen-002",
+    "basis-vocab-tijd-002",
+    "basis-verb-afspreken"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-demo-l-01",
+      "title": "Welkom",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In deze les zie je **alle soorten oefeningen**.\n\n- Kies het goede antwoord\n- Vul woorden in\n- Zet woorden in de goede volgorde"
+        },
+        {
+          "kind": "example",
+          "nl": "Morgen ga ik naar de dokter.",
+          "note": "werkwoord op plek 2"
+        },
+        {
+          "kind": "dialogue",
+          "lines": [
+            {
+              "speaker": "Huisbaas",
+              "nl": "Goedemorgen, ik kom de verwarming repareren."
+            },
+            {
+              "speaker": "Ahmed",
+              "nl": "Dank u wel, komt u binnen."
+            }
+          ]
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-wonen-002",
+            "basis-vocab-wonen-003"
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Gebruik de toetsen **1–4** om een antwoord te kiezen en **Enter** om te controleren."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-demo-mc",
+        "type": "mc",
+        "tags": [
+          "demo"
+        ],
+        "prompt": "Wat is half drie?",
+        "explanation": "Half drie is half uur vóór drie: 2.30.",
+        "difficulty": 1,
+        "options": [
+          "2.30",
+          "3.30",
+          "2.15",
+          "3.15"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-demo-mcm",
+        "type": "mc-multi",
+        "tags": [
+          "demo"
+        ],
+        "prompt": "Welke woorden zijn dagen van de week?",
+        "explanation": "Maandag en vrijdag zijn dagen. Januari is een maand.",
+        "difficulty": 1,
+        "options": [
+          "maandag",
+          "januari",
+          "vrijdag",
+          "ochtend"
+        ],
+        "answers": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-demo-tf",
+        "type": "true-false",
+        "tags": [
+          "demo"
+        ],
+        "prompt": "Is deze zin goed?",
+        "explanation": "Half acht is 7.30.",
+        "difficulty": 1,
+        "statement": "Half acht is 8.30.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-demo-gf",
+        "type": "gap-fill",
+        "tags": [
+          "demo"
+        ],
+        "prompt": "Vul het goede woord in.",
+        "explanation": "Bij ik gebruik je de stam van het werkwoord: ga.",
+        "difficulty": 1,
+        "text": "Ik ___ elke dag om acht uur naar mijn werk.",
+        "answers": [
+          [
+            "ga"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-demo-gc",
+        "type": "gap-choice",
+        "tags": [
+          "demo"
+        ],
+        "prompt": "Kies de goede woorden.",
+        "explanation": "Bij een zelfstandig naamwoord zonder lidwoord gebruik je geen.",
+        "difficulty": 1,
+        "text": "Ik heb ___ tijd. Dat is ___ probleem.",
+        "options": [
+          [
+            "geen",
+            "niet"
+          ],
+          [
+            "geen",
+            "niet"
+          ]
+        ],
+        "answers": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-demo-wo",
+        "type": "word-order",
+        "tags": [
+          "demo"
+        ],
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "explanation": "Het werkwoord staat op plek 2.",
+        "difficulty": 1,
+        "tokens": [
+          "Morgen",
+          "ga",
+          "ik",
+          "naar",
+          "de",
+          "dokter"
+        ],
+        "alsoAccepted": [
+          [
+            "Ik",
+            "ga",
+            "morgen",
+            "naar",
+            "de",
+            "dokter"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-demo-ma",
+        "type": "match",
+        "tags": [
+          "demo"
+        ],
+        "prompt": "Welke tijd hoort bij welke woorden?",
+        "explanation": "Kwart over is +15 minuten, kwart voor is -15 minuten.",
+        "difficulty": 1,
+        "pairs": [
+          [
+            "half elf",
+            "10.30"
+          ],
+          [
+            "kwart over acht",
+            "8.15"
+          ],
+          [
+            "kwart voor twee",
+            "1.45"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-demo-co",
+        "type": "conjugate",
+        "tags": [
+          "demo"
+        ],
+        "prompt": "Vul de werkwoordsvorm in.",
+        "explanation": "Bij ik gebruik je de stam: werk.",
+        "difficulty": 1,
+        "verbId": "basis-verb-werken",
+        "person": "ik",
+        "tense": "present",
+        "answers": [
+          "werk"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-demo-co2",
+        "type": "conjugate",
+        "tags": [
+          "demo"
+        ],
+        "prompt": "Vul het voltooid deelwoord in.",
+        "explanation": "Afspreken is scheidbaar: af + gesproken.",
+        "difficulty": 1,
+        "verbId": "basis-verb-afspreken",
+        "person": "wij",
+        "tense": "perfect",
+        "answers": [
+          "afgesproken"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-demo-re",
+        "type": "reading",
+        "tags": [
+          "demo"
+        ],
+        "prompt": "Lees de tekst en beantwoord de vragen.",
+        "explanation": "Lees eerst de vragen, zoek dan de woorden in de tekst.",
+        "difficulty": 1,
+        "document": {
+          "kind": "document",
+          "docType": "email",
+          "title": "Afspraak tandarts",
+          "body": "Van: Tandartspraktijk De Lach\nAan: Ahmed Yilmaz\nDatum: 3 oktober\n\nBeste meneer Yilmaz,\n\nU heeft op donderdag 10 oktober een afspraak om 14.30 uur. Kunt u niet komen? Bel dan uiterlijk woensdag.\n\nMet vriendelijke groet,\nTandartspraktijk De Lach"
+        },
+        "questions": [
+          {
+            "id": "basis-demo-re-1",
+            "type": "mc",
+            "tags": [
+              "demo"
+            ],
+            "prompt": "Hoe laat is de afspraak?",
+            "options": [
+              "14.00",
+              "14.30",
+              "15.30"
+            ],
+            "answer": 1,
+            "explanation": "In de tekst staat: om 14.30 uur.",
+            "difficulty": 1
+          },
+          {
+            "id": "basis-demo-re-2",
+            "type": "mc",
+            "tags": [
+              "demo"
+            ],
+            "prompt": "Wat moet Ahmed doen als hij niet kan komen?",
+            "options": [
+              "Een brief schrijven",
+              "Uiterlijk woensdag bellen",
+              "Niets doen"
+            ],
+            "answer": 1,
+            "explanation": "Er staat: bel dan uiterlijk woensdag.",
+            "difficulty": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-demo-ff",
+        "type": "form-fill",
+        "tags": [
+          "demo"
+        ],
+        "prompt": "Vul het formulier in.",
+        "explanation": "Schrijf de datum als dd-mm-jjjj.",
+        "difficulty": 1,
+        "formTitle": "Inschrijfformulier bibliotheek",
+        "scenario": "Je heet Priya Sharma. Je bent geboren op 5 mei 1990. Je woont aan de Kerkstraat 12 in Utrecht.",
+        "fields": [
+          {
+            "label": "Achternaam",
+            "kind": "text",
+            "expected": "Sharma",
+            "hint": "Je familienaam"
+          },
+          {
+            "label": "Geboortedatum",
+            "kind": "text",
+            "expected": "05-05-1990",
+            "hint": "dd-mm-jjjj"
+          },
+          {
+            "label": "Woonplaats",
+            "kind": "text",
+            "expected": "Utrecht"
+          },
+          {
+            "label": "Telefoonnummer",
+            "kind": "text",
+            "hint": "Verzin een nummer"
+          }
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-demo-wr",
+        "type": "writing",
+        "tags": [
+          "demo"
+        ],
+        "prompt": "Schrijf een kort bericht aan je buurman.",
+        "explanation": "Een kort bericht aan een buur is informeel.",
+        "difficulty": 1,
+        "task": {
+          "instructions": "Schrijf een kort bericht aan je buurman.",
+          "scenario": "Je komt zaterdag een feestje geven. Het kan wat lawaai geven.",
+          "requiredPoints": [
+            "Vertel dat je een feestje geeft.",
+            "Vertel wanneer het feestje is.",
+            "Zeg sorry voor het lawaai."
+          ]
+        },
+        "minWords": 25,
+        "maxWords": 50,
+        "modelAnswer": "Hoi Pieter,\n\nZaterdag geef ik een klein feestje. Het begint om acht uur en eindigt om elf uur. Het kan wat lawaai geven. Sorry daarvoor! Je bent natuurlijk welkom.\n\nGroetjes,\nJuan",
+        "checklist": [
+          "Aanhef: Hoi Pieter,",
+          "Feestje genoemd",
+          "Dag en tijd genoemd",
+          "Sorry gezegd",
+          "Groet + naam"
+        ],
+        "register": "informal"
+      }
+    }
+  ]
+}

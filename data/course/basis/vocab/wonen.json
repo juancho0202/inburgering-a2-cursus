@@ -10,9 +10,82 @@
       "plural": null,
       "definitionNl": "Het geld dat je elke maand betaalt voor je huis.",
       "example": "De huur is 750 euro per maand.",
-      "tags": ["knm:wonen", "lezen"],
+      "tags": [
+        "knm:wonen",
+        "lezen"
+      ],
       "level": "A2",
       "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-wonen-002",
+      "nl": "de huisbaas",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de huisbazen",
+      "definitionNl": "De persoon van wie jij je huis huurt.",
+      "example": "De huisbaas komt morgen de verwarming repareren.",
+      "tags": [
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-003",
+      "nl": "de verwarming",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de verwarmingen",
+      "definitionNl": "Het apparaat dat je huis warm maakt.",
+      "example": "De verwarming is kapot, het is koud.",
+      "tags": [
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-004",
+      "nl": "de buurman",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de buren",
+      "definitionNl": "Een man die naast jou woont.",
+      "example": "De buurman maakt veel lawaai.",
+      "tags": [
+        "wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-005",
+      "nl": "verhuizen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Naar een ander huis gaan wonen.",
+      "example": "Wij verhuizen volgende maand naar Utrecht.",
+      "tags": [
+        "wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-006",
+      "nl": "het contract",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de contracten",
+      "definitionNl": "Een papier met afspraken tussen jou en de huisbaas.",
+      "example": "Ik moet het huurcontract tekenen.",
+      "tags": [
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
     }
   ]
 }

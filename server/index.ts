@@ -3,6 +3,7 @@ import path from "node:path";
 import fs from "node:fs";
 import { contentRouter } from "./routes/content.js";
 import { progressRouter } from "./routes/progress.js";
+import { srsRouter } from "./routes/srs.js";
 import { settingsRouter } from "./routes/settings.js";
 import { writingRouter } from "./routes/writing.js";
 import { claudeRouter } from "./routes/claude.js";
@@ -41,6 +42,7 @@ async function main() {
 
   app.use("/api", contentRouter);
   app.use("/api", progressRouter);
+  app.use("/api", srsRouter);
   app.use("/api", settingsRouter);
   app.use("/api", writingRouter);
   app.use("/api", claudeRouter);

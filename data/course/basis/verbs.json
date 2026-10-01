@@ -4,12 +4,62 @@
     "infinitive": "zijn",
     "separable": false,
     "prefix": null,
-    "present": { "ik": "ben", "jij": "bent", "hij": "is", "wij": "zijn" },
-    "past": { "sg": "was", "pl": "waren" },
+    "present": {
+      "ik": "ben",
+      "jij": "bent",
+      "hij": "is",
+      "wij": "zijn"
+    },
+    "past": {
+      "sg": "was",
+      "pl": "waren"
+    },
     "participle": "geweest",
     "auxiliary": "zijn",
     "irregular": true,
     "definitionNl": "Een werkwoord dat zegt wie of wat iets is.",
     "example": "Ik ben moe."
+  },
+  {
+    "id": "basis-verb-afspreken",
+    "infinitive": "afspreken",
+    "separable": true,
+    "prefix": "af",
+    "present": {
+      "ik": "spreek af",
+      "jij": "spreekt af",
+      "hij": "spreekt af",
+      "wij": "spreken af"
+    },
+    "past": {
+      "sg": "sprak af",
+      "pl": "spraken af"
+    },
+    "participle": "afgesproken",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Samen een tijd en plek kiezen om elkaar te zien.",
+    "example": "We spreken morgen om drie uur af bij het buurthuis."
+  },
+  {
+    "id": "basis-verb-werken",
+    "infinitive": "werken",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "werk",
+      "jij": "werkt",
+      "hij": "werkt",
+      "wij": "werken"
+    },
+    "past": {
+      "sg": "werkte",
+      "pl": "werkten"
+    },
+    "participle": "gewerkt",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Iets doen voor je baan of om geld te verdienen.",
+    "example": "Ik werk vijf dagen per week in een winkel."
   }
 ]
