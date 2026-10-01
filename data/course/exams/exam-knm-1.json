@@ -1,0 +1,19 @@
+{
+  "id": "exam-knm-1",
+  "skill": "knm",
+  "title": "Proefexamen KNM 1",
+  "durationMinutes": 45,
+  "passScore": 0.7,
+  "items": [
+    {
+      "id": "exam-knm-1-q-001",
+      "type": "mc",
+      "tags": ["knm:wonen"],
+      "prompt": "Wie betaalt grote reparaties aan een huurhuis?",
+      "options": ["De huisbaas", "De huurder", "De gemeente", "De buren"],
+      "answer": 0,
+      "explanation": "De huisbaas is verantwoordelijk voor grote reparaties.",
+      "difficulty": 1
+    }
+  ]
+}

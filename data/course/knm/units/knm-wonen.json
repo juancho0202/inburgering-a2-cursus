@@ -1,0 +1,34 @@
+{
+  "id": "knm-wonen",
+  "moduleId": "knm",
+  "title": "Wonen",
+  "goal": "Je weet hoe je een huis huurt, wat de huisbaas doet en wat jij moet doen.",
+  "estimatedMinutes": 25,
+  "tags": ["knm:wonen"],
+  "vocabRefs": ["basis-vocab-wonen-001"],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "knm-wonen-l-01",
+      "title": "Een huis huren",
+      "blocks": [
+        { "kind": "text", "md": "In Nederland huren veel mensen een huis. Je betaalt elke maand huur aan de huisbaas." }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-014",
+        "type": "mc",
+        "tags": ["knm:wonen"],
+        "prompt": "Wat moet Ahmed doen?",
+        "context": "De verwarming in Ahmeds huurhuis is kapot.",
+        "options": ["Hij belt de huisbaas.", "Hij repareert het zelf.", "Hij verhuist meteen.", "Hij doet niets."],
+        "answer": 0,
+        "explanation": "De huisbaas moet grote reparaties betalen. Ahmed belt eerst de huisbaas.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

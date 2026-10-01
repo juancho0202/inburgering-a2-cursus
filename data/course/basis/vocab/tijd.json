@@ -1,0 +1,18 @@
+{
+  "theme": "tijd",
+  "title": "Tijd",
+  "entries": [
+    {
+      "id": "basis-vocab-tijd-001",
+      "nl": "het uur",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de uren",
+      "definitionNl": "Zestig minuten.",
+      "example": "Ik werk acht uur per dag.",
+      "tags": ["basis:tijd"],
+      "level": "A2",
+      "source": "samenvatting"
+    }
+  ]
+}

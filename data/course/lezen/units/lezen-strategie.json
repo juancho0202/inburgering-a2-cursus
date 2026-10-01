@@ -1,0 +1,49 @@
+{
+  "id": "lezen-strategie",
+  "moduleId": "lezen",
+  "title": "Zo lees je slim",
+  "goal": "Je weet hoe je snel de juiste informatie in een tekst vindt.",
+  "estimatedMinutes": 15,
+  "tags": ["lezen:strategie"],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "lezen-strategie-l-01",
+      "title": "Lees eerst de vraag",
+      "blocks": [
+        { "kind": "text", "md": "Lees eerst de vraag. Zoek daarna kernwoorden in de tekst, zoals getallen, tijden en namen." }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-strategie-q-001",
+        "type": "reading",
+        "tags": ["lezen:strategie"],
+        "prompt": "Lees de mededeling en beantwoord de vraag.",
+        "explanation": "De tekst zegt duidelijk tot wanneer de zwembad open is.",
+        "difficulty": 1,
+        "document": {
+          "kind": "document",
+          "docType": "folder",
+          "title": "Zwembad De Golfslag",
+          "body": "Open van maandag tot en met zaterdag, van 09.00 tot 18.00 uur. Op zondag gesloten."
+        },
+        "questions": [
+          {
+            "id": "lezen-strategie-q-001-a",
+            "type": "mc",
+            "tags": ["lezen:strategie"],
+            "prompt": "Wanneer is het zwembad gesloten?",
+            "options": ["Op zondag", "Op maandag", "Op zaterdag", "Nooit"],
+            "answer": 0,
+            "explanation": "De tekst zegt: op zondag gesloten.",
+            "difficulty": 1
+          }
+        ]
+      }
+    }
+  ]
+}
