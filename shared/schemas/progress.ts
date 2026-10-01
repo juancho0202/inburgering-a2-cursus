@@ -65,9 +65,10 @@ export const SrsCardSchema = z.object({
 export const SrsStateSchema = z.object({
   version: z.literal(1),
   cards: z.record(z.string(), SrsCardSchema),
+  newToday: z.object({ day: z.string(), count: z.number().int() }).default({ day: "", count: 0 }),
 });
 
-export const defaultSrs = () => ({ version: 1 as const, cards: {} });
+export const defaultSrs = () => ({ version: 1 as const, cards: {}, newToday: { day: "", count: 0 } });
 
 export const AttemptSchema = z.object({
   itemId: z.string(),

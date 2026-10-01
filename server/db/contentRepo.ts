@@ -8,7 +8,7 @@ import {
   VerbEntrySchema,
   ExamSchema,
 } from "../../shared/schemas/content.js";
-import type { Course, ModuleDef, Unit, VocabFile, VerbEntry, Exam } from "../../shared/types.js";
+import type { Course, ModuleDef, Unit, VocabFile, VerbEntry, Exam, Exercise } from "../../shared/types.js";
 
 const COURSE_DIR = path.resolve("data/course");
 
@@ -163,4 +163,26 @@ export async function getContent(): Promise<ContentIndex> {
 export async function reloadContent(): Promise<ContentIndex> {
   cached = await loadContent();
   return cached;
+}
+
+export interface ExerciseRef {
+  exercise: Exercise;
+  unitId: string;
+  tags: string[];
+}
+
+/** Index of every top-level exercise by id; reading sub-questions point at their parent. */
+export function buildExerciseIndex(content: ContentIndex) {
+  const byId = new Map<string, ExerciseRef>();
+  const parentOf = new Map<string, string>();
+  for (const unit of content.units.values()) {
+    for (const step of unit.steps) {
+      if (step.type !== "exercise") continue;
+      const ex = step.exercise;
+      byId.set(ex.id, { exercise: ex, unitId: unit.id, tags: [...new Set([...unit.tags, ...ex.tags])] });
+      if (ex.type === "reading") for (const q of ex.questions) parentOf.set(q.id, ex.id);
+    }
+  }
+  const resolve = (id: string) => byId.get(parentOf.get(id) ?? id);
+  return { byId, resolve };
 }

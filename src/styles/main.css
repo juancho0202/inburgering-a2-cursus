@@ -1,76 +1,137 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Semantic tokens: light values here, dark overrides in .dark */
 :root {
-  --color-bg: #ffffff;
-  --color-text: #1a1a1a;
-  --color-accent: #e8710a;
-  --color-correct: #2e7d32;
-  --color-wrong: #c62828;
-  --color-border: #e0e0e0;
+  --bg: #f6f4f1;
+  --surface: #ffffff;
+  --surface-2: #f0ede8;
+  --ink: #1f2328;
+  --muted: #5d6570;
+  --line: #e4dfd7;
+  --good: #1f7a3d;
+  --good-bg: #e3f4e8;
+  --bad: #b3261e;
+  --bad-bg: #fbe6e4;
+  --brand: #e8710a;
+  --brand-strong: #c45e05;
+  --brand-bg: #fdf0e1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #15181c;
-    --color-text: #f0f0f0;
-    --color-border: #333;
+.dark {
+  color-scheme: dark;
+  --bg: #14171b;
+  --surface: #1d2127;
+  --surface-2: #272c33;
+  --ink: #eef0f2;
+  --muted: #a3acb7;
+  --line: #333a43;
+  --good: #5fd083;
+  --good-bg: #17301f;
+  --bad: #ff8f87;
+  --bad-bg: #3a1c1a;
+  --brand: #ff9438;
+  --brand-strong: #ffb067;
+  --brand-bg: #3a2512;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-good: var(--good);
+  --color-good-bg: var(--good-bg);
+  --color-bad: var(--bad);
+  --color-bad-bg: var(--bad-bg);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-bg: var(--brand-bg);
+  --font-sans: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --radius-card: 1.25rem;
+  --shadow-card: 0 1px 2px rgb(20 20 30 / 0.05), 0 6px 20px rgb(20 20 30 / 0.06);
+}
+
+@layer base {
+  html {
+    font-size: 18px;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  button {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 3px solid var(--brand);
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-* {
-  box-sizing: border-box;
+@layer components {
+  .card {
+    @apply rounded-card bg-surface shadow-card border border-line;
+  }
+  .input {
+    @apply w-full rounded-xl border-2 border-line bg-surface px-3 py-2 text-ink placeholder:text-muted focus:border-brand;
+  }
+  /* Rendered markdown (lesson text) */
+  .prose-nl {
+    max-width: 70ch;
+  }
+  .prose-nl p {
+    margin: 0 0 0.9rem;
+  }
+  .prose-nl ul,
+  .prose-nl ol {
+    margin: 0 0 0.9rem 1.25rem;
+    list-style: revert;
+  }
+  .prose-nl li {
+    margin: 0.2rem 0;
+  }
+  .prose-nl strong {
+    font-weight: 700;
+  }
+  .prose-nl table {
+    border-collapse: collapse;
+    margin: 0 0 0.9rem;
+  }
+  .prose-nl th,
+  .prose-nl td {
+    border: 1px solid var(--line);
+    padding: 0.35rem 0.7rem;
+    text-align: left;
+  }
+  .prose-nl th {
+    background: var(--surface-2);
+  }
 }
 
-html {
-  font-size: 18px;
+@keyframes slide-up {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
 }
-
-body {
-  margin: 0;
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: system-ui, "Segoe UI", sans-serif;
-  line-height: 1.6;
-}
-
-.app-shell {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.app-nav {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.app-nav a {
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.app-nav a.router-link-active {
-  color: var(--color-accent);
-}
-
-.app-main {
-  flex: 1;
-  padding: 1.5rem;
-  max-width: 70ch;
-  margin: 0 auto;
-  width: 100%;
-}
-
-button {
-  font: inherit;
-  cursor: pointer;
-}
-
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 2px;
+.slide-up {
+  animation: slide-up 0.22s ease-out;
 }

@@ -10,9 +10,54 @@
       "plural": "de uren",
       "definitionNl": "Zestig minuten.",
       "example": "Ik werk acht uur per dag.",
-      "tags": ["basis:tijd"],
+      "tags": [
+        "basis:tijd"
+      ],
       "level": "A2",
       "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-tijd-002",
+      "nl": "de afspraak",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de afspraken",
+      "definitionNl": "Een tijd en plek die je met iemand kiest.",
+      "example": "Ik heb morgen een afspraak met de dokter.",
+      "tags": [
+        "basis:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-003",
+      "nl": "het rooster",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de roosters",
+      "definitionNl": "Een lijst met tijden en dagen.",
+      "example": "Op het rooster staat mijn werktijd.",
+      "tags": [
+        "basis:tijd",
+        "lezen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-004",
+      "nl": "vandaag",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Op deze dag.",
+      "example": "Vandaag is het maandag.",
+      "tags": [
+        "basis:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
     }
   ]
 }

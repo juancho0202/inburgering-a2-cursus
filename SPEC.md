@@ -92,7 +92,7 @@ All content must be original. It may imitate the *style* and *difficulty* of the
 | Runtime | Node 24 (use native `fetch`, `node:fs/promises`, ES modules everywhere; `"type": "module"`) |
 | Language | TypeScript (strict) for both client and server |
 | Frontend | Vue 3 (`<script setup>`, Composition API), Vite, Vue Router, Pinia |
-| Styling | Plain CSS with CSS custom properties (no Tailwind, no UI framework). One `src/styles/` folder. |
+| Styling | **Tailwind CSS v4** (`tailwindcss` + `@tailwindcss/vite`) with a custom theme defined in `src/styles/main.css` via `@theme` (colour tokens, fonts, radii, shadows). No component UI framework; build small reusable components in `src/components/ui/`. |
 | Backend | Express 5 (small JSON API) run with `tsx` in dev |
 | Validation | `zod` schemas shared between server and client (`shared/` folder) |
 | Claude | Official SDK `@anthropic-ai/sdk`, **server side only** |
@@ -636,9 +636,21 @@ as context. Stream the answer (SDK `messages.stream`). Keep the last 10 messages
 
 ### 11.2 Visual design
 
+- **The course must look modern, friendly and polished** — like a good language-learning app,
+  not a bare prototype. Built with Tailwind CSS (§3). Concretely:
+  - A consistent design system: one `@theme` block with semantic tokens (`brand`, `surface`,
+    `ink`, `muted`, `good`, `bad`), a rounded-2xl card style, soft shadows, generous spacing,
+    a clean sans-serif font stack (system fonts; no external font calls, see §3).
+  - App shell: top navigation (logo, Leren, Woorden, Examens, Instellingen), content centred
+    in a max-width container, subtle page background distinct from white cards.
+  - Friendly touches: module icons and colour per module (basis, lezen, knm, schrijven, exams),
+    progress rings and bars, a vertical "path" of units, large tappable answer buttons,
+    smooth but short transitions (respect `prefers-reduced-motion`), clear hover/focus/active states.
+  - Exercise screens are uncluttered: one question per screen, big type, a sticky bottom bar
+    with "Controleer" / "Volgende", and a coloured feedback panel (green/red) that slides up.
 - Calm, focused, readable. Large body text (18px), line-height 1.6, max text width ~70ch.
-- Light and dark mode (follow `prefers-color-scheme`, with a toggle in settings).
-- Colour tokens as CSS variables. One accent colour (suggest Dutch orange `#E8710A` used sparingly)
+- Light and dark mode (follow `prefers-color-scheme`, with a toggle in settings; Tailwind `dark:` variant driven by a `dark` class on `<html>`).
+- Colour tokens defined once in `@theme`. One accent colour (suggest Dutch orange `#E8710A` used sparingly)
   plus green for correct, red for wrong — never colour alone: also an icon (✓ / ✗) and text.
 - Mobile-friendly layout (the learner may open it on a phone on the same machine).
 - Reading exercises: document cards look like the real thing (a letter with sender/date,
@@ -853,7 +865,9 @@ Work through these phases in order. At the end of each, run `npm run validate`, 
   corrupting `progress.json` by hand doesn't crash the server; `npm run validate` catches a
   deliberately broken content file.
 
-### Phase 2 — Unit player, all exercise components, progress, SRS
+### Phase 2 — Theme, unit player, all exercise components, progress, SRS
+- **Install Tailwind v4 and apply the theme (§3, §11.2)** to the existing shell, dashboard,
+  module, unit and settings screens before building new screens. Shared UI components in `src/components/ui/`.
 - All exercise components of §9 (with keyboard support) and the lesson block renderer.
 - Unit player with resume, end screen; attempts saved; dashboard with real progress.
 - Leitner SRS (§8.2) + review screen + vocab browser + verb table; Web Speech 🔊.

@@ -3,5 +3,8 @@
   "title": "Basis Nederlands",
   "description": "Woorden, werkwoorden en zinsbouw die je overal nodig hebt.",
   "icon": "book",
-  "units": ["basis-tijd"]
+  "units": [
+    "basis-tijd",
+    "basis-demo"
+  ]
 }
