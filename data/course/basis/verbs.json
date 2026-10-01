@@ -1,0 +1,15 @@
+[
+  {
+    "id": "basis-verb-zijn",
+    "infinitive": "zijn",
+    "separable": false,
+    "prefix": null,
+    "present": { "ik": "ben", "jij": "bent", "hij": "is", "wij": "zijn" },
+    "past": { "sg": "was", "pl": "waren" },
+    "participle": "geweest",
+    "auxiliary": "zijn",
+    "irregular": true,
+    "definitionNl": "Een werkwoord dat zegt wie of wat iets is.",
+    "example": "Ik ben moe."
+  }
+]

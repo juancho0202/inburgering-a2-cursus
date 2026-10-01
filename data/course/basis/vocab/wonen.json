@@ -1,0 +1,18 @@
+{
+  "theme": "wonen",
+  "title": "Wonen",
+  "entries": [
+    {
+      "id": "basis-vocab-wonen-001",
+      "nl": "de huur",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Het geld dat je elke maand betaalt voor je huis.",
+      "example": "De huur is 750 euro per maand.",
+      "tags": ["knm:wonen", "lezen"],
+      "level": "A2",
+      "source": "samenvatting"
+    }
+  ]
+}

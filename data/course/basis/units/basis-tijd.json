@@ -1,0 +1,35 @@
+{
+  "id": "basis-tijd",
+  "moduleId": "basis",
+  "title": "Tijd, getallen en datums",
+  "goal": "Je kunt de klok lezen en getallen gebruiken.",
+  "estimatedMinutes": 15,
+  "tags": ["basis:tijd"],
+  "vocabRefs": ["basis-vocab-tijd-001"],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-tijd-l-01",
+      "title": "Hoe laat is het?",
+      "blocks": [
+        { "kind": "text", "md": "In het Nederlands zeg je **half elf** voor 10.30 uur, niet 11.30." },
+        { "kind": "table", "headers": ["Je hoort", "Tijd"], "rows": [["half elf", "10.30"], ["kwart over acht", "08.15"]] },
+        { "kind": "tip", "md": "Let op: **half elf** is 10.30, niet 11.30." }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-001",
+        "type": "mc",
+        "tags": ["basis:tijd"],
+        "prompt": "Hoe laat is het als iemand zegt: \"half elf\"?",
+        "options": ["10.30", "11.30", "10.00", "11.00"],
+        "answer": 0,
+        "explanation": "Half elf betekent de helft van elf uur, dus 10.30.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

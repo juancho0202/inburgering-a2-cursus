@@ -1,0 +1,32 @@
+{
+  "id": "schrijven-basis",
+  "moduleId": "schrijven",
+  "title": "Goede zinnen schrijven",
+  "goal": "Je schrijft zinnen met het werkwoord op de juiste plek.",
+  "estimatedMinutes": 20,
+  "tags": ["schrijven:basis"],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "schrijven-basis-l-01",
+      "title": "Werkwoord op plek 2",
+      "blocks": [
+        { "kind": "example", "nl": "Morgen ga ik naar de dokter.", "note": "werkwoord op plek 2" }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-001",
+        "type": "word-order",
+        "tags": ["schrijven:basis"],
+        "prompt": "Zet de zin in de juiste volgorde.",
+        "tokens": ["Morgen", "ga", "ik", "naar", "de", "dokter", "."],
+        "explanation": "Het werkwoord staat op de tweede plek in de zin.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

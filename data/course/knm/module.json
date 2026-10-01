@@ -1,0 +1,7 @@
+{
+  "id": "knm",
+  "title": "Kennis van de Nederlandse Maatschappij",
+  "description": "Leer hoe Nederland werkt: werk, wonen, zorg, school en de overheid.",
+  "icon": "landmark",
+  "units": ["knm-wonen"]
+}
