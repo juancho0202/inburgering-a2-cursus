@@ -3,8 +3,9 @@
 > **For Claude Code.** This file is the complete specification for a local study app.
 > Read the whole file before writing code. Build in the phases of §14, in order.
 > After each phase: run the checks in that phase, show the user how to try it, and wait
-> for the user's "ok" before starting the next phase. Commit after each phase if the
-> folder is a git repository (initialise one in Phase 1 if it is not).
+> for the user's "ok" before starting the next phase. **Do not commit or push**: leave the
+> changes in the working tree, because the user commits after reviewing them
+> (initialise a git repository in Phase 1 if there is none).
 
 ---
 
