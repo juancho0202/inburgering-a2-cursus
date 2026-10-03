@@ -1,0 +1,623 @@
+{
+  "id": "basis-bijzin",
+  "moduleId": "basis",
+  "title": "Bijzinnen",
+  "goal": "Je maakt bijzinnen met de werkwoorden aan het eind.",
+  "estimatedMinutes": 20,
+  "tags": [
+    "basis:bijzin",
+    "grammar:bijzin"
+  ],
+  "vocabRefs": [
+    "basis-vocab-tijd-002"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-bijzin-l-01",
+      "title": "Bijzinnen",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Na **dat, omdat, als, wanneer, of, terwijl, voordat, nadat** staan de werkwoorden **aan het eind**."
+        },
+        {
+          "kind": "example",
+          "nl": "Ik denk dat we een samenvatting gaan maken."
+        },
+        {
+          "kind": "example",
+          "nl": "Ik kan niet komen, omdat mijn zoon ziek is."
+        },
+        {
+          "kind": "text",
+          "md": "Na **want, maar, en, dus** is de volgorde **gewoon**: *Ik kan niet komen, want mijn zoon is ziek.*"
+        },
+        {
+          "kind": "text",
+          "md": "Een fout van een cursist: ~~Denk ik dat we zullen een samenvatting doen.~~\n\n**Beter:** Ik denk dat we een samenvatting gaan maken. (de zin begint met het onderwerp; na *dat* staan de werkwoorden aan het eind; je *maakt* een samenvatting)"
+        },
+        {
+          "kind": "tip",
+          "md": "**omdat** + bijzin (werkwoord aan het eind). **want** + gewone zin (werkwoord op plek 2)."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-001",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na dat staan de werkwoorden aan het eind: gaan maken.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "denk",
+          "dat",
+          "we",
+          "een",
+          "samenvatting",
+          "gaan",
+          "maken."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-002",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na omdat staat is aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "kan",
+          "niet",
+          "komen",
+          "omdat",
+          "mijn",
+          "zoon",
+          "ziek",
+          "is."
+        ],
+        "alsoAccepted": [
+          [
+            "Omdat",
+            "mijn",
+            "zoon",
+            "ziek",
+            "is",
+            "kan",
+            "ik",
+            "niet",
+            "komen."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-003",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na dat staat begint aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "weet",
+          "dat",
+          "de",
+          "les",
+          "om",
+          "negen",
+          "uur",
+          "begint."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-004",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na dat staan de werkwoorden aan het eind: kan werken.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Hij",
+          "zegt",
+          "dat",
+          "hij",
+          "morgen",
+          "niet",
+          "kan",
+          "werken."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-005",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na als staat regent aan het eind; dan begint de hoofdzin met het werkwoord.",
+        "difficulty": 2,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Als",
+          "het",
+          "regent",
+          "blijf",
+          "ik",
+          "thuis."
+        ],
+        "alsoAccepted": [
+          [
+            "Ik",
+            "blijf",
+            "thuis",
+            "als",
+            "het",
+            "regent."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-006",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na als staat ben aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "bel",
+          "je",
+          "als",
+          "ik",
+          "thuis",
+          "ben."
+        ],
+        "alsoAccepted": [
+          [
+            "Als",
+            "ik",
+            "thuis",
+            "ben",
+            "bel",
+            "ik",
+            "je."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-007",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na wanneer staat vertrekt aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Zij",
+          "wil",
+          "weten",
+          "wanneer",
+          "de",
+          "bus",
+          "vertrekt."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-008",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na tot staat komt aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "wacht",
+          "tot",
+          "de",
+          "trein",
+          "komt."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-009",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na terwijl staat kook aan het eind.",
+        "difficulty": 2,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Terwijl",
+          "ik",
+          "kook",
+          "kijkt",
+          "mijn",
+          "zoon",
+          "televisie."
+        ],
+        "alsoAccepted": [
+          [
+            "Mijn",
+            "zoon",
+            "kijkt",
+            "televisie",
+            "terwijl",
+            "ik",
+            "kook."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-010",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na omdat staat ben aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "ga",
+          "naar",
+          "huis",
+          "omdat",
+          "ik",
+          "moe",
+          "ben."
+        ],
+        "alsoAccepted": [
+          [
+            "Omdat",
+            "ik",
+            "moe",
+            "ben",
+            "ga",
+            "ik",
+            "naar",
+            "huis."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-011",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na ik ziek ben staat ben aan het eind: dat past bij omdat.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede zin.",
+        "text": "Ik kom niet, ___ ik ziek ben.",
+        "options": [
+          [
+            "omdat",
+            "want",
+            "dus"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-012",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na ik ben ziek (gewone volgorde) past want.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede zin.",
+        "text": "Ik kom niet, ___ ik ben ziek.",
+        "options": [
+          [
+            "want",
+            "omdat",
+            "dat"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-013",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na zeggen gebruik je dat.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Hij zegt ___ hij komt.",
+        "options": [
+          [
+            "dat",
+            "want",
+            "maar"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-014",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Een vraag in een bijzin begint met of: of hij thuis is.",
+        "difficulty": 2,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Ik weet niet ___ hij thuis is.",
+        "options": [
+          [
+            "of",
+            "dat",
+            "want"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-015",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Als + bijzin: werkwoord aan het eind (regent).",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "___ het regent, ga ik niet fietsen.",
+        "options": [
+          [
+            "Als",
+            "Want",
+            "Dus"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-016",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "In een bijzin staat het werkwoord aan het eind.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Ik denk dat hij komt morgen.",
+          "Ik denk dat komt hij morgen.",
+          "Ik denk dat morgen hij komt.",
+          "Ik denk dat hij morgen komt."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-017",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na omdat staat regent aan het eind van de bijzin.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Ik blijf thuis, omdat het regent.",
+          "Ik blijf thuis, omdat het is regenen.",
+          "Ik blijf thuis, omdat regent het.",
+          "Ik blijf thuis, omdat het regent niet."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-018",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na want is de volgorde gewoon: onderwerp + is.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Ik blijf thuis, want mijn dochter ziek is.",
+          "Ik blijf thuis, want mijn dochter is ziek.",
+          "Ik blijf thuis, want is mijn dochter ziek.",
+          "Ik blijf thuis, want ziek is mijn dochter."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-019",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Goed: Ik denk dat we een samenvatting gaan maken.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Wat is de fout in: \"Denk ik dat we zullen een samenvatting doen\"?",
+        "options": [
+          "Er staat geen punt.",
+          "Er staat geen onderwerp.",
+          "De zin begint verkeerd en de werkwoorden staan niet aan het eind.",
+          "Er is geen fout."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-020",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Omdat + bijzin; want + gewone zin.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je wilt een reden geven. Welk woord past, met het werkwoord aan het eind?",
+        "options": [
+          "want",
+          "maar",
+          "dus",
+          "omdat"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-021",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Dus = gevolg: Ik heb honger, dus ik eet. Na dus staat de gewone volgorde.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welk woord kun je kiezen? \"Ik heb honger, ___ ik eet een broodje.\"",
+        "options": [
+          "dus",
+          "omdat",
+          "dat",
+          "of"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-022",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Na want is de volgorde gewoon (werkwoord op plek 2). Na omdat staan ze aan het eind.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Na het woord \"want\" staan de werkwoorden aan het eind.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-023",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "explanation": "Omdat introduceert een bijzin.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Na het woord \"omdat\" staat het werkwoord aan het eind.",
+        "answer": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,412 @@
+{
+  "theme": "cursus-opleiding",
+  "title": "Cursus en opleiding",
+  "entries": [
+    {
+      "id": "basis-vocab-cursus-opleiding-001",
+      "nl": "de cursist",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de cursisten",
+      "definitionNl": "Iemand die een cursus volgt.",
+      "example": "De cursisten maken een toets.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-002",
+      "nl": "de docent",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de docenten",
+      "definitionNl": "Iemand die les geeft aan volwassenen.",
+      "example": "De docent legt de regels uit.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-003",
+      "nl": "de opleiding",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de opleidingen",
+      "definitionNl": "Een leerweg voor een beroep of diploma.",
+      "example": "Ik volg een opleiding tot kok.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-004",
+      "nl": "de les",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de lessen",
+      "definitionNl": "Het moment waarop je iets leert.",
+      "example": "De les begint om negen uur.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-005",
+      "nl": "afspreken",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Samen een tijd en plek kiezen.",
+      "example": "Wij spreken morgen af in de bibliotheek.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-006",
+      "nl": "de cursus",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de cursussen",
+      "definitionNl": "Een korte opleiding.",
+      "example": "Ik doe een cursus Nederlands.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-007",
+      "nl": "de toets",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de toetsen",
+      "definitionNl": "Een kleine test.",
+      "example": "Morgen hebben wij een toets.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-008",
+      "nl": "het examen",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de examens",
+      "definitionNl": "Een grote test voor een diploma.",
+      "example": "Het examen is op donderdag.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-009",
+      "nl": "het diploma",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de diploma's",
+      "definitionNl": "Een papier dat bewijst dat je een opleiding hebt afgemaakt.",
+      "example": "Ik heb mijn diploma gehaald.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-010",
+      "nl": "de inburgering",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Leren hoe het is om in Nederland te wonen.",
+      "example": "Voor de inburgering moet ik examens doen.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-011",
+      "nl": "slagen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Voor een toets of examen een voldoende halen.",
+      "example": "Ik hoop dat ik slaag.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-012",
+      "nl": "zakken",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Voor een toets of examen een onvoldoende halen.",
+      "example": "Zij is voor het examen gezakt.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-013",
+      "nl": "het cijfer",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de cijfers",
+      "definitionNl": "Een getal dat zegt hoe goed je het deed.",
+      "example": "Ik kreeg een zeven voor mijn toets.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-014",
+      "nl": "oefenen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets vaak doen om beter te worden.",
+      "example": "Ik oefen elke dag Nederlands.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-015",
+      "nl": "leren",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Nieuwe kennis krijgen.",
+      "example": "Wij leren vandaag nieuwe woorden.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-016",
+      "nl": "studeren",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Veel leren voor een opleiding of toets.",
+      "example": "Zij studeert op de universiteit.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-017",
+      "nl": "de woordenschat",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Alle woorden die je kent.",
+      "example": "Mijn woordenschat wordt steeds groter.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-018",
+      "nl": "de grammatica",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De regels van een taal.",
+      "example": "Grammatica vind ik moeilijk.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-019",
+      "nl": "het lokaal",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de lokalen",
+      "definitionNl": "Een kamer waar les wordt gegeven.",
+      "example": "Les is in lokaal 12.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-020",
+      "nl": "het schrift",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de schriften",
+      "definitionNl": "Een boekje om in te schrijven.",
+      "example": "Schrijf het woord in je schrift.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-021",
+      "nl": "het woordenboek",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de woordenboeken",
+      "definitionNl": "Een boek met woorden en uitleg.",
+      "example": "Zoek het woord in het woordenboek.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-022",
+      "nl": "de pauze",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de pauzes",
+      "definitionNl": "Even rusten tijdens een les of werk.",
+      "example": "In de pauze drink ik koffie.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-023",
+      "nl": "aanwezig",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Je bent er.",
+      "example": "Alle cursisten zijn aanwezig.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-024",
+      "nl": "afwezig",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Je bent er niet.",
+      "example": "Pieter is vandaag afwezig.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-025",
+      "nl": "de stage",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de stages",
+      "definitionNl": "Werken om te leren in een bedrijf.",
+      "example": "Ik loop stage in een zorgcentrum.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-026",
+      "nl": "de taalles",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de taallessen",
+      "definitionNl": "Een les in een taal.",
+      "example": "De taalles is op maandag en woensdag.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-027",
+      "nl": "het niveau",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de niveaus",
+      "definitionNl": "Hoe goed je iets kunt.",
+      "example": "Mijn niveau is A2.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-028",
+      "nl": "de vraag",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de vragen",
+      "definitionNl": "Je wilt iets weten.",
+      "example": "Heeft u nog een vraag?",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-cursus-opleiding-029",
+      "nl": "het antwoord",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de antwoorden",
+      "definitionNl": "Wat je zegt of schrijft na een vraag.",
+      "example": "Het antwoord is correct.",
+      "tags": [
+        "thema:cursus-opleiding"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}

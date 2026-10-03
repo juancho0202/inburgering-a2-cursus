@@ -17,6 +17,9 @@ async function main() {
         const ex = step.exercise;
         addId(ex.id, unit.id);
         if (!ex.explanation.trim()) extraErrors.push(`Lege explanation bij ${ex.id}`);
+        if ((ex.type === "mc" || ex.type === "mc-multi") && new Set(ex.options).size !== ex.options.length) {
+          extraErrors.push(`Dubbele opties bij ${ex.id}`);
+        }
         if (ex.type === "mc" && (ex.answer < 0 || ex.answer >= ex.options.length)) {
           extraErrors.push(`Ongeldig answer-index bij ${ex.id}`);
         }
@@ -35,6 +38,7 @@ async function main() {
         if (ex.type === "reading") {
           for (const q of ex.questions) {
             addId(q.id, unit.id);
+            if (q.type === "mc" && new Set(q.options).size !== q.options.length) extraErrors.push(`Dubbele opties bij ${q.id}`);
             if (q.type === "mc" && (q.answer < 0 || q.answer >= q.options.length)) extraErrors.push(`Ongeldig answer-index bij ${q.id}`);
           }
         }

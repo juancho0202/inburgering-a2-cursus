@@ -1,0 +1,482 @@
+{
+  "theme": "vervoer-richting",
+  "title": "Vervoer en richting",
+  "entries": [
+    {
+      "id": "basis-vocab-vervoer-richting-001",
+      "nl": "de vertraging",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de vertragingen",
+      "definitionNl": "De trein of bus is later dan gepland.",
+      "example": "De trein heeft tien minuten vertraging.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-002",
+      "nl": "het spoor",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de sporen",
+      "definitionNl": "Daar rijdt de trein; ook het perron.",
+      "example": "De trein vertrekt van spoor 5.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-003",
+      "nl": "overstappen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Van de ene naar de andere trein of bus gaan.",
+      "example": "U moet in Utrecht overstappen.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-004",
+      "nl": "vertrekken",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Weggaan van een plek.",
+      "example": "De bus vertrekt om negen uur.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-005",
+      "nl": "aankomen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Op een plek komen.",
+      "example": "De trein komt om tien uur aan.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-006",
+      "nl": "de halte",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de haltes",
+      "definitionNl": "Daar stopt de bus of tram.",
+      "example": "Ik wacht bij de halte.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-007",
+      "nl": "het omroepbericht",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de omroepberichten",
+      "definitionNl": "Een mededeling die je hoort in een station of trein.",
+      "example": "In het omroepbericht hoor je de nieuwe tijd.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-008",
+      "nl": "rechtsaf",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Naar de rechterkant gaan.",
+      "example": "Bij het stoplicht gaat u rechtsaf.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-009",
+      "nl": "linksaf",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Naar de linkerkant gaan.",
+      "example": "Na de brug gaat u linksaf.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-010",
+      "nl": "rechtdoor",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Niet links of rechts gaan, maar rechtdoor.",
+      "example": "Loop rechtdoor tot het plein.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-011",
+      "nl": "de drukte",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Heel veel mensen op één plek.",
+      "example": "In de trein was veel drukte.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-012",
+      "nl": "de drukste",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Met de meeste mensen of verkeer.",
+      "example": "Maandagochtend is de drukste tijd.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-013",
+      "nl": "het drukst",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Met de meeste drukte.",
+      "example": "Het is het drukst tussen vijf en zes uur.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-014",
+      "nl": "de trein",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de treinen",
+      "definitionNl": "Een lang voertuig op rails.",
+      "example": "Ik ga met de trein naar mijn werk.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-015",
+      "nl": "de bus",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de bussen",
+      "definitionNl": "Een groot voertuig voor veel mensen op de weg.",
+      "example": "De bus komt over vijf minuten.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-016",
+      "nl": "de tram",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de trams",
+      "definitionNl": "Een voertuig op rails in de stad.",
+      "example": "Neem tram 9 naar het centrum.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-017",
+      "nl": "de fiets",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de fietsen",
+      "definitionNl": "Een voertuig met twee wielen dat je zelf trapt.",
+      "example": "Ik ga op de fiets naar school.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-018",
+      "nl": "de auto",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de auto's",
+      "definitionNl": "Een voertuig met vier wielen en een motor.",
+      "example": "Wij hebben geen auto.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-019",
+      "nl": "het station",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de stations",
+      "definitionNl": "Daar stappen mensen in de trein.",
+      "example": "Ik wacht op het station.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-020",
+      "nl": "het perron",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de perrons",
+      "definitionNl": "Daar wacht je op de trein.",
+      "example": "Blijf achter de gele lijn op het perron.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-021",
+      "nl": "het kaartje",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de kaartjes",
+      "definitionNl": "Je betaalt en mag dan met de trein of bus.",
+      "example": "Ik koop een kaartje bij de automaat.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-022",
+      "nl": "de OV-chipkaart",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de OV-chipkaarten",
+      "definitionNl": "Een kaart voor bus, tram, metro en trein.",
+      "example": "Vergeet niet in- en uit te checken met de OV-chipkaart.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-023",
+      "nl": "de dienstregeling",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de dienstregelingen",
+      "definitionNl": "Een lijst met tijden van bus en trein.",
+      "example": "Kijk in de dienstregeling.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-024",
+      "nl": "de route",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de routes",
+      "definitionNl": "De weg die je neemt.",
+      "example": "Wat is de beste route naar het ziekenhuis?",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-025",
+      "nl": "de straat",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de straten",
+      "definitionNl": "Een weg met huizen.",
+      "example": "Ik woon in deze straat.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-026",
+      "nl": "de hoek",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de hoeken",
+      "definitionNl": "Daar komen twee straten bij elkaar.",
+      "example": "De apotheek zit op de hoek.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-027",
+      "nl": "het stoplicht",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de stoplichten",
+      "definitionNl": "Een lamp die rood, oranje of groen is.",
+      "example": "Bij het stoplicht ga je links.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-028",
+      "nl": "de brug",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de bruggen",
+      "definitionNl": "Een weg over het water.",
+      "example": "Loop over de brug.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-029",
+      "nl": "het plein",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de pleinen",
+      "definitionNl": "Een grote open plek in de stad.",
+      "example": "Op het plein is een markt.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-030",
+      "nl": "tegenover",
+      "article": null,
+      "pos": "prep",
+      "plural": null,
+      "definitionNl": "Aan de andere kant, recht voor iets.",
+      "example": "Het postkantoor is tegenover de bank.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-031",
+      "nl": "naast",
+      "article": null,
+      "pos": "prep",
+      "plural": null,
+      "definitionNl": "Aan de zijkant van iets.",
+      "example": "De supermarkt ligt naast het station.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-032",
+      "nl": "langs",
+      "article": null,
+      "pos": "prep",
+      "plural": null,
+      "definitionNl": "Ergens voorbij.",
+      "example": "U loopt langs de school.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-033",
+      "nl": "de weg wijzen",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Uitleggen hoe iemand ergens komt.",
+      "example": "Kunt u mij de weg wijzen naar het station?",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vervoer-richting-034",
+      "nl": "de file",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de files",
+      "definitionNl": "Een lange rij auto's die niet rijdt.",
+      "example": "Er staat een file op de snelweg.",
+      "tags": [
+        "thema:vervoer-richting"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}

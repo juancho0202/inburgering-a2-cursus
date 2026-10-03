@@ -1,0 +1,400 @@
+{
+  "id": "basis-signaalwoorden",
+  "moduleId": "basis",
+  "title": "Signaalwoorden",
+  "goal": "Je herkent signaalwoorden in teksten en weet wat ze betekenen.",
+  "estimatedMinutes": 15,
+  "tags": [
+    "basis:signaalwoorden",
+    "lezen"
+  ],
+  "vocabRefs": [
+    "basis-vocab-tijd-019"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-signaalwoorden-l-01",
+      "title": "Signaalwoorden",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Signaalwoord",
+            "Betekenis"
+          ],
+          "rows": [
+            [
+              "maar, toch, helaas, eigenlijk",
+              "het plan verandert → het goede antwoord komt na het signaalwoord"
+            ],
+            [
+              "niet … maar …",
+              "correctie"
+            ],
+            [
+              "want, omdat",
+              "reden"
+            ],
+            [
+              "dus",
+              "gevolg"
+            ],
+            [
+              "als, wanneer",
+              "voorwaarde"
+            ],
+            [
+              "hoeft niet, geen, niet",
+              "ontkenning"
+            ],
+            [
+              "eerst, dan, daarna, tot slot",
+              "volgorde"
+            ],
+            [
+              "vaker, meestal, altijd, nooit",
+              "hoe vaak"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Zie je **maar**? Lees dan goed wat **na** het woord *maar* staat. Dat is vaak het goede antwoord."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-001",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Na maar verandert het plan: maandag is de winkel dicht.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"Ik wilde op maandag komen, maar de winkel is dan dicht.\" Wanneer komt de persoon?",
+        "options": [
+          "Niet op maandag",
+          "Op maandag",
+          "Elke dag",
+          "Alleen op zondag"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-002",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Niet … maar … = correctie. Het goede staat na maar.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"De les is niet op dinsdag, maar op woensdag.\" Wanneer is de les?",
+        "options": [
+          "Op dinsdag",
+          "Op woensdag",
+          "Op donderdag",
+          "Elke dag"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-003",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Want geeft de reden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"Ik kom niet, want ik ben ziek.\" Waarom komt de persoon niet?",
+        "options": [
+          "De persoon heeft geen tijd.",
+          "De persoon wil niet.",
+          "De persoon is ziek.",
+          "De persoon is op vakantie."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-004",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Dus = gevolg.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"Het regent, dus ik neem een paraplu mee.\" Wat is het gevolg?",
+        "options": [
+          "Het regent.",
+          "Ik blijf thuis.",
+          "Ik koop een jas.",
+          "Ik neem een paraplu mee."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-005",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Als geeft een voorwaarde.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"Als u een afspraak heeft, moet u uw ID-kaart meenemen.\" Wanneer moet u uw ID-kaart meenemen?",
+        "options": [
+          "Als u een afspraak heeft",
+          "Altijd",
+          "Nooit",
+          "Als u ziek bent"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-006",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Hoeft niet = niet nodig.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"U hoeft het formulier niet in te leveren.\" Wat moet u doen?",
+        "options": [
+          "Het formulier inleveren.",
+          "Niets, het hoeft niet.",
+          "Het formulier meenemen.",
+          "Het formulier opsturen."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-007",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Eerst = begin, daarna = volgende stap.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"Eerst vult u het formulier in, daarna levert u het in bij het loket.\" Wat doet u eerst?",
+        "options": [
+          "Het formulier inleveren",
+          "Naar het loket gaan",
+          "Het formulier invullen",
+          "Een afspraak maken"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-008",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Meestal = bijna altijd.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"De bus komt meestal op tijd.\" Wat betekent meestal?",
+        "options": [
+          "Nooit",
+          "Soms",
+          "Altijd",
+          "Bijna altijd"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-009",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Nooit = geen enkele keer.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"Ik ga nooit met de bus.\" Hoe vaak gaat de persoon met de bus?",
+        "options": [
+          "Niet",
+          "Soms",
+          "Vaak",
+          "Altijd"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-010",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Helaas = slecht nieuws.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"Helaas is de cursus vol.\" Wat is het nieuws?",
+        "options": [
+          "U kunt zich inschrijven.",
+          "De cursus is vol; u kunt zich niet inschrijven.",
+          "De cursus is gratis.",
+          "De cursus begint morgen."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-011",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Maar: het adres op de website is nog oud.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "\"De winkel is gisteren verhuisd, maar het adres staat nog op de website.\" Waar is de winkel?",
+        "options": [
+          "Op het adres van de website",
+          "Gesloten",
+          "Op een nieuw adres",
+          "Nog op het oude adres"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-012",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Dus = gevolg.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede signaalwoord.",
+        "text": "Ik heb geen tijd, ___ ik kan niet komen.",
+        "options": [
+          [
+            "dus",
+            "want",
+            "maar"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-013",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Maar = tegenstelling.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede signaalwoord.",
+        "text": "Ik wil komen, ___ ik heb geen tijd.",
+        "options": [
+          [
+            "maar",
+            "dus",
+            "of"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-014",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Want = reden.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede signaalwoord.",
+        "text": "Ik blijf thuis, ___ ik ben ziek.",
+        "options": [
+          [
+            "want",
+            "maar",
+            "als"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-015",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "explanation": "Als = voorwaarde.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede signaalwoord.",
+        "text": "___ u ziek bent, belt u de huisarts.",
+        "options": [
+          [
+            "Als",
+            "Want",
+            "Dus"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    }
+  ]
+}

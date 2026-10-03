@@ -1,0 +1,342 @@
+{
+  "id": "basis-imperfectum",
+  "moduleId": "basis",
+  "title": "Was, had, ging",
+  "goal": "Je herkent het imperfectum in teksten (belangrijk voor Lezen).",
+  "estimatedMinutes": 12,
+  "tags": [
+    "basis:imperfectum",
+    "grammar:imperfectum"
+  ],
+  "vocabRefs": [
+    "basis-vocab-tijd-014",
+    "basis-vocab-tijd-018"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-imperfectum-l-01",
+      "title": "Verleden tijd herkennen",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In teksten lees je vaak het **imperfectum**. Je hoeft het niet zelf vaak te schrijven, maar je moet het **herkennen**."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Infinitief",
+            "Imperfectum (ik / hij)",
+            "Imperfectum (wij)"
+          ],
+          "rows": [
+            [
+              "zijn",
+              "was",
+              "waren"
+            ],
+            [
+              "hebben",
+              "had",
+              "hadden"
+            ],
+            [
+              "gaan",
+              "ging",
+              "gingen"
+            ],
+            [
+              "komen",
+              "kwam",
+              "kwamen"
+            ],
+            [
+              "zeggen",
+              "zei",
+              "zeiden"
+            ],
+            [
+              "kunnen",
+              "kon",
+              "konden"
+            ],
+            [
+              "moeten",
+              "moest",
+              "moesten"
+            ],
+            [
+              "willen",
+              "wilde",
+              "wilden"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Staat er *was, had, ging, kwam*? Dan gaat het over **vroeger** (gisteren, vorige week)."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-001",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "explanation": "Deze vormen moet je herkennen.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk imperfectum hoort bij het werkwoord?",
+        "pairs": [
+          [
+            "zijn",
+            "was"
+          ],
+          [
+            "hebben",
+            "had"
+          ],
+          [
+            "gaan",
+            "ging"
+          ],
+          [
+            "komen",
+            "kwam"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-002",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "explanation": "Deze vormen moet je herkennen.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk imperfectum hoort bij het werkwoord?",
+        "pairs": [
+          [
+            "zeggen",
+            "zei"
+          ],
+          [
+            "kunnen",
+            "kon"
+          ],
+          [
+            "moeten",
+            "moest"
+          ],
+          [
+            "willen",
+            "wilde"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-003",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "explanation": "Was = imperfectum van zijn. Gisteren = verleden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin gaat over het verleden?",
+        "options": [
+          "Morgen ben ik ziek.",
+          "Ik ben nu ziek.",
+          "Gisteren was ik ziek.",
+          "Ik word binnenkort ziek."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-004",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "explanation": "Kwam = imperfectum van komen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin gaat over het verleden?",
+        "options": [
+          "De monteur komt om tien uur.",
+          "De monteur gaat komen.",
+          "De monteur moet komen.",
+          "De monteur kwam om tien uur."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-005",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "explanation": "Had = imperfectum, vorige week = verleden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je leest: \"Vorige week had ik een afspraak.\" Wanneer was de afspraak?",
+        "options": [
+          "In de vorige week",
+          "Deze week",
+          "Volgende week",
+          "Morgen"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-006",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "explanation": "Wilde en zei zijn verleden. Maar = het plan veranderde.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Je leest: \"Ahmed wilde zaterdag verhuizen, maar de huisbaas zei nee.\" Wat gebeurde er?",
+        "options": [
+          "Ahmed is zaterdag verhuisd.",
+          "Ahmed mocht niet verhuizen op zaterdag.",
+          "Ahmed gaat zaterdag verhuizen.",
+          "De huisbaas wilde verhuizen."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-007",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "explanation": "Ging is het imperfectum. Gegaan is het deelwoord.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welk woord is het imperfectum van \"gaan\"?",
+        "options": [
+          "gaat",
+          "gegaan",
+          "ging",
+          "gaan"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-008",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "explanation": "Gisteren = verleden: was.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede werkwoord.",
+        "text": "Gisteren ___ ik thuis.",
+        "options": [
+          [
+            "was",
+            "ben",
+            "word"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-009",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "explanation": "Vorige week = verleden. Bij wij: gingen.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede werkwoord.",
+        "text": "Wij ___ vorige week naar het museum.",
+        "options": [
+          [
+            "gingen",
+            "gaan",
+            "gegaan"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-010",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "explanation": "Moeten → ik moest.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het imperfectum in (moeten).",
+        "text": "Gisteren ___ ik werken.",
+        "answers": [
+          [
+            "moest"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-011",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "explanation": "Hebben → zij had.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het imperfectum in (hebben).",
+        "text": "Zij ___ vorig jaar een andere baan.",
+        "answers": [
+          [
+            "had"
+          ]
+        ]
+      }
+    }
+  ]
+}

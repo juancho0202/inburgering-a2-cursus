@@ -1,0 +1,471 @@
+{
+  "theme": "overheid-politiek",
+  "title": "Overheid en politiek",
+  "entries": [
+    {
+      "id": "basis-vocab-overheid-politiek-001",
+      "nl": "de overheid",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De organisaties die het land besturen.",
+      "example": "De overheid maakt de wetten.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-002",
+      "nl": "de regering",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de regeringen",
+      "definitionNl": "De koning en de ministers.",
+      "example": "De regering maakt plannen.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-003",
+      "nl": "het parlement",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de parlementen",
+      "definitionNl": "De groep gekozen mensen die wetten maakt.",
+      "example": "Het parlement zit in Den Haag.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-004",
+      "nl": "de Tweede Kamer",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Het deel van het parlement met 150 gekozen leden.",
+      "example": "De Tweede Kamer maakt wetten.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-005",
+      "nl": "de Eerste Kamer",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Het deel van het parlement met 75 leden.",
+      "example": "De Eerste Kamer kijkt naar de wetten.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-006",
+      "nl": "de minister",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de ministers",
+      "definitionNl": "Iemand die een deel van de regering leidt.",
+      "example": "De minister van Zorg praat over de ziekenhuizen.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-007",
+      "nl": "de minister-president",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de minister-presidenten",
+      "definitionNl": "De leider van de regering.",
+      "example": "De minister-president leidt het kabinet.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-008",
+      "nl": "het kabinet",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de kabinetten",
+      "definitionNl": "De groep ministers van de regering.",
+      "example": "Het kabinet vergadert op vrijdag.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-009",
+      "nl": "de koning",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de koningen",
+      "definitionNl": "Het hoofd van het land, zonder politieke macht.",
+      "example": "De koning heet Willem-Alexander.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-010",
+      "nl": "de monarchie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de monarchieën",
+      "definitionNl": "Een land met een koning of koningin.",
+      "example": "Nederland is een monarchie.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-011",
+      "nl": "de democratie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de democratieën",
+      "definitionNl": "Mensen kiezen wie het land bestuurt.",
+      "example": "Nederland is een democratie.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-012",
+      "nl": "de Grondwet",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De belangrijkste wet van het land.",
+      "example": "In de Grondwet staat dat iedereen gelijk is.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-013",
+      "nl": "de wet",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de wetten",
+      "definitionNl": "Een regel van de overheid.",
+      "example": "Iedereen moet zich aan de wet houden.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-014",
+      "nl": "de rechter",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de rechters",
+      "definitionNl": "Iemand die beslist in een rechtszaak.",
+      "example": "De rechter beslist.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-015",
+      "nl": "de rechtbank",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de rechtbanken",
+      "definitionNl": "Een gebouw waar een rechter beslist.",
+      "example": "Hij moet naar de rechtbank.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-016",
+      "nl": "de advocaat",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de advocaten",
+      "definitionNl": "Iemand die je helpt bij de rechter.",
+      "example": "Je hebt recht op een advocaat.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-017",
+      "nl": "de verkiezing",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de verkiezingen",
+      "definitionNl": "Mensen stemmen op een partij of persoon.",
+      "example": "Op 18-jarige leeftijd mag je stemmen bij de verkiezingen.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-018",
+      "nl": "stemmen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Je kiest bij een verkiezing.",
+      "example": "Ik ga stemmen voor de gemeenteraad.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-019",
+      "nl": "de politieke partij",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Een groep met dezelfde ideeën over politiek.",
+      "example": "Elke politieke partij heeft een programma.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-020",
+      "nl": "de coalitie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de coalities",
+      "definitionNl": "Partijen die samen de regering vormen.",
+      "example": "De coalitie heeft een meerderheid.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-021",
+      "nl": "de gemeenteraad",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de gemeenteraden",
+      "definitionNl": "De gekozen groep die beslist over je gemeente.",
+      "example": "De gemeenteraad praat over het nieuwe park.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-022",
+      "nl": "de burgemeester",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de burgemeesters",
+      "definitionNl": "De leider van de gemeente.",
+      "example": "De burgemeester opent het nieuwe park.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-023",
+      "nl": "de wethouder",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de wethouders",
+      "definitionNl": "Een bestuurder van de gemeente.",
+      "example": "De wethouder is verantwoordelijk voor wonen.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-024",
+      "nl": "de provincie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de provincies",
+      "definitionNl": "Een deel van het land met een eigen bestuur.",
+      "example": "Nederland heeft twaalf provincies.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-025",
+      "nl": "het waterschap",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de waterschappen",
+      "definitionNl": "Een bestuur voor dijken en water.",
+      "example": "Het waterschap zorgt voor het water.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-026",
+      "nl": "de discriminatie",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Mensen slecht behandelen om wie ze zijn.",
+      "example": "Discriminatie is verboden.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-027",
+      "nl": "de vrijheid",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de vrijheden",
+      "definitionNl": "Je mag zelf kiezen.",
+      "example": "Vrijheid van godsdienst is een grondrecht.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-028",
+      "nl": "het grondrecht",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de grondrechten",
+      "definitionNl": "Een recht in de Grondwet.",
+      "example": "Vrijheid van meningsuiting is een grondrecht.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-029",
+      "nl": "de rechtsstaat",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de rechtsstaten",
+      "definitionNl": "Een land waar iedereen zich aan de wet moet houden.",
+      "example": "Nederland is een rechtsstaat.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-030",
+      "nl": "de naturalisatie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de naturalisaties",
+      "definitionNl": "Je wordt Nederlander.",
+      "example": "Voor naturalisatie moet je inburgeren.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-overheid-politiek-031",
+      "nl": "de Nederlander",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de Nederlanders",
+      "definitionNl": "Iemand met de Nederlandse nationaliteit.",
+      "example": "Hij is sinds vorig jaar Nederlander.",
+      "tags": [
+        "thema:overheid-politiek",
+        "knm:staat"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}

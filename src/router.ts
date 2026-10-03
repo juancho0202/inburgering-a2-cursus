@@ -10,6 +10,7 @@ export const router = createRouter({
     { path: "/woorden", name: "vocab", component: () => import("./views/VocabView.vue") },
     { path: "/woorden/herhalen", name: "review", component: () => import("./views/ReviewView.vue") },
     { path: "/werkwoorden", name: "verbs", component: () => import("./views/VerbsView.vue") },
+    { path: "/samenvatting", name: "samenvatting", component: () => import("./views/SamenvattingView.vue") },
     { path: "/instellingen", name: "settings", component: () => import("./views/SettingsView.vue") },
   ],
   scrollBehavior: () => ({ top: 0 }),

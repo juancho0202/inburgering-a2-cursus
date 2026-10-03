@@ -1,0 +1,619 @@
+{
+  "id": "knm-omgang",
+  "moduleId": "knm",
+  "title": "Omgangsvormen, waarden en normen",
+  "goal": "Je weet hoe je je gedraagt in Nederland en welke waarden belangrijk zijn.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "knm:omgang"
+  ],
+  "vocabRefs": [
+    "basis-vocab-feesten-tradities-001",
+    "basis-vocab-feesten-tradities-002",
+    "basis-vocab-feesten-tradities-003",
+    "basis-vocab-feesten-tradities-004",
+    "basis-vocab-feesten-tradities-005",
+    "basis-vocab-feesten-tradities-006",
+    "basis-vocab-feesten-tradities-007",
+    "basis-vocab-feesten-tradities-008",
+    "basis-vocab-feesten-tradities-009",
+    "basis-vocab-feesten-tradities-010",
+    "basis-vocab-feesten-tradities-011",
+    "basis-vocab-feesten-tradities-012",
+    "basis-vocab-feesten-tradities-013",
+    "basis-vocab-feesten-tradities-014",
+    "basis-vocab-feesten-tradities-015",
+    "basis-vocab-feesten-tradities-016",
+    "basis-vocab-feesten-tradities-017",
+    "basis-vocab-feesten-tradities-018",
+    "basis-vocab-feesten-tradities-024",
+    "basis-vocab-feesten-tradities-025",
+    "basis-vocab-feesten-tradities-028",
+    "basis-vocab-feesten-tradities-029"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "knm-omgang-l-01",
+      "title": "Afspraken en begroeten",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "**Op tijd komen** is belangrijk. Kom je te laat? Bel of stuur even een bericht.\n\nEen **afspraak maken** voor een bezoek is gewoon, ook bij vrienden of familie.\n\nBij **kennismaken** geef je een hand en kijk je de ander aan. Vrienden en familie geven soms **drie zoenen**, maar dat is **niet verplicht**."
+        },
+        {
+          "kind": "text",
+          "md": "Gebruik **u** voor onbekenden, oudere mensen en instanties (formeel). Gebruik **je/jij** bij vrienden en collega's (informeel). Nederlanders zijn vaak **direct**: ze zeggen eerlijk wat ze denken."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-001",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Te laat? Even bellen of een bericht sturen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Ahmed komt vijftien minuten te laat voor een afspraak. Wat is het beste?",
+        "options": [
+          "Hij belt of stuurt van tevoren een bericht.",
+          "Hij zegt niets.",
+          "Hij komt een dag later.",
+          "Hij blijft thuis zonder iets te zeggen."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-002",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Een afspraak maken voor bezoek is gewoon.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Olga wil haar buurvrouw bezoeken. Wat is gebruikelijk?",
+        "options": [
+          "Zomaar om middernacht aanbellen.",
+          "Eerst een afspraak maken.",
+          "Nooit op bezoek gaan.",
+          "Haar baas vragen."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-003",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Bij kennismaken geef je een hand.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je ontmoet een nieuwe collega voor het eerst. Wat doe je?",
+        "options": [
+          "Je zegt niets en kijkt weg.",
+          "Je geeft drie zoenen.",
+          "Je geeft een hand en kijkt hem aan.",
+          "Je geeft hem een cadeau."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-004",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Zoenen is niet verplicht.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Fatima voelt zich niet prettig bij drie zoenen. Moet ze dat doen?",
+        "options": [
+          "Ja, dat moet altijd.",
+          "Ja, bij de buren moet het.",
+          "Alleen op werk.",
+          "Nee, het is niet verplicht."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-005",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Voor instanties en onbekenden gebruik je u.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Een cursist praat met de leraar van de school. Wat past?",
+        "options": [
+          "u",
+          "jij",
+          "hé",
+          "jullie"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-006",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Directe communicatie is gewoon.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Pieter zegt eerlijk dat hij een idee niet goed vindt. Wat is dat in Nederland?",
+        "options": [
+          "Heel onbeleefd.",
+          "Normaal: Nederlanders zijn vaak direct.",
+          "Verboden.",
+          "Alleen voor oudere mensen."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-007",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Je/jij is informeel: vrienden, collega's.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Met wie gebruik je meestal \"je/jij\"?",
+        "options": [
+          "Met de burgemeester",
+          "Met een ambtenaar bij het loket",
+          "Met vrienden",
+          "Met een onbekende oudere man"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-omgang-l-02",
+      "title": "Gelijkheid en vrijheid",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In Nederland zijn **mannen en vrouwen gelijk**. **Homoseksuele mensen** mogen trouwen (sinds 2001).\n\nEr is **vrijheid van godsdienst** en **vrijheid van meningsuiting**. Dat is binnen de wet: **discriminatie** en **bedreigen** mogen niet.\n\nEr is **scheiding van kerk en staat**: de overheid is niet van één godsdienst."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-overheid-politiek-026",
+            "basis-vocab-overheid-politiek-027",
+            "basis-vocab-feesten-tradities-024",
+            "basis-vocab-feesten-tradities-025"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-008",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Homoseksuele mensen mogen trouwen, sinds 2001.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Twee mannen willen trouwen. Mag dat in Nederland?",
+        "options": [
+          "Nee, dat mag niet.",
+          "Alleen in Amsterdam.",
+          "Alleen met toestemming van de kerk.",
+          "Ja, dat mag."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-009",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Iedereen mag zelf kiezen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat betekent vrijheid van godsdienst?",
+        "options": [
+          "Je mag zelf kiezen welk geloof je hebt (of geen).",
+          "Je moet naar de kerk.",
+          "Alleen christenen mogen bidden.",
+          "De overheid kiest je geloof."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-010",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Kerk en overheid zijn gescheiden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat betekent scheiding van kerk en staat?",
+        "options": [
+          "Kerken zijn verboden.",
+          "De overheid is niet van één godsdienst.",
+          "De koning is de paus.",
+          "Scholen mogen nooit over geloof praten."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-011",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Je mag je mening zeggen, binnen de wet.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Mehmet zegt in een gesprek dat hij een politicus niet goed vindt. Mag dat?",
+        "options": [
+          "Nee, dat mag nooit.",
+          "Alleen met toestemming.",
+          "Ja, vrijheid van meningsuiting.",
+          "Alleen op internet."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-012",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Bedreigen is verboden, ook als je boos bent.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Iemand zegt dat hij een buurman gaat slaan als hij zijn mening zegt. Mag dat?",
+        "options": [
+          "Ja, vrijheid van meningsuiting.",
+          "Ja, als hij boos is.",
+          "Ja, in zijn eigen huis.",
+          "Nee, bedreigen mag niet."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-013",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Gelijkheid van man en vrouw.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Een vrouw wil werken. Haar man zegt dat het niet mag. Wat zegt de wet?",
+        "options": [
+          "Zij mag zelf kiezen; mannen en vrouwen zijn gelijk.",
+          "Hij beslist altijd.",
+          "Alleen met een papier van de gemeente.",
+          "Alleen als ze geen kinderen heeft."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-014",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Discriminatie is verboden in Nederland.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Een bedrijf geeft een baan niet aan Wei, alleen omdat hij uit China komt. Wat is dit?",
+        "options": [
+          "Een proeftijd.",
+          "Discriminatie. Dat mag niet.",
+          "Een gewone regel.",
+          "Zwartwerken."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-omgang-l-03",
+      "title": "Buren, feesten en afval",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "**Buren:** maak kennis als je verhuist en let op **geluid**, vooral 's avonds en 's nachts.\n\n**Verjaardag:** je zegt *gefeliciteerd*. Je feliciteert ook de familie (*Gefeliciteerd met je zoon*)."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Feestdag",
+            "Datum"
+          ],
+          "rows": [
+            [
+              "Koningsdag",
+              "27 april"
+            ],
+            [
+              "Dodenherdenking",
+              "4 mei (20.00 uur, twee minuten stilte)"
+            ],
+            [
+              "Bevrijdingsdag",
+              "5 mei"
+            ],
+            [
+              "Sinterklaas",
+              "5 december"
+            ],
+            [
+              "Kerst",
+              "25 en 26 december"
+            ],
+            [
+              "Oud en Nieuw",
+              "31 december / 1 januari"
+            ],
+            [
+              "Keti Koti",
+              "1 juli (einde slavernij)"
+            ]
+          ]
+        },
+        {
+          "kind": "text",
+          "md": "**Afval scheiden** (papier, glas, plastic/pmd, gft, restafval) en geen **zwerfafval** op straat gooien."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-015",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Op 27 april vieren we de verjaardag van de koning.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke feestdag is op 27 april?",
+        "options": [
+          "Bevrijdingsdag",
+          "Sinterklaas",
+          "Koningsdag",
+          "Keti Koti"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-016",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Op 4 mei herdenken we de doden met twee minuten stilte.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat gebeurt er op 4 mei om 20.00 uur?",
+        "options": [
+          "Een groot feest",
+          "Het vuurwerk",
+          "Een verkiezing",
+          "Twee minuten stilte voor de Dodenherdenking"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-017",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Op 5 mei 1945 werd Nederland bevrijd.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wanneer is Bevrijdingsdag?",
+        "options": [
+          "5 mei",
+          "4 mei",
+          "27 april",
+          "1 juli"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-018",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Sinterklaas is op 5 december.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wanneer vieren kinderen Sinterklaas?",
+        "options": [
+          "Op 25 december",
+          "Op 5 december",
+          "Op 1 januari",
+          "Op 27 april"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-019",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Keti Koti = herdenking van de afschaffing van de slavernij.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waar denkt Nederland aan op 1 juli (Keti Koti)?",
+        "options": [
+          "De bevrijding van de oorlog",
+          "De verjaardag van de koning",
+          "Het einde van de slavernij",
+          "Het nieuwe jaar"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-020",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Je feliciteert ook de familie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je buurman wordt vader. Wat zeg je?",
+        "options": [
+          "Sterkte!",
+          "Goede reis!",
+          "Succes met je baan!",
+          "Gefeliciteerd met je zoon (of dochter)!"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-021",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Houd rekening met geluid, vooral 's avonds en 's nachts.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Het is 23.30 uur. Je wilt luid muziek luisteren. Wat is het beste?",
+        "options": [
+          "Zacht doen, want je buren slapen.",
+          "Hard zetten, het is vrijdag.",
+          "De buren wakker maken.",
+          "De deur open laten."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-022",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Glas hoort bij het gescheiden afval. Zwerfafval mag niet.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waar gooi je een leeg flesje in?",
+        "options": [
+          "Op straat",
+          "In de glascontainer (afval scheiden)",
+          "In het restafval als je lui bent",
+          "In de gft-bak"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-023",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Zoenen is niet verplicht; een hand geven is ook goed.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "In Nederland moet je bij elk bezoek drie zoenen geven.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-024",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Maak kennis met je nieuwe buren.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Een nieuwe buurman verhuist naast je. Wat is een goede eerste stap?",
+        "options": [
+          "Niets zeggen",
+          "Meteen klagen over geluid",
+          "Hem een boete geven",
+          "Kennismaken en je voorstellen"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-025",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Nederlanders zijn vaak direct, maar wel beleefd.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Pieter vindt dat een collega zijn werk niet goed doet. Wat past bij de Nederlandse gewoonte?",
+        "options": [
+          "Hij zegt het eerlijk en beleefd.",
+          "Hij zegt niets en wordt boos.",
+          "Hij vertelt het aan alle collega's.",
+          "Hij stuurt een anonieme brief."
+        ],
+        "answer": 0
+      }
+    }
+  ]
+}

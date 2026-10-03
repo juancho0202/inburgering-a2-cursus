@@ -6,9 +6,14 @@ const TARGETS = {
   basisExercises: 250,
   lezenTexts: 30,
   lezenQuestions: 120,
+  synonymPairs: 40,
   knmQuestions: 200,
+  knmPerTheme: 25,
   schrijvenTasks: 16,
+  formFill: 5,
 };
+
+const KNM_THEMES = ["knm-werk", "knm-omgang", "knm-wonen", "knm-gezondheid", "knm-geschiedenis", "knm-instanties", "knm-staat", "knm-onderwijs"];
 
 async function main() {
   const content = await loadContent();
@@ -16,16 +21,25 @@ async function main() {
   let basisExercises = 0;
   let lezenTexts = 0;
   let lezenQuestions = 0;
+  let synonymPairs = 0;
   let knmQuestions = 0;
   let schrijvenTasks = 0;
   let formFill = 0;
+  const perTheme = new Map<string, number>();
+  const perUnit = new Map<string, number>();
 
   for (const unit of content.units.values()) {
+    if (unit.id === "basis-demo") continue;
     for (const step of unit.steps) {
       if (step.type !== "exercise") continue;
       const ex = step.exercise;
+      perUnit.set(unit.id, (perUnit.get(unit.id) ?? 0) + 1);
       if (unit.moduleId === "basis") basisExercises += 1;
-      if (unit.moduleId === "knm") knmQuestions += 1;
+      if (unit.moduleId === "knm") {
+        knmQuestions += 1;
+        perTheme.set(unit.id, (perTheme.get(unit.id) ?? 0) + 1);
+      }
+      if (unit.id === "lezen-strategie" && ex.type === "match") synonymPairs += ex.pairs.length;
       if (ex.type === "reading") {
         lezenTexts += 1;
         lezenQuestions += ex.questions.length;
@@ -43,9 +57,11 @@ async function main() {
   console.log(line("Basis exercises", basisExercises, TARGETS.basisExercises));
   console.log(line("Lezen teksten", lezenTexts, TARGETS.lezenTexts));
   console.log(line("Lezen vragen", lezenQuestions, TARGETS.lezenQuestions));
+  console.log(line("Lezen synoniemenparen", synonymPairs, TARGETS.synonymPairs));
   console.log(line("KNM vragen", knmQuestions, TARGETS.knmQuestions));
+  for (const id of KNM_THEMES) console.log("  " + line(id, perTheme.get(id) ?? 0, TARGETS.knmPerTheme));
   console.log(line("Schrijven taken", schrijvenTasks, TARGETS.schrijvenTasks));
-  console.log(`    Form-fill oefeningen: ${formFill}`);
+  console.log(line("Form-fill oefeningen", formFill, TARGETS.formFill));
   console.log(`    Mock exams: ${content.exams.size}`);
 }
 

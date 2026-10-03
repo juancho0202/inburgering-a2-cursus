@@ -1,0 +1,459 @@
+{
+  "theme": "gezondheid",
+  "title": "Gezondheid",
+  "entries": [
+    {
+      "id": "basis-vocab-gezondheid-001",
+      "nl": "de huisarts",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de huisartsen",
+      "definitionNl": "De dokter in jouw buurt waar je eerst naartoe gaat.",
+      "example": "De huisarts stuurt mij naar het ziekenhuis.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-gezondheid-002",
+      "nl": "de assistente",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de assistentes",
+      "definitionNl": "De vrouw die de dokter helpt en afspraken maakt.",
+      "example": "De assistente belt mij terug.",
+      "tags": [
+        "thema:gezondheid"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-gezondheid-003",
+      "nl": "ziek",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Je bent niet gezond.",
+      "example": "Mijn zoon is ziek.",
+      "tags": [
+        "thema:gezondheid"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-gezondheid-004",
+      "nl": "de pijn",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Dat voel je als iets pijn doet.",
+      "example": "Ik heb pijn in mijn rug.",
+      "tags": [
+        "thema:gezondheid"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-gezondheid-005",
+      "nl": "de pillen",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Kleine medicijnen die je doorslikt.",
+      "example": "Neem drie keer per dag een pil.",
+      "tags": [
+        "thema:gezondheid"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-gezondheid-006",
+      "nl": "de afdeling",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de afdelingen",
+      "definitionNl": "Een deel van een ziekenhuis.",
+      "example": "Mijn vader ligt op de afdeling cardiologie.",
+      "tags": [
+        "thema:gezondheid"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-gezondheid-007",
+      "nl": "last hebben van",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Iets doet je pijn of is vervelend.",
+      "example": "Ik heb last van mijn rug.",
+      "tags": [
+        "thema:gezondheid"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-gezondheid-008",
+      "nl": "het ziekenhuis",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de ziekenhuizen",
+      "definitionNl": "Daar worden zieke mensen geholpen en soms geopereerd.",
+      "example": "Zij is naar het ziekenhuis gegaan.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-009",
+      "nl": "de apotheek",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de apotheken",
+      "definitionNl": "Hier haal je medicijnen met een recept.",
+      "example": "Ik haal de pillen bij de apotheek.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-010",
+      "nl": "het recept",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de recepten",
+      "definitionNl": "Een papier van de dokter voor medicijnen.",
+      "example": "De huisarts geeft een recept.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-011",
+      "nl": "het medicijn",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de medicijnen",
+      "definitionNl": "Dat neem je om beter te worden.",
+      "example": "Neem dit medicijn na het eten.",
+      "tags": [
+        "thema:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-012",
+      "nl": "de drogist",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de drogisten",
+      "definitionNl": "Een winkel met medicijnen zonder recept.",
+      "example": "Paracetamol koop je bij de drogist.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-013",
+      "nl": "de tandarts",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de tandartsen",
+      "definitionNl": "De dokter voor je tanden.",
+      "example": "Ik heb een afspraak bij de tandarts.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-014",
+      "nl": "de specialist",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de specialisten",
+      "definitionNl": "Een dokter die veel weet van één ziekte of lichaamsdeel.",
+      "example": "De huisarts verwijst mij naar een specialist.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-015",
+      "nl": "de verwijzing",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de verwijzingen",
+      "definitionNl": "Een brief van de huisarts voor een specialist.",
+      "example": "Ik heb een verwijzing voor het ziekenhuis.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-016",
+      "nl": "de huisartsenpost",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de huisartsenposten",
+      "definitionNl": "De dokter die 's avonds, 's nachts en in het weekend werkt.",
+      "example": "Bel eerst de huisartsenpost.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-017",
+      "nl": "de zorgverzekering",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de zorgverzekeringen",
+      "definitionNl": "Een verzekering die zorgkosten betaalt.",
+      "example": "Iedereen moet een zorgverzekering hebben.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-018",
+      "nl": "het eigen risico",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Het deel van de zorgkosten dat je zelf betaalt.",
+      "example": "Mijn eigen risico is nog niet op.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-019",
+      "nl": "de zorgtoeslag",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de zorgtoeslagen",
+      "definitionNl": "Geld van de overheid voor je zorgverzekering.",
+      "example": "Zij krijgt zorgtoeslag.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-020",
+      "nl": "de koorts",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Je lichaam is te warm.",
+      "example": "Hij heeft hoge koorts.",
+      "tags": [
+        "thema:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-021",
+      "nl": "hoesten",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Lucht met geluid uit je keel doen.",
+      "example": "Ik hoest al een week.",
+      "tags": [
+        "thema:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-022",
+      "nl": "de verkoudheid",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de verkoudheden",
+      "definitionNl": "Een lichte ziekte met een snotneus en keelpijn.",
+      "example": "Ik heb een verkoudheid.",
+      "tags": [
+        "thema:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-023",
+      "nl": "de griep",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Een ziekte met koorts en pijn in je lichaam.",
+      "example": "Mijn dochter heeft de griep.",
+      "tags": [
+        "thema:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-024",
+      "nl": "beter",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Minder ziek of weer gezond.",
+      "example": "Ik word al beter.",
+      "tags": [
+        "thema:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-025",
+      "nl": "de verloskundige",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de verloskundigen",
+      "definitionNl": "Een vrouw die helpt bij zwangerschap en bevalling.",
+      "example": "De verloskundige komt vandaag langs.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-026",
+      "nl": "het consultatiebureau",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de consultatiebureaus",
+      "definitionNl": "Daar worden baby's en kleine kinderen gecontroleerd.",
+      "example": "Wij gaan naar het consultatiebureau.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-027",
+      "nl": "de vaccinatie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de vaccinaties",
+      "definitionNl": "Een prik die je beschermt tegen een ziekte.",
+      "example": "Mijn baby krijgt een vaccinatie.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-028",
+      "nl": "de GGD",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De organisatie voor gezondheid in de regio.",
+      "example": "De GGD geeft vaccinaties.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-029",
+      "nl": "afzeggen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Zeggen dat je niet komt naar een afspraak.",
+      "example": "Ik moet mijn afspraak afzeggen.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-030",
+      "nl": "het beroepsgeheim",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De dokter vertelt niets aan anderen over jou.",
+      "example": "De huisarts heeft een beroepsgeheim.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gezondheid-031",
+      "nl": "de spoedeisende hulp",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "De afdeling van het ziekenhuis voor noodgevallen.",
+      "example": "Hij is met de ambulance naar de spoedeisende hulp gebracht.",
+      "tags": [
+        "thema:gezondheid",
+        "knm:gezondheid"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}

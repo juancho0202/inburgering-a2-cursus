@@ -1,0 +1,445 @@
+{
+  "theme": "school-kinderen",
+  "title": "School en kinderen",
+  "entries": [
+    {
+      "id": "basis-vocab-school-kinderen-001",
+      "nl": "de juf",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de juffen",
+      "definitionNl": "Een vrouwelijke leraar op de basisschool.",
+      "example": "De juf leest een verhaal voor.",
+      "tags": [
+        "thema:school-kinderen"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-002",
+      "nl": "de meester",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de meesters",
+      "definitionNl": "Een mannelijke leraar op de basisschool.",
+      "example": "De meester geeft rekenles.",
+      "tags": [
+        "thema:school-kinderen"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-003",
+      "nl": "de klas",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de klassen",
+      "definitionNl": "Een groep kinderen die samen les heeft.",
+      "example": "Mijn dochter zit in groep 4, in klas 4b.",
+      "tags": [
+        "thema:school-kinderen"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-004",
+      "nl": "meenemen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets met je mee laten gaan.",
+      "example": "Neem een tas en een lunch mee.",
+      "tags": [
+        "thema:school-kinderen"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-005",
+      "nl": "het schoolreisje",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de schoolreisjes",
+      "definitionNl": "Een dag uit met de klas.",
+      "example": "Het schoolreisje gaat naar de dierentuin.",
+      "tags": [
+        "thema:school-kinderen"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-006",
+      "nl": "de basisschool",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de basisscholen",
+      "definitionNl": "De school voor kinderen van 4 tot 12 jaar.",
+      "example": "Mijn zoon zit op de basisschool.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-007",
+      "nl": "de leerplicht",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De regel dat kinderen naar school moeten.",
+      "example": "Door de leerplicht moet elk kind naar school.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-008",
+      "nl": "de leerplichtambtenaar",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de leerplichtambtenaren",
+      "definitionNl": "Een ambtenaar die controleert of kinderen naar school gaan.",
+      "example": "De leerplichtambtenaar belt als een kind vaak spijbelt.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-009",
+      "nl": "spijbelen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Niet naar school gaan zonder reden.",
+      "example": "Spijbelen mag niet.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-010",
+      "nl": "het voortgezet onderwijs",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "De school na de basisschool.",
+      "example": "Na groep 8 begint het voortgezet onderwijs.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-011",
+      "nl": "het vmbo",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Voortgezet onderwijs van vier jaar.",
+      "example": "Hij doet het vmbo en gaat daarna naar het mbo.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-012",
+      "nl": "de havo",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Voortgezet onderwijs van vijf jaar.",
+      "example": "Na de havo kun je naar het hbo.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-013",
+      "nl": "het vwo",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Voortgezet onderwijs van zes jaar.",
+      "example": "Na het vwo kun je naar de universiteit.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-014",
+      "nl": "het mbo",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Beroepsopleiding na het vmbo.",
+      "example": "Zij leert voor verpleegkundige op het mbo.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-015",
+      "nl": "het hbo",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Hogere beroepsopleiding.",
+      "example": "Na het hbo heb je een bachelor.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-016",
+      "nl": "de universiteit",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de universiteiten",
+      "definitionNl": "De hoogste opleiding in Nederland.",
+      "example": "Hij studeert medicijnen aan de universiteit.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-017",
+      "nl": "het schooladvies",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de schooladviezen",
+      "definitionNl": "Het advies van de basisschool over de volgende school.",
+      "example": "Het schooladvies is havo.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-018",
+      "nl": "de ouderavond",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de ouderavonden",
+      "definitionNl": "Een avond waarop ouders op school komen.",
+      "example": "Er is volgende week een ouderavond.",
+      "tags": [
+        "thema:school-kinderen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-019",
+      "nl": "het rapport",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de rapporten",
+      "definitionNl": "Een papier met de cijfers van een leerling.",
+      "example": "Het rapport is goed.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-020",
+      "nl": "de leraar",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de leraren",
+      "definitionNl": "Iemand die les geeft.",
+      "example": "De leraar Nederlands is erg aardig.",
+      "tags": [
+        "thema:school-kinderen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-021",
+      "nl": "de leerling",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de leerlingen",
+      "definitionNl": "Een kind of jongere op school.",
+      "example": "Er zijn dertig leerlingen op school.",
+      "tags": [
+        "thema:school-kinderen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-022",
+      "nl": "het huiswerk",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Werk voor school dat je thuis doet.",
+      "example": "Ik maak mijn huiswerk na het eten.",
+      "tags": [
+        "thema:school-kinderen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-023",
+      "nl": "de kinderopvang",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Een plek waar kinderen zijn terwijl hun ouders werken.",
+      "example": "Onze baby gaat twee dagen naar de kinderopvang.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-024",
+      "nl": "de peuterspeelzaal",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de peuterspeelzalen",
+      "definitionNl": "Een plek waar kleine kinderen spelen en leren.",
+      "example": "Zij gaat naar de peuterspeelzaal.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-025",
+      "nl": "de buitenschoolse opvang",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Opvang voor kinderen na school.",
+      "example": "Na school gaat hij naar de buitenschoolse opvang.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-026",
+      "nl": "de kinderopvangtoeslag",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Geld van de overheid voor de kosten van kinderopvang.",
+      "example": "Ik vraag kinderopvangtoeslag aan.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-027",
+      "nl": "de studiefinanciering",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Geld van de overheid voor studenten.",
+      "example": "Hij krijgt studiefinanciering van DUO.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-028",
+      "nl": "de speeltuin",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de speeltuinen",
+      "definitionNl": "Een plek buiten waar kinderen spelen.",
+      "example": "De kinderen spelen in de speeltuin.",
+      "tags": [
+        "thema:school-kinderen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-029",
+      "nl": "de gymles",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de gymlessen",
+      "definitionNl": "Een les waarin je beweegt en sport.",
+      "example": "Neem gymkleren mee voor de gymles.",
+      "tags": [
+        "thema:school-kinderen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-030",
+      "nl": "de opvoeding",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Hoe ouders hun kinderen leren leven.",
+      "example": "In de opvoeding is liefde belangrijk.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}

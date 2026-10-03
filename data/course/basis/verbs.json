@@ -21,25 +21,193 @@
     "example": "Ik ben moe."
   },
   {
-    "id": "basis-verb-afspreken",
-    "infinitive": "afspreken",
-    "separable": true,
-    "prefix": "af",
+    "id": "basis-verb-hebben",
+    "infinitive": "hebben",
+    "separable": false,
+    "prefix": null,
     "present": {
-      "ik": "spreek af",
-      "jij": "spreekt af",
-      "hij": "spreekt af",
-      "wij": "spreken af"
+      "ik": "heb",
+      "jij": "hebt",
+      "hij": "heeft",
+      "wij": "hebben"
     },
     "past": {
-      "sg": "sprak af",
-      "pl": "spraken af"
+      "sg": "had",
+      "pl": "hadden"
     },
-    "participle": "afgesproken",
+    "participle": "gehad",
     "auxiliary": "hebben",
     "irregular": true,
-    "definitionNl": "Samen een tijd en plek kiezen om elkaar te zien.",
-    "example": "We spreken morgen om drie uur af bij het buurthuis."
+    "definitionNl": "Iets bezitten.",
+    "example": "Ik heb twee kinderen."
+  },
+  {
+    "id": "basis-verb-gaan",
+    "infinitive": "gaan",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "ga",
+      "jij": "gaat",
+      "hij": "gaat",
+      "wij": "gaan"
+    },
+    "past": {
+      "sg": "ging",
+      "pl": "gingen"
+    },
+    "participle": "gegaan",
+    "auxiliary": "zijn",
+    "irregular": true,
+    "definitionNl": "Je beweegt naar een plek.",
+    "example": "Ik ga morgen naar de dokter."
+  },
+  {
+    "id": "basis-verb-komen",
+    "infinitive": "komen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "kom",
+      "jij": "komt",
+      "hij": "komt",
+      "wij": "komen"
+    },
+    "past": {
+      "sg": "kwam",
+      "pl": "kwamen"
+    },
+    "participle": "gekomen",
+    "auxiliary": "zijn",
+    "irregular": true,
+    "definitionNl": "Naar een plek toe gaan waar iemand is.",
+    "example": "Ik kom om acht uur."
+  },
+  {
+    "id": "basis-verb-doen",
+    "infinitive": "doen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "doe",
+      "jij": "doet",
+      "hij": "doet",
+      "wij": "doen"
+    },
+    "past": {
+      "sg": "deed",
+      "pl": "deden"
+    },
+    "participle": "gedaan",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets maken of uitvoeren.",
+    "example": "Wat doe je vandaag?"
+  },
+  {
+    "id": "basis-verb-maken",
+    "infinitive": "maken",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "maak",
+      "jij": "maakt",
+      "hij": "maakt",
+      "wij": "maken"
+    },
+    "past": {
+      "sg": "maakte",
+      "pl": "maakten"
+    },
+    "participle": "gemaakt",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Iets nieuws doen ontstaan.",
+    "example": "Ik maak een samenvatting."
+  },
+  {
+    "id": "basis-verb-zien",
+    "infinitive": "zien",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "zie",
+      "jij": "ziet",
+      "hij": "ziet",
+      "wij": "zien"
+    },
+    "past": {
+      "sg": "zag",
+      "pl": "zagen"
+    },
+    "participle": "gezien",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Met je ogen iets waarnemen.",
+    "example": "Ik zie een bus."
+  },
+  {
+    "id": "basis-verb-kijken",
+    "infinitive": "kijken",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "kijk",
+      "jij": "kijkt",
+      "hij": "kijkt",
+      "wij": "kijken"
+    },
+    "past": {
+      "sg": "keek",
+      "pl": "keken"
+    },
+    "participle": "gekeken",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Je ogen op iets richten.",
+    "example": "Wij kijken naar een film."
+  },
+  {
+    "id": "basis-verb-lezen",
+    "infinitive": "lezen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "lees",
+      "jij": "leest",
+      "hij": "leest",
+      "wij": "lezen"
+    },
+    "past": {
+      "sg": "las",
+      "pl": "lazen"
+    },
+    "participle": "gelezen",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Woorden begrijpen die geschreven zijn.",
+    "example": "Ik lees een brief."
+  },
+  {
+    "id": "basis-verb-schrijven",
+    "infinitive": "schrijven",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "schrijf",
+      "jij": "schrijft",
+      "hij": "schrijft",
+      "wij": "schrijven"
+    },
+    "past": {
+      "sg": "schreef",
+      "pl": "schreven"
+    },
+    "participle": "geschreven",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Woorden op papier of beeldscherm zetten.",
+    "example": "Ik schrijf een e-mail."
   },
   {
     "id": "basis-verb-werken",
@@ -61,5 +229,1937 @@
     "irregular": false,
     "definitionNl": "Iets doen voor je baan of om geld te verdienen.",
     "example": "Ik werk vijf dagen per week in een winkel."
+  },
+  {
+    "id": "basis-verb-wonen",
+    "infinitive": "wonen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "woon",
+      "jij": "woont",
+      "hij": "woont",
+      "wij": "wonen"
+    },
+    "past": {
+      "sg": "woonde",
+      "pl": "woonden"
+    },
+    "participle": "gewoond",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Je huis of kamer is op een plek.",
+    "example": "Ik woon in Utrecht."
+  },
+  {
+    "id": "basis-verb-betalen",
+    "infinitive": "betalen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "betaal",
+      "jij": "betaalt",
+      "hij": "betaalt",
+      "wij": "betalen"
+    },
+    "past": {
+      "sg": "betaalde",
+      "pl": "betaalden"
+    },
+    "participle": "betaald",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Geld geven voor iets.",
+    "example": "Ik betaal met de pinpas."
+  },
+  {
+    "id": "basis-verb-bellen",
+    "infinitive": "bellen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "bel",
+      "jij": "belt",
+      "hij": "belt",
+      "wij": "bellen"
+    },
+    "past": {
+      "sg": "belde",
+      "pl": "belden"
+    },
+    "participle": "gebeld",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Met de telefoon praten.",
+    "example": "Ik bel mijn moeder."
+  },
+  {
+    "id": "basis-verb-vragen",
+    "infinitive": "vragen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "vraag",
+      "jij": "vraagt",
+      "hij": "vraagt",
+      "wij": "vragen"
+    },
+    "past": {
+      "sg": "vroeg",
+      "pl": "vroegen"
+    },
+    "participle": "gevraagd",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Je wilt iets weten of krijgen.",
+    "example": "Ik vraag de weg."
+  },
+  {
+    "id": "basis-verb-zeggen",
+    "infinitive": "zeggen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "zeg",
+      "jij": "zegt",
+      "hij": "zegt",
+      "wij": "zeggen"
+    },
+    "past": {
+      "sg": "zei",
+      "pl": "zeiden"
+    },
+    "participle": "gezegd",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets met woorden vertellen.",
+    "example": "Wat zeg je?"
+  },
+  {
+    "id": "basis-verb-geven",
+    "infinitive": "geven",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "geef",
+      "jij": "geeft",
+      "hij": "geeft",
+      "wij": "geven"
+    },
+    "past": {
+      "sg": "gaf",
+      "pl": "gaven"
+    },
+    "participle": "gegeven",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets aan iemand laten krijgen.",
+    "example": "Ik geef je het boek."
+  },
+  {
+    "id": "basis-verb-krijgen",
+    "infinitive": "krijgen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "krijg",
+      "jij": "krijgt",
+      "hij": "krijgt",
+      "wij": "krijgen"
+    },
+    "past": {
+      "sg": "kreeg",
+      "pl": "kregen"
+    },
+    "participle": "gekregen",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets ontvangen.",
+    "example": "Ik krijg een brief."
+  },
+  {
+    "id": "basis-verb-nemen",
+    "infinitive": "nemen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "neem",
+      "jij": "neemt",
+      "hij": "neemt",
+      "wij": "nemen"
+    },
+    "past": {
+      "sg": "nam",
+      "pl": "namen"
+    },
+    "participle": "genomen",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets pakken.",
+    "example": "Ik neem de bus."
+  },
+  {
+    "id": "basis-verb-brengen",
+    "infinitive": "brengen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "breng",
+      "jij": "brengt",
+      "hij": "brengt",
+      "wij": "brengen"
+    },
+    "past": {
+      "sg": "bracht",
+      "pl": "brachten"
+    },
+    "participle": "gebracht",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets naar een plek dragen.",
+    "example": "Ik breng mijn kind naar school."
+  },
+  {
+    "id": "basis-verb-kopen",
+    "infinitive": "kopen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "koop",
+      "jij": "koopt",
+      "hij": "koopt",
+      "wij": "kopen"
+    },
+    "past": {
+      "sg": "kocht",
+      "pl": "kochten"
+    },
+    "participle": "gekocht",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets krijgen en er geld voor geven.",
+    "example": "Ik koop brood."
+  },
+  {
+    "id": "basis-verb-verkopen",
+    "infinitive": "verkopen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "verkoop",
+      "jij": "verkoopt",
+      "hij": "verkoopt",
+      "wij": "verkopen"
+    },
+    "past": {
+      "sg": "verkocht",
+      "pl": "verkochten"
+    },
+    "participle": "verkocht",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets geven voor geld.",
+    "example": "Hij verkoopt zijn fiets."
+  },
+  {
+    "id": "basis-verb-eten",
+    "infinitive": "eten",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "eet",
+      "jij": "eet",
+      "hij": "eet",
+      "wij": "eten"
+    },
+    "past": {
+      "sg": "at",
+      "pl": "aten"
+    },
+    "participle": "gegeten",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Voedsel in je mond doen en doorslikken.",
+    "example": "Wij eten om zes uur."
+  },
+  {
+    "id": "basis-verb-drinken",
+    "infinitive": "drinken",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "drink",
+      "jij": "drinkt",
+      "hij": "drinkt",
+      "wij": "drinken"
+    },
+    "past": {
+      "sg": "dronk",
+      "pl": "dronken"
+    },
+    "participle": "gedronken",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Vloeistof in je mond doen en doorslikken.",
+    "example": "Ik drink water."
+  },
+  {
+    "id": "basis-verb-slapen",
+    "infinitive": "slapen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "slaap",
+      "jij": "slaapt",
+      "hij": "slaapt",
+      "wij": "slapen"
+    },
+    "past": {
+      "sg": "sliep",
+      "pl": "sliepen"
+    },
+    "participle": "geslapen",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Je ogen zijn dicht en je rust uit.",
+    "example": "De baby slaapt."
+  },
+  {
+    "id": "basis-verb-beginnen",
+    "infinitive": "beginnen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "begin",
+      "jij": "begint",
+      "hij": "begint",
+      "wij": "beginnen"
+    },
+    "past": {
+      "sg": "begon",
+      "pl": "begonnen"
+    },
+    "participle": "begonnen",
+    "auxiliary": "both",
+    "irregular": true,
+    "definitionNl": "Met iets starten.",
+    "example": "De les begint om negen uur."
+  },
+  {
+    "id": "basis-verb-stoppen",
+    "infinitive": "stoppen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "stop",
+      "jij": "stopt",
+      "hij": "stopt",
+      "wij": "stoppen"
+    },
+    "past": {
+      "sg": "stopte",
+      "pl": "stopten"
+    },
+    "participle": "gestopt",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Niet meer doorgaan.",
+    "example": "De bus stopt bij de halte."
+  },
+  {
+    "id": "basis-verb-wachten",
+    "infinitive": "wachten",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "wacht",
+      "jij": "wacht",
+      "hij": "wacht",
+      "wij": "wachten"
+    },
+    "past": {
+      "sg": "wachtte",
+      "pl": "wachtten"
+    },
+    "participle": "gewacht",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Blijven tot iets gebeurt.",
+    "example": "Ik wacht op de trein."
+  },
+  {
+    "id": "basis-verb-helpen",
+    "infinitive": "helpen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "help",
+      "jij": "helpt",
+      "hij": "helpt",
+      "wij": "helpen"
+    },
+    "past": {
+      "sg": "hielp",
+      "pl": "hielpen"
+    },
+    "participle": "geholpen",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets voor iemand doen.",
+    "example": "Kunt u mij helpen?"
+  },
+  {
+    "id": "basis-verb-zoeken",
+    "infinitive": "zoeken",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "zoek",
+      "jij": "zoekt",
+      "hij": "zoekt",
+      "wij": "zoeken"
+    },
+    "past": {
+      "sg": "zocht",
+      "pl": "zochten"
+    },
+    "participle": "gezocht",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Proberen iets te vinden.",
+    "example": "Ik zoek mijn sleutel."
+  },
+  {
+    "id": "basis-verb-vinden",
+    "infinitive": "vinden",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "vind",
+      "jij": "vindt",
+      "hij": "vindt",
+      "wij": "vinden"
+    },
+    "past": {
+      "sg": "vond",
+      "pl": "vonden"
+    },
+    "participle": "gevonden",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets krijgen dat je zocht.",
+    "example": "Ik vind mijn sleutel niet."
+  },
+  {
+    "id": "basis-verb-sturen",
+    "infinitive": "sturen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "stuur",
+      "jij": "stuurt",
+      "hij": "stuurt",
+      "wij": "sturen"
+    },
+    "past": {
+      "sg": "stuurde",
+      "pl": "stuurden"
+    },
+    "participle": "gestuurd",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Iets laten gaan naar iemand.",
+    "example": "Ik stuur een bericht."
+  },
+  {
+    "id": "basis-verb-invullen",
+    "infinitive": "invullen",
+    "separable": true,
+    "prefix": "in",
+    "present": {
+      "ik": "vul in",
+      "jij": "vult in",
+      "hij": "vult in",
+      "wij": "vullen in"
+    },
+    "past": {
+      "sg": "vulde in",
+      "pl": "vulden in"
+    },
+    "participle": "ingevuld",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Antwoorden schrijven op een formulier.",
+    "example": "Ik vul het formulier in."
+  },
+  {
+    "id": "basis-verb-aanvragen",
+    "infinitive": "aanvragen",
+    "separable": true,
+    "prefix": "aan",
+    "present": {
+      "ik": "vraag aan",
+      "jij": "vraagt aan",
+      "hij": "vraagt aan",
+      "wij": "vragen aan"
+    },
+    "past": {
+      "sg": "vroeg aan",
+      "pl": "vroegen aan"
+    },
+    "participle": "aangevraagd",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Officieel om iets vragen.",
+    "example": "Ik vraag een paspoort aan."
+  },
+  {
+    "id": "basis-verb-opzeggen",
+    "infinitive": "opzeggen",
+    "separable": true,
+    "prefix": "op",
+    "present": {
+      "ik": "zeg op",
+      "jij": "zegt op",
+      "hij": "zegt op",
+      "wij": "zeggen op"
+    },
+    "past": {
+      "sg": "zei op",
+      "pl": "zeiden op"
+    },
+    "participle": "opgezegd",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Een contract stoppen.",
+    "example": "Ik zeg mijn abonnement op."
+  },
+  {
+    "id": "basis-verb-ophalen",
+    "infinitive": "ophalen",
+    "separable": true,
+    "prefix": "op",
+    "present": {
+      "ik": "haal op",
+      "jij": "haalt op",
+      "hij": "haalt op",
+      "wij": "halen op"
+    },
+    "past": {
+      "sg": "haalde op",
+      "pl": "haalden op"
+    },
+    "participle": "opgehaald",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Iets of iemand gaan halen.",
+    "example": "Ik haal mijn kind op van school."
+  },
+  {
+    "id": "basis-verb-terugbellen",
+    "infinitive": "terugbellen",
+    "separable": true,
+    "prefix": "terug",
+    "present": {
+      "ik": "bel terug",
+      "jij": "belt terug",
+      "hij": "belt terug",
+      "wij": "bellen terug"
+    },
+    "past": {
+      "sg": "belde terug",
+      "pl": "belden terug"
+    },
+    "participle": "teruggebeld",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Iemand nog een keer bellen.",
+    "example": "Ik bel u morgen terug."
+  },
+  {
+    "id": "basis-verb-verhuizen",
+    "infinitive": "verhuizen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "verhuis",
+      "jij": "verhuist",
+      "hij": "verhuist",
+      "wij": "verhuizen"
+    },
+    "past": {
+      "sg": "verhuisde",
+      "pl": "verhuisden"
+    },
+    "participle": "verhuisd",
+    "auxiliary": "zijn",
+    "irregular": false,
+    "definitionNl": "Naar een ander huis gaan wonen.",
+    "example": "Wij verhuizen naar Utrecht."
+  },
+  {
+    "id": "basis-verb-solliciteren",
+    "infinitive": "solliciteren",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "solliciteer",
+      "jij": "solliciteert",
+      "hij": "solliciteert",
+      "wij": "solliciteren"
+    },
+    "past": {
+      "sg": "solliciteerde",
+      "pl": "solliciteerden"
+    },
+    "participle": "gesolliciteerd",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Schrijven of vragen om een baan.",
+    "example": "Ik solliciteer op een baan."
+  },
+  {
+    "id": "basis-verb-trouwen",
+    "infinitive": "trouwen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "trouw",
+      "jij": "trouwt",
+      "hij": "trouwt",
+      "wij": "trouwen"
+    },
+    "past": {
+      "sg": "trouwde",
+      "pl": "trouwden"
+    },
+    "participle": "getrouwd",
+    "auxiliary": "zijn",
+    "irregular": false,
+    "definitionNl": "Officieel partners worden.",
+    "example": "Zij trouwen in mei."
+  },
+  {
+    "id": "basis-verb-inleveren",
+    "infinitive": "inleveren",
+    "separable": true,
+    "prefix": "in",
+    "present": {
+      "ik": "lever in",
+      "jij": "levert in",
+      "hij": "levert in",
+      "wij": "leveren in"
+    },
+    "past": {
+      "sg": "leverde in",
+      "pl": "leverden in"
+    },
+    "participle": "ingeleverd",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Iets terugbrengen of afgeven.",
+    "example": "Ik lever het formulier in."
+  },
+  {
+    "id": "basis-verb-afspreken",
+    "infinitive": "afspreken",
+    "separable": true,
+    "prefix": "af",
+    "present": {
+      "ik": "spreek af",
+      "jij": "spreekt af",
+      "hij": "spreekt af",
+      "wij": "spreken af"
+    },
+    "past": {
+      "sg": "sprak af",
+      "pl": "spraken af"
+    },
+    "participle": "afgesproken",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Samen een tijd en plek kiezen om elkaar te zien.",
+    "example": "We spreken morgen om drie uur af bij het buurthuis."
+  },
+  {
+    "id": "basis-verb-overstappen",
+    "infinitive": "overstappen",
+    "separable": true,
+    "prefix": "over",
+    "present": {
+      "ik": "stap over",
+      "jij": "stapt over",
+      "hij": "stapt over",
+      "wij": "stappen over"
+    },
+    "past": {
+      "sg": "stapte over",
+      "pl": "stapten over"
+    },
+    "participle": "overgestapt",
+    "auxiliary": "zijn",
+    "irregular": false,
+    "definitionNl": "Van de ene naar de andere trein of bus gaan.",
+    "example": "U stapt in Utrecht over."
+  },
+  {
+    "id": "basis-verb-meenemen",
+    "infinitive": "meenemen",
+    "separable": true,
+    "prefix": "mee",
+    "present": {
+      "ik": "neem mee",
+      "jij": "neemt mee",
+      "hij": "neemt mee",
+      "wij": "nemen mee"
+    },
+    "past": {
+      "sg": "nam mee",
+      "pl": "namen mee"
+    },
+    "participle": "meegenomen",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets met je laten gaan.",
+    "example": "Neem een jas mee."
+  },
+  {
+    "id": "basis-verb-opbellen",
+    "infinitive": "opbellen",
+    "separable": true,
+    "prefix": "op",
+    "present": {
+      "ik": "bel op",
+      "jij": "belt op",
+      "hij": "belt op",
+      "wij": "bellen op"
+    },
+    "past": {
+      "sg": "belde op",
+      "pl": "belden op"
+    },
+    "participle": "opgebeld",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Iemand telefonisch bellen.",
+    "example": "Ik bel je morgen op."
+  },
+  {
+    "id": "basis-verb-kunnen",
+    "infinitive": "kunnen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "kan",
+      "jij": "kunt",
+      "hij": "kan",
+      "wij": "kunnen"
+    },
+    "past": {
+      "sg": "kon",
+      "pl": "konden"
+    },
+    "participle": "gekund",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "De mogelijkheid hebben om iets te doen.",
+    "example": "Ik kan morgen komen."
+  },
+  {
+    "id": "basis-verb-willen",
+    "infinitive": "willen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "wil",
+      "jij": "wilt",
+      "hij": "wil",
+      "wij": "willen"
+    },
+    "past": {
+      "sg": "wilde",
+      "pl": "wilden"
+    },
+    "participle": "gewild",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Graag iets willen doen of hebben.",
+    "example": "Ik wil een kopje koffie."
+  },
+  {
+    "id": "basis-verb-moeten",
+    "infinitive": "moeten",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "moet",
+      "jij": "moet",
+      "hij": "moet",
+      "wij": "moeten"
+    },
+    "past": {
+      "sg": "moest",
+      "pl": "moesten"
+    },
+    "participle": "gemoeten",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets verplicht doen.",
+    "example": "Ik moet werken."
+  },
+  {
+    "id": "basis-verb-mogen",
+    "infinitive": "mogen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "mag",
+      "jij": "mag",
+      "hij": "mag",
+      "wij": "mogen"
+    },
+    "past": {
+      "sg": "mocht",
+      "pl": "mochten"
+    },
+    "participle": "gemogen",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "De toestemming hebben.",
+    "example": "Hier mag je niet parkeren."
+  },
+  {
+    "id": "basis-verb-weten",
+    "infinitive": "weten",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "weet",
+      "jij": "weet",
+      "hij": "weet",
+      "wij": "weten"
+    },
+    "past": {
+      "sg": "wist",
+      "pl": "wisten"
+    },
+    "participle": "geweten",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets in je hoofd hebben.",
+    "example": "Ik weet het niet."
+  },
+  {
+    "id": "basis-verb-denken",
+    "infinitive": "denken",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "denk",
+      "jij": "denkt",
+      "hij": "denkt",
+      "wij": "denken"
+    },
+    "past": {
+      "sg": "dacht",
+      "pl": "dachten"
+    },
+    "participle": "gedacht",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Nadenken of een mening hebben.",
+    "example": "Ik denk dat het morgen regent."
+  },
+  {
+    "id": "basis-verb-staan",
+    "infinitive": "staan",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "sta",
+      "jij": "staat",
+      "hij": "staat",
+      "wij": "staan"
+    },
+    "past": {
+      "sg": "stond",
+      "pl": "stonden"
+    },
+    "participle": "gestaan",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Rechtop zijn op je voeten.",
+    "example": "De fiets staat buiten."
+  },
+  {
+    "id": "basis-verb-zitten",
+    "infinitive": "zitten",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "zit",
+      "jij": "zit",
+      "hij": "zit",
+      "wij": "zitten"
+    },
+    "past": {
+      "sg": "zat",
+      "pl": "zaten"
+    },
+    "participle": "gezeten",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Op een stoel of bank zijn.",
+    "example": "Ik zit in de klas."
+  },
+  {
+    "id": "basis-verb-liggen",
+    "infinitive": "liggen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "lig",
+      "jij": "ligt",
+      "hij": "ligt",
+      "wij": "liggen"
+    },
+    "past": {
+      "sg": "lag",
+      "pl": "lagen"
+    },
+    "participle": "gelegen",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Plat op iets zijn.",
+    "example": "Het boek ligt op tafel."
+  },
+  {
+    "id": "basis-verb-lopen",
+    "infinitive": "lopen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "loop",
+      "jij": "loopt",
+      "hij": "loopt",
+      "wij": "lopen"
+    },
+    "past": {
+      "sg": "liep",
+      "pl": "liepen"
+    },
+    "participle": "gelopen",
+    "auxiliary": "both",
+    "irregular": true,
+    "definitionNl": "Te voet gaan.",
+    "example": "Ik loop naar het station."
+  },
+  {
+    "id": "basis-verb-rijden",
+    "infinitive": "rijden",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "rijd",
+      "jij": "rijdt",
+      "hij": "rijdt",
+      "wij": "rijden"
+    },
+    "past": {
+      "sg": "reed",
+      "pl": "reden"
+    },
+    "participle": "gereden",
+    "auxiliary": "both",
+    "irregular": true,
+    "definitionNl": "Met een auto of fiets gaan.",
+    "example": "De bus rijdt elk kwartier."
+  },
+  {
+    "id": "basis-verb-fietsen",
+    "infinitive": "fietsen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "fiets",
+      "jij": "fietst",
+      "hij": "fietst",
+      "wij": "fietsen"
+    },
+    "past": {
+      "sg": "fietste",
+      "pl": "fietsten"
+    },
+    "participle": "gefietst",
+    "auxiliary": "both",
+    "irregular": false,
+    "definitionNl": "Op een fiets rijden.",
+    "example": "Ik fiets naar school."
+  },
+  {
+    "id": "basis-verb-reizen",
+    "infinitive": "reizen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "reis",
+      "jij": "reist",
+      "hij": "reist",
+      "wij": "reizen"
+    },
+    "past": {
+      "sg": "reisde",
+      "pl": "reisden"
+    },
+    "participle": "gereisd",
+    "auxiliary": "both",
+    "irregular": false,
+    "definitionNl": "Van de ene plaats naar een andere gaan.",
+    "example": "Zij reist vaak met de trein."
+  },
+  {
+    "id": "basis-verb-leren",
+    "infinitive": "leren",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "leer",
+      "jij": "leert",
+      "hij": "leert",
+      "wij": "leren"
+    },
+    "past": {
+      "sg": "leerde",
+      "pl": "leerden"
+    },
+    "participle": "geleerd",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Nieuwe kennis krijgen.",
+    "example": "Ik leer Nederlands."
+  },
+  {
+    "id": "basis-verb-studeren",
+    "infinitive": "studeren",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "studeer",
+      "jij": "studeert",
+      "hij": "studeert",
+      "wij": "studeren"
+    },
+    "past": {
+      "sg": "studeerde",
+      "pl": "studeerden"
+    },
+    "participle": "gestudeerd",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Veel leren voor een opleiding of toets.",
+    "example": "Zij studeert rechten."
+  },
+  {
+    "id": "basis-verb-oefenen",
+    "infinitive": "oefenen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "oefen",
+      "jij": "oefent",
+      "hij": "oefent",
+      "wij": "oefenen"
+    },
+    "past": {
+      "sg": "oefende",
+      "pl": "oefenden"
+    },
+    "participle": "geoefend",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Iets vaak doen om beter te worden.",
+    "example": "Ik oefen elke dag."
+  },
+  {
+    "id": "basis-verb-praten",
+    "infinitive": "praten",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "praat",
+      "jij": "praat",
+      "hij": "praat",
+      "wij": "praten"
+    },
+    "past": {
+      "sg": "praatte",
+      "pl": "praatten"
+    },
+    "participle": "gepraat",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Met iemand spreken.",
+    "example": "Wij praten over het weekend."
+  },
+  {
+    "id": "basis-verb-spreken",
+    "infinitive": "spreken",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "spreek",
+      "jij": "spreekt",
+      "hij": "spreekt",
+      "wij": "spreken"
+    },
+    "past": {
+      "sg": "sprak",
+      "pl": "spraken"
+    },
+    "participle": "gesproken",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Woorden zeggen.",
+    "example": "Ik spreek een beetje Nederlands."
+  },
+  {
+    "id": "basis-verb-horen",
+    "infinitive": "horen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "hoor",
+      "jij": "hoort",
+      "hij": "hoort",
+      "wij": "horen"
+    },
+    "past": {
+      "sg": "hoorde",
+      "pl": "hoorden"
+    },
+    "participle": "gehoord",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Met je oren geluiden waarnemen.",
+    "example": "Ik hoor muziek."
+  },
+  {
+    "id": "basis-verb-luisteren",
+    "infinitive": "luisteren",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "luister",
+      "jij": "luistert",
+      "hij": "luistert",
+      "wij": "luisteren"
+    },
+    "past": {
+      "sg": "luisterde",
+      "pl": "luisterden"
+    },
+    "participle": "geluisterd",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Goed horen naar iets.",
+    "example": "Ik luister naar de radio."
+  },
+  {
+    "id": "basis-verb-kennen",
+    "infinitive": "kennen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "ken",
+      "jij": "kent",
+      "hij": "kent",
+      "wij": "kennen"
+    },
+    "past": {
+      "sg": "kende",
+      "pl": "kenden"
+    },
+    "participle": "gekend",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iemand of iets weten.",
+    "example": "Ik ken mijn buren."
+  },
+  {
+    "id": "basis-verb-vergeten",
+    "infinitive": "vergeten",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "vergeet",
+      "jij": "vergeet",
+      "hij": "vergeet",
+      "wij": "vergeten"
+    },
+    "past": {
+      "sg": "vergat",
+      "pl": "vergaten"
+    },
+    "participle": "vergeten",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Niet meer weten.",
+    "example": "Ik ben mijn sleutel vergeten."
+  },
+  {
+    "id": "basis-verb-onthouden",
+    "infinitive": "onthouden",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "onthoud",
+      "jij": "onthoudt",
+      "hij": "onthoudt",
+      "wij": "onthouden"
+    },
+    "past": {
+      "sg": "onthield",
+      "pl": "onthielden"
+    },
+    "participle": "onthouden",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "In je hoofd houden.",
+    "example": "Kun je mijn nummer onthouden?"
+  },
+  {
+    "id": "basis-verb-openen",
+    "infinitive": "openen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "open",
+      "jij": "opent",
+      "hij": "opent",
+      "wij": "openen"
+    },
+    "past": {
+      "sg": "opende",
+      "pl": "openden"
+    },
+    "participle": "geopend",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Iets open maken.",
+    "example": "De winkel opent om negen uur."
+  },
+  {
+    "id": "basis-verb-sluiten",
+    "infinitive": "sluiten",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "sluit",
+      "jij": "sluit",
+      "hij": "sluit",
+      "wij": "sluiten"
+    },
+    "past": {
+      "sg": "sloot",
+      "pl": "sloten"
+    },
+    "participle": "gesloten",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets dicht maken.",
+    "example": "De bibliotheek sluit om zes uur."
+  },
+  {
+    "id": "basis-verb-gebruiken",
+    "infinitive": "gebruiken",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "gebruik",
+      "jij": "gebruikt",
+      "hij": "gebruikt",
+      "wij": "gebruiken"
+    },
+    "past": {
+      "sg": "gebruikte",
+      "pl": "gebruikten"
+    },
+    "participle": "gebruikt",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Iets nemen om iets te doen.",
+    "example": "Mag ik uw pen gebruiken?"
+  },
+  {
+    "id": "basis-verb-repareren",
+    "infinitive": "repareren",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "repareer",
+      "jij": "repareert",
+      "hij": "repareert",
+      "wij": "repareren"
+    },
+    "past": {
+      "sg": "repareerde",
+      "pl": "repareerden"
+    },
+    "participle": "gerepareerd",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Iets kapots weer goed maken.",
+    "example": "De monteur repareert de kraan."
+  },
+  {
+    "id": "basis-verb-kiezen",
+    "infinitive": "kiezen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "kies",
+      "jij": "kiest",
+      "hij": "kiest",
+      "wij": "kiezen"
+    },
+    "past": {
+      "sg": "koos",
+      "pl": "kozen"
+    },
+    "participle": "gekozen",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Een keuze maken.",
+    "example": "Ik kies de blauwe jas."
+  },
+  {
+    "id": "basis-verb-huren",
+    "infinitive": "huren",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "huur",
+      "jij": "huurt",
+      "hij": "huurt",
+      "wij": "huren"
+    },
+    "past": {
+      "sg": "huurde",
+      "pl": "huurden"
+    },
+    "participle": "gehuurd",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Betalen om iets te gebruiken.",
+    "example": "Wij huren een huis."
+  },
+  {
+    "id": "basis-verb-ontvangen",
+    "infinitive": "ontvangen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "ontvang",
+      "jij": "ontvangt",
+      "hij": "ontvangt",
+      "wij": "ontvangen"
+    },
+    "past": {
+      "sg": "ontving",
+      "pl": "ontvingen"
+    },
+    "participle": "ontvangen",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets krijgen.",
+    "example": "Ik ontvang elke maand een brief."
+  },
+  {
+    "id": "basis-verb-afzeggen",
+    "infinitive": "afzeggen",
+    "separable": true,
+    "prefix": "af",
+    "present": {
+      "ik": "zeg af",
+      "jij": "zegt af",
+      "hij": "zegt af",
+      "wij": "zeggen af"
+    },
+    "past": {
+      "sg": "zei af",
+      "pl": "zeiden af"
+    },
+    "participle": "afgezegd",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Zeggen dat je niet komt.",
+    "example": "Ik zeg mijn afspraak af."
+  },
+  {
+    "id": "basis-verb-uitnodigen",
+    "infinitive": "uitnodigen",
+    "separable": true,
+    "prefix": "uit",
+    "present": {
+      "ik": "nodig uit",
+      "jij": "nodigt uit",
+      "hij": "nodigt uit",
+      "wij": "nodigen uit"
+    },
+    "past": {
+      "sg": "nodigde uit",
+      "pl": "nodigden uit"
+    },
+    "participle": "uitgenodigd",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Vragen of iemand komt.",
+    "example": "Ik nodig mijn buren uit."
+  },
+  {
+    "id": "basis-verb-vieren",
+    "infinitive": "vieren",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "vier",
+      "jij": "viert",
+      "hij": "viert",
+      "wij": "vieren"
+    },
+    "past": {
+      "sg": "vierde",
+      "pl": "vierden"
+    },
+    "participle": "gevierd",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Een feest houden.",
+    "example": "Wij vieren zijn verjaardag."
+  },
+  {
+    "id": "basis-verb-stemmen",
+    "infinitive": "stemmen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "stem",
+      "jij": "stemt",
+      "hij": "stemt",
+      "wij": "stemmen"
+    },
+    "past": {
+      "sg": "stemde",
+      "pl": "stemden"
+    },
+    "participle": "gestemd",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Kiezen bij een verkiezing.",
+    "example": "Ik stem op 18 maart."
+  },
+  {
+    "id": "basis-verb-sporten",
+    "infinitive": "sporten",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "sport",
+      "jij": "sport",
+      "hij": "sport",
+      "wij": "sporten"
+    },
+    "past": {
+      "sg": "sportte",
+      "pl": "sportten"
+    },
+    "participle": "gesport",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Bewegen om fit te zijn.",
+    "example": "Ik sport twee keer per week."
+  },
+  {
+    "id": "basis-verb-koken",
+    "infinitive": "koken",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "kook",
+      "jij": "kookt",
+      "hij": "kookt",
+      "wij": "koken"
+    },
+    "past": {
+      "sg": "kookte",
+      "pl": "kookten"
+    },
+    "participle": "gekookt",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Eten maken met warmte.",
+    "example": "Ik kook vanavond rijst."
+  },
+  {
+    "id": "basis-verb-bakken",
+    "infinitive": "bakken",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "bak",
+      "jij": "bakt",
+      "hij": "bakt",
+      "wij": "bakken"
+    },
+    "past": {
+      "sg": "bakte",
+      "pl": "bakten"
+    },
+    "participle": "gebakken",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Eten maken in de oven of pan.",
+    "example": "Ik bak een ei."
+  },
+  {
+    "id": "basis-verb-wassen",
+    "infinitive": "wassen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "was",
+      "jij": "wast",
+      "hij": "wast",
+      "wij": "wassen"
+    },
+    "past": {
+      "sg": "waste",
+      "pl": "wasten"
+    },
+    "participle": "gewassen",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets schoonmaken met water.",
+    "example": "Ik was mijn handen."
+  },
+  {
+    "id": "basis-verb-schoonmaken",
+    "infinitive": "schoonmaken",
+    "separable": true,
+    "prefix": "schoon",
+    "present": {
+      "ik": "maak schoon",
+      "jij": "maakt schoon",
+      "hij": "maakt schoon",
+      "wij": "maken schoon"
+    },
+    "past": {
+      "sg": "maakte schoon",
+      "pl": "maakten schoon"
+    },
+    "participle": "schoongemaakt",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Iets schoon maken.",
+    "example": "Ik maak het huis schoon."
+  },
+  {
+    "id": "basis-verb-ophangen",
+    "infinitive": "ophangen",
+    "separable": true,
+    "prefix": "op",
+    "present": {
+      "ik": "hang op",
+      "jij": "hangt op",
+      "hij": "hangt op",
+      "wij": "hangen op"
+    },
+    "past": {
+      "sg": "hing op",
+      "pl": "hingen op"
+    },
+    "participle": "opgehangen",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets aan een haak of muur doen.",
+    "example": "Ik hang mijn jas op."
+  },
+  {
+    "id": "basis-verb-terugbrengen",
+    "infinitive": "terugbrengen",
+    "separable": true,
+    "prefix": "terug",
+    "present": {
+      "ik": "breng terug",
+      "jij": "brengt terug",
+      "hij": "brengt terug",
+      "wij": "brengen terug"
+    },
+    "past": {
+      "sg": "bracht terug",
+      "pl": "brachten terug"
+    },
+    "participle": "teruggebracht",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets weer brengen naar waar het vandaan komt.",
+    "example": "Ik breng het boek terug."
+  },
+  {
+    "id": "basis-verb-instappen",
+    "infinitive": "instappen",
+    "separable": true,
+    "prefix": "in",
+    "present": {
+      "ik": "stap in",
+      "jij": "stapt in",
+      "hij": "stapt in",
+      "wij": "stappen in"
+    },
+    "past": {
+      "sg": "stapte in",
+      "pl": "stapten in"
+    },
+    "participle": "ingestapt",
+    "auxiliary": "zijn",
+    "irregular": false,
+    "definitionNl": "In een trein of bus gaan.",
+    "example": "Wij stappen in bij het station."
+  },
+  {
+    "id": "basis-verb-uitstappen",
+    "infinitive": "uitstappen",
+    "separable": true,
+    "prefix": "uit",
+    "present": {
+      "ik": "stap uit",
+      "jij": "stapt uit",
+      "hij": "stapt uit",
+      "wij": "stappen uit"
+    },
+    "past": {
+      "sg": "stapte uit",
+      "pl": "stapten uit"
+    },
+    "participle": "uitgestapt",
+    "auxiliary": "zijn",
+    "irregular": false,
+    "definitionNl": "Uit een trein of bus gaan.",
+    "example": "Wij stappen uit in Amsterdam."
+  },
+  {
+    "id": "basis-verb-afslaan",
+    "infinitive": "afslaan",
+    "separable": true,
+    "prefix": "af",
+    "present": {
+      "ik": "sla af",
+      "jij": "slaat af",
+      "hij": "slaat af",
+      "wij": "slaan af"
+    },
+    "past": {
+      "sg": "sloeg af",
+      "pl": "sloegen af"
+    },
+    "participle": "afgeslagen",
+    "auxiliary": "zijn",
+    "irregular": true,
+    "definitionNl": "Een andere straat inrijden of -lopen.",
+    "example": "U slaat bij het stoplicht rechtsaf."
+  },
+  {
+    "id": "basis-verb-doorlopen",
+    "infinitive": "doorlopen",
+    "separable": true,
+    "prefix": "door",
+    "present": {
+      "ik": "loop door",
+      "jij": "loopt door",
+      "hij": "loopt door",
+      "wij": "lopen door"
+    },
+    "past": {
+      "sg": "liep door",
+      "pl": "liepen door"
+    },
+    "participle": "doorgelopen",
+    "auxiliary": "zijn",
+    "irregular": true,
+    "definitionNl": "Niet stoppen met lopen.",
+    "example": "U loopt door tot het plein."
+  },
+  {
+    "id": "basis-verb-blijven",
+    "infinitive": "blijven",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "blijf",
+      "jij": "blijft",
+      "hij": "blijft",
+      "wij": "blijven"
+    },
+    "past": {
+      "sg": "bleef",
+      "pl": "bleven"
+    },
+    "participle": "gebleven",
+    "auxiliary": "zijn",
+    "irregular": true,
+    "definitionNl": "Op dezelfde plek of in dezelfde toestand zijn.",
+    "example": "Ik blijf thuis."
+  },
+  {
+    "id": "basis-verb-worden",
+    "infinitive": "worden",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "word",
+      "jij": "wordt",
+      "hij": "wordt",
+      "wij": "worden"
+    },
+    "past": {
+      "sg": "werd",
+      "pl": "werden"
+    },
+    "participle": "geworden",
+    "auxiliary": "zijn",
+    "irregular": true,
+    "definitionNl": "Iets anders of nieuw gaan zijn.",
+    "example": "Het wordt koud."
+  },
+  {
+    "id": "basis-verb-heten",
+    "infinitive": "heten",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "heet",
+      "jij": "heet",
+      "hij": "heet",
+      "wij": "heten"
+    },
+    "past": {
+      "sg": "heette",
+      "pl": "heetten"
+    },
+    "participle": "geheten",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Zo is je naam.",
+    "example": "Ik heet Fatima."
+  },
+  {
+    "id": "basis-verb-voelen",
+    "infinitive": "voelen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "voel",
+      "jij": "voelt",
+      "hij": "voelt",
+      "wij": "voelen"
+    },
+    "past": {
+      "sg": "voelde",
+      "pl": "voelden"
+    },
+    "participle": "gevoeld",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Ergens iets van merken.",
+    "example": "Ik voel me niet goed."
+  },
+  {
+    "id": "basis-verb-tekenen",
+    "infinitive": "tekenen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "teken",
+      "jij": "tekent",
+      "hij": "tekent",
+      "wij": "tekenen"
+    },
+    "past": {
+      "sg": "tekende",
+      "pl": "tekenden"
+    },
+    "participle": "getekend",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Je handtekening zetten.",
+    "example": "Ik teken het contract."
+  },
+  {
+    "id": "basis-verb-controleren",
+    "infinitive": "controleren",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "controleer",
+      "jij": "controleert",
+      "hij": "controleert",
+      "wij": "controleren"
+    },
+    "past": {
+      "sg": "controleerde",
+      "pl": "controleerden"
+    },
+    "participle": "gecontroleerd",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Kijken of iets goed is.",
+    "example": "Controleer je antwoorden."
+  },
+  {
+    "id": "basis-verb-ruilen",
+    "infinitive": "ruilen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "ruil",
+      "jij": "ruilt",
+      "hij": "ruilt",
+      "wij": "ruilen"
+    },
+    "past": {
+      "sg": "ruilde",
+      "pl": "ruilden"
+    },
+    "participle": "geruild",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Iets geven en iets anders krijgen.",
+    "example": "Ik ruil de broek voor een andere maat."
+  },
+  {
+    "id": "basis-verb-bestellen",
+    "infinitive": "bestellen",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "bestel",
+      "jij": "bestelt",
+      "hij": "bestelt",
+      "wij": "bestellen"
+    },
+    "past": {
+      "sg": "bestelde",
+      "pl": "bestelden"
+    },
+    "participle": "besteld",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Vragen om iets te laten komen.",
+    "example": "Ik bestel een boek."
+  },
+  {
+    "id": "basis-verb-kosten",
+    "infinitive": "kosten",
+    "separable": false,
+    "prefix": null,
+    "present": {
+      "ik": "kost",
+      "jij": "kost",
+      "hij": "kost",
+      "wij": "kosten"
+    },
+    "past": {
+      "sg": "kostte",
+      "pl": "kostten"
+    },
+    "participle": "gekost",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Zoveel geld moet je betalen.",
+    "example": "Wat kost deze jas?"
+  },
+  {
+    "id": "basis-verb-opstaan",
+    "infinitive": "opstaan",
+    "separable": true,
+    "prefix": "op",
+    "present": {
+      "ik": "sta op",
+      "jij": "staat op",
+      "hij": "staat op",
+      "wij": "staan op"
+    },
+    "past": {
+      "sg": "stond op",
+      "pl": "stonden op"
+    },
+    "participle": "opgestaan",
+    "auxiliary": "zijn",
+    "irregular": true,
+    "definitionNl": "Uit bed komen.",
+    "example": "Ik sta om zeven uur op."
+  },
+  {
+    "id": "basis-verb-inschrijven",
+    "infinitive": "inschrijven",
+    "separable": true,
+    "prefix": "in",
+    "present": {
+      "ik": "schrijf in",
+      "jij": "schrijft in",
+      "hij": "schrijft in",
+      "wij": "schrijven in"
+    },
+    "past": {
+      "sg": "schreef in",
+      "pl": "schreven in"
+    },
+    "participle": "ingeschreven",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Je naam officieel laten zetten.",
+    "example": "Ik schrijf mij in bij de gemeente."
+  },
+  {
+    "id": "basis-verb-uitleggen",
+    "infinitive": "uitleggen",
+    "separable": true,
+    "prefix": "uit",
+    "present": {
+      "ik": "leg uit",
+      "jij": "legt uit",
+      "hij": "legt uit",
+      "wij": "leggen uit"
+    },
+    "past": {
+      "sg": "legde uit",
+      "pl": "legden uit"
+    },
+    "participle": "uitgelegd",
+    "auxiliary": "hebben",
+    "irregular": false,
+    "definitionNl": "Duidelijk vertellen hoe iets zit.",
+    "example": "De docent legt de regel uit."
+  },
+  {
+    "id": "basis-verb-opschrijven",
+    "infinitive": "opschrijven",
+    "separable": true,
+    "prefix": "op",
+    "present": {
+      "ik": "schrijf op",
+      "jij": "schrijft op",
+      "hij": "schrijft op",
+      "wij": "schrijven op"
+    },
+    "past": {
+      "sg": "schreef op",
+      "pl": "schreven op"
+    },
+    "participle": "opgeschreven",
+    "auxiliary": "hebben",
+    "irregular": true,
+    "definitionNl": "Iets noteren op papier.",
+    "example": "Schrijf het adres op."
   }
 ]

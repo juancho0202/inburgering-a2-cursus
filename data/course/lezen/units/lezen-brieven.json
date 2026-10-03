@@ -1,0 +1,491 @@
+{
+  "id": "lezen-brieven",
+  "moduleId": "lezen",
+  "title": "Brieven van instanties",
+  "goal": "Je begrijpt brieven van de gemeente, huisbaas, school, verzekeraar en Belastingdienst.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "lezen:brief"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "lezen-brieven-l-01",
+      "title": "Brieven lezen",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In een brief staat meestal: **wie schrijft**, **waarom** (het doel), **wat moet je doen** en **wanneer**. Zoek eerst de datum, het doel en de opdracht."
+        },
+        {
+          "kind": "tip",
+          "md": "Let op woorden als **uiterlijk, vóór, alleen, behalve, tenzij**."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-brieven-q-001",
+        "type": "reading",
+        "tags": [
+          "lezen:brief"
+        ],
+        "prompt": "Lees de brief van de gemeente.",
+        "document": {
+          "kind": "document",
+          "docType": "brief",
+          "title": "Uw paspoort is klaar",
+          "body": "Van: Gemeente Rotterdam\nAan: De heer A. Yilmaz\nDatum: 8 maart\n\nGeachte heer Yilmaz,\n\nUw nieuwe paspoort is klaar. U kunt het vanaf 12 maart ophalen bij het gemeentekantoor.\n\nNeem uw oude paspoort en deze brief mee. U kunt niemand anders sturen; u moet het zelf ophalen.\n\nHet loket is open op maandag, dinsdag, donderdag en vrijdag van 9.00 tot 16.00 uur. Op woensdag is het loket gesloten.\n\nMet vriendelijke groet,\nGemeente Rotterdam"
+        },
+        "questions": [
+          {
+            "id": "lezen-brieven-q-001-1",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Wat is het doel van deze brief?",
+            "options": [
+              "Een afspraak afzeggen.",
+              "De heer Yilmaz laten weten dat zijn paspoort klaar is.",
+              "Een boete sturen.",
+              "Een nieuwe aanvraag vragen."
+            ],
+            "answer": 1,
+            "explanation": "In de eerste zin: 'Uw nieuwe paspoort is klaar.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-001-2",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Vanaf wanneer kan hij zijn paspoort ophalen?",
+            "options": [
+              "Vanaf 8 maart",
+              "Vanaf woensdag",
+              "Vanaf 12 maart",
+              "Vanaf 16 maart"
+            ],
+            "answer": 2,
+            "explanation": "'Vanaf 12 maart ophalen.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-001-3",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Wat moet hij meenemen?",
+            "options": [
+              "Alleen de brief",
+              "Zijn rijbewijs",
+              "Geld",
+              "Zijn oude paspoort en de brief"
+            ],
+            "answer": 3,
+            "explanation": "'Neem uw oude paspoort en deze brief mee.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-001-4",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Op welke dag kan hij het paspoort niet ophalen?",
+            "options": [
+              "Op woensdag",
+              "Op maandag",
+              "Op dinsdag",
+              "Op vrijdag"
+            ],
+            "answer": 0,
+            "explanation": "'Op woensdag is het loket gesloten.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Zoek de datum, wat je moet meenemen en wanneer het loket dicht is.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-brieven-q-002",
+        "type": "reading",
+        "tags": [
+          "lezen:brief"
+        ],
+        "prompt": "Lees de brief van de verhuurder.",
+        "document": {
+          "kind": "document",
+          "docType": "brief",
+          "title": "Nieuwe verwarming",
+          "body": "Van: Woningcorporatie Wonen Plus\nAan: Alle bewoners van de Lindelaan 10–40\nDatum: 1 november\n\nBeste bewoners,\n\nWij vervangen op donderdag 14 en vrijdag 15 november de verwarming in uw woning. De monteur komt tussen 8.00 en 17.00 uur.\n\nU hoeft niet thuis te zijn, maar dat mag wel. Kunt u niet thuis zijn? Dan kunt u uw sleutel afgeven bij het kantoor aan de Lindelaan 1. Doe dit uiterlijk 12 november.\n\nTijdens het werk is er geen warm water. Dat duurt ongeveer een uur.\n\nMet vriendelijke groet,\nWonen Plus"
+        },
+        "questions": [
+          {
+            "id": "lezen-brieven-q-002-1",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Waarom schrijft de woningcorporatie deze brief?",
+            "options": [
+              "Omdat de huur omhoog gaat",
+              "Omdat er een feest is",
+              "Omdat de verwarming wordt vervangen",
+              "Omdat het kantoor verhuist"
+            ],
+            "answer": 2,
+            "explanation": "'Wij vervangen … de verwarming.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-002-2",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Op welke dagen komt de monteur?",
+            "options": [
+              "Op 12 en 13 november",
+              "Op 1 en 2 november",
+              "Alleen op 14 november",
+              "Op 14 en 15 november"
+            ],
+            "answer": 3,
+            "explanation": "Donderdag 14 en vrijdag 15 november.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-002-3",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Moet u thuis zijn?",
+            "options": [
+              "Nee, u hoeft niet thuis te zijn.",
+              "Ja, altijd.",
+              "Ja, maar alleen op donderdag.",
+              "Alleen als u een sleutel heeft."
+            ],
+            "answer": 0,
+            "explanation": "'U hoeft niet thuis te zijn, maar dat mag wel.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-002-4",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Wat doet u als u niet thuis kunt zijn?",
+            "options": [
+              "U belt de monteur.",
+              "U geeft uiterlijk 12 november uw sleutel af bij het kantoor.",
+              "U verhuist.",
+              "U stuurt een brief."
+            ],
+            "answer": 1,
+            "explanation": "'Dan kunt u uw sleutel afgeven … uiterlijk 12 november.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op de datums en wat u moet doen.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-brieven-q-003",
+        "type": "reading",
+        "tags": [
+          "lezen:brief"
+        ],
+        "prompt": "Lees de brief van de basisschool.",
+        "document": {
+          "kind": "document",
+          "docType": "brief",
+          "title": "Schoolreisje groep 5",
+          "body": "Van: Basisschool De Regenboog\nAan: Ouders van groep 5\nDatum: 20 mei\n\nBeste ouders,\n\nOp dinsdag 25 juni gaan wij met groep 5 op schoolreisje naar de dierentuin. De bus vertrekt om 9.00 uur bij school. Wij zijn om 15.30 uur terug.\n\nDe kosten zijn 12 euro per kind. Wilt u dit bedrag uiterlijk 1 juni overmaken?\n\nGeef uw kind een lunchpakket en drinken mee. Snoep is niet toegestaan. Heeft uw kind een allergie? Laat dat dan even weten aan de juf.\n\nMet vriendelijke groet,\nJuf Sanne"
+        },
+        "questions": [
+          {
+            "id": "lezen-brieven-q-003-1",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Waar gaat groep 5 naartoe?",
+            "options": [
+              "Naar het museum",
+              "Naar het zwembad",
+              "Naar het strand",
+              "Naar de dierentuin"
+            ],
+            "answer": 3,
+            "explanation": "'Schoolreisje naar de dierentuin.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-003-2",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Hoe laat is groep 5 weer terug?",
+            "options": [
+              "Om 15.30 uur",
+              "Om 9.00 uur",
+              "Om 12.00 uur",
+              "Om 17.00 uur"
+            ],
+            "answer": 0,
+            "explanation": "'Wij zijn om 15.30 uur terug.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-003-3",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Wat moeten ouders uiterlijk 1 juni doen?",
+            "options": [
+              "Een lunchpakket meegeven",
+              "12 euro betalen",
+              "De juf bellen",
+              "De bus bestellen"
+            ],
+            "answer": 1,
+            "explanation": "'Wilt u dit bedrag uiterlijk 1 juni overmaken?'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-003-4",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Wat mag een kind niet meenemen?",
+            "options": [
+              "Een lunchpakket",
+              "Drinken",
+              "Snoep",
+              "Een jas"
+            ],
+            "answer": 2,
+            "explanation": "'Snoep is niet toegestaan.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-003-5",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Wat moeten ouders doen als hun kind een allergie heeft?",
+            "options": [
+              "Thuisblijven",
+              "Extra betalen",
+              "Een dokter bellen",
+              "Het aan de juf vertellen"
+            ],
+            "answer": 3,
+            "explanation": "'Laat dat dan even weten aan de juf.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Lees de vraag, zoek de datum of het bedrag.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-brieven-q-004",
+        "type": "reading",
+        "tags": [
+          "lezen:brief"
+        ],
+        "prompt": "Lees de brief van de Belastingdienst.",
+        "document": {
+          "kind": "document",
+          "docType": "brief",
+          "title": "Uw aangifte inkomstenbelasting",
+          "body": "Van: Belastingdienst\nAan: Mevrouw O. Petrova\nDatum: 10 april\n\nGeachte mevrouw Petrova,\n\nWij hebben uw aangifte inkomstenbelasting ontvangen. U heeft te veel belasting betaald. U krijgt daarom geld terug: 215 euro.\n\nWij betalen dit bedrag binnen zes weken op uw bankrekening. U hoeft zelf niets te doen.\n\nKloppen uw gegevens niet? Dan kunt u uiterlijk 20 mei bezwaar maken. Dit kan met DigiD op onze website.\n\nMet vriendelijke groet,\nBelastingdienst"
+        },
+        "questions": [
+          {
+            "id": "lezen-brieven-q-004-1",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Wat is het doel van de brief?",
+            "options": [
+              "Vertellen dat mevrouw Petrova geld terugkrijgt",
+              "Vragen om meer belasting te betalen",
+              "Een afspraak maken",
+              "Een DigiD aanvragen"
+            ],
+            "answer": 0,
+            "explanation": "'U krijgt daarom geld terug.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-004-2",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Hoeveel krijgt mevrouw Petrova terug?",
+            "options": [
+              "12 euro",
+              "215 euro",
+              "20 euro",
+              "10 euro"
+            ],
+            "answer": 1,
+            "explanation": "'Geld terug: 215 euro.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-004-3",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Wanneer staat het geld op haar bankrekening?",
+            "options": [
+              "Morgen",
+              "Na 20 mei",
+              "Binnen zes weken",
+              "Over een jaar"
+            ],
+            "answer": 2,
+            "explanation": "'Binnen zes weken op uw bankrekening.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-004-4",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Wat moet zij doen als haar gegevens niet kloppen?",
+            "options": [
+              "Een nieuwe aangifte doen",
+              "Naar de gemeente gaan",
+              "Niets",
+              "Uiterlijk 20 mei bezwaar maken"
+            ],
+            "answer": 3,
+            "explanation": "'Dan kunt u uiterlijk 20 mei bezwaar maken.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op bedragen, termijnen en wat u moet doen.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-brieven-q-005",
+        "type": "reading",
+        "tags": [
+          "lezen:brief"
+        ],
+        "prompt": "Lees de brief van de gemeente over afval.",
+        "document": {
+          "kind": "document",
+          "docType": "brief",
+          "title": "Nieuwe ophaaldagen afval",
+          "body": "Van: Gemeente Almere\nAan: Alle inwoners\nDatum: 5 december\n\nBeste inwoners,\n\nVanaf 1 januari verandert de ophaaldag van uw afval.\n\nGroene bak (gft): elke twee weken op dinsdag.\nGrijze bak (restafval): elke vier weken op woensdag.\nPapier: elke vier weken op donderdag.\n\nZet uw bak 's ochtends vóór 7.30 uur aan de straat. Is uw bak vol? Dan haalt de gemeente de zakken niet op. Grofvuil kunt u gratis laten ophalen. Maak daarvoor een afspraak via de website of bel de gemeente.\n\nMet vriendelijke groet,\nGemeente Almere"
+        },
+        "questions": [
+          {
+            "id": "lezen-brieven-q-005-1",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Wanneer verandert de ophaaldag?",
+            "options": [
+              "Vanaf 5 december",
+              "Vanaf 1 januari",
+              "Vanaf dinsdag",
+              "Vanaf morgen"
+            ],
+            "answer": 1,
+            "explanation": "'Vanaf 1 januari verandert de ophaaldag.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-005-2",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Wanneer wordt het gft-afval opgehaald?",
+            "options": [
+              "Elke week op woensdag",
+              "Elke vier weken op donderdag",
+              "Elke twee weken op dinsdag",
+              "Elke maand"
+            ],
+            "answer": 2,
+            "explanation": "Groene bak (gft): elke twee weken op dinsdag.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-005-3",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Hoe laat moet de bak aan de straat staan?",
+            "options": [
+              "Na 7.30 uur",
+              "'s Avonds",
+              "Om 12.00 uur",
+              "Vóór 7.30 uur 's ochtends"
+            ],
+            "answer": 3,
+            "explanation": "'Vóór 7.30 uur aan de straat.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-brieven-q-005-4",
+            "type": "mc",
+            "tags": [
+              "lezen:brief"
+            ],
+            "prompt": "Wat moet u doen om grofvuil te laten ophalen?",
+            "options": [
+              "Een afspraak maken",
+              "Het buiten zetten op woensdag",
+              "Betalen bij het loket",
+              "Het naar de bibliotheek brengen"
+            ],
+            "answer": 0,
+            "explanation": "'Maak daarvoor een afspraak via de website of bel de gemeente.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op dagen en tijden.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

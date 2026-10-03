@@ -1,0 +1,649 @@
+{
+  "id": "knm-staat",
+  "moduleId": "knm",
+  "title": "Staatsinrichting en rechtsstaat",
+  "goal": "Je weet hoe Nederland wordt bestuurd en welke rechten en regels er zijn.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "knm:staat"
+  ],
+  "vocabRefs": [
+    "basis-vocab-overheid-politiek-001",
+    "basis-vocab-overheid-politiek-002",
+    "basis-vocab-overheid-politiek-003",
+    "basis-vocab-overheid-politiek-004",
+    "basis-vocab-overheid-politiek-005",
+    "basis-vocab-overheid-politiek-006",
+    "basis-vocab-overheid-politiek-007",
+    "basis-vocab-overheid-politiek-008",
+    "basis-vocab-overheid-politiek-009",
+    "basis-vocab-overheid-politiek-010",
+    "basis-vocab-overheid-politiek-011",
+    "basis-vocab-overheid-politiek-012",
+    "basis-vocab-overheid-politiek-013",
+    "basis-vocab-overheid-politiek-014",
+    "basis-vocab-overheid-politiek-015",
+    "basis-vocab-overheid-politiek-016",
+    "basis-vocab-overheid-politiek-017",
+    "basis-vocab-overheid-politiek-018",
+    "basis-vocab-overheid-politiek-019",
+    "basis-vocab-overheid-politiek-020",
+    "basis-vocab-overheid-politiek-021",
+    "basis-vocab-overheid-politiek-022",
+    "basis-vocab-overheid-politiek-023",
+    "basis-vocab-overheid-politiek-024",
+    "basis-vocab-overheid-politiek-025"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "knm-staat-l-01",
+      "title": "Koning, regering en parlement",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Nederland is een **constitutionele monarchie** en een **parlementaire democratie**. De **koning** heeft **geen politieke macht**. **Koning Willem-Alexander** is koning sinds **2013**; **Máxima** is koningin.\n\nOp **Prinsjesdag** (derde dinsdag van september) leest de koning de **troonrede**: de plannen van de regering."
+        },
+        {
+          "kind": "text",
+          "md": "De **regering** = koning + ministers. De **minister-president** leidt het **kabinet**. Een **coalitie** bestaat uit meerdere partijen samen.\n\nHet parlement (**Staten-Generaal**) heeft twee delen: de **Tweede Kamer** (150 leden, direct gekozen, elke 4 jaar) en de **Eerste Kamer** (75 leden)."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-overheid-politiek-009",
+            "basis-vocab-overheid-politiek-002",
+            "basis-vocab-overheid-politiek-003",
+            "basis-vocab-overheid-politiek-004",
+            "basis-vocab-overheid-politiek-005",
+            "basis-vocab-overheid-politiek-020"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-001",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "De koning heeft geen politieke macht.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke macht heeft de koning in de politiek?",
+        "options": [
+          "Geen politieke macht",
+          "Hij maakt alle wetten.",
+          "Hij kiest de ministers alleen.",
+          "Hij is de rechter."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-002",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Koning Willem-Alexander regeert sinds 2013.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoe heet de koning van Nederland (sinds 2013)?",
+        "options": [
+          "Willem van Oranje",
+          "Willem-Alexander",
+          "Beatrix",
+          "Juliana"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-003",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Op Prinsjesdag leest de koning de troonrede.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wanneer is Prinsjesdag?",
+        "options": [
+          "Op 27 april",
+          "Op 5 december",
+          "De derde dinsdag van september",
+          "Op 1 mei"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-004",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "De troonrede wordt uitgesproken op Prinsjesdag.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is de troonrede?",
+        "options": [
+          "Een verkiezing",
+          "Een wet over huur",
+          "Een herdenking",
+          "De plannen van de regering voor het komende jaar"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-005",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "De minister-president is de leider van het kabinet.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie leidt het kabinet?",
+        "options": [
+          "De minister-president",
+          "De koning",
+          "De burgemeester",
+          "De rechter"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-006",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "De Tweede Kamer heeft 150 leden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoeveel leden heeft de Tweede Kamer?",
+        "options": [
+          "75",
+          "150",
+          "100",
+          "200"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-007",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Een coalitie bestaat uit partijen die samenwerken.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is een coalitie?",
+        "options": [
+          "Een groep rechters",
+          "Een gemeenteraad",
+          "Meerdere partijen die samen de regering vormen",
+          "Een soort verkiezing"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-008",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Eerste Kamer: 75 leden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welk deel van het parlement heeft 75 leden?",
+        "options": [
+          "De Tweede Kamer",
+          "De gemeenteraad",
+          "Het kabinet",
+          "De Eerste Kamer"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-staat-l-02",
+      "title": "Verkiezingen en bestuur",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Vanaf **18 jaar** mag je stemmen. Je stemt voor de **Tweede Kamer** (alleen Nederlanders), **Provinciale Staten**, **gemeenteraad**, **waterschap** en **Europees Parlement**. Bij de gemeenteraad mogen ook **EU-burgers** en andere niet-Nederlanders stemmen na **5 jaar** legaal verblijf. **Stemmen is geheim en niet verplicht.**\n\n**Gemeente:** gemeenteraad (gekozen), **burgemeester** (benoemd), **wethouders** (college van B en W).\n\n**Provincie:** Provinciale Staten, Gedeputeerde Staten, **commissaris van de Koning**."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-overheid-politiek-017",
+            "basis-vocab-overheid-politiek-018",
+            "basis-vocab-overheid-politiek-021",
+            "basis-vocab-overheid-politiek-022",
+            "basis-vocab-overheid-politiek-023",
+            "basis-vocab-overheid-politiek-024"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-009",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Je mag stemmen vanaf 18 jaar.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Vanaf welke leeftijd mag je stemmen?",
+        "options": [
+          "18 jaar",
+          "16 jaar",
+          "21 jaar",
+          "25 jaar"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-010",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Stemmen is niet verplicht.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Is stemmen in Nederland verplicht?",
+        "options": [
+          "Ja, altijd.",
+          "Nee, het is niet verplicht.",
+          "Ja, voor Nederlanders boven 50.",
+          "Ja, bij de gemeente."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-011",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Stemmen is geheim.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Weet iemand wie jij hebt gekozen?",
+        "options": [
+          "Ja, je baas.",
+          "Ja, de buren.",
+          "Nee, stemmen is geheim.",
+          "Ja, de politie."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-012",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "De gemeenteraad wordt gekozen; de burgemeester wordt benoemd.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie wordt gekozen door de inwoners van de gemeente?",
+        "options": [
+          "De burgemeester",
+          "De koning",
+          "De rechter",
+          "De gemeenteraad"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-013",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Niet-Nederlanders mogen na 5 jaar stemmen voor de gemeenteraad.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Mehmet woont al 6 jaar legaal in Nederland maar is geen Nederlander. Voor welke verkiezing mag hij stemmen?",
+        "options": [
+          "Voor de gemeenteraad",
+          "Voor de Tweede Kamer",
+          "Voor de koning",
+          "Voor de rechter"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-014",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Een provincie heeft Provinciale Staten.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke instantie bestuurt een provincie?",
+        "options": [
+          "De Tweede Kamer",
+          "Provinciale Staten (met Gedeputeerde Staten)",
+          "Het UWV",
+          "De gemeenteraad"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-015",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "De burgemeester wordt benoemd.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie is de leider van de gemeente en wordt benoemd?",
+        "options": [
+          "De wethouder",
+          "De minister",
+          "De burgemeester",
+          "De rechter"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-016",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Je stemt ook voor het waterschap.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Voor welke organisatie stem je ook, die zorgt voor dijken en water?",
+        "options": [
+          "De NAVO",
+          "De IND",
+          "DUO",
+          "Het waterschap"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-staat-l-03",
+      "title": "Rechtsstaat en grondrechten",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "De **Grondwet** is de belangrijkste wet. In **artikel 1** staat: iedereen is **gelijk** en **discriminatie is verboden**.\n\n**Scheiding der machten (trias politica):** **wetgevende macht** (regering en parlement), **uitvoerende macht** (de regering) en **rechterlijke macht** (rechters, onafhankelijk).\n\n**Rechtsstaat:** iedereen moet zich aan de wet houden, ook de overheid. Je bent **onschuldig tot het tegendeel bewezen is** en je hebt **recht op een advocaat**."
+        },
+        {
+          "kind": "text",
+          "md": "**Grondrechten:** vrijheid van meningsuiting, godsdienst, onderwijs en vereniging; **recht op privacy**; **kiesrecht**.\n\n**Kinderen slaan** en **huiselijk geweld** zijn verboden. Hulp: **Veilig Thuis**.\n\n**Naturalisatie:** Nederlander worden. Je moet ingeburgerd zijn. Je vraagt het aan via de gemeente; de **IND** beslist."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-overheid-politiek-012",
+            "basis-vocab-overheid-politiek-014",
+            "basis-vocab-overheid-politiek-016",
+            "basis-vocab-overheid-politiek-028",
+            "basis-vocab-overheid-politiek-029",
+            "basis-vocab-overheid-politiek-030"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-017",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Artikel 1 gaat over gelijke behandeling.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat staat in artikel 1 van de Grondwet?",
+        "options": [
+          "Iedereen is gelijk en discriminatie is verboden.",
+          "Je moet stemmen.",
+          "De koning beslist.",
+          "Iedereen moet werken."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-018",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "De rechterlijke macht is onafhankelijk.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie spreekt recht en is onafhankelijk?",
+        "options": [
+          "De minister",
+          "De rechter",
+          "De burgemeester",
+          "De koning"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-019",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Je bent onschuldig tot een rechter het tegendeel bewijst.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat betekent \"onschuldig tot het tegendeel bewezen is\"?",
+        "options": [
+          "Je bent altijd schuldig.",
+          "De politie beslist alles.",
+          "Je bent niet schuldig als niemand bewijst dat je het gedaan hebt.",
+          "Je moet bewijzen dat je onschuldig bent."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-020",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Je hebt recht op een advocaat.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Een man wordt verdacht van diefstal. Waarop heeft hij recht?",
+        "options": [
+          "Een nieuwe baan",
+          "Een uitkering",
+          "Een paspoort",
+          "Een advocaat"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-021",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Veilig Thuis helpt bij huiselijk geweld.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Priya wordt geslagen door haar partner. Waar kan ze hulp vragen?",
+        "options": [
+          "Bij Veilig Thuis",
+          "Bij de KVK",
+          "Bij DUO",
+          "Bij de bibliotheek"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-022",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Kinderen slaan mag niet.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Mag je je kind slaan als het stout is?",
+        "options": [
+          "Ja, dat is opvoeden.",
+          "Nee, kinderen slaan is verboden.",
+          "Ja, thuis wel.",
+          "Ja, als de buurman het goedvindt."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-023",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Regering en parlement samen maken de wetten.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is de wetgevende macht?",
+        "options": [
+          "De rechters",
+          "De politie",
+          "Regering en parlement maken de wetten.",
+          "De koning alleen"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-024",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Naturalisatie = Nederlander worden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Ahmed wil Nederlander worden. Wat is de officiële naam hiervoor?",
+        "options": [
+          "Inburgering",
+          "Inschrijven",
+          "Aangifte",
+          "Naturalisatie"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-025",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "In een rechtsstaat geldt de wet voor iedereen, ook voor de overheid.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Mag een politicus de wet breken?",
+        "options": [
+          "Nee, ook de overheid moet zich aan de wet houden.",
+          "Ja, als hij minister is.",
+          "Ja, als hij burgemeester is.",
+          "Ja, als hij een goede reden heeft."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-026",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Grondrechten staan in de Grondwet.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is een grondrecht?",
+        "options": [
+          "Een boete",
+          "Een recht in de Grondwet, zoals vrijheid van meningsuiting",
+          "Een soort belasting",
+          "Een recept"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-027",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Je mag stemmen vanaf 18 jaar, maar je hoeft niet.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "In Nederland moet je stemmen als je 18 bent.",
+        "answer": false
+      }
+    }
+  ]
+}

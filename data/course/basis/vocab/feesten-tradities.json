@@ -1,0 +1,434 @@
+{
+  "theme": "feesten-tradities",
+  "title": "Feesten en tradities",
+  "entries": [
+    {
+      "id": "basis-vocab-feesten-tradities-001",
+      "nl": "Koningsdag",
+      "article": null,
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De verjaardag van de koning, op 27 april.",
+      "example": "Op Koningsdag is er vrijmarkt.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-002",
+      "nl": "de Dodenherdenking",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De herdenking van de doden op 4 mei om 20.00 uur.",
+      "example": "Op 4 mei is er twee minuten stilte.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-003",
+      "nl": "Bevrijdingsdag",
+      "article": null,
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De dag op 5 mei waarop Nederland bevrijd werd in 1945.",
+      "example": "Op Bevrijdingsdag zijn er festivals.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-004",
+      "nl": "Sinterklaas",
+      "article": null,
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Een feest op 5 december met cadeautjes.",
+      "example": "Op 5 december vieren wij Sinterklaas.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-005",
+      "nl": "Kerstmis",
+      "article": null,
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Een feest op 25 en 26 december.",
+      "example": "Met Kerstmis eet de familie samen.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-006",
+      "nl": "Oud en Nieuw",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "De laatste avond van het jaar.",
+      "example": "Met Oud en Nieuw is er vuurwerk.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-007",
+      "nl": "Keti Koti",
+      "article": null,
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De herdenking van het einde van de slavernij op 1 juli.",
+      "example": "Op 1 juli is het Keti Koti.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-008",
+      "nl": "de herdenking",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de herdenkingen",
+      "definitionNl": "Je denkt samen aan mensen of een gebeurtenis uit het verleden.",
+      "example": "De herdenking begint om acht uur.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-009",
+      "nl": "de verjaardag",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de verjaardagen",
+      "definitionNl": "De dag waarop je geboren bent, elk jaar.",
+      "example": "Morgen is mijn verjaardag.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-010",
+      "nl": "feliciteren",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iemand blij maken met goed nieuws.",
+      "example": "Ik feliciteer mijn buurvrouw met haar baby.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-011",
+      "nl": "gefeliciteerd",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Wat je zegt tegen iemand die jarig is.",
+      "example": "Gefeliciteerd met je verjaardag!",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-012",
+      "nl": "de hand schudden",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Elkaars hand pakken om te begroeten.",
+      "example": "Bij kennismaken schud je de hand.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-013",
+      "nl": "de begroeting",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de begroetingen",
+      "definitionNl": "Hoe je hallo zegt.",
+      "example": "Een handdruk is een veelgebruikte begroeting.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-014",
+      "nl": "beleefd",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Netjes en met respect.",
+      "example": "Zij is altijd beleefd.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-015",
+      "nl": "direct",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Je zegt eerlijk wat je denkt.",
+      "example": "Nederlanders zijn vaak direct.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-016",
+      "nl": "de gewoonte",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de gewoonten",
+      "definitionNl": "Iets wat mensen vaak doen.",
+      "example": "Op tijd komen is een gewoonte.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-017",
+      "nl": "de traditie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de tradities",
+      "definitionNl": "Iets wat al lang gebeurt in een land of familie.",
+      "example": "Sinterklaas is een traditie.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-018",
+      "nl": "de feestdag",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de feestdagen",
+      "definitionNl": "Een speciale dag waarop je vaak vrij bent.",
+      "example": "Kerstmis is een feestdag.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-019",
+      "nl": "het vuurwerk",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Knallen en licht in de lucht.",
+      "example": "Met Oud en Nieuw is er veel vuurwerk.",
+      "tags": [
+        "thema:feesten-tradities"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-020",
+      "nl": "de cadeautjes",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Kleine geschenken.",
+      "example": "Op Sinterklaas krijgen kinderen cadeautjes.",
+      "tags": [
+        "thema:feesten-tradities"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-021",
+      "nl": "het geschenk",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de geschenken",
+      "definitionNl": "Iets dat je geeft.",
+      "example": "Zij kreeg een mooi geschenk.",
+      "tags": [
+        "thema:feesten-tradities"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-022",
+      "nl": "de gastheer",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de gastheren",
+      "definitionNl": "De man die gasten ontvangt.",
+      "example": "De gastheer schenkt koffie in.",
+      "tags": [
+        "thema:feesten-tradities"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-023",
+      "nl": "de gastvrouw",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de gastvrouwen",
+      "definitionNl": "De vrouw die gasten ontvangt.",
+      "example": "De gastvrouw zet de taart op tafel.",
+      "tags": [
+        "thema:feesten-tradities"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-024",
+      "nl": "het respect",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Je vindt iemand belangrijk en behandelt hem of haar netjes.",
+      "example": "Respect voor elkaar is belangrijk.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-025",
+      "nl": "de gelijkheid",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Iedereen is even veel waard.",
+      "example": "In Nederland geldt gelijkheid van man en vrouw.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-026",
+      "nl": "de buurt",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de buurten",
+      "definitionNl": "De huizen en mensen rondom jou.",
+      "example": "Wij kennen elkaar in de buurt.",
+      "tags": [
+        "thema:feesten-tradities"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-027",
+      "nl": "het geluid",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de geluiden",
+      "definitionNl": "Wat je hoort.",
+      "example": "Maak 's avonds niet te veel geluid.",
+      "tags": [
+        "thema:feesten-tradities"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-028",
+      "nl": "het afval scheiden",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Papier, glas en plastic apart weggooien.",
+      "example": "Wij scheiden ons afval.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-feesten-tradities-029",
+      "nl": "het zwerfafval",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Afval dat op straat ligt.",
+      "example": "Gooi geen zwerfafval op straat.",
+      "tags": [
+        "thema:feesten-tradities",
+        "knm:omgang"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}

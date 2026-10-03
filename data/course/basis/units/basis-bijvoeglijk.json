@@ -1,0 +1,386 @@
+{
+  "id": "basis-bijvoeglijk",
+  "moduleId": "basis",
+  "title": "Bijvoeglijk naamwoord en vergelijken",
+  "goal": "Je gebruikt de -e regel en vergelijkt met -er en -st.",
+  "estimatedMinutes": 15,
+  "tags": [
+    "basis:bijvoeglijk",
+    "grammar:adjectief"
+  ],
+  "vocabRefs": [
+    "basis-vocab-winkelen-geld-021",
+    "basis-vocab-winkelen-geld-020",
+    "basis-vocab-kleding-023",
+    "basis-vocab-kleding-024"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-bijvoeglijk-l-01",
+      "title": "De -e regel en vergelijken",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Het bijvoeglijk naamwoord krijgt **-e**, behalve bij **een + het-woord**.\n\n*de grote jas · een grote jas · het grote huis · **een groot huis** · grote huizen*"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Basis",
+            "Vergrotend",
+            "Overtreffend"
+          ],
+          "rows": [
+            [
+              "groot",
+              "groter",
+              "grootst"
+            ],
+            [
+              "goed",
+              "beter",
+              "best"
+            ],
+            [
+              "veel",
+              "meer",
+              "meest"
+            ],
+            [
+              "vaak",
+              "vaker",
+              "vaakst"
+            ],
+            [
+              "graag",
+              "liever",
+              "liefst"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-001",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Een + het-woord (huis): geen -e.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Ik zie een ___ huis. (groot)",
+        "options": [
+          [
+            "groot",
+            "grote"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-002",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "De + de-woord: -e.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Ik zie de ___ jas. (groot)",
+        "options": [
+          [
+            "grote",
+            "groot"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-003",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Het + het-woord: -e.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Het ___ huis is duur. (groot)",
+        "options": [
+          [
+            "grote",
+            "groot"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-004",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Een + de-woord (auto): -e.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Wij hebben een ___ auto. (nieuw)",
+        "options": [
+          [
+            "nieuwe",
+            "nieuw"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-005",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Meervoud: altijd -e.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Er zijn ___ huizen. (oud)",
+        "options": [
+          [
+            "oude",
+            "oud"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-006",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Een + de-woord: -e.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Het kind heeft een ___ jas. (warm)",
+        "options": [
+          [
+            "warme",
+            "warm"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-007",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Groot → groter.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Maak de vergrotende trap (groot).",
+        "text": "Mijn broer is ___ dan ik.",
+        "answers": [
+          [
+            "groter"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-008",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Goed → beter (onregelmatig).",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Maak de vergrotende trap (goed).",
+        "text": "Dit is ___ dan dat.",
+        "answers": [
+          [
+            "beter"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-009",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Vaak → vaker → vaakst.",
+        "difficulty": 2,
+        "type": "gap-fill",
+        "prompt": "Maak de overtreffende trap (vaak).",
+        "text": "Hij komt het ___ .",
+        "answers": [
+          [
+            "vaakst"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-010",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Goed → beter → best (+e).",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Dit is de goedste winkel.",
+          "Dit is de beste winkel.",
+          "Dit is de meest goede winkel.",
+          "Dit is de beter winkel."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-011",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Veel → meer → meest.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is de vergrotende trap van \"veel\"?",
+        "options": [
+          "veler",
+          "vele",
+          "meer",
+          "meest"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-012",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Graag → liever → liefst.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Wat is de vergrotende trap van \"graag\"?",
+        "options": [
+          "gragger",
+          "graagser",
+          "meer graag",
+          "liever"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-013",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Let op de onregelmatige vormen.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welke trap hoort erbij?",
+        "pairs": [
+          [
+            "groot",
+            "groter"
+          ],
+          [
+            "goed",
+            "beter"
+          ],
+          [
+            "veel",
+            "meer"
+          ],
+          [
+            "graag",
+            "liever"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-014",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Probleem is een het-woord. Bij een + het-woord geen -e.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Dat is een grote probleem.",
+          "Dat is een groot probleem.",
+          "Dat is een groten probleem.",
+          "Dat is groote probleem."
+        ],
+        "answer": 1
+      }
+    }
+  ]
+}

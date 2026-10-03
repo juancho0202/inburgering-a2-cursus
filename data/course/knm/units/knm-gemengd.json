@@ -1,0 +1,494 @@
+{
+  "id": "knm-gemengd",
+  "moduleId": "knm",
+  "title": "Gemengd",
+  "goal": "Je oefent KNM-vragen van alle thema's door elkaar, zonder te weten welk thema het is.",
+  "estimatedMinutes": 30,
+  "tags": [
+    "knm:gemengd"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-001",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Ziekmelden: meteen je werkgever bellen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Mehmet is ziek en kan vandaag niet naar zijn werk. Wat doet hij?",
+        "options": [
+          "Hij belt zijn werkgever.",
+          "Hij gaat naar het UWV.",
+          "Hij belt de politie.",
+          "Hij wacht tot morgen."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-002",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Binnen 5 dagen doorgeven aan de gemeente.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Fatima wil haar adres wijzigen na een verhuizing. Hoeveel dagen heeft ze om dit door te geven aan de gemeente?",
+        "options": [
+          "30 dagen",
+          "5 dagen",
+          "1 jaar",
+          "Er is geen termijn"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-003",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Op 4 mei is de Dodenherdenking met twee minuten stilte.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat zegt een Nederlander op 4 mei om 20.00 uur?",
+        "options": [
+          "Gefeliciteerd!",
+          "Veel plezier!",
+          "Niets: er zijn twee minuten stilte.",
+          "Goed nieuwjaar!"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-004",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "112 is voor noodgevallen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wanneer bel je 112?",
+        "options": [
+          "Bij elk probleem",
+          "Als je een afspraak wilt maken",
+          "Als je fiets kapot is",
+          "Bij spoed of gevaar"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-005",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Nederland heeft 12 provincies.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoeveel provincies heeft Nederland?",
+        "options": [
+          "12",
+          "8",
+          "10",
+          "15"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-006",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Paspoort en ID-kaart: gemeente.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waar vraag je een paspoort aan?",
+        "options": [
+          "Bij de IND",
+          "Bij de gemeente",
+          "Bij de politie",
+          "Bij de SVB"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-007",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "De minister-president leidt het kabinet.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie leidt de regering?",
+        "options": [
+          "De koning",
+          "De burgemeester",
+          "De minister-president",
+          "De rechter"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-008",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "De leerplicht begint op 5 jaar.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Vanaf welke leeftijd is een kind leerplichtig?",
+        "options": [
+          "2 jaar",
+          "4 jaar",
+          "7 jaar",
+          "5 jaar"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-009",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "De zorgtoeslag helpt bij de kosten van de zorgverzekering.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Ahmed krijgt een brief van de Belastingdienst over de zorgtoeslag. Waar gaat het over?",
+        "options": [
+          "Geld voor zijn zorgverzekering",
+          "Een nieuw paspoort",
+          "Een uitkering voor werklozen",
+          "Het schooladvies"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-010",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Tijdelijk = met een einddatum.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Priya heeft een tijdelijk contract. Wat betekent dat?",
+        "options": [
+          "Het contract is voor altijd.",
+          "Het contract stopt na een bepaalde tijd.",
+          "Ze werkt zonder loon.",
+          "Ze mag niet ziek zijn."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-011",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Waterschappen zorgen voor water en dijken.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie zorgt voor de dijken en het water in een regio?",
+        "options": [
+          "De gemeenteraad",
+          "De Eerste Kamer",
+          "Het waterschap",
+          "DUO"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-012",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Grofvuil = grote spullen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "De gemeente zegt: \"Zet je grofvuil buiten op de afgesproken dag.\" Wat is grofvuil?",
+        "options": [
+          "Groente- en fruitafval",
+          "Glas",
+          "Kleine plastic flesjes",
+          "Grote spullen zoals een oude kast"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-013",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Sinterklaas wordt op 5 december gevierd.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welk feest is op 5 december?",
+        "options": [
+          "Sinterklaas",
+          "Koningsdag",
+          "Keti Koti",
+          "Bevrijdingsdag"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-014",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Koning Willem-Alexander sinds 2013.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie is de koning van Nederland?",
+        "options": [
+          "Willem van Oranje",
+          "Willem-Alexander",
+          "Beatrix",
+          "Juliana"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-015",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "De huisarts verwijst door.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Sanne heeft last van haar rug en wil naar een specialist. Wat heeft ze nodig?",
+        "options": [
+          "Een recept van de apotheek",
+          "Een brief van de gemeente",
+          "Een verwijzing van haar huisarts",
+          "Een uitnodiging van de GGD"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-016",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Leerplicht van 5 tot 16, kwalificatieplicht tot 18.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Mehmets dochter is 14 en wil niet meer naar school. Mag dat?",
+        "options": [
+          "Ja, na 12 jaar mag het.",
+          "Ja, als ze werk heeft.",
+          "Ja, als haar vader het zegt.",
+          "Nee, ze is leerplichtig."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-017",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "WW na ontslag: UWV.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waar vraag je een WW-uitkering aan?",
+        "options": [
+          "Bij het UWV",
+          "Bij de SVB",
+          "Bij DUO",
+          "Bij de gemeente"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-018",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Bevrijding op 5 mei 1945.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat gebeurde er in 1945?",
+        "options": [
+          "De euro kwam.",
+          "Nederland werd bevrijd.",
+          "De Deltawerken werden gebouwd.",
+          "Suriname werd onafhankelijk."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-019",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Artikel 1: iedereen is gelijk.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Iemand wordt gediscrimineerd omdat hij een ander geloof heeft. Wat zegt de Grondwet?",
+        "options": [
+          "Dat mag als de baas het wil.",
+          "Dat mag op werk.",
+          "Discriminatie is verboden.",
+          "Dat mag in een kleine winkel."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-020",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Grote reparaties: de verhuurder.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie repareert een lekkend dak in een huurhuis?",
+        "options": [
+          "De huurder",
+          "De buren",
+          "De gemeente",
+          "De verhuurder"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-021",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Te laat? Even laten weten.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat doe je als je te laat komt voor een afspraak?",
+        "options": [
+          "Je belt of stuurt een bericht.",
+          "Je zegt niets.",
+          "Je komt niet meer.",
+          "Je komt de volgende dag."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-022",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Kinderbijslag en AOW: SVB.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Bij welke instantie ga je voor kinderbijslag?",
+        "options": [
+          "Het UWV",
+          "De SVB",
+          "De KVK",
+          "De IND"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-023",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Een vakbond helpt werknemers.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat doet een vakbond?",
+        "options": [
+          "Belasting innen",
+          "Banen uitdelen",
+          "Opkomen voor werknemers",
+          "Uitkeringen betalen"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gemengd-q-024",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Alleen met toestemming van de school.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Mag een kind van 10 vrij nemen om op vakantie te gaan buiten de schoolvakantie?",
+        "options": [
+          "Ja, altijd",
+          "Nee, nooit",
+          "Ja, als de ouders het willen",
+          "Alleen met toestemming van de school"
+        ],
+        "answer": 3
+      }
+    }
+  ]
+}

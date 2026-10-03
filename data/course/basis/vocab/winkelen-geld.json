@@ -1,0 +1,468 @@
+{
+  "theme": "winkelen-geld",
+  "title": "Winkelen en geld",
+  "entries": [
+    {
+      "id": "basis-vocab-winkelen-geld-001",
+      "nl": "kosten",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Je moet er geld voor betalen.",
+      "example": "Hoeveel kost deze jas?",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-002",
+      "nl": "de korting",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de kortingen",
+      "definitionNl": "Je betaalt minder dan de normale prijs.",
+      "example": "Deze week is er tien procent korting.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-003",
+      "nl": "de bon",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de bonnen",
+      "definitionNl": "Een papier dat bewijst dat je iets hebt gekocht.",
+      "example": "Bewaar de bon als je wilt ruilen.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-004",
+      "nl": "ruilen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Je geeft iets terug en krijgt iets anders.",
+      "example": "Ik wil deze broek ruilen voor een andere maat.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-005",
+      "nl": "het geld terug",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Je krijgt je betaalde bedrag terug.",
+      "example": "Ik krijg mijn geld terug van de winkel.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-006",
+      "nl": "de bestelling",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de bestellingen",
+      "definitionNl": "Iets dat je hebt gekocht en dat nog moet komen.",
+      "example": "Mijn bestelling komt morgen.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-007",
+      "nl": "bestellen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Vragen om iets te laten komen of te brengen.",
+      "example": "Ik bestel boeken via internet.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-008",
+      "nl": "betalen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Geld geven voor iets.",
+      "example": "Kunt u met de pin betalen?",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-009",
+      "nl": "de doos",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de dozen",
+      "definitionNl": "Een vierkante verpakking van karton.",
+      "example": "De spullen zitten in een grote doos.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-010",
+      "nl": "het blikje",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de blikjes",
+      "definitionNl": "Een klein metalen pakje met eten of drinken.",
+      "example": "Hij drinkt een blikje cola.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-011",
+      "nl": "kwijt zijn",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Je kunt iets niet meer vinden.",
+      "example": "Ik ben mijn portemonnee kwijt.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-012",
+      "nl": "de klant",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de klanten",
+      "definitionNl": "Iemand die iets koopt in een winkel.",
+      "example": "De klant wacht bij de kassa.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-013",
+      "nl": "de winkel",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de winkels",
+      "definitionNl": "Daar koop je spullen.",
+      "example": "De winkel is om zes uur dicht.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-014",
+      "nl": "de supermarkt",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de supermarkten",
+      "definitionNl": "Een grote winkel voor eten en drinken.",
+      "example": "Ik doe boodschappen in de supermarkt.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-015",
+      "nl": "de markt",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de markten",
+      "definitionNl": "Buiten kopen mensen groente, fruit en kleren.",
+      "example": "Op zaterdag is er markt in het centrum.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-016",
+      "nl": "de kassa",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de kassa's",
+      "definitionNl": "Daar betaal je in de winkel.",
+      "example": "Bij de kassa staat een rij.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-017",
+      "nl": "de pinpas",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de pinpassen",
+      "definitionNl": "Een pas waarmee je betaalt.",
+      "example": "Ik betaal met mijn pinpas.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-018",
+      "nl": "contant",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Met echt geld, niet met een pas.",
+      "example": "Mag ik contant betalen?",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-019",
+      "nl": "de prijs",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de prijzen",
+      "definitionNl": "Het bedrag dat iets kost.",
+      "example": "Wat is de prijs van deze tas?",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-020",
+      "nl": "duur",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Het kost veel geld.",
+      "example": "Deze telefoon is te duur.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-021",
+      "nl": "goedkoop",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Het kost weinig geld.",
+      "example": "Deze winkel is goedkoop.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-022",
+      "nl": "de aanbieding",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de aanbiedingen",
+      "definitionNl": "Iets is tijdelijk goedkoper.",
+      "example": "Appels zijn deze week in de aanbieding.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-023",
+      "nl": "de boodschappen",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Eten en andere spullen uit de winkel.",
+      "example": "Ik doe boodschappen voor het weekend.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-024",
+      "nl": "de garantie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de garanties",
+      "definitionNl": "De winkel repareert iets gratis als het kapot gaat.",
+      "example": "De wasmachine heeft twee jaar garantie.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-025",
+      "nl": "de rekening",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de rekeningen",
+      "definitionNl": "Een papier of bedrag dat je moet betalen.",
+      "example": "Ik betaal de rekening van het internet.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-026",
+      "nl": "de bankrekening",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de bankrekeningen",
+      "definitionNl": "Je geld staat op deze rekening bij de bank.",
+      "example": "Mijn salaris komt op mijn bankrekening.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-027",
+      "nl": "sparen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Geld bewaren voor later.",
+      "example": "Ik spaar voor een nieuwe fiets.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-028",
+      "nl": "lenen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Je krijgt geld of iets van iemand en geeft het terug.",
+      "example": "Ik heb geld geleend van de bank.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-029",
+      "nl": "de schuld",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de schulden",
+      "definitionNl": "Geld dat je nog moet betalen.",
+      "example": "Zij heeft schulden bij de bank.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-030",
+      "nl": "het bedrag",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de bedragen",
+      "definitionNl": "Hoeveel geld het is.",
+      "example": "Het bedrag staat op de factuur.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-031",
+      "nl": "de factuur",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de facturen",
+      "definitionNl": "Een rekening van een bedrijf.",
+      "example": "De factuur moet binnen veertien dagen betaald zijn.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-032",
+      "nl": "het kleingeld",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Munten.",
+      "example": "Heb je kleingeld voor de winkelwagen?",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-winkelen-geld-033",
+      "nl": "terugbrengen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets weer naar de winkel brengen.",
+      "example": "Ik breng de kapotte schoenen terug.",
+      "tags": [
+        "thema:winkelen-geld"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}

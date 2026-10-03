@@ -11,10 +11,10 @@
       "definitionNl": "Zestig minuten.",
       "example": "Ik werk acht uur per dag.",
       "tags": [
-        "basis:tijd"
+        "thema:tijd"
       ],
       "level": "A2",
-      "source": "samenvatting"
+      "source": "course"
     },
     {
       "id": "basis-vocab-tijd-002",
@@ -25,6 +25,7 @@
       "definitionNl": "Een tijd en plek die je met iemand kiest.",
       "example": "Ik heb morgen een afspraak met de dokter.",
       "tags": [
+        "thema:tijd",
         "basis:tijd"
       ],
       "level": "A2",
@@ -39,6 +40,7 @@
       "definitionNl": "Een lijst met tijden en dagen.",
       "example": "Op het rooster staat mijn werktijd.",
       "tags": [
+        "thema:tijd",
         "basis:tijd",
         "lezen"
       ],
@@ -54,7 +56,415 @@
       "definitionNl": "Op deze dag.",
       "example": "Vandaag is het maandag.",
       "tags": [
+        "thema:tijd",
         "basis:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-005",
+      "nl": "de minuut",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de minuten",
+      "definitionNl": "Zestig seconden.",
+      "example": "De trein komt over vijf minuten.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-006",
+      "nl": "de seconde",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de seconden",
+      "definitionNl": "Een heel korte tijd.",
+      "example": "Wacht even een seconde.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-007",
+      "nl": "kwart over",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Vijftien minuten na het hele uur.",
+      "example": "Het is kwart over tien.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-008",
+      "nl": "kwart voor",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Vijftien minuten voor het hele uur.",
+      "example": "De les begint om kwart voor twee.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-009",
+      "nl": "half",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Dertig minuten voor het volgende uur.",
+      "example": "Half elf is 10.30 uur.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-010",
+      "nl": "'s ochtends",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "In de ochtend, tussen 6 en 12 uur.",
+      "example": "Ik sta 's ochtends om zeven uur op.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-011",
+      "nl": "'s middags",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Tussen 12 en 18 uur.",
+      "example": "'s Middags eet ik een broodje.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-012",
+      "nl": "'s avonds",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Tussen 18 en 24 uur.",
+      "example": "'s Avonds kijk ik tv.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-013",
+      "nl": "'s nachts",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Tussen 0 en 6 uur.",
+      "example": "'s Nachts slaap ik.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-014",
+      "nl": "gisteren",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "De dag voor vandaag.",
+      "example": "Gisteren was ik ziek.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-015",
+      "nl": "morgen",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "De dag na vandaag.",
+      "example": "Morgen heb ik vrij.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-016",
+      "nl": "overmorgen",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Over twee dagen.",
+      "example": "Overmorgen komt mijn zus.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-017",
+      "nl": "volgende week",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "De week na deze week.",
+      "example": "Volgende week verhuizen wij.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-018",
+      "nl": "vorige week",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "De week voor deze week.",
+      "example": "Vorige week was het koud.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-019",
+      "nl": "binnenkort",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Over korte tijd.",
+      "example": "Wij gaan binnenkort verhuizen.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-tijd-020",
+      "nl": "tot einde volgende maand",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Tot de laatste dag van de maand na deze.",
+      "example": "De korting geldt tot einde volgende maand.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-tijd-021",
+      "nl": "vaker",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Meer keren.",
+      "example": "Ik wil vaker sporten.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-tijd-022",
+      "nl": "altijd",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Elke keer.",
+      "example": "Zij komt altijd op tijd.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-023",
+      "nl": "nooit",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Geen enkele keer.",
+      "example": "Hij komt nooit te laat.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-024",
+      "nl": "meestal",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Bijna altijd.",
+      "example": "Meestal eten wij om zes uur.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-025",
+      "nl": "soms",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Een paar keer.",
+      "example": "Soms ga ik op zaterdag naar de markt.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-026",
+      "nl": "de week",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de weken",
+      "definitionNl": "Zeven dagen.",
+      "example": "Ik werk vier dagen per week.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-027",
+      "nl": "de maand",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de maanden",
+      "definitionNl": "Ongeveer vier weken.",
+      "example": "Januari is de eerste maand.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-028",
+      "nl": "het jaar",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de jaren",
+      "definitionNl": "Twaalf maanden.",
+      "example": "Ik woon een jaar in Nederland.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-029",
+      "nl": "de datum",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de data",
+      "definitionNl": "De dag, maand en het jaar.",
+      "example": "Wat is de datum vandaag?",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-030",
+      "nl": "de agenda",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de agenda's",
+      "definitionNl": "Een boekje of programma met je afspraken.",
+      "example": "Ik schrijf het in mijn agenda.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-031",
+      "nl": "op tijd",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Niet te laat.",
+      "example": "Kom a.u.b. op tijd.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-032",
+      "nl": "te laat",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Later dan afgesproken.",
+      "example": "De trein is te laat.",
+      "tags": [
+        "thema:tijd"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-tijd-033",
+      "nl": "uiterlijk",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Niet later dan.",
+      "example": "Lever het formulier uiterlijk vrijdag in.",
+      "tags": [
+        "thema:tijd",
+        "lezen"
       ],
       "level": "A2",
       "source": "course"

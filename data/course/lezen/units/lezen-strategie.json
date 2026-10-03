@@ -2,18 +2,27 @@
   "id": "lezen-strategie",
   "moduleId": "lezen",
   "title": "Zo lees je slim",
-  "goal": "Je weet hoe je snel de juiste informatie in een tekst vindt.",
-  "estimatedMinutes": 15,
-  "tags": ["lezen:strategie"],
+  "goal": "Je leest slimmer: eerst de vraag, dan zoeken naar kernwoorden en signaalwoorden.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "lezen:strategie"
+  ],
   "vocabRefs": [],
   "passScore": 0.7,
   "steps": [
     {
       "type": "lesson",
       "id": "lezen-strategie-l-01",
-      "title": "Lees eerst de vraag",
+      "title": "Eerst de vraag",
       "blocks": [
-        { "kind": "text", "md": "Lees eerst de vraag. Zoek daarna kernwoorden in de tekst, zoals getallen, tijden en namen." }
+        {
+          "kind": "text",
+          "md": "Bij het examen Lezen krijg je korte teksten met meerkeuzevragen. Gebruik deze stappen:\n\n1. **Lees eerst de vraag.** Wat moet je weten?\n2. **Zoek kernwoorden** in de vraag (een tijd, een naam, een plaats, een bedrag).\n3. **Scan de tekst** naar die woorden. Je hoeft niet alles te lezen.\n4. **Let op signaalwoorden:** *maar, niet, geen, alleen, behalve, uiterlijk, vóór*.\n5. **Controleer.** Het antwoord staat vaak in **andere woorden** (synoniemen)."
+        },
+        {
+          "kind": "tip",
+          "md": "Een fout antwoord staat vaak ook in de tekst, maar bij een andere vraag. Controleer altijd of het antwoord echt bij **jouw vraag** past."
+        }
       ]
     },
     {
@@ -21,27 +30,575 @@
       "exercise": {
         "id": "lezen-strategie-q-001",
         "type": "reading",
-        "tags": ["lezen:strategie"],
-        "prompt": "Lees de mededeling en beantwoord de vraag.",
-        "explanation": "De tekst zegt duidelijk tot wanneer de zwembad open is.",
-        "difficulty": 1,
+        "tags": [
+          "lezen:strategie"
+        ],
+        "prompt": "Lees de vraag eerst. Lees dan de tekst.",
         "document": {
           "kind": "document",
-          "docType": "folder",
-          "title": "Zwembad De Golfslag",
-          "body": "Open van maandag tot en met zaterdag, van 09.00 tot 18.00 uur. Op zondag gesloten."
+          "docType": "bericht",
+          "title": "Bericht van de buurman",
+          "body": "Hoi Fatima,\n\nIk ben zaterdag niet thuis, maar zondag wel. Kun je mijn pakket aannemen? Het komt waarschijnlijk zaterdagochtend. Ik haal het zondag om 11.00 uur bij je op. Het pakket is niet zwaar en ongeveer zo groot als een schoenendoos. Alvast bedankt voor je hulp! Als er iets is, kun je me op zondagochtend gewoon bellen. Ik ben dan de hele ochtend thuis.\n\nGroeten,\nPieter"
         },
         "questions": [
           {
-            "id": "lezen-strategie-q-001-a",
+            "id": "lezen-strategie-q-001-1",
             "type": "mc",
-            "tags": ["lezen:strategie"],
-            "prompt": "Wanneer is het zwembad gesloten?",
-            "options": ["Op zondag", "Op maandag", "Op zaterdag", "Nooit"],
-            "answer": 0,
-            "explanation": "De tekst zegt: op zondag gesloten.",
+            "tags": [
+              "lezen:strategie"
+            ],
+            "prompt": "Wanneer haalt Pieter het pakket op?",
+            "options": [
+              "Zaterdag om 11.00 uur",
+              "Zondag om 11.00 uur",
+              "Zaterdagochtend",
+              "Zondag om 10.00 uur"
+            ],
+            "answer": 1,
+            "explanation": "Kernwoorden: wanneer, ophalen. In de tekst: 'Ik haal het zondag om 11.00 uur bij je op.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-strategie-q-001-2",
+            "type": "mc",
+            "tags": [
+              "lezen:strategie"
+            ],
+            "prompt": "Wat moet Fatima doen?",
+            "options": [
+              "Het pakket versturen",
+              "Naar Pieter bellen",
+              "Het pakket aannemen",
+              "Het pakket ophalen"
+            ],
+            "answer": 2,
+            "explanation": "Pieter vraagt: 'Kun je mijn pakket aannemen?'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-strategie-q-001-3",
+            "type": "mc",
+            "tags": [
+              "lezen:strategie"
+            ],
+            "prompt": "Wanneer is Pieter thuis?",
+            "options": [
+              "Op zaterdag",
+              "Op zaterdag en zondag",
+              "Nooit",
+              "Alleen op zondag"
+            ],
+            "answer": 3,
+            "explanation": "'Ik ben zaterdag niet thuis, maar zondag wel.' Maar = zondag is het goede antwoord.",
             "difficulty": 1
           }
+        ],
+        "explanation": "Lees eerst de vraag en zoek de kernwoorden.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-strategie-q-002",
+        "type": "reading",
+        "tags": [
+          "lezen:strategie"
+        ],
+        "prompt": "Let op signaalwoorden: niet, maar, alleen, behalve.",
+        "document": {
+          "kind": "document",
+          "docType": "folder",
+          "title": "Zwembad Aqua",
+          "body": "Opening: maandag tot en met vrijdag van 8.00 tot 20.00 uur.\nOp zaterdag is het zwembad open van 9.00 tot 17.00 uur.\nOp zondag is het zwembad **alleen** open voor zwemles.\n\nOp 1 januari en 25 december is het zwembad gesloten. Het zwembad heeft ook een restaurant. Dat is open tot een uur voor sluitingstijd.\nU kunt zonder afspraak zwemmen, behalve op zaterdag. Dan moet u van tevoren reserveren."
+        },
+        "questions": [
+          {
+            "id": "lezen-strategie-q-002-1",
+            "type": "mc",
+            "tags": [
+              "lezen:strategie"
+            ],
+            "prompt": "Wanneer kunt u gewoon zwemmen op zaterdag?",
+            "options": [
+              "Van 8.00 tot 20.00 uur",
+              "De hele dag",
+              "Van 9.00 tot 17.00 uur",
+              "Niet"
+            ],
+            "answer": 2,
+            "explanation": "Op zaterdag: 9.00 tot 17.00 uur.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-strategie-q-002-2",
+            "type": "mc",
+            "tags": [
+              "lezen:strategie"
+            ],
+            "prompt": "Wat kunt u op zondag doen?",
+            "options": [
+              "Gewoon zwemmen",
+              "Niets, het zwembad is dicht",
+              "Zonder afspraak komen",
+              "Alleen zwemles volgen"
+            ],
+            "answer": 3,
+            "explanation": "Alleen = er is maar één mogelijkheid: zwemles.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-strategie-q-002-3",
+            "type": "mc",
+            "tags": [
+              "lezen:strategie"
+            ],
+            "prompt": "Op welke dag moet u van tevoren reserveren?",
+            "options": [
+              "Op zaterdag",
+              "Op maandag",
+              "Op zondag",
+              "Op 25 december"
+            ],
+            "answer": 0,
+            "explanation": "'Zonder afspraak, behalve op zaterdag.' Dus op zaterdag moet u reserveren.",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Alleen en behalve geven belangrijke informatie.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-strategie-q-003",
+        "type": "reading",
+        "tags": [
+          "lezen:strategie"
+        ],
+        "prompt": "Let op uiterlijk en vóór.",
+        "document": {
+          "kind": "document",
+          "docType": "brief",
+          "title": "Brief van de gemeente",
+          "body": "Van: Gemeente Utrecht\nAan: Mevrouw A. Sharma\nDatum: 2 maart\n\nGeachte mevrouw Sharma,\n\nU heeft een aanvraag gedaan voor een parkeervergunning. Wij hebben nog een document nodig: een kopie van uw kentekenbewijs.\n\nStuur dit document uiterlijk 15 maart naar ons toe. Daarna kunnen wij uw aanvraag niet meer beoordelen. Heeft u vragen? Bel dan met het nummer 14 030 of kom langs bij het loket.\n\nMet vriendelijke groet,\nGemeente Utrecht"
+        },
+        "questions": [
+          {
+            "id": "lezen-strategie-q-003-1",
+            "type": "mc",
+            "tags": [
+              "lezen:strategie"
+            ],
+            "prompt": "Wat moet mevrouw Sharma doen?",
+            "options": [
+              "Een nieuwe aanvraag doen",
+              "Naar het loket komen",
+              "Geld betalen",
+              "Een kopie van haar kentekenbewijs opsturen"
+            ],
+            "answer": 3,
+            "explanation": "De gemeente heeft nog een kopie van het kentekenbewijs nodig.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-strategie-q-003-2",
+            "type": "mc",
+            "tags": [
+              "lezen:strategie"
+            ],
+            "prompt": "Wanneer moet zij dit doen?",
+            "options": [
+              "Op 15 maart of eerder",
+              "Na 15 maart",
+              "Op 2 maart",
+              "Alleen op 15 maart"
+            ],
+            "answer": 0,
+            "explanation": "Uiterlijk 15 maart = niet later dan 15 maart.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-strategie-q-003-3",
+            "type": "mc",
+            "tags": [
+              "lezen:strategie"
+            ],
+            "prompt": "Wat gebeurt er als zij te laat is?",
+            "options": [
+              "Zij krijgt een boete.",
+              "De gemeente kan haar aanvraag niet meer beoordelen.",
+              "Zij krijgt de vergunning automatisch.",
+              "Zij moet naar de rechter."
+            ],
+            "answer": 1,
+            "explanation": "'Daarna kunnen wij uw aanvraag niet meer beoordelen.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Uiterlijk betekent: niet later dan.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "lezen-strategie-l-02",
+      "title": "Andere woorden: synoniemen",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Het antwoord staat vaak in **andere woorden** dan in de vraag. Leer deze woordparen! Dan herken je het antwoord sneller."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-strategie-q-004",
+        "tags": [
+          "lezen:strategie"
+        ],
+        "explanation": "Leer deze woordparen. Je ziet ze vaak in teksten.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort bij de uitleg?",
+        "pairs": [
+          [
+            "aanvragen",
+            "vragen om"
+          ],
+          [
+            "uiterlijk",
+            "niet later dan"
+          ],
+          [
+            "kosteloos",
+            "gratis"
+          ],
+          [
+            "het legitimatiebewijs",
+            "paspoort of ID-kaart"
+          ],
+          [
+            "inleveren",
+            "afgeven"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-strategie-q-005",
+        "tags": [
+          "lezen:strategie"
+        ],
+        "explanation": "Leer deze woordparen. Je ziet ze vaak in teksten.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort bij de uitleg?",
+        "pairs": [
+          [
+            "reageren",
+            "antwoord geven"
+          ],
+          [
+            "beschikbaar",
+            "vrij of te gebruiken"
+          ],
+          [
+            "vervolgens",
+            "daarna"
+          ],
+          [
+            "verplicht",
+            "je moet het doen"
+          ],
+          [
+            "gesloten",
+            "dicht"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-strategie-q-006",
+        "tags": [
+          "lezen:strategie"
+        ],
+        "explanation": "Leer deze woordparen. Je ziet ze vaak in teksten.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort bij de uitleg?",
+        "pairs": [
+          [
+            "ontvangen",
+            "krijgen"
+          ],
+          [
+            "vergoeden",
+            "geld terugbetalen"
+          ],
+          [
+            "wijzigen",
+            "veranderen"
+          ],
+          [
+            "annuleren",
+            "afzeggen"
+          ],
+          [
+            "bevestigen",
+            "zeggen dat het klopt"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-strategie-q-007",
+        "tags": [
+          "lezen:strategie"
+        ],
+        "explanation": "Leer deze woordparen. Je ziet ze vaak in teksten.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort bij de uitleg?",
+        "pairs": [
+          [
+            "informeren",
+            "laten weten"
+          ],
+          [
+            "retour",
+            "terug"
+          ],
+          [
+            "verlengen",
+            "langer laten duren"
+          ],
+          [
+            "tijdelijk",
+            "voor korte tijd"
+          ],
+          [
+            "regelmatig",
+            "vaak"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-strategie-q-008",
+        "tags": [
+          "lezen:strategie"
+        ],
+        "explanation": "Leer deze woordparen. Je ziet ze vaak in teksten.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort bij de uitleg?",
+        "pairs": [
+          [
+            "bezorgen",
+            "naar huis brengen"
+          ],
+          [
+            "afhalen",
+            "zelf ophalen"
+          ],
+          [
+            "de storing",
+            "het werkt niet"
+          ],
+          [
+            "het onderhoud",
+            "repareren en schoonmaken"
+          ],
+          [
+            "dagelijks",
+            "elke dag"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-strategie-q-009",
+        "tags": [
+          "lezen:strategie"
+        ],
+        "explanation": "Leer deze woordparen. Je ziet ze vaak in teksten.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort bij de uitleg?",
+        "pairs": [
+          [
+            "wekelijks",
+            "elke week"
+          ],
+          [
+            "maandelijks",
+            "elke maand"
+          ],
+          [
+            "jaarlijks",
+            "elk jaar"
+          ],
+          [
+            "zich aanmelden",
+            "je naam opgeven"
+          ],
+          [
+            "deelnemen",
+            "meedoen"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-strategie-q-010",
+        "tags": [
+          "lezen:strategie"
+        ],
+        "explanation": "Leer deze woordparen. Je ziet ze vaak in teksten.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort bij de uitleg?",
+        "pairs": [
+          [
+            "de bijeenkomst",
+            "een vergadering of ontmoeting"
+          ],
+          [
+            "de medewerker",
+            "iemand die voor een bedrijf werkt"
+          ],
+          [
+            "de bewoner",
+            "iemand die in een huis woont"
+          ],
+          [
+            "de vacature",
+            "een baan die vrij is"
+          ],
+          [
+            "de sollicitatie",
+            "een brief om een baan te krijgen"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-strategie-q-011",
+        "tags": [
+          "lezen:strategie"
+        ],
+        "explanation": "Leer deze woordparen. Je ziet ze vaak in teksten.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort bij de uitleg?",
+        "pairs": [
+          [
+            "de kassabon",
+            "bewijs dat je betaald hebt"
+          ],
+          [
+            "de aanbieding",
+            "tijdelijk goedkoper"
+          ],
+          [
+            "de vertraging",
+            "later dan gepland"
+          ],
+          [
+            "het abonnement",
+            "een contract waarvoor je elke maand betaalt"
+          ],
+          [
+            "opzeggen",
+            "een contract stoppen"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-strategie-q-012",
+        "tags": [
+          "lezen:strategie"
+        ],
+        "explanation": "Leer deze woordparen. Je ziet ze vaak in teksten.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort bij de uitleg?",
+        "pairs": [
+          [
+            "de voorwaarde",
+            "iets wat je moet doen om iets te krijgen"
+          ],
+          [
+            "de handtekening",
+            "je naam geschreven door jezelf"
+          ],
+          [
+            "de bijlage",
+            "een bestand bij een e-mail"
+          ],
+          [
+            "de afspraak",
+            "een tijd en plek die je kiest"
+          ],
+          [
+            "de uitnodiging",
+            "een vraag om te komen"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-strategie-q-013",
+        "tags": [
+          "lezen:strategie"
+        ],
+        "explanation": "Leer deze woordparen. Je ziet ze vaak in teksten.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort bij de uitleg?",
+        "pairs": [
+          [
+            "meenemen",
+            "bij je hebben"
+          ],
+          [
+            "gelden",
+            "van toepassing zijn"
+          ],
+          [
+            "binnenkort",
+            "over korte tijd"
+          ],
+          [
+            "eerder",
+            "vroeger"
+          ],
+          [
+            "later",
+            "na dit moment"
+          ]
         ]
       }
     }

@@ -1,0 +1,292 @@
+{
+  "id": "lezen-formulieren",
+  "moduleId": "lezen",
+  "title": "Formulieren en folders",
+  "goal": "Je begrijpt formulieren en folders: wat moet je meenemen, wat moet je invullen en voor welke datum.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "lezen:formulier"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "lezen-formulieren-l-01",
+      "title": "Folders en formulieren",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In een folder staat vaak: **voor wie**, **wat het kost**, **wat je moet meenemen** en **tot wanneer**. Let op **voorwaarden** en **uitzonderingen**."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-formulieren-q-001",
+        "type": "reading",
+        "tags": [
+          "lezen:formulier"
+        ],
+        "prompt": "Lees de folder van de huisarts.",
+        "document": {
+          "kind": "document",
+          "docType": "folder",
+          "title": "Inschrijven bij de huisarts",
+          "body": "Wilt u zich inschrijven bij huisartsenpraktijk De Linde? Dat kan elke dag tussen 8.00 en 10.00 uur bij de balie of via de website.\n\nWat neemt u mee?\n- Uw legitimatiebewijs\n- Uw zorgverzekeringspas\n- Uw BSN\n\nHeeft u kinderen? Neem hun gegevens ook mee.\n\nU betaalt niets voor het inschrijven. De eerste afspraak maakt u na de inschrijving. Dat kan op werkdagen telefonisch tussen 8.00 en 10.00 uur."
+        },
+        "questions": [
+          {
+            "id": "lezen-formulieren-q-001-1",
+            "type": "mc",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "prompt": "Wanneer kunt u zich inschrijven?",
+            "options": [
+              "Alleen op maandag",
+              "Elke dag tussen 8.00 en 10.00 uur",
+              "Elke dag de hele dag",
+              "Alleen via de website"
+            ],
+            "answer": 1,
+            "explanation": "'Elke dag tussen 8.00 en 10.00 uur bij de balie of via de website.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-formulieren-q-001-2",
+            "type": "mc",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "prompt": "Wat moet u meenemen?",
+            "options": [
+              "Alleen uw paspoort",
+              "Geld",
+              "Uw legitimatiebewijs, zorgverzekeringspas en BSN",
+              "Een brief van uw baas"
+            ],
+            "answer": 2,
+            "explanation": "De lijst onder 'Wat neemt u mee?'.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-formulieren-q-001-3",
+            "type": "mc",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "prompt": "Wat kost het inschrijven?",
+            "options": [
+              "10 euro",
+              "25 euro",
+              "Een abonnement",
+              "Niets"
+            ],
+            "answer": 3,
+            "explanation": "'U betaalt niets voor het inschrijven.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-formulieren-q-001-4",
+            "type": "mc",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "prompt": "Wanneer maakt u de eerste afspraak?",
+            "options": [
+              "Na de inschrijving",
+              "Voor de inschrijving",
+              "Tijdens de inschrijving",
+              "Nooit"
+            ],
+            "answer": 0,
+            "explanation": "'De eerste afspraak maakt u na de inschrijving.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Lees voor wie, wat en wanneer.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-formulieren-q-002",
+        "type": "reading",
+        "tags": [
+          "lezen:formulier"
+        ],
+        "prompt": "Lees de aanvraag voor een bibliotheekpas.",
+        "document": {
+          "kind": "document",
+          "docType": "formulier",
+          "title": "Bibliotheekpas aanvragen",
+          "body": "Wilt u lid worden van de bibliotheek?\n\nVolwassenen betalen 40 euro per jaar. Kinderen tot 18 jaar zijn gratis lid. Heeft u een uitkering? Dan betaalt u minder, namelijk 20 euro. Neem dan uw bewijs van de gemeente mee.\n\nWat heeft u nodig?\n1. Een legitimatiebewijs\n2. Een bewijs van uw adres (bijvoorbeeld een brief van de gemeente)\n\nMet de pas leent u 10 boeken tegelijk, voor 3 weken. U kunt de periode één keer verlengen, tenzij een ander het boek ook wil lezen."
+        },
+        "questions": [
+          {
+            "id": "lezen-formulieren-q-002-1",
+            "type": "mc",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "prompt": "Wie is gratis lid?",
+            "options": [
+              "Alle volwassenen",
+              "Mensen met een uitkering",
+              "Kinderen tot 18 jaar",
+              "Studenten"
+            ],
+            "answer": 2,
+            "explanation": "'Kinderen tot 18 jaar zijn gratis lid.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-formulieren-q-002-2",
+            "type": "mc",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "prompt": "Hoeveel betaalt iemand met een uitkering?",
+            "options": [
+              "40 euro per jaar",
+              "Niets",
+              "10 euro per jaar",
+              "20 euro per jaar"
+            ],
+            "answer": 3,
+            "explanation": "'Heeft u een uitkering? Dan betaalt u minder, namelijk 20 euro.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-formulieren-q-002-3",
+            "type": "mc",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "prompt": "Hoeveel boeken mag u tegelijk lenen?",
+            "options": [
+              "10 boeken",
+              "3 boeken",
+              "20 boeken",
+              "1 boek"
+            ],
+            "answer": 0,
+            "explanation": "'Met de pas leent u 10 boeken tegelijk.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-formulieren-q-002-4",
+            "type": "mc",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "prompt": "Wanneer mag u een boek niet verlengen?",
+            "options": [
+              "Na twee weken",
+              "Als een ander het boek ook wil lezen",
+              "Als u een uitkering heeft",
+              "Nooit"
+            ],
+            "answer": 1,
+            "explanation": "'Tenzij een ander het boek ook wil lezen.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op bedragen en voorwaarden.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-formulieren-q-003",
+        "type": "reading",
+        "tags": [
+          "lezen:formulier"
+        ],
+        "prompt": "Lees de folder van de sportclub.",
+        "document": {
+          "kind": "document",
+          "docType": "folder",
+          "title": "Lid worden van VV De Eik",
+          "body": "Voetbalvereniging De Eik zoekt nieuwe leden!\n\nVoor wie? Kinderen vanaf 5 jaar en volwassenen.\nWanneer trainen we? Kinderen: woensdag 16.00 – 17.00 uur. Volwassenen: dinsdag en donderdag 19.30 – 21.00 uur.\nWat kost het? Kinderen: 150 euro per jaar. Volwassenen: 220 euro per jaar. U betaalt in twee delen.\n\nDoe eerst drie keer mee met een gratis proefles. Wilt u daarna lid worden? Vul dan het inschrijfformulier in en lever het in bij het clubhuis. Voetbalschoenen en een scheenbeschermer neemt u zelf mee."
+        },
+        "questions": [
+          {
+            "id": "lezen-formulieren-q-003-1",
+            "type": "mc",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "prompt": "Voor wie is de club?",
+            "options": [
+              "Alleen voor kinderen",
+              "Alleen voor mannen",
+              "Alleen voor volwassenen",
+              "Voor kinderen vanaf 5 jaar en volwassenen"
+            ],
+            "answer": 3,
+            "explanation": "'Kinderen vanaf 5 jaar en volwassenen.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-formulieren-q-003-2",
+            "type": "mc",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "prompt": "Wanneer trainen volwassenen?",
+            "options": [
+              "Op dinsdag en donderdag",
+              "Op woensdag",
+              "Op zaterdag",
+              "Elke dag"
+            ],
+            "answer": 0,
+            "explanation": "'Volwassenen: dinsdag en donderdag.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-formulieren-q-003-3",
+            "type": "mc",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "prompt": "Hoe kunt u eerst proberen?",
+            "options": [
+              "Met een korting",
+              "Met drie gratis proeflessen",
+              "Met een brief",
+              "Met een betaald abonnement"
+            ],
+            "answer": 1,
+            "explanation": "'Doe eerst drie keer mee met een gratis proefles.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-formulieren-q-003-4",
+            "type": "mc",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "prompt": "Wat moet u zelf meenemen?",
+            "options": [
+              "Een bal",
+              "Een shirt",
+              "Voetbalschoenen en een scheenbeschermer",
+              "Een handdoek"
+            ],
+            "answer": 2,
+            "explanation": "'Voetbalschoenen en een scheenbeschermer neemt u zelf mee.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Lees voor wie, wanneer en wat het kost.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

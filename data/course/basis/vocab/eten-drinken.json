@@ -1,0 +1,454 @@
+{
+  "theme": "eten-drinken",
+  "title": "Eten en drinken",
+  "entries": [
+    {
+      "id": "basis-vocab-eten-drinken-001",
+      "nl": "het brood",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de broden",
+      "definitionNl": "Een basisvoedsel van meel, vaak met beleg.",
+      "example": "Ik eet brood met kaas.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-002",
+      "nl": "de boterham",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de boterhammen",
+      "definitionNl": "Een snee brood met beleg.",
+      "example": "Ik neem twee boterhammen mee.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-003",
+      "nl": "de kaas",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Een gele of witte zuivel, vaak op brood.",
+      "example": "Nederlandse kaas is beroemd.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-004",
+      "nl": "de melk",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Een witte drank van koeien.",
+      "example": "Wil je melk in je koffie?",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-005",
+      "nl": "de koffie",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Een warme bruine drank.",
+      "example": "Ik drink elke ochtend koffie.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-006",
+      "nl": "de thee",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Een warme drank van bladeren.",
+      "example": "Wil je thee of koffie?",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-007",
+      "nl": "het water",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Een drank zonder kleur of smaak.",
+      "example": "Een glas water, alstublieft.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-008",
+      "nl": "het sap",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de sappen",
+      "definitionNl": "Een drank van fruit.",
+      "example": "Mijn kinderen drinken appelsap.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-009",
+      "nl": "de groente",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de groenten",
+      "definitionNl": "Planten die je eet, zoals wortel en sla.",
+      "example": "Ik eet elke dag groente.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-010",
+      "nl": "het fruit",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Zoete producten zoals appels en bananen.",
+      "example": "Fruit is gezond.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-011",
+      "nl": "de appel",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de appels",
+      "definitionNl": "Een rond fruit, groen of rood.",
+      "example": "Een appel per dag is gezond.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-012",
+      "nl": "de banaan",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de bananen",
+      "definitionNl": "Een gele, lange vrucht.",
+      "example": "De banaan is rijp.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-013",
+      "nl": "de aardappel",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de aardappels",
+      "definitionNl": "Een bruine knol die je kookt of bakt.",
+      "example": "Wij eten aardappels met groente.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-014",
+      "nl": "de rijst",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Kleine witte korrels die je kookt.",
+      "example": "Ik eet rijst met kip.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-015",
+      "nl": "het vlees",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Eten van dieren.",
+      "example": "Ik eet geen vlees.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-016",
+      "nl": "de kip",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de kippen",
+      "definitionNl": "Een vogel die wij eten.",
+      "example": "De kip is lekker.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-017",
+      "nl": "de vis",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de vissen",
+      "definitionNl": "Een dier uit het water dat je kunt eten.",
+      "example": "Op vrijdag eten wij vis.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-018",
+      "nl": "het ei",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de eieren",
+      "definitionNl": "Dit komt van een kip.",
+      "example": "Ik bak een ei.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-019",
+      "nl": "de soep",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de soepen",
+      "definitionNl": "Een warm gerecht van water met groente of vlees.",
+      "example": "De soep is heet.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-020",
+      "nl": "het ontbijt",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de ontbijten",
+      "definitionNl": "De eerste maaltijd van de dag.",
+      "example": "Ik eet brood bij het ontbijt.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-021",
+      "nl": "de lunch",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de lunches",
+      "definitionNl": "De maaltijd rond het middaguur.",
+      "example": "Wij eten om half een lunch.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-022",
+      "nl": "het avondeten",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De maaltijd 's avonds.",
+      "example": "Het avondeten is om zes uur klaar.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-023",
+      "nl": "koken",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Eten maken met warmte.",
+      "example": "Ik kook vanavond pasta.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-024",
+      "nl": "bakken",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Eten maken in de oven of pan.",
+      "example": "Ik bak een ei.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-025",
+      "nl": "eten",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Voedsel in je mond doen en doorslikken.",
+      "example": "Wat eten wij vanavond?",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-026",
+      "nl": "drinken",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Vloeistof in je mond doen en doorslikken.",
+      "example": "Ik drink veel water.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-027",
+      "nl": "lekker",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Het smaakt goed.",
+      "example": "De soep is lekker.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-028",
+      "nl": "de honger",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Je wilt eten.",
+      "example": "Ik heb honger.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-029",
+      "nl": "de dorst",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Je wilt drinken.",
+      "example": "Ik heb dorst.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-030",
+      "nl": "het restaurant",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de restaurants",
+      "definitionNl": "Daar eet je en betaal je.",
+      "example": "Wij eten in een restaurant.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-031",
+      "nl": "vegetarisch",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Zonder vlees.",
+      "example": "Zij eet vegetarisch.",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-eten-drinken-032",
+      "nl": "het zout",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Wit poeder voor in het eten.",
+      "example": "Wil je het zout even geven?",
+      "tags": [
+        "thema:eten-drinken"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}

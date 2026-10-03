@@ -4,8 +4,34 @@
   "title": "Wonen",
   "goal": "Je weet hoe je een huis huurt, wat de huisbaas doet en wat jij moet doen.",
   "estimatedMinutes": 25,
-  "tags": ["knm:wonen"],
-  "vocabRefs": ["basis-vocab-wonen-001"],
+  "tags": [
+    "knm:wonen"
+  ],
+  "vocabRefs": [
+    "basis-vocab-wonen-001",
+    "basis-vocab-wonen-002",
+    "basis-vocab-wonen-003",
+    "basis-vocab-wonen-006",
+    "basis-vocab-wonen-011",
+    "basis-vocab-wonen-012",
+    "basis-vocab-wonen-023",
+    "basis-vocab-wonen-026",
+    "basis-vocab-wonen-027",
+    "basis-vocab-wonen-028",
+    "basis-vocab-wonen-029",
+    "basis-vocab-wonen-030",
+    "basis-vocab-wonen-032",
+    "basis-vocab-wonen-033",
+    "basis-vocab-wonen-034",
+    "basis-vocab-wonen-035",
+    "basis-vocab-wonen-036",
+    "basis-vocab-wonen-037",
+    "basis-vocab-wonen-038",
+    "basis-vocab-wonen-039",
+    "basis-vocab-wonen-040",
+    "basis-vocab-wonen-041",
+    "basis-vocab-wonen-042"
+  ],
   "passScore": 0.7,
   "steps": [
     {
@@ -13,21 +39,570 @@
       "id": "knm-wonen-l-01",
       "title": "Een huis huren",
       "blocks": [
-        { "kind": "text", "md": "In Nederland huren veel mensen een huis. Je betaalt elke maand huur aan de huisbaas." }
+        {
+          "kind": "text",
+          "md": "Je kunt een **sociale huurwoning** krijgen via een **woningcorporatie** (vaak is er een wachtlijst). Je kunt ook van een **particuliere verhuurder** huren. Je tekent een **huurcontract** en betaalt vaak een **borg**.\n\nBij een laag inkomen kun je **huurtoeslag** aanvragen bij de **Belastingdienst**."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-wonen-029",
+            "basis-vocab-wonen-027",
+            "basis-vocab-wonen-028",
+            "basis-vocab-wonen-026",
+            "basis-vocab-wonen-037"
+          ]
+        }
       ]
     },
     {
       "type": "exercise",
       "exercise": {
-        "id": "knm-wonen-q-014",
+        "id": "knm-wonen-q-001",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Woningcorporaties verhuren sociale huurwoningen.",
+        "difficulty": 1,
         "type": "mc",
-        "tags": ["knm:wonen"],
-        "prompt": "Wat moet Ahmed doen?",
-        "context": "De verwarming in Ahmeds huurhuis is kapot.",
-        "options": ["Hij belt de huisbaas.", "Hij repareert het zelf.", "Hij verhuist meteen.", "Hij doet niets."],
-        "answer": 0,
-        "explanation": "De huisbaas moet grote reparaties betalen. Ahmed belt eerst de huisbaas.",
-        "difficulty": 1
+        "prompt": "Fatima zoekt een goedkope huurwoning. Waar kan ze zich inschrijven?",
+        "options": [
+          "Bij een woningcorporatie",
+          "Bij de KVK",
+          "Bij het UWV",
+          "Bij de politie"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-002",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "De borg krijg je terug als er niets kapot is.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is een borg?",
+        "options": [
+          "De maandelijkse huur.",
+          "Geld dat je vooraf betaalt en later terugkrijgt.",
+          "Een soort belasting.",
+          "Een toeslag van de overheid."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-003",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Huurtoeslag regelt de Belastingdienst.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Ahmed heeft weinig inkomen en betaalt huur. Waar vraagt hij hulp bij de huur aan?",
+        "options": [
+          "Bij het UWV",
+          "Bij de SVB",
+          "Bij de Belastingdienst (huurtoeslag)",
+          "Bij de bibliotheek"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-004",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Het contract bevat de afspraken over het huren.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat staat in een huurcontract?",
+        "options": [
+          "Het salaris van de huurder",
+          "De gezondheid van de huurder",
+          "De verkiezingen",
+          "De afspraken tussen huurder en verhuurder"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-005",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Sociale huur = goedkope huur, vaak via een corporatie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is een sociale huurwoning?",
+        "options": [
+          "Een goedkopere huurwoning, vaak via een woningcorporatie",
+          "Een koopwoning",
+          "Een hotelkamer",
+          "Een tijdelijke tent"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-wonen-l-02",
+      "title": "Wie doet wat?",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "**De huurder** betaalt de huur op tijd, doet **kleine reparaties** zelf (bijvoorbeeld een kraan of lamp) en gaat netjes met het huis om.\n\n**De verhuurder (huisbaas)** doet **grote reparaties**: dak, verwarming (cv-ketel), lekkage.\n\nProblemen met huurprijs of onderhoud? Dan kun je naar de **Huurcommissie**."
+        },
+        {
+          "kind": "tip",
+          "md": "Eerst de verhuurder bellen. Komt hij niet in actie? Dan naar de Huurcommissie."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-006",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Een lamp is een kleine reparatie: de huurder doet het zelf.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "De lamp in de gang van Priya is kapot. Wie moet dit repareren?",
+        "options": [
+          "De huisbaas",
+          "Priya zelf",
+          "De gemeente",
+          "De Belastingdienst"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-007",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Het dak is een grote reparatie: de verhuurder.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Er zit een lekkage in het dak van het huurhuis van Pieter. Wie lost het op?",
+        "options": [
+          "Pieter",
+          "De buurman",
+          "De huisbaas",
+          "De politie"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-008",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Grote reparaties zijn voor de verhuurder.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "De verwarming in het huis van Olga is kapot. Het is winter. Wat doet ze het eerst?",
+        "context": "Olga huurt een huis van een particuliere verhuurder.",
+        "options": [
+          "Zelf een nieuwe verwarming kopen",
+          "De politie bellen",
+          "Naar het UWV gaan",
+          "De huisbaas bellen"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-009",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Bij problemen over onderhoud of huurprijs: de Huurcommissie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "De huisbaas van Mehmet doet drie maanden niets aan een lekkage. Waar kan hij hulp krijgen?",
+        "options": [
+          "Bij de Huurcommissie",
+          "Bij de SVB",
+          "Bij DUO",
+          "Bij het consultatiebureau"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-010",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "De huurder betaalt en zorgt goed voor het huis.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is de taak van de huurder?",
+        "options": [
+          "Het dak repareren",
+          "De huur op tijd betalen en netjes met het huis omgaan",
+          "Een nieuw huis bouwen",
+          "Belasting innen"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-011",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Een kraan is een kleine reparatie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Een kraan lekt een beetje. Wie repareert dat meestal?",
+        "options": [
+          "De verhuurder altijd",
+          "De gemeente",
+          "De huurder",
+          "De buurman"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-wonen-l-03",
+      "title": "Verhuizen en kosten",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "**Verhuizen?** Geef het **binnen 5 dagen** door aan de **gemeente** (inschrijven in de **BRP**).\n\n**Vaste lasten:** huur, **energie** (gas, water, licht), internet, **gemeentelijke belastingen** (afvalstoffenheffing, rioolheffing) en **waterschapsbelasting**."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-wonen-035",
+            "basis-vocab-wonen-036",
+            "basis-vocab-wonen-042"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-012",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Binnen 5 dagen doorgeven aan de gemeente (BRP).",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Ahmed is verhuisd. Wat moet hij binnen 5 dagen doen?",
+        "options": [
+          "Zijn baas bellen",
+          "Zijn huisbaas betalen",
+          "Zijn verzekering opzeggen",
+          "Zijn nieuwe adres doorgeven aan de gemeente"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-013",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "In de BRP staan inwoners ingeschreven.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is de BRP?",
+        "options": [
+          "Het register van de gemeente met alle inwoners",
+          "Een soort belasting",
+          "Een uitkering",
+          "Een verzekering"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-014",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Vaste lasten betaal je elke maand.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke kosten zijn vaste lasten?",
+        "options": [
+          "Een bioscoopkaartje",
+          "Huur en energie",
+          "Een verjaardagscadeau",
+          "Boodschappen voor één dag"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-015",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Afvalstoffenheffing en rioolheffing zijn gemeentelijke belastingen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat betaal je aan de gemeente voor afval en riool?",
+        "options": [
+          "Vakantiegeld",
+          "Toeslag",
+          "Gemeentelijke belastingen",
+          "Borg"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-016",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Voor een huis kopen heb je meestal een hypotheek van de bank.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Een vrouw wil een huis kopen. Waar vraagt ze meestal geld voor?",
+        "options": [
+          "Bij de SVB",
+          "Bij het UWV",
+          "Bij de bibliotheek",
+          "Bij een bank (hypotheek)"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-wonen-l-04",
+      "title": "Buren, afval en veiligheid",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "**Afval scheiden:** papier, glas, plastic/pmd, gft (groente, fruit, tuin) en restafval. **Grofvuil** haal je op via de gemeente.\n\n**Overlast van buren?** Praat eerst met de buren. Lukt dat niet, dan kan **buurtbemiddeling** helpen.\n\nZorg voor een **rookmelder**. Bij brand of gevaar bel je **112**."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-wonen-034",
+            "basis-vocab-wonen-032",
+            "basis-vocab-wonen-033",
+            "basis-vocab-wonen-041"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-017",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Grofvuil laat je ophalen via de gemeente.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waar gooi je een oude kapotte bank weg?",
+        "options": [
+          "Als grofvuil via de gemeente",
+          "In het gft-afval",
+          "In de glasbak",
+          "Op straat"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-018",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "gft = groente, fruit en tuinafval.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "In welke bak gooi je groente- en fruitresten?",
+        "options": [
+          "Papier",
+          "gft",
+          "Glas",
+          "Plastic/pmd"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-019",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Eerst praten. Daarna eventueel buurtbemiddeling.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "De buren van Wei maken elke avond veel lawaai. Wat doet hij het eerst?",
+        "options": [
+          "Meteen de politie bellen",
+          "Zelf ook lawaai maken",
+          "Met de buren praten",
+          "Verhuizen"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-020",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Buurtbemiddeling helpt bij ruzie tussen buren.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Het lukt niet om het probleem met de buren op te lossen. Wat kan helpen?",
+        "options": [
+          "Een uitkering",
+          "Een paspoort",
+          "De Belastingdienst",
+          "Buurtbemiddeling"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-021",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Bij nood en gevaar bel je 112.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Er is brand in het huis. Wat bel je?",
+        "options": [
+          "112",
+          "0900-8844",
+          "De huisbaas",
+          "De gemeente"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-022",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Een rookmelder waarschuwt bij brand.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waarvoor is een rookmelder?",
+        "options": [
+          "Hij verwarmt het huis.",
+          "Hij piept als er rook is.",
+          "Hij meet het geluid.",
+          "Hij laat de tijd zien."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-023",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Een dak is een grote reparatie; die betaalt de verhuurder.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "De huurder betaalt het nieuwe dak van het huis.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-024",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "De huurder betaalt huur.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat betaalt de huurder meestal aan de verhuurder?",
+        "options": [
+          "De hypotheek",
+          "Het eigen risico",
+          "De AOW",
+          "De huur"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-025",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Papier, glas, plastic, gft en restafval gooi je apart weg.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Priya wil papier en glas apart weggooien. Wat doet ze?",
+        "options": [
+          "Ze scheidt het afval en gooit het in aparte bakken.",
+          "Ze gooit alles in één zak.",
+          "Ze gooit het op straat.",
+          "Ze verbrandt het."
+        ],
+        "answer": 0
       }
     }
   ]
