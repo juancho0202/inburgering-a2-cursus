@@ -19,6 +19,7 @@ const links = [
   { to: "/", label: "Leren", icon: "🏠" },
   { to: "/woorden", label: "Woorden", icon: "🔤" },
   { to: "/werkwoorden", label: "Werkwoorden", icon: "🔁" },
+  { to: "/samenvatting", label: "Samenvatting", icon: "📝" },
   { to: "/instellingen", label: "Instellingen", icon: "⚙️" },
 ];
 </script>

@@ -1,0 +1,582 @@
+{
+  "id": "basis-zinsbouw",
+  "moduleId": "basis",
+  "title": "Werkwoord op plek 2",
+  "goal": "Je maakt hoofdzinnen en vragen met de goede woordvolgorde.",
+  "estimatedMinutes": 20,
+  "tags": [
+    "basis:zinsbouw",
+    "grammar:zinsbouw"
+  ],
+  "vocabRefs": [
+    "basis-vocab-tijd-015",
+    "basis-vocab-tijd-014"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-zinsbouw-l-01",
+      "title": "Plek 2",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In een gewone zin staat het **werkwoord op plek 2**."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Plek 1",
+            "Plek 2 (werkwoord)",
+            "Rest",
+            "Eind"
+          ],
+          "rows": [
+            [
+              "Ik",
+              "ga",
+              "morgen naar de dokter.",
+              ""
+            ],
+            [
+              "Morgen",
+              "ga",
+              "ik naar de dokter.",
+              ""
+            ],
+            [
+              "Ik",
+              "moet",
+              "morgen",
+              "werken."
+            ],
+            [
+              "Gisteren",
+              "heb",
+              "ik brood",
+              "gekocht."
+            ]
+          ]
+        },
+        {
+          "kind": "text",
+          "md": "Begint de zin met **tijd of plaats**? Dan komt het onderwerp **na** het werkwoord (inversie).\n\n**Ja/nee-vraag:** werkwoord eerst (*Komt u woensdag?*).\n\n**Vraagwoord eerst:** wie, wat, waar, wanneer, hoe laat, hoeveel, hoelang, waarom, welke."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-001",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Onderwerp ik op plek 1, ga op plek 2.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "ga",
+          "morgen",
+          "naar",
+          "de",
+          "dokter."
+        ],
+        "alsoAccepted": [
+          [
+            "Morgen",
+            "ga",
+            "ik",
+            "naar",
+            "de",
+            "dokter."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-002",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Begint de zin met morgen? Dan staat ga op plek 2 en komt ik daarna.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Morgen",
+          "ga",
+          "ik",
+          "naar",
+          "de",
+          "dokter."
+        ],
+        "alsoAccepted": [
+          [
+            "Ik",
+            "ga",
+            "morgen",
+            "naar",
+            "de",
+            "dokter."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-003",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Onderwerp, werkwoord, rest.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "woon",
+          "in",
+          "Utrecht."
+        ],
+        "alsoAccepted": [
+          [
+            "In",
+            "Utrecht",
+            "woon",
+            "ik."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-004",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Onderwerp (mijn vrouw), dan het werkwoord.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Mijn",
+          "vrouw",
+          "werkt",
+          "in",
+          "een",
+          "ziekenhuis."
+        ],
+        "alsoAccepted": [
+          [
+            "In",
+            "een",
+            "ziekenhuis",
+            "werkt",
+            "mijn",
+            "vrouw."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-005",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Zin begint met vandaag: werkwoord op plek 2, dan ik.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Vandaag",
+          "heb",
+          "ik",
+          "vrij."
+        ],
+        "alsoAccepted": [
+          [
+            "Ik",
+            "heb",
+            "vandaag",
+            "vrij."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-006",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Zin begint met een plaats: werkwoord op plek 2.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "In",
+          "Nederland",
+          "fietsen",
+          "veel",
+          "mensen."
+        ],
+        "alsoAccepted": [
+          [
+            "Veel",
+            "mensen",
+            "fietsen",
+            "in",
+            "Nederland."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-007",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Heb op plek 2; gekocht aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Gisteren",
+          "heb",
+          "ik",
+          "brood",
+          "gekocht."
+        ],
+        "alsoAccepted": [
+          [
+            "Ik",
+            "heb",
+            "gisteren",
+            "brood",
+            "gekocht."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-008",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Moet op plek 2; werken aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "moet",
+          "morgen",
+          "werken."
+        ],
+        "alsoAccepted": [
+          [
+            "Morgen",
+            "moet",
+            "ik",
+            "werken."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-009",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Gaan op plek 2.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Wij",
+          "gaan",
+          "zaterdag",
+          "naar",
+          "het",
+          "buurthuis."
+        ],
+        "alsoAccepted": [
+          [
+            "Zaterdag",
+            "gaan",
+            "wij",
+            "naar",
+            "het",
+            "buurthuis."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-010",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Zin begint met tijd: werkwoord op plek 2.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Op",
+          "maandag",
+          "begint",
+          "de",
+          "cursus."
+        ],
+        "alsoAccepted": [
+          [
+            "De",
+            "cursus",
+            "begint",
+            "op",
+            "maandag."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-011",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Ja/nee-vraag: werkwoord eerst.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde (een vraag).",
+        "tokens": [
+          "Komt",
+          "u",
+          "woensdag?"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-012",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Vraagwoord eerst, dan het werkwoord.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde (een vraag).",
+        "tokens": [
+          "Wanneer",
+          "begint",
+          "de",
+          "les?"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-013",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Hoe laat is het vraagwoord, dan het werkwoord.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde (een vraag).",
+        "tokens": [
+          "Hoe",
+          "laat",
+          "gaat",
+          "de",
+          "bus?"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-014",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Vraagwoord, werkwoord, onderwerp.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde (een vraag).",
+        "tokens": [
+          "Waar",
+          "woon",
+          "je?"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-015",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Ja/nee-vraag: werkwoord eerst.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde (een vraag).",
+        "tokens": [
+          "Heb",
+          "je",
+          "een",
+          "afspraak?"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-016",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Na Morgen komt direct het werkwoord (plek 2).",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Morgen ik ga naar de dokter.",
+          "Morgen naar de dokter ga ik.",
+          "Ik morgen ga naar de dokter.",
+          "Morgen ga ik naar de dokter."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-017",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Na het vraagwoord komt het werkwoord.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Waarom ben je te laat?",
+          "Waarom je bent te laat?",
+          "Waarom te laat ben je?",
+          "Waarom je te laat bent?"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-018",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Heeft op plek 2, gehad aan het eind.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Gisteren de bus heeft vertraging gehad.",
+          "Gisteren heeft de bus vertraging gehad.",
+          "Gisteren heeft gehad de bus vertraging.",
+          "Gisteren de bus vertraging heeft gehad."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-019",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Na de tijd 'Op zaterdag' komt eerst het werkwoord: gaan wij.",
+        "difficulty": 2,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Op zaterdag ___ wij naar de markt.",
+        "options": [
+          [
+            "gaan",
+            "wij gaan",
+            "gaat"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-020",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Ja/nee-vraag: werkwoord eerst.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "___ jij vandaag werken?",
+        "options": [
+          [
+            "Moet",
+            "Moeten",
+            "Jij moet"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    }
+  ]
+}

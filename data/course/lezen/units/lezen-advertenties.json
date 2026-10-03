@@ -1,0 +1,487 @@
+{
+  "id": "lezen-advertenties",
+  "moduleId": "lezen",
+  "title": "Advertenties",
+  "goal": "Je begrijpt advertenties voor werk, huizen, spullen en cursussen.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "lezen:advertentie"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "lezen-advertenties-l-01",
+      "title": "Advertenties lezen",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In een advertentie staan **wat**, **waar**, **wanneer**, **wat het kost** en **hoe je reageert** (telefoon, e-mail). Let op **voorwaarden**: *ervaring gewenst, alleen overdag, vanaf 18 jaar*."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-advertenties-q-001",
+        "type": "reading",
+        "tags": [
+          "lezen:advertentie"
+        ],
+        "prompt": "Lees de advertentie voor werk.",
+        "document": {
+          "kind": "document",
+          "docType": "advertentie",
+          "title": "Medewerker magazijn gezocht",
+          "body": "Bij Fresh & Co zoeken wij een medewerker voor ons magazijn in Zwolle.\n\nWat ga je doen? Je pakt bestellingen in en brengt dozen naar de vrachtwagen.\n\nWat vragen wij?\n- Je kunt goed tillen.\n- Je spreekt een beetje Nederlands.\n- Ervaring is **niet** nodig. Je leert alles bij ons.\n\nWat bieden wij?\n- Een baan voor 32 uur per week (maandag tot en met donderdag).\n- Een vast contract na een jaar.\n- Gratis lunch.\n\nSolliciteren? Stuur je cv en een korte brief naar werk@freshenco.example vóór 1 oktober.\n\nContact: Tel: 038-555 01 23"
+        },
+        "questions": [
+          {
+            "id": "lezen-advertenties-q-001-1",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Waar gaat deze advertentie over?",
+            "options": [
+              "Een huis",
+              "Een baan in een magazijn",
+              "Een cursus",
+              "Een auto"
+            ],
+            "answer": 1,
+            "explanation": "Titel: Medewerker magazijn gezocht.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-001-2",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Wat is een voorwaarde voor de baan?",
+            "options": [
+              "Je hebt veel ervaring.",
+              "Je spreekt perfect Nederlands.",
+              "Je kunt goed tillen.",
+              "Je hebt een rijbewijs."
+            ],
+            "answer": 2,
+            "explanation": "'Je kunt goed tillen.' Ervaring is niet nodig.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-001-3",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Op welke dagen werk je?",
+            "options": [
+              "Van maandag tot en met vrijdag",
+              "Alleen in het weekend",
+              "Elke dag",
+              "Van maandag tot en met donderdag"
+            ],
+            "answer": 3,
+            "explanation": "'32 uur per week (maandag tot en met donderdag).'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-001-4",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Wat moet u doen als u wilt solliciteren?",
+            "options": [
+              "Uw cv en een brief sturen vóór 1 oktober",
+              "Bellen op 1 oktober",
+              "Langskomen zonder afspraak",
+              "Een formulier invullen"
+            ],
+            "answer": 0,
+            "explanation": "'Stuur je cv en een korte brief … vóór 1 oktober.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op wat het bedrijf vraagt en biedt.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-advertenties-q-002",
+        "type": "reading",
+        "tags": [
+          "lezen:advertentie"
+        ],
+        "prompt": "Lees de advertentie voor een huurwoning.",
+        "document": {
+          "kind": "document",
+          "docType": "advertentie",
+          "title": "Appartement te huur in Utrecht",
+          "body": "Ruim appartement te huur, 3e verdieping met lift.\n\n- 2 slaapkamers, woonkamer, keuken, badkamer en balkon\n- Huur: 850 euro per maand, exclusief gas, water en licht\n- Borg: twee maanden huur\n- Beschikbaar vanaf 1 september\n- Huisdieren niet toegestaan\n\nGeschikt voor 1 of 2 personen. U kunt het appartement bekijken op zaterdag 17 augustus tussen 10.00 en 12.00 uur. Maak vooraf een afspraak.\n\nContact: Tel: 06-1234 5678 (na 18.00 uur)"
+        },
+        "questions": [
+          {
+            "id": "lezen-advertenties-q-002-1",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Wat betaalt de huurder per maand, zonder gas, water en licht?",
+            "options": [
+              "Twee maanden huur",
+              "1700 euro",
+              "850 euro",
+              "Gratis"
+            ],
+            "answer": 2,
+            "explanation": "'Huur: 850 euro per maand, exclusief gas, water en licht.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-002-2",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Vanaf wanneer kan iemand er wonen?",
+            "options": [
+              "Vanaf 17 augustus",
+              "Vanaf zaterdag",
+              "Vanaf morgen",
+              "Vanaf 1 september"
+            ],
+            "answer": 3,
+            "explanation": "'Beschikbaar vanaf 1 september.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-002-3",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Wat is niet toegestaan?",
+            "options": [
+              "Huisdieren",
+              "Kinderen",
+              "Een balkon",
+              "Roken buiten"
+            ],
+            "answer": 0,
+            "explanation": "'Huisdieren niet toegestaan.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-002-4",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Wat moet u doen om het appartement te bekijken?",
+            "options": [
+              "Langskomen op elk moment",
+              "Een afspraak maken",
+              "Een brief schrijven",
+              "Geld betalen"
+            ],
+            "answer": 1,
+            "explanation": "'Maak vooraf een afspraak.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-002-5",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Wanneer kunt u bellen?",
+            "options": [
+              "Voor 12.00 uur",
+              "Alleen op zaterdag",
+              "Na 18.00 uur",
+              "Niet bellen"
+            ],
+            "answer": 2,
+            "explanation": "'Tel: 06-… (na 18.00 uur).'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Lees wat het kost en wat de voorwaarden zijn.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-advertenties-q-003",
+        "type": "reading",
+        "tags": [
+          "lezen:advertentie"
+        ],
+        "prompt": "Lees de advertentie voor een tweedehands artikel.",
+        "document": {
+          "kind": "document",
+          "docType": "advertentie",
+          "title": "Kinderfiets te koop",
+          "body": "Te koop: kinderfiets, 20 inch, blauw. Geschikt voor kinderen van 6 tot 9 jaar. De fiets is 2 jaar oud en in goede staat. Alleen de bel is kapot.\n\nPrijs: 45 euro (nieuw kost deze fiets 150 euro).\nOphalen in Amersfoort, in de buurt van het station.\nAlleen contant betalen.\n\nIk ben thuis op werkdagen na 17.00 uur en in het weekend de hele dag.\n\nContact: Tel: 06-9876 5432"
+        },
+        "questions": [
+          {
+            "id": "lezen-advertenties-q-003-1",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Voor wie is de fiets geschikt?",
+            "options": [
+              "Voor volwassenen",
+              "Voor baby's",
+              "Voor kinderen van 12 jaar",
+              "Voor kinderen van 6 tot 9 jaar"
+            ],
+            "answer": 3,
+            "explanation": "'Geschikt voor kinderen van 6 tot 9 jaar.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-003-2",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Wat is er kapot aan de fiets?",
+            "options": [
+              "De bel",
+              "De banden",
+              "Het licht",
+              "Niets"
+            ],
+            "answer": 0,
+            "explanation": "'Alleen de bel is kapot.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-003-3",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Hoe moet u betalen?",
+            "options": [
+              "Met een pinpas",
+              "Met contant geld",
+              "Via internet",
+              "Met een cheque"
+            ],
+            "answer": 1,
+            "explanation": "'Alleen contant betalen.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-003-4",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Wanneer is de verkoper thuis?",
+            "options": [
+              "Elke ochtend",
+              "Alleen op zaterdag",
+              "Op werkdagen na 17.00 uur en in het weekend",
+              "Op werkdagen overdag"
+            ],
+            "answer": 2,
+            "explanation": "'Op werkdagen na 17.00 uur en in het weekend de hele dag.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op de prijs en de voorwaarden.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-advertenties-q-004",
+        "type": "reading",
+        "tags": [
+          "lezen:advertentie"
+        ],
+        "prompt": "Lees de advertentie voor een cursus.",
+        "document": {
+          "kind": "document",
+          "docType": "advertentie",
+          "title": "Nederlands voor beginners",
+          "body": "Taalcursus in buurthuis De Brug\n\nWilt u Nederlands leren? Kom naar onze gratis cursus!\n\nWanneer? Elke dinsdag en donderdag van 19.00 tot 21.00 uur. De cursus begint op dinsdag 3 september en duurt 20 weken.\nWaar? Buurthuis De Brug, Molenstraat 8.\nWie? Iedereen vanaf 18 jaar.\n\nGeef u op vóór 24 augustus bij de balie van het buurthuis of via e-mail. Neem bij uw eerste les uw legitimatiebewijs mee.\n\nContact: Tel: 030-555 98 76"
+        },
+        "questions": [
+          {
+            "id": "lezen-advertenties-q-004-1",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Wat kost de cursus?",
+            "options": [
+              "Niets, de cursus is gratis.",
+              "20 euro",
+              "100 euro",
+              "Het hangt van de les af."
+            ],
+            "answer": 0,
+            "explanation": "'Kom naar onze gratis cursus!'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-004-2",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Op welke dagen is de les?",
+            "options": [
+              "Op maandag en woensdag",
+              "Op dinsdag en donderdag",
+              "Elke dag",
+              "Alleen op zaterdag"
+            ],
+            "answer": 1,
+            "explanation": "'Elke dinsdag en donderdag.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-004-3",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Tot wanneer kunt u zich opgeven?",
+            "options": [
+              "Tot 3 september",
+              "Tot 18 augustus",
+              "Tot 24 augustus",
+              "Tot vrijdag"
+            ],
+            "answer": 2,
+            "explanation": "'Geef u op vóór 24 augustus.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-004-4",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Wat moet u bij de eerste les meenemen?",
+            "options": [
+              "Uw diploma",
+              "Geld",
+              "Een boek",
+              "Uw legitimatiebewijs"
+            ],
+            "answer": 3,
+            "explanation": "'Neem bij uw eerste les uw legitimatiebewijs mee.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op tijden, kosten en wat u moet meenemen.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-advertenties-q-005",
+        "type": "reading",
+        "tags": [
+          "lezen:advertentie"
+        ],
+        "prompt": "Lees de advertentie van de supermarkt.",
+        "document": {
+          "kind": "document",
+          "docType": "advertentie",
+          "title": "Aanbiedingen deze week",
+          "body": "Supermarkt Dichtbij – aanbiedingen van maandag 2 tot en met zondag 8 juni\n\n- Appels: 1 kilo voor 1,50 euro\n- Brood: 2 voor 3 euro\n- Kaas: 25% korting\n- Melk: 1 liter voor 1 euro (alleen op woensdag)\n\nBetaal met uw klantenkaart en spaar punten. Zonder klantenkaart geldt de aanbieding niet voor kaas.\n\nOpen: maandag tot en met zaterdag van 8.00 tot 21.00 uur. Op zondag van 12.00 tot 18.00 uur."
+        },
+        "questions": [
+          {
+            "id": "lezen-advertenties-q-005-1",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Tot wanneer zijn de aanbiedingen geldig?",
+            "options": [
+              "Tot maandag 2 juni",
+              "Tot en met zondag 8 juni",
+              "Tot woensdag",
+              "Alleen vandaag"
+            ],
+            "answer": 1,
+            "explanation": "'Van maandag 2 tot en met zondag 8 juni.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-005-2",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Wanneer is de melk voordelig?",
+            "options": [
+              "De hele week",
+              "Op zondag",
+              "Alleen op woensdag",
+              "Op maandag"
+            ],
+            "answer": 2,
+            "explanation": "'(alleen op woensdag).'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-005-3",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Wat heeft u nodig voor de korting op kaas?",
+            "options": [
+              "Een kassabon",
+              "Een folder",
+              "Een tas",
+              "Een klantenkaart"
+            ],
+            "answer": 3,
+            "explanation": "'Zonder klantenkaart geldt de aanbieding niet voor kaas.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-advertenties-q-005-4",
+            "type": "mc",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "prompt": "Hoe laat sluit de supermarkt op zondag?",
+            "options": [
+              "Om 18.00 uur",
+              "Om 21.00 uur",
+              "Om 12.00 uur",
+              "Om 20.00 uur"
+            ],
+            "answer": 0,
+            "explanation": "'Op zondag van 12.00 tot 18.00 uur.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op alleen, zonder en de dagen.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

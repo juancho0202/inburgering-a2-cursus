@@ -1,0 +1,589 @@
+{
+  "id": "knm-gezondheid",
+  "moduleId": "knm",
+  "title": "Gezondheid en gezondheidszorg",
+  "goal": "Je weet naar wie je gaat als je ziek bent en hoe de zorgverzekering werkt.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "knm:gezondheid"
+  ],
+  "vocabRefs": [
+    "basis-vocab-gezondheid-001",
+    "basis-vocab-gezondheid-008",
+    "basis-vocab-gezondheid-009",
+    "basis-vocab-gezondheid-010",
+    "basis-vocab-gezondheid-012",
+    "basis-vocab-gezondheid-013",
+    "basis-vocab-gezondheid-014",
+    "basis-vocab-gezondheid-015",
+    "basis-vocab-gezondheid-016",
+    "basis-vocab-gezondheid-017",
+    "basis-vocab-gezondheid-018",
+    "basis-vocab-gezondheid-019",
+    "basis-vocab-gezondheid-025",
+    "basis-vocab-gezondheid-026",
+    "basis-vocab-gezondheid-027",
+    "basis-vocab-gezondheid-028",
+    "basis-vocab-gezondheid-029",
+    "basis-vocab-gezondheid-030",
+    "basis-vocab-gezondheid-031"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "knm-gezondheid-l-01",
+      "title": "Eerst de huisarts",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Je schrijft je in bij een **huisarts** in de buurt. Je gaat **eerst naar de huisarts**. De huisarts kan je doorsturen (**verwijzing**) naar een **specialist** of het **ziekenhuis**.\n\n**Buiten kantoortijd** (avond, nacht, weekend) bel je de **huisartsenpost**. **Bel eerst.**\n\nBij **levensgevaar** bel je **112**. Heb je de politie nodig, maar is het geen spoed? Bel **0900-8844**."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-gezondheid-001",
+            "basis-vocab-gezondheid-016",
+            "basis-vocab-gezondheid-015",
+            "basis-vocab-gezondheid-014"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-001",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Buiten kantoortijd bel je eerst de huisartsenpost.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Olga heeft op zaterdag hoge koorts. De huisarts is gesloten. Wat doet ze?",
+        "options": [
+          "Ze belt de huisartsenpost.",
+          "Ze wacht tot maandag.",
+          "Ze belt 112.",
+          "Ze gaat naar de apotheek voor een verwijzing."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-002",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Eerst naar de huisarts.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Ahmed heeft pijn in zijn rug. Naar wie gaat hij eerst?",
+        "options": [
+          "De specialist",
+          "De huisarts",
+          "De apotheek",
+          "De GGD"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-003",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Bij levensgevaar: 112.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Een man valt van een ladder en kan niet meer bewegen. Hij is bewusteloos. Wat doet de buurvrouw?",
+        "options": [
+          "Ze belt 0900-8844.",
+          "Ze belt zijn huisarts morgen.",
+          "Ze belt 112.",
+          "Ze wacht."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-004",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Geen spoed maar politie nodig: 0900-8844.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Er is een inbraak geweest, maar de dader is weg en niemand is gewond. Welk nummer bel je voor de politie?",
+        "options": [
+          "112",
+          "0800-0000",
+          "0900-0000",
+          "0900-8844"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-005",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Met een verwijzing mag je naar een specialist.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is een verwijzing?",
+        "options": [
+          "Een brief van de huisarts voor een specialist of ziekenhuis",
+          "Een recept voor medicijnen",
+          "Een afspraakkaartje",
+          "Een verzekeringspas"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-006",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "De huisarts verwijst door.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je wilt naar een specialist in het ziekenhuis. Wat heb je meestal nodig?",
+        "options": [
+          "Een brief van de gemeente",
+          "Een verwijzing van de huisarts",
+          "Toestemming van de buren",
+          "Een recept"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-gezondheid-l-02",
+      "title": "Zorgverzekering",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Iedereen die in Nederland woont of werkt moet een **zorgverzekering (basisverzekering)** hebben.\n\n**Eigen risico:** een deel van de zorgkosten betaal je zelf per jaar. Het bedrag verandert. De **huisarts** valt niet onder het eigen risico.\n\n**Zorgtoeslag:** bij een laag inkomen kun je zorgtoeslag krijgen van de **Belastingdienst**.\n\n**Tandarts:** bij volwassenen meestal **niet** in de basisverzekering. Je kunt een **aanvullende verzekering** nemen."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-gezondheid-017",
+            "basis-vocab-gezondheid-018",
+            "basis-vocab-gezondheid-019"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-007",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Een basisverzekering is verplicht.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie moet een zorgverzekering hebben?",
+        "options": [
+          "Alleen kinderen",
+          "Alleen mensen boven de 65",
+          "Iedereen die in Nederland woont of werkt",
+          "Alleen mensen zonder werk"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-008",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Je betaalt zelf een deel per jaar.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is eigen risico?",
+        "options": [
+          "Een toeslag van de overheid",
+          "De prijs van de verzekering",
+          "Een vaccinatie",
+          "Een deel van de zorgkosten dat je zelf betaalt"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-009",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "De huisarts valt niet onder het eigen risico.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Priya gaat naar de huisarts. Valt dit onder het eigen risico?",
+        "options": [
+          "Nee, de huisarts valt er niet onder.",
+          "Ja, altijd.",
+          "Alleen op zaterdag.",
+          "Alleen bij ziekte."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-010",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Zorgtoeslag komt van de Belastingdienst.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Fatima heeft weinig inkomen en wil hulp bij de kosten van haar zorgverzekering. Wat kan ze vragen?",
+        "options": [
+          "Huurtoeslag bij de gemeente",
+          "Zorgtoeslag bij de Belastingdienst",
+          "Een WW-uitkering",
+          "Kinderbijslag bij het UWV"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-011",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Voor tandarts kan een aanvullende verzekering nodig zijn.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Mehmet heeft een gaatje. De tandarts kost geld. Waarom?",
+        "options": [
+          "De tandarts is verboden.",
+          "Hij is niet verzekerd.",
+          "De tandarts zit voor volwassenen meestal niet in de basisverzekering.",
+          "De tandarts is alleen voor kinderen."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-gezondheid-l-03",
+      "title": "Apotheek, consultatiebureau en meer",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "**Apotheek:** medicijnen met een **recept** van de huisarts. **Drogist:** medicijnen **zonder recept** (bijvoorbeeld paracetamol).\n\n**Consultatiebureau:** controle van baby's en jonge kinderen (groei, vaccinaties). **Verloskundige:** zwangerschap en bevalling. **GGD:** gezondheid in de regio en vaccinaties.\n\n**Beroepsgeheim:** de dokter vertelt niets aan anderen zonder jouw toestemming.\n\n**Afspraak afzeggen?** Doe dat op tijd (vaak minstens 24 uur van tevoren), anders moet je soms betalen."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-gezondheid-009",
+            "basis-vocab-gezondheid-012",
+            "basis-vocab-gezondheid-026",
+            "basis-vocab-gezondheid-025",
+            "basis-vocab-gezondheid-030"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-012",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Medicijnen met een recept haal je bij de apotheek.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "De huisarts geeft Sanne een recept voor antibiotica. Waar haalt ze het medicijn?",
+        "options": [
+          "Bij de drogist",
+          "Bij de gemeente",
+          "Bij de bibliotheek",
+          "Bij de apotheek"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-013",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Bij de drogist koop je medicijnen zonder recept.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Priya wil paracetamol kopen zonder recept. Waar kan dat?",
+        "options": [
+          "Bij de drogist",
+          "Bij de huisartsenpost",
+          "Bij de gemeente",
+          "Bij het consultatiebureau"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-014",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Het consultatiebureau controleert baby's en jonge kinderen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Fatima heeft een baby van drie maanden. Waar kan ze de groei laten controleren?",
+        "options": [
+          "Bij de tandarts",
+          "Bij het consultatiebureau",
+          "Bij de drogist",
+          "Bij de huisartsenpost"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-015",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Een verloskundige begeleidt zwangerschap en bevalling.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie helpt bij een zwangerschap en bevalling?",
+        "options": [
+          "De drogist",
+          "De leerplichtambtenaar",
+          "De verloskundige",
+          "De wethouder"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-016",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Zonder toestemming vertelt de dokter niets aan anderen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "De huisarts van Ahmed vertelt zijn baas dat Ahmed ziek is, zonder dat Ahmed dat wil. Mag dat?",
+        "options": [
+          "Ja, altijd.",
+          "Ja, als de baas het vraagt.",
+          "Ja, in het weekend.",
+          "Nee, de dokter heeft een beroepsgeheim."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-017",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Zeg een afspraak op tijd af, anders moet je soms betalen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je kunt niet naar je afspraak bij de huisarts. Wat is het beste?",
+        "options": [
+          "De afspraak op tijd afzeggen",
+          "Niet gaan en niets zeggen",
+          "Een week later komen",
+          "Een andere huisarts bellen"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-018",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "De GGD werkt aan gezondheid in de regio.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is de taak van de GGD?",
+        "options": [
+          "Huizen verhuren",
+          "Gezondheid in de regio, bijvoorbeeld vaccinaties",
+          "Belasting innen",
+          "Inburgeringsexamens"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-019",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Een vaccinatie beschermt tegen een ziekte.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Een baby moet een prik tegen een ziekte krijgen. Hoe heet dat?",
+        "options": [
+          "Een recept",
+          "Een verwijzing",
+          "Een vaccinatie",
+          "Een toeslag"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-020",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "In het weekend bel je eerst de huisartsenpost.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Het is zondagavond en de dochter van Wei heeft veel pijn in haar oor. Wanneer belt Wei de huisartsenpost?",
+        "options": [
+          "Maandag",
+          "Nooit, hij gaat naar de apotheek",
+          "Hij wacht tot ze beter is",
+          "Meteen; de huisartsenpost is er in het weekend."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-021",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "De tandarts zit voor volwassenen meestal niet in de basisverzekering.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Een volwassene kan zonder extra verzekering altijd gratis naar de tandarts.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-022",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Eerst de huisarts. 112 is alleen voor levensgevaar.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Sanne heeft sinds drie dagen buikpijn. Het is woensdagmiddag. Wat doet ze?",
+        "options": [
+          "Ze belt 112.",
+          "Ze maakt een afspraak bij de huisarts.",
+          "Ze gaat zonder afspraak naar het ziekenhuis.",
+          "Ze belt de drogist."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-023",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Vaccinaties horen bij het consultatiebureau en de GGD.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Ahmed wil weten of zijn kind alle vaccinaties heeft gehad. Waar kan hij terecht?",
+        "options": [
+          "Bij de KVK",
+          "Bij DUO",
+          "Bij het consultatiebureau of de GGD",
+          "Bij de bibliotheek"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-024",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "De verloskundige begeleidt zwangerschap en bevalling.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Olga is zwanger. Wie begeleidt haar tijdens de zwangerschap?",
+        "options": [
+          "Een apotheker",
+          "Een drogist",
+          "Een leerplichtambtenaar",
+          "Een verloskundige"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-025",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Op kantoortijd bel je de eigen huisarts; de huisartsenpost is voor avond, nacht en weekend.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wei heeft een hoge koorts op dinsdagmorgen om tien uur. Naar wie belt hij het eerst?",
+        "options": [
+          "De huisarts",
+          "De huisartsenpost",
+          "112",
+          "De apotheek"
+        ],
+        "answer": 0
+      }
+    }
+  ]
+}

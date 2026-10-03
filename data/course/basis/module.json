@@ -5,6 +5,20 @@
   "icon": "book",
   "units": [
     "basis-tijd",
-    "basis-demo"
+    "basis-werkwoorden-nu",
+    "basis-modaal",
+    "basis-toekomst",
+    "basis-perfectum",
+    "basis-imperfectum",
+    "basis-scheidbaar",
+    "basis-zinsbouw",
+    "basis-bijzin",
+    "basis-niet-geen",
+    "basis-de-het",
+    "basis-bijvoeglijk",
+    "basis-voornaamwoorden",
+    "basis-voorzetsels",
+    "basis-signaalwoorden",
+    "basis-mijn-woorden"
   ]
 }

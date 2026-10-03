@@ -1,0 +1,468 @@
+{
+  "theme": "vrije-tijd-weer",
+  "title": "Vrije tijd en weer",
+  "entries": [
+    {
+      "id": "basis-vocab-vrije-tijd-weer-001",
+      "nl": "de regen",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Water dat uit de lucht valt.",
+      "example": "Er is veel regen vandaag.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-002",
+      "nl": "de zon",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De grote lamp in de lucht overdag.",
+      "example": "De zon schijnt.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-003",
+      "nl": "koud",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Niet warm.",
+      "example": "Het is koud buiten.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-004",
+      "nl": "lekker weer",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Mooi en prettig weer.",
+      "example": "Het is lekker weer vandaag.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-005",
+      "nl": "sporten",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Bewegen om fit te zijn.",
+      "example": "Ik sport op donderdag.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-006",
+      "nl": "het feest",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de feesten",
+      "definitionNl": "Een gezellige dag of avond met veel mensen.",
+      "example": "Wij geven zaterdag een feest.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-007",
+      "nl": "de uitnodiging",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de uitnodigingen",
+      "definitionNl": "Een vraag om ergens naartoe te komen.",
+      "example": "Ik krijg een uitnodiging voor het feest.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-008",
+      "nl": "het weer",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Hoe de lucht buiten is.",
+      "example": "Hoe is het weer morgen?",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-009",
+      "nl": "de wind",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Lucht die beweegt.",
+      "example": "Er is veel wind vandaag.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-010",
+      "nl": "de sneeuw",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Wit, koud water dat uit de lucht valt.",
+      "example": "In januari lag er sneeuw.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-011",
+      "nl": "warm",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Niet koud.",
+      "example": "In de zomer is het warm.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-012",
+      "nl": "bewolkt",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Er zijn veel wolken.",
+      "example": "Het is bewolkt vandaag.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-013",
+      "nl": "de temperatuur",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de temperaturen",
+      "definitionNl": "Hoe warm of koud het is.",
+      "example": "De temperatuur is 15 graden.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-014",
+      "nl": "de graad",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de graden",
+      "definitionNl": "Een maat voor temperatuur.",
+      "example": "Het is vijf graden.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-015",
+      "nl": "het weekend",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de weekenden",
+      "definitionNl": "Zaterdag en zondag.",
+      "example": "Wat doe je dit weekend?",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-016",
+      "nl": "de hobby",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de hobby's",
+      "definitionNl": "Iets leuks dat je in je vrije tijd doet.",
+      "example": "Mijn hobby is koken.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-017",
+      "nl": "het uitje",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de uitjes",
+      "definitionNl": "Een leuke dag buitenshuis.",
+      "example": "Wij gaan op een uitje naar het strand.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-018",
+      "nl": "het museum",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de musea",
+      "definitionNl": "Een gebouw met kunst of oude spullen.",
+      "example": "Wij bezoeken het museum.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-019",
+      "nl": "de film",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de films",
+      "definitionNl": "Een verhaal met bewegende beelden.",
+      "example": "Wij kijken een film.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-020",
+      "nl": "de bioscoop",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de bioscopen",
+      "definitionNl": "Een gebouw waar je films kijkt.",
+      "example": "Ik ga naar de bioscoop.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-021",
+      "nl": "het zwembad",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de zwembaden",
+      "definitionNl": "Een plek om te zwemmen.",
+      "example": "Het zwembad is open tot acht uur.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-022",
+      "nl": "de sportschool",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de sportscholen",
+      "definitionNl": "Een plek om te trainen.",
+      "example": "Ik ga naar de sportschool.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-023",
+      "nl": "voetballen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Een sport met een bal en twee doelen.",
+      "example": "De kinderen voetballen in het park.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-024",
+      "nl": "wandelen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Rustig lopen voor je plezier.",
+      "example": "Op zondag wandelen wij in het bos.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-025",
+      "nl": "fietsen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Op een fiets rijden.",
+      "example": "Wij fietsen naar het strand.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-026",
+      "nl": "het park",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de parken",
+      "definitionNl": "Een groot stuk gras en bomen in de stad.",
+      "example": "Het park is mooi in de lente.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-027",
+      "nl": "het strand",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de stranden",
+      "definitionNl": "Plek met zand bij de zee.",
+      "example": "Op het strand liggen veel mensen.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-028",
+      "nl": "de vereniging",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de verenigingen",
+      "definitionNl": "Een groep mensen met dezelfde hobby.",
+      "example": "Hij is lid van een voetbalvereniging.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-029",
+      "nl": "lid worden",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Je gaat bij een club horen.",
+      "example": "Ik wil lid worden van de bibliotheek.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-030",
+      "nl": "de club",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de clubs",
+      "definitionNl": "Een groep mensen die samen iets doet.",
+      "example": "Mijn zoon zit op een voetbalclub.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-031",
+      "nl": "gezellig",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Prettig en leuk.",
+      "example": "Het was een gezellige avond.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-032",
+      "nl": "de vakantie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de vakanties",
+      "definitionNl": "Weken zonder werk of school.",
+      "example": "Wij gaan in de zomer op vakantie.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-vrije-tijd-weer-033",
+      "nl": "het cadeau",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de cadeaus",
+      "definitionNl": "Iets dat je geeft aan iemand.",
+      "example": "Ik koop een cadeau voor mijn moeder.",
+      "tags": [
+        "thema:vrije-tijd-weer"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}

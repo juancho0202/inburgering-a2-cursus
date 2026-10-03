@@ -2,10 +2,25 @@
   "id": "basis-tijd",
   "moduleId": "basis",
   "title": "Tijd, getallen en datums",
-  "goal": "Je kunt de klok lezen en getallen gebruiken.",
-  "estimatedMinutes": 15,
-  "tags": ["basis:tijd"],
-  "vocabRefs": ["basis-vocab-tijd-001"],
+  "goal": "Je kunt de klok lezen en getallen, geld en datums gebruiken.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "basis:tijd"
+  ],
+  "vocabRefs": [
+    "basis-vocab-tijd-001",
+    "basis-vocab-tijd-005",
+    "basis-vocab-tijd-007",
+    "basis-vocab-tijd-008",
+    "basis-vocab-tijd-009",
+    "basis-vocab-tijd-019",
+    "basis-vocab-tijd-029",
+    "basis-vocab-tijd-014",
+    "basis-vocab-tijd-015",
+    "basis-vocab-tijd-016",
+    "basis-vocab-tijd-030",
+    "basis-vocab-tijd-033"
+  ],
   "passScore": 0.7,
   "steps": [
     {
@@ -13,22 +28,695 @@
       "id": "basis-tijd-l-01",
       "title": "Hoe laat is het?",
       "blocks": [
-        { "kind": "text", "md": "In het Nederlands zeg je **half elf** voor 10.30 uur, niet 11.30." },
-        { "kind": "table", "headers": ["Je hoort", "Tijd"], "rows": [["half elf", "10.30"], ["kwart over acht", "08.15"]] },
-        { "kind": "tip", "md": "Let op: **half elf** is 10.30, niet 11.30." }
+        {
+          "kind": "text",
+          "md": "Bij **half** denk je aan het volgende uur: **half elf = 10.30**. Je telt dus de helft vóór elf uur."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Je hoort",
+            "Tijd"
+          ],
+          "rows": [
+            [
+              "tien uur",
+              "10.00"
+            ],
+            [
+              "vijf over tien",
+              "10.05"
+            ],
+            [
+              "kwart over tien",
+              "10.15"
+            ],
+            [
+              "tien voor half elf",
+              "10.20"
+            ],
+            [
+              "half elf",
+              "10.30"
+            ],
+            [
+              "vijf over half elf",
+              "10.35"
+            ],
+            [
+              "kwart voor elf",
+              "10.45"
+            ],
+            [
+              "tien voor elf",
+              "10.50"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Let op: **half elf** is 10.30, niet 11.30."
+        },
+        {
+          "kind": "example",
+          "nl": "De les begint om half negen.",
+          "note": "half negen = 8.30"
+        }
       ]
     },
     {
       "type": "exercise",
       "exercise": {
         "id": "basis-tijd-q-001",
-        "type": "mc",
-        "tags": ["basis:tijd"],
-        "prompt": "Hoe laat is het als iemand zegt: \"half elf\"?",
-        "options": ["10.30", "11.30", "10.00", "11.00"],
-        "answer": 0,
+        "tags": [
+          "basis:tijd"
+        ],
         "explanation": "Half elf betekent de helft van elf uur, dus 10.30.",
-        "difficulty": 1
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoe laat is het als iemand zegt: \"half elf\"?",
+        "options": [
+          "10.30",
+          "11.30",
+          "10.00",
+          "11.00"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-002",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Kwart over = 15 minuten na het hele uur. Kwart over acht is 8.15.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is kwart over acht?",
+        "options": [
+          "8.45",
+          "8.15",
+          "7.45",
+          "8.30"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-003",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Kwart voor = 15 minuten vóór het hele uur. Kwart voor twee is 1.45.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is kwart voor twee?",
+        "options": [
+          "2.15",
+          "2.45",
+          "1.45",
+          "1.15"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-004",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Half elf is 10.30. Tien minuten ervoor is 10.20.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Wat is tien voor half elf?",
+        "options": [
+          "10.40",
+          "11.20",
+          "9.50",
+          "10.20"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-005",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Half elf is 10.30. Vijf minuten erna is 10.35.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Wat is vijf over half elf?",
+        "options": [
+          "10.35",
+          "10.25",
+          "11.35",
+          "10.05"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-006",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Tien voor elf = tien minuten vóór 11.00, dus 10.50.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is tien voor elf?",
+        "options": [
+          "11.10",
+          "10.50",
+          "10.10",
+          "9.50"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-007",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Half zeven is de helft vóór zeven uur: 6.30.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is half zeven?",
+        "options": [
+          "7.30",
+          "6.15",
+          "6.30",
+          "7.00"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-008",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Half negen is 8.30. Vijf minuten ervoor is 8.25.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Je hoort: \"vijf voor half negen\". Welke tijd is dat?",
+        "options": [
+          "8.35",
+          "9.25",
+          "7.25",
+          "8.25"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-009",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "10.45 is 15 minuten vóór 11.00: kwart voor elf.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoe zeg je 10.45?",
+        "options": [
+          "kwart voor elf",
+          "kwart over tien",
+          "half elf",
+          "kwart voor tien"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-010",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "3.30: je zegt het volgende uur: half vier.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoe zeg je 3.30?",
+        "options": [
+          "half drie",
+          "half vier",
+          "kwart over drie",
+          "half vijf"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-011",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "12.15 is 15 minuten na 12.00: kwart over twaalf.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoe zeg je 12.15?",
+        "options": [
+          "kwart voor twaalf",
+          "half één",
+          "kwart over twaalf",
+          "kwart over één"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-tijd-l-02",
+      "title": "Dagen, getallen en geld",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "**Dagdelen:** 's ochtends (6–12), 's middags (12–18), 's avonds (18–24), 's nachts (0–6).\n\n**Dagen:** maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag. Let op: *dinsdag* en *donderdag* lijken op elkaar."
+        },
+        {
+          "kind": "text",
+          "md": "**Getallen:** het kleine getal eerst. 21 = *eenentwintig*, 48 = *achtenveertig*.\n\nVerwar niet: **dertien / dertig**, **veertien / veertig**, **zeventien / zeventig**."
+        },
+        {
+          "kind": "example",
+          "nl": "€ 12,50 = twaalf euro vijftig"
+        },
+        {
+          "kind": "text",
+          "md": "**Datums:** de eerste, de tweede, de derde, de achtste, de twintigste. *Op 3 mei* zeg je: *op drie mei*."
+        },
+        {
+          "kind": "text",
+          "md": "**Tijdwoorden:** gisteren, vandaag, morgen, overmorgen, volgende week, vorige week, binnenkort."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-012",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Dertig is 30. Dertien is 13.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welk getal hoor je? \"dertig\"",
+        "options": [
+          "13",
+          "33",
+          "3",
+          "30"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-013",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Veertien = 14. Veertig = 40.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welk getal hoor je? \"veertien\"",
+        "options": [
+          "14",
+          "40",
+          "4",
+          "41"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-014",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Zeventig = 70. Zeventien = 17.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welk getal hoor je? \"zeventig\"",
+        "options": [
+          "17",
+          "70",
+          "7",
+          "27"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-015",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Het kleine getal eerst: een-en-twintig = 21.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoe schrijf je \"eenentwintig\"?",
+        "options": [
+          "12",
+          "120",
+          "21",
+          "201"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-016",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Acht-en-veertig = 48.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Hoe schrijf je \"achtenveertig\"?",
+        "options": [
+          "84",
+          "408",
+          "480",
+          "48"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-017",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Eerst de euro's, dan de centen: twaalf euro vijftig.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoe zeg je € 12,50?",
+        "options": [
+          "twaalf euro vijftig",
+          "tweeënvijftig euro twaalf",
+          "twaalf euro vijf",
+          "vijftig euro twaalf"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-018",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Drie euro, dan 75 cent: vijfenzeventig.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Hoe zeg je € 3,75?",
+        "options": [
+          "drie euro zevenenvijftig",
+          "drie euro vijfenzeventig",
+          "zeventig euro vijf",
+          "drieënzeventig euro vijf"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-019",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Morgen is donderdag, overmorgen is vrijdag.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Vandaag is woensdag. Welke dag is overmorgen?",
+        "options": [
+          "donderdag",
+          "zaterdag",
+          "vrijdag",
+          "dinsdag"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-020",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Bij een datum zeg je het gewone getal: op drie mei.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je leest: \"op 3 mei\". Wat zeg je?",
+        "options": [
+          "op derde mei",
+          "op de driede mei",
+          "op mei drie",
+          "op drie mei"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-021",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Binnenkort betekent: over korte tijd.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wanneer is \"binnenkort\"?",
+        "options": [
+          "over korte tijd",
+          "gisteren",
+          "nooit",
+          "over een jaar"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-022",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Kwart over = 15 minuten na het hele uur.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het goede woord in.",
+        "text": "Het is 10.15 uur. Het is ___ over tien.",
+        "answers": [
+          [
+            "kwart"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-023",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Je zegt half elf voor 10.30.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het goede woord in.",
+        "text": "Het is 10.30 uur. Het is ___ elf.",
+        "answers": [
+          [
+            "half"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-024",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Vandaag is dinsdag, dus morgen is het woensdag.",
+        "difficulty": 2,
+        "type": "gap-fill",
+        "prompt": "Vul het goede woord in.",
+        "text": "Gisteren was het maandag. Morgen is het ___.",
+        "answers": [
+          [
+            "woensdag"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-025",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Tussen 6 en 12 uur is het 's ochtends.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het goede woord in.",
+        "text": "Om 7.00 uur 's ___ sta ik op.",
+        "answers": [
+          [
+            "ochtends"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-026",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Tussen 18 en 24 uur is het 's avonds.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het goede woord in.",
+        "text": "De les eindigt om 21.00 uur. Dat is 's ___.",
+        "answers": [
+          [
+            "avonds"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-027",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Half = het volgende uur min 30 minuten. Kwart over/voor = 15 minuten.",
+        "difficulty": 2,
+        "type": "match",
+        "prompt": "Welke tijd hoort bij de woorden?",
+        "pairs": [
+          [
+            "half twee",
+            "1.30"
+          ],
+          [
+            "kwart over negen",
+            "9.15"
+          ],
+          [
+            "tien voor vijf",
+            "4.50"
+          ],
+          [
+            "vijf over half zes",
+            "5.35"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-028",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "Let op het einde van het woord: -tien (13–19) of -tig (30–90).",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk getal hoort bij het woord?",
+        "pairs": [
+          [
+            "dertien",
+            "13"
+          ],
+          [
+            "dertig",
+            "30"
+          ],
+          [
+            "zeventien",
+            "17"
+          ],
+          [
+            "zeventig",
+            "70"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-tijd-q-029",
+        "tags": [
+          "basis:tijd"
+        ],
+        "explanation": "'s ochtends 6–12, 's middags 12–18, 's avonds 18–24, 's nachts 0–6.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk dagdeel hoort bij de tijd?",
+        "pairs": [
+          [
+            "8.00 uur",
+            "'s ochtends"
+          ],
+          [
+            "15.00 uur",
+            "'s middags"
+          ],
+          [
+            "20.00 uur",
+            "'s avonds"
+          ],
+          [
+            "2.00 uur",
+            "'s nachts"
+          ]
+        ]
       }
     }
   ]

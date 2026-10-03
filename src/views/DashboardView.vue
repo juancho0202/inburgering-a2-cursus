@@ -7,6 +7,7 @@ import AppButton from "../components/ui/AppButton.vue";
 import ProgressBar from "../components/ui/ProgressBar.vue";
 import ProgressRing from "../components/ui/ProgressRing.vue";
 import { useContentStore } from "../stores/content";
+import tulips from "../assets/tulips-bg.jpg";
 
 interface Dashboard {
   lastLocation: { unitId: string; unitTitle: string; stepIndex: number; stepCount: number } | null;
@@ -38,8 +39,13 @@ const tagLabel = (t: string) => t.replace(":", " · ");
 </script>
 
 <template>
+  <!-- Fixed background photo with a soft veil so the cards stay readable -->
+  <div class="pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
+    <img :src="tulips" alt="" class="h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-bg/35 dark:bg-bg/60" />
+  </div>
   <p v-if="error" class="rounded-2xl bg-bad-bg p-4 text-bad">{{ error }}</p>
-  <div v-else-if="data" class="grid gap-6">
+  <div v-else-if="data" class="glass-cards grid gap-6">
     <section class="card relative overflow-hidden p-6 sm:p-8">
       <div class="absolute -right-10 -top-10 h-44 w-44 rounded-full bg-brand-bg" aria-hidden="true" />
       <div class="relative">
@@ -82,7 +88,7 @@ const tagLabel = (t: string) => t.replace(":", " · ");
     </section>
 
     <section>
-      <h2 class="mb-3 text-2xl font-bold">Modules</h2>
+      <h2 class="glass mb-3 inline-block rounded-2xl px-4 py-1 text-2xl font-bold">Modules</h2>
       <div class="grid gap-4 sm:grid-cols-2">
         <RouterLink
           v-for="m in data.modules"

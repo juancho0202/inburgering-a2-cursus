@@ -1,0 +1,465 @@
+{
+  "theme": "werk",
+  "title": "Werk",
+  "entries": [
+    {
+      "id": "basis-vocab-werk-001",
+      "nl": "de baan",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de banen",
+      "definitionNl": "Het werk waarvoor je betaald wordt.",
+      "example": "Ik zoek een nieuwe baan.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-werk-002",
+      "nl": "de baas",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de bazen",
+      "definitionNl": "De persoon die zegt wat je op je werk moet doen.",
+      "example": "Mijn baas is vandaag niet aanwezig.",
+      "tags": [
+        "thema:werk"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-werk-003",
+      "nl": "de leidinggevende",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de leidinggevenden",
+      "definitionNl": "De persoon die een groep medewerkers leidt.",
+      "example": "Ik bel mijn leidinggevende als ik ziek ben.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-werk-004",
+      "nl": "de dienst",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de diensten",
+      "definitionNl": "De tijd dat je werkt.",
+      "example": "Ik heb vandaag een late dienst.",
+      "tags": [
+        "thema:werk"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-werk-005",
+      "nl": "solliciteren",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Schrijven of vragen om een baan.",
+      "example": "Ik wil solliciteren op deze baan.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-werk-006",
+      "nl": "het gesprek",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de gesprekken",
+      "definitionNl": "Je praat met iemand over iets.",
+      "example": "Ik heb morgen een sollicitatiegesprek.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-werk-007",
+      "nl": "de afdeling inkoop",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "De groep mensen in een bedrijf die spullen koopt.",
+      "example": "Ze werkt bij de afdeling inkoop.",
+      "tags": [
+        "thema:werk"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-werk-008",
+      "nl": "de collega",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de collega's",
+      "definitionNl": "Een persoon met wie je samenwerkt.",
+      "example": "Mijn collega's zijn aardig.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-009",
+      "nl": "de werkgever",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de werkgevers",
+      "definitionNl": "Het bedrijf of de persoon die jou betaalt.",
+      "example": "Mijn werkgever heeft een vaste baan voor mij.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-010",
+      "nl": "de werknemer",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de werknemers",
+      "definitionNl": "Een persoon die voor een bedrijf werkt.",
+      "example": "Een werknemer heeft recht op vakantiedagen.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-011",
+      "nl": "het salaris",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de salarissen",
+      "definitionNl": "Het geld dat je krijgt voor je werk.",
+      "example": "Het salaris staat op de 25e op mijn rekening.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-012",
+      "nl": "het loon",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de lonen",
+      "definitionNl": "Geld dat je krijgt voor je werk.",
+      "example": "Het minimumloon is het laagste loon.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-013",
+      "nl": "de loonstrook",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de loonstroken",
+      "definitionNl": "Een papier met je loon en de belasting.",
+      "example": "Op de loonstrook staat mijn salaris.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-014",
+      "nl": "bruto",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Het bedrag voordat de belasting eraf gaat.",
+      "example": "Mijn brutosalaris is hoger dan mijn nettosalaris.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-015",
+      "nl": "netto",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Het bedrag nadat de belasting eraf is.",
+      "example": "Netto houd ik minder over.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-016",
+      "nl": "het arbeidscontract",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de arbeidscontracten",
+      "definitionNl": "Het contract tussen jou en je werkgever.",
+      "example": "In het arbeidscontract staan de uren.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-017",
+      "nl": "tijdelijk",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Het duurt maar een tijd.",
+      "example": "Ik heb een tijdelijke baan.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-018",
+      "nl": "vast",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Het stopt niet na een bepaalde tijd.",
+      "example": "Zij heeft een vast contract.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-019",
+      "nl": "de proeftijd",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De eerste weken of maanden van een nieuwe baan.",
+      "example": "In de proeftijd kun je makkelijk stoppen.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-020",
+      "nl": "het vakantiegeld",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Extra geld dat je in de zomer krijgt.",
+      "example": "Ik krijg het vakantiegeld in mei.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-021",
+      "nl": "de vakantiedag",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de vakantiedagen",
+      "definitionNl": "Een dag dat je vrij bent van je werk.",
+      "example": "Ik heb nog drie vakantiedagen.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-022",
+      "nl": "het uitzendbureau",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de uitzendbureaus",
+      "definitionNl": "Een bedrijf dat tijdelijk werk zoekt voor mensen.",
+      "example": "Via het uitzendbureau vond ik werk.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-023",
+      "nl": "de vacature",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de vacatures",
+      "definitionNl": "Een baan die nog vrij is.",
+      "example": "Ik las een vacature in de krant.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-024",
+      "nl": "het cv",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de cv's",
+      "definitionNl": "Een lijst met je opleiding en werk.",
+      "example": "Stuur je cv mee met de brief.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-025",
+      "nl": "ziekmelden",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Je baas bellen als je ziek bent.",
+      "example": "Ik moet mij vandaag ziekmelden.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-026",
+      "nl": "de vakbond",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de vakbonden",
+      "definitionNl": "Een organisatie die opkomt voor werknemers.",
+      "example": "Hij is lid van een vakbond.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-027",
+      "nl": "de ondernemingsraad",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de ondernemingsraden",
+      "definitionNl": "Een groep werknemers die met de directie praat.",
+      "example": "De ondernemingsraad vergadert vandaag.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-028",
+      "nl": "zwartwerken",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Werken zonder dat je belasting betaalt.",
+      "example": "Zwartwerken is verboden.",
+      "tags": [
+        "thema:werk",
+        "knm:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-029",
+      "nl": "gebruiken",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets nemen om iets te doen.",
+      "example": "Mag ik jouw computer gebruiken?",
+      "tags": [
+        "thema:werk"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-werk-030",
+      "nl": "het bedrijf",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de bedrijven",
+      "definitionNl": "Een organisatie die producten of diensten verkoopt.",
+      "example": "Hij werkt bij een groot bedrijf.",
+      "tags": [
+        "thema:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-werk-031",
+      "nl": "de vergadering",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de vergaderingen",
+      "definitionNl": "Een bijeenkomst om over werk te praten.",
+      "example": "De vergadering begint om negen uur.",
+      "tags": [
+        "thema:werk"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}

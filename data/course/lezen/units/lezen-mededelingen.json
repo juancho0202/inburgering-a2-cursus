@@ -1,0 +1,470 @@
+{
+  "id": "lezen-mededelingen",
+  "moduleId": "lezen",
+  "title": "Mededelingen en borden",
+  "goal": "Je begrijpt mededelingen op stations, in gebouwen en in winkels.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "lezen:mededeling"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "lezen-mededelingen-l-01",
+      "title": "Korte teksten",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Mededelingen zijn kort. Let op: **Verboden**, **Niet**, **Alleen voor**, **Gesloten**, **Geopend**, **Vanaf … tot …**. Wat moet je doen? Wat mag je niet?"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-mededelingen-q-001",
+        "type": "reading",
+        "tags": [
+          "lezen:mededeling"
+        ],
+        "prompt": "Lees de mededeling op het station.",
+        "document": {
+          "kind": "document",
+          "docType": "bericht",
+          "title": "Mededeling NS",
+          "body": "Reizigers naar Amsterdam Centraal:\n\nOp zaterdag 12 en zondag 13 oktober rijden er geen treinen tussen Utrecht en Amsterdam. Er rijden bussen. De bussen vertrekken bij de uitgang aan de voorkant van het station.\n\nDe reistijd is 30 minuten langer. Vertrek dus eerder!\n\nOp maandag rijdt alles weer normaal.\n\nVoor meer informatie: kijk op het informatiebord of vraag het aan een medewerker."
+        },
+        "questions": [
+          {
+            "id": "lezen-mededelingen-q-001-1",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Wanneer rijden er geen treinen tussen Utrecht en Amsterdam?",
+            "options": [
+              "Op maandag",
+              "Op 12 en 13 oktober",
+              "Elke dag",
+              "Alleen op zondag"
+            ],
+            "answer": 1,
+            "explanation": "'Op zaterdag 12 en zondag 13 oktober.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-001-2",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Hoe reizen mensen dan?",
+            "options": [
+              "Met de tram",
+              "Met de fiets",
+              "Met de bus",
+              "Met de metro"
+            ],
+            "answer": 2,
+            "explanation": "'Er rijden bussen.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-001-3",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Waar vertrekken de bussen?",
+            "options": [
+              "Op spoor 5",
+              "Bij de bushalte in de stad",
+              "Bij het informatiebord",
+              "Bij de uitgang aan de voorkant van het station"
+            ],
+            "answer": 3,
+            "explanation": "'De bussen vertrekken bij de uitgang aan de voorkant.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-001-4",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Wat moet u doen?",
+            "options": [
+              "Eerder vertrekken, want de reis duurt langer",
+              "Thuisblijven",
+              "De trein nemen",
+              "Een taxi bellen"
+            ],
+            "answer": 0,
+            "explanation": "'De reistijd is 30 minuten langer. Vertrek dus eerder!'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op de dagen en wat er anders is.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-mededelingen-q-002",
+        "type": "reading",
+        "tags": [
+          "lezen:mededeling"
+        ],
+        "prompt": "Lees de regels in het appartementengebouw.",
+        "document": {
+          "kind": "document",
+          "docType": "bericht",
+          "title": "Huisregels",
+          "body": "Aan alle bewoners van Flat Zonnehof:\n\n1. Zet uw fiets **niet** in de gang. Gebruik de fietsenstalling in de kelder.\n2. Zet uw afval **niet** voor de deur. Gebruik de container bij de ingang.\n3. Na 22.00 uur graag stil zijn. Muziek mag dan niet hard staan.\n4. De wasmachines in de kelder zijn open van 8.00 tot 20.00 uur.\n5. Heeft u een probleem? Meld het aan de huismeester (kamer 0.03). Hij is aanwezig van maandag tot en met donderdag.\n\nDank voor uw medewerking."
+        },
+        "questions": [
+          {
+            "id": "lezen-mededelingen-q-002-1",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Waar moet u uw fiets neerzetten?",
+            "options": [
+              "In de gang",
+              "Op het balkon",
+              "In de fietsenstalling in de kelder",
+              "Voor de deur"
+            ],
+            "answer": 2,
+            "explanation": "'Gebruik de fietsenstalling in de kelder.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-002-2",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Wat mag niet na 22.00 uur?",
+            "options": [
+              "Wassen",
+              "Fietsen",
+              "De deur openen",
+              "Harde muziek"
+            ],
+            "answer": 3,
+            "explanation": "'Na 22.00 uur graag stil zijn.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-002-3",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Wanneer mag u de wasmachines gebruiken?",
+            "options": [
+              "Van 8.00 tot 20.00 uur",
+              "De hele dag",
+              "Alleen 's avonds",
+              "Na 22.00 uur"
+            ],
+            "answer": 0,
+            "explanation": "'Open van 8.00 tot 20.00 uur.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-002-4",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Op welke dag is de huismeester er niet?",
+            "options": [
+              "Op maandag",
+              "Op vrijdag",
+              "Op dinsdag",
+              "Op donderdag"
+            ],
+            "answer": 1,
+            "explanation": "'Maandag tot en met donderdag.' Dus niet op vrijdag.",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Lees de regels goed.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-mededelingen-q-003",
+        "type": "reading",
+        "tags": [
+          "lezen:mededeling"
+        ],
+        "prompt": "Lees de mededeling van de bibliotheek.",
+        "document": {
+          "kind": "document",
+          "docType": "bericht",
+          "title": "Bibliotheek Noord",
+          "body": "Beste bezoekers,\n\nVanwege een verbouwing is de bibliotheek van 1 tot en met 14 juli gesloten. In deze periode kunt u uw boeken terugbrengen in de box buiten (naast de ingang). Er is dan geen boete.\n\nDe bibliotheek in het centrum is wel open, van maandag tot en met zaterdag van 10.00 tot 17.00 uur. U kunt daar ook uw pas gebruiken.\n\nOp 15 juli zijn wij weer open. Welkom terug!"
+        },
+        "questions": [
+          {
+            "id": "lezen-mededelingen-q-003-1",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Waarom is de bibliotheek gesloten?",
+            "options": [
+              "Door vakantie",
+              "Door een storing",
+              "Door een staking",
+              "Door een verbouwing"
+            ],
+            "answer": 3,
+            "explanation": "'Vanwege een verbouwing.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-003-2",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Hoe lang is de bibliotheek gesloten?",
+            "options": [
+              "Van 1 tot en met 14 juli",
+              "De hele zomer",
+              "Een dag",
+              "Tot 15 augustus"
+            ],
+            "answer": 0,
+            "explanation": "'Van 1 tot en met 14 juli.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-003-3",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Waar kunt u uw boeken terugbrengen?",
+            "options": [
+              "Bij de balie",
+              "In de box naast de ingang",
+              "In het centrum",
+              "Via de post"
+            ],
+            "answer": 1,
+            "explanation": "'In de box buiten (naast de ingang).'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-003-4",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Wanneer is de bibliotheek in het centrum dicht?",
+            "options": [
+              "Op zaterdag",
+              "Op maandag",
+              "Op zondag",
+              "Op woensdag"
+            ],
+            "answer": 2,
+            "explanation": "'Maandag tot en met zaterdag.' Dus niet op zondag.",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op wat tijdelijk anders is.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-mededelingen-q-004",
+        "type": "reading",
+        "tags": [
+          "lezen:mededeling"
+        ],
+        "prompt": "Lees het bord bij het zwembad.",
+        "document": {
+          "kind": "document",
+          "docType": "folder",
+          "title": "Regels van het zwembad",
+          "body": "Welkom bij het zwembad!\n\nU mag **niet** hardlopen bij het water.\nKinderen onder de 8 jaar mogen **alleen** zwemmen met een volwassene.\nDouche eerst, daarna zwemmen.\nEten en drinken mag **alleen** in het restaurant.\nNeem uw eigen handdoek mee. Een handdoek huren kost 2 euro.\n\nLet op: de kluisjes zijn gratis, maar u moet uw sleutel bij de uitgang inleveren."
+        },
+        "questions": [
+          {
+            "id": "lezen-mededelingen-q-004-1",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Wat mag niet bij het water?",
+            "options": [
+              "Hardlopen",
+              "Zwemmen",
+              "Douchen",
+              "Praten"
+            ],
+            "answer": 0,
+            "explanation": "'U mag niet hardlopen bij het water.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-004-2",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Wanneer mag een kind van 6 zwemmen?",
+            "options": [
+              "Alleen",
+              "Met een volwassene erbij",
+              "Alleen met een vriend",
+              "Nooit"
+            ],
+            "answer": 1,
+            "explanation": "'Kinderen onder de 8 jaar … alleen met een volwassene.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-004-3",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Waar mag u eten en drinken?",
+            "options": [
+              "Overal",
+              "Bij het water",
+              "Alleen in het restaurant",
+              "Bij de douche"
+            ],
+            "answer": 2,
+            "explanation": "'Alleen in het restaurant.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-004-4",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Wat moet u bij de uitgang doen?",
+            "options": [
+              "Een handdoek huren",
+              "Betalen voor het kluisje",
+              "Uw kaartje laten zien",
+              "Uw sleutel inleveren"
+            ],
+            "answer": 3,
+            "explanation": "'U moet uw sleutel bij de uitgang inleveren.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op niet en alleen.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-mededelingen-q-005",
+        "type": "reading",
+        "tags": [
+          "lezen:mededeling"
+        ],
+        "prompt": "Lees de mededeling in de supermarkt.",
+        "document": {
+          "kind": "document",
+          "docType": "bericht",
+          "title": "Supermarkt Dichtbij – nieuw",
+          "body": "Vanaf maandag 3 maart gelden nieuwe openingstijden.\n\nMaandag tot en met zaterdag: 8.00 tot 21.00 uur (was: tot 20.00 uur).\nZondag: 12.00 tot 18.00 uur (nieuw!).\n\nOp feestdagen is de winkel gesloten, **behalve** op Koningsdag.\n\nBetaalt u met een pinpas? Dat kan bij alle kassa's. Contant betalen kan **alleen** bij kassa 1 en 2.\n\nWij danken u voor uw begrip."
+        },
+        "questions": [
+          {
+            "id": "lezen-mededelingen-q-005-1",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Vanaf wanneer gelden de nieuwe tijden?",
+            "options": [
+              "Vanaf zondag",
+              "Vanaf 3 maart",
+              "Vanaf 8.00 uur",
+              "Vanaf volgend jaar"
+            ],
+            "answer": 1,
+            "explanation": "'Vanaf maandag 3 maart.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-005-2",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Wat is nieuw?",
+            "options": [
+              "De winkel is dicht op zaterdag.",
+              "De winkel is dicht op maandag.",
+              "De winkel is nu ook op zondag open.",
+              "De winkel sluit eerder."
+            ],
+            "answer": 2,
+            "explanation": "'Zondag: 12.00 tot 18.00 uur (nieuw!)'.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-005-3",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Wanneer is de winkel op een feestdag open?",
+            "options": [
+              "Op alle feestdagen",
+              "Op Kerstmis",
+              "Nooit",
+              "Op Koningsdag"
+            ],
+            "answer": 3,
+            "explanation": "'Gesloten, behalve op Koningsdag.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-mededelingen-q-005-4",
+            "type": "mc",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "prompt": "Waar kunt u contant betalen?",
+            "options": [
+              "Alleen bij kassa 1 en 2",
+              "Bij alle kassa's",
+              "Niet",
+              "Bij de uitgang"
+            ],
+            "answer": 0,
+            "explanation": "'Contant … alleen bij kassa 1 en 2.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op behalve en alleen.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

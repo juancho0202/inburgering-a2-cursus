@@ -1,0 +1,474 @@
+{
+  "id": "lezen-emails",
+  "moduleId": "lezen",
+  "title": "E-mails en berichten",
+  "goal": "Je begrijpt e-mails en berichten van collega's, docenten, buren en bedrijven.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "lezen:email"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "lezen-emails-l-01",
+      "title": "E-mails lezen",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Bij een e-mail kijk je eerst naar **Van**, **Aan** en **Onderwerp**. Lees dan de eerste zin: wat is het doel? Daarna: wat moet jij doen, en wanneer?"
+        },
+        {
+          "kind": "tip",
+          "md": "Een e-mail aan een vriend of collega is vaak informeel (*hoi, je*). Een e-mail van een bedrijf is formeel (*geachte, u*)."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-emails-q-001",
+        "type": "reading",
+        "tags": [
+          "lezen:email"
+        ],
+        "prompt": "Lees de e-mail van een collega.",
+        "document": {
+          "kind": "document",
+          "docType": "email",
+          "title": "Rooster ruilen?",
+          "body": "Van: Mehmet Kaya\nAan: Sanne de Vries\nOnderwerp: Rooster ruilen?\n\nHoi Sanne,\n\nKun je misschien met mij ruilen? Ik moet volgende week woensdag werken, maar mijn zoon heeft dan een afspraak bij de tandarts.\n\nIk wil graag op donderdag werken. Dan werk ik jouw dienst van 14.00 tot 22.00 uur, en jij werkt mijn dienst op woensdag van 8.00 tot 16.00 uur.\n\nLaat je het me even weten? Ik hoor het graag vóór vrijdag.\n\nGroeten,\nMehmet"
+        },
+        "questions": [
+          {
+            "id": "lezen-emails-q-001-1",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wat vraagt Mehmet aan Sanne?",
+            "options": [
+              "Of zij vrij wil nemen",
+              "Of zij haar dienst met hem wil ruilen",
+              "Of zij de tandarts wil bellen",
+              "Of zij zijn zoon wil ophalen"
+            ],
+            "answer": 1,
+            "explanation": "'Kun je misschien met mij ruilen?'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-001-2",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Waarom wil Mehmet ruilen?",
+            "options": [
+              "Hij is ziek.",
+              "Hij heeft vakantie.",
+              "Zijn zoon heeft een afspraak bij de tandarts.",
+              "Hij wil eerder naar huis."
+            ],
+            "answer": 2,
+            "explanation": "'Mijn zoon heeft dan een afspraak bij de tandarts.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-001-3",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wanneer wil Mehmet werken?",
+            "options": [
+              "Op woensdag van 8.00 tot 16.00 uur",
+              "Op vrijdag",
+              "Op zaterdag",
+              "Op donderdag van 14.00 tot 22.00 uur"
+            ],
+            "answer": 3,
+            "explanation": "Hij wil Sannes dienst op donderdag van 14.00 tot 22.00 uur.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-001-4",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wanneer wil Mehmet antwoord?",
+            "options": [
+              "Vóór vrijdag",
+              "Na vrijdag",
+              "Op woensdag",
+              "Meteen"
+            ],
+            "answer": 0,
+            "explanation": "'Ik hoor het graag vóór vrijdag.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Lees wie wat wil, en wanneer.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-emails-q-002",
+        "type": "reading",
+        "tags": [
+          "lezen:email"
+        ],
+        "prompt": "Lees de e-mail van de docent.",
+        "document": {
+          "kind": "document",
+          "docType": "email",
+          "title": "Les valt uit",
+          "body": "Van: Marieke Jansen (docent)\nAan: Alle cursisten Nederlands A2\nOnderwerp: Les van donderdag\n\nBeste cursisten,\n\nDe les van donderdag 9 mei valt uit, want ik ben ziek. Dat vind ik heel jammer.\n\nWe maken de les in plaats daarvan op zaterdag 18 mei van 10.00 tot 12.00 uur in lokaal 3. Kunt u niet komen? Laat het mij dan voor 15 mei weten.\n\nMaak intussen de oefeningen op bladzijde 40 en 41. We bespreken ze op zaterdag.\n\nMet vriendelijke groet,\nMarieke Jansen"
+        },
+        "questions": [
+          {
+            "id": "lezen-emails-q-002-1",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Waarom valt de les uit?",
+            "options": [
+              "Het is een feestdag.",
+              "Het lokaal is gesloten.",
+              "De docent is ziek.",
+              "De cursisten zijn ziek."
+            ],
+            "answer": 2,
+            "explanation": "'… want ik ben ziek.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-002-2",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wanneer is de nieuwe les?",
+            "options": [
+              "Op donderdag 9 mei",
+              "Op zaterdag 15 mei",
+              "Op zondag 19 mei",
+              "Op zaterdag 18 mei"
+            ],
+            "answer": 3,
+            "explanation": "'Op zaterdag 18 mei van 10.00 tot 12.00 uur.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-002-3",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wat moeten cursisten doen als ze niet kunnen komen?",
+            "options": [
+              "Het vóór 15 mei aan de docent laten weten",
+              "Een brief naar de school sturen",
+              "Niets doen",
+              "Een andere cursus kiezen"
+            ],
+            "answer": 0,
+            "explanation": "'Laat het mij dan voor 15 mei weten.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-002-4",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wat moeten cursisten alvast maken?",
+            "options": [
+              "Een toets",
+              "De oefeningen op bladzijde 40 en 41",
+              "Een samenvatting",
+              "Een brief"
+            ],
+            "answer": 1,
+            "explanation": "'Maak intussen de oefeningen op bladzijde 40 en 41.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op de nieuwe datum en wat je moet doen.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-emails-q-003",
+        "type": "reading",
+        "tags": [
+          "lezen:email"
+        ],
+        "prompt": "Lees het bericht van de buurvrouw.",
+        "document": {
+          "kind": "document",
+          "docType": "bericht",
+          "title": "Verjaardagsfeestje",
+          "body": "Van: Olga Petrova\nAan: Alle buren\nOnderwerp: Feestje zaterdag\n\nBeste buren,\n\nMijn dochter wordt zaterdag acht jaar. We geven een klein feestje in de tuin, van 14.00 tot 17.00 uur. Het kan een beetje druk zijn en er is wat muziek. Sorry voor het lawaai!\n\nWilt u een stuk taart komen eten? Dan bent u van harte welkom. Laat het mij even weten via nummer 14 of via dit bericht.\n\nGroeten,\nOlga (nr. 14)"
+        },
+        "questions": [
+          {
+            "id": "lezen-emails-q-003-1",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Waarom schrijft Olga dit bericht?",
+            "options": [
+              "Ze wil verhuizen.",
+              "Ze zoekt een baan.",
+              "Ze klaagt over de buren.",
+              "Ze nodigt de buren uit en waarschuwt voor lawaai."
+            ],
+            "answer": 3,
+            "explanation": "Ze geeft een feestje en zegt sorry voor het lawaai.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-003-2",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Hoe oud wordt de dochter van Olga?",
+            "options": [
+              "Acht jaar",
+              "Zes jaar",
+              "Veertien jaar",
+              "Drie jaar"
+            ],
+            "answer": 0,
+            "explanation": "'Wordt zaterdag acht jaar.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-003-3",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wanneer is het feestje?",
+            "options": [
+              "Zaterdag van 17.00 tot 20.00 uur",
+              "Zaterdag van 14.00 tot 17.00 uur",
+              "Zondag",
+              "Vrijdagavond"
+            ],
+            "answer": 1,
+            "explanation": "'Van 14.00 tot 17.00 uur.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-003-4",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wat kunnen de buren eten?",
+            "options": [
+              "Soep",
+              "Pizza",
+              "Taart",
+              "Brood"
+            ],
+            "answer": 2,
+            "explanation": "'Wilt u een stuk taart komen eten?'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Lees wie schrijft en waarom.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-emails-q-004",
+        "type": "reading",
+        "tags": [
+          "lezen:email"
+        ],
+        "prompt": "Lees de e-mail van het bedrijf.",
+        "document": {
+          "kind": "document",
+          "docType": "email",
+          "title": "Uw bestelling",
+          "body": "Van: Webwinkel Boekenbos\nAan: Mevrouw P. Sharma\nOnderwerp: Vertraging van uw bestelling\n\nGeachte mevrouw Sharma,\n\nUw bestelling (nummer 48213) komt later dan gepland. Wij verwachten het pakket op donderdag 6 juni te bezorgen in plaats van maandag 3 juni. Dit komt door drukte bij de postbezorger.\n\nU hoeft niets te doen. Wilt u de bestelling toch annuleren? Dan krijgt u uw geld terug. Dat kan tot 5 juni via onze website.\n\nHet spijt ons. Als excuus krijgt u 10% korting op uw volgende bestelling.\n\nMet vriendelijke groet,\nWebwinkel Boekenbos"
+        },
+        "questions": [
+          {
+            "id": "lezen-emails-q-004-1",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wat is het probleem?",
+            "options": [
+              "Het pakket komt later.",
+              "Het pakket is kwijt.",
+              "Het pakket is kapot.",
+              "Het pakket is te duur."
+            ],
+            "answer": 0,
+            "explanation": "'Uw bestelling komt later dan gepland.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-004-2",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wanneer verwacht het bedrijf het pakket te bezorgen?",
+            "options": [
+              "Op maandag 3 juni",
+              "Op donderdag 6 juni",
+              "Op woensdag 5 juni",
+              "Op vrijdag 7 juni"
+            ],
+            "answer": 1,
+            "explanation": "'Donderdag 6 juni in plaats van maandag 3 juni.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-004-3",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wat kan mevrouw Sharma doen als ze niet wil wachten?",
+            "options": [
+              "Het pakket terugsturen na 6 juni",
+              "De postbezorger bellen",
+              "De bestelling tot 5 juni annuleren",
+              "Een nieuwe bestelling doen"
+            ],
+            "answer": 2,
+            "explanation": "'Annuleren … tot 5 juni via onze website.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-004-4",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wat krijgt mevrouw Sharma als excuus?",
+            "options": [
+              "Geld terug",
+              "Een gratis boek",
+              "Gratis bezorging",
+              "10% korting op de volgende bestelling"
+            ],
+            "answer": 3,
+            "explanation": "'10% korting op uw volgende bestelling.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Een bedrijf stuurt een formele e-mail.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-emails-q-005",
+        "type": "reading",
+        "tags": [
+          "lezen:email"
+        ],
+        "prompt": "Lees het bericht van de vriendin.",
+        "document": {
+          "kind": "document",
+          "docType": "bericht",
+          "title": "Zin om te wandelen?",
+          "body": "Van: Priya\nAan: Wei\nOnderwerp: Zin om te wandelen?\n\nHoi Wei,\n\nHeb je zin om zondag te wandelen in het bos? Het weer wordt mooi: zon en 17 graden. We spreken om 10.00 uur af bij het station. Neem een lunch en water mee.\n\nOlga en Juan komen ook. Wil je weten hoe laat we terug zijn? Rond 15.00 uur.\n\nLaat je het even weten? Dan reserveer ik een plek in de auto van Juan.\n\nTot zondag!\nPriya"
+        },
+        "questions": [
+          {
+            "id": "lezen-emails-q-005-1",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wat stelt Priya voor?",
+            "options": [
+              "Zondag naar de film gaan",
+              "Zondag gaan wandelen",
+              "Zaterdag gaan fietsen",
+              "Zondag koken"
+            ],
+            "answer": 1,
+            "explanation": "'Heb je zin om zondag te wandelen?'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-005-2",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Waar spreken ze af?",
+            "options": [
+              "In het bos",
+              "Bij Priya thuis",
+              "Bij het station",
+              "Bij de auto van Juan"
+            ],
+            "answer": 2,
+            "explanation": "'We spreken om 10.00 uur af bij het station.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-005-3",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wat moet Wei meenemen?",
+            "options": [
+              "Een jas en laarzen",
+              "Geld",
+              "Een kaart",
+              "Een lunch en water"
+            ],
+            "answer": 3,
+            "explanation": "'Neem een lunch en water mee.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-emails-q-005-4",
+            "type": "mc",
+            "tags": [
+              "lezen:email"
+            ],
+            "prompt": "Wat moet Wei doen?",
+            "options": [
+              "Laten weten of hij komt",
+              "Een auto huren",
+              "Een kaartje kopen",
+              "Priya bellen om 10.00 uur"
+            ],
+            "answer": 0,
+            "explanation": "'Laat je het even weten?'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Een informeel bericht tussen vrienden.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

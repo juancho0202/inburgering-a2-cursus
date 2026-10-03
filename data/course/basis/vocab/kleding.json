@@ -1,0 +1,412 @@
+{
+  "theme": "kleding",
+  "title": "Kleding",
+  "entries": [
+    {
+      "id": "basis-vocab-kleding-001",
+      "nl": "de kleren",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Wat je aantrekt.",
+      "example": "Ik was mijn kleren.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-002",
+      "nl": "de jas",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de jassen",
+      "definitionNl": "Kleding voor buiten, over je andere kleren.",
+      "example": "Doe een warme jas aan.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-003",
+      "nl": "de broek",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de broeken",
+      "definitionNl": "Kleding voor je benen.",
+      "example": "Mijn broek is te groot.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-004",
+      "nl": "de rok",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de rokken",
+      "definitionNl": "Een kledingstuk dat vanaf je middel hangt.",
+      "example": "Zij draagt een rode rok.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-005",
+      "nl": "de jurk",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de jurken",
+      "definitionNl": "Een lang kledingstuk voor vrouwen.",
+      "example": "De jurk is mooi.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-006",
+      "nl": "het shirt",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de shirts",
+      "definitionNl": "Een los kledingstuk voor je bovenlichaam.",
+      "example": "Ik draag een wit shirt.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-007",
+      "nl": "de trui",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de truien",
+      "definitionNl": "Een warm kledingstuk van wol.",
+      "example": "Het is koud, doe een trui aan.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-008",
+      "nl": "het overhemd",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de overhemden",
+      "definitionNl": "Een nette blouse met kraag, vooral voor mannen.",
+      "example": "Hij draagt een overhemd naar zijn werk.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-009",
+      "nl": "de schoen",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de schoenen",
+      "definitionNl": "Kleding voor je voeten.",
+      "example": "Mijn schoenen zijn nat.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-010",
+      "nl": "de laars",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de laarzen",
+      "definitionNl": "Hoge schoen voor regen of kou.",
+      "example": "Doe laarzen aan bij regen.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-011",
+      "nl": "de sok",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de sokken",
+      "definitionNl": "Dit draag je in je schoenen.",
+      "example": "Ik heb nieuwe sokken.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-012",
+      "nl": "de muts",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de mutsen",
+      "definitionNl": "Een warme hoed voor je hoofd.",
+      "example": "In de winter draag ik een muts.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-013",
+      "nl": "de sjaal",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de sjaals",
+      "definitionNl": "Dit doe je om je nek.",
+      "example": "Het is koud, neem een sjaal mee.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-014",
+      "nl": "de handschoen",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de handschoenen",
+      "definitionNl": "Dit doe je aan je handen.",
+      "example": "Ik heb mijn handschoenen vergeten.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-015",
+      "nl": "het uniform",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de uniformen",
+      "definitionNl": "Kleding die je draagt voor je werk.",
+      "example": "De politie draagt een uniform.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-016",
+      "nl": "de maat",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de maten",
+      "definitionNl": "Hoe groot een kledingstuk is.",
+      "example": "Welke maat heeft u?",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-017",
+      "nl": "passen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets heeft de goede maat.",
+      "example": "Deze broek past niet.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-018",
+      "nl": "aantrekken",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Kleding op je lichaam doen.",
+      "example": "Ik trek een jas aan.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-019",
+      "nl": "uitdoen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Kleding van je lichaam doen.",
+      "example": "Doe je schoenen uit bij de deur.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-020",
+      "nl": "dragen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Kleding aan je lichaam hebben.",
+      "example": "Zij draagt een blauwe jas.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-021",
+      "nl": "de pas",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De maat van een kledingstuk of schoen.",
+      "example": "Mag ik deze jas passen?",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-022",
+      "nl": "de kleur",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de kleuren",
+      "definitionNl": "Rood, blauw, groen enzovoort.",
+      "example": "Welke kleur vind je mooi?",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-023",
+      "nl": "groot",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Niet klein.",
+      "example": "Deze trui is te groot.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-024",
+      "nl": "klein",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Niet groot.",
+      "example": "Deze jas is te klein.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-025",
+      "nl": "nieuw",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Pas gemaakt of gekocht.",
+      "example": "Ik heb nieuwe schoenen.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-026",
+      "nl": "oud",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Al lang bestaand.",
+      "example": "Mijn jas is oud.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-027",
+      "nl": "schoon",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Niet vies.",
+      "example": "Het shirt is schoon.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-028",
+      "nl": "vies",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Niet schoon.",
+      "example": "Mijn schoenen zijn vies.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-kleding-029",
+      "nl": "wassen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets schoonmaken met water.",
+      "example": "Ik was de kleren in de wasmachine.",
+      "tags": [
+        "thema:kleding"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}

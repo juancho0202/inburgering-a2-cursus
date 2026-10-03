@@ -27,10 +27,23 @@ const parsed = computed(() => {
   }
   return { head, body: lines.slice(i).join("\n").trim() };
 });
-// Table rows: lines with " | " separators render as a table (for roosters).
-const table = computed(() => {
-  const rows = parsed.value.body.split("\n").filter((l) => l.includes(" | "));
-  return rows.length >= 2 ? rows.map((r) => r.split(" | ").map((c) => c.trim())) : null;
+// Body segments: lines with " | " form a table, other lines form paragraphs (for roosters).
+type Segment = { kind: "text"; text: string } | { kind: "table"; rows: string[][] };
+const segments = computed<Segment[]>(() => {
+  const out: Segment[] = [];
+  for (const line of parsed.value.body.split("\n")) {
+    if (line.includes(" | ")) {
+      const row = line.split(" | ").map((c) => c.trim());
+      const last = out[out.length - 1];
+      if (last?.kind === "table") last.rows.push(row);
+      else out.push({ kind: "table", rows: [row] });
+    } else {
+      const last = out[out.length - 1];
+      if (last?.kind === "text") last.text += "\n" + line;
+      else out.push({ kind: "text", text: line });
+    }
+  }
+  return out.map((s) => (s.kind === "text" ? { ...s, text: s.text.trim() } : s)).filter((s) => s.kind === "table" || s.text);
 });
 </script>
 
@@ -53,16 +66,18 @@ const table = computed(() => {
           <dd>{{ v }}</dd>
         </template>
       </dl>
-      <div v-if="table" class="overflow-x-auto">
-        <table class="w-full border-collapse text-left">
-          <tbody>
-            <tr v-for="(row, ri) in table" :key="ri" :class="ri === 0 ? 'bg-slate-100 font-bold' : 'border-t border-slate-200'">
-              <td v-for="(cell, ci) in row" :key="ci" class="px-3 py-2">{{ cell }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p v-else class="whitespace-pre-line text-lg leading-relaxed">{{ parsed.body }}</p>
+      <template v-for="(seg, si) in segments" :key="si">
+        <div v-if="seg.kind === 'table'" class="my-3 overflow-x-auto">
+          <table class="w-full border-collapse text-left">
+            <tbody>
+              <tr v-for="(row, ri) in seg.rows" :key="ri" :class="ri === 0 ? 'bg-slate-100 font-bold' : 'border-t border-slate-200'">
+                <td v-for="(cell, ci) in row" :key="ci" class="px-3 py-2">{{ cell }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p v-else class="whitespace-pre-line text-lg leading-relaxed">{{ seg.text }}</p>
+      </template>
     </div>
   </article>
 </template>

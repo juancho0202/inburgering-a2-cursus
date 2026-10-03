@@ -1,0 +1,470 @@
+{
+  "id": "lezen-roosters",
+  "moduleId": "lezen",
+  "title": "Roosters en tabellen",
+  "goal": "Je leest tabellen met tijden, prijzen en opening.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "lezen:rooster"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "lezen-roosters-l-01",
+      "title": "Tabellen lezen",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Bij een tabel zoek je eerst de **rij** (de dag of het product) en dan de **kolom** (de tijd of de prijs). Let op uitzonderingen in de kleine letters onder de tabel."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-roosters-q-001",
+        "type": "reading",
+        "tags": [
+          "lezen:rooster"
+        ],
+        "prompt": "Lees de openingstijden.",
+        "document": {
+          "kind": "document",
+          "docType": "rooster",
+          "title": "Openingstijden Huisartsenpraktijk Zuid",
+          "body": "Dag | Open | Gesloten\nMaandag | 8.00 – 17.00 | 12.00 – 13.00\nDinsdag | 8.00 – 17.00 | 12.00 – 13.00\nWoensdag | 8.00 – 12.00 | -\nDonderdag | 8.00 – 17.00 | 12.00 – 13.00\nVrijdag | 8.00 – 16.00 | 12.00 – 13.00\n\nBuiten deze tijden belt u de huisartsenpost.\n\nLet op: de tijden kunnen veranderen op feestdagen. Kijk voor de laatste informatie op de website of vraag het bij de balie."
+        },
+        "questions": [
+          {
+            "id": "lezen-roosters-q-001-1",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Wanneer is de praktijk op woensdag open?",
+            "options": [
+              "Van 8.00 tot 17.00 uur",
+              "Van 8.00 tot 12.00 uur",
+              "De hele dag",
+              "Niet"
+            ],
+            "answer": 1,
+            "explanation": "Woensdag: 8.00 – 12.00.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-001-2",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Wanneer is de praktijk op dinsdag tussen de middag dicht?",
+            "options": [
+              "Van 13.00 tot 14.00 uur",
+              "De hele middag",
+              "Van 12.00 tot 13.00 uur",
+              "Nooit"
+            ],
+            "answer": 2,
+            "explanation": "Dinsdag gesloten: 12.00 – 13.00.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-001-3",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Hoe laat sluit de praktijk op vrijdag?",
+            "options": [
+              "Om 17.00 uur",
+              "Om 12.00 uur",
+              "Om 18.00 uur",
+              "Om 16.00 uur"
+            ],
+            "answer": 3,
+            "explanation": "Vrijdag: 8.00 – 16.00.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-001-4",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Wat doet u als u 's avonds ziek bent?",
+            "options": [
+              "De huisartsenpost bellen",
+              "Naar de praktijk gaan",
+              "Wachten tot de ochtend",
+              "De apotheek bellen"
+            ],
+            "answer": 0,
+            "explanation": "'Buiten deze tijden belt u de huisartsenpost.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Zoek eerst de dag.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-roosters-q-002",
+        "type": "reading",
+        "tags": [
+          "lezen:rooster"
+        ],
+        "prompt": "Lees de dienstregeling van de bus.",
+        "document": {
+          "kind": "document",
+          "docType": "rooster",
+          "title": "Buslijn 12: Station – Ziekenhuis",
+          "body": "Vertrek Station | Aankomst Ziekenhuis\n8.10 | 8.25\n8.40 | 8.55\n9.10 | 9.25\n9.40 | 9.55\n10.10 | 10.25\n\nDe bus rijdt elke 30 minuten. Op zondag rijdt de bus niet. Op feestdagen rijdt de bus volgens het zondagsrooster.\n\nLet op: de tijden kunnen veranderen op feestdagen. Kijk voor de laatste informatie op de website of vraag het bij de balie."
+        },
+        "questions": [
+          {
+            "id": "lezen-roosters-q-002-1",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Hoe lang duurt de reis van het station naar het ziekenhuis?",
+            "options": [
+              "30 minuten",
+              "5 minuten",
+              "15 minuten",
+              "45 minuten"
+            ],
+            "answer": 2,
+            "explanation": "8.10 → 8.25 = 15 minuten.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-002-2",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "U wilt om 9.30 uur in het ziekenhuis zijn. Met welke bus gaat u?",
+            "options": [
+              "Met de bus van 9.40 uur",
+              "Met de bus van 8.40 uur",
+              "Met de bus van 10.10 uur",
+              "Met de bus van 9.10 uur"
+            ],
+            "answer": 3,
+            "explanation": "De bus van 9.10 uur komt om 9.25 uur aan. De volgende komt om 9.55 uur aan: te laat.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-002-3",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Op welke dag rijdt de bus niet?",
+            "options": [
+              "Op zondag",
+              "Op zaterdag",
+              "Op maandag",
+              "Op vrijdag"
+            ],
+            "answer": 0,
+            "explanation": "'Op zondag rijdt de bus niet.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-002-4",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Hoe vaak rijdt de bus?",
+            "options": [
+              "Elke 15 minuten",
+              "Elke 30 minuten",
+              "Elk uur",
+              "Elke 5 minuten"
+            ],
+            "answer": 1,
+            "explanation": "'De bus rijdt elke 30 minuten.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Reken uit hoe laat u er bent.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-roosters-q-003",
+        "type": "reading",
+        "tags": [
+          "lezen:rooster"
+        ],
+        "prompt": "Lees het werkrooster.",
+        "document": {
+          "kind": "document",
+          "docType": "rooster",
+          "title": "Rooster van Sanne",
+          "body": "Dag | Dienst | Tijd\nMaandag | Vroeg | 7.00 – 15.00\nDinsdag | Vrij | -\nWoensdag | Laat | 15.00 – 23.00\nDonderdag | Laat | 15.00 – 23.00\nVrijdag | Vroeg | 7.00 – 15.00\nZaterdag | Vrij | -\n\nOp woensdag heeft Sanne om 10.00 uur een afspraak bij de tandarts.\n\nLet op: de tijden kunnen veranderen op feestdagen. Kijk voor de laatste informatie op de website of vraag het bij de balie."
+        },
+        "questions": [
+          {
+            "id": "lezen-roosters-q-003-1",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Op welke dagen is Sanne vrij?",
+            "options": [
+              "Op maandag en vrijdag",
+              "Op woensdag en donderdag",
+              "Op zondag",
+              "Op dinsdag en zaterdag"
+            ],
+            "answer": 3,
+            "explanation": "Vrij op dinsdag en zaterdag.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-003-2",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Hoe laat begint Sannes dienst op donderdag?",
+            "options": [
+              "Om 15.00 uur",
+              "Om 7.00 uur",
+              "Om 23.00 uur",
+              "Om 10.00 uur"
+            ],
+            "answer": 0,
+            "explanation": "Donderdag: laat, 15.00 – 23.00.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-003-3",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Kan Sanne op woensdag naar de tandarts om 10.00 uur?",
+            "options": [
+              "Nee, want ze werkt dan.",
+              "Ja, want ze werkt pas om 15.00 uur.",
+              "Nee, want ze is vrij.",
+              "Ja, want ze werkt vroeg."
+            ],
+            "answer": 1,
+            "explanation": "Op woensdag begint haar dienst om 15.00 uur.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-003-4",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Op welke dag werkt Sanne vroeg?",
+            "options": [
+              "Op woensdag",
+              "Op donderdag",
+              "Op maandag en vrijdag",
+              "Op dinsdag"
+            ],
+            "answer": 2,
+            "explanation": "Vroege dienst: maandag en vrijdag.",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Lees de tabel en de extra tekst.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-roosters-q-004",
+        "type": "reading",
+        "tags": [
+          "lezen:rooster"
+        ],
+        "prompt": "Lees de prijslijst.",
+        "document": {
+          "kind": "document",
+          "docType": "rooster",
+          "title": "Prijzen sportschool FitNu",
+          "body": "Abonnement | Prijs per maand | Voorwaarde\nBasis | 25 euro | Alleen overdag (8.00 – 17.00 uur)\nPlus | 35 euro | Elke dag, de hele dag\nStudent | 20 euro | Met studentenkaart, alleen overdag\n\nOpzeggen kan elke maand, met een opzegtermijn van één maand. Inschrijfkosten: 15 euro (eenmalig). Kinderen onder de 16 jaar mogen niet trainen.\n\nLet op: de tijden kunnen veranderen op feestdagen. Kijk voor de laatste informatie op de website of vraag het bij de balie."
+        },
+        "questions": [
+          {
+            "id": "lezen-roosters-q-004-1",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Welk abonnement is het goedkoopst?",
+            "options": [
+              "Student",
+              "Basis",
+              "Plus",
+              "Allemaal gelijk"
+            ],
+            "answer": 0,
+            "explanation": "Student kost 20 euro.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-004-2",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Wanneer kunt u met een Basis-abonnement trainen?",
+            "options": [
+              "Elke dag de hele dag",
+              "Alleen overdag",
+              "Alleen 's avonds",
+              "Alleen in het weekend"
+            ],
+            "answer": 1,
+            "explanation": "'Basis: alleen overdag.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-004-3",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Wat heeft u nodig voor een Student-abonnement?",
+            "options": [
+              "Een legitimatiebewijs",
+              "Een diploma",
+              "Een studentenkaart",
+              "Een brief van de gemeente"
+            ],
+            "answer": 2,
+            "explanation": "'Met studentenkaart.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-004-4",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Wat moet u eenmalig betalen?",
+            "options": [
+              "25 euro",
+              "35 euro",
+              "20 euro",
+              "15 euro inschrijfkosten"
+            ],
+            "answer": 3,
+            "explanation": "'Inschrijfkosten: 15 euro (eenmalig).'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op de voorwaarden in de derde kolom.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-roosters-q-005",
+        "type": "reading",
+        "tags": [
+          "lezen:rooster"
+        ],
+        "prompt": "Lees de afvalkalender.",
+        "document": {
+          "kind": "document",
+          "docType": "rooster",
+          "title": "Afvalkalender maart",
+          "body": "Soort afval | Datum\nGft | 4, 18 maart\nRestafval | 11 maart\nPapier | 25 maart\nGlas | Altijd naar de glasbak\n\nLet op: op 18 maart wordt het gft later opgehaald, namelijk op woensdag 19 maart, door een feestdag.\n\nLet op: de tijden kunnen veranderen op feestdagen. Kijk voor de laatste informatie op de website of vraag het bij de balie."
+        },
+        "questions": [
+          {
+            "id": "lezen-roosters-q-005-1",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Wanneer wordt het restafval opgehaald?",
+            "options": [
+              "Op 4 maart",
+              "Op 11 maart",
+              "Op 25 maart",
+              "Op 18 maart"
+            ],
+            "answer": 1,
+            "explanation": "Restafval: 11 maart.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-005-2",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Wanneer wordt het gft van 18 maart opgehaald?",
+            "options": [
+              "Op 18 maart",
+              "Op 20 maart",
+              "Op 19 maart",
+              "Op 25 maart"
+            ],
+            "answer": 2,
+            "explanation": "'Op woensdag 19 maart, door een feestdag.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-005-3",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Wat doet u met glas?",
+            "options": [
+              "U zet het buiten op 25 maart.",
+              "U gooit het in het restafval.",
+              "U geeft het aan de buren.",
+              "U brengt het naar de glasbak."
+            ],
+            "answer": 3,
+            "explanation": "'Glas: altijd naar de glasbak.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-roosters-q-005-4",
+            "type": "mc",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "prompt": "Hoe vaak wordt gft opgehaald in maart?",
+            "options": [
+              "Twee keer",
+              "Een keer",
+              "Drie keer",
+              "Elke week"
+            ],
+            "answer": 0,
+            "explanation": "4 en 18 maart: twee keer.",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Zoek het goede soort afval en de datum.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

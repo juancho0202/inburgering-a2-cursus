@@ -1,0 +1,403 @@
+{
+  "id": "basis-scheidbaar",
+  "moduleId": "basis",
+  "title": "Scheidbare werkwoorden",
+  "goal": "Je gebruikt scheidbare werkwoorden goed in een zin.",
+  "estimatedMinutes": 15,
+  "tags": [
+    "basis:scheidbaar",
+    "grammar:scheidbaar"
+  ],
+  "vocabRefs": [
+    "basis-verb-afspreken",
+    "basis-verb-inleveren",
+    "basis-verb-overstappen",
+    "basis-verb-meenemen",
+    "basis-verb-opbellen",
+    "basis-verb-invullen",
+    "basis-verb-opzeggen",
+    "basis-verb-aanvragen"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-scheidbaar-l-01",
+      "title": "Het eerste deel gaat naar het eind",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Een **scheidbaar werkwoord** heeft een voorvoegsel (af-, in-, over-, mee-, op-, aan-). In een gewone zin gaat dat deel naar het **eind**."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Infinitief",
+            "In een zin",
+            "Perfectum"
+          ],
+          "rows": [
+            [
+              "afspreken",
+              "We spreken morgen af.",
+              "We hebben afgesproken."
+            ],
+            [
+              "inleveren",
+              "Ik lever het formulier in.",
+              "Ik heb het ingeleverd."
+            ],
+            [
+              "overstappen",
+              "U stapt in Utrecht over.",
+              "Ik ben overgestapt."
+            ],
+            [
+              "meenemen",
+              "Neem een jas mee.",
+              "Ik heb een jas meegenomen."
+            ],
+            [
+              "opbellen",
+              "Ik bel je morgen op.",
+              "Ik heb je opgebeld."
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Wacht op het laatste woordje! *Ik bel* ≠ *ik bel af* (afzeggen)."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-001",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "explanation": "Spreken op plek 2, het voorvoegsel af aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "We",
+          "spreken",
+          "morgen",
+          "af."
+        ],
+        "alsoAccepted": [
+          [
+            "Morgen",
+            "spreken",
+            "we",
+            "af."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-002",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "explanation": "Lever op plek 2, in aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "lever",
+          "het",
+          "formulier",
+          "in."
+        ],
+        "alsoAccepted": [
+          [
+            "Het",
+            "formulier",
+            "lever",
+            "ik",
+            "in."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-003",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "explanation": "Stapt op plek 2, over aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "U",
+          "stapt",
+          "in",
+          "Utrecht",
+          "over."
+        ],
+        "alsoAccepted": [
+          [
+            "In",
+            "Utrecht",
+            "stapt",
+            "u",
+            "over."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-004",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "explanation": "Bel op plek 2, op aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "bel",
+          "je",
+          "morgen",
+          "op."
+        ],
+        "alsoAccepted": [
+          [
+            "Morgen",
+            "bel",
+            "ik",
+            "je",
+            "op."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-005",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "explanation": "Bij een opdracht staat het werkwoord vooraan; mee staat aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Neem",
+          "een",
+          "jas",
+          "mee."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-006",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "explanation": "Het voorvoegsel gaat naar het eind: af.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het ontbrekende deel in (afspreken).",
+        "text": "Wij spreken morgen ___ .",
+        "answers": [
+          [
+            "af"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-007",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "explanation": "Bij moeten staat de infinitief aan het eind, dus ongesplitst: inleveren.",
+        "difficulty": 2,
+        "type": "gap-fill",
+        "prompt": "Vul het ontbrekende deel in (inleveren).",
+        "text": "Je moet het formulier voor 1 maart ___ .",
+        "answers": [
+          [
+            "inleveren"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-008",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "explanation": "Perfectum van meenemen: meegenomen.",
+        "difficulty": 2,
+        "type": "gap-fill",
+        "prompt": "Vul het ontbrekende deel in (meenemen).",
+        "text": "Ik heb een jas ___ .",
+        "answers": [
+          [
+            "meegenomen"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-009",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "explanation": "Perfectum: overgestapt, met zijn.",
+        "difficulty": 2,
+        "type": "gap-fill",
+        "prompt": "Vul het ontbrekende deel in (overstappen).",
+        "text": "Ik ben in Utrecht ___ .",
+        "answers": [
+          [
+            "overgestapt"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-010",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "explanation": "Het voorvoegsel (in) gaat naar het eind.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Ik invul het formulier.",
+          "Ik vul het formulier in.",
+          "Ik vul in het formulier.",
+          "Ik het formulier invul."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-011",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "explanation": "Afbellen = afzeggen. Het laatste woordje verandert de betekenis.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Wat betekent: \"Ik bel af\"?",
+        "options": [
+          "Ik bel iemand op.",
+          "Ik bel terug.",
+          "Ik zeg dat ik niet kom.",
+          "Ik bel mijn baas."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-012",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "explanation": "Bij scheidbare werkwoorden komt ge tussen in en leverd: ingeleverd.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Wat is het perfectum van \"inleveren\"?",
+        "options": [
+          "Ik heb het geinleverd.",
+          "Ik heb het inleverd.",
+          "Ik ben het ingeleverd.",
+          "Ik heb het ingeleverd."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-013",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "explanation": "Ge komt tussen voorvoegsel en stam.",
+        "difficulty": 2,
+        "type": "match",
+        "prompt": "Welk deelwoord hoort bij het werkwoord?",
+        "pairs": [
+          [
+            "afspreken",
+            "afgesproken"
+          ],
+          [
+            "opbellen",
+            "opgebeld"
+          ],
+          [
+            "aanvragen",
+            "aangevraagd"
+          ],
+          [
+            "opzeggen",
+            "opgezegd"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-014",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "explanation": "Het voorvoegsel gaat naar het eind van de zin.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "In de zin \"Ik stap in Utrecht over\" staat het voorvoegsel over aan het eind.",
+        "answer": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,381 @@
+{
+  "id": "lezen-artikelen",
+  "moduleId": "lezen",
+  "title": "Korte artikelen",
+  "goal": "Je leest korte nieuwsberichten en artikelen en vindt de belangrijkste informatie.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "lezen:artikel"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "lezen-artikelen-l-01",
+      "title": "Een artikel lezen",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Een kort artikel heeft een **titel** en een **eerste alinea** met de belangrijkste informatie (wie, wat, waar, wanneer). Lees die goed. De rest geeft uitleg."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-artikelen-q-001",
+        "type": "reading",
+        "tags": [
+          "lezen:artikel"
+        ],
+        "prompt": "Lees het nieuwsbericht.",
+        "document": {
+          "kind": "document",
+          "docType": "folder",
+          "title": "Nieuw buurthuis geopend in Zuid",
+          "body": "In de wijk Zuid is gisteren een nieuw buurthuis geopend. Burgemeester Jansen knipte het lint door. \"Een buurthuis is een plek waar mensen elkaar ontmoeten\", zei de burgemeester.\n\nIn het buurthuis zijn elke week activiteiten: taalles op dinsdag, een koffieochtend op donderdag en een naailes op vrijdag. Alle activiteiten zijn gratis, maar u moet zich vooraf aanmelden.\n\nHet buurthuis is open van maandag tot en met vrijdag van 9.00 tot 17.00 uur. Er is ook een speeltuin voor kinderen."
+        },
+        "questions": [
+          {
+            "id": "lezen-artikelen-q-001-1",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Wat is er gisteren gebeurd?",
+            "options": [
+              "De burgemeester is gekozen.",
+              "Er is een nieuw buurthuis geopend.",
+              "Er was een feest.",
+              "Er is een school gesloten."
+            ],
+            "answer": 1,
+            "explanation": "'Gisteren is een nieuw buurthuis geopend.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-artikelen-q-001-2",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Wanneer is de koffieochtend?",
+            "options": [
+              "Op dinsdag",
+              "Op vrijdag",
+              "Op donderdag",
+              "Op maandag"
+            ],
+            "answer": 2,
+            "explanation": "'Een koffieochtend op donderdag.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-artikelen-q-001-3",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Wat moet u doen voor een activiteit?",
+            "options": [
+              "U moet betalen.",
+              "U moet een pas kopen.",
+              "U hoeft niets te doen.",
+              "U moet zich vooraf aanmelden."
+            ],
+            "answer": 3,
+            "explanation": "'Gratis, maar u moet zich vooraf aanmelden.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-artikelen-q-001-4",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Wanneer is het buurthuis open?",
+            "options": [
+              "Van maandag tot en met vrijdag",
+              "Elke dag",
+              "Alleen in het weekend",
+              "Alleen op dinsdag"
+            ],
+            "answer": 0,
+            "explanation": "'Van maandag tot en met vrijdag van 9.00 tot 17.00 uur.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Lees eerst de eerste alinea.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-artikelen-q-002",
+        "type": "reading",
+        "tags": [
+          "lezen:artikel"
+        ],
+        "prompt": "Lees het bericht over de fietsenstalling.",
+        "document": {
+          "kind": "document",
+          "docType": "folder",
+          "title": "Fietsenstalling station tijdelijk dicht",
+          "body": "De fietsenstalling bij station Noord is vanaf 1 augustus tot en met 31 augustus gesloten. De stalling wordt groter en moderner gemaakt.\n\nFietsers kunnen hun fiets in deze periode zetten bij de tijdelijke stalling aan de Stationsweg. Die stalling is 200 meter van het station. Het stallen is daar gratis.\n\n\"Wij vragen begrip van de reizigers\", zegt een woordvoerder. De nieuwe stalling opent op 1 september en heeft plaats voor 2.000 fietsen."
+        },
+        "questions": [
+          {
+            "id": "lezen-artikelen-q-002-1",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Hoe lang is de fietsenstalling dicht?",
+            "options": [
+              "Een week",
+              "Een jaar",
+              "Een maand",
+              "Drie dagen"
+            ],
+            "answer": 2,
+            "explanation": "Van 1 tot en met 31 augustus: een maand.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-artikelen-q-002-2",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Waarom is de stalling dicht?",
+            "options": [
+              "Hij is kapot.",
+              "Er zijn te veel fietsen.",
+              "Het is te duur.",
+              "Hij wordt groter en moderner gemaakt."
+            ],
+            "answer": 3,
+            "explanation": "'De stalling wordt groter en moderner gemaakt.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-artikelen-q-002-3",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Waar kunt u uw fiets zetten in augustus?",
+            "options": [
+              "Bij de tijdelijke stalling aan de Stationsweg",
+              "Bij het station",
+              "Op straat",
+              "Bij de gemeente"
+            ],
+            "answer": 0,
+            "explanation": "'Bij de tijdelijke stalling aan de Stationsweg.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-artikelen-q-002-4",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Wat kost de tijdelijke stalling?",
+            "options": [
+              "1 euro",
+              "Niets",
+              "5 euro",
+              "10 euro"
+            ],
+            "answer": 1,
+            "explanation": "'Het stallen is daar gratis.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Let op de periode en de oplossing.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-artikelen-q-003",
+        "type": "reading",
+        "tags": [
+          "lezen:artikel"
+        ],
+        "prompt": "Lees het artikel over zwemles voor volwassenen.",
+        "document": {
+          "kind": "document",
+          "docType": "folder",
+          "title": "Zwemles voor volwassenen",
+          "body": "Veel volwassenen in Nederland kunnen niet zwemmen. In Nederland is dat een probleem, want er is veel water. Daarom start zwembad De Golf in oktober met zwemles voor volwassenen.\n\nDe lessen zijn op woensdagavond van 19.00 tot 20.00 uur. De cursus duurt tien weken en kost 90 euro. Mensen met een laag inkomen krijgen korting. Zij kunnen dat aanvragen bij de gemeente.\n\nEen groep bestaat uit maximaal acht mensen. U kunt zich opgeven tot 15 september."
+        },
+        "questions": [
+          {
+            "id": "lezen-artikelen-q-003-1",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Voor wie is deze zwemles?",
+            "options": [
+              "Voor kinderen",
+              "Voor baby's",
+              "Voor ouderen alleen",
+              "Voor volwassenen"
+            ],
+            "answer": 3,
+            "explanation": "Titel: zwemles voor volwassenen.",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-artikelen-q-003-2",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Wanneer zijn de lessen?",
+            "options": [
+              "Op woensdagavond",
+              "Op maandagochtend",
+              "Op zaterdag",
+              "Elke dag"
+            ],
+            "answer": 0,
+            "explanation": "'Op woensdagavond van 19.00 tot 20.00 uur.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-artikelen-q-003-3",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Wie krijgt korting?",
+            "options": [
+              "Alle volwassenen",
+              "Mensen met een laag inkomen",
+              "Mensen onder de 18",
+              "Niemand"
+            ],
+            "answer": 1,
+            "explanation": "'Mensen met een laag inkomen krijgen korting.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-artikelen-q-003-4",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Tot wanneer kunt u zich opgeven?",
+            "options": [
+              "Tot oktober",
+              "Tot 1 september",
+              "Tot 15 september",
+              "Tot woensdag"
+            ],
+            "answer": 2,
+            "explanation": "'U kunt zich opgeven tot 15 september.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Lees voor wie, wanneer en wat het kost.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-artikelen-q-004",
+        "type": "reading",
+        "tags": [
+          "lezen:artikel"
+        ],
+        "prompt": "Lees het bericht over de storing.",
+        "document": {
+          "kind": "document",
+          "docType": "folder",
+          "title": "Storing bij de bus",
+          "body": "Vanochtend reden de bussen van lijn 5 niet. Er was een storing bij het systeem van de buschauffeurs. Reizigers moesten lang wachten. Rond 9.30 uur reden de bussen weer.\n\n\"Het spijt ons erg\", zegt het busbedrijf. Reizigers die te laat op hun werk waren, kunnen een bewijs aanvragen via de website. Dit kan tot en met vrijdag.\n\nDe oorzaak van de storing is nog niet bekend. Het bedrijf doet onderzoek. Vanavond rijden de bussen volgens het normale rooster."
+        },
+        "questions": [
+          {
+            "id": "lezen-artikelen-q-004-1",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Wat gebeurde er vanochtend?",
+            "options": [
+              "De bussen van lijn 5 reden niet.",
+              "De bussen reden te snel.",
+              "De bussen waren vol.",
+              "De bussen waren gratis."
+            ],
+            "answer": 0,
+            "explanation": "'Vanochtend reden de bussen van lijn 5 niet.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-artikelen-q-004-2",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Hoe laat reden de bussen weer?",
+            "options": [
+              "Rond 8.00 uur",
+              "Rond 9.30 uur",
+              "Rond 12.00 uur",
+              "Vanavond"
+            ],
+            "answer": 1,
+            "explanation": "'Rond 9.30 uur reden de bussen weer.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-artikelen-q-004-3",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Wat kunnen reizigers aanvragen?",
+            "options": [
+              "Geld terug voor de reis",
+              "Een gratis abonnement",
+              "Een bewijs dat zij te laat waren door de storing",
+              "Een nieuwe bus"
+            ],
+            "answer": 2,
+            "explanation": "'Een bewijs aanvragen via de website.'",
+            "difficulty": 1
+          },
+          {
+            "id": "lezen-artikelen-q-004-4",
+            "type": "mc",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "prompt": "Wat is de oorzaak van de storing?",
+            "options": [
+              "Het weer",
+              "Een ongeluk",
+              "Een staking",
+              "Dat is nog niet bekend."
+            ],
+            "answer": 3,
+            "explanation": "'De oorzaak is nog niet bekend.'",
+            "difficulty": 1
+          }
+        ],
+        "explanation": "Lees de eerste alinea goed.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

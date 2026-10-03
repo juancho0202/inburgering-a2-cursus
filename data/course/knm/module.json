@@ -3,5 +3,15 @@
   "title": "Kennis van de Nederlandse Maatschappij",
   "description": "Leer hoe Nederland werkt: werk, wonen, zorg, school en de overheid.",
   "icon": "landmark",
-  "units": ["knm-wonen"]
+  "units": [
+    "knm-werk",
+    "knm-omgang",
+    "knm-wonen",
+    "knm-gezondheid",
+    "knm-geschiedenis",
+    "knm-instanties",
+    "knm-staat",
+    "knm-onderwijs",
+    "knm-gemengd"
+  ]
 }

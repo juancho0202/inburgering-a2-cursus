@@ -1,0 +1,270 @@
+{
+  "id": "basis-toekomst",
+  "moduleId": "basis",
+  "title": "De toekomst",
+  "goal": "Je praat over de toekomst met gaan + infinitief en zullen.",
+  "estimatedMinutes": 10,
+  "tags": [
+    "basis:toekomst",
+    "grammar:toekomst"
+  ],
+  "vocabRefs": [
+    "basis-vocab-tijd-019",
+    "basis-vocab-tijd-017",
+    "basis-vocab-tijd-016"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-toekomst-l-01",
+      "title": "Gaan + infinitief",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Voor de toekomst gebruik je vaak **gaan + infinitief**. De infinitief staat aan het eind."
+        },
+        {
+          "kind": "example",
+          "nl": "Hij gaat binnenkort trouwen."
+        },
+        {
+          "kind": "example",
+          "nl": "Wij gaan volgende week verhuizen."
+        },
+        {
+          "kind": "text",
+          "md": "Formeler kun je **zullen** gebruiken: *Ik zal het doen.* (= Ik ga het doen.)"
+        },
+        {
+          "kind": "tip",
+          "md": "Een samenvatting **maken**, niet *doen*: *Ik denk dat we een samenvatting gaan maken.*"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-toekomst-q-001",
+        "tags": [
+          "basis:toekomst",
+          "grammar:toekomst"
+        ],
+        "explanation": "Bij wij: gaan + infinitief aan het eind.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Wij ___ morgen verhuizen.",
+        "options": [
+          [
+            "gaan",
+            "gaat",
+            "ga"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-toekomst-q-002",
+        "tags": [
+          "basis:toekomst",
+          "grammar:toekomst"
+        ],
+        "explanation": "Bij zij (één persoon): gaat.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Zij ___ binnenkort trouwen.",
+        "options": [
+          [
+            "gaat",
+            "gaan",
+            "ga"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-toekomst-q-003",
+        "tags": [
+          "basis:toekomst",
+          "grammar:toekomst"
+        ],
+        "explanation": "Na zullen staat de infinitief: bellen.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Ik zal je morgen ___ .",
+        "options": [
+          [
+            "bellen",
+            "gebeld",
+            "belt"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-toekomst-q-004",
+        "tags": [
+          "basis:toekomst",
+          "grammar:toekomst"
+        ],
+        "explanation": "Gaat staat op plek 2, trouwen aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Hij",
+          "gaat",
+          "binnenkort",
+          "trouwen."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-toekomst-q-005",
+        "tags": [
+          "basis:toekomst",
+          "grammar:toekomst"
+        ],
+        "explanation": "Gaan staat op plek 2, verhuizen aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Wij",
+          "gaan",
+          "volgende",
+          "week",
+          "verhuizen."
+        ],
+        "alsoAccepted": [
+          [
+            "Volgende",
+            "week",
+            "gaan",
+            "wij",
+            "verhuizen."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-toekomst-q-006",
+        "tags": [
+          "basis:toekomst",
+          "grammar:toekomst"
+        ],
+        "explanation": "Zal staat op plek 2, invullen aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "zal",
+          "het",
+          "formulier",
+          "invullen."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-toekomst-q-007",
+        "tags": [
+          "basis:toekomst",
+          "grammar:toekomst"
+        ],
+        "explanation": "Je maakt een samenvatting. Je doet geen samenvatting.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het goede werkwoord in (maken / doen).",
+        "text": "Ik ga een samenvatting ___ .",
+        "answers": [
+          [
+            "maken"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-toekomst-q-008",
+        "tags": [
+          "basis:toekomst",
+          "grammar:toekomst"
+        ],
+        "explanation": "Gaan + infinitief (naar de dokter gaan) = toekomst; morgen helpt ook.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin gaat over de toekomst?",
+        "options": [
+          "Gisteren ben ik naar de dokter gegaan.",
+          "Ik ben bij de dokter.",
+          "Ik was bij de dokter.",
+          "Morgen ga ik naar de dokter."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-toekomst-q-009",
+        "tags": [
+          "basis:toekomst",
+          "grammar:toekomst"
+        ],
+        "explanation": "Na dat staan de werkwoorden aan het eind: gaan maken.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Wat is de beste zin?",
+        "options": [
+          "Ik denk dat we een samenvatting gaan maken.",
+          "Denk ik dat we zullen een samenvatting doen.",
+          "Ik denk dat we gaan een samenvatting maken.",
+          "Ik denk dat we een samenvatting doen gaan."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-toekomst-q-010",
+        "tags": [
+          "basis:toekomst",
+          "grammar:toekomst"
+        ],
+        "explanation": "Zullen + infinitief = toekomst, wat formeler.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Zullen kun je gebruiken voor de toekomst: \"Ik zal het doen.\"",
+        "answer": true
+      }
+    }
+  ]
+}

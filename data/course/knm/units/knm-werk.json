@@ -1,0 +1,630 @@
+{
+  "id": "knm-werk",
+  "moduleId": "knm",
+  "title": "Werk en inkomen",
+  "goal": "Je weet hoe je werk zoekt, wat in een contract staat en welke instanties je helpen.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "knm:werk"
+  ],
+  "vocabRefs": [
+    "basis-vocab-werk-001",
+    "basis-vocab-werk-003",
+    "basis-vocab-werk-005",
+    "basis-vocab-werk-006",
+    "basis-vocab-werk-008",
+    "basis-vocab-werk-009",
+    "basis-vocab-werk-010",
+    "basis-vocab-werk-011",
+    "basis-vocab-werk-012",
+    "basis-vocab-werk-013",
+    "basis-vocab-werk-014",
+    "basis-vocab-werk-015",
+    "basis-vocab-werk-016",
+    "basis-vocab-werk-017",
+    "basis-vocab-werk-018",
+    "basis-vocab-werk-019",
+    "basis-vocab-werk-020",
+    "basis-vocab-werk-021",
+    "basis-vocab-werk-022",
+    "basis-vocab-werk-023",
+    "basis-vocab-werk-024",
+    "basis-vocab-werk-025",
+    "basis-vocab-werk-026",
+    "basis-vocab-werk-027",
+    "basis-vocab-werk-028"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "knm-werk-l-01",
+      "title": "Werk zoeken",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Je kunt werk zoeken via **vacatures** op internet, een **uitzendbureau** of je **netwerk** (mensen die je kent).\n\nBij **solliciteren** stuur je een brief of e-mail met je **cv**. Daarna volgt vaak een **sollicitatiegesprek**."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-werk-023",
+            "basis-vocab-werk-022",
+            "basis-vocab-werk-024",
+            "basis-vocab-werk-005"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-001",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Bij solliciteren stuur je een brief of e-mail met je cv.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Fatima zoekt werk. Wat kan ze doen?",
+        "options": [
+          "Een vacature lezen en een brief met cv sturen.",
+          "Een aangifte doen bij de politie.",
+          "Naar de huisarts gaan.",
+          "Een huurcontract tekenen."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-002",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Een uitzendbureau zoekt tijdelijk werk voor mensen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is een uitzendbureau?",
+        "options": [
+          "Een kantoor van de gemeente.",
+          "Een bedrijf dat tijdelijk werk voor mensen zoekt.",
+          "Een school voor volwassenen.",
+          "Een bank."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-003",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "In het sollicitatiegesprek praat je met de werkgever over de baan.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Ahmed heeft een sollicitatiegesprek. Wat is dat?",
+        "options": [
+          "Een gesprek met de huisarts.",
+          "Een gesprek bij de gemeente.",
+          "Een gesprek met een bedrijf over een baan.",
+          "Een les Nederlands."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-004",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Netwerk = de mensen die je kent.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Pieter hoort van een vriend dat er werk is bij een bakker. Hoe heeft hij de baan gevonden?",
+        "options": [
+          "Via een vacature in de krant.",
+          "Via de Belastingdienst.",
+          "Via het UWV.",
+          "Via zijn netwerk."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-005",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Je cv bevat je opleiding en werkervaring.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat stuur je mee bij een sollicitatie?",
+        "options": [
+          "Een cv",
+          "Een loonstrook",
+          "Een huurcontract",
+          "Een verzekeringspolis"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-werk-l-02",
+      "title": "Contract en loon",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In je **arbeidscontract** staat of de baan **tijdelijk** of **vast** is. Vaak is er eerst een **proeftijd**.\n\nOp je **loonstrook** zie je je **bruto** en **netto** salaris. Netto is wat je krijgt nadat de belasting eraf is.\n\nJe krijgt vaak **vakantiegeld** (meestal in mei of juni) en je hebt **vakantiedagen**. Er is een **wettelijk minimumloon**."
+        },
+        {
+          "kind": "tip",
+          "md": "Het bedrag van het minimumloon verandert. Je hoeft het bedrag niet te leren, maar je moet weten dat er een minimumloon is."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-006",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Bruto = voordat belasting eraf gaat, netto = nadat.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is het verschil tussen bruto en netto?",
+        "options": [
+          "Bruto is het bedrag na aftrek van belasting.",
+          "Netto is het bedrag na aftrek van belasting.",
+          "Netto is het bedrag voor aftrek van belasting.",
+          "Er is geen verschil."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-007",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Een vast contract heeft geen einddatum.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Mehmet heeft een vast contract. Wat betekent dat?",
+        "options": [
+          "Het contract stopt na een maand.",
+          "Hij werkt zonder contract.",
+          "Het contract stopt niet na een bepaalde tijd.",
+          "Hij heeft geen loon."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-008",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "In de proeftijd kunnen werkgever en werknemer makkelijker stoppen.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Sanne begint in een nieuwe baan. De eerste twee maanden zijn de proeftijd. Wat betekent dat?",
+        "options": [
+          "Ze krijgt in die tijd geen salaris.",
+          "Ze mag in die tijd niet ziek zijn.",
+          "Het contract is dan vast.",
+          "In die tijd kan het contract makkelijker stoppen."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-009",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Vakantiegeld is extra geld, meestal in mei/juni.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wanneer krijgen veel mensen vakantiegeld?",
+        "options": [
+          "Meestal in mei of juni.",
+          "Elke maand.",
+          "In december.",
+          "Alleen na een jaar niet werken."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-010",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "De loonstrook laat bruto, netto en belasting zien.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waar zie je hoeveel belasting er van je salaris af gaat?",
+        "options": [
+          "Op je paspoort",
+          "Op je loonstrook",
+          "Op je ID-kaart",
+          "Op je OV-chipkaart"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-011",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "In Nederland bestaat een wettelijk minimumloon.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Een cursist vraagt: \"Is er een minimumloon in Nederland?\" Wat is het antwoord?",
+        "options": [
+          "Nee, je mag zelf je loon kiezen.",
+          "Alleen voor mensen onder de 18.",
+          "Ja, er is een wettelijk minimumloon.",
+          "Alleen in Amsterdam."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-werk-l-03",
+      "title": "Ziek zijn en je rechten",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "**Ziek?** Bel **meteen** je werkgever (**ziekmelden**) volgens de regels van je werk.\n\n**Zwartwerken** (werken zonder belasting te betalen) mag niet.\n\n**Discriminatie** op je werk mag niet. Mannen en vrouwen hebben dezelfde rechten.\n\nEen **vakbond** komt op voor werknemers. In grotere bedrijven is er een **ondernemingsraad (OR)**."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-werk-025",
+            "basis-vocab-werk-028",
+            "basis-vocab-werk-026",
+            "basis-vocab-werk-027"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-012",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Ziekmelden: meteen je werkgever bellen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Priya is ziek en kan niet werken. Wat doet ze het eerst?",
+        "options": [
+          "Ze belt de politie.",
+          "Ze wacht tot ze beter is.",
+          "Ze gaat naar het UWV.",
+          "Ze belt haar werkgever."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-013",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Werken zonder belasting te betalen heet zwartwerken en is verboden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Omar werkt in een café en krijgt het loon contant, zonder belasting. Wat is dit?",
+        "options": [
+          "Zwartwerken. Dat mag niet.",
+          "Vakantiegeld. Dat mag.",
+          "Een proeftijd. Dat mag.",
+          "Een uitkering. Dat mag."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-014",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Discriminatie op werk is verboden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Een vrouw krijgt minder loon dan een man voor hetzelfde werk, alleen omdat ze een vrouw is. Mag dat?",
+        "options": [
+          "Ja, een man verdient meer.",
+          "Nee, mannen en vrouwen hebben gelijke rechten.",
+          "Ja, als de baas het zegt.",
+          "Alleen in kleine bedrijven."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-015",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Een vakbond helpt werknemers met hun rechten.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat doet een vakbond?",
+        "options": [
+          "Belasting innen",
+          "Uitkeringen betalen",
+          "Opkomen voor werknemers",
+          "Banen geven"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-016",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "De OR praat namens de werknemers met de directie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is een ondernemingsraad (OR)?",
+        "options": [
+          "Een afdeling van de gemeente",
+          "Een bedrijf dat werk zoekt",
+          "Een soort uitkering",
+          "Een groep werknemers die met de directie praat"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-017",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Een eigen bedrijf schrijf je in bij de KVK.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Jan wil een eigen bedrijf beginnen. Waar schrijft hij zich in?",
+        "options": [
+          "Bij de Kamer van Koophandel (KVK)",
+          "Bij de huisarts",
+          "Bij DUO",
+          "Bij de bibliotheek"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-werk-l-04",
+      "title": "Instanties voor werk en geld",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Instantie",
+            "Waarvoor"
+          ],
+          "rows": [
+            [
+              "Belastingdienst",
+              "inkomstenbelasting, aangifte, toeslagen"
+            ],
+            [
+              "UWV",
+              "WW-uitkering na ontslag, hulp bij werk zoeken, uitkering bij langdurige ziekte"
+            ],
+            [
+              "Gemeente",
+              "bijstand (als je geen ander inkomen hebt)"
+            ],
+            [
+              "SVB",
+              "kinderbijslag en AOW (pensioen)"
+            ],
+            [
+              "KVK",
+              "een eigen bedrijf inschrijven"
+            ]
+          ]
+        },
+        {
+          "kind": "text",
+          "md": "De **belastingaangifte** doe je meestal **vóór 1 mei** over het vorige jaar. **Toeslagen** zijn bijvoorbeeld zorgtoeslag, huurtoeslag en kinderopvangtoeslag. Kijk altijd naar je eigen situatie."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-018",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Het UWV betaalt de WW-uitkering na ontslag.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wim is ontslagen. Hij heeft genoeg gewerkt. Naar welke instantie gaat hij voor een uitkering?",
+        "options": [
+          "De SVB",
+          "Het UWV",
+          "De Belastingdienst",
+          "De KVK"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-019",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "AOW = pensioen van de overheid. Je vraagt het aan bij de SVB.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is de AOW?",
+        "options": [
+          "Een uitkering voor werklozen",
+          "Een toeslag voor huur",
+          "Pensioen van de overheid voor ouderen",
+          "Een soort belasting"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-020",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Bijstand komt van de gemeente.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Linda heeft geen werk en geen ander inkomen. Waar vraagt ze bijstand aan?",
+        "options": [
+          "Bij de Belastingdienst",
+          "Bij de KVK",
+          "Bij de SVB",
+          "Bij de gemeente"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-021",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "De SVB betaalt kinderbijslag.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Bij welke instantie vraag je kinderbijslag aan?",
+        "options": [
+          "De SVB",
+          "Het UWV",
+          "De KVK",
+          "DUO"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-022",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "De belastingaangifte is meestal vóór 1 mei.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat doe je jaarlijks bij de Belastingdienst, meestal vóór 1 mei?",
+        "options": [
+          "Een paspoort aanvragen",
+          "Aangifte doen over het vorige jaar",
+          "Je inschrijven bij de gemeente",
+          "Een uitkering vragen"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-023",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Huurtoeslag komt van de Belastingdienst.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Fatima heeft weinig inkomen en betaalt veel voor haar huur. Wat kan ze bij de Belastingdienst aanvragen?",
+        "options": [
+          "WW-uitkering",
+          "Kinderbijslag",
+          "Huurtoeslag",
+          "AOW"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-024",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Toeslagen zijn bijvoorbeeld zorgtoeslag en huurtoeslag.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat betekent \"toeslagen\"?",
+        "options": [
+          "Extra belasting op je loon",
+          "Geld dat je aan je baas geeft",
+          "Een soort contract",
+          "Extra geld van de overheid voor bepaalde kosten"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-025",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Een vakbond helpt met werkrechten, maar je betaalt nog steeds belasting.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Als je lid bent van een vakbond, krijg je automatisch geen belasting meer.",
+        "answer": false
+      }
+    }
+  ]
+}

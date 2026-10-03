@@ -3,5 +3,14 @@
   "title": "Lezen A2",
   "description": "Oefen met het lezen van brieven, e-mails, advertenties en roosters.",
   "icon": "file-text",
-  "units": ["lezen-strategie"]
+  "units": [
+    "lezen-strategie",
+    "lezen-brieven",
+    "lezen-emails",
+    "lezen-advertenties",
+    "lezen-mededelingen",
+    "lezen-roosters",
+    "lezen-formulieren",
+    "lezen-artikelen"
+  ]
 }

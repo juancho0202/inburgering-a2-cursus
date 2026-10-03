@@ -7,10 +7,11 @@
       "nl": "de huur",
       "article": "de",
       "pos": "noun",
-      "plural": null,
+      "plural": "de huren",
       "definitionNl": "Het geld dat je elke maand betaalt voor je huis.",
       "example": "De huur is 750 euro per maand.",
       "tags": [
+        "thema:wonen",
         "knm:wonen",
         "lezen"
       ],
@@ -26,10 +27,11 @@
       "definitionNl": "De persoon van wie jij je huis huurt.",
       "example": "De huisbaas komt morgen de verwarming repareren.",
       "tags": [
+        "thema:wonen",
         "knm:wonen"
       ],
       "level": "A2",
-      "source": "course"
+      "source": "samenvatting"
     },
     {
       "id": "basis-vocab-wonen-003",
@@ -40,6 +42,7 @@
       "definitionNl": "Het apparaat dat je huis warm maakt.",
       "example": "De verwarming is kapot, het is koud.",
       "tags": [
+        "thema:wonen",
         "knm:wonen"
       ],
       "level": "A2",
@@ -54,7 +57,7 @@
       "definitionNl": "Een man die naast jou woont.",
       "example": "De buurman maakt veel lawaai.",
       "tags": [
-        "wonen"
+        "thema:wonen"
       ],
       "level": "A2",
       "source": "course"
@@ -68,10 +71,10 @@
       "definitionNl": "Naar een ander huis gaan wonen.",
       "example": "Wij verhuizen volgende maand naar Utrecht.",
       "tags": [
-        "wonen"
+        "thema:wonen"
       ],
       "level": "A2",
-      "source": "course"
+      "source": "samenvatting"
     },
     {
       "id": "basis-vocab-wonen-006",
@@ -82,6 +85,532 @@
       "definitionNl": "Een papier met afspraken tussen jou en de huisbaas.",
       "example": "Ik moet het huurcontract tekenen.",
       "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-007",
+      "nl": "kapot",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Het werkt niet meer.",
+      "example": "De wasmachine is kapot.",
+      "tags": [
+        "thema:wonen",
+        "lezen"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-wonen-008",
+      "nl": "repareren",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets kapot maken weer goed.",
+      "example": "De monteur komt de kraan repareren.",
+      "tags": [
+        "thema:wonen",
+        "lezen"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-wonen-009",
+      "nl": "het buurthuis",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de buurthuizen",
+      "definitionNl": "Een plek in de wijk waar mensen elkaar ontmoeten en activiteiten doen.",
+      "example": "Op dinsdag is er koffie in het buurthuis.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-wonen-010",
+      "nl": "het huis",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de huizen",
+      "definitionNl": "Het gebouw waar je woont.",
+      "example": "Ons huis heeft drie kamers.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-011",
+      "nl": "het appartement",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de appartementen",
+      "definitionNl": "Een woning op één verdieping in een groot gebouw.",
+      "example": "Ik woon in een klein appartement.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-012",
+      "nl": "de woning",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de woningen",
+      "definitionNl": "Een huis of appartement waar je woont.",
+      "example": "Ze zoeken een goedkope woning.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-013",
+      "nl": "de verdieping",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de verdiepingen",
+      "definitionNl": "Een laag in een gebouw.",
+      "example": "Wij wonen op de tweede verdieping.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-014",
+      "nl": "de woonkamer",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de woonkamers",
+      "definitionNl": "De kamer waar je zit en tv kijkt.",
+      "example": "In de woonkamer staat een grote bank.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-015",
+      "nl": "de slaapkamer",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de slaapkamers",
+      "definitionNl": "De kamer waar je slaapt.",
+      "example": "Het huis heeft twee slaapkamers.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-016",
+      "nl": "de keuken",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de keukens",
+      "definitionNl": "De kamer waar je eten maakt.",
+      "example": "Ik kook in de keuken.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-017",
+      "nl": "de badkamer",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de badkamers",
+      "definitionNl": "De kamer met een douche of bad.",
+      "example": "De badkamer is nieuw.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-018",
+      "nl": "de tuin",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de tuinen",
+      "definitionNl": "Een stuk grond met gras en planten bij het huis.",
+      "example": "Wij hebben een kleine tuin.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-019",
+      "nl": "het balkon",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de balkons",
+      "definitionNl": "Een klein stuk buiten aan een appartement.",
+      "example": "Op het balkon staan bloemen.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-020",
+      "nl": "de deur",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de deuren",
+      "definitionNl": "Hier loop je het huis door.",
+      "example": "Doe de deur dicht, het is koud.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-021",
+      "nl": "het raam",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de ramen",
+      "definitionNl": "Hier kijk je naar buiten.",
+      "example": "Het raam is open.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-022",
+      "nl": "de sleutel",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de sleutels",
+      "definitionNl": "Hiermee doe je de deur open.",
+      "example": "Ik ben mijn sleutel kwijt.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-023",
+      "nl": "de kraan",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de kranen",
+      "definitionNl": "Hier komt het water uit.",
+      "example": "De kraan lekt.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-024",
+      "nl": "de lamp",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de lampen",
+      "definitionNl": "Die geeft licht.",
+      "example": "De lamp in de gang is kapot.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-025",
+      "nl": "de meubels",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Tafels, stoelen, kasten en bedden.",
+      "example": "Wij kopen nieuwe meubels.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-026",
+      "nl": "de borg",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Geld dat je vooraf betaalt voor een huis en later terugkrijgt.",
+      "example": "De borg is twee maanden huur.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-027",
+      "nl": "de huurder",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de huurders",
+      "definitionNl": "De persoon die een huis huurt.",
+      "example": "De huurder betaalt elke maand.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-028",
+      "nl": "de verhuurder",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de verhuurders",
+      "definitionNl": "De persoon of organisatie van wie je het huis huurt.",
+      "example": "De verhuurder repareert het dak.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-029",
+      "nl": "de woningcorporatie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de woningcorporaties",
+      "definitionNl": "Een organisatie die sociale huurwoningen verhuurt.",
+      "example": "Ik sta ingeschreven bij een woningcorporatie.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-030",
+      "nl": "de wijk",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de wijken",
+      "definitionNl": "Een deel van een stad.",
+      "example": "In onze wijk is een speeltuin.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-031",
+      "nl": "het lawaai",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Heel veel harde geluiden.",
+      "example": "De buren maken veel lawaai.",
+      "tags": [
+        "thema:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-032",
+      "nl": "de overlast",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Last van iets, bijvoorbeeld van lawaai.",
+      "example": "Wij hebben overlast van de buren.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-033",
+      "nl": "de rookmelder",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de rookmelders",
+      "definitionNl": "Een apparaat dat piept bij rook.",
+      "example": "De rookmelder hangt in de gang.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-034",
+      "nl": "het afval",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Spullen die je weggooit.",
+      "example": "Het afval gaat in de container.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-035",
+      "nl": "de vaste lasten",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Bedragen die je elke maand moet betalen, zoals huur en energie.",
+      "example": "De vaste lasten zijn hoog.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-036",
+      "nl": "de energierekening",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de energierekeningen",
+      "definitionNl": "De rekening voor gas, water en licht.",
+      "example": "De energierekening komt elke maand.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-037",
+      "nl": "de huurtoeslag",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Geld van de Belastingdienst als je weinig verdient en huur betaalt.",
+      "example": "Zij krijgt huurtoeslag.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-038",
+      "nl": "de Huurcommissie",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Een organisatie die helpt bij problemen over huurprijs of onderhoud.",
+      "example": "Ik vraag hulp aan de Huurcommissie.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-039",
+      "nl": "de hypotheek",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de hypotheken",
+      "definitionNl": "Een lening van de bank om een huis te kopen.",
+      "example": "Zij hebben een hypotheek.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-040",
+      "nl": "de lekkage",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de lekkages",
+      "definitionNl": "Er komt water door het dak of een leiding.",
+      "example": "Er is een lekkage in de badkamer.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-041",
+      "nl": "het grofvuil",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Grote spullen zoals een oude bank die je weggooit.",
+      "example": "De gemeente haalt het grofvuil op.",
+      "tags": [
+        "thema:wonen",
+        "knm:wonen"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-wonen-042",
+      "nl": "de gemeentelijke belasting",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Belasting voor bijvoorbeeld afval en riool.",
+      "example": "Wij betalen gemeentelijke belasting.",
+      "tags": [
+        "thema:wonen",
         "knm:wonen"
       ],
       "level": "A2",

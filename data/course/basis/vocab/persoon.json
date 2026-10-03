@@ -1,0 +1,455 @@
+{
+  "theme": "persoon",
+  "title": "Jezelf voorstellen",
+  "entries": [
+    {
+      "id": "basis-vocab-persoon-001",
+      "nl": "heten",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Zo is je naam.",
+      "example": "Ik heet Fatima.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-persoon-002",
+      "nl": "de naam",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de namen",
+      "definitionNl": "Zo noemen mensen jou.",
+      "example": "Wat is uw naam?",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-003",
+      "nl": "de voornaam",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de voornamen",
+      "definitionNl": "Het eerste deel van je naam.",
+      "example": "Mijn voornaam is Ahmed.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-004",
+      "nl": "de achternaam",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de achternamen",
+      "definitionNl": "Het deel van je naam dat je familie ook heeft.",
+      "example": "Mijn achternaam is Yilmaz.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-005",
+      "nl": "wonen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Je huis of kamer is op een plek.",
+      "example": "Ik woon in Utrecht.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-persoon-006",
+      "nl": "getrouwd",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Je hebt een man of vrouw met een officieel papier.",
+      "example": "Ze zijn al tien jaar getrouwd.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-persoon-007",
+      "nl": "ongehuwd",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Je bent niet getrouwd.",
+      "example": "Op het formulier vul ik \"ongehuwd\" in.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-008",
+      "nl": "gescheiden",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Je was getrouwd, maar nu niet meer.",
+      "example": "Mijn buurvrouw is gescheiden.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-009",
+      "nl": "het kind",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de kinderen",
+      "definitionNl": "Een jongen of meisje, of je zoon of dochter.",
+      "example": "Ik heb twee kinderen.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-persoon-010",
+      "nl": "de man",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de mannen",
+      "definitionNl": "Een volwassen persoon die geen vrouw is.",
+      "example": "Mijn man werkt in een ziekenhuis.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-011",
+      "nl": "de vrouw",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de vrouwen",
+      "definitionNl": "Een volwassen persoon die geen man is.",
+      "example": "Mijn vrouw is lerares.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-012",
+      "nl": "de zoon",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de zonen",
+      "definitionNl": "Je mannelijke kind.",
+      "example": "Mijn zoon is zeven jaar.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-013",
+      "nl": "de dochter",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de dochters",
+      "definitionNl": "Je vrouwelijke kind.",
+      "example": "Mijn dochter zit op judo.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-014",
+      "nl": "de ouders",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Je vader en moeder.",
+      "example": "Mijn ouders wonen in Marokko.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-015",
+      "nl": "de broer",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de broers",
+      "definitionNl": "Een jongen met dezelfde ouders als jij.",
+      "example": "Mijn broer woont in Rotterdam.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-016",
+      "nl": "de zus",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de zussen",
+      "definitionNl": "Een meisje met dezelfde ouders als jij.",
+      "example": "Mijn zus is jonger dan ik.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-017",
+      "nl": "de buren",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De mensen die naast jou wonen.",
+      "example": "De buren zijn erg aardig.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-persoon-018",
+      "nl": "de buurvrouw",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de buurvrouwen",
+      "definitionNl": "Een vrouw die naast jou woont.",
+      "example": "De buurvrouw heeft een hond.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-019",
+      "nl": "kennismaken",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Voor het eerst met iemand praten en elkaar leren kennen.",
+      "example": "Ik wil graag kennismaken met mijn nieuwe collega.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-020",
+      "nl": "afkomstig uit",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Je komt oorspronkelijk uit dit land of deze plek.",
+      "example": "Ik ben afkomstig uit Syrië.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-persoon-021",
+      "nl": "de nationaliteit",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de nationaliteiten",
+      "definitionNl": "Het land waar je paspoort van is.",
+      "example": "Mijn nationaliteit is Turks.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-022",
+      "nl": "de leeftijd",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de leeftijden",
+      "definitionNl": "Hoe oud je bent.",
+      "example": "Zijn leeftijd is 34 jaar.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-023",
+      "nl": "de familie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de families",
+      "definitionNl": "Alle mensen die bij jouw gezin horen.",
+      "example": "Mijn familie woont in het buitenland.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-024",
+      "nl": "de vriend",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de vrienden",
+      "definitionNl": "Een man of jongen die je goed kent en aardig vindt.",
+      "example": "Ik ga met een vriend naar de film.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-025",
+      "nl": "de vriendin",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de vriendinnen",
+      "definitionNl": "Een vrouw of meisje die je goed kent en aardig vindt.",
+      "example": "Mijn vriendin komt vanavond eten.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-026",
+      "nl": "de partner",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de partners",
+      "definitionNl": "Je man, vrouw of vriend(in) met wie je samen bent.",
+      "example": "Mijn partner werkt op zaterdag.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-027",
+      "nl": "alleenstaand",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Je woont zonder partner.",
+      "example": "Ik ben alleenstaand en heb één zoon.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-028",
+      "nl": "de geboortedatum",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de geboortedata",
+      "definitionNl": "De dag waarop je geboren bent.",
+      "example": "Mijn geboortedatum is 12-03-1990.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-029",
+      "nl": "de moedertaal",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de moedertalen",
+      "definitionNl": "De taal die je als kind eerst leert.",
+      "example": "Mijn moedertaal is Arabisch.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-030",
+      "nl": "het beroep",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de beroepen",
+      "definitionNl": "Het werk dat je doet.",
+      "example": "Mijn beroep is kok.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-031",
+      "nl": "de gast",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de gasten",
+      "definitionNl": "Iemand die op bezoek komt.",
+      "example": "Onze gasten komen om zeven uur.",
+      "tags": [
+        "thema:persoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-persoon-032",
+      "nl": "trouwen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Man en vrouw (of twee mensen) worden officieel partners.",
+      "example": "Zij gaan volgende maand trouwen.",
+      "tags": [
+        "thema:persoon",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    }
+  ]
+}

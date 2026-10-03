@@ -1,0 +1,652 @@
+{
+  "id": "basis-perfectum",
+  "moduleId": "basis",
+  "title": "Het perfectum",
+  "goal": "Je maakt het perfectum met hebben of zijn en het voltooid deelwoord.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "basis:perfectum",
+    "grammar:perfectum"
+  ],
+  "vocabRefs": [
+    "basis-verb-werken",
+    "basis-verb-kopen",
+    "basis-verb-gaan",
+    "basis-verb-komen",
+    "basis-verb-wonen",
+    "basis-verb-bellen",
+    "basis-verb-eten",
+    "basis-verb-krijgen"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-perfectum-l-01",
+      "title": "Hebben of zijn + voltooid deelwoord",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Perfectum = **hebben/zijn + voltooid deelwoord**. Het deelwoord staat **aan het eind**."
+        },
+        {
+          "kind": "example",
+          "nl": "Gisteren heb ik brood gekocht."
+        },
+        {
+          "kind": "text",
+          "md": "**Regelmatig:** ge + stam + **t** of **d**.\n\n't kofschip: eindigt de stam op **t, k, f, s, ch, p**? Dan **t**: *gewerkt, gekookt*. Anders **d**: *gewoond, gebeld*."
+        },
+        {
+          "kind": "text",
+          "md": "**Onregelmatig:** gegaan, gekomen, gedaan, gezien, gegeten, gedronken, gekregen, gebracht, gekocht, gegeven, geweest, gehad."
+        },
+        {
+          "kind": "text",
+          "md": "**zijn** bij beweging naar een plek of verandering: *Ik ben naar huis gegaan. Hij is ziek geworden.*\n\nAnders **hebben**: *Ik heb brood gekocht.*"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-001",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Stam werk eindigt op k: ge-werk-t.",
+        "difficulty": 1,
+        "type": "conjugate",
+        "prompt": "Vul het voltooid deelwoord in en kies hebben of zijn.",
+        "verbId": "basis-verb-werken",
+        "person": "ik",
+        "tense": "perfect",
+        "answers": [
+          "gewerkt"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-002",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Stam woon eindigt op n: ge-woon-d.",
+        "difficulty": 1,
+        "type": "conjugate",
+        "prompt": "Vul het voltooid deelwoord in en kies hebben of zijn.",
+        "verbId": "basis-verb-wonen",
+        "person": "wij",
+        "tense": "perfect",
+        "answers": [
+          "gewoond"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-003",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Stam bel eindigt op l: ge-bel-d.",
+        "difficulty": 1,
+        "type": "conjugate",
+        "prompt": "Vul het voltooid deelwoord in en kies hebben of zijn.",
+        "verbId": "basis-verb-bellen",
+        "person": "jij",
+        "tense": "perfect",
+        "answers": [
+          "gebeld"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-004",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Kopen is onregelmatig: gekocht.",
+        "difficulty": 1,
+        "type": "conjugate",
+        "prompt": "Vul het voltooid deelwoord in en kies hebben of zijn.",
+        "verbId": "basis-verb-kopen",
+        "person": "ik",
+        "tense": "perfect",
+        "answers": [
+          "gekocht"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-005",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Gaan is onregelmatig: gegaan, met zijn.",
+        "difficulty": 1,
+        "type": "conjugate",
+        "prompt": "Vul het voltooid deelwoord in en kies hebben of zijn.",
+        "verbId": "basis-verb-gaan",
+        "person": "hij",
+        "tense": "perfect",
+        "answers": [
+          "gegaan"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-006",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Komen is onregelmatig: gekomen, met zijn.",
+        "difficulty": 1,
+        "type": "conjugate",
+        "prompt": "Vul het voltooid deelwoord in en kies hebben of zijn.",
+        "verbId": "basis-verb-komen",
+        "person": "zij",
+        "tense": "perfect",
+        "answers": [
+          "gekomen"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-007",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Eten is onregelmatig: gegeten.",
+        "difficulty": 1,
+        "type": "conjugate",
+        "prompt": "Vul het voltooid deelwoord in en kies hebben of zijn.",
+        "verbId": "basis-verb-eten",
+        "person": "wij",
+        "tense": "perfect",
+        "answers": [
+          "gegeten"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-008",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Krijgen is onregelmatig: gekregen.",
+        "difficulty": 1,
+        "type": "conjugate",
+        "prompt": "Vul het voltooid deelwoord in en kies hebben of zijn.",
+        "verbId": "basis-verb-krijgen",
+        "person": "ik",
+        "tense": "perfect",
+        "answers": [
+          "gekregen"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-009",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Stam kook eindigt op k (kofschip), dus -t.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welk woord heeft een deelwoord met -t?",
+        "options": [
+          "koken (gekookt)",
+          "wonen (gewoond)",
+          "bellen (gebeld)",
+          "huren (gehuurd)"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-010",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Stam maak eindigt op k, dus -t: gemaakt.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Het deelwoord van \"maken\" is:",
+        "options": [
+          "gemaakd",
+          "gemaakt",
+          "gemaken",
+          "gemaak"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-011",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Vragen is een uitzondering: gevraagd.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Het deelwoord van \"vragen\" is:",
+        "options": [
+          "gevraagt",
+          "gevragen",
+          "gevraagd",
+          "gevraag"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-012",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Stam studeer, eindigt op r: ge-studeer-d.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Het deelwoord van \"studeren\" is:",
+        "options": [
+          "gestudeert",
+          "gestuderd",
+          "studeerd",
+          "gestudeerd"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-013",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Bij beweging naar een plek gebruik je zijn.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies hebben of zijn.",
+        "text": "Ik ___ naar huis gegaan.",
+        "options": [
+          [
+            "ben",
+            "heb",
+            "ga"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-014",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Kopen is geen beweging: hebben.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies hebben of zijn.",
+        "text": "Gisteren ___ ik brood gekocht.",
+        "options": [
+          [
+            "heb",
+            "ben",
+            "had"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-015",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Verandering (ziek worden): zijn.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies hebben of zijn.",
+        "text": "Hij ___ ziek geworden.",
+        "options": [
+          [
+            "is",
+            "heeft",
+            "had"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-016",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Wonen is geen beweging: hebben.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies hebben of zijn.",
+        "text": "Wij ___ drie jaar in Utrecht gewoond.",
+        "options": [
+          [
+            "hebben",
+            "zijn",
+            "waren"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-017",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Komen = beweging naar een plek: zijn.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies hebben of zijn.",
+        "text": "Zij ___ om acht uur gekomen.",
+        "options": [
+          [
+            "is",
+            "heeft",
+            "had"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-018",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Stam werk + t: gewerkt.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het voltooid deelwoord in (werken).",
+        "text": "Ik heb gisteren acht uur ___ .",
+        "answers": [
+          [
+            "gewerkt"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-019",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Drinken is onregelmatig: gedronken.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het voltooid deelwoord in (drinken).",
+        "text": "Hij heeft veel water ___ .",
+        "answers": [
+          [
+            "gedronken"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-020",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Doen is onregelmatig: gedaan.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het voltooid deelwoord in (doen).",
+        "text": "Wat heb je gisteren ___ ?",
+        "answers": [
+          [
+            "gedaan"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-021",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Zien is onregelmatig: gezien.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het voltooid deelwoord in (zien).",
+        "text": "Ik heb mijn buurman nog niet ___ .",
+        "answers": [
+          [
+            "gezien"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-022",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Zijn is onregelmatig: geweest.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het voltooid deelwoord in (zijn).",
+        "text": "Ik ben nooit in Rotterdam ___ .",
+        "answers": [
+          [
+            "geweest"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-023",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Heb staat op plek 2; het deelwoord gekocht staat aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Gisteren",
+          "heb",
+          "ik",
+          "brood",
+          "gekocht."
+        ],
+        "alsoAccepted": [
+          [
+            "Ik",
+            "heb",
+            "gisteren",
+            "brood",
+            "gekocht."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-024",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Zijn op plek 2, deelwoord gegaan aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Wij",
+          "zijn",
+          "naar",
+          "het",
+          "buurthuis",
+          "gegaan."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-025",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Onregelmatige deelwoorden moet je leren.",
+        "difficulty": 2,
+        "type": "match",
+        "prompt": "Welk deelwoord hoort bij het werkwoord?",
+        "pairs": [
+          [
+            "geven",
+            "gegeven"
+          ],
+          [
+            "nemen",
+            "genomen"
+          ],
+          [
+            "brengen",
+            "gebracht"
+          ],
+          [
+            "schrijven",
+            "geschreven"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-026",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Regelmatig: 't kofschip bepaalt -t of -d.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk deelwoord hoort bij het werkwoord?",
+        "pairs": [
+          [
+            "werken",
+            "gewerkt"
+          ],
+          [
+            "wonen",
+            "gewoond"
+          ],
+          [
+            "bellen",
+            "gebeld"
+          ],
+          [
+            "koken",
+            "gekookt"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-027",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "explanation": "Stam bel eindigt niet op een letter van 't kofschip, dus -d.",
+        "difficulty": 2,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Bij regelmatige werkwoorden eindigt het deelwoord op -d als de stam op een l eindigt (bellen → gebeld).",
+        "answer": true
+      }
+    }
+  ]
+}

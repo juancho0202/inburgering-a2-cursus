@@ -1,0 +1,609 @@
+{
+  "id": "knm-geschiedenis",
+  "moduleId": "knm",
+  "title": "Geschiedenis en geografie",
+  "goal": "Je kent de belangrijkste feiten over het land, het water en de geschiedenis van Nederland.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "knm:geschiedenis"
+  ],
+  "vocabRefs": [
+    "basis-vocab-geschiedenis-geografie-001",
+    "basis-vocab-geschiedenis-geografie-002",
+    "basis-vocab-geschiedenis-geografie-003",
+    "basis-vocab-geschiedenis-geografie-004",
+    "basis-vocab-geschiedenis-geografie-005",
+    "basis-vocab-geschiedenis-geografie-006",
+    "basis-vocab-geschiedenis-geografie-007",
+    "basis-vocab-geschiedenis-geografie-008",
+    "basis-vocab-geschiedenis-geografie-009",
+    "basis-vocab-geschiedenis-geografie-010",
+    "basis-vocab-geschiedenis-geografie-011",
+    "basis-vocab-geschiedenis-geografie-012",
+    "basis-vocab-geschiedenis-geografie-013",
+    "basis-vocab-geschiedenis-geografie-014",
+    "basis-vocab-geschiedenis-geografie-015",
+    "basis-vocab-geschiedenis-geografie-016",
+    "basis-vocab-geschiedenis-geografie-017",
+    "basis-vocab-geschiedenis-geografie-018",
+    "basis-vocab-geschiedenis-geografie-019",
+    "basis-vocab-geschiedenis-geografie-020",
+    "basis-vocab-geschiedenis-geografie-021",
+    "basis-vocab-geschiedenis-geografie-022",
+    "basis-vocab-geschiedenis-geografie-023"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "knm-geschiedenis-l-01",
+      "title": "Het land en het water",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Nederland heeft **12 provincies**. De **hoofdstad** is **Amsterdam**. De **regering en het parlement** zitten in **Den Haag**.\n\nVeel land ligt **onder zeeniveau**. Daarom zijn er **dijken**, **gemalen** en **polders**. Nederland vecht al eeuwen tegen het water."
+        },
+        {
+          "kind": "text",
+          "md": "In **1953** was er de **watersnoodramp** in **Zeeland**. Daarna kwamen de **Deltawerken**.\n\n**Rivieren:** Rijn, Maas, Waal. **Zee:** Noordzee. **Buurlanden:** Duitsland en België."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-geschiedenis-geografie-003",
+            "basis-vocab-geschiedenis-geografie-004",
+            "basis-vocab-geschiedenis-geografie-005",
+            "basis-vocab-geschiedenis-geografie-006",
+            "basis-vocab-geschiedenis-geografie-007"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-001",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Nederland heeft twaalf provincies.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoeveel provincies heeft Nederland?",
+        "options": [
+          "12",
+          "10",
+          "14",
+          "8"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-002",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Amsterdam is de hoofdstad. De regering zit in Den Haag.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is de hoofdstad van Nederland?",
+        "options": [
+          "Den Haag",
+          "Amsterdam",
+          "Rotterdam",
+          "Utrecht"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-003",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Regering en parlement zijn in Den Haag.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "In welke stad zitten de regering en het parlement?",
+        "options": [
+          "Amsterdam",
+          "Utrecht",
+          "Den Haag",
+          "Rotterdam"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-004",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Dijken beschermen het land tegen water.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waarom zijn er in Nederland veel dijken?",
+        "options": [
+          "Er zijn veel bergen.",
+          "Het regent nooit.",
+          "Er is geen zee.",
+          "Veel land ligt onder zeeniveau."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-005",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Een polder is land dat uit het water is gehaald.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is een polder?",
+        "options": [
+          "Droog land dat vroeger water was",
+          "Een soort dijk van steen",
+          "Een berg",
+          "Een rivier"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-006",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Na de watersnoodramp bouwde men de Deltawerken.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat gebeurde er in 1953 in Zeeland?",
+        "options": [
+          "Een oorlog begon.",
+          "Er was een grote overstroming (watersnoodramp).",
+          "De euro kwam.",
+          "De koning werd gekroond."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-007",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Ze zijn gebouwd na de ramp van 1953.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waarom bouwde Nederland de Deltawerken?",
+        "options": [
+          "Om schepen te bouwen",
+          "Om toeristen te laten komen",
+          "Om Zeeland te beschermen tegen het water",
+          "Om electriciteit te maken"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-008",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Nederland ligt aan de Noordzee.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zee ligt bij Nederland?",
+        "options": [
+          "De Middellandse Zee",
+          "De Zwarte Zee",
+          "De Rode Zee",
+          "De Noordzee"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-009",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Nederland grenst aan Duitsland en België.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke twee landen zijn buurlanden van Nederland?",
+        "options": [
+          "Duitsland en België",
+          "Frankrijk en Spanje",
+          "Denemarken en Polen",
+          "Engeland en Ierland"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-010",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Rijn, Maas en Waal zijn belangrijke rivieren.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke rivier is een grote rivier in Nederland?",
+        "options": [
+          "De Seine",
+          "De Rijn",
+          "De Donau",
+          "De Theems"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-geschiedenis-l-02",
+      "title": "Koninkrijk en Gouden Eeuw",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Het **Koninkrijk der Nederlanden** bestaat uit **Nederland, Aruba, Curaçao en Sint Maarten** (landen). **Bonaire, Sint Eustatius en Saba** zijn bijzondere gemeenten van Nederland.\n\nIn de **Gouden Eeuw** (17e eeuw) was Nederland rijk door **handel** (de **VOC**). Er waren beroemde schilders zoals **Rembrandt**. Maar er was ook **slavenhandel** en **slavernij** in de koloniën."
+        },
+        {
+          "kind": "text",
+          "md": "De slavernij in **Suriname en op de Antillen** is afgeschaft in **1863**. De herdenking is **Keti Koti** op **1 juli**. **Suriname** werd onafhankelijk in **1975**. **Indonesië** was ook een kolonie en werd na de Tweede Wereldoorlog onafhankelijk.\n\n**Willem van Oranje** was de leider in de **80-jarige oorlog** tegen Spanje (16e en 17e eeuw)."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-011",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Aruba, Curaçao en Sint Maarten zijn landen in het Koninkrijk.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welk eiland hoort bij het Koninkrijk der Nederlanden als land?",
+        "options": [
+          "Bonaire",
+          "Saba",
+          "Aruba",
+          "Sint Eustatius"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-012",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "De Gouden Eeuw is de 17e eeuw.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "In welke eeuw was de Gouden Eeuw?",
+        "options": [
+          "De twintigste eeuw",
+          "De veertiende eeuw",
+          "De negentiende eeuw",
+          "De zeventiende eeuw"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-013",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Rembrandt is een beroemde Nederlandse schilder uit de Gouden Eeuw.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke schilder leefde in de Gouden Eeuw?",
+        "options": [
+          "Rembrandt",
+          "Picasso",
+          "Monet",
+          "Dali"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-014",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "De VOC dreef handel over de wereld.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waardoor was Nederland rijk in de Gouden Eeuw?",
+        "options": [
+          "Door olie",
+          "Door handel, bijvoorbeeld met de VOC",
+          "Door goud in de grond",
+          "Door toerisme"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-015",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "1863: afschaffing van de slavernij. Herdenking op 1 juli: Keti Koti.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat gebeurde er in 1863 in Suriname en op de Antillen?",
+        "options": [
+          "Er was een oorlog.",
+          "Het land werd onafhankelijk.",
+          "De slavernij werd afgeschaft.",
+          "De euro kwam."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-016",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Suriname werd in 1975 onafhankelijk.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wanneer werd Suriname onafhankelijk?",
+        "options": [
+          "In 1863",
+          "In 1945",
+          "In 2002",
+          "In 1975"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-017",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Hij leidde de 80-jarige oorlog tegen Spanje.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie was Willem van Oranje?",
+        "options": [
+          "De leider in de strijd tegen Spanje",
+          "Een schilder",
+          "De eerste minister-president",
+          "Een bouwmeester van de dijken"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-geschiedenis-l-03",
+      "title": "De twintigste eeuw",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In de **Tweede Wereldoorlog** was Nederland bezet door **Duitsland** (**1940–1945**). Er was **Jodenvervolging**. **Anne Frank** schreef een dagboek in Amsterdam. Nederland werd **bevrijd op 5 mei 1945**.\n\nNa de oorlog was er **wederopbouw**. In de jaren zestig en zeventig kwamen **gastarbeiders** (onder meer uit **Turkije** en **Marokko**). Er was ook migratie uit **Suriname** en **Indonesië**.\n\nNederland was **medeoprichter van de Europese Unie** en is lid van de **NAVO**. Sinds **2002** betalen we met de **euro** (daarvoor de **gulden**)."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-geschiedenis-geografie-014",
+            "basis-vocab-geschiedenis-geografie-015",
+            "basis-vocab-geschiedenis-geografie-016",
+            "basis-vocab-geschiedenis-geografie-017",
+            "basis-vocab-geschiedenis-geografie-020"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-018",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "De Duitse bezetting duurde van 1940 tot 1945.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke jaren was Nederland bezet door Duitsland?",
+        "options": [
+          "1914 tot 1918",
+          "1940 tot 1945",
+          "1953 tot 1960",
+          "1975 tot 1980"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-019",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Anne Frank schreef haar dagboek in het Achterhuis.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie schreef een bekend dagboek in Amsterdam tijdens de oorlog?",
+        "options": [
+          "Rembrandt",
+          "Willem van Oranje",
+          "Anne Frank",
+          "Máxima"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-020",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Bevrijdingsdag is op 5 mei.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wanneer werd Nederland bevrijd?",
+        "options": [
+          "4 mei 1940",
+          "27 april 1945",
+          "1 juli 1863",
+          "5 mei 1945"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-021",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "In de jaren zestig en zeventig kwamen veel gastarbeiders, onder meer uit Turkije en Marokko.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie zijn gastarbeiders?",
+        "options": [
+          "Mensen uit het buitenland die in Nederland kwamen werken",
+          "Mensen die op vakantie komen",
+          "Studenten uit Duitsland",
+          "Soldaten in de oorlog"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-022",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "De euro kwam in 2002. Daarvoor was er de gulden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Sinds wanneer betaalt Nederland met de euro?",
+        "options": [
+          "Sinds 1953",
+          "Sinds 2002",
+          "Sinds 1975",
+          "Sinds 1990"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-023",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Vroeger betaalde men met de gulden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welk geld had Nederland vóór de euro?",
+        "options": [
+          "De dollar",
+          "De frank",
+          "De gulden",
+          "Het pond"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-024",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Nederland was een van de oprichters van de EU (EEG).",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Bij welke organisatie was Nederland medeoprichter?",
+        "options": [
+          "De Verenigde Staten",
+          "De Sovjet-Unie",
+          "De Arabische Liga",
+          "De Europese Unie"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-025",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Indonesië was een kolonie en werd na de Tweede Wereldoorlog onafhankelijk.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Indonesië was een kolonie van Nederland.",
+        "answer": true
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-geschiedenis-q-026",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "De Deltawerken kwamen ná de watersnoodramp.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "De Deltawerken zijn gebouwd vóór de watersnoodramp van 1953.",
+        "answer": false
+      }
+    }
+  ]
+}

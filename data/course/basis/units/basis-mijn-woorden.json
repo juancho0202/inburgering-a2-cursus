@@ -1,0 +1,409 @@
+{
+  "id": "basis-mijn-woorden",
+  "moduleId": "basis",
+  "title": "Mijn woorden",
+  "goal": "Je oefent de woorden uit jouw eigen lijst met moeilijke woorden.",
+  "estimatedMinutes": 15,
+  "tags": [
+    "basis:mijn-woorden",
+    "learner-notes"
+  ],
+  "vocabRefs": [
+    "basis-vocab-vervoer-richting-007",
+    "basis-vocab-wonen-009",
+    "basis-vocab-tijd-020",
+    "basis-vocab-gezondheid-006",
+    "basis-vocab-werk-007",
+    "basis-vocab-winkelen-geld-006",
+    "basis-vocab-winkelen-geld-007",
+    "basis-vocab-winkelen-geld-009",
+    "basis-vocab-winkelen-geld-010",
+    "basis-vocab-werk-029",
+    "basis-vocab-cursus-opleiding-001",
+    "basis-vocab-cursus-opleiding-005",
+    "basis-vocab-tijd-019",
+    "basis-vocab-persoon-032",
+    "basis-vocab-gemeente-instanties-003",
+    "basis-vocab-winkelen-geld-011",
+    "basis-vocab-post-internet-telefoon-033",
+    "basis-vocab-vrije-tijd-weer-007",
+    "basis-vocab-werk-006",
+    "basis-vocab-cursus-opleiding-003",
+    "basis-vocab-werk-003",
+    "basis-vocab-vervoer-richting-008",
+    "basis-vocab-vervoer-richting-010",
+    "basis-vocab-werk-001",
+    "basis-vocab-gemeente-instanties-006",
+    "basis-vocab-vervoer-richting-001",
+    "basis-vocab-tijd-021",
+    "basis-vocab-vervoer-richting-012",
+    "basis-vocab-gezondheid-007",
+    "basis-vocab-vervoer-richting-011",
+    "basis-vocab-post-internet-telefoon-027",
+    "basis-vocab-winkelen-geld-012"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-mijn-woorden-l-01",
+      "title": "Jouw moeilijke woorden",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Dit zijn woorden uit **jouw eigen aantekeningen** van oefenexamens. Je ziet ze hier in zinnen. Je krijgt ze ook vaker bij het woorden herhalen."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-vervoer-richting-007",
+            "basis-vocab-wonen-009",
+            "basis-vocab-werk-007",
+            "basis-vocab-winkelen-geld-006",
+            "basis-vocab-gemeente-instanties-003",
+            "basis-vocab-werk-003",
+            "basis-vocab-vervoer-richting-001",
+            "basis-vocab-vervoer-richting-011"
+          ]
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-winkelen-geld-010",
+            "basis-vocab-winkelen-geld-009",
+            "basis-vocab-winkelen-geld-011",
+            "basis-vocab-gezondheid-007",
+            "basis-vocab-gemeente-instanties-006",
+            "basis-vocab-tijd-019",
+            "basis-vocab-winkelen-geld-012",
+            "basis-vocab-cursus-opleiding-001"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-mijn-woorden-q-001",
+        "tags": [
+          "basis:mijn-woorden",
+          "learner-notes"
+        ],
+        "explanation": "Dit zijn woorden uit jouw lijst.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort bij de uitleg?",
+        "pairs": [
+          [
+            "de doos",
+            "een vierkante verpakking van karton"
+          ],
+          [
+            "het blikje",
+            "een klein metalen pakje met drinken"
+          ],
+          [
+            "de klant",
+            "iemand die iets koopt"
+          ],
+          [
+            "de cursist",
+            "iemand die een cursus volgt"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-mijn-woorden-q-002",
+        "tags": [
+          "basis:mijn-woorden",
+          "learner-notes"
+        ],
+        "explanation": "Dit zijn woorden uit jouw lijst.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort bij de uitleg?",
+        "pairs": [
+          [
+            "de vertraging",
+            "de trein is later dan gepland"
+          ],
+          [
+            "de drukte",
+            "heel veel mensen op één plek"
+          ],
+          [
+            "het omroepbericht",
+            "een mededeling in het station"
+          ],
+          [
+            "het buurthuis",
+            "een plek in de wijk voor activiteiten"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-mijn-woorden-q-003",
+        "tags": [
+          "basis:mijn-woorden",
+          "learner-notes"
+        ],
+        "explanation": "Dit zijn woorden uit jouw lijst.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort bij de uitleg?",
+        "pairs": [
+          [
+            "trouwen",
+            "officieel partners worden"
+          ],
+          [
+            "inleveren",
+            "iets terugbrengen of afgeven"
+          ],
+          [
+            "afspreken",
+            "samen een tijd en plek kiezen"
+          ],
+          [
+            "kwijt zijn",
+            "iets niet meer kunnen vinden"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-mijn-woorden-q-004",
+        "tags": [
+          "basis:mijn-woorden",
+          "learner-notes"
+        ],
+        "explanation": "Vertraging = later dan gepland.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"De trein heeft twintig minuten vertraging.\" Wat betekent dat?",
+        "options": [
+          "De trein is twintig minuten eerder.",
+          "De trein rijdt niet.",
+          "De trein is vol.",
+          "De trein is twintig minuten later."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-mijn-woorden-q-005",
+        "tags": [
+          "basis:mijn-woorden",
+          "learner-notes"
+        ],
+        "explanation": "Kwijt zijn = niet kunnen vinden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"Ik ben mijn sleutel kwijt.\" Wat is er gebeurd?",
+        "options": [
+          "Ik kan mijn sleutel niet vinden.",
+          "Ik heb mijn sleutel gekocht.",
+          "Ik heb een nieuwe sleutel.",
+          "Ik geef mijn sleutel aan iemand."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-mijn-woorden-q-006",
+        "tags": [
+          "basis:mijn-woorden",
+          "learner-notes"
+        ],
+        "explanation": "Een legitimatiebewijs is een paspoort of ID-kaart.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"U moet uw legitimatiebewijs meenemen.\" Wat moet u meenemen?",
+        "options": [
+          "Een brief",
+          "Een paspoort of ID-kaart",
+          "Een pinpas",
+          "Een diploma"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-mijn-woorden-q-007",
+        "tags": [
+          "basis:mijn-woorden",
+          "learner-notes"
+        ],
+        "explanation": "Last hebben van = iets doet pijn of is vervelend.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"Hij heeft last van zijn rug.\" Wat betekent dat?",
+        "options": [
+          "Hij draagt een rugzak.",
+          "Hij heeft een nieuwe rug.",
+          "Zijn rug doet pijn.",
+          "Hij is boos."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-mijn-woorden-q-008",
+        "tags": [
+          "basis:mijn-woorden",
+          "learner-notes"
+        ],
+        "explanation": "Het drukst = met de meeste drukte.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"Het is het drukst om vijf uur.\" Wat betekent dat?",
+        "options": [
+          "Om vijf uur is het stil.",
+          "Om vijf uur sluit de winkel.",
+          "Om vijf uur begint de les.",
+          "Om vijf uur zijn er de meeste mensen."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-mijn-woorden-q-009",
+        "tags": [
+          "basis:mijn-woorden",
+          "learner-notes"
+        ],
+        "explanation": "De leidinggevende is de baas van een groep.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"Hij belt zijn leidinggevende.\" Wie belt hij?",
+        "options": [
+          "De persoon die hem aanstuurt op het werk",
+          "Zijn buurman",
+          "Zijn dokter",
+          "Een klant"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-mijn-woorden-q-010",
+        "tags": [
+          "basis:mijn-woorden",
+          "learner-notes"
+        ],
+        "explanation": "Inspreken = je stem opnemen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "\"Je kunt een bericht inspreken.\" Wat doe je?",
+        "options": [
+          "Je schrijft een bericht.",
+          "Je neemt een bericht op met je stem.",
+          "Je leest een bericht.",
+          "Je verstuurt een brief."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-mijn-woorden-q-011",
+        "tags": [
+          "basis:mijn-woorden",
+          "learner-notes"
+        ],
+        "explanation": "Tot einde volgende maand = tot de laatste dag van de maand na deze.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "\"De korting geldt tot einde volgende maand.\" Wanneer eindigt de korting?",
+        "options": [
+          "Aan het eind van deze maand",
+          "Over twee dagen",
+          "Aan het eind van de maand na deze maand",
+          "Volgende week"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-mijn-woorden-q-012",
+        "tags": [
+          "basis:mijn-woorden",
+          "learner-notes"
+        ],
+        "explanation": "De uitnodiging is de vraag om ergens naartoe te komen.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het goede woord in.",
+        "text": "Ik heb een ___ voor het feest gekregen. (vraag om te komen)",
+        "answers": [
+          [
+            "uitnodiging"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-mijn-woorden-q-013",
+        "tags": [
+          "basis:mijn-woorden",
+          "learner-notes"
+        ],
+        "explanation": "De bestelling is wat je laat komen.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het goede woord in.",
+        "text": "Ik heb mijn ___ geplaatst. (wat je bij een winkel laat komen)",
+        "answers": [
+          [
+            "bestelling"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-mijn-woorden-q-014",
+        "tags": [
+          "basis:mijn-woorden",
+          "learner-notes"
+        ],
+        "explanation": "De baan is je werk.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het goede woord in.",
+        "text": "Ik heb een nieuwe ___ . (werk waarvoor je betaald wordt)",
+        "answers": [
+          [
+            "baan"
+          ]
+        ]
+      }
+    }
+  ]
+}

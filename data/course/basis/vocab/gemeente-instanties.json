@@ -1,0 +1,523 @@
+{
+  "theme": "gemeente-instanties",
+  "title": "Gemeente en instanties",
+  "entries": [
+    {
+      "id": "basis-vocab-gemeente-instanties-001",
+      "nl": "het loket",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de loketten",
+      "definitionNl": "Daar help een medewerker je met je vraag.",
+      "example": "Ik ga naar het loket voor een paspoort.",
+      "tags": [
+        "thema:gemeente-instanties"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-002",
+      "nl": "de balie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de balies",
+      "definitionNl": "Een tafel waar je wordt geholpen.",
+      "example": "Meld je bij de balie.",
+      "tags": [
+        "thema:gemeente-instanties"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-003",
+      "nl": "het legitimatiebewijs",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de legitimatiebewijzen",
+      "definitionNl": "Een paspoort of ID-kaart.",
+      "example": "Neem uw legitimatiebewijs mee.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "lezen"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-004",
+      "nl": "het formulier",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de formulieren",
+      "definitionNl": "Een papier met vragen die je moet invullen.",
+      "example": "Vul het formulier in.",
+      "tags": [
+        "thema:gemeente-instanties"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-005",
+      "nl": "invullen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Antwoorden schrijven op een formulier.",
+      "example": "Ik moet dit formulier invullen.",
+      "tags": [
+        "thema:gemeente-instanties"
+      ],
+      "level": "A2",
+      "source": "samenvatting"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-006",
+      "nl": "inleveren",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets terugbrengen of afgeven.",
+      "example": "U moet het formulier voor 1 maart inleveren.",
+      "tags": [
+        "thema:gemeente-instanties"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-007",
+      "nl": "de gemeente",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de gemeenten",
+      "definitionNl": "De organisatie van de overheid voor jouw stad of dorp.",
+      "example": "Ik schrijf mij in bij de gemeente.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-008",
+      "nl": "het paspoort",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de paspoorten",
+      "definitionNl": "Een officieel boekje om te reizen.",
+      "example": "Mijn paspoort is nog twee jaar geldig.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-009",
+      "nl": "de ID-kaart",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de ID-kaarten",
+      "definitionNl": "Een kaart die bewijst wie je bent.",
+      "example": "Bij de bank laat ik mijn ID-kaart zien.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-010",
+      "nl": "het rijbewijs",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de rijbewijzen",
+      "definitionNl": "Een kaart waarmee je mag autorijden.",
+      "example": "Ik haal mijn rijbewijs volgend jaar.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-011",
+      "nl": "inschrijven",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Je naam officieel laten zetten in een lijst.",
+      "example": "Ik schrijf mij in bij de gemeente.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-012",
+      "nl": "de BRP",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Het register van de gemeente met alle inwoners.",
+      "example": "Je staat in de BRP als je woont in Nederland.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-013",
+      "nl": "het burgerservicenummer",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de burgerservicenummers",
+      "definitionNl": "Je persoonlijke nummer bij de overheid.",
+      "example": "Mijn BSN staat op mijn paspoort.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-014",
+      "nl": "het BSN",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Het burgerservicenummer.",
+      "example": "Wat is uw BSN?",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-015",
+      "nl": "de DigiD",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Je persoonlijke code om bij de overheid in te loggen.",
+      "example": "Met mijn DigiD kijk ik naar mijn belastingen.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-016",
+      "nl": "de ambtenaar",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de ambtenaren",
+      "definitionNl": "Iemand die voor de overheid werkt.",
+      "example": "De ambtenaar helpt mij met het formulier.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-017",
+      "nl": "de aanvraag",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de aanvragen",
+      "definitionNl": "Je vraagt officieel om iets.",
+      "example": "Mijn aanvraag voor een paspoort is gelukt.",
+      "tags": [
+        "thema:gemeente-instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-018",
+      "nl": "aanvragen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Officieel om iets vragen.",
+      "example": "Ik wil een uitkering aanvragen.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-019",
+      "nl": "de uitkering",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de uitkeringen",
+      "definitionNl": "Geld van de overheid als je niet kunt werken.",
+      "example": "Hij krijgt een uitkering.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-020",
+      "nl": "de bijstand",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Geld van de gemeente voor mensen zonder inkomen.",
+      "example": "Zij vraagt bijstand aan.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-021",
+      "nl": "de verblijfsvergunning",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de verblijfsvergunningen",
+      "definitionNl": "Een papier dat bewijst dat je in Nederland mag wonen.",
+      "example": "Mijn verblijfsvergunning is geldig tot 2030.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-022",
+      "nl": "de IND",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De organisatie voor verblijfsvergunning en naturalisatie.",
+      "example": "De IND beslist over mijn aanvraag.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-023",
+      "nl": "de Belastingdienst",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De organisatie die belasting en toeslagen regelt.",
+      "example": "De Belastingdienst stuurt mij een brief.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-024",
+      "nl": "de belasting",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de belastingen",
+      "definitionNl": "Geld dat je aan de overheid betaalt.",
+      "example": "Ik betaal belasting over mijn loon.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-025",
+      "nl": "de toeslag",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de toeslagen",
+      "definitionNl": "Extra geld van de overheid.",
+      "example": "Zij krijgt huurtoeslag.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-026",
+      "nl": "het UWV",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De organisatie voor werk en uitkering bij ziekte of ontslag.",
+      "example": "Het UWV helpt mensen zonder werk.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-027",
+      "nl": "de SVB",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De organisatie voor kinderbijslag en AOW.",
+      "example": "De SVB betaalt de AOW.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-028",
+      "nl": "de kinderbijslag",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Geld van de overheid voor het opvoeden van kinderen.",
+      "example": "Ik krijg elk kwartaal kinderbijslag.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-029",
+      "nl": "de AOW",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Pensioen van de overheid voor ouderen.",
+      "example": "Mijn opa krijgt AOW.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-030",
+      "nl": "de politie",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De organisatie die zorgt voor veiligheid.",
+      "example": "Bel 112 als je de politie nodig hebt.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-031",
+      "nl": "de aangifte",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de aangiftes",
+      "definitionNl": "Je vertelt de politie dat er iets strafbaars is gebeurd.",
+      "example": "Ik doe aangifte van diefstal.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-032",
+      "nl": "het Juridisch Loket",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Een organisatie die gratis informatie geeft over wet en recht.",
+      "example": "Bij het Juridisch Loket krijg je advies.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-033",
+      "nl": "de bibliotheek",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de bibliotheken",
+      "definitionNl": "Hier leen je boeken.",
+      "example": "In de bibliotheek help je bij taal en computers.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-034",
+      "nl": "het afspraakbewijs",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Een papier met de tijd van je afspraak.",
+      "example": "Neem het afspraakbewijs mee.",
+      "tags": [
+        "thema:gemeente-instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-035",
+      "nl": "de handtekening",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de handtekeningen",
+      "definitionNl": "Je naam geschreven door jezelf.",
+      "example": "Zet hier je handtekening.",
+      "tags": [
+        "thema:gemeente-instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}

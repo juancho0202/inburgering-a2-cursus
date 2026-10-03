@@ -86,12 +86,43 @@
   .card {
     @apply rounded-card bg-surface shadow-card border border-line;
   }
+  /* Frosted-glass look for cards that sit on top of a photo */
+  .glass,
+  .glass-cards .card {
+    background: color-mix(in srgb, var(--surface) 80%, transparent);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
   .input {
     @apply w-full rounded-xl border-2 border-line bg-surface px-3 py-2 text-ink placeholder:text-muted focus:border-brand;
   }
   /* Rendered markdown (lesson text) */
   .prose-nl {
     max-width: 70ch;
+  }
+  .prose-nl h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+  }
+  .prose-nl h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 2rem 0 0.75rem;
+    scroll-margin-top: 5rem;
+  }
+  .prose-nl h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .prose-nl code {
+    background: var(--surface-2);
+    border-radius: 0.35rem;
+    padding: 0.05rem 0.35rem;
+  }
+  .prose-nl del {
+    color: var(--bad);
   }
   .prose-nl p {
     margin: 0 0 0.9rem;
@@ -108,6 +139,8 @@
     font-weight: 700;
   }
   .prose-nl table {
+    display: block;
+    overflow-x: auto;
     border-collapse: collapse;
     margin: 0 0 0.9rem;
   }

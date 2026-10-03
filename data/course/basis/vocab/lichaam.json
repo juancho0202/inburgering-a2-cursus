@@ -1,0 +1,426 @@
+{
+  "theme": "lichaam",
+  "title": "Lichaam",
+  "entries": [
+    {
+      "id": "basis-vocab-lichaam-001",
+      "nl": "het hoofd",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de hoofden",
+      "definitionNl": "Het bovenste deel van je lichaam.",
+      "example": "Ik heb pijn in mijn hoofd.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-002",
+      "nl": "het gezicht",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de gezichten",
+      "definitionNl": "Het voorste deel van je hoofd.",
+      "example": "Zij heeft een vriendelijk gezicht.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-003",
+      "nl": "het oog",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de ogen",
+      "definitionNl": "Hiermee zie je.",
+      "example": "Mijn ogen doen pijn.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-004",
+      "nl": "het oor",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de oren",
+      "definitionNl": "Hiermee hoor je.",
+      "example": "Hij heeft pijn in zijn oor.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-005",
+      "nl": "de neus",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de neuzen",
+      "definitionNl": "Hiermee ruik je.",
+      "example": "Ik heb een snotneus.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-006",
+      "nl": "de mond",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de monden",
+      "definitionNl": "Hiermee praat en eet je.",
+      "example": "Doe je mond open.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-007",
+      "nl": "de tand",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de tanden",
+      "definitionNl": "Wit en hard in je mond.",
+      "example": "Ik poets mijn tanden twee keer per dag.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-008",
+      "nl": "de keel",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de kelen",
+      "definitionNl": "Het deel in je hals waar eten en lucht door gaan.",
+      "example": "Ik heb keelpijn.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-009",
+      "nl": "de nek",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de nekken",
+      "definitionNl": "Het deel tussen hoofd en schouders.",
+      "example": "Mijn nek doet pijn.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-010",
+      "nl": "de schouder",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de schouders",
+      "definitionNl": "Het deel boven je arm.",
+      "example": "Ik heb pijn aan mijn schouder.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-011",
+      "nl": "de arm",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de armen",
+      "definitionNl": "Van je schouder tot je hand.",
+      "example": "Hij heeft zijn arm gebroken.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-012",
+      "nl": "de hand",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de handen",
+      "definitionNl": "Het einde van je arm.",
+      "example": "Was je handen.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-013",
+      "nl": "de vinger",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de vingers",
+      "definitionNl": "Een van de vijf delen van je hand.",
+      "example": "Ik heb mijn vinger bezeerd.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-014",
+      "nl": "de rug",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de ruggen",
+      "definitionNl": "De achterkant van je lichaam.",
+      "example": "Zij heeft last van haar rug.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-015",
+      "nl": "de buik",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de buiken",
+      "definitionNl": "Het voorste deel van je romp.",
+      "example": "Ik heb buikpijn.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-016",
+      "nl": "de borst",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de borsten",
+      "definitionNl": "Het voorste deel van je romp, boven je buik.",
+      "example": "Hij heeft pijn op zijn borst.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-017",
+      "nl": "het been",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de benen",
+      "definitionNl": "Hiermee loop je.",
+      "example": "Mijn been doet pijn.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-018",
+      "nl": "de knie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de knieën",
+      "definitionNl": "Het deel in het midden van je been.",
+      "example": "Zij is op haar knie gevallen.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-019",
+      "nl": "de voet",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de voeten",
+      "definitionNl": "Het onderste deel van je been.",
+      "example": "Mijn voeten zijn koud.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-020",
+      "nl": "het hart",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de harten",
+      "definitionNl": "Dit pompt bloed door je lichaam.",
+      "example": "Zijn hart klopt snel.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-021",
+      "nl": "het bloed",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Rood vocht in je lichaam.",
+      "example": "Er komt bloed uit de wond.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-022",
+      "nl": "de huid",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De buitenkant van je lichaam.",
+      "example": "Mijn huid is droog.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-023",
+      "nl": "de wond",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de wonden",
+      "definitionNl": "Een open plek in de huid.",
+      "example": "De wond bloedt.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-024",
+      "nl": "het lichaam",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de lichamen",
+      "definitionNl": "Alles van jou: hoofd, armen, benen.",
+      "example": "Het lichaam heeft rust nodig.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-025",
+      "nl": "gebroken",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Een bot is kapot.",
+      "example": "Zijn been is gebroken.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-026",
+      "nl": "duizelig",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Alles draait en je voelt je niet goed.",
+      "example": "Ik ben duizelig.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-027",
+      "nl": "misselijk",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Je voelt je alsof je moet overgeven.",
+      "example": "Ik ben misselijk van de soep.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-028",
+      "nl": "moe",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Je wilt slapen.",
+      "example": "Ik ben erg moe.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-029",
+      "nl": "gezond",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Niet ziek.",
+      "example": "Groente is gezond.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-lichaam-030",
+      "nl": "de allergie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de allergieën",
+      "definitionNl": "Je lichaam reageert slecht op iets.",
+      "example": "Ik heb een allergie voor noten.",
+      "tags": [
+        "thema:lichaam"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}

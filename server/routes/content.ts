@@ -1,4 +1,6 @@
 import { Router } from "express";
+import fs from "node:fs/promises";
+import path from "node:path";
 import { getContent } from "../db/contentRepo.js";
 
 export const contentRouter = Router();
@@ -48,4 +50,13 @@ contentRouter.get("/exams/:id", async (req, res) => {
     return;
   }
   res.json(exam);
+});
+
+contentRouter.get("/samenvatting", async (_req, res) => {
+  try {
+    const md = await fs.readFile(path.resolve("data/course/basis/samenvatting.md"), "utf-8");
+    res.json({ md });
+  } catch {
+    res.status(404).json({ error: { code: "not_found", message: "De samenvatting bestaat niet." } });
+  }
 });

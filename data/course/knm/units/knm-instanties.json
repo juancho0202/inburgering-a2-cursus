@@ -1,0 +1,623 @@
+{
+  "id": "knm-instanties",
+  "moduleId": "knm",
+  "title": "Instanties",
+  "goal": "Je weet welke instantie je moet hebben voor welke vraag.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "knm:instanties"
+  ],
+  "vocabRefs": [
+    "basis-vocab-gemeente-instanties-007",
+    "basis-vocab-gemeente-instanties-008",
+    "basis-vocab-gemeente-instanties-009",
+    "basis-vocab-gemeente-instanties-010",
+    "basis-vocab-gemeente-instanties-011",
+    "basis-vocab-gemeente-instanties-012",
+    "basis-vocab-gemeente-instanties-013",
+    "basis-vocab-gemeente-instanties-014",
+    "basis-vocab-gemeente-instanties-015",
+    "basis-vocab-gemeente-instanties-016",
+    "basis-vocab-gemeente-instanties-018",
+    "basis-vocab-gemeente-instanties-019",
+    "basis-vocab-gemeente-instanties-020",
+    "basis-vocab-gemeente-instanties-021",
+    "basis-vocab-gemeente-instanties-022",
+    "basis-vocab-gemeente-instanties-023",
+    "basis-vocab-gemeente-instanties-024",
+    "basis-vocab-gemeente-instanties-025",
+    "basis-vocab-gemeente-instanties-026",
+    "basis-vocab-gemeente-instanties-027",
+    "basis-vocab-gemeente-instanties-028",
+    "basis-vocab-gemeente-instanties-029",
+    "basis-vocab-gemeente-instanties-030",
+    "basis-vocab-gemeente-instanties-031",
+    "basis-vocab-gemeente-instanties-032"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "knm-instanties-l-01",
+      "title": "De gemeente",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "De **gemeente** regelt veel: **inschrijven** en **verhuizen** (BRP), **paspoort** en **ID-kaart**, **rijbewijs**, **trouwen**, **bijstand**, **afval**, **parkeren** en hulp (**Wmo**).\n\nJe **BSN (burgerservicenummer)** is je persoonlijke nummer. Met **DigiD** log je in bij de overheid. Geef je DigiD nooit aan een ander."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-gemeente-instanties-007",
+            "basis-vocab-gemeente-instanties-008",
+            "basis-vocab-gemeente-instanties-012",
+            "basis-vocab-gemeente-instanties-014",
+            "basis-vocab-gemeente-instanties-015"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-001",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Verhuizen geef je door aan de gemeente (BRP).",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Fatima verhuist naar een andere stad. Waar geeft ze dit door?",
+        "options": [
+          "Bij de gemeente",
+          "Bij de IND",
+          "Bij DUO",
+          "Bij het UWV"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-002",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Paspoort en ID-kaart: de gemeente.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Ahmed wil een nieuw paspoort. Waar vraagt hij het aan?",
+        "options": [
+          "Bij de Belastingdienst",
+          "Bij de gemeente",
+          "Bij het UWV",
+          "Bij de politie"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-003",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "BSN = burgerservicenummer.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is een BSN?",
+        "options": [
+          "Een soort belasting",
+          "Een telefoonnummer",
+          "Een persoonlijk nummer bij de overheid",
+          "Een rijbewijs"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-004",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Met DigiD log je veilig in bij gemeente, Belastingdienst, DUO of UWV.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waarvoor gebruik je DigiD?",
+        "options": [
+          "Om geld te lenen",
+          "Om te reizen",
+          "Om te telefoneren",
+          "Om in te loggen bij de overheid"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-005",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Geef je DigiD nooit aan een ander.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Een vriend vraagt je DigiD-code. Wat doe je?",
+        "options": [
+          "Je geeft hem je code niet.",
+          "Je geeft hem je code.",
+          "Je zet de code op social media.",
+          "Je schrijft de code op zijn hand."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-006",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Trouwen regel je bij de gemeente.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Priya en haar vriend willen trouwen. Waar regelen ze dit?",
+        "options": [
+          "Bij de IND",
+          "Bij de gemeente",
+          "Bij het UWV",
+          "Bij de huisarts"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-007",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Bijstand wordt door de gemeente betaald.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Een man heeft geen werk en geen inkomen. Waar vraagt hij bijstand aan?",
+        "options": [
+          "Bij de SVB",
+          "Bij de Belastingdienst",
+          "Bij de gemeente",
+          "Bij DUO"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-instanties-l-02",
+      "title": "Landelijke instanties",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Instantie",
+            "Waarvoor"
+          ],
+          "rows": [
+            [
+              "DUO",
+              "inburgering (examens, lening), studiefinanciering"
+            ],
+            [
+              "IND",
+              "verblijfsvergunning, naturalisatie"
+            ],
+            [
+              "UWV",
+              "WW-uitkering, werk zoeken, arbeidsongeschiktheid"
+            ],
+            [
+              "Belastingdienst",
+              "belasting en toeslagen"
+            ],
+            [
+              "SVB",
+              "kinderbijslag, AOW"
+            ],
+            [
+              "Politie",
+              "112 bij spoed, 0900-8844 bij geen spoed, aangifte"
+            ],
+            [
+              "Juridisch Loket",
+              "gratis informatie over rechtsvragen"
+            ],
+            [
+              "KVK",
+              "eigen bedrijf inschrijven"
+            ],
+            [
+              "Bibliotheek",
+              "boeken lenen, hulp bij taal en computer"
+            ],
+            [
+              "Vluchtelingenwerk / maatschappelijk werk",
+              "begeleiding en hulp"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-008",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "DUO regelt inburgering en studiefinanciering.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Olga heeft een lening bij DUO voor haar inburgering. Waar heeft ze het over?",
+        "options": [
+          "Een lening voor een huis",
+          "Een lening voor een auto",
+          "Een lening voor vakantie",
+          "Een lening voor het inburgeringsexamen"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-009",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "De IND regelt verblijfsvergunning en naturalisatie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Mehmet heeft een verblijfsvergunning nodig. Naar welke instantie moet hij?",
+        "options": [
+          "De IND",
+          "De SVB",
+          "DUO",
+          "De KVK"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-010",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Kinderbijslag en AOW: SVB.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke instantie regelt kinderbijslag?",
+        "options": [
+          "De IND",
+          "De SVB",
+          "De KVK",
+          "DUO"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-011",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Een eigen bedrijf: KVK.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wei wil een eigen restaurant beginnen. Waar schrijft hij zich in?",
+        "options": [
+          "Bij de IND",
+          "Bij de politie",
+          "Bij de KVK",
+          "Bij het UWV"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-012",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Het Juridisch Loket geeft gratis informatie over rechtsvragen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Sanne wil gratis advies over een probleem met haar huisbaas. Waar kan ze terecht?",
+        "options": [
+          "Bij de KVK",
+          "Bij de SVB",
+          "Bij de apotheek",
+          "Bij het Juridisch Loket"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-013",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Aangifte doe je bij de politie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Er is bij Pieter ingebroken. Hij wil aangifte doen. Wat doet hij?",
+        "options": [
+          "Hij gaat naar de politie.",
+          "Hij gaat naar de SVB.",
+          "Hij gaat naar de bibliotheek.",
+          "Hij belt de KVK."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-014",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "In de bibliotheek krijg je hulp bij taal en computer.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Priya wil gratis hulp bij het leren van computeren. Waar kan ze naartoe?",
+        "options": [
+          "Naar de IND",
+          "Naar de bibliotheek",
+          "Naar de Belastingdienst",
+          "Naar de huisartsenpost"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-015",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "WW na ontslag: UWV.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke instantie regelt de WW-uitkering?",
+        "options": [
+          "De SVB",
+          "De gemeente",
+          "Het UWV",
+          "De IND"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-016",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Naturalisatie: aanvraag via de gemeente, de IND beslist.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Ahmed wil Nederlander worden. Waar vraagt hij het aan, en wie beslist?",
+        "options": [
+          "Aanvraag bij de SVB; de KVK beslist.",
+          "Aanvraag bij DUO; de politie beslist.",
+          "Aanvraag bij het UWV; de gemeente beslist.",
+          "Aanvraag via de gemeente; de IND beslist."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-017",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "CJG en consultatiebureau helpen bij opvoeden en jonge kinderen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Bij welke instantie ga je voor hulp met een jong kind (opvoeden, vragen)?",
+        "options": [
+          "Het consultatiebureau / Centrum voor Jeugd en Gezin",
+          "De KVK",
+          "De IND",
+          "Het UWV"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-018",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Vluchtelingenwerk en maatschappelijk werk begeleiden en helpen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke instantie helpt nieuwkomers met begeleiding en hulp?",
+        "options": [
+          "De Belastingdienst",
+          "Vluchtelingenwerk of maatschappelijk werk",
+          "De KVK",
+          "De SVB"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-instanties-l-03",
+      "title": "Hulpnummers en veiligheid",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "**112** bel je bij **spoed** en gevaar (politie, ambulance, brandweer).\n\n**0900-8844** bel je als je de politie nodig hebt, maar het **geen spoed** is.\n\n**Woningcorporatie:** sociale huurwoningen. **Huisarts / huisartsenpost:** gezondheid."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-019",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Spoed: 112.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je ziet een auto-ongeluk met gewonden. Wat bel je?",
+        "options": [
+          "0900-8844",
+          "De gemeente",
+          "112",
+          "De huisarts"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-020",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Geen spoed: 0900-8844.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je fiets is gestolen. Er is niemand in gevaar. Welk nummer bel je?",
+        "options": [
+          "112",
+          "De brandweer",
+          "De huisartsenpost",
+          "0900-8844"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-021",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Woningcorporaties verhuren sociale huurwoningen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke instantie verhuurt sociale huurwoningen?",
+        "options": [
+          "Een woningcorporatie",
+          "De IND",
+          "De Belastingdienst",
+          "De SVB"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-022",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Studiefinanciering regelt DUO.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Ahmed wil weten hoeveel studiefinanciering hij krijgt voor zijn mbo-opleiding. Waar kijkt hij?",
+        "options": [
+          "Bij de SVB",
+          "Bij DUO",
+          "Bij de IND",
+          "Bij de politie"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-023",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Geef je DigiD nooit aan een ander.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Je kunt je DigiD veilig aan je buurman geven als hij helpt met een formulier.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-024",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "DUO regelt de inburgeringsexamens.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Mehmet wil weten wat hij moet doen om te kunnen inburgeren en de examens te doen. Welke instantie regelt dat?",
+        "options": [
+          "De SVB",
+          "De KVK",
+          "De Belastingdienst",
+          "DUO"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-025",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Het UWV helpt bij werk zoeken en regelt de WW.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke instantie helpt je met het zoeken naar werk als je werkloos bent?",
+        "options": [
+          "Het UWV",
+          "De IND",
+          "De KVK",
+          "De SVB"
+        ],
+        "answer": 0
+      }
+    }
+  ]
+}

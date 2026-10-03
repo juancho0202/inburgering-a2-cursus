@@ -1,0 +1,468 @@
+{
+  "theme": "post-internet-telefoon",
+  "title": "Post, internet en telefoon",
+  "entries": [
+    {
+      "id": "basis-vocab-post-internet-telefoon-001",
+      "nl": "de brief",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de brieven",
+      "definitionNl": "Een papier met tekst dat je verstuurt.",
+      "example": "Ik krijg een brief van de gemeente.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-002",
+      "nl": "de post",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Brieven en pakjes.",
+      "example": "De post komt om twaalf uur.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-003",
+      "nl": "het pakket",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de pakketten",
+      "definitionNl": "Een doos die je verstuurt of krijgt.",
+      "example": "Mijn pakket komt morgen.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-004",
+      "nl": "de postzegel",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de postzegels",
+      "definitionNl": "Een plakker voor je brief.",
+      "example": "Ik plak een postzegel op de brief.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-005",
+      "nl": "het adres",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de adressen",
+      "definitionNl": "Straat, huisnummer en woonplaats.",
+      "example": "Mijn adres is Kerkstraat 12.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-006",
+      "nl": "de postcode",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de postcodes",
+      "definitionNl": "Cijfers en letters bij je adres.",
+      "example": "Mijn postcode is 3512 AB.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-007",
+      "nl": "versturen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets laten gaan naar iemand anders.",
+      "example": "Ik verstuur de brief vandaag.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-008",
+      "nl": "sturen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets laten gaan naar een persoon.",
+      "example": "Ik stuur je een bericht.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-009",
+      "nl": "opsturen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets naar iemand sturen.",
+      "example": "Ik stuur het formulier op.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-010",
+      "nl": "de e-mail",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de e-mails",
+      "definitionNl": "Een bericht via internet.",
+      "example": "Ik krijg veel e-mails.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-011",
+      "nl": "het e-mailadres",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de e-mailadressen",
+      "definitionNl": "Het adres voor je e-mail.",
+      "example": "Mijn e-mailadres staat op het formulier.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-012",
+      "nl": "het bericht",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de berichten",
+      "definitionNl": "Een korte tekst.",
+      "example": "Ik stuur je een bericht.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-013",
+      "nl": "de bijlage",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de bijlagen",
+      "definitionNl": "Een bestand dat bij een e-mail zit.",
+      "example": "Open de bijlage voor het formulier.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-014",
+      "nl": "het wachtwoord",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de wachtwoorden",
+      "definitionNl": "Een geheim woord voor je account.",
+      "example": "Vergeet je wachtwoord niet.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-015",
+      "nl": "inloggen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Je naam en wachtwoord invullen om binnen te komen.",
+      "example": "Ik log in op mijn account.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-016",
+      "nl": "het internet",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Het wereldwijde netwerk van computers.",
+      "example": "Ik zoek het op internet.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-017",
+      "nl": "de website",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de websites",
+      "definitionNl": "Een pagina op internet.",
+      "example": "Kijk op de website van de gemeente.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-018",
+      "nl": "de computer",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de computers",
+      "definitionNl": "Een apparaat waarop je kunt werken.",
+      "example": "De computer is kapot.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-019",
+      "nl": "de laptop",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de laptops",
+      "definitionNl": "Een computer die je mee kunt nemen.",
+      "example": "Ik werk op mijn laptop.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-020",
+      "nl": "de telefoon",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de telefoons",
+      "definitionNl": "Hiermee bel je.",
+      "example": "Mijn telefoon ligt thuis.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-021",
+      "nl": "het telefoonnummer",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de telefoonnummers",
+      "definitionNl": "Het nummer om iemand te bellen.",
+      "example": "Wat is uw telefoonnummer?",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-022",
+      "nl": "bellen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Met de telefoon praten.",
+      "example": "Ik bel mijn moeder.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-023",
+      "nl": "opbellen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iemand telefonisch bellen.",
+      "example": "Ik bel je morgen op.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-024",
+      "nl": "terugbellen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Nog een keer bellen.",
+      "example": "Kunt u mij terugbellen?",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-025",
+      "nl": "de voicemail",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Een bericht dat je inspreekt als iemand niet opneemt.",
+      "example": "Ik laat een bericht achter op de voicemail.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-026",
+      "nl": "inspreken",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Een bericht met je stem opnemen.",
+      "example": "U kunt een bericht inspreken.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-027",
+      "nl": "ingesproken",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Met je stem opgenomen.",
+      "example": "Er is een ingesproken bericht.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-028",
+      "nl": "ophangen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Het telefoongesprek stoppen.",
+      "example": "Hij hangt op.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-029",
+      "nl": "de app",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de apps",
+      "definitionNl": "Een programma op je telefoon.",
+      "example": "Ik gebruik een app voor het weer.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-030",
+      "nl": "het scherm",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de schermen",
+      "definitionNl": "Het deel van je telefoon waar je naar kijkt.",
+      "example": "Het scherm is kapot.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-031",
+      "nl": "de batterij",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de batterijen",
+      "definitionNl": "Dit geeft stroom aan je telefoon.",
+      "example": "De batterij is leeg.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-032",
+      "nl": "het bereik",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De telefoon kan signaal vangen.",
+      "example": "Ik heb hier geen bereik.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-post-internet-telefoon-033",
+      "nl": "krijgen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets ontvangen.",
+      "example": "Ik krijg een brief.",
+      "tags": [
+        "thema:post-internet-telefoon"
+      ],
+      "level": "A2",
+      "source": "learner-notes"
+    }
+  ]
+}

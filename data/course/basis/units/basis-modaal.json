@@ -1,0 +1,409 @@
+{
+  "id": "basis-modaal",
+  "moduleId": "basis",
+  "title": "Moeten, kunnen, willen, mogen, hoeven",
+  "goal": "Je gebruikt modale werkwoorden met een infinitief aan het eind van de zin.",
+  "estimatedMinutes": 15,
+  "tags": [
+    "basis:modaal",
+    "grammar:modaal"
+  ],
+  "vocabRefs": [
+    "basis-verb-kunnen",
+    "basis-verb-willen",
+    "basis-verb-moeten",
+    "basis-verb-mogen"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-modaal-l-01",
+      "title": "Modale werkwoorden",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Modale werkwoorden: **kunnen, moeten, willen, mogen, hoeven**. Het tweede werkwoord is een infinitief en staat **aan het eind**."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "",
+            "kunnen",
+            "willen",
+            "moeten",
+            "mogen"
+          ],
+          "rows": [
+            [
+              "ik",
+              "kan",
+              "wil",
+              "moet",
+              "mag"
+            ],
+            [
+              "jij",
+              "kunt / kan",
+              "wilt / wil",
+              "moet",
+              "mag"
+            ],
+            [
+              "hij / zij",
+              "kan",
+              "wil",
+              "moet",
+              "mag"
+            ],
+            [
+              "wij",
+              "kunnen",
+              "willen",
+              "moeten",
+              "mogen"
+            ]
+          ]
+        },
+        {
+          "kind": "example",
+          "nl": "Ik moet morgen werken.",
+          "note": "moeten + infinitief aan het eind"
+        },
+        {
+          "kind": "example",
+          "nl": "Kunt u woensdag komen?"
+        },
+        {
+          "kind": "text",
+          "md": "**hoeven + niet/geen** = niet nodig: *Je hoeft niets te doen. Eten hoeft niet.*"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-001",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "Bij ik: moet.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede werkwoord.",
+        "text": "Ik ___ morgen werken.",
+        "options": [
+          [
+            "moet",
+            "moeten",
+            "moets"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-002",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "Bij u: kunt.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede werkwoord.",
+        "text": "___ u woensdag komen?",
+        "options": [
+          [
+            "Kunt",
+            "Kan u",
+            "Kunnen"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-003",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "Bij wij: willen.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede werkwoord.",
+        "text": "Wij ___ om negen uur beginnen.",
+        "options": [
+          [
+            "willen",
+            "wil",
+            "wilt"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-004",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "Bij je: mag. Hier mag je niet roken = het is verboden.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede werkwoord.",
+        "text": "Hier ___ je niet roken.",
+        "options": [
+          [
+            "mag",
+            "mogen",
+            "magt"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-005",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "Het tweede werkwoord (werken) staat aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "moet",
+          "morgen",
+          "werken."
+        ],
+        "alsoAccepted": [
+          [
+            "Morgen",
+            "moet",
+            "ik",
+            "werken."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-006",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "In een ja/nee-vraag staat het werkwoord eerst, de infinitief aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Kunt",
+          "u",
+          "woensdag",
+          "komen?"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-007",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "Wil is op plek 2, voetballen staat aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Mijn",
+          "zoon",
+          "wil",
+          "graag",
+          "voetballen."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-008",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "Moeten op plek 2, invullen aan het eind.",
+        "difficulty": 2,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Wij",
+          "moeten",
+          "het",
+          "formulier",
+          "invullen."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-009",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "Na kunnen staat de infinitief: komen.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de infinitief in (komen, werken, bellen).",
+        "text": "Ik kan morgen niet ___ .",
+        "answers": [
+          [
+            "komen"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-010",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "Na moeten staat de infinitief aan het eind.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de infinitief in (betalen).",
+        "text": "Je moet de huur elke maand ___ .",
+        "answers": [
+          [
+            "betalen"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-011",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "Hoeven + niet/geen/niets = het is niet nodig.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat betekent: \"Je hoeft niets te doen\"?",
+        "options": [
+          "Je moet alles doen.",
+          "Je mag niets doen.",
+          "Het is niet nodig om iets te doen.",
+          "Je kunt niets doen."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-012",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "Bij ik: hoef. Daarna niet + te + infinitief.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Ik hoef betalen niet.",
+          "Ik hoeft niet te betalen.",
+          "Ik moet niet betalen te.",
+          "Ik hoef niet te betalen."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-013",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "Een bord met 'niet' bij een regel betekent: het mag niet.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Op een bord staat: \"Hier niet parkeren.\" Wat is dat?",
+        "options": [
+          "Het mag niet.",
+          "Het hoeft niet.",
+          "Het kan niet.",
+          "Het moet."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-014",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "Hoeven + niet = het is niet nodig. Het is niet verboden.",
+        "difficulty": 2,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "\"Je hoeft niet te komen\" betekent: je mag niet komen.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-modaal-q-015",
+        "tags": [
+          "basis:modaal",
+          "grammar:modaal"
+        ],
+        "explanation": "Het tweede werkwoord staat bij een modaal werkwoord aan het eind.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "In de zin \"Ik moet morgen werken\" staat werken aan het eind.",
+        "answer": true
+      }
+    }
+  ]
+}

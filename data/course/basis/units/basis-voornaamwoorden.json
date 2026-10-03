@@ -1,0 +1,366 @@
+{
+  "id": "basis-voornaamwoorden",
+  "moduleId": "basis",
+  "title": "Ik, mij, mijn",
+  "goal": "Je gebruikt persoonlijke en bezittelijke voornaamwoorden.",
+  "estimatedMinutes": 12,
+  "tags": [
+    "basis:voornaamwoorden",
+    "grammar:voornaamwoord"
+  ],
+  "vocabRefs": [
+    "basis-vocab-persoon-017"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-voornaamwoorden-l-01",
+      "title": "Ik, mij, mijn",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Onderwerp",
+            "Na werkwoord/voorzetsel",
+            "Van wie"
+          ],
+          "rows": [
+            [
+              "ik",
+              "mij / me",
+              "mijn"
+            ],
+            [
+              "jij / je",
+              "jou / je",
+              "jouw / je"
+            ],
+            [
+              "u",
+              "u",
+              "uw"
+            ],
+            [
+              "hij",
+              "hem",
+              "zijn"
+            ],
+            [
+              "zij / ze",
+              "haar",
+              "haar"
+            ],
+            [
+              "wij / we",
+              "ons",
+              "ons / onze"
+            ],
+            [
+              "jullie",
+              "jullie",
+              "jullie"
+            ],
+            [
+              "zij / ze",
+              "hen / hun / ze",
+              "hun"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "*Ons* gebruik je bij het-woorden (ons huis), *onze* bij de-woorden (onze auto)."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voornaamwoorden-q-001",
+        "tags": [
+          "basis:voornaamwoorden",
+          "grammar:voornaamwoord"
+        ],
+        "explanation": "Onderwerp: ik.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "___ woon in Utrecht.",
+        "options": [
+          [
+            "Ik",
+            "Mij",
+            "Mijn"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voornaamwoorden-q-002",
+        "tags": [
+          "basis:voornaamwoorden",
+          "grammar:voornaamwoord"
+        ],
+        "explanation": "Na het werkwoord: mij.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Kun je ___ helpen? (ik)",
+        "options": [
+          [
+            "mij",
+            "ik",
+            "mijn"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voornaamwoorden-q-003",
+        "tags": [
+          "basis:voornaamwoorden",
+          "grammar:voornaamwoord"
+        ],
+        "explanation": "Bezit: mijn.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Dat is ___ fiets. (van mij)",
+        "options": [
+          [
+            "mijn",
+            "mij",
+            "ik"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voornaamwoorden-q-004",
+        "tags": [
+          "basis:voornaamwoorden",
+          "grammar:voornaamwoord"
+        ],
+        "explanation": "Formeel bezit: uw.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Meneer De Groot, is dit ___ tas?",
+        "options": [
+          [
+            "uw",
+            "u",
+            "jouw"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voornaamwoorden-q-005",
+        "tags": [
+          "basis:voornaamwoorden",
+          "grammar:voornaamwoord"
+        ],
+        "explanation": "Na het werkwoord: hem.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Ik zie ___ . (de buurman)",
+        "options": [
+          [
+            "hem",
+            "hij",
+            "zijn"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voornaamwoorden-q-006",
+        "tags": [
+          "basis:voornaamwoorden",
+          "grammar:voornaamwoord"
+        ],
+        "explanation": "Na het werkwoord: haar.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Ik bel ___ morgen. (de buurvrouw)",
+        "options": [
+          [
+            "haar",
+            "zij",
+            "hem"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voornaamwoorden-q-007",
+        "tags": [
+          "basis:voornaamwoorden",
+          "grammar:voornaamwoord"
+        ],
+        "explanation": "Huis is een het-woord: ons huis.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Dit is ___ huis. (van ons)",
+        "options": [
+          [
+            "ons",
+            "onze",
+            "wij"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voornaamwoorden-q-008",
+        "tags": [
+          "basis:voornaamwoorden",
+          "grammar:voornaamwoord"
+        ],
+        "explanation": "Auto is een de-woord: onze auto.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Dit is ___ auto. (van ons)",
+        "options": [
+          [
+            "onze",
+            "ons",
+            "wij"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voornaamwoorden-q-009",
+        "tags": [
+          "basis:voornaamwoorden",
+          "grammar:voornaamwoord"
+        ],
+        "explanation": "Na het werkwoord: hen (of ze).",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Wij nodigen ___ uit. (de buren)",
+        "options": [
+          [
+            "hen",
+            "zij",
+            "hun"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voornaamwoorden-q-010",
+        "tags": [
+          "basis:voornaamwoorden",
+          "grammar:voornaamwoord"
+        ],
+        "explanation": "Formeel gebruik je u. Kunt u mij helpen?",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin is formeel goed?",
+        "options": [
+          "Kun je mij helpen?",
+          "Kunt u mij helpen?",
+          "Kunt jij mij helpen?",
+          "Kan je mij help?"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voornaamwoorden-q-011",
+        "tags": [
+          "basis:voornaamwoorden",
+          "grammar:voornaamwoord"
+        ],
+        "explanation": "Van wie? Zij → haar (bezit).",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Zij vertelt zij verhaal.",
+          "Zij vertelt hem verhaal.",
+          "Zij vertelt haar verhaal.",
+          "Zij vertelt haar verhalen is."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voornaamwoorden-q-012",
+        "tags": [
+          "basis:voornaamwoorden",
+          "grammar:voornaamwoord"
+        ],
+        "explanation": "Formeel: u (en Geachte).",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je schrijft aan je baas (formeel). Welke begroeting past?",
+        "options": [
+          "Hoi, ik schrijf je omdat…",
+          "Hoi De Groot, ik schrijf jou omdat…",
+          "Hey, ik schrijf je omdat…",
+          "Geachte heer De Groot, ik schrijf u omdat…"
+        ],
+        "answer": 3
+      }
+    }
+  ]
+}

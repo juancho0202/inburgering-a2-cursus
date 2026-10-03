@@ -1,0 +1,380 @@
+{
+  "id": "basis-voorzetsels",
+  "moduleId": "basis",
+  "title": "Voorzetsels en richting",
+  "goal": "Je gebruikt voorzetsels van plaats en richting, en je begrijpt een route.",
+  "estimatedMinutes": 15,
+  "tags": [
+    "basis:voorzetsels",
+    "grammar:voorzetsel"
+  ],
+  "vocabRefs": [
+    "basis-vocab-vervoer-richting-008",
+    "basis-vocab-vervoer-richting-010",
+    "basis-vocab-vervoer-richting-009",
+    "basis-vocab-vervoer-richting-030",
+    "basis-vocab-vervoer-richting-031",
+    "basis-vocab-vervoer-richting-026",
+    "basis-vocab-vervoer-richting-027",
+    "basis-vocab-vervoer-richting-028",
+    "basis-vocab-vervoer-richting-033"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-voorzetsels-l-01",
+      "title": "Plaats en richting",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "**Plaats:** in, op, bij, naast, tegenover, achter, voor, onder, boven, tussen.\n\n**Richting:** naar, van, door, langs."
+        },
+        {
+          "kind": "text",
+          "md": "**-af** = afslaan (**rechtsaf**, **linksaf**). **-door** = doorlopen (**rechtdoor**).\n\nHandige woorden: *tegenover, naast, op de hoek, aan uw rechterhand, de tweede straat links.*"
+        },
+        {
+          "kind": "dialogue",
+          "lines": [
+            {
+              "speaker": "Toerist",
+              "nl": "Pardon, hoe kom ik bij het station?"
+            },
+            {
+              "speaker": "Voorbijganger",
+              "nl": "U loopt rechtdoor tot het stoplicht. Daar gaat u rechtsaf."
+            },
+            {
+              "speaker": "Toerist",
+              "nl": "En dan?"
+            },
+            {
+              "speaker": "Voorbijganger",
+              "nl": "Dan ziet u het station aan uw linkerhand, tegenover de bank."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-001",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "explanation": "Links = linksaf. Tweede straat = niet de eerste.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je hoort: \"Neem de tweede straat links.\" Wat doe je?",
+        "options": [
+          "Je gaat bij de tweede straat naar links.",
+          "Je gaat bij de tweede straat naar rechts.",
+          "Je loopt rechtdoor.",
+          "Je gaat bij de eerste straat naar links."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-002",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "explanation": "Rechtsaf = naar rechts afslaan.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je hoort: \"Bij het stoplicht gaat u rechtsaf.\" Wat doe je?",
+        "options": [
+          "Je slaat links af.",
+          "Je slaat rechts af.",
+          "Je loopt rechtdoor.",
+          "Je gaat terug."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-003",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "explanation": "Rechtdoor = door blijven lopen, niet afslaan.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat betekent \"rechtdoor\"?",
+        "options": [
+          "Naar rechts gaan.",
+          "Terug gaan.",
+          "Niet links of rechts gaan.",
+          "Links afslaan."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-004",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "explanation": "Tegenover = aan de andere kant, recht voor iets.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "De bank is tegenover het station. Waar staat de bank?",
+        "options": [
+          "Naast het station.",
+          "In het station.",
+          "Achter het station.",
+          "Aan de andere kant van de straat."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-005",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "explanation": "Naast = aan de zijkant.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "De apotheek is naast de bakker. Waar is de apotheek?",
+        "options": [
+          "Aan de zijkant van de bakker.",
+          "Tegenover de bakker.",
+          "Op de bakker.",
+          "Onder de bakker."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-006",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "explanation": "Op de hoek = waar twee straten bij elkaar komen.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Wat is een goede route? \"Ga rechtdoor, de eerste straat rechts, het huis is op de hoek.\" Waar is het huis?",
+        "options": [
+          "Aan het eind van de straat.",
+          "Op de hoek van de eerste straat rechts.",
+          "Bij het stoplicht.",
+          "Tegenover het station."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-007",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "explanation": "In + stad: in Utrecht.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Ik woon ___ Utrecht.",
+        "options": [
+          [
+            "in",
+            "op",
+            "aan"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-008",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "explanation": "Richting naar een plek: naar.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "De bus gaat ___ het station.",
+        "options": [
+          [
+            "naar",
+            "van",
+            "in"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-009",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "explanation": "Onder = lager dan iets.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "De kinderen spelen ___ de tafel. (onder de tafel)",
+        "options": [
+          [
+            "onder",
+            "boven",
+            "naast"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-010",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "explanation": "Tussen = in het midden van twee dingen.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Het museum is ___ de school en de bank. (in het midden)",
+        "options": [
+          [
+            "tussen",
+            "tegenover",
+            "achter"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-011",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "explanation": "Rechtsaf = naar rechts afslaan.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het goede woord in.",
+        "text": "Bij het stoplicht gaat u ___ . (naar rechts afslaan)",
+        "answers": [
+          [
+            "rechtsaf"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-012",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "explanation": "Rechtdoor = door blijven lopen.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het goede woord in.",
+        "text": "Loop ___ tot het plein. (niet afslaan)",
+        "answers": [
+          [
+            "rechtdoor"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-013",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "explanation": "Let op: -af = afslaan, -door = doorlopen.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort bij de uitleg?",
+        "pairs": [
+          [
+            "rechtsaf",
+            "naar rechts afslaan"
+          ],
+          [
+            "linksaf",
+            "naar links afslaan"
+          ],
+          [
+            "rechtdoor",
+            "niet afslaan"
+          ],
+          [
+            "tegenover",
+            "aan de andere kant"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-014",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "explanation": "Bij = in de buurt van een plek.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welk woord past? \"Ik wacht ___ de halte.\"",
+        "options": [
+          "tot",
+          "bij",
+          "naar",
+          "van"
+        ],
+        "answer": 1
+      }
+    }
+  ]
+}

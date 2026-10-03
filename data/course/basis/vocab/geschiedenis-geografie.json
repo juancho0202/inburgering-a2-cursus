@@ -1,0 +1,351 @@
+{
+  "theme": "geschiedenis-geografie",
+  "title": "Geschiedenis en geografie",
+  "entries": [
+    {
+      "id": "basis-vocab-geschiedenis-geografie-001",
+      "nl": "de hoofdstad",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de hoofdsteden",
+      "definitionNl": "De belangrijkste stad van een land.",
+      "example": "Amsterdam is de hoofdstad van Nederland.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-002",
+      "nl": "Den Haag",
+      "article": null,
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De stad waar de regering en het parlement zitten.",
+      "example": "De regering zit in Den Haag.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-003",
+      "nl": "de dijk",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de dijken",
+      "definitionNl": "Een hoge rand van aarde om het water tegen te houden.",
+      "example": "De dijk beschermt het land tegen het water.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-004",
+      "nl": "de polder",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de polders",
+      "definitionNl": "Droog land dat vroeger water was.",
+      "example": "Flevoland is een polder.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-005",
+      "nl": "het zeeniveau",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De hoogte van de zee.",
+      "example": "Veel land ligt onder zeeniveau.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-006",
+      "nl": "de Deltawerken",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Grote werken om Zeeland tegen het water te beschermen.",
+      "example": "Na 1953 bouwde men de Deltawerken.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-007",
+      "nl": "de watersnoodramp",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Een grote overstroming in Zeeland in 1953.",
+      "example": "De watersnoodramp was in 1953.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-008",
+      "nl": "de Noordzee",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De zee ten noorden en westen van Nederland.",
+      "example": "Aan de Noordzee zijn mooie stranden.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-009",
+      "nl": "de rivier",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de rivieren",
+      "definitionNl": "Een grote stroom water over land.",
+      "example": "De Rijn is een grote rivier.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-010",
+      "nl": "de buurlanden",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De landen naast Nederland.",
+      "example": "Duitsland en België zijn buurlanden.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-011",
+      "nl": "de kolonie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de koloniën",
+      "definitionNl": "Een land dat bestuurd werd door een ander land.",
+      "example": "Suriname was een kolonie.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-012",
+      "nl": "de Gouden Eeuw",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "De zeventiende eeuw, een rijke tijd.",
+      "example": "In de Gouden Eeuw schilderde Rembrandt.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-013",
+      "nl": "de slavernij",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Mensen zijn bezit van anderen en moeten werken zonder vrijheid.",
+      "example": "De slavernij is in 1863 afgeschaft.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-014",
+      "nl": "de bezetting",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de bezettingen",
+      "definitionNl": "Een ander land bestuurt jouw land met geweld.",
+      "example": "De Duitse bezetting duurde van 1940 tot 1945.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-015",
+      "nl": "de bevrijding",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de bevrijdingen",
+      "definitionNl": "Het einde van de bezetting.",
+      "example": "De bevrijding was in 1945.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-016",
+      "nl": "de wederopbouw",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De opbouw van een land na de oorlog.",
+      "example": "Na de oorlog was er wederopbouw.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-017",
+      "nl": "de gastarbeider",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de gastarbeiders",
+      "definitionNl": "Iemand uit het buitenland die kwam werken.",
+      "example": "Veel gastarbeiders kwamen uit Turkije en Marokko.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-018",
+      "nl": "de onafhankelijkheid",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Een land bestuurt zichzelf.",
+      "example": "Suriname kreeg onafhankelijkheid in 1975.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-019",
+      "nl": "de oorlog",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de oorlogen",
+      "definitionNl": "Een strijd tussen landen of groepen.",
+      "example": "De Tweede Wereldoorlog duurde van 1939 tot 1945.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-020",
+      "nl": "de Europese Unie",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Een groep Europese landen die samenwerken.",
+      "example": "Nederland is lid van de Europese Unie.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-021",
+      "nl": "de euro",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de euro's",
+      "definitionNl": "Het geld van veel Europese landen.",
+      "example": "Sinds 2002 betalen wij met de euro.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-022",
+      "nl": "de gulden",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de guldens",
+      "definitionNl": "Het oude Nederlandse geld.",
+      "example": "Vroeger betaalde men met de gulden.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-geschiedenis-geografie-023",
+      "nl": "de eeuw",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de eeuwen",
+      "definitionNl": "Honderd jaar.",
+      "example": "De Gouden Eeuw was de zeventiende eeuw.",
+      "tags": [
+        "thema:geschiedenis-geografie",
+        "knm:geschiedenis"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}
