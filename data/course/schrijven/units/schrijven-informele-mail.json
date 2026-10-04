@@ -1,0 +1,454 @@
+{
+  "id": "schrijven-informele-mail",
+  "moduleId": "schrijven",
+  "title": "Een informele e-mail",
+  "goal": "Je schrijft een informele e-mail (40–80 woorden) aan een vriend, collega of buur.",
+  "estimatedMinutes": 30,
+  "tags": [
+    "schrijven:informeel"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "schrijven-informele-mail-l-01",
+      "title": "Een informele e-mail",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Een e-mail aan een vriend, collega of buur is **informeel** en **40 tot 80 woorden** lang."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Onderdeel",
+            "Voorbeeld"
+          ],
+          "rows": [
+            [
+              "Aanhef",
+              "Hoi Wei, / Beste Sanne,"
+            ],
+            [
+              "Waarom schrijf ik?",
+              "Ik wil je uitnodigen voor mijn verjaardag."
+            ],
+            [
+              "Punt 1, 2, 3",
+              "Wanneer? Waar? Wat neem je mee?"
+            ],
+            [
+              "Vraag",
+              "Laat je het even weten?"
+            ],
+            [
+              "Groet + naam",
+              "Groetjes, / Tot snel! Priya"
+            ]
+          ]
+        },
+        {
+          "kind": "text",
+          "md": "**Zinnen:** Hoe gaat het met je? · Ik wil je uitnodigen voor … · Heb je zin om … ? · Bedankt voor … · Sorry, ik kan niet komen, want … · Zullen we … afspreken? · Laat je het even weten? · Tot zaterdag!"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "schrijven-informele-mail-l-02",
+      "title": "Voorbeeld met uitleg",
+      "blocks": [
+        {
+          "kind": "document",
+          "docType": "email",
+          "title": "Uitnodiging verjaardag",
+          "body": "Van: Priya\nAan: Wei\nOnderwerp: Mijn verjaardag\n\nHoi Wei,\n\nHoe gaat het met je? Ik word zaterdag 35 jaar en ik geef een feestje. Heb je zin om te komen? Het begint om 15.00 uur bij mij thuis. Neem gerust je vriendin mee. Laat je het even weten?\n\nGroetjes,\nPriya"
+        },
+        {
+          "kind": "text",
+          "md": "**Uitleg:** aanhef *Hoi Wei*, waarom (*feestje*), wanneer en waar, een vraag (*Heb je zin?*), een groet. Dat zijn **43 woorden**."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-001",
+        "tags": [
+          "schrijven:informeel"
+        ],
+        "explanation": "Ja/nee-vraag: werkwoord eerst; te komen aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Heb",
+          "je",
+          "zin",
+          "om",
+          "zaterdag",
+          "te",
+          "komen?"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-002",
+        "tags": [
+          "schrijven:informeel"
+        ],
+        "explanation": "Wil op plek 2, uitnodigen aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "wil",
+          "je",
+          "uitnodigen",
+          "voor",
+          "mijn",
+          "verjaardag."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-003",
+        "tags": [
+          "schrijven:informeel"
+        ],
+        "explanation": "Na omdat staat ben aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Sorry,",
+          "ik",
+          "kan",
+          "niet",
+          "komen",
+          "omdat",
+          "ik",
+          "ziek",
+          "ben."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-004",
+        "tags": [
+          "schrijven:informeel"
+        ],
+        "explanation": "Zullen op plek 1, afspreken aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Zullen",
+          "we",
+          "zaterdag",
+          "afspreken?"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-005",
+        "tags": [
+          "schrijven:informeel"
+        ],
+        "explanation": "Een korte dankzin.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Bedankt",
+          "voor",
+          "je",
+          "hulp!"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-006",
+        "tags": [
+          "schrijven:informeel"
+        ],
+        "explanation": "Hoe gaat het met je? is een vriendelijke vraag.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de zin aan.",
+        "text": "Hoe ___ het met je?",
+        "answers": [
+          [
+            "gaat"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-007",
+        "tags": [
+          "schrijven:informeel"
+        ],
+        "explanation": "Bedankt voor …",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de zin aan.",
+        "text": "___ voor het cadeau! (bedankt)",
+        "answers": [
+          [
+            "Bedankt",
+            "Dank"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-008",
+        "tags": [
+          "schrijven:informeel"
+        ],
+        "explanation": "Laten weten = laat het weten.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de zin aan.",
+        "text": "Laat je het even ___ ? (weten)",
+        "answers": [
+          [
+            "weten"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-009",
+        "tags": [
+          "schrijven:informeel"
+        ],
+        "explanation": "Informeel: Hoi of Beste + voornaam.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke aanhef past bij een e-mail aan een vriendin?",
+        "options": [
+          "Hoi Olga,",
+          "Geachte mevrouw Petrova,",
+          "Zeer geachte,",
+          "Aan Olga Petrova,"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-010",
+        "tags": [
+          "schrijven:informeel"
+        ],
+        "explanation": "Informeel: Groetjes, Groeten, Tot snel.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke afsluiting past bij een informele e-mail?",
+        "options": [
+          "Met vriendelijke groet, A. Yilmaz",
+          "Groetjes, Ahmed",
+          "Hoogachtend, Ahmed",
+          "Met de meeste hoogachting,"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-011",
+        "tags": [
+          "schrijven:informeel",
+          "vrije-tijd-weer"
+        ],
+        "explanation": "Een uitnodiging aan een vriend is informeel.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een e-mail aan een vriend.",
+        "task": {
+          "instructions": "Schrijf een e-mail aan je vriend Wei. Je nodigt hem uit voor je verjaardag.",
+          "scenario": "Je wordt zaterdag 40 jaar. Je geeft een feestje bij jou thuis.",
+          "requiredPoints": [
+            "Nodig Wei uit voor je verjaardag.",
+            "Vertel wanneer en hoe laat het feest is.",
+            "Vraag of Wei het even laat weten."
+          ]
+        },
+        "minWords": 40,
+        "maxWords": 80,
+        "register": "informal",
+        "modelAnswer": "Hoi Wei,\n\nHoe gaat het met je? Ik word zaterdag 40 jaar en ik geef een feestje bij mij thuis. Het begint om vier uur. Heb je zin om te komen? Je mag ook je vriendin meenemen. Laat je het even weten?\n\nGroetjes,\nJuan",
+        "checklist": [
+          "Aanhef: Hoi Wei,",
+          "Uitnodiging genoemd",
+          "Dag en tijd genoemd",
+          "Vraag om te antwoorden",
+          "je/jij (niet u)",
+          "Groet + naam"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-012",
+        "tags": [
+          "schrijven:informeel",
+          "wonen"
+        ],
+        "explanation": "Bedank iemand duidelijk en voeg iets extra's toe.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een bedank-e-mail.",
+        "task": {
+          "instructions": "Schrijf een e-mail aan je buurvrouw, Sanne. Je bedankt haar.",
+          "scenario": "Sanne heeft vorige week op je kinderen gepast. Dat was erg fijn.",
+          "requiredPoints": [
+            "Bedank Sanne.",
+            "Vertel waarvoor je haar bedankt.",
+            "Nodig haar uit voor koffie."
+          ]
+        },
+        "minWords": 40,
+        "maxWords": 80,
+        "register": "informal",
+        "modelAnswer": "Hoi Sanne,\n\nBedankt voor je hulp! Je hebt vorige week op mijn kinderen gepast, want ik moest naar het ziekenhuis. Dat was erg fijn. De kinderen vonden het ook leuk. Wil je een keer bij mij koffie komen drinken? Laat je het weten?\n\nGroetjes,\nOlga",
+        "checklist": [
+          "Aanhef",
+          "Bedankt gezegd",
+          "Uitgelegd waarvoor",
+          "Uitnodiging voor koffie",
+          "je/jij",
+          "Groet + naam"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-013",
+        "tags": [
+          "schrijven:informeel",
+          "gezondheid"
+        ],
+        "explanation": "Zeg sorry en stel een nieuwe afspraak voor.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een e-mail om af te zeggen.",
+        "task": {
+          "instructions": "Schrijf een e-mail aan je vriendin Priya. Je zegt een afspraak af.",
+          "scenario": "Je had zaterdag afgesproken om samen te gaan winkelen. Je bent ziek en kunt niet komen.",
+          "requiredPoints": [
+            "Zeg dat je zaterdag niet kunt komen.",
+            "Vertel waarom.",
+            "Stel een nieuwe dag voor."
+          ]
+        },
+        "minWords": 40,
+        "maxWords": 80,
+        "register": "informal",
+        "modelAnswer": "Hoi Priya,\n\nHelaas kan ik zaterdag niet komen. Ik ben ziek en ik heb koorts. Het spijt me heel erg en ik vind het echt jammer. Zullen we volgende week woensdag afspreken? Dan ben ik hopelijk beter. Laat je het me even weten?\n\nGroetjes,\nAmira",
+        "checklist": [
+          "Aanhef",
+          "Afzeggen genoemd",
+          "Reden genoemd",
+          "Nieuwe dag voorgesteld",
+          "je/jij",
+          "Groet + naam"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-014",
+        "tags": [
+          "schrijven:informeel",
+          "werk"
+        ],
+        "explanation": "Je vertelt nieuws en vraagt iets terug.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een e-mail met nieuws.",
+        "task": {
+          "instructions": "Schrijf een e-mail aan je vriend Pieter. Je vertelt over je nieuwe baan.",
+          "scenario": "Je hebt een nieuwe baan in een winkel. Je begint maandag.",
+          "requiredPoints": [
+            "Vertel dat je een nieuwe baan hebt.",
+            "Vertel waar je werkt en wanneer je begint.",
+            "Vraag hoe het met Pieter gaat."
+          ]
+        },
+        "minWords": 40,
+        "maxWords": 80,
+        "register": "informal",
+        "modelAnswer": "Beste Pieter,\n\nIk heb goed nieuws: ik heb een nieuwe baan! Ik werk in een kledingwinkel in het centrum. Ik begin maandag en ik werk vier dagen per week. Hoe gaat het met jou? Zullen we binnenkort samen koffie drinken?\n\nGroeten,\nWei",
+        "checklist": [
+          "Aanhef",
+          "Nieuwe baan genoemd",
+          "Waar en wanneer",
+          "Vraag aan Pieter",
+          "je/jij",
+          "Groet + naam"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-informele-mail-q-015",
+        "tags": [
+          "schrijven:informeel",
+          "wonen"
+        ],
+        "explanation": "Een vraag om hulp met Kun jij … ? is vriendelijk.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een e-mail aan een collega.",
+        "task": {
+          "instructions": "Schrijf een e-mail aan je collega Mehmet. Je vraagt om hulp bij je verhuizing.",
+          "scenario": "Je verhuist op 15 juni naar een nieuw huis. Je hebt hulp nodig met dozen dragen.",
+          "requiredPoints": [
+            "Vertel dat je gaat verhuizen.",
+            "Vraag of Mehmet op 15 juni kan helpen.",
+            "Zeg wat je daarvoor doet (bijvoorbeeld pizza)."
+          ]
+        },
+        "minWords": 40,
+        "maxWords": 80,
+        "register": "informal",
+        "modelAnswer": "Hoi Mehmet,\n\nIk ga op 15 juni verhuizen naar een nieuw huis. Kun jij mij helpen met de dozen? We beginnen om negen uur en we zijn om twee uur klaar. Ik zorg natuurlijk voor lunch en drinken. Laat je het even weten?\n\nGroeten,\nPriya",
+        "checklist": [
+          "Aanhef",
+          "Verhuizing genoemd",
+          "Vraag om hulp met datum",
+          "Wat je zelf doet",
+          "je/jij",
+          "Groet + naam"
+        ]
+      }
+    }
+  ]
+}

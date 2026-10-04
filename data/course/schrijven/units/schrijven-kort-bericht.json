@@ -1,0 +1,451 @@
+{
+  "id": "schrijven-kort-bericht",
+  "moduleId": "schrijven",
+  "title": "Een kort bericht",
+  "goal": "Je schrijft een kort briefje of bericht (25–50 woorden) met alle punten van de opdracht.",
+  "estimatedMinutes": 30,
+  "tags": [
+    "schrijven:kort-bericht"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "schrijven-kort-bericht-l-01",
+      "title": "Een kort bericht (briefje)",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Een **briefje** aan een buur, collega of docent is kort: **25 tot 50 woorden**. Het is informeel (*je*)."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Onderdeel",
+            "Voorbeeld"
+          ],
+          "rows": [
+            [
+              "Aanhef",
+              "Beste buren, / Hallo Pieter,"
+            ],
+            [
+              "Wat is er? Wat vraag je? Wanneer?",
+              "Zaterdag geef ik een feestje voor mijn verjaardag."
+            ],
+            [
+              "Extra (sorry, bedankt)",
+              "Het kan druk zijn. Sorry voor het lawaai!"
+            ],
+            [
+              "Groet + naam",
+              "Groeten, Olga (nr. 14)"
+            ]
+          ]
+        },
+        {
+          "kind": "text",
+          "md": "**Zinnen die je kunt gebruiken:** Kun je … ? · Ik kan niet komen, want … · Sorry voor … · Alvast bedankt! · Laat je het even weten? · Tot zaterdag!"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "schrijven-kort-bericht-l-02",
+      "title": "Voorbeeld met uitleg",
+      "blocks": [
+        {
+          "kind": "document",
+          "docType": "bericht",
+          "title": "Briefje aan de buren",
+          "body": "Beste buren,\n\nZaterdag geef ik een feestje voor mijn verjaardag. Het kan een beetje druk zijn. Het feest is om 23.00 uur klaar. Sorry voor het lawaai!\n\nGroeten,\nOlga (nr. 14)"
+        },
+        {
+          "kind": "text",
+          "md": "**Uitleg:** 1) aanhef *Beste buren*; 2) wat en wanneer (*feestje, zaterdag*); 3) eindtijd; 4) sorry; 5) groet met naam en huisnummer. Dat zijn **31 woorden**."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-001",
+        "tags": [
+          "schrijven:kort-bericht"
+        ],
+        "explanation": "Ja/nee-vraag: werkwoord eerst.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Kun",
+          "je",
+          "mijn",
+          "pakket",
+          "aannemen?"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-002",
+        "tags": [
+          "schrijven:kort-bericht"
+        ],
+        "explanation": "Het werkwoord kan staat op plek 2.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "kan",
+          "zaterdag",
+          "niet",
+          "komen."
+        ],
+        "alsoAccepted": [
+          [
+            "Zaterdag",
+            "kan",
+            "ik",
+            "niet",
+            "komen."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-003",
+        "tags": [
+          "schrijven:kort-bericht"
+        ],
+        "explanation": "Een korte zin met sorry.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Sorry",
+          "voor",
+          "het",
+          "lawaai!"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-004",
+        "tags": [
+          "schrijven:kort-bericht"
+        ],
+        "explanation": "Twee delen met en; werkwoord op plek 2.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "ben",
+          "ziek",
+          "en",
+          "ik",
+          "kom",
+          "niet",
+          "naar",
+          "de",
+          "les."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-005",
+        "tags": [
+          "schrijven:kort-bericht"
+        ],
+        "explanation": "Een vriendelijke vraag om antwoord.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Laat",
+          "je",
+          "het",
+          "even",
+          "weten?"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-006",
+        "tags": [
+          "schrijven:kort-bericht"
+        ],
+        "explanation": "Want geeft de reden.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de zin aan.",
+        "text": "Ik kan niet komen, ___ ik ben ziek.",
+        "answers": [
+          [
+            "want"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-007",
+        "tags": [
+          "schrijven:kort-bericht"
+        ],
+        "explanation": "Sorry zeg je als iets vervelend is.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de zin aan.",
+        "text": "___ voor het lawaai!",
+        "answers": [
+          [
+            "Sorry"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-008",
+        "tags": [
+          "schrijven:kort-bericht"
+        ],
+        "explanation": "Laten weten = informeren.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de zin aan.",
+        "text": "Kun je het even ___ ? (laten weten)",
+        "answers": [
+          [
+            "laten weten"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-009",
+        "tags": [
+          "schrijven:kort-bericht"
+        ],
+        "explanation": "Een briefje aan buren is informeel.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke aanhef past bij een briefje aan de buren?",
+        "options": [
+          "Beste buren,",
+          "Geachte heer of mevrouw,",
+          "Zeer geachte directie,",
+          "Aan wie het mag aangaan,"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-010",
+        "tags": [
+          "schrijven:kort-bericht"
+        ],
+        "explanation": "Informeel: Groeten of Groetjes.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke groet past bij een briefje aan een buurman?",
+        "options": [
+          "Hoogachtend,",
+          "Groeten, Juan (nr. 5)",
+          "Met vriendelijke groet, namens Juan García,",
+          "Met de meeste hoogachting,"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-011",
+        "tags": [
+          "schrijven:kort-bericht",
+          "wonen"
+        ],
+        "explanation": "Een briefje aan een buur is informeel.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een briefje aan je buurman.",
+        "task": {
+          "instructions": "Schrijf een kort bericht aan je buurman, Pieter.",
+          "scenario": "Je komt zaterdag een feestje geven in je huis. Het kan wat lawaai geven.",
+          "requiredPoints": [
+            "Vertel dat je een feestje geeft.",
+            "Vertel wanneer het feestje is.",
+            "Zeg sorry voor het lawaai."
+          ]
+        },
+        "minWords": 25,
+        "maxWords": 50,
+        "register": "informal",
+        "modelAnswer": "Hoi Pieter,\n\nZaterdag geef ik een klein feestje. Het begint om acht uur en is om elf uur klaar. Het kan wat lawaai geven. Sorry daarvoor! Je bent natuurlijk welkom.\n\nGroetjes,\nJuan",
+        "checklist": [
+          "Aanhef: Hoi Pieter,",
+          "Feestje genoemd",
+          "Dag en tijd genoemd",
+          "Sorry gezegd",
+          "Groet + naam"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-012",
+        "tags": [
+          "schrijven:kort-bericht",
+          "cursus"
+        ],
+        "explanation": "Een bericht aan je docent mag vriendelijk en netjes zijn.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een bericht aan je docent.",
+        "task": {
+          "instructions": "Schrijf een kort bericht aan je docent, mevrouw Jansen.",
+          "scenario": "Je bent ziek en kunt woensdag niet naar de les komen. Je wilt het huiswerk graag weten.",
+          "requiredPoints": [
+            "Vertel dat je ziek bent.",
+            "Vertel dat je woensdag niet kunt komen.",
+            "Vraag naar het huiswerk."
+          ]
+        },
+        "minWords": 25,
+        "maxWords": 50,
+        "register": "informal",
+        "modelAnswer": "Beste mevrouw Jansen,\n\nIk ben ziek en ik kan woensdag niet naar de les komen. Sorry! Kunt u mij laten weten wat het huiswerk is? Alvast bedankt.\n\nMet vriendelijke groet,\nAhmed Yilmaz",
+        "checklist": [
+          "Aanhef met naam",
+          "Ziek genoemd",
+          "Woensdag genoemd",
+          "Vraag over huiswerk",
+          "Afsluiting + naam"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-013",
+        "tags": [
+          "schrijven:kort-bericht",
+          "wonen"
+        ],
+        "explanation": "Je vraagt iets vriendelijk met Kunt u … ?",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een briefje aan je buurvrouw.",
+        "task": {
+          "instructions": "Schrijf een kort bericht aan je buurvrouw, mevrouw De Boer.",
+          "scenario": "Je gaat een week op vakantie. Je wilt dat zij elke dag je planten water geeft.",
+          "requiredPoints": [
+            "Vertel dat je een week weg bent.",
+            "Vraag of zij de planten water wil geven.",
+            "Zeg dat je haar bedankt."
+          ]
+        },
+        "minWords": 25,
+        "maxWords": 50,
+        "register": "informal",
+        "modelAnswer": "Hallo mevrouw De Boer,\n\nIk ga volgende week op vakantie. Kunt u elke dag mijn planten water geven? U kunt de sleutel bij mij ophalen. Alvast heel erg bedankt!\n\nGroeten,\nPriya (nr. 7)",
+        "checklist": [
+          "Aanhef",
+          "Vakantie genoemd",
+          "Vraag om hulp",
+          "Bedankt",
+          "Groet + naam + huisnummer"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-014",
+        "tags": [
+          "schrijven:kort-bericht",
+          "werk"
+        ],
+        "explanation": "Gebruik je/jij bij een collega.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een bericht aan een collega.",
+        "task": {
+          "instructions": "Schrijf een kort bericht aan je collega Sanne.",
+          "scenario": "Je moet volgende week donderdag naar de tandarts. Je wilt je dienst met Sanne ruilen.",
+          "requiredPoints": [
+            "Vertel waarom je wilt ruilen.",
+            "Vraag of Sanne met je wil ruilen.",
+            "Vraag of ze het vóór vrijdag laat weten."
+          ]
+        },
+        "minWords": 25,
+        "maxWords": 50,
+        "register": "informal",
+        "modelAnswer": "Hoi Sanne,\n\nIk moet volgende week donderdag naar de tandarts. Kun jij met mij ruilen? Dan werk ik jouw dienst en jij de mijne. Laat je het vóór vrijdag even weten?\n\nGroeten,\nMehmet",
+        "checklist": [
+          "Aanhef: Hoi Sanne,",
+          "Tandarts genoemd",
+          "Vraag om te ruilen",
+          "Vóór vrijdag",
+          "Groet + naam"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-kort-bericht-q-015",
+        "tags": [
+          "schrijven:kort-bericht",
+          "school-kinderen"
+        ],
+        "explanation": "Een kort bericht aan school is netjes en kort.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een bericht aan de school.",
+        "task": {
+          "instructions": "Schrijf een kort bericht aan de leraar van je zoon, meester Bram.",
+          "scenario": "Je zoon Daan is ziek en kan vandaag niet naar school. Hij is morgen waarschijnlijk weer beter.",
+          "requiredPoints": [
+            "Vertel dat Daan ziek is.",
+            "Vertel dat hij vandaag niet komt.",
+            "Vertel dat hij waarschijnlijk morgen weer komt."
+          ]
+        },
+        "minWords": 25,
+        "maxWords": 50,
+        "register": "informal",
+        "modelAnswer": "Beste meester Bram,\n\nMijn zoon Daan is ziek. Hij komt vandaag niet naar school. Morgen komt hij waarschijnlijk weer. Ik laat het u weten als het niet lukt.\n\nMet vriendelijke groet,\nOlga Petrova",
+        "checklist": [
+          "Aanhef met naam",
+          "Daan is ziek",
+          "Vandaag niet",
+          "Morgen waarschijnlijk wel",
+          "Afsluiting + naam"
+        ]
+      }
+    }
+  ]
+}

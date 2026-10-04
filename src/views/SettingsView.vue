@@ -79,6 +79,10 @@ const themes = [
           <AppButton :disabled="!newKey" @click="saveKey">Opslaan en testen</AppButton>
           <AppButton variant="secondary" @click="store.testKey">Test sleutel</AppButton>
         </div>
+        <p v-if="store.settings.usage" class="mt-4 text-sm text-muted">
+          Gebruik deze maand: ~{{ store.settings.usage.requests }} {{ store.settings.usage.requests === 1 ? "verzoek" : "verzoeken" }}
+          ({{ store.settings.usage.inputTokens.toLocaleString("nl-NL") }} tokens erin, {{ store.settings.usage.outputTokens.toLocaleString("nl-NL") }} eruit)
+        </p>
         <p v-if="store.testResult" role="status" class="mt-3 font-semibold" :class="store.testResult.ok ? 'text-good' : 'text-bad'">
           {{ store.testResult.ok ? "✓" : "✗" }} {{ store.testResult.message }}
         </p>

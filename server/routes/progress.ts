@@ -3,6 +3,7 @@ import { z } from "zod";
 import { AttemptSchema, defaultProgress, defaultSrs } from "../../shared/schemas/progress.js";
 import { dayString } from "../../shared/logic/srs.js";
 import { hardItemIds, weakestTags } from "../../shared/logic/weakspots.js";
+import { practiceTagFor } from "../../shared/logic/corrections.js";
 import { loadProgress, saveProgress, appendAttempt, saveSrs, loadSrs } from "../db/progressRepo.js";
 import { getContent, buildExerciseIndex } from "../db/contentRepo.js";
 import { recordActivity } from "../db/activity.js";
@@ -115,8 +116,9 @@ progressRouter.get("/dashboard", async (_req, res) => {
     dueCount,
     newCount,
     modules,
-    hardCount: hardItemIds(progress.items).length,
-    weakTags: weakestTags(progress.items, (id) => index.resolve(id)?.tags ?? []),
+    hardCount: hardItemIds(progress.items).filter((id) => !id.startsWith("writing:")).length,
+    // Writing error types (writing:woordvolgorde, ...) are tags of their own.
+    weakTags: weakestTags(progress.items, (id) => (id.startsWith("writing:") ? [id] : (index.resolve(id)?.tags ?? []))),
     nextExam: [...content.exams.values()].find((e) => !progress.exams.some((r) => r.examId === e.id && r.finishedAt))?.id ?? null,
   });
 });
@@ -126,12 +128,20 @@ progressRouter.get("/practice", async (req, res) => {
   const content = await getContent();
   const progress = await loadProgress();
   const index = buildExerciseIndex(content);
-  const tag = typeof req.query.tag === "string" ? req.query.tag : null;
+  const requestedTag = typeof req.query.tag === "string" ? req.query.tag : null;
+  const tag = requestedTag?.startsWith("writing:") ? practiceTagFor(requestedTag) : requestedTag;
+  const generatedUnit = typeof req.query.generated === "string" ? req.query.generated : null;
   const unitId = typeof req.query.unit === "string" ? req.query.unit : null;
   const limit = Math.min(Number(req.query.limit ?? 12), 30);
 
   let ids: string[];
-  if (tag) {
+  if (generatedUnit) {
+    const items = (content.generated.get(generatedUnit) ?? []).filter((i) => !i.hidden);
+    ids = items
+      .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
+      .slice(0, limit)
+      .map((i) => i.exercise.id);
+  } else if (tag) {
     ids = [...index.byId.values()].filter((r) => r.tags.includes(tag)).map((r) => r.exercise.id);
     ids.sort((a, b) => accuracy(progress, a) - accuracy(progress, b));
   } else {

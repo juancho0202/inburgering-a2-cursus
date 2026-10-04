@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { api } from "../api/client";
 
 interface SettingsView {
@@ -10,6 +10,7 @@ interface SettingsView {
   speechRate: number;
   spellcheckWriting: boolean;
   theme: "light" | "dark" | "system";
+  usage: { month: string; requests: number; inputTokens: number; outputTokens: number };
 }
 
 export const useSettingsStore = defineStore("settings", () => {
@@ -34,5 +35,8 @@ export const useSettingsStore = defineStore("settings", () => {
     testResult.value = await api.post<{ ok: boolean; message: string }>("/settings/test-key");
   }
 
-  return { settings, loading, testResult, load, update, testKey };
+  /** True when an API key is set, so Claude features can be offered. */
+  const hasKey = computed(() => settings.value?.apiKey != null);
+
+  return { settings, loading, testResult, hasKey, load, update, testKey };
 });

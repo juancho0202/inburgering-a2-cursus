@@ -1,12 +1,27 @@
 import { Router } from "express";
 import { z } from "zod";
 import { loadWriting, saveWritingSubmission } from "../db/progressRepo.js";
+import { buildExerciseIndex, getContent } from "../db/contentRepo.js";
 
 export const writingRouter = Router();
 
+/** All submissions (newest first) with the task they belong to, for the history screen. */
 writingRouter.get("/writing", async (_req, res) => {
   const file = await loadWriting();
-  res.json(file.submissions);
+  const index = buildExerciseIndex(await getContent());
+  res.json(
+    [...file.submissions].reverse().map((s) => {
+      const ex = index.byId.get(s.exerciseId)?.exercise;
+      const writing = ex?.type === "writing" ? ex : null;
+      const taskType = writing?.tags.find((t) => t.startsWith("schrijven:"))?.slice("schrijven:".length) ?? "overig";
+      return {
+        ...s,
+        task: writing
+          ? { prompt: writing.prompt, scenario: writing.task.scenario, register: writing.register, type: taskType, minWords: writing.minWords, maxWords: writing.maxWords }
+          : null,
+      };
+    }),
+  );
 });
 
 const NewSubmissionSchema = z.object({ exerciseId: z.string(), text: z.string() });

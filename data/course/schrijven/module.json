@@ -3,5 +3,12 @@
   "title": "Schrijven A2",
   "description": "Leer formulieren, berichten, e-mails en brieven schrijven.",
   "icon": "pencil",
-  "units": ["schrijven-basis"]
+  "units": [
+    "schrijven-basis",
+    "schrijven-formulier",
+    "schrijven-kort-bericht",
+    "schrijven-informele-mail",
+    "schrijven-formele-mail",
+    "schrijven-examen-tips"
+  ]
 }

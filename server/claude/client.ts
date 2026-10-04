@@ -14,7 +14,8 @@ export function maskKey(apiKey: string | null): string | null {
 }
 
 export function mapClaudeError(err: unknown): string {
-  const anyErr = err as { status?: number; message?: string };
+  const anyErr = err as { status?: number; message?: string; name?: string; constructor?: { name?: string } };
+  if (anyErr?.constructor?.name === "APIConnectionError" || anyErr?.constructor?.name === "APIConnectionTimeoutError") return "Geen internet.";
   if (anyErr?.status === 401) return "De API-sleutel klopt niet.";
   if (anyErr?.status === 429) return "Te veel verzoeken. Probeer het over een minuut opnieuw.";
   if (anyErr?.status && anyErr.status >= 500) return "Claude is even niet bereikbaar. Je antwoord is wel opgeslagen.";

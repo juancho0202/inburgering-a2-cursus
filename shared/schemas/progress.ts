@@ -103,11 +103,14 @@ export const SettingsSchema = z.object({
   speechRate: z.number().default(0.95),
   spellcheckWriting: z.boolean().default(false),
   theme: z.enum(["light", "dark", "system"]).default("system"),
-  usage: z.object({ requests: z.number().int().default(0), inputTokens: z.number().int().default(0), outputTokens: z.number().int().default(0) }).default({
-    requests: 0,
-    inputTokens: 0,
-    outputTokens: 0,
-  }),
+  usage: z
+    .object({
+      month: z.string().default(""),
+      requests: z.number().int().default(0),
+      inputTokens: z.number().int().default(0),
+      outputTokens: z.number().int().default(0),
+    })
+    .default({ month: "", requests: 0, inputTokens: 0, outputTokens: 0 }),
 });
 
 export const defaultSettings = () => ({
@@ -119,5 +122,5 @@ export const defaultSettings = () => ({
   speechRate: 0.95,
   spellcheckWriting: false,
   theme: "system" as const,
-  usage: { requests: 0, inputTokens: 0, outputTokens: 0 },
+  usage: { month: "", requests: 0, inputTokens: 0, outputTokens: 0 },
 });

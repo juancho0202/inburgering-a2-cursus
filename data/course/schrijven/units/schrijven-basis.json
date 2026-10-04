@@ -2,30 +2,389 @@
   "id": "schrijven-basis",
   "moduleId": "schrijven",
   "title": "Goede zinnen schrijven",
-  "goal": "Je schrijft zinnen met het werkwoord op de juiste plek.",
+  "goal": "Je schrijft zinnen met hoofdletters, punten, het werkwoord op de goede plek en verbindingswoorden.",
   "estimatedMinutes": 20,
-  "tags": ["schrijven:basis"],
+  "tags": [
+    "schrijven:basis"
+  ],
   "vocabRefs": [],
   "passScore": 0.7,
   "steps": [
     {
       "type": "lesson",
       "id": "schrijven-basis-l-01",
-      "title": "Werkwoord op plek 2",
+      "title": "Zinnen en verbindingswoorden",
       "blocks": [
-        { "kind": "example", "nl": "Morgen ga ik naar de dokter.", "note": "werkwoord op plek 2" }
+        {
+          "kind": "text",
+          "md": "Een goede zin begint met een **hoofdletter** en eindigt met een **punt** (of vraagteken).\n\nHet **werkwoord staat op plek 2**: *Morgen ga ik naar de dokter.*"
+        },
+        {
+          "kind": "text",
+          "md": "**Verbindingswoorden** maken je tekst beter:\n\n| Woord | Gebruik | Voorbeeld |\n| --- | --- | --- |\n| en | twee dingen samen | Ik werk en ik leer Nederlands. |\n| maar | tegenstelling | Ik wil komen, maar ik heb geen tijd. |\n| want | reden (gewone volgorde) | Ik kom niet, want ik ben ziek. |\n| omdat | reden (werkwoord aan het eind) | Ik kom niet, omdat ik ziek ben. |\n| dus | gevolg | Ik ben ziek, dus ik blijf thuis. |\n| ook | erbij | Ik neem ook mijn zoon mee. |"
+        },
+        {
+          "kind": "tip",
+          "md": "Op het examen schrijf je met pen op papier. Schrijf duidelijk, en lees je tekst aan het eind nog één keer."
+        }
       ]
     },
     {
       "type": "exercise",
       "exercise": {
         "id": "schrijven-basis-q-001",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Na omdat staat het werkwoord (heb) aan het eind.",
+        "difficulty": 1,
         "type": "word-order",
-        "tags": ["schrijven:basis"],
-        "prompt": "Zet de zin in de juiste volgorde.",
-        "tokens": ["Morgen", "ga", "ik", "naar", "de", "dokter", "."],
-        "explanation": "Het werkwoord staat op de tweede plek in de zin.",
-        "difficulty": 1
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "schrijf",
+          "u",
+          "omdat",
+          "ik",
+          "een",
+          "vraag",
+          "heb."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-002",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Na want is de volgorde gewoon: ik ben ziek.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "kan",
+          "niet",
+          "komen",
+          "want",
+          "ik",
+          "ben",
+          "ziek."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-003",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Het werkwoord staat op plek 2.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Morgen",
+          "ga",
+          "ik",
+          "naar",
+          "de",
+          "gemeente."
+        ],
+        "alsoAccepted": [
+          [
+            "Ik",
+            "ga",
+            "morgen",
+            "naar",
+            "de",
+            "gemeente."
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-004",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Wil op plek 2, maken aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "wil",
+          "graag",
+          "een",
+          "afspraak",
+          "maken."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-005",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Het werkwoord (doet) staat op plek 2.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "De",
+          "verwarming",
+          "doet",
+          "het",
+          "al",
+          "drie",
+          "dagen",
+          "niet."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-006",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Ja/nee-vraag: werkwoord eerst. In de bijzin staat komt aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Kunt",
+          "u",
+          "mij",
+          "laten",
+          "weten",
+          "wanneer",
+          "u",
+          "komt?"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-007",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Gewone zin: onderwerp, werkwoord, rest.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "heb",
+          "een",
+          "vraag",
+          "over",
+          "mijn",
+          "huur."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-008",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Na dus staat de gewone volgorde.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "ben",
+          "ziek,",
+          "dus",
+          "ik",
+          "blijf",
+          "thuis."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-009",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Dus = gevolg.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede verbindingswoord.",
+        "text": "Ik ben moe, ___ ik ga naar bed.",
+        "options": [
+          [
+            "dus",
+            "want",
+            "maar"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-010",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Maar = tegenstelling.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede verbindingswoord.",
+        "text": "Ik wil komen, ___ ik heb geen tijd.",
+        "options": [
+          [
+            "maar",
+            "dus",
+            "omdat"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-011",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Want = reden, met gewone volgorde.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede verbindingswoord.",
+        "text": "Ik blijf thuis, ___ mijn dochter is ziek.",
+        "options": [
+          [
+            "want",
+            "maar",
+            "dus"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-012",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Omdat + werkwoord aan het eind (ziek is).",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede verbindingswoord.",
+        "text": "Ik blijf thuis, ___ mijn dochter ziek is.",
+        "options": [
+          [
+            "omdat",
+            "want",
+            "dus"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-013",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Na het gat staat heb aan het eind: omdat.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het verbindingswoord in (want / omdat).",
+        "text": "Ik schrijf u, ___ ik een probleem heb.",
+        "answers": [
+          [
+            "omdat"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-014",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Hoofdletter, werkwoord op plek 2 en een punt.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin is goed geschreven?",
+        "options": [
+          "ik heb een vraag over de huur",
+          "Ik heb een vraag over de huur.",
+          "Ik heb een vraag over de huur",
+          "Ik een vraag heb over de huur."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-basis-q-015",
+        "tags": [
+          "schrijven:basis",
+          "grammar:zinsbouw"
+        ],
+        "explanation": "Na omdat staat de bijzin; moet werken blijft samen aan het eind.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Ik kan niet komen, want omdat ik moet werken.",
+          "Ik kan niet komen, omdat moet ik werken.",
+          "Ik kan niet komen, omdat ik moet werken.",
+          "Ik kan niet komen omdat, ik moet werken."
+        ],
+        "answer": 2
       }
     }
   ]

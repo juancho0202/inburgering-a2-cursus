@@ -77,3 +77,38 @@ describe("weak spots", () => {
     expect(result[0].accuracy).toBeCloseTo(2 / 7);
   });
 });
+
+import { buildSegments, writingTag } from "../../shared/logic/corrections";
+import { WritingFeedbackSchema } from "../../shared/schemas/claude";
+
+describe("writing corrections", () => {
+  const text = "Denk ik dat we zullen een samenvatting doen. Ik ga morgen naar de dokter.";
+  it("splits text around corrections", () => {
+    const segs = buildSegments(text, [
+      { original: "Denk ik dat we zullen een samenvatting doen", corrected: "Ik denk dat we een samenvatting gaan maken", type: "woordvolgorde", explanation: "x" },
+    ]);
+    expect(segs.map((s) => s.kind)).toEqual(["fix", "text"]);
+    expect(segs[1]).toMatchObject({ kind: "text", text: ". Ik ga morgen naar de dokter." });
+  });
+  it("skips corrections it cannot find and overlapping ones", () => {
+    const segs = buildSegments(text, [
+      { original: "bestaat niet", corrected: "y", type: "anders", explanation: "x" },
+      { original: "Denk ik", corrected: "Ik denk", type: "woordvolgorde", explanation: "x" },
+      { original: "ik dat", corrected: "dat ik", type: "woordvolgorde", explanation: "x" },
+    ]);
+    expect(segs.filter((s) => s.kind === "fix")).toHaveLength(1);
+  });
+  it("makes tags without slashes", () => {
+    expect(writingTag("hoofdletter/leesteken")).toBe("writing:hoofdletter-leesteken");
+  });
+  it("parses a sample feedback JSON", () => {
+    const sample = {
+      overall: "bijna", score: 6,
+      criteria: [{ name: "Opdracht", score: 2, comment: "Bijna alle punten." }],
+      missingPoints: ["Sinds wanneer"], corrections: [{ original: "a", corrected: "b", type: "spelling", explanation: "c" }],
+      correctedText: "b", strongPoints: ["Goede aanhef"], nextTip: "Oefen bijzinnen.",
+    };
+    expect(WritingFeedbackSchema.parse(sample).overall).toBe("bijna");
+    expect(() => WritingFeedbackSchema.parse({ ...sample, overall: "goed" })).toThrow();
+  });
+});

@@ -35,7 +35,7 @@ onMounted(async () => {
 });
 
 const firstUnit = () => content.course?.modules.find((m) => m.units.length)?.units[0]?.id;
-const tagLabel = (t: string) => t.replace(":", " · ");
+const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.slice(8)}` : t.replace(":", " · "));
 </script>
 
 <template>
@@ -117,7 +117,10 @@ const tagLabel = (t: string) => t.replace(":", " · ");
             <p class="font-bold">{{ tagLabel(t.tag) }}</p>
             <p class="text-sm text-muted">{{ Math.round(t.accuracy * 100) }}% goed ({{ t.seen }} antwoorden)</p>
           </div>
-          <RouterLink :to="{ path: '/oefenen', query: { tag: t.tag } }"><AppButton variant="secondary">Oefen dit</AppButton></RouterLink>
+          <div class="flex flex-wrap justify-end gap-2">
+            <RouterLink :to="{ path: '/oefenen', query: { tag: t.tag } }"><AppButton variant="secondary">Oefen dit</AppButton></RouterLink>
+            <RouterLink v-if="!t.tag.startsWith('writing:')" :to="{ path: '/oefenen', query: { gen: 'tag', tag: t.tag } }"><AppButton variant="ghost">🤖 Meer met Claude</AppButton></RouterLink>
+          </div>
         </li>
         <li v-if="data.hardCount" class="flex items-center justify-between gap-3 rounded-2xl bg-bad-bg px-4 py-3">
           <p class="font-bold">{{ data.hardCount }} moeilijke {{ data.hardCount === 1 ? "vraag" : "vragen" }}</p>

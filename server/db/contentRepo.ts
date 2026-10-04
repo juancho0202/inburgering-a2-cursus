@@ -8,9 +8,11 @@ import {
   VerbEntrySchema,
   ExamSchema,
 } from "../../shared/schemas/content.js";
+import { GeneratedFileSchema } from "../../shared/schemas/claude.js";
+import type { GeneratedItem } from "../../shared/schemas/claude.js";
 import type { Course, ModuleDef, Unit, VocabFile, VerbEntry, Exam, Exercise } from "../../shared/types.js";
 
-const COURSE_DIR = path.resolve("data/course");
+export const COURSE_DIR = path.resolve("data/course");
 
 export interface ContentError {
   file: string;
@@ -25,6 +27,8 @@ export interface ContentIndex {
   vocabById: Map<string, VocabFile["entries"][number]>;
   verbs: Map<string, VerbEntry>;
   exams: Map<string, Exam>;
+  /** Exercises made by Claude (§10.4), per unit id. */
+  generated: Map<string, GeneratedItem[]>;
   errors: ContentError[];
 }
 
@@ -61,6 +65,7 @@ export async function loadContent(): Promise<ContentIndex> {
     vocabById: new Map(),
     verbs: new Map(),
     exams: new Map(),
+    generated: new Map(),
     errors: [],
   };
 
@@ -150,6 +155,16 @@ export async function loadContent(): Promise<ContentIndex> {
     }
   }
 
+  for (const file of await listJsonFiles(path.join(COURSE_DIR, "generated"))) {
+    try {
+      const result = GeneratedFileSchema.safeParse(await readJsonFile(file));
+      if (result.success) index.generated.set(result.data.unitId, result.data.items);
+      else index.errors.push({ file, message: result.error.message });
+    } catch (err) {
+      index.errors.push({ file, message: String(err) });
+    }
+  }
+
   return index;
 }
 
@@ -184,5 +199,14 @@ export function buildExerciseIndex(content: ContentIndex) {
     }
   }
   const resolve = (id: string) => byId.get(parentOf.get(id) ?? id);
+  for (const [unitId, items] of content.generated) {
+    const unit = content.units.get(unitId);
+    for (const item of items) {
+      if (item.hidden) continue;
+      const ex = item.exercise;
+      byId.set(ex.id, { exercise: ex, unitId, tags: [...new Set([...(unit?.tags ?? []), ...ex.tags])] });
+      if (ex.type === "reading") for (const q of ex.questions) parentOf.set(q.id, ex.id);
+    }
+  }
   return { byId, resolve };
 }
