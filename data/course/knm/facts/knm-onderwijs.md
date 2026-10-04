@@ -1,0 +1,12 @@
+# Onderwijs en opvoeding
+- Leerplicht: kinderen moeten naar school van 5 tot 16 jaar (vanaf de eerste schooldag van de maand na hun 5e verjaardag); daarna kwalificatieplicht tot 18 jaar (of tot een startkwalificatie: havo-, vwo- of mbo-2-diploma). Leerplichtambtenaar van de gemeente controleert; ouders kunnen een boete krijgen bij spijbelen.
+- Kinderen mogen vanaf 4 jaar naar de basisschool. Basisschool: groep 1–8 (4–12 jaar). Openbaar of bijzonder (bijv. religieus) onderwijs — beide gratis (vrijwillige ouderbijdrage).
+- Eind groep 8: schooladvies + doorstroomtoets → voortgezet onderwijs: vmbo (4 jaar), havo (5 jaar), vwo (6 jaar).
+- Daarna: mbo (na vmbo), hbo (na havo/mbo-4), universiteit/wo (na vwo).
+- Vrij voor school: vakanties (o.a. zomervakantie ~6 weken); vrij nemen buiten de vakanties mag alleen met toestemming van de school.
+- Ouders: ouderavond, 10-minutengesprek met de leraar, rapport, medezeggenschapsraad, ouderraad.
+- Kinderopvang: kinderdagverblijf (0–4), buitenschoolse opvang (bso); kinderopvangtoeslag.
+- Peuterspeelzaal / voorschool: voorbereiding op school, taalontwikkeling.
+- Opvoeding: kinderen leren zelfstandig zijn en hun mening geven; slaan mag niet.
+- Studiefinanciering voor mbo/hbo/wo via DUO.
+- Volwassenen: inburgeringscursus, taalcursus, bibliotheek, mbo-opleidingen.

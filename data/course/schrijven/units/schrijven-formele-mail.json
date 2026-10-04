@@ -1,0 +1,598 @@
+{
+  "id": "schrijven-formele-mail",
+  "moduleId": "schrijven",
+  "title": "Een formele e-mail of brief",
+  "goal": "Je schrijft een formele e-mail of brief (50–100 woorden) aan de gemeente, huisbaas, school, bedrijf of dokter.",
+  "estimatedMinutes": 35,
+  "tags": [
+    "schrijven:formeel"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "schrijven-formele-mail-l-01",
+      "title": "Een formele e-mail of brief",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Een formele e-mail of brief is **50 tot 100 woorden**. Je gebruikt **u** (niet je) en een nette aanhef en afsluiting."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Onderdeel",
+            "Voorbeeld"
+          ],
+          "rows": [
+            [
+              "Aanhef",
+              "Geachte heer De Groot, / Geachte mevrouw Jansen, / Geachte heer, mevrouw,"
+            ],
+            [
+              "Waarom schrijf ik?",
+              "Ik schrijf u omdat …"
+            ],
+            [
+              "Punt 1, 2, 3 / vraag",
+              "Kunt u mij laten weten wanneer …?"
+            ],
+            [
+              "Afsluiting",
+              "Met vriendelijke groet,"
+            ],
+            [
+              "Naam (en adres/telefoon als gevraagd)",
+              "Juan García, Kerkstraat 12, Utrecht"
+            ]
+          ]
+        },
+        {
+          "kind": "text",
+          "md": "**Zinnen:** Ik schrijf u omdat … · Ik wil graag een afspraak maken. · Ik wil mijn afspraak afzeggen. · Ik heb een vraag over … · Helaas … · Het probleem is dat … · Kunt u mij laten weten wanneer …? · Kunt u … repareren / opsturen / terugbellen? · Ik ben bereikbaar op 06-… · Alvast bedankt voor uw hulp. · Ik hoop snel iets van u te horen."
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "schrijven-formele-mail-l-02",
+      "title": "Voorbeeld met uitleg",
+      "blocks": [
+        {
+          "kind": "document",
+          "docType": "email",
+          "title": "Verwarming kapot",
+          "body": "Aan: Meneer De Groot\nOnderwerp: Verwarming kapot\n\nGeachte heer De Groot,\n\nDe verwarming in mijn huis doet het niet. Het probleem is er al sinds maandag, dus drie dagen. Het is erg koud in huis, ook voor mijn kinderen.\n\nWanneer kan iemand de verwarming komen repareren? Ik ben elke dag na 15.00 uur thuis.\n\nMet vriendelijke groet,\n\nJuan García\nKerkstraat 12, Utrecht"
+        },
+        {
+          "kind": "text",
+          "md": "**Uitleg:** 1) *Geachte heer De Groot*; 2) het probleem; 3) sinds wanneer; 4) de vraag (*Wanneer kan iemand …?*); 5) *Met vriendelijke groet* + naam en adres. Let op **u** en **mijn**. Dat zijn **55 woorden**."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-001",
+        "tags": [
+          "schrijven:formeel"
+        ],
+        "explanation": "Na omdat staat is aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "schrijf",
+          "u",
+          "omdat",
+          "mijn",
+          "verwarming",
+          "kapot",
+          "is."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-002",
+        "tags": [
+          "schrijven:formeel"
+        ],
+        "explanation": "Ja/nee-vraag; in de bijzin staat komt aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Kunt",
+          "u",
+          "mij",
+          "laten",
+          "weten",
+          "wanneer",
+          "u",
+          "komt?"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-003",
+        "tags": [
+          "schrijven:formeel"
+        ],
+        "explanation": "Wil op plek 2, maken aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "wil",
+          "graag",
+          "een",
+          "afspraak",
+          "maken."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-004",
+        "tags": [
+          "schrijven:formeel"
+        ],
+        "explanation": "Helaas op plek 1, daarna het werkwoord kan.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Helaas",
+          "kan",
+          "ik",
+          "niet",
+          "op",
+          "de",
+          "afspraak",
+          "komen."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-005",
+        "tags": [
+          "schrijven:formeel"
+        ],
+        "explanation": "Een vaste slotzin.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "hoop",
+          "snel",
+          "iets",
+          "van",
+          "u",
+          "te",
+          "horen."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-006",
+        "tags": [
+          "schrijven:formeel"
+        ],
+        "explanation": "Een vaste slotzin.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Alvast",
+          "bedankt",
+          "voor",
+          "uw",
+          "hulp."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-007",
+        "tags": [
+          "schrijven:formeel"
+        ],
+        "explanation": "Bij ik: stam schrijf.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de zin aan.",
+        "text": "Ik ___ u omdat ik een vraag heb. (schrijven)",
+        "answers": [
+          [
+            "schrijf"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-008",
+        "tags": [
+          "schrijven:formeel"
+        ],
+        "explanation": "Vaste afsluiting: Met vriendelijke groet.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de zin aan.",
+        "text": "Met vriendelijke ___ ,",
+        "answers": [
+          [
+            "groet"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-009",
+        "tags": [
+          "schrijven:formeel"
+        ],
+        "explanation": "Formele aanhef: Geachte.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de zin aan.",
+        "text": "___ heer De Groot, (aanhef)",
+        "answers": [
+          [
+            "Geachte"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-010",
+        "tags": [
+          "schrijven:formeel"
+        ],
+        "explanation": "Formeel gebruik je u.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies u of je.",
+        "text": "Ik schrijf ___ omdat de lamp kapot is. (aan de huisbaas)",
+        "options": [
+          [
+            "u",
+            "je",
+            "jou"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-011",
+        "tags": [
+          "schrijven:formeel"
+        ],
+        "explanation": "Bij een dokter gebruik je u.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Kunt ___ mij terugbellen? (aan de dokter)",
+        "options": [
+          [
+            "u",
+            "je",
+            "jij"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-012",
+        "tags": [
+          "schrijven:formeel"
+        ],
+        "explanation": "Formeel: Geachte + achternaam.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke aanhef is goed voor een brief aan mevrouw Jansen?",
+        "options": [
+          "Hoi Jansen,",
+          "Beste Jansen,",
+          "Hallo mevrouw,",
+          "Geachte mevrouw Jansen,"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-013",
+        "tags": [
+          "schrijven:formeel"
+        ],
+        "explanation": "Formeel: Met vriendelijke groet.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke afsluiting is goed voor een formele brief?",
+        "options": [
+          "Met vriendelijke groet,",
+          "Groetjes,",
+          "Tot snel!",
+          "Doei,"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-014",
+        "tags": [
+          "schrijven:formeel",
+          "wonen"
+        ],
+        "explanation": "In een formele e-mail gebruik je 'Geachte' en 'Met vriendelijke groet'.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een e-mail aan je huisbaas.",
+        "task": {
+          "instructions": "Schrijf een e-mail aan je huisbaas, meneer De Groot.",
+          "scenario": "De verwarming in uw huis doet het al drie dagen niet. Het is koud.",
+          "requiredPoints": [
+            "Vertel wat het probleem is.",
+            "Vertel sinds wanneer het probleem er is.",
+            "Vraag wanneer iemand het kan repareren."
+          ]
+        },
+        "minWords": 50,
+        "maxWords": 100,
+        "register": "formal",
+        "modelAnswer": "Geachte heer De Groot,\n\nDe verwarming in mijn huis doet het niet. Het probleem is er al sinds maandag, dus drie dagen. Het is erg koud in huis, ook voor mijn kinderen.\n\nWanneer kan iemand de verwarming komen repareren? Ik ben elke dag na 15.00 uur thuis.\n\nMet vriendelijke groet,\n\nJuan García\nKerkstraat 12, Utrecht",
+        "checklist": [
+          "Aanhef: Geachte heer De Groot,",
+          "Probleem genoemd",
+          "Sinds wanneer genoemd",
+          "Vraag over reparatie gesteld",
+          "u (niet je)",
+          "Afsluiting: Met vriendelijke groet, + naam"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-015",
+        "tags": [
+          "schrijven:formeel",
+          "gemeente-instanties"
+        ],
+        "explanation": "Als je de naam niet weet, gebruik je Geachte heer, mevrouw.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een e-mail aan de gemeente.",
+        "task": {
+          "instructions": "Schrijf een e-mail aan de gemeente Utrecht.",
+          "scenario": "Je bent verhuisd naar een nieuw adres. Je wilt weten hoe je dit doorgeeft en of je een afspraak moet maken.",
+          "requiredPoints": [
+            "Vertel dat je bent verhuisd en geef je nieuwe adres.",
+            "Vraag of je een afspraak moet maken.",
+            "Vraag welke papieren je moet meenemen."
+          ]
+        },
+        "minWords": 50,
+        "maxWords": 100,
+        "register": "formal",
+        "modelAnswer": "Geachte heer, mevrouw,\n\nIk schrijf u omdat ik ben verhuisd. Mijn nieuwe adres is Beukenlaan 18, 3571 JK Utrecht. Moet ik een afspraak maken om mijn adres door te geven? Kunt u mij ook laten weten welke papieren ik moet meenemen?\n\nAlvast bedankt voor uw hulp.\n\nMet vriendelijke groet,\n\nAmira Haddad",
+        "checklist": [
+          "Aanhef: Geachte heer, mevrouw,",
+          "Verhuizing en nieuw adres",
+          "Vraag over afspraak",
+          "Vraag over papieren",
+          "u (niet je)",
+          "Afsluiting + naam"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-016",
+        "tags": [
+          "schrijven:formeel",
+          "school-kinderen"
+        ],
+        "explanation": "Vraag netjes om een gesprek.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een e-mail aan de school.",
+        "task": {
+          "instructions": "Schrijf een e-mail aan de leraar van je dochter, mevrouw Jansen.",
+          "scenario": "Je dochter Lina is een week ziek geweest. Je wilt een gesprek met de leraar over het gemiste werk.",
+          "requiredPoints": [
+            "Vertel dat Lina ziek is geweest.",
+            "Vraag om een afspraak voor een gesprek.",
+            "Zeg wanneer je kunt (bijvoorbeeld na 16.00 uur)."
+          ]
+        },
+        "minWords": 50,
+        "maxWords": 100,
+        "register": "formal",
+        "modelAnswer": "Geachte mevrouw Jansen,\n\nMijn dochter Lina is vorige week ziek geweest. Daarom heeft zij veel lessen gemist. Ik wil graag een afspraak maken voor een gesprek. Kunt u mij laten weten wanneer u tijd heeft? Ik kan na 16.00 uur. Ik hoop dat dit mogelijk is.\n\nAlvast bedankt voor uw hulp.\n\nMet vriendelijke groet,\n\nFatima Yilmaz",
+        "checklist": [
+          "Aanhef met naam",
+          "Lina ziek genoemd",
+          "Vraag om afspraak",
+          "Wanneer jij kunt",
+          "u (niet je)",
+          "Afsluiting + naam"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-017",
+        "tags": [
+          "schrijven:formeel",
+          "gezondheid"
+        ],
+        "explanation": "Zeg een afspraak op tijd af.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een e-mail aan de huisarts.",
+        "task": {
+          "instructions": "Schrijf een e-mail aan de huisartsenpraktijk.",
+          "scenario": "Je hebt woensdag om 10.00 uur een afspraak, maar je kunt niet komen. Je wilt een nieuwe afspraak.",
+          "requiredPoints": [
+            "Vertel welke afspraak je wilt afzeggen.",
+            "Vertel waarom je niet kunt komen.",
+            "Vraag om een nieuwe afspraak."
+          ]
+        },
+        "minWords": 50,
+        "maxWords": 100,
+        "register": "formal",
+        "modelAnswer": "Geachte heer, mevrouw,\n\nIk heb woensdag om 10.00 uur een afspraak, maar helaas kan ik niet komen. Ik moet op die dag werken. Ik wil mijn afspraak daarom afzeggen. Kunt u mij een nieuwe afspraak geven? Ik ben vrij op donderdag en vrijdag. Alvast bedankt voor uw hulp.\n\nMet vriendelijke groet,\n\nWei Zhang",
+        "checklist": [
+          "Aanhef: Geachte heer, mevrouw,",
+          "Afspraak genoemd (dag en tijd)",
+          "Reden genoemd",
+          "Vraag om nieuwe afspraak",
+          "u (niet je)",
+          "Afsluiting + naam"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-018",
+        "tags": [
+          "schrijven:formeel",
+          "winkelen-geld"
+        ],
+        "explanation": "Noem je bestelnummer en wees duidelijk en beleefd.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een klacht aan een webwinkel.",
+        "task": {
+          "instructions": "Schrijf een e-mail aan de webwinkel Boekenbos.",
+          "scenario": "Je hebt een bestelling gedaan (nummer 48213). Het pakket is beschadigd aangekomen. Je wilt een nieuw pakket of je geld terug.",
+          "requiredPoints": [
+            "Vertel wat je hebt besteld (nummer 48213).",
+            "Vertel wat het probleem is.",
+            "Vraag wat u kunt doen: een nieuw pakket of geld terug."
+          ]
+        },
+        "minWords": 50,
+        "maxWords": 100,
+        "register": "formal",
+        "modelAnswer": "Geachte heer, mevrouw,\n\nIk schrijf u omdat mijn bestelling (nummer 48213) beschadigd is aangekomen. Het probleem is dat de doos kapot is en twee boeken zijn nat. Ik wil graag een nieuw pakket of mijn geld terug. Kunt u mij laten weten wat u kunt doen?\n\nAlvast bedankt voor uw hulp.\n\nMet vriendelijke groet,\n\nPriya Sharma",
+        "checklist": [
+          "Aanhef",
+          "Bestelnummer genoemd",
+          "Probleem genoemd",
+          "Gevraagd om oplossing",
+          "u (niet je)",
+          "Afsluiting + naam"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-019",
+        "tags": [
+          "schrijven:formeel",
+          "werk"
+        ],
+        "explanation": "Vraag formeel om vrij.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een e-mail aan je werkgever.",
+        "task": {
+          "instructions": "Schrijf een e-mail aan je leidinggevende, mevrouw Bakker.",
+          "scenario": "Je wilt volgende maand twee vrije dagen opnemen voor een verhuizing.",
+          "requiredPoints": [
+            "Vraag of u twee vrije dagen kunt opnemen.",
+            "Noem de dagen (donderdag 12 en vrijdag 13).",
+            "Vertel waarom (verhuizing)."
+          ]
+        },
+        "minWords": 50,
+        "maxWords": 100,
+        "register": "formal",
+        "modelAnswer": "Geachte mevrouw Bakker,\n\nIk wil graag twee vrije dagen opnemen: donderdag 12 en vrijdag 13 juni. Ik ga dan verhuizen naar een nieuw huis. Is dat mogelijk? Kunt u mij laten weten of dat goed is? Ik kan eventueel mijn werk eerder afmaken.\n\nAlvast bedankt.\n\nMet vriendelijke groet,\n\nMehmet Kaya",
+        "checklist": [
+          "Aanhef met naam",
+          "Gevraagd om vrije dagen",
+          "Dagen genoemd",
+          "Reden genoemd",
+          "u (niet je)",
+          "Afsluiting + naam"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formele-mail-q-020",
+        "tags": [
+          "schrijven:formeel",
+          "gemeente-instanties"
+        ],
+        "explanation": "Wees duidelijk over wat je wilt en vraagt.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Schrijf een e-mail aan de bibliotheek.",
+        "task": {
+          "instructions": "Schrijf een e-mail aan de bibliotheek.",
+          "scenario": "Je bent je bibliotheekpas kwijt. Je wilt een nieuwe pas en weten wat dat kost.",
+          "requiredPoints": [
+            "Vertel dat u uw pas kwijt bent.",
+            "Vraag om een nieuwe pas.",
+            "Vraag wat dat kost."
+          ]
+        },
+        "minWords": 50,
+        "maxWords": 100,
+        "register": "formal",
+        "modelAnswer": "Geachte heer, mevrouw,\n\nIk schrijf u omdat ik mijn bibliotheekpas kwijt ben. Ik heb de pas waarschijnlijk in de bus verloren. Kunt u mij een nieuwe pas geven? Wat kost een nieuwe pas, en moet ik daarvoor langskomen? Mijn nummer is 12345.\n\nAlvast bedankt voor uw hulp.\n\nMet vriendelijke groet,\n\nOlga Petrova",
+        "checklist": [
+          "Aanhef",
+          "Pas kwijt genoemd",
+          "Vraag om nieuwe pas",
+          "Vraag over kosten",
+          "u (niet je)",
+          "Afsluiting + naam"
+        ]
+      }
+    }
+  ]
+}

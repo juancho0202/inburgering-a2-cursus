@@ -87,6 +87,7 @@ const restart = async () => {
     <div class="mt-6 grid gap-3">
       <RouterLink v-if="nextUnit" :to="`/unit/${nextUnit.id}`"><AppButton size="lg" class="w-full">Volgende les: {{ nextUnit.title }} →</AppButton></RouterLink>
       <RouterLink v-if="summary.hard" :to="{ path: '/oefenen', query: { mode: 'hard', unit: unit.id } }"><AppButton variant="secondary" class="w-full">Moeilijke vragen ({{ summary.hard }})</AppButton></RouterLink>
+      <RouterLink :to="{ path: '/oefenen', query: { gen: 'unit', unit: unit.id } }"><AppButton variant="secondary" class="w-full">🤖 Meer oefenen met Claude</AppButton></RouterLink>
       <AppButton variant="secondary" @click="restart">Opnieuw</AppButton>
       <AppButton variant="ghost" @click="exit">Terug naar de module</AppButton>
     </div>

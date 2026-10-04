@@ -1,0 +1,606 @@
+{
+  "id": "schrijven-formulier",
+  "moduleId": "schrijven",
+  "title": "Een formulier invullen",
+  "goal": "Je vult persoonlijke gegevens, datums en korte antwoorden goed in op een formulier.",
+  "estimatedMinutes": 25,
+  "tags": [
+    "schrijven:formulier"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "schrijven-formulier-l-01",
+      "title": "Persoonlijke gegevens",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Veld",
+            "Wat vul je in?",
+            "Voorbeeld"
+          ],
+          "rows": [
+            [
+              "voornaam",
+              "je eerste naam",
+              "Fatima"
+            ],
+            [
+              "achternaam",
+              "je familienaam",
+              "Yilmaz"
+            ],
+            [
+              "geslacht",
+              "man / vrouw / anders",
+              "vrouw"
+            ],
+            [
+              "geboortedatum",
+              "dd-mm-jjjj",
+              "05-03-1990"
+            ],
+            [
+              "geboorteplaats",
+              "waar je geboren bent",
+              "Aleppo"
+            ],
+            [
+              "nationaliteit",
+              "van welk land je paspoort is",
+              "Syrische"
+            ],
+            [
+              "burgerlijke staat",
+              "ongehuwd / gehuwd / gescheiden",
+              "gehuwd"
+            ],
+            [
+              "adres",
+              "straat + huisnummer",
+              "Kerkstraat 12"
+            ],
+            [
+              "postcode",
+              "4 cijfers + 2 letters",
+              "3512 AB"
+            ],
+            [
+              "woonplaats",
+              "stad of dorp",
+              "Utrecht"
+            ],
+            [
+              "telefoonnummer",
+              "je nummer",
+              "06-12345678"
+            ],
+            [
+              "e-mailadres",
+              "je e-mail",
+              "fatima@example.nl"
+            ],
+            [
+              "handtekening",
+              "je naam met de hand",
+              ""
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Schrijf de **datum** als **dd-mm-jjjj**: 5 maart 1990 = **05-03-1990**. Schrijf in **blokletters** als het formulier dat vraagt."
+        },
+        {
+          "kind": "text",
+          "md": "**Korte antwoorden:** schrijf een korte zin. *Waarom wilt u lid worden?* → *Ik wil graag sporten en nieuwe mensen leren kennen.*"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-001",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "dd = dag, mm = maand, jjjj = jaar.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoe schrijf je 3 september 1985 als dd-mm-jjjj?",
+        "options": [
+          "03-09-1985",
+          "09-03-1985",
+          "1985-09-03",
+          "3-9-85"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-002",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "Eerst de dag, dan de maand, dan het jaar.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoe schrijf je 21 december 2001 als dd-mm-jjjj?",
+        "options": [
+          "12-21-2001",
+          "21-12-2001",
+          "2001-12-21",
+          "21-12-01"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-003",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "De voornaam is je eerste naam, bijvoorbeeld Fatima.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat vul je in bij \"voornaam\"?",
+        "options": [
+          "Je familienaam",
+          "Je adres",
+          "Je eerste naam",
+          "Je telefoonnummer"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-004",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "De achternaam is de naam van je familie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat vul je in bij \"achternaam\"?",
+        "options": [
+          "Je eerste naam",
+          "Je woonplaats",
+          "Je BSN",
+          "Je familienaam"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-005",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "De Nederlandse postcode is 1234 AB.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is een postcode?",
+        "options": [
+          "Vier cijfers en twee letters, bijvoorbeeld 3512 AB",
+          "Een telefoonnummer",
+          "Je huisnummer",
+          "Je geboortedatum"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-006",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "Burgerlijke staat gaat over trouwen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is \"burgerlijke staat\"?",
+        "options": [
+          "Je beroep",
+          "Of je ongehuwd, gehuwd of gescheiden bent",
+          "Je nationaliteit",
+          "Je adres"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-007",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "Niet getrouwd = ongehuwd.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je bent niet getrouwd. Wat vul je in bij burgerlijke staat?",
+        "options": [
+          "gehuwd",
+          "gescheiden",
+          "ongehuwd",
+          "weduwe"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-008",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "Je handtekening schrijf je zelf.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waar zet je je naam met de hand?",
+        "options": [
+          "Bij voornaam",
+          "Bij adres",
+          "Bij geboorteplaats",
+          "Bij handtekening"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-009",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "7 mei 1992 = 07-05-1992.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de datum in als dd-mm-jjjj. (7 mei 1992)",
+        "text": "Geboortedatum: ___",
+        "answers": [
+          [
+            "07-05-1992"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-010",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "Straat + huisnummer is je adres.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het goede woord in.",
+        "text": "Straat en huisnummer: dit is je ___ .",
+        "answers": [
+          [
+            "adres"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-011",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "Een korte zin met een reden is genoeg. (Dit is een voorbeeld: elk logisch antwoord is goed.)",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul een korte zin in. Waarom wilt u lid worden? (Begin met: Ik wil graag …)",
+        "text": "Ik wil graag ___ .",
+        "answers": [
+          [
+            "sporten",
+            "zwemmen",
+            "voetballen",
+            "fitnessen",
+            "leren",
+            "boeken lenen",
+            "nieuwe mensen leren kennen"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-012",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "Schrijf de datum als dd-mm-jjjj en de postcode met cijfers en letters.",
+        "difficulty": 1,
+        "type": "form-fill",
+        "prompt": "Vul het formulier in met de gegevens uit de situatie.",
+        "formTitle": "Inschrijfformulier bibliotheek",
+        "scenario": "Je heet Priya Sharma. Je bent geboren op 5 mei 1990 in Mumbai. Je woont aan de Kerkstraat 12 in Utrecht. Je postcode is 3512 AB. Je bent ongehuwd.",
+        "fields": [
+          {
+            "label": "Voornaam",
+            "kind": "text",
+            "expected": "Priya"
+          },
+          {
+            "label": "Achternaam",
+            "kind": "text",
+            "expected": "Sharma"
+          },
+          {
+            "label": "Geboortedatum",
+            "kind": "text",
+            "expected": "05-05-1990",
+            "hint": "dd-mm-jjjj"
+          },
+          {
+            "label": "Geboorteplaats",
+            "kind": "text",
+            "expected": "Mumbai"
+          },
+          {
+            "label": "Straat en huisnummer",
+            "kind": "text",
+            "expected": "Kerkstraat 12"
+          },
+          {
+            "label": "Postcode",
+            "kind": "text",
+            "expected": "3512 AB"
+          },
+          {
+            "label": "Woonplaats",
+            "kind": "text",
+            "expected": "Utrecht"
+          },
+          {
+            "label": "Burgerlijke staat",
+            "kind": "text",
+            "expected": "ongehuwd",
+            "hint": "ongehuwd / gehuwd / gescheiden"
+          },
+          {
+            "label": "Telefoonnummer",
+            "kind": "text",
+            "hint": "Verzin een nummer"
+          }
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-013",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "Let op: eerst de achternaam, dan de voornaam. Lees elke vraag goed.",
+        "difficulty": 1,
+        "type": "form-fill",
+        "prompt": "Vul het formulier in met de gegevens uit de situatie.",
+        "formTitle": "Aanmelding sportvereniging De Eik",
+        "scenario": "Je heet Mehmet Kaya. Je woont aan de Molenweg 7 in Rotterdam (3011 CD). Je bent geboren op 21 november 1985. Je wilt graag voetballen.",
+        "fields": [
+          {
+            "label": "Achternaam",
+            "kind": "text",
+            "expected": "Kaya"
+          },
+          {
+            "label": "Voornaam",
+            "kind": "text",
+            "expected": "Mehmet"
+          },
+          {
+            "label": "Adres",
+            "kind": "text",
+            "expected": "Molenweg 7"
+          },
+          {
+            "label": "Postcode",
+            "kind": "text",
+            "expected": "3011 CD"
+          },
+          {
+            "label": "Woonplaats",
+            "kind": "text",
+            "expected": "Rotterdam"
+          },
+          {
+            "label": "Geboortedatum",
+            "kind": "text",
+            "expected": "21-11-1985",
+            "hint": "dd-mm-jjjj"
+          },
+          {
+            "label": "Welke sport wilt u doen?",
+            "kind": "text",
+            "expected": "voetbal",
+            "hint": "voetbal / zwemmen / tennis"
+          },
+          {
+            "label": "Waarom wilt u lid worden?",
+            "kind": "text",
+            "hint": "Schrijf een korte zin"
+          }
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-014",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "Schrijf je BSN zonder spaties.",
+        "difficulty": 1,
+        "type": "form-fill",
+        "prompt": "Vul het formulier in met de gegevens uit de situatie.",
+        "formTitle": "Inschrijving bij de huisarts",
+        "scenario": "Je heet Olga Petrova. Je bent een vrouw en geboren op 14 februari 1978. Je BSN is 123456789. Je woont aan de Dorpsstraat 3 in Zwolle (8011 EF). Je zorgverzekering is Zorg & Zekerheid.",
+        "fields": [
+          {
+            "label": "Naam",
+            "kind": "text",
+            "expected": "Olga Petrova"
+          },
+          {
+            "label": "Geslacht",
+            "kind": "text",
+            "expected": "vrouw",
+            "hint": "man / vrouw / anders"
+          },
+          {
+            "label": "Geboortedatum",
+            "kind": "text",
+            "expected": "14-02-1978",
+            "hint": "dd-mm-jjjj"
+          },
+          {
+            "label": "BSN",
+            "kind": "text",
+            "expected": "123456789"
+          },
+          {
+            "label": "Postcode en woonplaats",
+            "kind": "text",
+            "expected": "8011 EF Zwolle"
+          },
+          {
+            "label": "Zorgverzekeraar",
+            "kind": "text",
+            "expected": "Zorg & Zekerheid"
+          }
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-015",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "Gebruik de gegevens precies zoals in de situatie.",
+        "difficulty": 1,
+        "type": "form-fill",
+        "prompt": "Vul het formulier in met de gegevens uit de situatie.",
+        "formTitle": "Aanmelding cursus Nederlands",
+        "scenario": "Je heet Wei Zhang. Je bent geboren op 30 augustus 1995 in Shanghai. Je nationaliteit is Chinees. Je woont aan de Stationsweg 22 in Amersfoort (3811 GH). Je telefoonnummer is 06-23456789. Je wilt graag op dinsdagavond les.",
+        "fields": [
+          {
+            "label": "Naam",
+            "kind": "text",
+            "expected": "Wei Zhang"
+          },
+          {
+            "label": "Geboortedatum",
+            "kind": "text",
+            "expected": "30-08-1995",
+            "hint": "dd-mm-jjjj"
+          },
+          {
+            "label": "Geboorteplaats",
+            "kind": "text",
+            "expected": "Shanghai"
+          },
+          {
+            "label": "Nationaliteit",
+            "kind": "text",
+            "expected": "Chinees"
+          },
+          {
+            "label": "Adres",
+            "kind": "text",
+            "expected": "Stationsweg 22"
+          },
+          {
+            "label": "Postcode",
+            "kind": "text",
+            "expected": "3811 GH"
+          },
+          {
+            "label": "Telefoonnummer",
+            "kind": "text",
+            "expected": "06-23456789"
+          },
+          {
+            "label": "Op welke dag wilt u les?",
+            "kind": "text",
+            "expected": "dinsdag",
+            "hint": "maandag / dinsdag / donderdag"
+          }
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-formulier-q-016",
+        "tags": [
+          "schrijven:formulier"
+        ],
+        "explanation": "Binnen 5 dagen na een verhuizing geef je het nieuwe adres door aan de gemeente.",
+        "difficulty": 1,
+        "type": "form-fill",
+        "prompt": "Vul het formulier in met de gegevens uit de situatie.",
+        "formTitle": "Verhuisbericht aan de gemeente",
+        "scenario": "Je heet Amira Haddad en je bent verhuisd. Je oude adres was Lindelaan 5, Utrecht. Je nieuwe adres is Beukenlaan 18, 3571 JK Utrecht. Je bent verhuisd op 1 juni 2025.",
+        "fields": [
+          {
+            "label": "Naam",
+            "kind": "text",
+            "expected": "Amira Haddad"
+          },
+          {
+            "label": "Oud adres",
+            "kind": "text",
+            "expected": "Lindelaan 5"
+          },
+          {
+            "label": "Nieuw adres",
+            "kind": "text",
+            "expected": "Beukenlaan 18"
+          },
+          {
+            "label": "Postcode nieuw adres",
+            "kind": "text",
+            "expected": "3571 JK"
+          },
+          {
+            "label": "Datum van verhuizing",
+            "kind": "text",
+            "expected": "01-06-2025",
+            "hint": "dd-mm-jjjj"
+          },
+          {
+            "label": "Handtekening",
+            "kind": "text",
+            "hint": "Zet hier je naam"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Omgangsvormen, waarden en normen
+- Op tijd komen is belangrijk; te laat → even bellen of een bericht sturen.
+- Afspraak maken voor bezoek is gewoon (ook bij vrienden/familie vaak).
+- Begroeten: hand geven bij kennismaken, iemand aankijken; drie zoenen bij vrienden/familie (niet verplicht).
+- u (formeel, onbekenden, oudere mensen, instanties) en je/jij (informeel).
+- Direct zijn: Nederlanders zeggen vaak eerlijk wat ze denken.
+- Gelijkheid: mannen en vrouwen zijn gelijk; homoseksuele mensen mogen trouwen (sinds 2001).
+- Vrijheid van godsdienst en vrijheid van meningsuiting (binnen de wet; discriminatie en bedreigen mogen niet).
+- Scheiding van kerk en staat.
+- Verjaardag: feliciteren, ook de familie ("Gefeliciteerd met je zoon").
+- Buren: kennismaken bij verhuizing, rekening houden met geluid (vooral 's avonds/'s nachts).
+- Feestdagen: Koningsdag (27 april), Dodenherdenking (4 mei, 20.00 uur twee minuten stilte), Bevrijdingsdag (5 mei), Sinterklaas (5 december), Kerst (25 en 26 december), Oud en Nieuw, Keti Koti (1 juli, herdenking afschaffing slavernij).
+- Afval scheiden en zwerfafval: rommel niet op straat gooien.

@@ -1,0 +1,14 @@
+# Staatsinrichting en rechtsstaat
+- Nederland is een constitutionele monarchie en een parlementaire democratie. De koning heeft geen politieke macht.
+- Koning Willem-Alexander (sinds 2013), koningin Máxima. Prinsjesdag (derde dinsdag van september): troonrede, plannen van de regering.
+- Grondwet; artikel 1: gelijke behandeling, discriminatie is verboden.
+- Scheiding der machten (trias politica): wetgevende macht (regering + parlement), uitvoerende macht (regering), rechterlijke macht (rechters, onafhankelijk).
+- Staten-Generaal: Tweede Kamer (150 leden, direct gekozen, elke 4 jaar) en Eerste Kamer (75 leden).
+- Regering = koning + ministers; de minister-president leidt het kabinet. Coalitie: meerdere partijen samen.
+- Verkiezingen: vanaf 18 jaar stemmen; Tweede Kamer (Nederlanders), Provinciale Staten, gemeenteraad (ook EU-burgers, en andere niet-Nederlanders na 5 jaar legaal verblijf), waterschap, Europees Parlement. Stemmen is geheim en niet verplicht.
+- Gemeente: gemeenteraad (gekozen), burgemeester (benoemd), wethouders (college van B en W).
+- Provincie: Provinciale Staten, Gedeputeerde Staten, commissaris van de Koning.
+- Rechtsstaat: iedereen moet zich aan de wet houden, ook de overheid. Je bent onschuldig tot het tegendeel bewezen is. Recht op een advocaat.
+- Grondrechten: vrijheid van meningsuiting, godsdienst, onderwijs, vereniging; recht op privacy; kiesrecht.
+- Kinderen slaan / huiselijk geweld is verboden; hulp: Veilig Thuis.
+- Naturalisatie: Nederlander worden — inburgering, aanvraag via gemeente (IND beslist).

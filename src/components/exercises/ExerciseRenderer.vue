@@ -12,7 +12,7 @@ import FormFillExercise from "./FormFillExercise.vue";
 import WritingExercise from "./WritingExercise.vue";
 import type { EvalResult, ExerciseHandle } from "./types";
 
-defineProps<{ exercise: Exercise; checked: boolean }>();
+defineProps<{ exercise: Exercise; checked: boolean; prefill?: string }>();
 
 const inner = ref<ExerciseHandle | null>(null);
 defineExpose({
@@ -38,5 +38,5 @@ const components = {
 </script>
 
 <template>
-  <component :is="components[exercise.type]" :ref="(el: any) => (inner = el)" :exercise="exercise as any" :checked="checked" />
+  <component :is="components[exercise.type]" :ref="(el: any) => (inner = el)" :exercise="exercise as any" :checked="checked" :prefill="exercise.type === 'writing' ? prefill : undefined" />
 </template>

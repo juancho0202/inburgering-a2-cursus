@@ -1,0 +1,13 @@
+# Geschiedenis en geografie
+- Nederland: 12 provincies; hoofdstad Amsterdam; regering en parlement in Den Haag.
+- Veel land ligt onder zeeniveau; dijken, gemalen, polders; strijd tegen het water.
+- Watersnoodramp 1953 (Zeeland) → Deltawerken.
+- Rivieren: Rijn, Maas, Waal. Zee: Noordzee. Buurlanden: Duitsland, België.
+- Koninkrijk der Nederlanden: Nederland + Aruba, Curaçao, Sint Maarten (landen); Bonaire, Sint Eustatius, Saba (bijzondere gemeenten).
+- Gouden Eeuw (17e eeuw): handel, VOC, schilders (Rembrandt). Ook: slavenhandel en slavernij in de koloniën.
+- Afschaffing slavernij in Suriname en de Antillen: 1863 (Keti Koti, 1 juli). Suriname onafhankelijk in 1975. Indonesië: voormalige kolonie (onafhankelijk na WO II).
+- Willem van Oranje: vader des vaderlands; 80-jarige oorlog tegen Spanje (16e–17e eeuw).
+- Tweede Wereldoorlog: Duitse bezetting 1940–1945; Jodenvervolging; Anne Frank (dagboek, Amsterdam). Bevrijding 5 mei 1945.
+- Na de oorlog: wederopbouw; gastarbeiders (o.a. uit Turkije, Marokko) in de jaren '60–'70; migratie uit Suriname en Indonesië.
+- Nederland was medeoprichter van de Europese Unie (EU/EEG) en lid van de NAVO.
+- Euro sinds 2002 (daarvoor gulden).

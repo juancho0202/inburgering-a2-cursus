@@ -1,0 +1,204 @@
+{
+  "id": "schrijven-examen-tips",
+  "moduleId": "schrijven",
+  "title": "Tips voor het examen",
+  "goal": "Je weet hoe je het examen Schrijven aanpakt en wat je aan het eind controleert.",
+  "estimatedMinutes": 15,
+  "tags": [
+    "schrijven:tips"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "schrijven-examen-tips-l-01",
+      "title": "Zo pak je het examen aan",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Het examen **Schrijven A2** duurt **40 minuten**. Je schrijft **met pen op papier** (geen spellingcontrole!). Er zijn **4 opdrachten**: een formulier, een kort bericht, een informele e-mail en een formele e-mail of brief."
+        },
+        {
+          "kind": "text",
+          "md": "**Tips:**\n\n1. **Lees de opdracht twee keer.**\n2. **Streep elk punt af** dat je beantwoord hebt.\n3. **Plan ongeveer 10 minuten per opdracht.**\n4. **Controleer werkwoorden en hoofdletters** aan het eind.\n5. **Schrijf duidelijk** met pen, zodat een lezer je tekst kan lezen."
+        },
+        {
+          "kind": "tip",
+          "md": "Het belangrijkste: staan **alle punten** van de opdracht in je tekst? Kleine fouten zijn niet erg als de lezer je begrijpt."
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "schrijven-examen-tips-l-02",
+      "title": "Examenchecklist",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Controleer **elke tekst** met deze lijst:\n\n1. Heb ik alle punten van de opdracht beantwoord?\n2. Aanhef en afsluiting goed (formeel of informeel)?\n3. **u** of **je**: past het bij de lezer?\n4. Werkwoord op plek 2? In een bijzin werkwoord aan het eind?\n5. Hoofdletter aan het begin, punt aan het eind?\n6. Genoeg woorden (en niet te veel)?\n7. Duidelijk geschreven (op het examen schrijf je met pen)?"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-examen-tips-q-001",
+        "tags": [
+          "schrijven:tips"
+        ],
+        "explanation": "Schrijven A2 duurt 40 minuten.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoe lang duurt het examen Schrijven?",
+        "options": [
+          "40 minuten",
+          "25 minuten",
+          "65 minuten",
+          "90 minuten"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-examen-tips-q-002",
+        "tags": [
+          "schrijven:tips"
+        ],
+        "explanation": "Het examen Schrijven is op papier, zonder spellingcontrole.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waarmee schrijf je op het examen?",
+        "options": [
+          "Op een computer",
+          "Met pen op papier",
+          "Met een potlood op een tablet",
+          "Met spraak"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-examen-tips-q-003",
+        "tags": [
+          "schrijven:tips"
+        ],
+        "explanation": "Een formulier, een kort bericht, een informele e-mail en een formele e-mail of brief.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoeveel opdrachten zijn er?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "6"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-examen-tips-q-004",
+        "tags": [
+          "schrijven:tips"
+        ],
+        "explanation": "Alle punten beantwoorden is het belangrijkste.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is het belangrijkste in je tekst?",
+        "options": [
+          "De tekst is erg lang.",
+          "Er staan moeilijke woorden in.",
+          "Er staat geen enkele fout in.",
+          "Alle punten van de opdracht staan erin."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-examen-tips-q-005",
+        "tags": [
+          "schrijven:tips"
+        ],
+        "explanation": "Aan een instantie schrijf je formeel.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je schrijft aan de gemeente. Welke aanhef kies je?",
+        "options": [
+          "Geachte heer, mevrouw,",
+          "Hoi,",
+          "Beste vriend,",
+          "Hallo allemaal,"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-examen-tips-q-006",
+        "tags": [
+          "schrijven:tips"
+        ],
+        "explanation": "Aan een vriend schrijf je informeel.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je schrijft aan een vriend. Welke afsluiting kies je?",
+        "options": [
+          "Hoogachtend,",
+          "Groetjes,",
+          "Met vriendelijke groet, namens,",
+          "Zeer geachte,"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-examen-tips-q-007",
+        "tags": [
+          "schrijven:tips"
+        ],
+        "explanation": "40 minuten voor 4 opdrachten = 10 minuten per opdracht.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoeveel tijd plan je ongeveer per opdracht?",
+        "options": [
+          "Ongeveer 1 minuut",
+          "Ongeveer 30 minuten",
+          "Ongeveer 10 minuten",
+          "Alle tijd voor de eerste"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-examen-tips-q-008",
+        "tags": [
+          "schrijven:tips"
+        ],
+        "explanation": "Controleer je tekst met de checklist.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat doe je aan het eind van de tijd?",
+        "options": [
+          "Je schrijft een nieuwe tekst.",
+          "Je stopt meteen.",
+          "Je maakt je tekst veel langer.",
+          "Je controleert werkwoorden, hoofdletters en punten."
+        ],
+        "answer": 3
+      }
+    }
+  ]
+}

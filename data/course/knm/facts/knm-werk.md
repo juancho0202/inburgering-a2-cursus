@@ -1,0 +1,13 @@
+# Werk en inkomen
+- Werk zoeken: vacatures online, uitzendbureau, netwerk. Solliciteren: brief/e-mail + cv, sollicitatiegesprek.
+- Arbeidscontract: tijdelijk of vast; proeftijd; loonstrook (salaris bruto/netto); vakantiegeld (meestal in mei/juni); vakantiedagen.
+- Ziek: meteen je werkgever bellen (ziekmelden), volgens de regels van je werk.
+- Wettelijk minimumloon bestaat (bedrag verandert — niet noemen).
+- Belastingdienst: inkomstenbelasting, belastingaangifte (meestal vóór 1 mei over het vorige jaar), toeslagen (zorgtoeslag, huurtoeslag, kinderopvangtoeslag) — check eigen situatie.
+- UWV: werkloosheidsuitkering (WW) na ontslag als je genoeg gewerkt hebt; ook hulp bij werk zoeken en uitkering bij langdurige ziekte.
+- Gemeente: bijstand (uitkering als je geen ander inkomen hebt).
+- SVB: kinderbijslag, AOW (pensioen van de overheid voor ouderen).
+- Zwartwerken (werk zonder belasting te betalen) mag niet.
+- Gelijke behandeling: discriminatie op werk mag niet; mannen en vrouwen hebben dezelfde rechten.
+- Vakbond: organisatie die opkomt voor werknemers. Ondernemingsraad (OR) in grotere bedrijven.
+- Eigen bedrijf beginnen: inschrijven bij de Kamer van Koophandel (KVK).

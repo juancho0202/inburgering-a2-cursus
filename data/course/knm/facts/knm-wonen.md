@@ -1,0 +1,12 @@
+# Wonen
+- Huren: sociale huurwoning via een woningcorporatie (vaak wachtlijst) of particuliere verhuurder; huurcontract; borg.
+- Huurtoeslag (Belastingdienst) bij laag inkomen en niet te hoge huur.
+- Huurder: huur op tijd betalen, kleine reparaties zelf (bijv. kraan, lamp), netjes met het huis omgaan.
+- Verhuurder/huisbaas: grote reparaties (dak, verwarming/cv-ketel, lekkage).
+- Problemen met de verhuurder over huurprijs of onderhoud → Huurcommissie.
+- Verhuizen: binnen 5 dagen doorgeven aan de gemeente (inschrijven in de BRP).
+- Vaste lasten: huur, gas/water/licht (energie), internet, gemeentelijke belastingen (afvalstoffenheffing, rioolheffing), waterschapsbelasting.
+- Kopen: hypotheek bij een bank.
+- Afval scheiden: papier, glas, plastic/pmd, gft (groente, fruit, tuin), restafval; grofvuil ophalen via de gemeente.
+- Buren en overlast: eerst praten; daarna eventueel buurtbemiddeling.
+- Brand: rookmelder; bij nood 112.

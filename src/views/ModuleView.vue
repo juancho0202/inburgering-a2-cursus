@@ -32,6 +32,11 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
       </div>
     </header>
 
+    <RouterLink v-if="mod.id === 'schrijven'" to="/schrijven/geschiedenis" class="card mb-6 flex items-center gap-3 p-4 transition hover:-translate-y-0.5 hover:shadow-lg">
+      <span class="text-2xl" aria-hidden="true">🗂️</span>
+      <span class="font-bold">Mijn teksten en feedback</span>
+      <span class="ml-auto text-muted">→</span>
+    </RouterLink>
     <p v-if="!mod.units.length" class="card p-6 text-muted">Hier komen later lessen. Kom snel terug!</p>
     <ol v-else class="relative grid gap-4 before:absolute before:bottom-6 before:left-[1.65rem] before:top-6 before:w-1 before:rounded-full before:bg-line">
       <li v-for="(u, i) in mod.units" :key="u.id" class="relative">

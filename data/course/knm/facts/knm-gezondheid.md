@@ -1,0 +1,14 @@
+# Gezondheid en gezondheidszorg
+- Zorgverzekering (basisverzekering) is verplicht voor iedereen die in Nederland woont/werkt.
+- Eigen risico: een deel van de zorgkosten betaal je zelf per jaar (bedrag niet noemen); huisarts valt er niet onder.
+- Zorgtoeslag bij laag inkomen (Belastingdienst).
+- Huisarts: eerst naar de huisarts; inschrijven bij een huisarts in de buurt; de huisarts verwijst door naar specialist/ziekenhuis.
+- Buiten kantoortijd (avond, nacht, weekend): huisartsenpost — eerst bellen.
+- Levensgevaar: 112. Geen spoed maar politie nodig: 0900-8844.
+- Apotheek: medicijnen met recept van de huisarts; drogist: zonder recept (paracetamol).
+- Tandarts: valt (voor volwassenen) meestal niet in de basisverzekering — eventueel aanvullende verzekering.
+- Consultatiebureau (via jeugdgezondheidszorg/GGD): baby's en jonge kinderen — groei, vaccinaties.
+- Verloskundige: zwangerschap en bevalling (veel thuis- of poliklinische bevallingen).
+- GGD: gezondheid in de regio, vaccinaties.
+- Medisch beroepsgeheim: de dokter vertelt niets aan anderen zonder toestemming.
+- Afspraak afzeggen: op tijd (vaak minstens 24 uur van tevoren), anders soms betalen.
