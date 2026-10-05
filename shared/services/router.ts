@@ -1,6 +1,6 @@
 import { ZodError } from "zod";
 import { courseTree, getUnit, samenvatting } from "./course.js";
-import { ServiceError, type Env } from "./context.js";
+import { ServiceError, invalid, type Env } from "./context.js";
 import { dashboard, practice } from "./dashboard.js";
 import { examMistakes, getExam, getExamResult, listExams, saveExamState, startExam, submitExam } from "./exams.js";
 import { exportData } from "./exportData.js";
@@ -20,6 +20,9 @@ export interface ApiResponse {
 /** Things that live outside the data store (the API key). Filled in by the app. */
 export interface RouterOptions {
   maskedKey?: () => Promise<string | null>;
+  /** Stores the key (encrypted). Throws an Error with message "invalid_key" for something that is not a key. */
+  saveKey?: (apiKey: string) => Promise<string>;
+  removeKey?: () => Promise<void>;
   testKey?: () => Promise<{ ok: boolean; message: string }>;
 }
 
@@ -75,6 +78,28 @@ const routes: [Method, string, Handler][] = [
     "/settings",
     async (c) => {
       await updateSettings(c.env, c.body);
+      return settingsView(c);
+    },
+  ],
+  [
+    "POST",
+    "/settings/api-key",
+    async (c) => {
+      const apiKey = (c.body as { apiKey?: unknown } | undefined)?.apiKey;
+      if (typeof apiKey !== "string" || !c.options.saveKey) throw invalid("Plak hier je API-sleutel.");
+      try {
+        await c.options.saveKey(apiKey);
+      } catch {
+        throw invalid("Dit lijkt geen Anthropic-sleutel. Die begint met sk-ant-.");
+      }
+      return settingsView(c);
+    },
+  ],
+  [
+    "POST",
+    "/settings/api-key/remove",
+    async (c) => {
+      await c.options.removeKey?.();
       return settingsView(c);
     },
   ],
