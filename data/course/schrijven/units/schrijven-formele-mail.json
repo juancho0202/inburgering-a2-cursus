@@ -342,9 +342,9 @@
         "prompt": "Welke afsluiting is goed voor een formele brief?",
         "options": [
           "Met vriendelijke groet,",
-          "Groetjes,",
-          "Tot snel!",
-          "Doei,"
+          "Groetjes en tot snel!",
+          "Tot snel, doei doei!",
+          "Doei, tot de volgende keer"
         ],
         "answer": 0
       }

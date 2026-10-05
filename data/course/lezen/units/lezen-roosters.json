@@ -274,10 +274,10 @@
             ],
             "prompt": "Op welke dag werkt Sanne vroeg?",
             "options": [
-              "Op woensdag",
-              "Op donderdag",
+              "Op woensdag en donderdag",
+              "Op dinsdag en zaterdag",
               "Op maandag en vrijdag",
-              "Op dinsdag"
+              "Op donderdag en zaterdag"
             ],
             "answer": 2,
             "explanation": "Vroege dienst: maandag en vrijdag.",
@@ -363,9 +363,9 @@
             ],
             "prompt": "Wat moet u eenmalig betalen?",
             "options": [
-              "25 euro",
-              "35 euro",
-              "20 euro",
+              "25 euro per maand voor Basis",
+              "35 euro per maand voor Plus",
+              "20 euro per maand voor Student",
               "15 euro inschrijfkosten"
             ],
             "answer": 3,

@@ -142,10 +142,10 @@
         "type": "mc",
         "prompt": "Wat is een verwijzing?",
         "options": [
-          "Een brief van de huisarts voor een specialist of ziekenhuis",
-          "Een recept voor medicijnen",
-          "Een afspraakkaartje",
-          "Een verzekeringspas"
+          "Een brief van de huisarts voor een specialist",
+          "Een recept voor medicijnen bij de apotheek",
+          "Een afspraakkaartje voor de volgende keer",
+          "Een pasje van je zorgverzekering"
         ],
         "answer": 0
       }
@@ -221,9 +221,9 @@
         "type": "mc",
         "prompt": "Wat is eigen risico?",
         "options": [
-          "Een toeslag van de overheid",
-          "De prijs van de verzekering",
-          "Een vaccinatie",
+          "Een toeslag van de overheid voor zorg",
+          "De prijs die je voor de verzekering betaalt",
+          "Een prik tegen een ziekte",
           "Een deel van de zorgkosten dat je zelf betaalt"
         ],
         "answer": 3
@@ -242,9 +242,9 @@
         "prompt": "Priya gaat naar de huisarts. Valt dit onder het eigen risico?",
         "options": [
           "Nee, de huisarts valt er niet onder.",
-          "Ja, altijd.",
-          "Alleen op zaterdag.",
-          "Alleen bij ziekte."
+          "Ja, alles valt altijd onder het eigen risico.",
+          "Ja, maar alleen op zaterdag en zondag.",
+          "Alleen als je ziek bent geworden."
         ],
         "answer": 0
       }
@@ -281,10 +281,10 @@
         "type": "mc",
         "prompt": "Mehmet heeft een gaatje. De tandarts kost geld. Waarom?",
         "options": [
-          "De tandarts is verboden.",
-          "Hij is niet verzekerd.",
-          "De tandarts zit voor volwassenen meestal niet in de basisverzekering.",
-          "De tandarts is alleen voor kinderen."
+          "De tandarts is in Nederland niet toegestaan.",
+          "Mehmet heeft helemaal geen zorgverzekering.",
+          "Tandartszorg zit meestal niet in de basisverzekering.",
+          "De tandarts is alleen bedoeld voor kinderen."
         ],
         "answer": 2
       }
@@ -442,10 +442,10 @@
         "type": "mc",
         "prompt": "Wat is de taak van de GGD?",
         "options": [
-          "Huizen verhuren",
+          "Huizen verhuren aan mensen met weinig geld",
           "Gezondheid in de regio, bijvoorbeeld vaccinaties",
-          "Belasting innen",
-          "Inburgeringsexamens"
+          "Belasting innen van alle werkenden",
+          "Inburgeringsexamens afnemen en nakijken"
         ],
         "answer": 1
       }
@@ -537,10 +537,10 @@
         "type": "mc",
         "prompt": "Ahmed wil weten of zijn kind alle vaccinaties heeft gehad. Waar kan hij terecht?",
         "options": [
-          "Bij de KVK",
-          "Bij DUO",
+          "Bij de Kamer van Koophandel (KVK)",
+          "Bij Dienst Uitvoering Onderwijs (DUO)",
           "Bij het consultatiebureau of de GGD",
-          "Bij de bibliotheek"
+          "Bij de bibliotheek in de buurt"
         ],
         "answer": 2
       }

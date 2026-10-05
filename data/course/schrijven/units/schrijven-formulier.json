@@ -192,10 +192,10 @@
         "type": "mc",
         "prompt": "Wat is een postcode?",
         "options": [
-          "Vier cijfers en twee letters, bijvoorbeeld 3512 AB",
-          "Een telefoonnummer",
-          "Je huisnummer",
-          "Je geboortedatum"
+          "Vier cijfers en twee letters (3512 AB)",
+          "Een telefoonnummer met tien cijfers",
+          "Het nummer van je huis in de straat",
+          "De datum waarop je geboren bent"
         ],
         "answer": 0
       }
@@ -212,10 +212,10 @@
         "type": "mc",
         "prompt": "Wat is \"burgerlijke staat\"?",
         "options": [
-          "Je beroep",
+          "Het beroep dat je in Nederland hebt",
           "Of je ongehuwd, gehuwd of gescheiden bent",
-          "Je nationaliteit",
-          "Je adres"
+          "Het land waar je paspoort van is",
+          "De straat waar je woont"
         ],
         "answer": 1
       }

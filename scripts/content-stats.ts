@@ -25,6 +25,15 @@ async function main() {
   let knmQuestions = 0;
   let schrijvenTasks = 0;
   let formFill = 0;
+  let mcTotal = 0;
+  let mcLongest = 0;
+  const countMc = (ex: { type: string; options?: string[]; answer?: unknown }) => {
+    if (ex.type !== "mc" || !ex.options || typeof ex.answer !== "number") return;
+    mcTotal += 1;
+    const lens = ex.options.map((o) => o.length);
+    const max = Math.max(...lens);
+    if (lens[ex.answer] === max && lens.filter((l) => l === max).length === 1) mcLongest += 1;
+  };
   const perTheme = new Map<string, number>();
   const perUnit = new Map<string, number>();
 
@@ -33,6 +42,8 @@ async function main() {
     for (const step of unit.steps) {
       if (step.type !== "exercise") continue;
       const ex = step.exercise;
+      countMc(ex as never);
+      if (ex.type === "reading") for (const q of ex.questions) countMc(q as never);
       perUnit.set(unit.id, (perUnit.get(unit.id) ?? 0) + 1);
       if (unit.moduleId === "basis") basisExercises += 1;
       if (unit.moduleId === "knm") {
@@ -63,6 +74,8 @@ async function main() {
   for (const id of KNM_THEMES) console.log("  " + line(id, perTheme.get(id) ?? 0, TARGETS.knmPerTheme));
   console.log(line("Schrijven taken", schrijvenTasks, TARGETS.schrijvenTasks));
   console.log(line("Form-fill oefeningen", formFill, TARGETS.formFill));
+  const biasPct = mcTotal ? Math.round((mcLongest / mcTotal) * 100) : 0;
+  console.log(`${biasPct <= 40 ? "OK " : "!! "}Juiste antwoord is het langste (mc): ${biasPct}% van ${mcTotal} (doel: <= 40%, kans: ~30%)`);
   const bySkill = (skill: string) => [...content.exams.values()].filter((e) => e.skill === skill).length;
   console.log(`${bySkill("lezen") >= 2 && bySkill("knm") >= 2 && bySkill("schrijven") >= 2 ? "OK " : "!! "}Proefexamens: ${bySkill("lezen")} Lezen, ${bySkill("knm")} KNM, ${bySkill("schrijven")} Schrijven (doel: 2 / 2 / 2)`);
 }

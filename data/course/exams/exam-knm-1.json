@@ -48,10 +48,10 @@
       "type": "mc",
       "prompt": "Wat zijn Aruba, Curaçao en Sint Maarten?",
       "options": [
-        "Provincies van Nederland",
-        "Buurlanden van Nederland",
+        "Provincies van het land Nederland",
+        "Buurlanden waar Nederland mee samenwerkt",
         "Landen in het Koninkrijk der Nederlanden",
-        "Steden in Zeeland"
+        "Steden in de provincie Zeeland"
       ],
       "answer": 2
     },
@@ -65,10 +65,10 @@
       "type": "mc",
       "prompt": "Wat is een recept?",
       "options": [
-        "Een bewijs van je verzekering",
-        "Een afspraak bij de tandarts",
-        "Een verwijzing naar het ziekenhuis",
-        "Een papier van de huisarts om medicijnen te halen"
+        "Een bewijs dat je een zorgverzekering hebt",
+        "Een afspraak voor de tandarts volgende week",
+        "Een brief om naar het ziekenhuis te gaan",
+        "Een papier van de huisarts voor medicijnen"
       ],
       "answer": 3
     },
@@ -99,10 +99,10 @@
       "type": "mc",
       "prompt": "Wat was de VOC?",
       "options": [
-        "Een Nederlands leger",
+        "Een Nederlands leger in de Gouden Eeuw",
         "Een handelsbedrijf in de Gouden Eeuw",
-        "Een school",
-        "Een rivier"
+        "Een school voor schilders in Amsterdam",
+        "Een rivier in het zuiden van Nederland"
       ],
       "answer": 1
     },
@@ -133,9 +133,9 @@
       "type": "mc",
       "prompt": "Wat doet een woningcorporatie?",
       "options": [
-        "Ze betaalt toeslagen.",
-        "Ze regelt paspoorten.",
-        "Ze geeft hypotheken.",
+        "Ze betaalt toeslagen aan huurders.",
+        "Ze regelt paspoorten en ID-kaarten.",
+        "Ze geeft hypotheken aan kopers.",
         "Ze verhuurt sociale huurwoningen."
       ],
       "answer": 3
@@ -201,10 +201,10 @@
       "type": "mc",
       "prompt": "Wat doet de huisartsenpost?",
       "options": [
-        "Zij verkoopt medicijnen.",
-        "Zij controleert baby's.",
-        "Zij regelt een zorgverzekering.",
-        "Zij helpt buiten kantoortijd, bijvoorbeeld 's avonds en in het weekend."
+        "Zij verkoopt medicijnen met en zonder recept.",
+        "Zij controleert de groei van baby's.",
+        "Zij regelt een zorgverzekering voor mensen.",
+        "Zij helpt 's avonds, 's nachts en in het weekend."
       ],
       "answer": 3
     },
@@ -219,9 +219,9 @@
       "prompt": "De dochter van Fatima is 3 jaar en nog niet leerplichtig. Waar kan ze wel naartoe?",
       "options": [
         "Naar de peuterspeelzaal of voorschool",
-        "Naar groep 8",
-        "Naar de universiteit",
-        "Naar het mbo"
+        "Naar groep 8 van de basisschool",
+        "Naar de universiteit in de stad",
+        "Naar het mbo voor een beroep"
       ],
       "answer": 0
     },
@@ -252,10 +252,10 @@
       "type": "mc",
       "prompt": "Naast de huur betaalt Priya elke maand ook voor gas, water en licht. Hoe heet dit?",
       "options": [
-        "Borg",
-        "Toeslag",
+        "Een borg voor de woning",
+        "Een toeslag van de Belastingdienst",
         "Vaste lasten (energie)",
-        "Hypotheek"
+        "Een hypotheek van de bank"
       ],
       "answer": 2
     },
@@ -269,9 +269,9 @@
       "type": "mc",
       "prompt": "Priya krijgt een loonstrook. Wat staat daarop?",
       "options": [
-        "Haar zorgverzekering",
-        "Haar huurcontract",
-        "Haar paspoortnummer",
+        "Haar zorgverzekering en polisnummer",
+        "De huurprijs van haar woning",
+        "Haar paspoortnummer en nationaliteit",
         "Haar bruto en netto salaris"
       ],
       "answer": 3
@@ -286,10 +286,10 @@
       "type": "mc",
       "prompt": "Wat doet de IND?",
       "options": [
-        "De IND beslist over verblijfsvergunningen en naturalisatie.",
-        "De IND betaalt AOW.",
-        "De IND geeft toeslagen.",
-        "De IND repareert wegen."
+        "Ze regelt verblijfsvergunningen en naturalisatie.",
+        "Ze betaalt de AOW aan oudere mensen.",
+        "Ze geeft toeslagen aan gezinnen.",
+        "Ze repareert wegen en bruggen."
       ],
       "answer": 0
     },
@@ -303,10 +303,10 @@
       "type": "mc",
       "prompt": "Wat is een rapport?",
       "options": [
-        "Een brief van de gemeente",
+        "Een brief van de gemeente over school",
         "Een papier met de resultaten van een leerling",
-        "Een afspraak voor ouders",
-        "Een boete voor spijbelen"
+        "Een afspraak voor ouders met de juf",
+        "Een boete voor een kind dat spijbelt"
       ],
       "answer": 1
     },
@@ -371,10 +371,10 @@
       "type": "mc",
       "prompt": "Wat betekent beroepsgeheim?",
       "options": [
-        "De dokter mag alles vertellen aan je baas.",
-        "De dokter vertelt niets aan anderen zonder jouw toestemming.",
-        "De dokter werkt in het geheim.",
-        "De dokter mag geen medicijnen geven."
+        "De dokter mag alles aan je baas vertellen.",
+        "De dokter praat niet over jou zonder toestemming.",
+        "De dokter werkt alleen in het geheim.",
+        "De dokter mag geen medicijnen voorschrijven."
       ],
       "answer": 1
     },
@@ -439,10 +439,10 @@
       "type": "mc",
       "prompt": "Ahmed schrijft zich in voor een sociale huurwoning. Er is een wachtlijst. Wat betekent dat?",
       "options": [
-        "Hij krijgt meteen een huis.",
+        "Hij krijgt meteen een huurwoning aangeboden.",
         "Hij moet wachten tot er een woning vrij is.",
-        "Hij moet een huis kopen.",
-        "Hij mag niet verhuizen."
+        "Hij moet een eigen huis gaan kopen.",
+        "Hij mag niet meer verhuizen in Nederland."
       ],
       "answer": 1
     },
@@ -473,9 +473,9 @@
       "type": "mc",
       "prompt": "Mehmet is op een verjaardag van zijn buurvrouw. Wat zegt hij?",
       "options": [
-        "Veel succes op school!",
-        "Goede reis!",
-        "Fijne feestdagen!",
+        "Veel succes op je school, buurvrouw!",
+        "Goede reis en tot volgend jaar!",
+        "Fijne feestdagen en een gelukkig nieuwjaar!",
         "Gefeliciteerd met je verjaardag!"
       ],
       "answer": 3
@@ -507,10 +507,10 @@
       "type": "mc",
       "prompt": "Priya heeft kiespijn. Wat is slim om te controleren?",
       "options": [
-        "Of ze een recept heeft",
-        "Of ze een aanvullende verzekering heeft voor de tandarts",
+        "Of ze een recept van de apotheek heeft",
+        "Of ze een aanvullende verzekering heeft",
         "Of ze een verwijzing van de gemeente heeft",
-        "Of ze eigen risico heeft op de huisarts"
+        "Of ze haar eigen risico al heeft gebruikt"
       ],
       "answer": 1
     },
@@ -541,9 +541,9 @@
       "type": "mc",
       "prompt": "Wat doet een rechter?",
       "options": [
-        "Hij maakt de wetten.",
-        "Hij leidt het kabinet.",
-        "Hij benoemt de burgemeester.",
+        "Hij maakt de wetten voor het hele land.",
+        "Hij leidt het kabinet van de regering.",
+        "Hij benoemt de burgemeesters van gemeenten.",
         "Hij beslist onafhankelijk in rechtszaken."
       ],
       "answer": 3
@@ -592,10 +592,10 @@
       "type": "mc",
       "prompt": "In welke bak gooi je een kartonnen doos?",
       "options": [
-        "In de glasbak",
-        "In het gft-afval",
+        "In de glasbak bij de supermarkt",
+        "In het gft-afval met groente",
         "In de bak voor papier",
-        "In het restafval"
+        "In het restafval van de buurt"
       ],
       "answer": 2
     },
@@ -626,10 +626,10 @@
       "type": "mc",
       "prompt": "Wat is een ouderavond?",
       "options": [
-        "Een avond waarop ouders met leraren over school praten",
-        "Een avond zonder les voor kinderen",
-        "Een examen voor ouders",
-        "Een schoolreisje"
+        "Een avond waarop ouders en leraren praten",
+        "Een avond zonder les voor alle kinderen",
+        "Een examen voor ouders van leerlingen",
+        "Een schoolreisje voor de hele familie"
       ],
       "answer": 0
     },
@@ -643,10 +643,10 @@
       "type": "mc",
       "prompt": "Waar vraag je een parkeervergunning aan?",
       "options": [
-        "Bij de IND",
-        "Bij de gemeente",
-        "Bij DUO",
-        "Bij de SVB"
+        "Bij de IND in Den Haag",
+        "Bij de gemeente waar je woont",
+        "Bij DUO in Groningen",
+        "Bij de SVB voor je pensioen"
       ],
       "answer": 1
     },

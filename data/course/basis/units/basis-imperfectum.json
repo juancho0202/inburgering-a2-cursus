@@ -198,7 +198,7 @@
         "type": "mc",
         "prompt": "Je leest: \"Vorige week had ik een afspraak.\" Wanneer was de afspraak?",
         "options": [
-          "In de vorige week",
+          "Vorige week",
           "Deze week",
           "Volgende week",
           "Morgen"

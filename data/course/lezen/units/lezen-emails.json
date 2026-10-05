@@ -66,10 +66,10 @@
             ],
             "prompt": "Waarom wil Mehmet ruilen?",
             "options": [
-              "Hij is ziek.",
-              "Hij heeft vakantie.",
-              "Zijn zoon heeft een afspraak bij de tandarts.",
-              "Hij wil eerder naar huis."
+              "Mehmet is ziek en blijft thuis.",
+              "Mehmet heeft een week vakantie.",
+              "Zijn zoon moet naar de tandarts.",
+              "Mehmet wil eerder naar huis gaan."
             ],
             "answer": 2,
             "explanation": "'Mijn zoon heeft dan een afspraak bij de tandarts.'",
@@ -189,10 +189,10 @@
             ],
             "prompt": "Wat moeten cursisten alvast maken?",
             "options": [
-              "Een toets",
+              "Een toets over hoofdstuk vijf en zes",
               "De oefeningen op bladzijde 40 en 41",
-              "Een samenvatting",
-              "Een brief"
+              "Een samenvatting van de les",
+              "Een brief aan de docent"
             ],
             "answer": 1,
             "explanation": "'Maak intussen de oefeningen op bladzijde 40 en 41.'",
@@ -227,10 +227,10 @@
             ],
             "prompt": "Waarom schrijft Olga dit bericht?",
             "options": [
-              "Ze wil verhuizen.",
-              "Ze zoekt een baan.",
-              "Ze klaagt over de buren.",
-              "Ze nodigt de buren uit en waarschuwt voor lawaai."
+              "Ze wil graag naar een ander huis verhuizen.",
+              "Ze zoekt een nieuwe baan in de buurt.",
+              "Ze klaagt over de buren en hun lawaai.",
+              "Ze nodigt de buren uit voor een feestje."
             ],
             "answer": 3,
             "explanation": "Ze geeft een feestje en zegt sorry voor het lawaai.",
@@ -367,9 +367,9 @@
             ],
             "prompt": "Wat krijgt mevrouw Sharma als excuus?",
             "options": [
-              "Geld terug",
-              "Een gratis boek",
-              "Gratis bezorging",
+              "Haar geld terug voor de bestelling",
+              "Een gratis boek bij haar volgende pakket",
+              "Gratis bezorging voor een jaar",
               "10% korting op de volgende bestelling"
             ],
             "answer": 3,

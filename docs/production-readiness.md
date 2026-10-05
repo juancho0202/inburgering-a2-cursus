@@ -1,6 +1,6 @@
 # Sharing the A2 Trainer with friends — production-readiness plan
 
-> Status: **decided, building.** Steps 0–11 done (CI, content-id check, strict CSP, Netlify config). Still to do: content review (12), beta (13). *Trusted Types was dropped: Vue's `v-html` needs a pass-through default policy, which would add little protection.*
+> Status: **decided, building.** Steps 0–12 done (incl. content review, see `docs/content-review.md`). Still to do: beta with friends (13). *Trusted Types was dropped: Vue's `v-html` needs a pass-through default policy, which would add little protection.*
 > Companion to `SPEC.md`, which describes the app as built in phases 1–7: one learner, one computer.
 > This document changes some of SPEC's hard constraints (§3 of SPEC). Step 0 below updates SPEC to match.
 

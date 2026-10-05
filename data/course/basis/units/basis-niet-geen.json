@@ -188,11 +188,11 @@
           "basis:niet-geen",
           "grammar:ontkenning"
         ],
-        "explanation": "Koffie zonder lidwoord: geen.",
+        "explanation": "Koffie zonder lidwoord: geen koffie.",
         "difficulty": 1,
         "type": "gap-choice",
         "prompt": "Kies niet of geen.",
-        "text": "Ik wil ___ koffie, ik wil thee.",
+        "text": "Ik drink ___ koffie.",
         "options": [
           [
             "geen",

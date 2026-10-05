@@ -79,10 +79,10 @@
             ],
             "prompt": "Waar vertrekken de bussen?",
             "options": [
-              "Op spoor 5",
-              "Bij de bushalte in de stad",
-              "Bij het informatiebord",
-              "Bij de uitgang aan de voorkant van het station"
+              "Op spoor 5 bij de grote klok",
+              "Bij de bushalte in het centrum",
+              "Bij het informatiebord in de hal",
+              "Bij de uitgang aan de voorkant"
             ],
             "answer": 3,
             "explanation": "'De bussen vertrekken bij de uitgang aan de voorkant.'",
@@ -97,9 +97,9 @@
             "prompt": "Wat moet u doen?",
             "options": [
               "Eerder vertrekken, want de reis duurt langer",
-              "Thuisblijven",
-              "De trein nemen",
-              "Een taxi bellen"
+              "Thuisblijven en de reis uitstellen",
+              "Gewoon de trein nemen als altijd",
+              "Een taxi bellen voor de hele reis"
             ],
             "answer": 0,
             "explanation": "'De reistijd is 30 minuten langer. Vertrek dus eerder!'",
@@ -134,10 +134,10 @@
             ],
             "prompt": "Waar moet u uw fiets neerzetten?",
             "options": [
-              "In de gang",
-              "Op het balkon",
+              "In de gang naast de lift",
+              "Op het balkon van uw woning",
               "In de fietsenstalling in de kelder",
-              "Voor de deur"
+              "Voor de deur van de flat"
             ],
             "answer": 2,
             "explanation": "'Gebruik de fietsenstalling in de kelder.'",
@@ -257,10 +257,10 @@
             ],
             "prompt": "Waar kunt u uw boeken terugbrengen?",
             "options": [
-              "Bij de balie",
+              "Bij de balie van de bibliotheek",
               "In de box naast de ingang",
-              "In het centrum",
-              "Via de post"
+              "In de bibliotheek in het centrum",
+              "Via de post naar het kantoor"
             ],
             "answer": 1,
             "explanation": "'In de box buiten (naast de ingang).'",
@@ -346,10 +346,10 @@
             ],
             "prompt": "Waar mag u eten en drinken?",
             "options": [
-              "Overal",
-              "Bij het water",
+              "Overal in het hele zwembad",
+              "Bij het water, op de rand",
               "Alleen in het restaurant",
-              "Bij de douche"
+              "Bij de douches en kleedkamers"
             ],
             "answer": 2,
             "explanation": "'Alleen in het restaurant.'",

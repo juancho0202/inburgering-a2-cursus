@@ -350,10 +350,10 @@
         "type": "mc",
         "prompt": "Aan het eind van groep 8 krijgt Mehmets dochter een advies. Wat is dat?",
         "options": [
-          "Het schooladvies voor het voortgezet onderwijs",
-          "Een boete",
-          "Een toeslag",
-          "Een diploma"
+          "Het schooladvies",
+          "Een boete voor te laat komen",
+          "Een toeslag voor school",
+          "Een diploma van de basisschool"
         ],
         "answer": 0
       }
@@ -476,10 +476,10 @@
         "type": "mc",
         "prompt": "Wat is een 10-minutengesprek?",
         "options": [
-          "Een les van 10 minuten",
-          "Een kort gesprek tussen ouder en leraar over het kind",
-          "Een examen",
-          "Een gesprek bij de huisarts"
+          "Een les van tien minuten voor kinderen",
+          "Een kort gesprek van ouder en leraar",
+          "Een examen van tien minuten voor ouders",
+          "Een gesprek van tien minuten bij de huisarts"
         ],
         "answer": 1
       }
@@ -598,7 +598,7 @@
         "options": [
           "Praten",
           "Straf geven zonder slaan",
-          "Het kind een stap in zijn kamer zetten",
+          "Het kind rustig naar zijn kamer sturen",
           "Het kind slaan"
         ],
         "answer": 3
@@ -617,9 +617,9 @@
         "prompt": "Wat kan een volwassene doen om Nederlands te leren?",
         "options": [
           "Een taalcursus volgen of naar de bibliotheek gaan",
-          "Naar de IND gaan",
-          "Een uitkering aanvragen",
-          "Naar de Belastingdienst gaan"
+          "Naar de IND gaan voor een cursus",
+          "Een uitkering aanvragen bij het UWV",
+          "Naar de Belastingdienst gaan voor les"
         ],
         "answer": 0
       }

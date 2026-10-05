@@ -225,9 +225,9 @@
         "type": "mc",
         "prompt": "\"De bus komt meestal op tijd.\" Wat betekent meestal?",
         "options": [
-          "Nooit",
-          "Soms",
-          "Altijd",
+          "Soms wel, soms niet",
+          "Heel zelden",
+          "Elke keer, zonder uitzondering",
           "Bijna altijd"
         ],
         "answer": 3
@@ -267,10 +267,10 @@
         "type": "mc",
         "prompt": "\"Helaas is de cursus vol.\" Wat is het nieuws?",
         "options": [
-          "U kunt zich inschrijven.",
-          "De cursus is vol; u kunt zich niet inschrijven.",
-          "De cursus is gratis.",
-          "De cursus begint morgen."
+          "U kunt zich nog gratis inschrijven.",
+          "De cursus zit vol, u kunt niet meedoen.",
+          "De cursus is gratis voor iedereen.",
+          "De cursus begint morgen om negen uur."
         ],
         "answer": 1
       }

@@ -45,10 +45,10 @@
             ],
             "prompt": "Waar gaat deze advertentie over?",
             "options": [
-              "Een huis",
+              "Een huis in Zwolle",
               "Een baan in een magazijn",
-              "Een cursus",
-              "Een auto"
+              "Een cursus voor beginners",
+              "Een auto in goede staat"
             ],
             "answer": 1,
             "explanation": "Titel: Medewerker magazijn gezocht.",
@@ -291,10 +291,10 @@
             ],
             "prompt": "Wanneer is de verkoper thuis?",
             "options": [
-              "Elke ochtend",
-              "Alleen op zaterdag",
+              "Elke ochtend voor het werk",
+              "Alleen op zaterdag in de middag",
               "Op werkdagen na 17.00 uur en in het weekend",
-              "Op werkdagen overdag"
+              "Op werkdagen overdag, tot vijf uur"
             ],
             "answer": 2,
             "explanation": "'Op werkdagen na 17.00 uur en in het weekend de hele dag.'",
@@ -380,9 +380,9 @@
             ],
             "prompt": "Wat moet u bij de eerste les meenemen?",
             "options": [
-              "Uw diploma",
-              "Geld",
-              "Een boek",
+              "Uw diploma van de basisschool",
+              "Geld voor de cursus",
+              "Een schrift en een pen",
               "Uw legitimatiebewijs"
             ],
             "answer": 3,

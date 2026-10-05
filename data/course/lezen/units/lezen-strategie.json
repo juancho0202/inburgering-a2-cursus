@@ -193,9 +193,9 @@
             ],
             "prompt": "Wat moet mevrouw Sharma doen?",
             "options": [
-              "Een nieuwe aanvraag doen",
-              "Naar het loket komen",
-              "Geld betalen",
+              "Een nieuwe aanvraag voor de vergunning doen",
+              "Zelf naar het loket van de gemeente komen",
+              "Geld betalen voor de parkeervergunning",
               "Een kopie van haar kentekenbewijs opsturen"
             ],
             "answer": 3,

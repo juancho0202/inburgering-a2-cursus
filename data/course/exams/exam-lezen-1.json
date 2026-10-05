@@ -60,9 +60,9 @@
           ],
           "prompt": "Wanneer moet hij de pas meenemen?",
           "options": [
-            "Alleen naar het ziekenhuis",
-            "Alleen naar de gemeente",
-            "Nooit",
+            "Alleen als hij naar het buitenland gaat",
+            "Alleen als hij een brief van de gemeente heeft",
+            "Alleen als hij zijn rekening betaalt",
             "Naar de huisarts, apotheek en het ziekenhuis"
           ],
           "answer": 3,
@@ -130,9 +130,9 @@
           "prompt": "Wat moeten collega's doen als zij niet kunnen komen?",
           "options": [
             "Het vóór woensdag aan Sanne laten weten",
-            "Een andere collega vragen",
-            "Het in de kantine zeggen",
-            "Niets doen"
+            "Een andere collega vragen om te ruilen",
+            "Het bij de leiding van de kantine melden",
+            "Niets doen, het is niet nodig"
           ],
           "answer": 0,
           "explanation": "'Laat het mij dan vóór woensdag weten.'",
@@ -164,10 +164,10 @@
           ],
           "prompt": "Wanneer moet de schoonmaker werken?",
           "options": [
-            "Alleen in het weekend",
+            "Alleen in het weekend, overdag",
             "'s Ochtends van 8.00 tot 12.00 uur",
             "'s Avonds van 20.00 tot 23.00 uur",
-            "Van maandag tot en met vrijdag in de late middag"
+            "Op werkdagen in de late middag"
           ],
           "answer": 3,
           "explanation": "'Maandag tot en met vrijdag van 16.00 tot 19.00 uur.'",
@@ -319,10 +319,10 @@
           ],
           "prompt": "Wat moet u doen om mee te doen?",
           "options": [
-            "Zich aanmelden bij de balie",
-            "Betalen bij de ingang",
+            "Zich aanmelden bij de balie van de bibliotheek",
+            "Vooraf betalen bij de ingang van het café",
             "Niets, u hoeft zich niet aan te melden.",
-            "Een boek meenemen"
+            "Een eigen boek meenemen naar de les"
           ],
           "answer": 2,
           "explanation": "'U hoeft zich niet aan te melden.'",
@@ -336,9 +336,9 @@
           ],
           "prompt": "Wanneer is er geen taalcafé?",
           "options": [
-            "Op woensdag",
-            "In de ochtend",
-            "Als het regent",
+            "Elke eerste woensdag van de maand",
+            "Als er minder dan tien mensen zijn",
+            "Op feestdagen en in het weekend",
             "In de schoolvakanties"
           ],
           "answer": 3,
@@ -406,9 +406,9 @@
           "prompt": "Wat gebeurt er als niemand reageert?",
           "options": [
             "Olga brengt de fiets volgende maand naar de politie.",
-            "Olga houdt de fiets.",
-            "Olga verkoopt de fiets.",
-            "Olga zet de fiets weer bij de speeltuin."
+            "Olga houdt de fiets en geeft hem aan haar dochter.",
+            "Olga verkoopt de fiets en geeft het geld aan de buurt.",
+            "Olga zet de fiets weer bij de speeltuin neer."
           ],
           "answer": 0,
           "explanation": "'… breng ik hem volgende maand naar de politie.'",
@@ -510,9 +510,9 @@
           "prompt": "Wat is het probleem?",
           "options": [
             "De huur van maart is nog niet betaald.",
-            "De huur is te hoog.",
-            "De woning is kapot.",
-            "De huurder moet verhuizen."
+            "De huur van maart is te hoog geworden.",
+            "De woning van mevrouw Yilmaz is te klein.",
+            "Mevrouw Yilmaz moet de woning verlaten."
           ],
           "answer": 0,
           "explanation": "'Wij hebben uw huur van maart nog niet ontvangen.'",
@@ -526,10 +526,10 @@
           ],
           "prompt": "Wat gebeurt er als mevrouw Yilmaz binnen 7 dagen betaalt?",
           "options": [
-            "Zij krijgt een boete.",
+            "Zij krijgt een boete van de gemeente.",
             "Zij hoeft niets extra te betalen.",
-            "Zij moet verhuizen.",
-            "Zij krijgt korting."
+            "Zij moet de woning meteen verlaten.",
+            "Zij krijgt korting op de huur van april."
           ],
           "answer": 1,
           "explanation": "'Binnen 7 dagen? Dan hoeft u niets extra te betalen.'",
@@ -543,10 +543,10 @@
           ],
           "prompt": "Wat kan mevrouw Yilmaz doen bij geldproblemen?",
           "options": [
-            "De politie bellen",
-            "Een nieuwe woning zoeken",
+            "De politie bellen om hulp te vragen",
+            "Zelf een nieuwe woning gaan zoeken",
             "Contact opnemen met de woningcorporatie",
-            "Niets doen"
+            "Wachten en niets tegen de corporatie zeggen"
           ],
           "answer": 2,
           "explanation": "'Neem dan contact met ons op.'",
@@ -612,9 +612,9 @@
           ],
           "prompt": "Wat moet een kind bij elke les meenemen?",
           "options": [
-            "Een bril",
-            "Een kopie van het paspoort",
-            "Het aanmeldformulier",
+            "Een bril, een jas en een tas met boeken",
+            "Een kopie van het paspoort en een pas",
+            "Het aanmeldformulier en een bewijs van betaling",
             "Een handdoek, zwemkleding en een badmuts"
           ],
           "answer": 3,

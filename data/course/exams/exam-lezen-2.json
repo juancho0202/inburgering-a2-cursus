@@ -26,10 +26,10 @@
           ],
           "prompt": "Waar gaat de ouderavond over?",
           "options": [
-            "Over het schoolreisje",
+            "Over het schoolreisje en de kosten daarvan",
             "Over het schooladvies en wat kinderen gaan leren",
-            "Over de vakanties",
-            "Over de kosten van school"
+            "Over de vakanties en de vrije dagen op school",
+            "Over het huiswerk en de regels in de klas"
           ],
           "answer": 1,
           "explanation": "'… over het schooladvies en over wat uw kind dit jaar gaat leren.'",
@@ -164,9 +164,9 @@
           ],
           "prompt": "Wat zit er in de huur?",
           "options": [
-            "Alleen gas en water",
-            "Alleen de kamer",
-            "Een tuinhuis",
+            "Alleen gas en water, internet niet",
+            "Alleen de kamer, de rest betaalt u zelf",
+            "De kamer en het gebruik van een tuinhuis",
             "Gas, water, licht en internet"
           ],
           "answer": 3,
@@ -182,9 +182,9 @@
           "prompt": "Wat is niet toegestaan?",
           "options": [
             "Roken en huisdieren",
-            "Bezoek",
-            "Studeren",
-            "Muziek"
+            "Bezoek na tien uur 's avonds",
+            "Studeren en werken in de kamer",
+            "Muziek luisteren in de woonkamer"
           ],
           "answer": 0,
           "explanation": "'Roken en huisdieren zijn niet toegestaan.'",
@@ -336,9 +336,9 @@
           ],
           "prompt": "Wanneer rijdt de bus niet?",
           "options": [
-            "Op zaterdag",
-            "Op maandag",
-            "Elke ochtend",
+            "Op zaterdag en op zondag",
+            "Op maandag en op dinsdag",
+            "Elke ochtend voor negen uur",
             "Op zondag en op feestdagen"
           ],
           "answer": 3,
@@ -406,9 +406,9 @@
           "prompt": "Wanneer moet hij iets laten weten aan de gemeente?",
           "options": [
             "Als hij verhuist of een andere auto krijgt",
-            "Elke maand",
-            "Als hij op vakantie gaat",
-            "Nooit"
+            "Elke maand, ook als er niets verandert",
+            "Als hij op vakantie gaat in de zomer",
+            "Alleen als hij de vergunning kwijt is"
           ],
           "answer": 0,
           "explanation": "'Verhuist u? Of krijgt u een andere auto? Laat dit … weten.'",
@@ -440,9 +440,9 @@
           ],
           "prompt": "Wat leert u in de cursus?",
           "options": [
-            "Alleen tekstverwerking",
-            "Programmeren",
-            "Een nieuwe taal",
+            "Tekstverwerken, rekenen en programmeren",
+            "Een nieuwe taal leren met een app",
+            "Foto's maken en filmpjes bewerken",
             "E-mailen, zoeken op internet en inloggen met DigiD"
           ],
           "answer": 3,
@@ -526,10 +526,10 @@
           ],
           "prompt": "Wat gebeurt er met een abonnement?",
           "options": [
-            "Het stopt.",
+            "Het stopt en moet opnieuw worden gekocht.",
             "Het wordt automatisch twee weken verlengd.",
-            "Het wordt duurder.",
-            "Het moet opnieuw worden gekocht."
+            "Het wordt twee weken goedkoper.",
+            "Het blijft gewoon hetzelfde, zonder verlenging."
           ],
           "answer": 1,
           "explanation": "'… wordt uw abonnement automatisch twee weken verlengd.'",
@@ -595,10 +595,10 @@
           ],
           "prompt": "Wanneer komt de monteur?",
           "options": [
-            "Op maandag 11 november",
-            "Op dinsdag 12 november om 12.00 uur",
+            "Op maandag 11 november tussen 13.00 en 17.00 uur",
+            "Op dinsdag 12 november om 12.00 uur precies",
             "Op dinsdag 12 november tussen 13.00 en 17.00 uur",
-            "Op woensdag 13 november"
+            "Op woensdag 13 november tussen 8.00 en 12.00 uur"
           ],
           "answer": 2,
           "explanation": "'… dinsdag 12 november tussen 13.00 en 17.00 uur.'",
@@ -612,9 +612,9 @@
           ],
           "prompt": "Tot wanneer kunt u de afspraak gratis wijzigen?",
           "options": [
-            "Tot dinsdag 12 november",
-            "Tot vrijdag",
-            "Dat kan niet",
+            "Tot dinsdag 12 november om 13.00 uur",
+            "Tot vrijdag voor de afspraak, om 17.00 uur",
+            "Dat kan niet, de afspraak staat vast",
             "Tot maandag 11 november om 12.00 uur"
           ],
           "answer": 3,
