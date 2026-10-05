@@ -171,10 +171,10 @@
         "type": "mc",
         "prompt": "Wat gebeurde er in 1953 in Zeeland?",
         "options": [
-          "Een oorlog begon.",
-          "Er was een grote overstroming (watersnoodramp).",
-          "De euro kwam.",
-          "De koning werd gekroond."
+          "Er begon een oorlog in Europa.",
+          "Er was een grote overstroming.",
+          "Nederland kreeg de euro als geld.",
+          "De koning werd daar gekroond."
         ],
         "answer": 1
       }
@@ -194,7 +194,7 @@
           "Om schepen te bouwen",
           "Om toeristen te laten komen",
           "Om Zeeland te beschermen tegen het water",
-          "Om electriciteit te maken"
+          "Om elektriciteit te maken"
         ],
         "answer": 2
       }
@@ -346,10 +346,10 @@
         "type": "mc",
         "prompt": "Waardoor was Nederland rijk in de Gouden Eeuw?",
         "options": [
-          "Door olie",
+          "Door olie uit de Noordzee",
           "Door handel, bijvoorbeeld met de VOC",
-          "Door goud in de grond",
-          "Door toerisme"
+          "Door goud uit de grond",
+          "Door toeristen uit andere landen"
         ],
         "answer": 1
       }
@@ -507,10 +507,10 @@
         "type": "mc",
         "prompt": "Wie zijn gastarbeiders?",
         "options": [
-          "Mensen uit het buitenland die in Nederland kwamen werken",
-          "Mensen die op vakantie komen",
-          "Studenten uit Duitsland",
-          "Soldaten in de oorlog"
+          "Buitenlanders die in Nederland kwamen werken",
+          "Mensen die op vakantie in Nederland waren",
+          "Studenten uit Duitsland op een school",
+          "Soldaten die in de oorlog vochten"
         ],
         "answer": 0
       }

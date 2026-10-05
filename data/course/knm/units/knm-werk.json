@@ -88,10 +88,10 @@
         "type": "mc",
         "prompt": "Wat is een uitzendbureau?",
         "options": [
-          "Een kantoor van de gemeente.",
+          "Een kantoor van de gemeente voor werk.",
           "Een bedrijf dat tijdelijk werk voor mensen zoekt.",
-          "Een school voor volwassenen.",
-          "Een bank."
+          "Een school waar volwassenen leren.",
+          "Een bank die geld uitleent voor werk."
         ],
         "answer": 1
       }
@@ -363,10 +363,10 @@
         "type": "mc",
         "prompt": "Een vrouw krijgt minder loon dan een man voor hetzelfde werk, alleen omdat ze een vrouw is. Mag dat?",
         "options": [
-          "Ja, een man verdient meer.",
+          "Ja, een man verdient meestal meer.",
           "Nee, mannen en vrouwen hebben gelijke rechten.",
-          "Ja, als de baas het zegt.",
-          "Alleen in kleine bedrijven."
+          "Ja, als de baas dat zo bepaalt.",
+          "Alleen in heel kleine bedrijven."
         ],
         "answer": 1
       }
@@ -424,9 +424,9 @@
         "prompt": "Jan wil een eigen bedrijf beginnen. Waar schrijft hij zich in?",
         "options": [
           "Bij de Kamer van Koophandel (KVK)",
-          "Bij de huisarts",
-          "Bij DUO",
-          "Bij de bibliotheek"
+          "Bij de huisarts in de buurt",
+          "Bij DUO voor een bedrijf",
+          "Bij de bibliotheek van de stad"
         ],
         "answer": 0
       }

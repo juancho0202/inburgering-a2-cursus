@@ -537,10 +537,10 @@
         "type": "mc",
         "prompt": "Wat is de fout in: \"Denk ik dat we zullen een samenvatting doen\"?",
         "options": [
-          "Er staat geen punt.",
-          "Er staat geen onderwerp.",
-          "De zin begint verkeerd en de werkwoorden staan niet aan het eind.",
-          "Er is geen fout."
+          "Er staat geen punt achter de zin.",
+          "Er staat geen onderwerp in de zin.",
+          "Het werkwoord staat op de verkeerde plek.",
+          "Er is geen fout in deze zin."
         ],
         "answer": 2
       }

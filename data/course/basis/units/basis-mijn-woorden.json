@@ -232,10 +232,10 @@
         "type": "mc",
         "prompt": "\"U moet uw legitimatiebewijs meenemen.\" Wat moet u meenemen?",
         "options": [
-          "Een brief",
+          "Een brief van de gemeente",
           "Een paspoort of ID-kaart",
-          "Een pinpas",
-          "Een diploma"
+          "Een pinpas van de bank",
+          "Een diploma van school"
         ],
         "answer": 1
       }
@@ -295,10 +295,10 @@
         "type": "mc",
         "prompt": "\"Hij belt zijn leidinggevende.\" Wie belt hij?",
         "options": [
-          "De persoon die hem aanstuurt op het werk",
-          "Zijn buurman",
-          "Zijn dokter",
-          "Een klant"
+          "Zijn baas of teamleider op het werk",
+          "Zijn buurman in de straat",
+          "Zijn dokter in het ziekenhuis",
+          "Een klant van het bedrijf"
         ],
         "answer": 0
       }

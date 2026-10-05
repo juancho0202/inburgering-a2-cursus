@@ -62,10 +62,10 @@
         "type": "mc",
         "prompt": "Wat zegt een Nederlander op 4 mei om 20.00 uur?",
         "options": [
-          "Gefeliciteerd!",
-          "Veel plezier!",
+          "Gefeliciteerd met de feestdag!",
+          "Veel plezier met het vuurwerk!",
           "Niets: er zijn twee minuten stilte.",
-          "Goed nieuwjaar!"
+          "Een gelukkig nieuwjaar allemaal!"
         ],
         "answer": 2
       }
@@ -97,15 +97,15 @@
         "tags": [
           "knm:geschiedenis"
         ],
-        "explanation": "Nederland heeft 12 provincies.",
+        "explanation": "Een gemaal pompt water weg, zodat het land droog blijft. Een dijk houdt het water tegen.",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "Hoeveel provincies heeft Nederland?",
+        "prompt": "Wat doet een gemaal in Nederland?",
         "options": [
-          "12",
-          "8",
-          "10",
-          "15"
+          "Het pompt water weg",
+          "Het houdt de zee tegen met zand",
+          "Het verwarmt de huizen in de polder",
+          "Het meet hoe warm het weer is"
         ],
         "answer": 0
       }
@@ -157,15 +157,15 @@
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "De leerplicht begint op 5 jaar.",
+        "explanation": "Kinderen van 4 tot 12 jaar gaan naar de basisschool (groep 1 tot en met 8).",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "Vanaf welke leeftijd is een kind leerplichtig?",
+        "prompt": "Hoe heet de school voor kinderen van 4 tot 12 jaar?",
         "options": [
-          "2 jaar",
-          "4 jaar",
-          "7 jaar",
-          "5 jaar"
+          "Het voortgezet onderwijs",
+          "De peuterspeelzaal",
+          "Het mbo",
+          "De basisschool"
         ],
         "answer": 3
       }
@@ -457,15 +457,15 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "Een vakbond helpt werknemers.",
+        "explanation": "Bij solliciteren stuur je een brief of e-mail met je cv naar het bedrijf.",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "Wat doet een vakbond?",
+        "prompt": "Wat is een sollicitatiebrief?",
         "options": [
-          "Belasting innen",
-          "Banen uitdelen",
-          "Opkomen voor werknemers",
-          "Uitkeringen betalen"
+          "Een brief van je baas over je loon",
+          "Een brief van de gemeente over werk",
+          "Een brief om te vragen naar een baan",
+          "Een brief van het UWV over een uitkering"
         ],
         "answer": 2
       }

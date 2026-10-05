@@ -62,10 +62,10 @@
             ],
             "prompt": "Wat moet u meenemen?",
             "options": [
-              "Alleen uw paspoort",
-              "Geld",
-              "Uw legitimatiebewijs, zorgverzekeringspas en BSN",
-              "Een brief van uw baas"
+              "Alleen uw paspoort en uw pinpas",
+              "Uw diploma en een brief van uw baas",
+              "Uw ID, zorgverzekeringspas en BSN",
+              "Geld om de inschrijving te betalen"
             ],
             "answer": 2,
             "explanation": "De lijst onder 'Wat neemt u mee?'.",
@@ -223,9 +223,9 @@
             ],
             "prompt": "Voor wie is de club?",
             "options": [
-              "Alleen voor kinderen",
-              "Alleen voor mannen",
-              "Alleen voor volwassenen",
+              "Alleen voor kinderen onder de twaalf",
+              "Alleen voor mannen van boven de 18",
+              "Alleen voor volwassenen die al voetballen",
               "Voor kinderen vanaf 5 jaar en volwassenen"
             ],
             "answer": 3,
@@ -241,9 +241,9 @@
             "prompt": "Wanneer trainen volwassenen?",
             "options": [
               "Op dinsdag en donderdag",
-              "Op woensdag",
-              "Op zaterdag",
-              "Elke dag"
+              "Op woensdag van vier tot vijf uur",
+              "Op zaterdag in de ochtend",
+              "Elke dag van de week, 's avonds"
             ],
             "answer": 0,
             "explanation": "'Volwassenen: dinsdag en donderdag.'",
@@ -274,10 +274,10 @@
             ],
             "prompt": "Wat moet u zelf meenemen?",
             "options": [
-              "Een bal",
-              "Een shirt",
+              "Een bal en een clubshirt van de vereniging",
+              "Een handdoek en een flesje water",
               "Voetbalschoenen en een scheenbeschermer",
-              "Een handdoek"
+              "Een eigen shirt en een korte broek"
             ],
             "answer": 2,
             "explanation": "'Voetbalschoenen en een scheenbeschermer neemt u zelf mee.'",

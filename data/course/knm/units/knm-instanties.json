@@ -109,10 +109,10 @@
         "type": "mc",
         "prompt": "Wat is een BSN?",
         "options": [
-          "Een soort belasting",
-          "Een telefoonnummer",
+          "Een soort belasting voor werkenden",
+          "Het telefoonnummer van de gemeente",
           "Een persoonlijk nummer bij de overheid",
-          "Een rijbewijs"
+          "Een nummer op je rijbewijs"
         ],
         "answer": 2
       }
@@ -129,9 +129,9 @@
         "type": "mc",
         "prompt": "Waarvoor gebruik je DigiD?",
         "options": [
-          "Om geld te lenen",
-          "Om te reizen",
-          "Om te telefoneren",
+          "Om geld te lenen bij de bank",
+          "Om met de trein te reizen",
+          "Om gratis te kunnen bellen",
           "Om in te loggen bij de overheid"
         ],
         "answer": 3
@@ -445,10 +445,10 @@
         "type": "mc",
         "prompt": "Bij welke instantie ga je voor hulp met een jong kind (opvoeden, vragen)?",
         "options": [
-          "Het consultatiebureau / Centrum voor Jeugd en Gezin",
-          "De KVK",
-          "De IND",
-          "Het UWV"
+          "Het consultatiebureau of het CJG",
+          "De Kamer van Koophandel (KVK)",
+          "De Immigratie- en Naturalisatiedienst",
+          "Het UWV in je regio"
         ],
         "answer": 0
       }
@@ -465,10 +465,10 @@
         "type": "mc",
         "prompt": "Welke instantie helpt nieuwkomers met begeleiding en hulp?",
         "options": [
-          "De Belastingdienst",
+          "De Belastingdienst in je regio",
           "Vluchtelingenwerk of maatschappelijk werk",
-          "De KVK",
-          "De SVB"
+          "De Kamer van Koophandel (KVK)",
+          "De Sociale Verzekeringsbank (SVB)"
         ],
         "answer": 1
       }

@@ -121,7 +121,7 @@
         "options": [
           [
             "Kunt",
-            "Kan u",
+            "Kun",
             "Kunnen"
           ]
         ],
@@ -323,10 +323,10 @@
         "type": "mc",
         "prompt": "Wat betekent: \"Je hoeft niets te doen\"?",
         "options": [
-          "Je moet alles doen.",
-          "Je mag niets doen.",
+          "Je moet nu alles meteen doen.",
+          "Je mag helemaal niets doen.",
           "Het is niet nodig om iets te doen.",
-          "Je kunt niets doen."
+          "Je kunt het niet doen."
         ],
         "answer": 2
       }

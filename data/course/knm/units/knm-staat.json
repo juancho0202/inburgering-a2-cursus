@@ -114,10 +114,10 @@
         "type": "mc",
         "prompt": "Wanneer is Prinsjesdag?",
         "options": [
-          "Op 27 april",
-          "Op 5 december",
+          "Op 27 april, de verjaardag van de koning",
+          "Op 5 december, met Sinterklaas",
           "De derde dinsdag van september",
-          "Op 1 mei"
+          "Op 1 mei, de dag van de arbeid"
         ],
         "answer": 2
       }
@@ -134,9 +134,9 @@
         "type": "mc",
         "prompt": "Wat is de troonrede?",
         "options": [
-          "Een verkiezing",
-          "Een wet over huur",
-          "Een herdenking",
+          "Een verkiezing van de nieuwe koning",
+          "Een nieuwe wet over de huur van woningen",
+          "Een herdenking van de oorlogsdoden",
           "De plannen van de regering voor het komende jaar"
         ],
         "answer": 3
@@ -194,10 +194,10 @@
         "type": "mc",
         "prompt": "Wat is een coalitie?",
         "options": [
-          "Een groep rechters",
-          "Een gemeenteraad",
+          "Een groep rechters die samen oordeelt",
+          "Een raad van de gemeente met inwoners",
           "Meerdere partijen die samen de regering vormen",
-          "Een soort verkiezing"
+          "Een soort verkiezing voor de Eerste Kamer"
         ],
         "answer": 2
       }
@@ -356,10 +356,10 @@
         "type": "mc",
         "prompt": "Welke instantie bestuurt een provincie?",
         "options": [
-          "De Tweede Kamer",
+          "De Tweede Kamer in Den Haag",
           "Provinciale Staten (met Gedeputeerde Staten)",
-          "Het UWV",
-          "De gemeenteraad"
+          "Het UWV in de provincie",
+          "De gemeenteraad van de hoofdstad"
         ],
         "answer": 1
       }
@@ -396,10 +396,10 @@
         "type": "mc",
         "prompt": "Voor welke organisatie stem je ook, die zorgt voor dijken en water?",
         "options": [
-          "De NAVO",
-          "De IND",
-          "DUO",
-          "Het waterschap"
+          "De NAVO, een groep landen",
+          "De IND, voor vergunningen",
+          "DUO, voor onderwijs",
+          "Het waterschap in je regio"
         ],
         "answer": 3
       }
@@ -442,10 +442,10 @@
         "type": "mc",
         "prompt": "Wat staat in artikel 1 van de Grondwet?",
         "options": [
-          "Iedereen is gelijk en discriminatie is verboden.",
-          "Je moet stemmen.",
-          "De koning beslist.",
-          "Iedereen moet werken."
+          "Iedereen is gelijk. Discriminatie mag niet.",
+          "Iedereen moet verplicht gaan stemmen.",
+          "De koning beslist over alle wetten.",
+          "Iedereen moet een baan hebben."
         ],
         "answer": 0
       }
@@ -562,10 +562,10 @@
         "type": "mc",
         "prompt": "Wat is de wetgevende macht?",
         "options": [
-          "De rechters",
-          "De politie",
+          "De rechters spreken recht in zaken.",
+          "De politie zorgt voor de veiligheid.",
           "Regering en parlement maken de wetten.",
-          "De koning alleen"
+          "De koning beslist alleen over wetten."
         ],
         "answer": 2
       }
@@ -622,10 +622,10 @@
         "type": "mc",
         "prompt": "Wat is een grondrecht?",
         "options": [
-          "Een boete",
-          "Een recht in de Grondwet, zoals vrijheid van meningsuiting",
-          "Een soort belasting",
-          "Een recept"
+          "Een boete van de gemeente voor lawaai",
+          "Een recht uit de Grondwet, zoals vrijheid",
+          "Een soort belasting op je inkomen",
+          "Een recept van de huisarts"
         ],
         "answer": 1
       }

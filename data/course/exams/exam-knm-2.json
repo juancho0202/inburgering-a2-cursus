@@ -15,9 +15,9 @@
       "prompt": "Wat is het mbo?",
       "options": [
         "Een beroepsopleiding na het vmbo",
-        "Een basisschool",
-        "Een universiteit",
-        "Een peuterspeelzaal"
+        "Een basisschool voor kinderen van 4 jaar",
+        "Een universiteit voor wetenschappelijk onderzoek",
+        "Een peuterspeelzaal voor kleine kinderen"
       ],
       "answer": 0
     },
@@ -48,10 +48,10 @@
       "type": "mc",
       "prompt": "Wat is de Grondwet?",
       "options": [
-        "Een lijst met straffen",
-        "Een wet voor gemeenten",
+        "Een lijst met straffen voor de rechter",
+        "Een wet die alleen voor gemeenten geldt",
         "De belangrijkste wet van het land",
-        "Een boek over de koning"
+        "Een boek over de geschiedenis van de koning"
       ],
       "answer": 2
     },
@@ -82,10 +82,10 @@
       "type": "mc",
       "prompt": "Wat betekent rechtsstaat?",
       "options": [
-        "Iedereen moet zich aan de wet houden, ook de overheid.",
-        "Alleen burgers houden zich aan de wet.",
-        "De koning bepaalt de wet.",
-        "De politie mag alles."
+        "Iedereen houdt zich aan de wet, ook de overheid.",
+        "Alleen gewone burgers houden zich aan de wet.",
+        "De koning bepaalt wat de wet is.",
+        "De politie mag zelf de regels veranderen."
       ],
       "answer": 0
     },
@@ -99,10 +99,10 @@
       "type": "mc",
       "prompt": "Wat gebeurt er na groep 8?",
       "options": [
-        "Meteen de universiteit",
-        "Schooladvies en doorstroomtoets, daarna voortgezet onderwijs",
-        "Een inburgeringsexamen",
-        "Leerplicht stopt voor altijd"
+        "Kinderen gaan meteen naar de universiteit",
+        "Schooladvies en toets, dan voortgezet onderwijs",
+        "Kinderen doen eerst een inburgeringsexamen",
+        "De leerplicht stopt voor alle kinderen"
       ],
       "answer": 1
     },
@@ -116,10 +116,10 @@
       "type": "mc",
       "prompt": "Wat is het wettelijk minimumloon?",
       "options": [
-        "Het hoogste loon van een bedrijf",
-        "Het loon van een uitzendbureau",
+        "Het hoogste loon dat een bedrijf mag betalen",
+        "Het loon dat een uitzendbureau betaalt",
         "Het laagste loon dat je volgens de wet mag krijgen",
-        "Een toeslag van de overheid"
+        "Een toeslag van de overheid voor lage lonen"
       ],
       "answer": 2
     },
@@ -133,10 +133,10 @@
       "type": "mc",
       "prompt": "Wat doet het UWV naast een WW-uitkering?",
       "options": [
-        "Het geeft paspoorten.",
-        "Het verhuurt woningen.",
-        "Het regelt vaccinaties.",
-        "Het helpt bij werk zoeken en regelt uitkeringen bij langdurige ziekte."
+        "Het geeft paspoorten en rijbewijzen uit.",
+        "Het verhuurt woningen aan mensen met weinig geld.",
+        "Het regelt vaccinaties voor kinderen.",
+        "Het helpt bij werk en bij arbeidsongeschiktheid."
       ],
       "answer": 3
     },
@@ -151,9 +151,9 @@
       "prompt": "Wat is Vluchtelingenwerk?",
       "options": [
         "Een organisatie die begeleiding en hulp geeft",
-        "Een bank voor vluchtelingen",
-        "Een deel van de politie",
-        "Een inburgeringsexamen"
+        "Een bank voor mensen die gevlucht zijn",
+        "Een onderdeel van de politie in de stad",
+        "Een inburgeringsexamen voor vluchtelingen"
       ],
       "answer": 0
     },
@@ -184,10 +184,10 @@
       "type": "mc",
       "prompt": "Welke instantie betaalt toeslagen, zoals zorgtoeslag en huurtoeslag?",
       "options": [
-        "De SVB",
-        "DUO",
+        "De Sociale Verzekeringsbank (SVB)",
+        "Dienst Uitvoering Onderwijs (DUO)",
         "De Belastingdienst",
-        "De gemeente"
+        "De gemeente waar je woont"
       ],
       "answer": 2
     },
@@ -235,10 +235,10 @@
       "type": "mc",
       "prompt": "Wat is bijstand?",
       "options": [
-        "Geld van de SVB voor ouderen",
-        "Geld van de gemeente voor mensen zonder ander inkomen",
-        "Geld voor je zorgverzekering",
-        "Extra loon van je werkgever"
+        "Geld van de SVB voor mensen boven de 67",
+        "Geld van de gemeente als je geen inkomen hebt",
+        "Geld van de zorgverzekeraar voor medicijnen",
+        "Extra loon dat je werkgever betaalt"
       ],
       "answer": 1
     },
@@ -252,10 +252,10 @@
       "type": "mc",
       "prompt": "Mag je werken zonder belasting te betalen?",
       "options": [
-        "Ja, als je baas het goed vindt.",
-        "Ja, in de eerste maand.",
+        "Ja, als je baas dat goedvindt.",
+        "Ja, in de eerste maand van een baan.",
         "Nee, dat heet zwartwerken en is verboden.",
-        "Ja, als je weinig verdient."
+        "Ja, als je maar heel weinig verdient."
       ],
       "answer": 2
     },
@@ -269,10 +269,10 @@
       "type": "mc",
       "prompt": "Wat betekent discriminatie?",
       "options": [
-        "Mensen helpen",
-        "Mensen een baan geven",
-        "Mensen uitnodigen",
-        "Mensen slechter behandelen vanwege bijvoorbeeld afkomst of geloof"
+        "Mensen die in nood zijn gratis helpen",
+        "Mensen een baan geven die lang werkloos zijn",
+        "Mensen uitnodigen voor een feest in de buurt",
+        "Iemand slechter behandelen om zijn afkomst of geloof"
       ],
       "answer": 3
     },
@@ -286,10 +286,10 @@
       "type": "mc",
       "prompt": "Wat is Oud en Nieuw?",
       "options": [
-        "De laatste avond van het jaar en het begin van het nieuwe jaar",
-        "De verjaardag van de koning",
-        "Een herdenking van de oorlog",
-        "Het feest van Sinterklaas"
+        "De overgang naar het nieuwe jaar",
+        "De verjaardag van de koning in april",
+        "Een herdenking van de Tweede Wereldoorlog",
+        "Het feest van Sinterklaas in december"
       ],
       "answer": 0
     },
@@ -354,10 +354,10 @@
       "type": "mc",
       "prompt": "Wat doet een specialist?",
       "options": [
-        "Een specialist is dokter voor één ziekte of lichaamsdeel.",
-        "Een specialist verkoopt medicijnen.",
-        "Een specialist helpt bij zwangerschap.",
-        "Een specialist controleert baby's."
+        "Een dokter voor één ziekte of lichaamsdeel.",
+        "Een specialist verkoopt medicijnen aan klanten.",
+        "Een specialist begeleidt een zwangerschap.",
+        "Een specialist controleert baby's op groei."
       ],
       "answer": 0
     },
@@ -388,10 +388,10 @@
       "type": "mc",
       "prompt": "Wat doet de Huurcommissie?",
       "options": [
-        "Ze verhuurt woningen.",
-        "Ze geeft hypotheken.",
+        "Ze verhuurt sociale woningen aan mensen.",
+        "Ze geeft hypotheken aan mensen met een huis.",
         "Ze helpt bij problemen over huurprijs of onderhoud.",
-        "Ze haalt afval op."
+        "Ze haalt het afval op in de wijk."
       ],
       "answer": 2
     },
@@ -439,10 +439,10 @@
       "type": "mc",
       "prompt": "Wat is een aanvullende verzekering?",
       "options": [
-        "De verplichte basisverzekering",
+        "De verplichte basisverzekering van iedereen",
         "Een extra verzekering, bijvoorbeeld voor de tandarts",
-        "Een toeslag van de overheid",
-        "Een verwijzing"
+        "Een toeslag van de overheid voor de zorg",
+        "Een verwijzing van de huisarts naar het ziekenhuis"
       ],
       "answer": 1
     },
@@ -456,10 +456,10 @@
       "type": "mc",
       "prompt": "Wat is de trias politica?",
       "options": [
-        "De drie politieke partijen",
-        "De drie koningen",
-        "De verdeling van de macht in wetgevende, uitvoerende en rechterlijke macht",
-        "De drie provincies"
+        "De drie grootste politieke partijen",
+        "De drie koningen van het koningshuis",
+        "De verdeling van de macht in drie delen",
+        "De drie provincies in het noorden"
       ],
       "answer": 2
     },
@@ -473,10 +473,10 @@
       "type": "mc",
       "prompt": "Wat gebeurt er op het consultatiebureau?",
       "options": [
-        "Volwassenen krijgen een operatie.",
-        "Er worden medicijnen verkocht.",
-        "Er worden verzekeringen afgesloten.",
-        "De groei en vaccinaties van baby's worden gecontroleerd."
+        "Volwassenen krijgen daar een operatie.",
+        "Daar worden medicijnen en pillen verkocht.",
+        "Daar worden zorgverzekeringen afgesloten.",
+        "Baby's krijgen controle op groei en vaccinaties."
       ],
       "answer": 3
     },
@@ -507,10 +507,10 @@
       "type": "mc",
       "prompt": "Wat is een startkwalificatie?",
       "options": [
-        "Een basisschooldiploma",
+        "Een diploma van de basisschool",
         "Een havo-, vwo- of mbo-2-diploma",
-        "Een cursus Nederlands",
-        "Een schooladvies"
+        "Een certificaat van een taalcursus",
+        "Een schooladvies voor de middelbare school"
       ],
       "answer": 1
     },
@@ -541,9 +541,9 @@
       "type": "mc",
       "prompt": "Wat betaal je aan het waterschap?",
       "options": [
-        "Huurtoeslag",
-        "Zorgtoeslag",
-        "Eigen risico",
+        "De huurtoeslag voor je woning",
+        "De zorgtoeslag voor je verzekering",
+        "Het eigen risico voor de zorg",
         "Waterschapsbelasting"
       ],
       "answer": 3
@@ -559,9 +559,9 @@
       "prompt": "De buurvrouw van Ahmed heeft een baby gekregen. Wat zegt hij?",
       "options": [
         "Gefeliciteerd met je baby!",
-        "Sterkte!",
-        "Goede reis!",
-        "Succes met je baan!"
+        "Sterkte met alles wat er gebeurt!",
+        "Goede reis en tot snel!",
+        "Succes met je nieuwe baan!"
       ],
       "answer": 0
     },
@@ -592,10 +592,10 @@
       "type": "mc",
       "prompt": "Met wie gebruik je meestal \"u\"?",
       "options": [
-        "Met vrienden",
-        "Met kinderen",
+        "Met vrienden en met familie",
+        "Met kinderen en met jongeren",
         "Met onbekenden, oudere mensen en instanties",
-        "Met je collega's altijd"
+        "Met al je collega's op het werk"
       ],
       "answer": 2
     },
@@ -627,9 +627,9 @@
       "prompt": "Wat doet de Belastingdienst?",
       "options": [
         "Belasting innen en toeslagen regelen",
-        "Paspoorten uitgeven",
-        "Verblijfsvergunningen geven",
-        "Inburgeringsexamens afnemen"
+        "Paspoorten en ID-kaarten uitgeven",
+        "Verblijfsvergunningen aan mensen geven",
+        "Inburgeringsexamens afnemen en nakijken"
       ],
       "answer": 0
     },
@@ -643,10 +643,10 @@
       "type": "mc",
       "prompt": "Wat is het verschil tussen een tijdelijk en een vast contract?",
       "options": [
-        "Een vast contract eindigt na een jaar.",
+        "Een vast contract eindigt altijd na een jaar.",
         "Een tijdelijk contract eindigt na een bepaalde tijd.",
-        "Een tijdelijk contract is voor altijd.",
-        "Er is geen verschil."
+        "Een tijdelijk contract blijft voor altijd gelden.",
+        "Er is geen verschil tussen deze contracten."
       ],
       "answer": 1
     },
@@ -660,10 +660,10 @@
       "type": "mc",
       "prompt": "Waar schrijf je je in als je een huisarts zoekt?",
       "options": [
-        "Bij de gemeente",
-        "Bij de SVB",
+        "Bij de gemeente waar je woont",
+        "Bij de SVB in je regio",
         "Bij een huisarts in de buurt",
-        "Bij een drogist"
+        "Bij een drogist in de stad"
       ],
       "answer": 2
     },

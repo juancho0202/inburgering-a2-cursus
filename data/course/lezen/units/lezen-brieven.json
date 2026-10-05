@@ -49,10 +49,10 @@
             ],
             "prompt": "Wat is het doel van deze brief?",
             "options": [
-              "Een afspraak afzeggen.",
-              "De heer Yilmaz laten weten dat zijn paspoort klaar is.",
-              "Een boete sturen.",
-              "Een nieuwe aanvraag vragen."
+              "Een afspraak voor volgende week afzeggen.",
+              "Laten weten dat het paspoort klaar is.",
+              "Een boete sturen voor een te late aanvraag.",
+              "Vragen om een nieuwe aanvraag in te dienen."
             ],
             "answer": 1,
             "explanation": "In de eerste zin: 'Uw nieuwe paspoort is klaar.'",
@@ -83,9 +83,9 @@
             ],
             "prompt": "Wat moet hij meenemen?",
             "options": [
-              "Alleen de brief",
-              "Zijn rijbewijs",
-              "Geld",
+              "Alleen de brief van de gemeente",
+              "Zijn rijbewijs en zijn pinpas",
+              "Geld voor het nieuwe paspoort",
               "Zijn oude paspoort en de brief"
             ],
             "answer": 3,
@@ -189,10 +189,10 @@
             ],
             "prompt": "Wat doet u als u niet thuis kunt zijn?",
             "options": [
-              "U belt de monteur.",
-              "U geeft uiterlijk 12 november uw sleutel af bij het kantoor.",
-              "U verhuist.",
-              "U stuurt een brief."
+              "De monteur zelf bellen en iets afspreken",
+              "De sleutel afgeven, uiterlijk 12 november",
+              "Naar een andere woning verhuizen",
+              "Een brief naar de woningcorporatie sturen"
             ],
             "answer": 1,
             "explanation": "'Dan kunt u uw sleutel afgeven … uiterlijk 12 november.'",
@@ -456,9 +456,9 @@
             ],
             "prompt": "Hoe laat moet de bak aan de straat staan?",
             "options": [
-              "Na 7.30 uur",
-              "'s Avonds",
-              "Om 12.00 uur",
+              "Na 7.30 uur 's ochtends",
+              "Aan het eind van de dag, 's avonds",
+              "Om 12.00 uur, tussen de middag",
               "Vóór 7.30 uur 's ochtends"
             ],
             "answer": 3,

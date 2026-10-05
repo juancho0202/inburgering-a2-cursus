@@ -192,10 +192,10 @@
         "type": "mc",
         "prompt": "Wat doe je aan het eind van de tijd?",
         "options": [
-          "Je schrijft een nieuwe tekst.",
-          "Je stopt meteen.",
+          "Je schrijft een hele nieuwe tekst.",
+          "Je stopt meteen en levert in.",
           "Je maakt je tekst veel langer.",
-          "Je controleert werkwoorden, hoofdletters en punten."
+          "Je controleert werkwoorden en hoofdletters."
         ],
         "answer": 3
       }

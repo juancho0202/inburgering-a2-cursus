@@ -446,7 +446,7 @@
         "difficulty": 1,
         "type": "gap-choice",
         "prompt": "Kies de goede vorm.",
-        "text": "Zij ___ twee kinderen en ze ___ getrouwd.",
+        "text": "Mijn zus ___ twee kinderen en ze ___ getrouwd.",
         "options": [
           [
             "heeft",

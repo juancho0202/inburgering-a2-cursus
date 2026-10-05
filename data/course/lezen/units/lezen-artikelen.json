@@ -169,9 +169,9 @@
             "prompt": "Waar kunt u uw fiets zetten in augustus?",
             "options": [
               "Bij de tijdelijke stalling aan de Stationsweg",
-              "Bij het station",
-              "Op straat",
-              "Bij de gemeente"
+              "Bij het station, op de oude plek",
+              "Op straat, voor de ingang van het station",
+              "Bij het gemeentehuis in het centrum"
             ],
             "answer": 0,
             "explanation": "'Bij de tijdelijke stalling aan de Stationsweg.'",
@@ -346,10 +346,10 @@
             ],
             "prompt": "Wat kunnen reizigers aanvragen?",
             "options": [
-              "Geld terug voor de reis",
-              "Een gratis abonnement",
+              "Hun geld terug voor de reis",
+              "Een gratis abonnement voor een maand",
               "Een bewijs dat zij te laat waren door de storing",
-              "Een nieuwe bus"
+              "Een nieuwe bus voor hun wijk"
             ],
             "answer": 2,
             "explanation": "'Een bewijs aanvragen via de website.'",
@@ -363,9 +363,9 @@
             ],
             "prompt": "Wat is de oorzaak van de storing?",
             "options": [
-              "Het weer",
-              "Een ongeluk",
-              "Een staking",
+              "Het slechte weer van vanochtend",
+              "Een ongeluk met een bus",
+              "Een staking van de chauffeurs",
               "Dat is nog niet bekend."
             ],
             "answer": 3,

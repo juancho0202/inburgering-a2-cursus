@@ -68,9 +68,9 @@
         "prompt": "Fatima zoekt een goedkope huurwoning. Waar kan ze zich inschrijven?",
         "options": [
           "Bij een woningcorporatie",
-          "Bij de KVK",
-          "Bij het UWV",
-          "Bij de politie"
+          "Bij de Kamer van Koophandel",
+          "Bij het UWV in je regio",
+          "Bij de politie in de buurt"
         ],
         "answer": 0
       }
@@ -87,10 +87,10 @@
         "type": "mc",
         "prompt": "Wat is een borg?",
         "options": [
-          "De maandelijkse huur.",
+          "De huur die je elke maand betaalt.",
           "Geld dat je vooraf betaalt en later terugkrijgt.",
-          "Een soort belasting.",
-          "Een toeslag van de overheid."
+          "Een soort belasting voor huurders.",
+          "Een toeslag van de overheid voor huur."
         ],
         "answer": 1
       }
@@ -107,10 +107,10 @@
         "type": "mc",
         "prompt": "Ahmed heeft weinig inkomen en betaalt huur. Waar vraagt hij hulp bij de huur aan?",
         "options": [
-          "Bij het UWV",
-          "Bij de SVB",
+          "Bij het UWV in je regio",
+          "Bij de SVB voor je pensioen",
           "Bij de Belastingdienst (huurtoeslag)",
-          "Bij de bibliotheek"
+          "Bij de bibliotheek in de wijk"
         ],
         "answer": 2
       }
@@ -147,10 +147,10 @@
         "type": "mc",
         "prompt": "Wat is een sociale huurwoning?",
         "options": [
-          "Een goedkopere huurwoning, vaak via een woningcorporatie",
-          "Een koopwoning",
-          "Een hotelkamer",
-          "Een tijdelijke tent"
+          "Een goedkope huurwoning via een corporatie",
+          "Een koopwoning met een hypotheek",
+          "Een hotelkamer voor korte tijd",
+          "Een tijdelijke tent op een veld"
         ],
         "answer": 0
       }
@@ -263,10 +263,10 @@
         "type": "mc",
         "prompt": "Wat is de taak van de huurder?",
         "options": [
-          "Het dak repareren",
-          "De huur op tijd betalen en netjes met het huis omgaan",
-          "Een nieuw huis bouwen",
-          "Belasting innen"
+          "Het dak laten maken door de buren",
+          "De huur betalen en netjes wonen",
+          "Een nieuw huis bouwen voor de wijk",
+          "Belasting innen voor de gemeente"
         ],
         "answer": 1
       }
@@ -322,9 +322,9 @@
         "type": "mc",
         "prompt": "Ahmed is verhuisd. Wat moet hij binnen 5 dagen doen?",
         "options": [
-          "Zijn baas bellen",
-          "Zijn huisbaas betalen",
-          "Zijn verzekering opzeggen",
+          "Zijn baas bellen over de verhuizing",
+          "Zijn huisbaas de borg betalen",
+          "Zijn zorgverzekering opzeggen",
           "Zijn nieuwe adres doorgeven aan de gemeente"
         ],
         "answer": 3
@@ -343,9 +343,9 @@
         "prompt": "Wat is de BRP?",
         "options": [
           "Het register van de gemeente met alle inwoners",
-          "Een soort belasting",
-          "Een uitkering",
-          "Een verzekering"
+          "Een soort belasting voor de gemeente",
+          "Een uitkering voor mensen zonder werk",
+          "Een verzekering voor je huis"
         ],
         "answer": 0
       }
@@ -382,10 +382,10 @@
         "type": "mc",
         "prompt": "Wat betaal je aan de gemeente voor afval en riool?",
         "options": [
-          "Vakantiegeld",
-          "Toeslag",
+          "Het vakantiegeld van je werk",
+          "Een toeslag van de overheid",
           "Gemeentelijke belastingen",
-          "Borg"
+          "De borg voor je huurhuis"
         ],
         "answer": 2
       }
@@ -443,9 +443,9 @@
         "prompt": "Waar gooi je een oude kapotte bank weg?",
         "options": [
           "Als grofvuil via de gemeente",
-          "In het gft-afval",
-          "In de glasbak",
-          "Op straat"
+          "In het gft-afval met groente",
+          "In de glasbak bij de winkel",
+          "Op straat bij de buren"
         ],
         "answer": 0
       }
@@ -597,10 +597,10 @@
         "type": "mc",
         "prompt": "Priya wil papier en glas apart weggooien. Wat doet ze?",
         "options": [
-          "Ze scheidt het afval en gooit het in aparte bakken.",
-          "Ze gooit alles in één zak.",
-          "Ze gooit het op straat.",
-          "Ze verbrandt het."
+          "Ze gooit papier en glas in aparte bakken.",
+          "Ze gooit alles samen in één zak.",
+          "Ze legt het buiten op straat.",
+          "Ze verbrandt het afval in de tuin."
         ],
         "answer": 0
       }

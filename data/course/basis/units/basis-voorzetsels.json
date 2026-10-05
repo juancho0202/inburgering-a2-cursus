@@ -133,9 +133,9 @@
         "type": "mc",
         "prompt": "De bank is tegenover het station. Waar staat de bank?",
         "options": [
-          "Naast het station.",
-          "In het station.",
-          "Achter het station.",
+          "Aan de zijkant van het station.",
+          "Binnen in het station zelf.",
+          "Achter het station, bij de fietsen.",
           "Aan de andere kant van de straat."
         ],
         "answer": 3
@@ -173,7 +173,7 @@
         "explanation": "Op de hoek = waar twee straten bij elkaar komen.",
         "difficulty": 2,
         "type": "mc",
-        "prompt": "Wat is een goede route? \"Ga rechtdoor, de eerste straat rechts, het huis is op de hoek.\" Waar is het huis?",
+        "prompt": "Je leest een route: \"Ga rechtdoor, de eerste straat rechts, het huis is op de hoek.\" Waar is het huis?",
         "options": [
           "Aan het eind van de straat.",
           "Op de hoek van de eerste straat rechts.",
@@ -216,11 +216,11 @@
           "basis:voorzetsels",
           "grammar:voorzetsel"
         ],
-        "explanation": "Richting naar een plek: naar.",
+        "explanation": "Je gaat naar een plek toe: naar.",
         "difficulty": 1,
         "type": "gap-choice",
         "prompt": "Kies het goede woord.",
-        "text": "De bus gaat ___ het station.",
+        "text": "Ik ga ___ het station. (ik wil bij het station zijn)",
         "options": [
           [
             "naar",
