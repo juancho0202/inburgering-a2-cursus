@@ -1,5 +1,5 @@
 import { createApiRouter, type Method } from "@shared/services/router";
-import { getEnv } from "./env";
+import { getEnv, routerOptions } from "./env";
 
 export interface ApiError {
   error: { code: string; message: string };
@@ -17,7 +17,7 @@ export class ApiRequestError extends Error {
 }
 
 // The screens call the same paths as in the server version; the answers now come from the browser itself.
-const router = createApiRouter(getEnv);
+const router = createApiRouter(getEnv, routerOptions);
 
 async function request<T>(method: Method, path: string, data?: unknown): Promise<T> {
   const res = await router.handle(method, path, data);

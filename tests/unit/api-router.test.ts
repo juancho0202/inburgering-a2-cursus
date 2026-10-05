@@ -106,3 +106,28 @@ describe("every API call in the screens has a route", () => {
     expect(setup().api.has(c.method, c.url), `${c.file} calls ${c.method} ${c.url}`).toBe(true);
   });
 });
+
+describe("api key routes", () => {
+  it("saves a key through the options, never returns it in full, and removes it", async () => {
+    let stored: string | null = null;
+    const { api } = setup({
+      maskedKey: async () => (stored ? "sk-ant-…abcd" : null),
+      saveKey: async (k: string) => {
+        if (!k.startsWith("sk-ant-")) throw new Error("invalid_key");
+        stored = k;
+        return "sk-ant-…abcd";
+      },
+      removeKey: async () => void (stored = null),
+    });
+    const saved = await api.handle("POST", "/settings/api-key", { apiKey: "sk-ant-api03-heelgeheim" });
+    expect(saved.status).toBe(200);
+    expect(saved.body).toMatchObject({ apiKey: "sk-ant-…abcd" });
+    expect(JSON.stringify(saved.body)).not.toContain("heelgeheim");
+    expect(JSON.stringify((await api.handle("GET", "/settings")).body)).not.toContain("heelgeheim");
+
+    expect(await api.handle("POST", "/settings/api-key", { apiKey: "hallo" })).toMatchObject({ status: 400, body: { error: { message: "Dit lijkt geen Anthropic-sleutel. Die begint met sk-ant-." } } });
+    expect((await api.handle("POST", "/settings/api-key", {})).status).toBe(400);
+
+    expect((await api.handle("POST", "/settings/api-key/remove")).body).toMatchObject({ apiKey: null });
+  });
+});

@@ -2,6 +2,7 @@
 import { onMounted, ref } from "vue";
 import { useSettingsStore } from "../stores/settings";
 import { api } from "../api/client";
+import { MODELS } from "@shared/claude/models";
 import AppButton from "../components/ui/AppButton.vue";
 
 const store = useSettingsStore();
@@ -33,11 +34,25 @@ async function resetProgress() {
 
 onMounted(() => store.load());
 
+const keyError = ref<string | null>(null);
+const confirmRemove = ref(false);
+
 async function saveKey() {
-  if (!newKey.value) return;
-  await store.update({ apiKey: newKey.value });
-  newKey.value = "";
-  await store.testKey();
+  if (!newKey.value.trim()) return;
+  keyError.value = null;
+  store.testResult = null;
+  try {
+    await store.saveKey(newKey.value);
+    newKey.value = "";
+    await store.testKey();
+  } catch (e) {
+    keyError.value = (e as Error).message;
+  }
+}
+
+async function removeKey() {
+  await store.removeKey();
+  confirmRemove.value = false;
 }
 const num = (e: Event) => Number((e.target as HTMLInputElement).value);
 async function patch(p: Parameters<typeof store.update>[0]) {
@@ -111,21 +126,49 @@ const themes = [
       </section>
 
       <section class="card p-6">
-        <h2 class="text-xl font-bold">Claude API-sleutel</h2>
-        <p class="mt-1 text-muted">Huidige sleutel: <strong class="text-ink">{{ store.settings.apiKey ?? "geen sleutel ingesteld" }}</strong></p>
-        <label for="apiKey" class="mt-4 block font-semibold">Nieuwe sleutel</label>
-        <input id="apiKey" v-model="newKey" class="input mt-1" type="password" placeholder="sk-ant-..." autocomplete="off" />
+        <h2 class="text-xl font-bold">Claude (optioneel)</h2>
+        <p class="mt-1 text-muted">
+          Met je eigen API-sleutel krijg je feedback op je teksten, uitleg bij fouten en extra oefeningen. De app werkt ook zonder sleutel.
+          De sleutel wordt versleuteld op dit apparaat bewaard en gaat alleen naar Anthropic. Hij zit nooit in je gegevensbestand.
+        </p>
+        <p class="mt-3">Huidige sleutel: <strong>{{ store.settings.apiKey ?? "geen sleutel ingesteld" }}</strong></p>
+
+        <label for="apiKey" class="mt-4 block font-semibold">{{ store.settings.apiKey ? "Nieuwe sleutel" : "Plak je sleutel" }}</label>
+        <input id="apiKey" v-model="newKey" class="input mt-1" type="password" placeholder="sk-ant-..." autocomplete="off" spellcheck="false" @keydown.enter="saveKey" />
+        <p v-if="keyError" role="alert" class="mt-2 font-semibold text-bad">✗ {{ keyError }}</p>
         <div class="mt-3 flex flex-wrap gap-3">
-          <AppButton :disabled="!newKey" @click="saveKey">Opslaan en testen</AppButton>
-          <AppButton variant="secondary" @click="store.testKey">Test sleutel</AppButton>
+          <AppButton :disabled="!newKey.trim()" @click="saveKey">Opslaan en testen</AppButton>
+          <AppButton v-if="store.settings.apiKey" variant="secondary" @click="store.testKey">Test sleutel</AppButton>
+          <AppButton v-if="store.settings.apiKey && !confirmRemove" variant="ghost" @click="confirmRemove = true">Sleutel verwijderen</AppButton>
         </div>
+        <div v-if="confirmRemove" class="mt-3 flex flex-wrap items-center gap-3 rounded-2xl bg-bad-bg p-3">
+          <span class="font-semibold">Sleutel van dit apparaat verwijderen?</span>
+          <AppButton variant="bad" @click="removeKey">Ja, verwijderen</AppButton>
+          <AppButton variant="secondary" @click="confirmRemove = false">Nee</AppButton>
+        </div>
+        <p v-if="store.testResult" role="status" class="mt-3 font-semibold" :class="store.testResult.ok ? 'text-good' : 'text-bad'">
+          {{ store.testResult.ok ? "✓" : "✗" }} {{ store.testResult.message }}
+        </p>
+
+        <label for="model" class="mt-5 block font-semibold">Model</label>
+        <select id="model" class="input mt-1" :value="store.settings.model" @change="patch({ model: ($event.target as HTMLSelectElement).value })">
+          <option v-for="m in MODELS" :key="m.id" :value="m.id">{{ m.label }}</option>
+        </select>
+
         <p v-if="store.settings.usage" class="mt-4 text-sm text-muted">
           Gebruik deze maand: ~{{ store.settings.usage.requests }} {{ store.settings.usage.requests === 1 ? "verzoek" : "verzoeken" }}
           ({{ store.settings.usage.inputTokens.toLocaleString("nl-NL") }} tokens erin, {{ store.settings.usage.outputTokens.toLocaleString("nl-NL") }} eruit)
         </p>
-        <p v-if="store.testResult" role="status" class="mt-3 font-semibold" :class="store.testResult.ok ? 'text-good' : 'text-bad'">
-          {{ store.testResult.ok ? "✓" : "✗" }} {{ store.testResult.message }}
-        </p>
+        <details class="mt-4 rounded-2xl border border-line p-4">
+          <summary class="cursor-pointer font-bold">Zo maak je een veilige sleutel</summary>
+          <ol class="mt-3 grid list-decimal gap-1 pl-5">
+            <li>Maak een account in de Anthropic Console en zet er een klein tegoed op (een paar euro is genoeg voor de hele cursus).</li>
+            <li>Maak een <strong>nieuwe sleutel alleen voor deze app</strong> (API keys → Create key).</li>
+            <li>Stel een <strong>maandlimiet</strong> in bij de uitgavenlimieten, bijvoorbeeld 5 dollar.</li>
+            <li>Plak de sleutel hierboven. Op elk ander apparaat moet je de sleutel opnieuw plakken.</li>
+            <li>Raak je een apparaat kwijt? Verwijder de sleutel dan in de Console.</li>
+          </ol>
+        </details>
       </section>
     </div>
     <p v-else class="text-muted">Even laden…</p>
