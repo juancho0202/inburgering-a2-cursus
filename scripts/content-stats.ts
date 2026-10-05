@@ -1,4 +1,4 @@
-import { loadContent } from "../db/contentRepo.js";
+import { loadCourse } from "./courseFiles.js";
 
 const TARGETS = {
   vocab: 500,
@@ -16,7 +16,7 @@ const TARGETS = {
 const KNM_THEMES = ["knm-werk", "knm-omgang", "knm-wonen", "knm-gezondheid", "knm-geschiedenis", "knm-instanties", "knm-staat", "knm-onderwijs"];
 
 async function main() {
-  const content = await loadContent();
+  const { content, data } = await loadCourse();
 
   let basisExercises = 0;
   let lezenTexts = 0;
@@ -52,6 +52,7 @@ async function main() {
   const line = (label: string, actual: number, target: number) =>
     `${actual >= target ? "OK " : "!! "}${label}: ${actual} (doel: ${target})`;
 
+  console.log(`    Course version: ${data.version}`);
   console.log(line("Vocab entries", content.vocabById.size, TARGETS.vocab));
   console.log(line("Verbs", content.verbs.size, TARGETS.verbs));
   console.log(line("Basis exercises", basisExercises, TARGETS.basisExercises));
