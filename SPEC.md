@@ -86,7 +86,16 @@ All content must be original. It may imitate the *style* and *difficulty* of the
 
 ---
 
+> **Direction change (2026-10-05): local-first.** Phases 1–7 built the app as a single-learner app with an
+> Express server and JSON files. To share it with friends we are moving to a **static site (Netlify) with
+> browser storage and "bring your own API key"**. The plan, decisions and work steps are in
+> [`docs/production-readiness.md`](docs/production-readiness.md). **Where this SPEC and that document
+> disagree, the document wins.** Sections below are marked *(as built)* where they describe the server
+> version that is being replaced.
+
 ## 3. Tech stack and hard constraints
+
+*Table: "now" = as built in phases 1–7; "target" = after the local-first work.*
 
 | Concern | Choice |
 | --- | --- |
@@ -94,27 +103,37 @@ All content must be original. It may imitate the *style* and *difficulty* of the
 | Language | TypeScript (strict) for both client and server |
 | Frontend | Vue 3 (`<script setup>`, Composition API), Vite, Vue Router, Pinia |
 | Styling | **Tailwind CSS v4** (`tailwindcss` + `@tailwindcss/vite`) with a custom theme defined in `src/styles/main.css` via `@theme` (colour tokens, fonts, radii, shadows). No component UI framework; build small reusable components in `src/components/ui/`. |
-| Backend | Express 5 (small JSON API) run with `tsx` in dev |
-| Validation | `zod` schemas shared between server and client (`shared/` folder) |
-| Claude | Official SDK `@anthropic-ai/sdk`, **server side only** |
-| Tests | Vitest (unit), Playwright (one smoke test; optional) |
-| Dev runner | `concurrently` to run Vite + API with one command |
+| Backend | Now: Express 5 JSON API run with `tsx`. **Target: none.** The old API paths are served by an in-browser router; the logic lives in `shared/services/` |
+| Storage | Now: JSON files in `data/user/`. **Target: IndexedDB via `dexie`**, behind a `DataStore` interface. Facts are append-only events with unique ids; totals are derived (so progress files can be merged) |
+| Validation | `zod` schemas shared across the app (`shared/` folder) |
+| Claude | Official SDK `@anthropic-ai/sdk`. Now: server side only. **Target: called from the browser with the learner's own key** (`dangerouslyAllowBrowser: true`) behind the existing gateway interface |
+| PWA | **Target:** `vite-plugin-pwa` (installable, offline, `navigator.storage.persist()`) |
+| Hosting | **Target:** Netlify, static files only, strict CSP via `_headers` |
+| Tests | Vitest (unit, services against an in-memory `DataStore`), Playwright (`@playwright/test`, smoke tests on a phone viewport, dev dependency) |
+| Dev runner | Now: `concurrently` runs Vite + API. **Target:** Vite only |
 
 **Hard constraints**
 
-- **No database server.** The "database" is JSON files in `data/` (see §6).
-- **The API key never reaches the browser.** The browser sends requests to the local server;
-  the server calls Claude. The settings screen only ever shows a masked key (`sk-ant-…abcd`).
-- The server listens on **127.0.0.1 only** (not 0.0.0.0).
+- **No database server, no backend of ours.** *(Target.)* Progress lives in the browser (IndexedDB). *(As built:
+  JSON files in `data/`, see §6.)*
+- **The API key belongs to the learner and goes only to Anthropic.** *(Target.)* Each learner pastes their own
+  key; it is remembered on that device, **encrypted at rest** (non-extractable WebCrypto key), shown only
+  masked (`sk-ant-…abcd`), and **never** included in progress files, exports, logs or URLs. The page's
+  Content-Security-Policy allows network calls only to `self` and `https://api.anthropic.com`, and scripts
+  only from `self`. *(As built: the key stayed on the server and never reached the browser.)*
 - The app must work fully **without** an API key. Claude features show a friendly message
   ("Voeg een API-sleutel toe bij Instellingen") and fall back to self-check.
-- No telemetry, no external calls except to the Anthropic API.
-- No login / users — single learner.
-- Keep dependencies minimal. Ask the user before adding anything not listed here.
+- No telemetry, no analytics, no third-party scripts. The only external call is to the Anthropic API.
+- No login / accounts. Progress is moved between devices with a **progress file** ("Klaar voor vandaag" →
+  save/share, "Ga verder met een bestand" → merge-import). Importing never deletes progress.
+- Keep dependencies minimal. Ask the user before adding anything not listed here. *Approved for the
+  local-first work:* `dexie`, `vite-plugin-pwa`, `@playwright/test` (dev).
 
 ---
 
 ## 4. Folder structure
+
+> *(As built.)* `server/` and `data/user/` are removed in the local-first work; services move to `shared/services/`, Claude code to `shared/claude/`, scripts to `scripts/`. See `docs/production-readiness.md` §6 and §8.
 
 ```
 inburgering-a2/
@@ -183,6 +202,8 @@ inburgering-a2/
 
 ## 5. Running the app
 
+> *(As built.)* After the local-first work `npm run dev` runs Vite only and `npm start` / the Express server no longer exist; the site is deployed to Netlify.
+
 `package.json` scripts:
 
 | Script | Does |
@@ -202,6 +223,8 @@ is stored, how to back it up (copy `data/user/`), how to add the API key, and ho
 ---
 
 ## 6. The file database
+
+> *(As built, being replaced.)* Target storage is IndexedDB with merge rules; see `docs/production-readiness.md` §3.2. The content rules in §6.2 (unique, stable ids) still apply and become a CI check.
 
 ### 6.1 `fileStore.ts`
 
@@ -466,6 +489,8 @@ All exercises share a base:
 ---
 
 ## 10. Claude API integration
+
+> *(As built.)* The prompts, schemas, validation and error messages below stay as they are. What changes: the calls are made from the browser with the learner's own key (see §3 and `docs/production-readiness.md` §5), and the "Keys" and "usage" parts live in browser storage instead of `settings.json`.
 
 ### 10.1 Setup
 
