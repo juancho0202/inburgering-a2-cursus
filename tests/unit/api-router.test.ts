@@ -131,3 +131,17 @@ describe("api key routes", () => {
     expect((await api.handle("POST", "/settings/api-key/remove")).body).toMatchObject({ apiKey: null });
   });
 });
+
+describe("welcome screen flag", () => {
+  it("is not seen on a new device, and stays seen after it is marked", async () => {
+    const { api } = setup();
+    expect((await api.handle("GET", "/welcome")).body).toEqual({ seen: false });
+    expect((await api.handle("POST", "/welcome/seen")).body).toEqual({ seen: true });
+    expect((await api.handle("GET", "/welcome")).body).toEqual({ seen: true });
+  });
+  it("is not part of the progress file", async () => {
+    const { api } = setup();
+    await api.handle("POST", "/welcome/seen");
+    expect(JSON.stringify((await api.handle("GET", "/export")).body)).not.toContain("welcomeSeen");
+  });
+});

@@ -107,4 +107,5 @@ export const KV = {
   lastLocation: "lastLocation",
   srsNewToday: "srsNewToday",
   meta: "meta",
+  welcomeSeen: "welcomeSeen",
 } as const;
