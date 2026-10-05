@@ -133,7 +133,7 @@ All content must be original. It may imitate the *style* and *difficulty* of the
 
 ## 4. Folder structure
 
-> *(As built.)* `server/` and `data/user/` are removed in the local-first work; services move to `shared/services/`, Claude code to `shared/claude/`, scripts to `scripts/`. See `docs/production-readiness.md` §6 and §8.
+> *(Replaced.)* The `server/` folder and `data/user/` no longer exist: services live in `shared/services/`, Claude code in `shared/claude/`, scripts in `scripts/`, the browser database in `src/db/`. See README.md and `docs/production-readiness.md`.
 
 ```
 inburgering-a2/
@@ -202,7 +202,7 @@ inburgering-a2/
 
 ## 5. Running the app
 
-> *(As built.)* After the local-first work `npm run dev` runs Vite only and `npm start` / the Express server no longer exist; the site is deployed to Netlify.
+> *(Replaced.)* `npm run dev` runs Vite only; `npm start` and the Express server no longer exist. The site is deployed as static files (Netlify). See README.md.
 
 `package.json` scripts:
 
@@ -224,7 +224,7 @@ is stored, how to back it up (copy `data/user/`), how to add the API key, and ho
 
 ## 6. The file database
 
-> *(As built, being replaced.)* Target storage is IndexedDB with merge rules; see `docs/production-readiness.md` §3.2. The content rules in §6.2 (unique, stable ids) still apply and become a CI check.
+> *(Replaced.)* Storage is now IndexedDB with merge rules; see `docs/production-readiness.md` §3.2. The content rules in §6.2 (unique, stable ids) still apply and become a CI check.
 
 ### 6.1 `fileStore.ts`
 
