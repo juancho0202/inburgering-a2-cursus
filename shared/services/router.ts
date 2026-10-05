@@ -8,6 +8,7 @@ import { completeUnit, getProgress, recordAttempt, resetProgress, setUnitStep } 
 import { getSettings, updateSettings } from "./settings.js";
 import { dueCards, introduce, reviewSrsCard, verbList, vocabList } from "./srs.js";
 import { listWriting, saveWriting } from "./writing.js";
+import { getWelcome, markWelcomeSeen } from "./welcome.js";
 import { explain, feedbackWriting, flagGenerated, generate } from "./claude.js";
 
 export type Method = "GET" | "POST" | "PUT";
@@ -111,6 +112,8 @@ const routes: [Method, string, Handler][] = [
   ["GET", "/import/last", async (c) => (await lastImport(c.env)) ?? null],
   ["GET", "/session/summary", (c) => sessionSummary(c.env)],
   ["POST", "/session/exported", (c) => markExported(c.env)],
+  ["GET", "/welcome", (c) => getWelcome(c.env)],
+  ["POST", "/welcome/seen", (c) => markWelcomeSeen(c.env)],
   ["GET", "/device", (c) => getDevice(c.env)],
   ["PUT", "/device", (c) => setDeviceName(c.env, c.body)],
 ];

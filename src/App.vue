@@ -145,5 +145,8 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
     <main id="main" tabindex="-1" class="mx-auto w-full flex-1 px-4 py-6 sm:py-8" :class="route.meta.focus ? 'max-w-6xl' : 'max-w-5xl'">
       <RouterView />
     </main>
+    <footer v-if="!route.meta.focus" class="border-t border-line px-4 py-4 text-center text-sm text-muted">
+      Niet van DUO · Een oefenapp voor Inburgering A2 · <RouterLink to="/over" class="font-semibold underline hover:text-ink">Over deze app</RouterLink>
+    </footer>
   </div>
 </template>
