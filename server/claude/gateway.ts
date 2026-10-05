@@ -1,28 +1,9 @@
 import type { Settings } from "../../shared/types.js";
+import { NoApiKeyError, type ClaudeGateway } from "../../shared/claude/gateway.js";
 import { buildClient } from "./client.js";
 
-export interface CompleteArgs {
-  system: string;
-  user: string;
-  schema: Record<string, unknown>;
-  maxTokens: number;
-}
-
-export interface CompleteResult {
-  text: string;
-  usage: { inputTokens: number; outputTokens: number };
-}
-
-/** The only thing the rest of the server knows about Claude. Tests use a fake. */
-export interface ClaudeGateway {
-  complete(args: CompleteArgs): Promise<CompleteResult>;
-}
-
-export class NoApiKeyError extends Error {
-  constructor() {
-    super("no_api_key");
-  }
-}
+export { NoApiKeyError };
+export type { ClaudeGateway };
 
 /** Real gateway: Messages API with structured outputs (JSON schema). */
 export function createGateway(settings: Settings): ClaudeGateway {

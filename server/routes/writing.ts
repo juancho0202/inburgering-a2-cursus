@@ -2,16 +2,19 @@ import { Router } from "express";
 import { z } from "zod";
 import { loadWriting, saveWritingSubmission } from "../db/progressRepo.js";
 import { buildExerciseIndex, getContent } from "../db/contentRepo.js";
+import { examExercises } from "../../shared/logic/exam.js";
 
 export const writingRouter = Router();
 
 /** All submissions (newest first) with the task they belong to, for the history screen. */
 writingRouter.get("/writing", async (_req, res) => {
   const file = await loadWriting();
-  const index = buildExerciseIndex(await getContent());
+  const content = await getContent();
+  const index = buildExerciseIndex(content);
+  const examTasks = new Map([...content.exams.values()].flatMap((e) => examExercises(e)).map((x) => [x.id, x] as const));
   res.json(
     [...file.submissions].reverse().map((s) => {
-      const ex = index.byId.get(s.exerciseId)?.exercise;
+      const ex = index.byId.get(s.exerciseId)?.exercise ?? examTasks.get(s.exerciseId);
       const writing = ex?.type === "writing" ? ex : null;
       const taskType = writing?.tags.find((t) => t.startsWith("schrijven:"))?.slice("schrijven:".length) ?? "overig";
       return {

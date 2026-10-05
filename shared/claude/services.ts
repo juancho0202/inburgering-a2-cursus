@@ -1,13 +1,13 @@
-import type { Exercise, Unit } from "../../shared/types.js";
+import type { Exercise, Unit } from "../types.js";
 import {
   ExplanationSchema,
   WritingFeedbackSchema,
   type Explanation,
   type GenerateRequest,
   type WritingFeedback,
-} from "../../shared/schemas/claude.js";
-import { ExerciseSchema } from "../../shared/schemas/content.js";
-import { countWords } from "../../shared/logic/answers.js";
+} from "../schemas/claude.js";
+import { ExerciseSchema } from "../schemas/content.js";
+import { countWords } from "../logic/answers.js";
 import type { ClaudeGateway } from "./gateway.js";
 import { EXPLAIN_SYSTEM, GENERATE_SYSTEM, WRITING_FEEDBACK_SYSTEM, explainUser, generateUser, writingFeedbackUser } from "./prompts.js";
 import { explanationJsonSchema, generateJsonSchemas, writingFeedbackJsonSchema } from "./schemas.js";

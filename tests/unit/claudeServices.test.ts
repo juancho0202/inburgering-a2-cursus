@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import type { ClaudeGateway } from "../../server/claude/gateway";
-import { explainMistake, generateExercises, writingFeedback } from "../../server/claude/services";
-import { describeAnswer, describeCorrect } from "../../server/claude/describe";
-import { writingFeedbackUser } from "../../server/claude/prompts";
+import type { ClaudeGateway } from "../../shared/claude/gateway";
+import { explainMistake, generateExercises, writingFeedback } from "../../shared/claude/services";
+import { describeAnswer, describeCorrect } from "../../shared/claude/describe";
+import { writingFeedbackUser } from "../../shared/claude/prompts";
 import type { Exercise } from "../../shared/types";
 
 const fake = (reply: unknown): ClaudeGateway & { calls: { system: string; user: string }[] } => {
