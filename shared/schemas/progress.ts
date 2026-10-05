@@ -23,6 +23,11 @@ export const ExamResultSchema = z.object({
   max: z.number(),
   answers: z.record(z.string(), z.unknown()),
   byTheme: z.record(z.string(), z.array(z.number())).optional(),
+  /** Added in phase 7: id, marked questions, current position and per-question results. */
+  id: z.string().optional(),
+  flagged: z.array(z.string()).default([]),
+  position: z.number().int().default(0),
+  details: z.record(z.string(), z.unknown()).default({}),
 });
 
 export const ProgressSchema = z.object({

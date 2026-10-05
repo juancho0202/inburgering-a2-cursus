@@ -4,6 +4,8 @@ import fs from "node:fs";
 import { contentRouter } from "./routes/content.js";
 import { progressRouter } from "./routes/progress.js";
 import { srsRouter } from "./routes/srs.js";
+import { examsRouter } from "./routes/exams.js";
+import { dataRouter } from "./routes/data.js";
 import { settingsRouter } from "./routes/settings.js";
 import { writingRouter } from "./routes/writing.js";
 import { claudeRouter } from "./routes/claude.js";
@@ -43,13 +45,11 @@ async function main() {
   app.use("/api", contentRouter);
   app.use("/api", progressRouter);
   app.use("/api", srsRouter);
+  app.use("/api", examsRouter);
+  app.use("/api", dataRouter);
   app.use("/api", settingsRouter);
   app.use("/api", writingRouter);
   app.use("/api", claudeRouter);
-
-  app.get("/api/export", async (_req, res) => {
-    res.status(501).json({ error: { code: "not_implemented", message: "Komt in een volgende fase." } });
-  });
 
   if (!isDev) {
     const distDir = path.resolve("dist");

@@ -133,3 +133,15 @@ async function pruneOldBackups(backupsDir: string): Promise<void> {
     await fs.rm(path.join(backupsDir, dir), { recursive: true, force: true }).catch(() => undefined);
   }
 }
+
+/** Copies all user files into backups/<label>/ (used before a reset). */
+export async function backupUserFiles(userDir: string, label: string): Promise<string> {
+  const target = path.join(userDir, "backups", label);
+  await fs.mkdir(target, { recursive: true });
+  for (const entry of await fs.readdir(userDir).catch(() => [] as string[])) {
+    const src = path.join(userDir, entry);
+    const stat = await fs.stat(src).catch(() => null);
+    if (stat?.isFile()) await fs.copyFile(src, path.join(target, entry)).catch(() => undefined);
+  }
+  return target;
+}

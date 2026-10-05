@@ -58,10 +58,23 @@ async function main() {
   for (const exam of content.exams.values()) {
     addId(exam.id, "exams");
     for (const item of exam.items) {
-      if ("ref" in item && !content.units.has(item.ref) && !allIds.has(item.ref)) {
-        // refs may point to exercise ids collected above; checked loosely here
+      if ("ref" in item) {
+        extraErrors.push(`Examen ${exam.id}: gebruik geen ref; teksten en vragen mogen niet uit de lessen komen (${item.ref})`);
+        continue;
       }
+      addId(item.id, exam.id);
+      if (!item.explanation.trim()) extraErrors.push(`Lege explanation bij ${item.id}`);
+      const questions = item.type === "reading" ? item.questions : [item];
+      for (const q of questions) {
+        if (q !== item) addId(q.id, exam.id);
+        if (q.type === "mc" && (q.answer < 0 || q.answer >= q.options.length)) extraErrors.push(`Ongeldig answer-index bij ${q.id}`);
+        if (q.type === "mc" && new Set(q.options).size !== q.options.length) extraErrors.push(`Dubbele opties bij ${q.id}`);
+      }
+      if (exam.skill !== "schrijven" && item.type !== "mc" && item.type !== "reading") extraErrors.push(`${item.id}: alleen meerkeuze en leestekst in een ${exam.skill}-examen`);
+      if (exam.skill === "schrijven" && item.type !== "form-fill" && item.type !== "writing") extraErrors.push(`${item.id}: alleen formulier en schrijfopdracht in een schrijfexamen`);
     }
+    if (exam.skill === "knm" && exam.items.length !== 40) extraErrors.push(`${exam.id}: een KNM-examen heeft 40 vragen (nu ${exam.items.length})`);
+    if (exam.skill === "schrijven" && exam.items.length !== 4) extraErrors.push(`${exam.id}: een schrijfexamen heeft 4 opdrachten (nu ${exam.items.length})`);
   }
 
   const allErrors = [...content.errors.map((e) => `${e.file}\n  ${e.message}`), ...extraErrors];

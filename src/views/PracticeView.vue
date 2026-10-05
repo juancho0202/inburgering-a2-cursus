@@ -35,8 +35,13 @@ onMounted(async () => {
   if (!settings.settings) await settings.load();
   if (genMode.value) return;
   try {
-    const qs = new URLSearchParams(route.query as Record<string, string>).toString();
-    items.value = await api.get<Exercise[]>(`/practice?${qs}`);
+    if (route.query.exam) {
+      // "Oefen je fouten" after a mock exam
+      items.value = await api.get<Exercise[]>(`/exams/results/${route.query.exam}/mistakes`);
+    } else {
+      const qs = new URLSearchParams(route.query as Record<string, string>).toString();
+      items.value = await api.get<Exercise[]>(`/practice?${qs}`);
+    }
   } catch (e) {
     error.value = (e as Error).message;
   }
@@ -61,7 +66,9 @@ async function generate() {
 const title = computed(() =>
   genMode.value
     ? "Oefenen met Claude"
-    : route.query.tag
+    : route.query.exam
+      ? "Oefen je fouten"
+      : route.query.tag
       ? `Oefen: ${String(route.query.tag).replace(":", " · ")}`
       : "Moeilijke vragen",
 );

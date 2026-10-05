@@ -1,17 +1,24 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import type { Exercise } from "@shared/types";
 import ExerciseStem from "./ExerciseStem.vue";
 import OptionButton from "./OptionButton.vue";
 import { shuffled, type EvalResult } from "./types";
 
 type Mc = Extract<Exercise, { type: "mc" | "mc-multi" }>;
-const props = withDefaults(defineProps<{ exercise: Mc; checked: boolean; keys?: boolean; hideStem?: boolean }>(), { keys: true });
+const props = withDefaults(
+  defineProps<{ exercise: Mc; checked: boolean; keys?: boolean; hideStem?: boolean; initial?: number[]; shuffle?: boolean }>(),
+  { keys: true, shuffle: true },
+);
+// Used by exam mode: keep the selection outside the component and keep the option order stable.
+const emit = defineEmits<{ change: [selected: number[]] }>();
 
 const multi = computed(() => props.exercise.type === "mc-multi");
 const correctSet = computed(() => new Set(props.exercise.type === "mc-multi" ? props.exercise.answers : [props.exercise.answer]));
-const order = ref(shuffled(props.exercise.options.map((_, i) => i)));
-const selected = ref<number[]>([]);
+const identity = props.exercise.options.map((_, i) => i);
+const order = ref(props.shuffle ? shuffled(identity) : identity);
+const selected = ref<number[]>([...(props.initial ?? [])]);
+watch(selected, (v) => emit("change", [...v]));
 
 function toggle(orig: number) {
   if (props.checked) return;

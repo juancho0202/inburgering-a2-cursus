@@ -21,6 +21,7 @@ import {
 import { COURSE_DIR, buildExerciseIndex, getContent, reloadContent } from "../db/contentRepo.js";
 import { writeJson, readJson } from "../db/fileStore.js";
 import { GeneratedFileSchema } from "../../shared/schemas/claude.js";
+import { summarizeWriting } from "./exams.js";
 import { createGateway, NoApiKeyError, type ClaudeGateway } from "../claude/gateway.js";
 import { mapClaudeError } from "../claude/client.js";
 import { explainMistake, generateExercises, writingFeedback } from "../claude/services.js";
@@ -49,7 +50,7 @@ function claudeFailure(res: Response, err: unknown, extra: object = {}) {
 
 // ---------- writing feedback (§10.2) ----------
 
-const FeedbackBody = z.object({ exerciseId: z.string(), text: z.string().optional(), submissionId: z.string().optional() });
+const FeedbackBody = z.object({ exerciseId: z.string(), text: z.string().optional(), submissionId: z.string().optional(), examResultId: z.string().optional() });
 
 async function recordWritingErrors(feedback: WritingFeedback) {
   const progress = await loadProgress();
@@ -87,6 +88,16 @@ claudeRouter.post("/claude/feedback-writing", async (req, res) => {
     const saved = await updateWritingSubmission(submission.id, { feedback });
     await recordUsage(usage);
     await recordWritingErrors(feedback);
+    if (body.data.examResultId) {
+      // Part of a mock exam: the feedback score becomes the points for this task.
+      const progress = await loadProgress();
+      const exam = progress.exams.find((r) => r.id === body.data.examResultId);
+      if (exam) {
+        exam.details[ex.id] = { kind: "writing", submissionId: submission.id, points: Math.min(10, Math.max(0, feedback.score)), max: 10 };
+        summarizeWriting(exam);
+        await saveProgress(progress);
+      }
+    }
     res.json({ submission: saved, feedback });
   } catch (err) {
     claudeFailure(res, err, extra);

@@ -19,6 +19,7 @@ interface Dashboard {
   modules: { id: string; title: string; total: number; completed: number }[];
   hardCount: number;
   weakTags: { tag: string; accuracy: number; seen: number }[];
+  nextExam: { id: string; title: string; skill: string; durationMinutes: number } | null;
 }
 
 const content = useContentStore();
@@ -106,6 +107,15 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
           <div class="mt-4"><ProgressBar :value="m.total ? m.completed / m.total : 0" :label="`Voortgang ${m.title}`" /></div>
         </RouterLink>
       </div>
+    </section>
+
+    <section v-if="data.nextExam" class="card flex flex-wrap items-center gap-4 p-5">
+      <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-amber-100 text-3xl dark:bg-amber-950" aria-hidden="true">⏱️</span>
+      <div class="min-w-0 flex-1">
+        <h2 class="text-lg font-bold">Probeer een proefexamen</h2>
+        <p class="text-muted">{{ data.nextExam.title }} · {{ data.nextExam.durationMinutes }} minuten</p>
+      </div>
+      <RouterLink to="/examens"><AppButton variant="secondary">Naar de examens</AppButton></RouterLink>
     </section>
 
     <section class="card p-6">

@@ -3,10 +3,12 @@ import { z } from "zod";
 import { AttemptSchema, defaultProgress, defaultSrs } from "../../shared/schemas/progress.js";
 import { dayString } from "../../shared/logic/srs.js";
 import { hardItemIds, weakestTags } from "../../shared/logic/weakspots.js";
+import { examQuestions } from "../../shared/logic/exam.js";
 import { practiceTagFor } from "../../shared/logic/corrections.js";
-import { loadProgress, saveProgress, appendAttempt, saveSrs, loadSrs } from "../db/progressRepo.js";
+import { loadProgress, saveProgress, appendAttempt, saveSrs, loadSrs, userDir } from "../db/progressRepo.js";
 import { getContent, buildExerciseIndex } from "../db/contentRepo.js";
 import { recordActivity } from "../db/activity.js";
+import { backupUserFiles } from "../db/fileStore.js";
 import { introduceCards } from "./srs.js";
 
 export const progressRouter = Router();
@@ -97,6 +99,7 @@ progressRouter.get("/dashboard", async (_req, res) => {
   const srs = await loadSrs();
   const today = dayString(new Date());
   const index = buildExerciseIndex(content);
+  const examTags = new Map([...content.exams.values()].flatMap((e) => examQuestions(e).map((q) => [q.id, q.tags] as const)));
 
   const modules = [...content.modules.values()].map((mod) => {
     const done = mod.units.filter((id) => progress.units[id]?.status === "completed").length;
@@ -118,8 +121,11 @@ progressRouter.get("/dashboard", async (_req, res) => {
     modules,
     hardCount: hardItemIds(progress.items).filter((id) => !id.startsWith("writing:")).length,
     // Writing error types (writing:woordvolgorde, ...) are tags of their own.
-    weakTags: weakestTags(progress.items, (id) => (id.startsWith("writing:") ? [id] : (index.resolve(id)?.tags ?? []))),
-    nextExam: [...content.exams.values()].find((e) => !progress.exams.some((r) => r.examId === e.id && r.finishedAt))?.id ?? null,
+    weakTags: weakestTags(progress.items, (id) => (id.startsWith("writing:") ? [id] : (index.resolve(id)?.tags ?? examTags.get(id) ?? []))),
+    nextExam: (() => {
+      const next = [...content.exams.values()].find((e) => !progress.exams.some((r) => r.examId === e.id && r.finishedAt));
+      return next ? { id: next.id, title: next.title, skill: next.skill, durationMinutes: next.durationMinutes } : null;
+    })(),
   });
 });
 
@@ -164,6 +170,8 @@ progressRouter.post("/progress/reset", async (req, res) => {
     res.status(400).json(bad("Bevestig met RESET om door te gaan."));
     return;
   }
+  // A backup is made first, so a reset can be undone by copying files back.
+  await backupUserFiles(userDir, `reset-${new Date().toISOString().replace(/[:.]/g, "-")}`);
   await saveProgress(defaultProgress());
   await saveSrs(defaultSrs());
   res.json({ ok: true });

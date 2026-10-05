@@ -3,17 +3,687 @@
   "skill": "knm",
   "title": "Proefexamen KNM 1",
   "durationMinutes": 45,
-  "passScore": 0.7,
   "items": [
     {
       "id": "exam-knm-1-q-001",
+      "tags": [
+        "knm:gezondheid"
+      ],
+      "explanation": "Zeg een afspraak vaak minstens 24 uur van tevoren af, anders moet je soms betalen.",
+      "difficulty": 1,
       "type": "mc",
-      "tags": ["knm:wonen"],
-      "prompt": "Wie betaalt grote reparaties aan een huurhuis?",
-      "options": ["De huisbaas", "De huurder", "De gemeente", "De buren"],
-      "answer": 0,
-      "explanation": "De huisbaas is verantwoordelijk voor grote reparaties.",
-      "difficulty": 1
+      "prompt": "Je wilt een afspraak bij de huisarts afzeggen. Hoeveel tijd van tevoren is vaak nodig?",
+      "options": [
+        "Minstens 24 uur",
+        "Minstens een week",
+        "Minstens een maand",
+        "Je hoeft niets te zeggen"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-1-q-002",
+      "tags": [
+        "knm:omgang"
+      ],
+      "explanation": "Nederlanders zijn vaak direct, maar wel beleefd.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wei vindt het plan van zijn collega niet goed. Wat past bij de Nederlandse gewoonte?",
+      "options": [
+        "Hij zegt niets en is boos.",
+        "Hij zegt eerlijk en beleefd wat hij denkt.",
+        "Hij zegt dat het geweldig is.",
+        "Hij vertelt het aan de baas, niet aan zijn collega."
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-1-q-003",
+      "tags": [
+        "knm:geschiedenis"
+      ],
+      "explanation": "Het Koninkrijk bestaat uit Nederland, Aruba, Curaçao en Sint Maarten.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat zijn Aruba, Curaçao en Sint Maarten?",
+      "options": [
+        "Provincies van Nederland",
+        "Buurlanden van Nederland",
+        "Landen in het Koninkrijk der Nederlanden",
+        "Steden in Zeeland"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-1-q-004",
+      "tags": [
+        "knm:gezondheid"
+      ],
+      "explanation": "Met een recept haal je medicijnen bij de apotheek.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is een recept?",
+      "options": [
+        "Een bewijs van je verzekering",
+        "Een afspraak bij de tandarts",
+        "Een verwijzing naar het ziekenhuis",
+        "Een papier van de huisarts om medicijnen te halen"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-1-q-005",
+      "tags": [
+        "knm:geschiedenis"
+      ],
+      "explanation": "Gastarbeiders kwamen om in Nederland te werken.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Waarom kwamen veel gastarbeiders in de jaren zestig naar Nederland?",
+      "options": [
+        "Om te werken",
+        "Om te studeren",
+        "Om op vakantie te gaan",
+        "Om te vluchten voor de watersnood"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-1-q-006",
+      "tags": [
+        "knm:geschiedenis"
+      ],
+      "explanation": "In de Gouden Eeuw was Nederland rijk door handel, onder meer van de VOC.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat was de VOC?",
+      "options": [
+        "Een Nederlands leger",
+        "Een handelsbedrijf in de Gouden Eeuw",
+        "Een school",
+        "Een rivier"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-1-q-007",
+      "tags": [
+        "knm:omgang"
+      ],
+      "explanation": "Kerst is op 25 en 26 december.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Op welke dagen is het Kerst in Nederland?",
+      "options": [
+        "Op 5 en 6 december",
+        "Op 27 april",
+        "Op 25 en 26 december",
+        "Op 1 en 2 januari"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-1-q-008",
+      "tags": [
+        "knm:wonen"
+      ],
+      "explanation": "Een woningcorporatie verhuurt sociale huurwoningen, vaak met een wachtlijst.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat doet een woningcorporatie?",
+      "options": [
+        "Ze betaalt toeslagen.",
+        "Ze regelt paspoorten.",
+        "Ze geeft hypotheken.",
+        "Ze verhuurt sociale huurwoningen."
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-1-q-009",
+      "tags": [
+        "knm:geschiedenis"
+      ],
+      "explanation": "Suriname was een kolonie en werd in 1975 onafhankelijk.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat was Suriname vroeger?",
+      "options": [
+        "Een kolonie van Nederland",
+        "Een provincie van Duitsland",
+        "Een deel van België",
+        "Een eiland in de Noordzee"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-1-q-010",
+      "tags": [
+        "knm:instanties"
+      ],
+      "explanation": "Een rijbewijs vraag je aan bij de gemeente.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Waar vraag je een rijbewijs aan?",
+      "options": [
+        "Bij het UWV",
+        "Bij de gemeente",
+        "Bij de SVB",
+        "Bij de Belastingdienst"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-1-q-011",
+      "tags": [
+        "knm:staat"
+      ],
+      "explanation": "De commissaris van de Koning werkt voor de provincie.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Bij welk bestuur hoort de commissaris van de Koning?",
+      "options": [
+        "De gemeente",
+        "Het waterschap",
+        "De provincie",
+        "De Tweede Kamer"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-1-q-012",
+      "tags": [
+        "knm:gezondheid"
+      ],
+      "explanation": "Buiten kantoortijd bel je eerst de huisartsenpost.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat doet de huisartsenpost?",
+      "options": [
+        "Zij verkoopt medicijnen.",
+        "Zij controleert baby's.",
+        "Zij regelt een zorgverzekering.",
+        "Zij helpt buiten kantoortijd, bijvoorbeeld 's avonds en in het weekend."
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-1-q-013",
+      "tags": [
+        "knm:onderwijs"
+      ],
+      "explanation": "Peuters bereiden zich voor op school in de peuterspeelzaal of voorschool.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "De dochter van Fatima is 3 jaar en nog niet leerplichtig. Waar kan ze wel naartoe?",
+      "options": [
+        "Naar de peuterspeelzaal of voorschool",
+        "Naar groep 8",
+        "Naar de universiteit",
+        "Naar het mbo"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-1-q-014",
+      "tags": [
+        "knm:omgang"
+      ],
+      "explanation": "In Nederland zijn mannen en vrouwen gelijk.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Fatima wil zelf beslissen over haar werk. Wat zegt de Nederlandse regel?",
+      "options": [
+        "Haar man beslist altijd.",
+        "Mannen en vrouwen hebben dezelfde rechten.",
+        "Alleen vrouwen zonder kinderen mogen werken.",
+        "Een vrouw moet toestemming vragen aan de gemeente."
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-1-q-015",
+      "tags": [
+        "knm:wonen"
+      ],
+      "explanation": "Energie hoort bij de vaste lasten.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Naast de huur betaalt Priya elke maand ook voor gas, water en licht. Hoe heet dit?",
+      "options": [
+        "Borg",
+        "Toeslag",
+        "Vaste lasten (energie)",
+        "Hypotheek"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-1-q-016",
+      "tags": [
+        "knm:werk"
+      ],
+      "explanation": "Op de loonstrook staan je bruto en netto salaris en de belasting.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Priya krijgt een loonstrook. Wat staat daarop?",
+      "options": [
+        "Haar zorgverzekering",
+        "Haar huurcontract",
+        "Haar paspoortnummer",
+        "Haar bruto en netto salaris"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-1-q-017",
+      "tags": [
+        "knm:instanties"
+      ],
+      "explanation": "De IND regelt verblijfsvergunning en naturalisatie.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat doet de IND?",
+      "options": [
+        "De IND beslist over verblijfsvergunningen en naturalisatie.",
+        "De IND betaalt AOW.",
+        "De IND geeft toeslagen.",
+        "De IND repareert wegen."
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-1-q-018",
+      "tags": [
+        "knm:onderwijs"
+      ],
+      "explanation": "Op het rapport staan de cijfers.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is een rapport?",
+      "options": [
+        "Een brief van de gemeente",
+        "Een papier met de resultaten van een leerling",
+        "Een afspraak voor ouders",
+        "Een boete voor spijbelen"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-1-q-019",
+      "tags": [
+        "knm:staat"
+      ],
+      "explanation": "Kiesrecht is het recht om te stemmen en gekozen te worden.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is kiesrecht?",
+      "options": [
+        "Het recht om te werken",
+        "Het recht op een huis",
+        "Het recht om te stemmen",
+        "Het recht op een uitkering"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-1-q-020",
+      "tags": [
+        "knm:werk"
+      ],
+      "explanation": "De aangifte inkomstenbelasting doe je meestal vóór 1 mei over het vorige jaar.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Mehmet wil zijn belastingaangifte over vorig jaar doen. Wanneer moet dit meestal klaar zijn?",
+      "options": [
+        "Vóór 1 januari",
+        "Vóór 1 september",
+        "Er is geen datum",
+        "Vóór 1 mei"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-1-q-021",
+      "tags": [
+        "knm:staat"
+      ],
+      "explanation": "De Tweede Kamer wordt direct gekozen, elke 4 jaar.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Hoe vaak wordt de Tweede Kamer gekozen?",
+      "options": [
+        "Elke vier jaar",
+        "Elk jaar",
+        "Elke tien jaar",
+        "Elke twee jaar"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-1-q-022",
+      "tags": [
+        "knm:gezondheid"
+      ],
+      "explanation": "Dokters hebben een beroepsgeheim.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat betekent beroepsgeheim?",
+      "options": [
+        "De dokter mag alles vertellen aan je baas.",
+        "De dokter vertelt niets aan anderen zonder jouw toestemming.",
+        "De dokter werkt in het geheim.",
+        "De dokter mag geen medicijnen geven."
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-1-q-023",
+      "tags": [
+        "knm:werk"
+      ],
+      "explanation": "De WW-uitkering is voor mensen die hun baan kwijt zijn. Je vraagt die aan bij het UWV.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Sanne is ontslagen. Ze heeft lang genoeg gewerkt. Welke uitkering kan ze aanvragen?",
+      "options": [
+        "Kinderbijslag",
+        "AOW",
+        "Een WW-uitkering",
+        "Huurtoeslag"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-1-q-024",
+      "tags": [
+        "knm:werk"
+      ],
+      "explanation": "In grotere bedrijven is er een ondernemingsraad (OR).",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Pieter werkt in een groot bedrijf. Wie kan namens de werknemers met de directie praten?",
+      "options": [
+        "De Belastingdienst",
+        "Het UWV",
+        "De huisarts",
+        "De ondernemingsraad"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-1-q-025",
+      "tags": [
+        "knm:omgang"
+      ],
+      "explanation": "Zwerfafval op straat is niet toegestaan.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Olga eet een ijsje op straat. Waar gooit ze het papiertje?",
+      "options": [
+        "In een afvalbak",
+        "Op de grond",
+        "In de tuin van de buren",
+        "In de gracht"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-1-q-026",
+      "tags": [
+        "knm:wonen"
+      ],
+      "explanation": "Bij sociale huurwoningen is vaak een wachtlijst.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Ahmed schrijft zich in voor een sociale huurwoning. Er is een wachtlijst. Wat betekent dat?",
+      "options": [
+        "Hij krijgt meteen een huis.",
+        "Hij moet wachten tot er een woning vrij is.",
+        "Hij moet een huis kopen.",
+        "Hij mag niet verhuizen."
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-1-q-027",
+      "tags": [
+        "knm:werk"
+      ],
+      "explanation": "Mannen en vrouwen hebben gelijke rechten op werk.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Een baas betaalt vrouwen minder dan mannen voor hetzelfde werk. Wat is dit?",
+      "options": [
+        "Een proeftijd. Dat is toegestaan.",
+        "Vakantiegeld. Dat is toegestaan.",
+        "Discriminatie. Dat is verboden.",
+        "Een gewone regel van het bedrijf."
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-1-q-028",
+      "tags": [
+        "knm:omgang"
+      ],
+      "explanation": "Bij een verjaardag feliciteer je de jarige.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Mehmet is op een verjaardag van zijn buurvrouw. Wat zegt hij?",
+      "options": [
+        "Veel succes op school!",
+        "Goede reis!",
+        "Fijne feestdagen!",
+        "Gefeliciteerd met je verjaardag!"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-1-q-029",
+      "tags": [
+        "knm:instanties"
+      ],
+      "explanation": "DUO regelt inburgering en studiefinanciering.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Pieter krijgt een brief van DUO. Waar gaat de brief waarschijnlijk over?",
+      "options": [
+        "Inburgering of studiefinanciering",
+        "Een uitkering voor werklozen",
+        "Een parkeerboete",
+        "Zijn zorgverzekering"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-1-q-030",
+      "tags": [
+        "knm:gezondheid"
+      ],
+      "explanation": "De tandarts zit voor volwassenen meestal niet in de basisverzekering.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Priya heeft kiespijn. Wat is slim om te controleren?",
+      "options": [
+        "Of ze een recept heeft",
+        "Of ze een aanvullende verzekering heeft voor de tandarts",
+        "Of ze een verwijzing van de gemeente heeft",
+        "Of ze eigen risico heeft op de huisarts"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-1-q-031",
+      "tags": [
+        "knm:geschiedenis"
+      ],
+      "explanation": "Duitsland en België zijn de buurlanden van Nederland. Duitsland ligt in het oosten.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Welk land ligt aan de oostkant van Nederland?",
+      "options": [
+        "België",
+        "Frankrijk",
+        "Duitsland",
+        "Engeland"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-1-q-032",
+      "tags": [
+        "knm:staat"
+      ],
+      "explanation": "De rechterlijke macht is onafhankelijk.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat doet een rechter?",
+      "options": [
+        "Hij maakt de wetten.",
+        "Hij leidt het kabinet.",
+        "Hij benoemt de burgemeester.",
+        "Hij beslist onafhankelijk in rechtszaken."
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-1-q-033",
+      "tags": [
+        "knm:onderwijs"
+      ],
+      "explanation": "Beide soorten basisonderwijs zijn gratis; de ouderbijdrage is vrijwillig.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Welk onderwijs op de basisschool is gratis?",
+      "options": [
+        "Openbaar en bijzonder onderwijs",
+        "Alleen openbaar onderwijs",
+        "Alleen bijzonder onderwijs",
+        "Geen enkel onderwijs"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-1-q-034",
+      "tags": [
+        "knm:wonen"
+      ],
+      "explanation": "Verwarming en cv-ketel zijn grote reparaties voor de verhuurder.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "De cv-ketel van Wei, die een huurhuis heeft, is kapot. Wie moet dit laten repareren?",
+      "options": [
+        "Wei zelf",
+        "De verhuurder",
+        "De buurman",
+        "De gemeente"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-1-q-035",
+      "tags": [
+        "knm:wonen"
+      ],
+      "explanation": "Karton is papier. Papier scheid je van ander afval.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "In welke bak gooi je een kartonnen doos?",
+      "options": [
+        "In de glasbak",
+        "In het gft-afval",
+        "In de bak voor papier",
+        "In het restafval"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-1-q-036",
+      "tags": [
+        "knm:staat"
+      ],
+      "explanation": "In een democratie kiezen mensen het parlement.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat betekent: Nederland is een parlementaire democratie?",
+      "options": [
+        "De koning kiest het parlement.",
+        "De rechters kiezen het parlement.",
+        "De burgemeester kiest het parlement.",
+        "Het volk kiest het parlement."
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-1-q-037",
+      "tags": [
+        "knm:onderwijs"
+      ],
+      "explanation": "Op een ouderavond komen ouders naar school.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is een ouderavond?",
+      "options": [
+        "Een avond waarop ouders met leraren over school praten",
+        "Een avond zonder les voor kinderen",
+        "Een examen voor ouders",
+        "Een schoolreisje"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-1-q-038",
+      "tags": [
+        "knm:instanties"
+      ],
+      "explanation": "Parkeren is een zaak van de gemeente.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Waar vraag je een parkeervergunning aan?",
+      "options": [
+        "Bij de IND",
+        "Bij de gemeente",
+        "Bij DUO",
+        "Bij de SVB"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-1-q-039",
+      "tags": [
+        "knm:onderwijs"
+      ],
+      "explanation": "Vmbo duurt 4 jaar, havo 5 jaar en vwo 6 jaar.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Hoe lang duurt het vmbo?",
+      "options": [
+        "5 jaar",
+        "6 jaar",
+        "4 jaar",
+        "3 jaar"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-1-q-040",
+      "tags": [
+        "knm:instanties"
+      ],
+      "explanation": "Je BSN (burgerservicenummer) staat op je paspoort of ID-kaart.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Waar kun je je BSN vinden?",
+      "options": [
+        "Op je OV-chipkaart",
+        "Op je loonstrook van vorig jaar alleen",
+        "Op je pinpas",
+        "Op je paspoort of ID-kaart"
+      ],
+      "answer": 3
     }
-  ]
+  ],
+  "passScore": 0.7
 }
