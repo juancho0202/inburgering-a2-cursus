@@ -8,6 +8,7 @@ import ProgressBar from "../components/ui/ProgressBar.vue";
 import ProgressRing from "../components/ui/ProgressRing.vue";
 import { useContentStore } from "../stores/content";
 import { pickBackground } from "../lib/backgrounds";
+import { useSessionStore } from "../stores/session";
 
 interface Dashboard {
   lastLocation: { unitId: string; unitTitle: string; stepIndex: number; stepCount: number } | null;
@@ -19,10 +20,12 @@ interface Dashboard {
   modules: { id: string; title: string; total: number; completed: number }[];
   hardCount: number;
   weakTags: { tag: string; accuracy: number; seen: number }[];
+  backupReminder: { show: boolean; daysAgo: number | null; unsavedAnswers: number };
   nextExam: { id: string; title: string; skill: string; durationMinutes: number } | null;
 }
 
 const content = useContentStore();
+const session = useSessionStore();
 // A different background each time the dashboard opens; it fades in once it has loaded.
 const background = pickBackground();
 const backgroundLoaded = ref(false);
@@ -111,6 +114,18 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
           <div v-if="m.total" class="mt-4"><ProgressBar :value="m.total ? m.completed / m.total : 0" :label="`Voortgang ${m.title}`" /></div>
         </RouterLink>
       </div>
+    </section>
+
+    <section v-if="data.backupReminder.show" class="card flex flex-wrap items-center gap-4 p-5" aria-label="Voortgang bewaren">
+      <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand-bg text-3xl" aria-hidden="true">💾</span>
+      <div class="min-w-0 flex-1">
+        <h2 class="text-lg font-bold">Bewaar je voortgang</h2>
+        <p class="text-muted">
+          {{ data.backupReminder.daysAgo === null ? "Je hebt je voortgang nog niet bewaard." : `Laatst bewaard: ${data.backupReminder.daysAgo} dagen geleden.` }}
+          Je voortgang staat alleen in deze browser.
+        </p>
+      </div>
+      <AppButton variant="secondary" @click="session.openFinish()">Bewaar nu</AppButton>
     </section>
 
     <section v-if="data.nextExam" class="card flex flex-wrap items-center gap-4 p-5">

@@ -3,9 +3,16 @@ import { nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { RouterLink, RouterView, useRoute } from "vue-router";
 import { useSettingsStore } from "./stores/settings";
 import { applyTheme } from "./composables/theme";
+import { useSessionStore } from "./stores/session";
+import FinishSessionDialog from "./components/FinishSessionDialog.vue";
 
 const settings = useSettingsStore();
 const route = useRoute();
+const session = useSessionStore();
+function finishFromMenu() {
+  closeMenu(false);
+  session.openFinish();
+}
 const mq = window.matchMedia("(prefers-color-scheme: dark)");
 const refresh = () => applyTheme(settings.settings?.theme ?? "system");
 
@@ -61,7 +68,7 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
       <div class="mx-auto flex max-w-5xl items-center gap-2 px-4 py-2.5">
         <RouterLink to="/" class="mr-2 flex items-center gap-2 text-xl font-extrabold tracking-tight">
           <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand text-lg text-white" aria-hidden="true">NL</span>
-          <span>Inburgering A2</span>
+          <span class="whitespace-nowrap">Inburgering A2</span>
         </RouterLink>
 
         <!-- Desktop: links in the top bar -->
@@ -77,6 +84,10 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
             <span aria-hidden="true">{{ l.icon }}</span>{{ l.label }}
           </RouterLink>
         </nav>
+
+        <button type="button" class="ml-auto hidden items-center gap-1.5 rounded-xl border-2 border-line px-3 py-1.5 font-semibold text-muted transition hover:bg-surface-2 hover:text-ink md:flex" title="Klaar voor vandaag" aria-label="Klaar voor vandaag" @click="session.openFinish()">
+          <span aria-hidden="true">🌙</span><span class="hidden whitespace-nowrap xl:inline">Klaar voor vandaag</span>
+        </button>
 
         <!-- Mobile: hamburger button -->
         <button
@@ -123,9 +134,13 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
               </RouterLink>
             </li>
           </ul>
+          <button type="button" class="mt-auto flex items-center justify-center gap-2 rounded-2xl border-2 border-line px-4 py-3 text-lg font-bold transition hover:bg-surface-2" @click="finishFromMenu">
+            <span aria-hidden="true">🌙</span>Klaar voor vandaag
+          </button>
         </nav>
       </div>
     </Transition>
+    <FinishSessionDialog />
 
     <main id="main" tabindex="-1" class="mx-auto w-full flex-1 px-4 py-6 sm:py-8" :class="route.meta.focus ? 'max-w-6xl' : 'max-w-5xl'">
       <RouterView />

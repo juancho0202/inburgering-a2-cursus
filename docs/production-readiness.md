@@ -1,6 +1,6 @@
 # Sharing the A2 Trainer with friends — production-readiness plan
 
-> Status: **decided, building.** Steps 0–4 done: plan + SPEC updated; services and `DataStore` in `shared/`; course bundled and validated at build time; the screens run on an in-browser API + IndexedDB with no server; Claude is called from the browser with the learner's own key, stored encrypted. Still to do: progress file (5), onboarding (6), flags (7), PWA (8), delete `server/` (9), CI/E2E (10), Netlify + CSP (11), content review (12), beta (13).
+> Status: **decided, building.** Steps 0–5 done (progress file with merge-import, "Klaar voor vandaag", AirDrop/share, undo, import of old server files). Still to do: onboarding (6), flags (7), PWA (8), delete `server/` (9), CI/E2E (10), Netlify + CSP (11), content review (12), beta (13).
 > Companion to `SPEC.md`, which describes the app as built in phases 1–7: one learner, one computer.
 > This document changes some of SPEC's hard constraints (§3 of SPEC). Step 0 below updates SPEC to match.
 
@@ -226,7 +226,7 @@ committing (no commits by Claude). Sizes: S ≈ 1–2 h, M ≈ half a day, L ≈
 | 2 | **Content in the bundle** (`shared/content/`), validation before build ✅ | M | `npm run build` fails on a broken course file; the course is its own lazy chunk (~120 kB gzipped). *Showing the modules with no server running needs the in-browser API, so that check moves to step 3* |
 | 3 | **In-browser router + Dexie store**; `api/client.ts` switches transport ✅ | L | Every screen works with the dev server stopped; refresh keeps progress; resume-at-step and exam resume still work. *Verified through the router on a (fake) IndexedDB; a real-browser pass is part of step 10's Playwright tests* |
 | 4 | **Claude in the browser (BYOK):** gateway, encrypted key store, test key, remove key, usage counter ✅ | M | Feedback / explain / generate work with a real key; the network tab shows only `api.anthropic.com`; the key is never in IndexedDB as plain text |
-| 5 | **Progress file:** export, share (Web Share + AirDrop), merge-import with preview, undo last import, v1 importer, "Klaar voor vandaag" dialog, reminder | L | Laptop → phone → laptop round trip keeps everything; importing an old file changes nothing; your current local progress imports correctly |
+| 5 | **Progress file:** export, share (Web Share + AirDrop), merge-import with preview, undo last import, v1 importer, "Klaar voor vandaag" dialog, reminder ✅ | L | Laptop → phone → laptop round trip keeps everything; importing an old file changes nothing; your current local progress imports correctly |
 | 6 | **Welcome / "Over deze app" + key guide + DUO disclaimer** | S | A friend can start without help |
 | 7 | **"Meld een fout"** on every item + `npm run flags` script | S | Flag on phone → export → script lists it |
 | 8 | **PWA** + `storage.persist()` | M | Installable on iPhone/Android; lessons work in airplane mode |

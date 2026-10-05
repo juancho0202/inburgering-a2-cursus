@@ -4,6 +4,7 @@ import { hardItemIds, weakestTags } from "../logic/weakspots.js";
 import { getLastLocation, derivedStats } from "./progress.js";
 import { getSettings } from "./settings.js";
 import { today, type Env } from "./context.js";
+import { backupReminder } from "./transfer.js";
 
 export async function dashboard(env: Env) {
   const day = today(env);
@@ -44,6 +45,7 @@ export async function dashboard(env: Env) {
     hardCount: hardItemIds(stats.items).filter((id) => !id.startsWith("writing:") && index.resolve(id)).length,
     // Writing error types (writing:woordvolgorde, ...) are tags of their own.
     weakTags: weakestTags(stats.items, (id) => (id.startsWith("writing:") ? [id] : (index.resolve(id)?.tags ?? examTags.get(id) ?? []))),
+    backupReminder: await backupReminder(env),
     nextExam: nextExam ? { id: nextExam.id, title: nextExam.title, skill: nextExam.skill, durationMinutes: nextExam.durationMinutes } : null,
   };
 }

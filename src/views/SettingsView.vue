@@ -2,25 +2,17 @@
 import { onMounted, ref } from "vue";
 import { useSettingsStore } from "../stores/settings";
 import { api } from "../api/client";
+import ImportSection from "../components/ImportSection.vue";
+import { useSessionStore } from "../stores/session";
 import { MODELS } from "@shared/claude/models";
 import AppButton from "../components/ui/AppButton.vue";
 
 const store = useSettingsStore();
+const session = useSessionStore();
 const newKey = ref("");
 const saved = ref(false);
 const resetText = ref("");
 const resetMessage = ref<{ ok: boolean; text: string } | null>(null);
-
-/** Saves everything as one file. (Step 5 turns this into the share/AirDrop flow.) */
-async function downloadData() {
-  const bundle = await api.get<unknown>("/export");
-  const url = URL.createObjectURL(new Blob([JSON.stringify(bundle, null, 2)], { type: "application/json" }));
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `inburgering-a2-voortgang-${new Date().toISOString().slice(0, 10)}.json`;
-  link.click();
-  URL.revokeObjectURL(url);
-}
 
 async function resetProgress() {
   try {
@@ -111,13 +103,18 @@ const themes = [
 
       <section class="card p-6">
         <h2 class="text-xl font-bold">Mijn gegevens</h2>
-        <p class="mt-1 text-muted">Al je voortgang staat in de browser op dit apparaat. Download je gegevens om een backup te maken of om op een ander apparaat verder te gaan.</p>
-        <AppButton class="mt-3" variant="secondary" @click="downloadData">⬇ Download mijn gegevens</AppButton>
-        <p class="mt-1 text-sm text-muted">De API-sleutel zit niet in dit bestand.</p>
+        <p class="mt-1 text-muted">Al je voortgang staat in de browser op dit apparaat. Bewaar je voortgang als bestand om een backup te maken of om op een ander apparaat verder te gaan.</p>
+        <div class="mt-4 grid gap-5">
+          <div>
+            <AppButton variant="secondary" @click="session.openFinish()">🌙 Klaar voor vandaag: bewaar mijn voortgang</AppButton>
+            <p class="mt-1 text-sm text-muted">Maakt een bestand om te delen met je andere apparaat of als backup. De API-sleutel zit niet in dit bestand.</p>
+          </div>
+          <ImportSection @imported="store.load()" />
+        </div>
 
         <div class="mt-6 rounded-2xl border border-bad/40 bg-bad-bg p-4">
           <h3 class="font-bold text-bad">Voortgang wissen</h3>
-          <p class="mt-1">Dit wist je voortgang en woordkaartjes. Je schrijfteksten blijven staan. Dit kun je niet ongedaan maken: download eerst je gegevens als je ze wilt bewaren.</p>
+          <p class="mt-1">Dit wist je voortgang en woordkaartjes. Je schrijfteksten blijven staan. Dit kun je niet ongedaan maken: bewaar eerst je voortgang als je die wilt houden.</p>
           <label for="reset" class="mt-3 block font-semibold">Typ <strong>RESET</strong> om te bevestigen</label>
           <input id="reset" v-model="resetText" class="input mt-1" autocomplete="off" />
           <AppButton class="mt-3" variant="bad" :disabled="resetText !== 'RESET'" @click="resetProgress">Wis mijn voortgang</AppButton>
