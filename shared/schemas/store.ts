@@ -91,7 +91,13 @@ export type LastLocation = z.infer<typeof LastLocationSchema>;
 export const NewTodaySchema = z.object({ day: z.string(), count: z.number().int() });
 export type NewToday = z.infer<typeof NewTodaySchema>;
 
-export const MetaRecordSchema = z.object({ deviceId: z.string(), deviceName: z.string().optional() });
+export const MetaRecordSchema = z.object({
+  deviceId: z.string(),
+  deviceName: z.string().optional(),
+  /** When a progress file was last saved/shared from this device (for the "not saved for X days" reminder). */
+  lastExportAt: z.string().optional(),
+  lastImportAt: z.string().optional(),
+});
 export type MetaRecord = z.infer<typeof MetaRecordSchema>;
 
 /** Names of the key-value entries. */

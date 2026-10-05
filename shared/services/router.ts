@@ -3,7 +3,7 @@ import { courseTree, getUnit, samenvatting } from "./course.js";
 import { ServiceError, invalid, type Env } from "./context.js";
 import { dashboard, practice } from "./dashboard.js";
 import { examMistakes, getExam, getExamResult, listExams, saveExamState, startExam, submitExam } from "./exams.js";
-import { exportData } from "./exportData.js";
+import { applyImport, buildProgressFile, getDevice, lastImport, markExported, previewImport, sessionSummary, setDeviceName, undoLastImport } from "./transfer.js";
 import { completeUnit, getProgress, recordAttempt, resetProgress, setUnitStep } from "./progress.js";
 import { getSettings, updateSettings } from "./settings.js";
 import { dueCards, introduce, reviewSrsCard, verbList, vocabList } from "./srs.js";
@@ -104,7 +104,15 @@ const routes: [Method, string, Handler][] = [
     },
   ],
   ["POST", "/settings/test-key", async (c) => (await c.options.testKey?.()) ?? { ok: false, message: "Voeg eerst een API-sleutel toe." }],
-  ["GET", "/export", (c) => exportData(c.env)],
+  ["GET", "/export", (c) => buildProgressFile(c.env)],
+  ["POST", "/import/preview", (c) => previewImport(c.env, c.body)],
+  ["POST", "/import/apply", (c) => applyImport(c.env, c.body)],
+  ["POST", "/import/undo", (c) => undoLastImport(c.env)],
+  ["GET", "/import/last", async (c) => (await lastImport(c.env)) ?? null],
+  ["GET", "/session/summary", (c) => sessionSummary(c.env)],
+  ["POST", "/session/exported", (c) => markExported(c.env)],
+  ["GET", "/device", (c) => getDevice(c.env)],
+  ["PUT", "/device", (c) => setDeviceName(c.env, c.body)],
 ];
 
 const compiled = routes.map(([method, pattern, handler]) => {

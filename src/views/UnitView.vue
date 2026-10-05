@@ -5,6 +5,7 @@ import { api } from "../api/client";
 import type { Progress, Unit } from "@shared/types";
 import { unitScore } from "../lib/unitScore";
 import { useContentStore } from "../stores/content";
+import { useSessionStore } from "../stores/session";
 import AppButton from "../components/ui/AppButton.vue";
 import ProgressBar from "../components/ui/ProgressBar.vue";
 import LessonBlocks from "../components/LessonBlocks.vue";
@@ -13,6 +14,7 @@ import ExerciseShell from "../components/exercises/ExerciseShell.vue";
 const route = useRoute();
 const router = useRouter();
 const content = useContentStore();
+const session = useSessionStore();
 
 const unit = ref<Unit | null>(null);
 const error = ref<string | null>(null);
@@ -89,6 +91,7 @@ const restart = async () => {
       <RouterLink v-if="summary.hard" :to="{ path: '/oefenen', query: { mode: 'hard', unit: unit.id } }"><AppButton variant="secondary" class="w-full">Moeilijke vragen ({{ summary.hard }})</AppButton></RouterLink>
       <RouterLink :to="{ path: '/oefenen', query: { gen: 'unit', unit: unit.id } }"><AppButton variant="secondary" class="w-full">🤖 Meer oefenen met Claude</AppButton></RouterLink>
       <AppButton variant="secondary" @click="restart">Opnieuw</AppButton>
+      <AppButton variant="secondary" @click="session.openFinish()">🌙 Klaar voor vandaag</AppButton>
       <AppButton variant="ghost" @click="exit">Terug naar de module</AppButton>
     </div>
   </div>
