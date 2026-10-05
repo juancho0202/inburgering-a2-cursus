@@ -13,7 +13,8 @@
     "stats": "tsx scripts/content-stats.ts",
     "flags": "tsx scripts/flags.ts",
     "test": "vitest run",
-    "migrate-old-progress": "tsx scripts/migrate-old-progress.ts"
+    "migrate-old-progress": "tsx scripts/migrate-old-progress.ts",
+    "e2e": "playwright test"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",

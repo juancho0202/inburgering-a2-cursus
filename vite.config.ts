@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import vue from "@vitejs/plugin-vue";
 import tailwindcss from "@tailwindcss/vite";
 import path from "node:path";
@@ -48,6 +48,8 @@ export default defineConfig({
       },
     }),
   ],
+  // Unit tests only; the browser tests in tests/e2e run with Playwright (npm run e2e).
+  test: { include: ["tests/unit/**/*.test.ts"] },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
