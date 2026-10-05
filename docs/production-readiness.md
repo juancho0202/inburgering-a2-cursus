@@ -1,6 +1,6 @@
 # Sharing the A2 Trainer with friends — production-readiness plan
 
-> Status: **decided, building.** Steps 0–9 done (the Express server is gone). Still to do: CI/E2E (10), Netlify + CSP (11), content review (12), beta (13).
+> Status: **decided, building.** Steps 0–11 done (CI, content-id check, strict CSP, Netlify config). Still to do: content review (12), beta (13). *Trusted Types was dropped: Vue's `v-html` needs a pass-through default policy, which would add little protection.*
 > Companion to `SPEC.md`, which describes the app as built in phases 1–7: one learner, one computer.
 > This document changes some of SPEC's hard constraints (§3 of SPEC). Step 0 below updates SPEC to match.
 

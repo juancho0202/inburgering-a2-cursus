@@ -25,6 +25,8 @@ npm run dev          # Vite dev server op http://localhost:5173
 npm test             # unit tests (Vitest)
 npm run build        # type-check + productiebuild in dist/ (faalt als de cursusinhoud niet klopt)
 npm run validate     # controleert alle cursusbestanden in data/course/
+npm run check-ids    # faalt als een vaste id uit een eerdere versie verdwenen is
+npm run e2e          # browsertests (Playwright, telefoonformaat; eerst: npx playwright install chromium)
 npm run stats        # telt vragen, woorden en teksten t.o.v. de doelen
 ```
 
@@ -43,6 +45,17 @@ Had je voortgang in de oude versie met een server (`data/user/`)? Maak er een be
 ```bash
 npm run migrate-old-progress -- data/user
 ```
+
+## Online zetten met Netlify
+
+De site is statisch (geen server). `netlify.toml` bevat alle instellingen; de beveiligingsheaders (`Content-Security-Policy` e.d.) worden bij de build in `dist/_headers` gezet.
+
+1. Zet de code op GitHub en kies in Netlify **Add new site → Import an existing project**.
+2. Kies de repository en de branch `main`. Build command (`npm run build`), publish directory (`dist`) en Node 24 komen uit `netlify.toml`.
+3. Elke push naar `main` publiceert automatisch. Pull requests krijgen een eigen **deploy preview**-link.
+4. De build faalt als de cursusinhoud niet klopt, en GitHub Actions (`.github/workflows/ci.yml`) draait daarnaast de tests en de browsertests. Zet in GitHub bij *Settings → Branches* "Require status checks" aan als je wilt dat Netlify alleen groene commits publiceert.
+
+Vrienden gebruiken de site met hun **eigen** API-sleutel; die komt nooit op een server van jou.
 
 ## Waar staat wat?
 
