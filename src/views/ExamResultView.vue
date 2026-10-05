@@ -10,6 +10,7 @@ import { useSettingsStore } from "../stores/settings";
 import AppButton from "../components/ui/AppButton.vue";
 import ProgressBar from "../components/ui/ProgressBar.vue";
 import WritingFeedbackPanel from "../components/WritingFeedbackPanel.vue";
+import ReportIssue from "../components/ReportIssue.vue";
 import { DISCLAIMER, themeLabel } from "../lib/examLabels";
 
 type Result = Progress["exams"][number];
@@ -147,6 +148,7 @@ const retryable = computed(() => tasks.value.some((t) => taskState.value[t.id]?.
             <p class="mt-1 text-bad">✗ Jouw antwoord: {{ yourAnswer(q) }}</p>
             <p class="text-good">✓ Goed antwoord: {{ correctText(q.exercise) }}</p>
             <p class="mt-1 text-muted">{{ q.exercise.explanation }}</p>
+            <div class="mt-1 -ml-3"><ReportIssue :item-id="q.id" /></div>
           </li>
         </ol>
       </section>

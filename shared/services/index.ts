@@ -7,6 +7,7 @@ export * from "./settings.js";
 export * from "./srs.js";
 export * from "./writing.js";
 export * from "./welcome.js";
+export * from "./flags.js";
 export { feedbackWriting, explain, generate, flagGenerated } from "./claude.js";
 export * from "./transfer.js";
 export * from "./router.js";

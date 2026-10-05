@@ -27,6 +27,20 @@ async function resetProgress() {
 
 onMounted(() => store.load());
 
+interface FlagRow {
+  id: string;
+  title: string;
+  note: string;
+  at: string;
+}
+const flags = ref<FlagRow[]>([]);
+const loadFlags = async () => (flags.value = await api.get<FlagRow[]>("/flags"));
+onMounted(loadFlags);
+async function removeFlag(id: string) {
+  await api.post(`/flags/${id}/remove`);
+  await loadFlags();
+}
+
 const keyError = ref<string | null>(null);
 const confirmRemove = ref(false);
 
@@ -121,6 +135,20 @@ const themes = [
           <AppButton class="mt-3" variant="bad" :disabled="resetText !== 'RESET'" @click="resetProgress">Wis mijn voortgang</AppButton>
           <p v-if="resetMessage" role="status" class="mt-3 font-semibold" :class="resetMessage.ok ? 'text-good' : 'text-bad'">{{ resetMessage.ok ? "✓" : "✗" }} {{ resetMessage.text }}</p>
         </div>
+      </section>
+
+      <section v-if="flags.length" class="card p-6">
+        <h2 class="text-xl font-bold">Mijn meldingen ({{ flags.length }})</h2>
+        <p class="mt-1 text-sm text-muted">Fouten die je hebt gemeld. Ze zitten in je voortgangsbestand.</p>
+        <ul class="mt-3 grid gap-2">
+          <li v-for="f in flags" :key="f.id" class="flex items-start justify-between gap-3 rounded-2xl bg-surface-2 p-3">
+            <div class="min-w-0">
+              <p class="truncate font-semibold">{{ f.title }}</p>
+              <p class="text-muted">{{ f.note || "(geen toelichting)" }}</p>
+            </div>
+            <button type="button" class="shrink-0 text-sm font-semibold underline hover:text-ink" @click="removeFlag(f.id)">Verwijder</button>
+          </li>
+        </ul>
       </section>
 
       <section class="card p-6">
