@@ -101,10 +101,11 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
             <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl text-3xl" :class="moduleStyle(m.id).tile" aria-hidden="true">{{ moduleStyle(m.id).emoji }}</span>
             <div class="min-w-0 flex-1">
               <h3 class="text-xl font-bold group-hover:text-brand-strong">{{ m.title }}</h3>
-              <p class="text-sm text-muted">{{ m.completed }} van {{ m.total }} lessen klaar</p>
+              <p v-if="m.total" class="text-sm text-muted">{{ m.completed }} van {{ m.total }} lessen klaar</p>
+              <p v-else class="text-sm text-muted">Oefen onder examentijd</p>
             </div>
           </div>
-          <div class="mt-4"><ProgressBar :value="m.total ? m.completed / m.total : 0" :label="`Voortgang ${m.title}`" /></div>
+          <div v-if="m.total" class="mt-4"><ProgressBar :value="m.total ? m.completed / m.total : 0" :label="`Voortgang ${m.title}`" /></div>
         </RouterLink>
       </div>
     </section>

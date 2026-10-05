@@ -7,9 +7,8 @@
     "node": ">=24"
   },
   "scripts": {
-    "dev": "concurrently -k -n API,WEB -c blue,green \"npm:dev:server\" \"npm:dev:client\"",
+    "dev": "vite",
     "dev:server": "tsx watch server/index.ts",
-    "dev:client": "vite",
     "build": "vue-tsc -b && vite build",
     "start": "NODE_ENV=production tsx server/index.ts",
     "validate": "tsx scripts/validate-content.ts",

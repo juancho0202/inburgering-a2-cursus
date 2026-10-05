@@ -1081,7 +1081,7 @@ In een gewone zin staat het werkwoord op plek 2. In een bijzin staan de werkwoor
 - Voorzetsels van plaats: in, op, bij, naast, tegenover, achter, voor, onder, boven, tussen.
   Richting: naar, van, door, langs.
 
-### A.6 Signaalwoorden (useful for Lezen too)
+### A.6 Signaalwoorden (ook handig voor Lezen)
 
 | Signaalwoord | Betekenis |
 | --- | --- |

@@ -2,6 +2,8 @@ import type { Exam, ModuleDef, Unit, VerbEntry, VocabEntry, VocabFile } from "..
 
 /** The course, as the services see it. Built from the JSON files (step 2: at build time). */
 export interface Content {
+  /** Content version hash (see ContentData.version). */
+  version: string;
   course: { id: string; title: string };
   /** In course order. */
   modules: Map<string, ModuleDef>;

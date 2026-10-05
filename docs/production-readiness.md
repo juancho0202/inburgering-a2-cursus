@@ -1,6 +1,6 @@
 # Sharing the A2 Trainer with friends — production-readiness plan
 
-> Status: **decided, building.** Steps 0–2 done: plan + SPEC updated; services and `DataStore` in `shared/`; the course is validated and bundled at build time (`virtual:course-data`). The Express server is left untouched (and later deleted) until step 3 switches the UI over.
+> Status: **decided, building.** Steps 0–3 done: plan + SPEC updated; services and `DataStore` in `shared/`; the course is validated and bundled at build time; the screens now run on an in-browser API + IndexedDB (Dexie) with no server. Still to do: key handling (step 4), progress file (5), onboarding (6), flags (7), PWA (8), delete `server/` (9), CI/E2E (10), Netlify (11).
 > Companion to `SPEC.md`, which describes the app as built in phases 1–7: one learner, one computer.
 > This document changes some of SPEC's hard constraints (§3 of SPEC). Step 0 below updates SPEC to match.
 
@@ -224,7 +224,7 @@ committing (no commits by Claude). Sizes: S ≈ 1–2 h, M ≈ half a day, L ≈
 | 0 | **Prep:** new branch `local-first`; update `SPEC.md` hard constraints (browser storage, BYOK, Netlify); install `dexie`, `vite-plugin-pwa`, `@playwright/test` | S | SPEC and this document agree |
 | 1 | **`DataStore` interface + in-memory store; move route logic to `shared/services/`**: attempts-derived stats, units, SRS, practice, dashboard, exams, writing, generated, explanations | L | Existing tests pass; new service tests cover merge-relevant behaviour (stats derived from attempts, exam submit, SRS review) |
 | 2 | **Content in the bundle** (`shared/content/`), validation before build ✅ | M | `npm run build` fails on a broken course file; the course is its own lazy chunk (~120 kB gzipped). *Showing the modules with no server running needs the in-browser API, so that check moves to step 3* |
-| 3 | **In-browser router + Dexie store**; `api/client.ts` switches transport | L | Every screen works with the dev server stopped; refresh keeps progress; resume-at-step and exam resume still work |
+| 3 | **In-browser router + Dexie store**; `api/client.ts` switches transport ✅ | L | Every screen works with the dev server stopped; refresh keeps progress; resume-at-step and exam resume still work. *Verified through the router on a (fake) IndexedDB; a real-browser pass is part of step 10's Playwright tests* |
 | 4 | **Claude in the browser (BYOK):** gateway, encrypted key store, test key, remove key, usage counter | M | Feedback / explain / generate work with a real key; the network tab shows only `api.anthropic.com`; the key is never in IndexedDB as plain text |
 | 5 | **Progress file:** export, share (Web Share + AirDrop), merge-import with preview, undo last import, v1 importer, "Klaar voor vandaag" dialog, reminder | L | Laptop → phone → laptop round trip keeps everything; importing an old file changes nothing; your current local progress imports correctly |
 | 6 | **Welcome / "Over deze app" + key guide + DUO disclaimer** | S | A friend can start without help |
