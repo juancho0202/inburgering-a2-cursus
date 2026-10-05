@@ -1,4 +1,4 @@
-import type { Exercise } from "../../shared/types.js";
+import type { Exercise } from "../types.js";
 
 export const WRITING_FEEDBACK_SYSTEM = `Je bent een vriendelijke, eerlijke docent Nederlands als tweede taal. Je beoordeelt
 schrijfopdrachten voor het inburgeringsexamen Schrijven op niveau A2.

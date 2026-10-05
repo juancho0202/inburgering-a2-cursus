@@ -1,4 +1,4 @@
-import type { Exercise } from "../../shared/types.js";
+import type { Exercise } from "../types.js";
 
 /** Readable version of the learner's answer, for the "explain" prompt and the cache key. */
 export function describeAnswer(ex: Exercise, answer: unknown): string {

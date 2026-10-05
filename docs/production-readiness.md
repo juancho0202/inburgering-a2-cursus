@@ -1,6 +1,6 @@
 # Sharing the A2 Trainer with friends — production-readiness plan
 
-> Status: **decided, ready to build** (2026-10-05).
+> Status: **decided, building.** Step 0 done (2026-10-05). Step 1 done: services, `DataStore` and tests exist in `shared/`; the Express server is left untouched (and later deleted) until step 3 switches the UI over.
 > Companion to `SPEC.md`, which describes the app as built in phases 1–7: one learner, one computer.
 > This document changes some of SPEC's hard constraints (§3 of SPEC). Step 0 below updates SPEC to match.
 

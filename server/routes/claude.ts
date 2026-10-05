@@ -4,6 +4,7 @@ import path from "node:path";
 import { z } from "zod";
 import { CORRECTION_TYPES, GenerateRequestSchema } from "../../shared/schemas/claude.js";
 import type { GeneratedItem, WritingFeedback } from "../../shared/schemas/claude.js";
+import { examExercises, examQuestions } from "../../shared/logic/exam.js";
 import { normalizeAnswer } from "../../shared/logic/answers.js";
 import { writingTag } from "../../shared/logic/corrections.js";
 import type { Exercise, Settings } from "../../shared/types.js";
@@ -24,8 +25,8 @@ import { GeneratedFileSchema } from "../../shared/schemas/claude.js";
 import { summarizeWriting } from "./exams.js";
 import { createGateway, NoApiKeyError, type ClaudeGateway } from "../claude/gateway.js";
 import { mapClaudeError } from "../claude/client.js";
-import { explainMistake, generateExercises, writingFeedback } from "../claude/services.js";
-import { describeAnswer, describeCorrect, optionsOf } from "../claude/describe.js";
+import { explainMistake, generateExercises, writingFeedback } from "../../shared/claude/services.js";
+import { describeAnswer, describeCorrect, optionsOf } from "../../shared/claude/describe.js";
 
 export const claudeRouter = Router();
 
@@ -46,6 +47,17 @@ function claudeFailure(res: Response, err: unknown, extra: object = {}) {
     return fail(res, 502, "bad_answer", "Claude gaf een antwoord dat niet klopt. Probeer het opnieuw.", extra);
   console.warn("[claude]", (err as Error)?.message);
   return fail(res, 502, "claude_error", mapClaudeError(err), extra);
+}
+
+/** Exam items (writing tasks, questions) are valid targets too, but are not part of practice sessions. */
+function findExamOrUnitExercise(content: Awaited<ReturnType<typeof getContent>>, id: string): Exercise | undefined {
+  const fromUnits = buildExerciseIndex(content).byId.get(id)?.exercise;
+  if (fromUnits) return fromUnits;
+  for (const exam of content.exams.values()) {
+    const hit = examExercises(exam).find((x) => x.id === id) ?? examQuestions(exam).find((q) => q.id === id)?.exercise;
+    if (hit) return hit;
+  }
+  return undefined;
 }
 
 // ---------- writing feedback (§10.2) ----------
@@ -70,7 +82,7 @@ claudeRouter.post("/claude/feedback-writing", async (req, res) => {
   if (!body.success) return fail(res, 400, "invalid_body", "Er ontbreekt een tekst of opdracht.");
 
   const content = await getContent();
-  const ex = buildExerciseIndex(content).byId.get(body.data.exerciseId)?.exercise;
+  const ex = findExamOrUnitExercise(content, body.data.exerciseId);
   if (!ex || ex.type !== "writing") return fail(res, 404, "not_found", "Deze schrijfopdracht bestaat niet.");
 
   // The learner's text is always saved BEFORE calling Claude, so nothing is lost.
@@ -116,7 +128,7 @@ claudeRouter.post("/claude/explain", async (req, res) => {
   const index = buildExerciseIndex(content);
   const parent = index.resolve(body.data.itemId)?.exercise;
   const ex: Exercise | undefined =
-    parent && parent.type === "reading" && parent.id !== body.data.itemId ? parent.questions.find((q) => q.id === body.data.itemId) : parent;
+    parent && parent.type === "reading" && parent.id !== body.data.itemId ? parent.questions.find((q) => q.id === body.data.itemId) : (parent ?? findExamOrUnitExercise(content, body.data.itemId));
   if (!ex) return fail(res, 404, "not_found", "Deze vraag bestaat niet.");
 
   const learner = describeAnswer(ex, body.data.learnerAnswer);
