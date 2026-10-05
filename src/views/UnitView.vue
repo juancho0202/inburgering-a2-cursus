@@ -9,6 +9,7 @@ import { useSessionStore } from "../stores/session";
 import AppButton from "../components/ui/AppButton.vue";
 import ProgressBar from "../components/ui/ProgressBar.vue";
 import LessonBlocks from "../components/LessonBlocks.vue";
+import ReportIssue from "../components/ReportIssue.vue";
 import ExerciseShell from "../components/exercises/ExerciseShell.vue";
 
 const route = useRoute();
@@ -115,7 +116,10 @@ const restart = async () => {
       </div>
       <div class="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface/95 backdrop-blur">
         <div class="mx-auto flex max-w-4xl items-center justify-between gap-3 px-4 py-3">
-          <AppButton variant="ghost" @click="stepIndex === 0 ? exit() : goTo(stepIndex - 1)">{{ stepIndex === 0 ? "Stoppen" : "← Vorige" }}</AppButton>
+          <div class="flex items-center gap-1">
+            <AppButton variant="ghost" @click="stepIndex === 0 ? exit() : goTo(stepIndex - 1)">{{ stepIndex === 0 ? "Stoppen" : "← Vorige" }}</AppButton>
+            <ReportIssue :item-id="step.id" />
+          </div>
           <AppButton size="lg" @click="advance">{{ isLast ? "Afronden" : "Volgende →" }}</AppButton>
         </div>
       </div>

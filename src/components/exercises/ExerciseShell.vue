@@ -6,6 +6,7 @@ import type { Explanation } from "@shared/schemas/claude";
 import { api } from "../../api/client";
 import { useSettingsStore } from "../../stores/settings";
 import AppButton from "../ui/AppButton.vue";
+import ReportIssue from "../ReportIssue.vue";
 import ExerciseRenderer from "./ExerciseRenderer.vue";
 import type { EvalResult } from "./types";
 
@@ -158,6 +159,7 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey, true));
         <div class="flex gap-1">
           <AppButton variant="ghost" @click="emit('exit')">Stoppen</AppButton>
           <AppButton v-if="isGenerated && !flagged" variant="ghost" @click="flag">Klopt niet</AppButton>
+          <ReportIssue :item-id="exercise.id" />
         </div>
         <div class="flex gap-2">
           <AppButton v-if="isWriting && checked" variant="secondary" size="lg" @click="retry">Probeer opnieuw</AppButton>
