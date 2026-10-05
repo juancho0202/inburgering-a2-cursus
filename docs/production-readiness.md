@@ -1,6 +1,6 @@
 # Sharing the A2 Trainer with friends — production-readiness plan
 
-> Status: **decided, building.** Steps 0–5 done (progress file with merge-import, "Klaar voor vandaag", AirDrop/share, undo, import of old server files). Still to do: onboarding (6), flags (7), PWA (8), delete `server/` (9), CI/E2E (10), Netlify + CSP (11), content review (12), beta (13).
+> Status: **decided, building.** Steps 0–8 done (…plus welcome screen, "Meld een fout", installable offline PWA). Still to do: delete `server/` (9), CI/E2E (10), Netlify + CSP (11), content review (12), beta (13).
 > Companion to `SPEC.md`, which describes the app as built in phases 1–7: one learner, one computer.
 > This document changes some of SPEC's hard constraints (§3 of SPEC). Step 0 below updates SPEC to match.
 

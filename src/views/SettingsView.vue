@@ -4,6 +4,7 @@ import { useSettingsStore } from "../stores/settings";
 import { api } from "../api/client";
 import ImportSection from "../components/ImportSection.vue";
 import KeyGuide from "../components/KeyGuide.vue";
+import InstallHint from "../components/InstallHint.vue";
 import { useSessionStore } from "../stores/session";
 import { MODELS } from "@shared/claude/models";
 import AppButton from "../components/ui/AppButton.vue";
@@ -136,6 +137,8 @@ const themes = [
           <p v-if="resetMessage" role="status" class="mt-3 font-semibold" :class="resetMessage.ok ? 'text-good' : 'text-bad'">{{ resetMessage.ok ? "✓" : "✗" }} {{ resetMessage.text }}</p>
         </div>
       </section>
+
+      <InstallHint />
 
       <section v-if="flags.length" class="card p-6">
         <h2 class="text-xl font-bold">Mijn meldingen ({{ flags.length }})</h2>
