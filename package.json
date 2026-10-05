@@ -12,8 +12,8 @@
     "dev:client": "vite",
     "build": "vue-tsc -b && vite build",
     "start": "NODE_ENV=production tsx server/index.ts",
-    "validate": "tsx server/scripts/validate-content.ts",
-    "stats": "tsx server/scripts/content-stats.ts",
+    "validate": "tsx scripts/validate-content.ts",
+    "stats": "tsx scripts/content-stats.ts",
     "test": "vitest run"
   },
   "dependencies": {

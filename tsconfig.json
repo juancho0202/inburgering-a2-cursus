@@ -17,5 +17,5 @@
       "@shared/*": ["shared/*"]
     }
   },
-  "include": ["src", "shared", "server"]
+  "include": ["src", "shared", "server", "scripts"]
 }
