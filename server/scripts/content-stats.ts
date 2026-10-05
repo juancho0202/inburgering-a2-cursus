@@ -62,7 +62,8 @@ async function main() {
   for (const id of KNM_THEMES) console.log("  " + line(id, perTheme.get(id) ?? 0, TARGETS.knmPerTheme));
   console.log(line("Schrijven taken", schrijvenTasks, TARGETS.schrijvenTasks));
   console.log(line("Form-fill oefeningen", formFill, TARGETS.formFill));
-  console.log(`    Mock exams: ${content.exams.size}`);
+  const bySkill = (skill: string) => [...content.exams.values()].filter((e) => e.skill === skill).length;
+  console.log(`${bySkill("lezen") >= 2 && bySkill("knm") >= 2 && bySkill("schrijven") >= 2 ? "OK " : "!! "}Proefexamens: ${bySkill("lezen")} Lezen, ${bySkill("knm")} KNM, ${bySkill("schrijven")} Schrijven (doel: 2 / 2 / 2)`);
 }
 
 main().catch((err) => {

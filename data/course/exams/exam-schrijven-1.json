@@ -1,0 +1,165 @@
+{
+  "id": "exam-schrijven-1",
+  "skill": "schrijven",
+  "title": "Proefexamen Schrijven 1",
+  "durationMinutes": 40,
+  "items": [
+    {
+      "id": "exam-schrijven-1-q-001",
+      "tags": [
+        "schrijven:formulier"
+      ],
+      "explanation": "Schrijf de datum als dd-mm-jjjj.",
+      "difficulty": 1,
+      "type": "form-fill",
+      "prompt": "Opdracht 1: Vul het formulier in.",
+      "formTitle": "Aanmelding buurtcentrum De Brug",
+      "scenario": "Je heet Amira Haddad. Je bent geboren op 12 april 1988. Je woont aan de Beukenlaan 18 in Utrecht (3571 JK). Je telefoonnummer is 06-34567890. Je wilt graag meedoen aan de taalles op dinsdag.",
+      "fields": [
+        {
+          "label": "Achternaam",
+          "kind": "text",
+          "expected": "Haddad"
+        },
+        {
+          "label": "Voornaam",
+          "kind": "text",
+          "expected": "Amira"
+        },
+        {
+          "label": "Geboortedatum",
+          "kind": "text",
+          "expected": "12-04-1988",
+          "hint": "dd-mm-jjjj"
+        },
+        {
+          "label": "Adres",
+          "kind": "text",
+          "expected": "Beukenlaan 18"
+        },
+        {
+          "label": "Postcode en woonplaats",
+          "kind": "text",
+          "expected": "3571 JK Utrecht"
+        },
+        {
+          "label": "Telefoonnummer",
+          "kind": "text",
+          "expected": "06-34567890"
+        },
+        {
+          "label": "Aan welke activiteit wilt u meedoen?",
+          "kind": "text",
+          "expected": "taalles",
+          "hint": "Schrijf de activiteit op"
+        },
+        {
+          "label": "Op welke dag?",
+          "kind": "text",
+          "expected": "dinsdag"
+        },
+        {
+          "label": "Handtekening",
+          "kind": "text",
+          "hint": "Zet hier je naam"
+        }
+      ]
+    },
+    {
+      "id": "exam-schrijven-1-q-002",
+      "tags": [
+        "schrijven:kort-bericht",
+        "wonen"
+      ],
+      "explanation": "Een kort bericht aan een buur is vriendelijk en duidelijk.",
+      "difficulty": 1,
+      "type": "writing",
+      "prompt": "Opdracht 2: Schrijf een kort bericht.",
+      "task": {
+        "instructions": "Schrijf een kort bericht aan je buurman, meneer Bos.",
+        "scenario": "Je bent zaterdag niet thuis. Je verwacht een pakket. Je wilt dat meneer Bos het pakket aanneemt.",
+        "requiredPoints": [
+          "Vertel dat je zaterdag niet thuis bent.",
+          "Vraag of meneer Bos het pakket kan aannemen.",
+          "Zeg wanneer je het pakket ophaalt."
+        ]
+      },
+      "minWords": 25,
+      "maxWords": 50,
+      "register": "informal",
+      "modelAnswer": "Beste meneer Bos,\n\nIk ben zaterdag niet thuis, maar ik verwacht een pakket. Kunt u het pakket voor mij aannemen? Ik haal het zondag om tien uur bij u op. Alvast bedankt!\n\nGroeten,\nAmira (nr. 18)",
+      "checklist": [
+        "Aanhef met naam",
+        "Zaterdag niet thuis",
+        "Vraag om het pakket aan te nemen",
+        "Wanneer ophalen",
+        "Groet + naam"
+      ]
+    },
+    {
+      "id": "exam-schrijven-1-q-003",
+      "tags": [
+        "schrijven:informeel",
+        "eten-drinken"
+      ],
+      "explanation": "Een uitnodiging aan een collega is informeel.",
+      "difficulty": 1,
+      "type": "writing",
+      "prompt": "Opdracht 3: Schrijf een informele e-mail.",
+      "task": {
+        "instructions": "Schrijf een e-mail aan je collega Wei. Je nodigt hem uit voor het eten.",
+        "scenario": "Je wilt vrijdag samen eten bij jou thuis. Je hebt Wei lang niet gezien.",
+        "requiredPoints": [
+          "Nodig Wei uit om vrijdag te komen eten.",
+          "Vertel hoe laat en waar.",
+          "Vraag of hij iets niet lust."
+        ]
+      },
+      "minWords": 40,
+      "maxWords": 80,
+      "register": "informal",
+      "modelAnswer": "Hoi Wei,\n\nHoe gaat het met je? We hebben elkaar lang niet gezien. Heb je zin om vrijdag bij mij te komen eten? We eten om zeven uur bij mij thuis, aan de Beukenlaan 18. Eet je alles, of is er iets wat je niet lust? Laat je het even weten?\n\nGroetjes,\nAmira",
+      "checklist": [
+        "Aanhef: Hoi Wei,",
+        "Uitnodiging genoemd",
+        "Tijd en plaats",
+        "Vraag over eten",
+        "je/jij",
+        "Groet + naam"
+      ]
+    },
+    {
+      "id": "exam-schrijven-1-q-004",
+      "tags": [
+        "schrijven:formeel",
+        "gemeente-instanties"
+      ],
+      "explanation": "Wees duidelijk en beleefd in een formele e-mail.",
+      "difficulty": 1,
+      "type": "writing",
+      "prompt": "Opdracht 4: Schrijf een formele e-mail.",
+      "task": {
+        "instructions": "Schrijf een e-mail aan de gemeente. Je meldt een kapotte straatlamp.",
+        "scenario": "Voor je huis in de Beukenlaan is de straatlamp al een week kapot. 's Avonds is het donker en onveilig.",
+        "requiredPoints": [
+          "Vertel wat het probleem is en waar.",
+          "Vertel sinds wanneer het probleem er is.",
+          "Vraag of de gemeente de lamp kan repareren."
+        ]
+      },
+      "minWords": 50,
+      "maxWords": 100,
+      "register": "formal",
+      "modelAnswer": "Geachte heer, mevrouw,\n\nIk schrijf u omdat de straatlamp voor mijn huis in de Beukenlaan kapot is. Het probleem is er al een week. 's Avonds is het erg donker, en dat is onveilig voor de kinderen. Kunt u de lamp zo snel mogelijk laten repareren? Ik hoop snel iets van u te horen.\n\nMet vriendelijke groet,\n\nAmira Haddad\nBeukenlaan 18, Utrecht",
+      "checklist": [
+        "Aanhef: Geachte heer, mevrouw,",
+        "Probleem en plaats genoemd",
+        "Sinds wanneer genoemd",
+        "Vraag om reparatie",
+        "u (niet je)",
+        "Afsluiting + naam"
+      ]
+    }
+  ],
+  "passScore": 0.7
+}

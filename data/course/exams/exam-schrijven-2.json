@@ -1,0 +1,164 @@
+{
+  "id": "exam-schrijven-2",
+  "skill": "schrijven",
+  "title": "Proefexamen Schrijven 2",
+  "durationMinutes": 40,
+  "items": [
+    {
+      "id": "exam-schrijven-2-q-001",
+      "tags": [
+        "schrijven:formulier"
+      ],
+      "explanation": "Lees elke vraag goed en schrijf de gegevens precies op.",
+      "difficulty": 1,
+      "type": "form-fill",
+      "prompt": "Opdracht 1: Vul het formulier in.",
+      "formTitle": "Inschrijving zwemvereniging Golfslag",
+      "scenario": "Je heet Pieter de Vries. Je bent geboren op 3 september 1982 in Zwolle. Je woont aan de Molenstraat 9 in Zwolle (8011 AB). Je e-mailadres is pieter@example.nl. Je wilt graag zwemmen op zaterdagochtend.",
+      "fields": [
+        {
+          "label": "Voornaam",
+          "kind": "text",
+          "expected": "Pieter"
+        },
+        {
+          "label": "Achternaam",
+          "kind": "text",
+          "expected": "De Vries"
+        },
+        {
+          "label": "Geboortedatum",
+          "kind": "text",
+          "expected": "03-09-1982",
+          "hint": "dd-mm-jjjj"
+        },
+        {
+          "label": "Geboorteplaats",
+          "kind": "text",
+          "expected": "Zwolle"
+        },
+        {
+          "label": "Adres",
+          "kind": "text",
+          "expected": "Molenstraat 9"
+        },
+        {
+          "label": "Postcode",
+          "kind": "text",
+          "expected": "8011 AB"
+        },
+        {
+          "label": "E-mailadres",
+          "kind": "text",
+          "expected": "pieter@example.nl"
+        },
+        {
+          "label": "Wanneer wilt u zwemmen?",
+          "kind": "text",
+          "expected": "zaterdagochtend"
+        },
+        {
+          "label": "Waarom wilt u lid worden?",
+          "kind": "text",
+          "hint": "Schrijf een korte zin"
+        }
+      ]
+    },
+    {
+      "id": "exam-schrijven-2-q-002",
+      "tags": [
+        "schrijven:kort-bericht",
+        "school-kinderen"
+      ],
+      "explanation": "Een kort bericht aan school is netjes.",
+      "difficulty": 1,
+      "type": "writing",
+      "prompt": "Opdracht 2: Schrijf een kort bericht.",
+      "task": {
+        "instructions": "Schrijf een kort bericht aan de leraar van je zoon, juf Karin.",
+        "scenario": "Je zoon Sem is vandaag ziek en komt niet naar school. Hij komt morgen waarschijnlijk wel weer.",
+        "requiredPoints": [
+          "Vertel dat Sem ziek is.",
+          "Vertel dat hij vandaag niet komt.",
+          "Vertel dat hij morgen waarschijnlijk weer komt."
+        ]
+      },
+      "minWords": 25,
+      "maxWords": 50,
+      "register": "informal",
+      "modelAnswer": "Beste juf Karin,\n\nMijn zoon Sem is vandaag ziek. Hij komt niet naar school. Morgen komt hij waarschijnlijk weer. Ik laat het u weten als dat niet lukt. Alvast bedankt.\n\nMet vriendelijke groet,\nPieter de Vries",
+      "checklist": [
+        "Aanhef met naam",
+        "Sem is ziek",
+        "Vandaag niet",
+        "Morgen waarschijnlijk wel",
+        "Afsluiting + naam"
+      ]
+    },
+    {
+      "id": "exam-schrijven-2-q-003",
+      "tags": [
+        "schrijven:informeel",
+        "wonen"
+      ],
+      "explanation": "Je vertelt nieuws en vraagt om hulp.",
+      "difficulty": 1,
+      "type": "writing",
+      "prompt": "Opdracht 3: Schrijf een informele e-mail.",
+      "task": {
+        "instructions": "Schrijf een e-mail aan je vriendin Priya. Je vertelt dat je gaat verhuizen.",
+        "scenario": "Je verhuist volgende maand naar een groter huis in Amersfoort. Je wilt dat Priya helpt met verhuizen.",
+        "requiredPoints": [
+          "Vertel dat je gaat verhuizen en waarheen.",
+          "Vraag of Priya kan helpen op zaterdag 15 maart.",
+          "Zeg wat je voor haar doet."
+        ]
+      },
+      "minWords": 40,
+      "maxWords": 80,
+      "register": "informal",
+      "modelAnswer": "Hoi Priya,\n\nIk heb groot nieuws: ik ga verhuizen! Volgende maand ga ik naar een groter huis in Amersfoort. Kun jij mij helpen op zaterdag 15 maart? We beginnen om negen uur. Ik zorg voor koffie en een lekkere lunch. Laat je het me even weten?\n\nGroetjes,\nPieter",
+      "checklist": [
+        "Aanhef: Hoi Priya,",
+        "Verhuizing genoemd",
+        "Vraag om hulp met datum",
+        "Wat je zelf doet",
+        "je/jij",
+        "Groet + naam"
+      ]
+    },
+    {
+      "id": "exam-schrijven-2-q-004",
+      "tags": [
+        "schrijven:formeel",
+        "wonen"
+      ],
+      "explanation": "Een klacht aan de huisbaas is formeel en duidelijk.",
+      "difficulty": 1,
+      "type": "writing",
+      "prompt": "Opdracht 4: Schrijf een formele e-mail.",
+      "task": {
+        "instructions": "Schrijf een e-mail aan je huisbaas, mevrouw Dekker.",
+        "scenario": "De kraan in je keuken lekt al vier dagen. Je hebt overal water. Je wilt dat de huisbaas een monteur stuurt.",
+        "requiredPoints": [
+          "Vertel wat het probleem is.",
+          "Vertel sinds wanneer de kraan lekt.",
+          "Vraag wanneer een monteur kan komen."
+        ]
+      },
+      "minWords": 50,
+      "maxWords": 100,
+      "register": "formal",
+      "modelAnswer": "Geachte mevrouw Dekker,\n\nIk schrijf u omdat de kraan in mijn keuken lekt. Het probleem is er al vier dagen en er is steeds meer water op de vloer. Kunt u een monteur sturen? Wanneer kan hij komen? Ik ben elke dag thuis na vier uur.\n\nAlvast bedankt voor uw hulp.\n\nMet vriendelijke groet,\n\nPieter de Vries\nMolenstraat 9, Zwolle",
+      "checklist": [
+        "Aanhef: Geachte mevrouw Dekker,",
+        "Probleem genoemd",
+        "Sinds wanneer genoemd",
+        "Vraag om een monteur",
+        "u (niet je)",
+        "Afsluiting + naam"
+      ]
+    }
+  ],
+  "passScore": 0.7
+}

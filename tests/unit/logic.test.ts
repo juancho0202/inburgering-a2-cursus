@@ -112,3 +112,40 @@ describe("writing corrections", () => {
     expect(() => WritingFeedbackSchema.parse({ ...sample, overall: "goed" })).toThrow();
   });
 });
+
+import { gradeExam, remainingMs, selectedIndexes } from "../../shared/logic/exam";
+import type { Exam } from "../../shared/types";
+
+describe("mock exam grading", () => {
+  const mc = (id: string, tag: string, answer: number) => ({ id, type: "mc", tags: [tag], prompt: "p", options: ["a", "b", "c"], answer, explanation: "e", difficulty: 1 });
+  const exam = {
+    id: "e", skill: "knm", title: "t", durationMinutes: 45, passScore: 0.7,
+    items: [
+      mc("q1", "knm:wonen", 0), mc("q2", "knm:wonen", 1), mc("q3", "knm:werk", 2),
+      { id: "r1", type: "reading", tags: ["lezen:brief"], prompt: "p", explanation: "e", difficulty: 1,
+        document: { kind: "document", docType: "brief", title: "t", body: "b" }, questions: [mc("r1-1", "lezen:brief", 0)] },
+    ],
+  } as unknown as Exam;
+
+  it("scores answers and groups by theme", () => {
+    const res = gradeExam(exam, { q1: [0], q2: [0], q3: 2, "r1-1": [0] });
+    expect(res.score).toBe(3);
+    expect(res.max).toBe(4);
+    expect(res.byTheme["knm:wonen"]).toEqual([1, 2]);
+    expect(res.byTheme["knm:werk"]).toEqual([1, 1]);
+    expect(res.correct.q2).toBe(false);
+  });
+  it("counts unanswered questions as wrong", () => {
+    expect(gradeExam(exam, {}).score).toBe(0);
+  });
+  it("normalises answers", () => {
+    expect(selectedIndexes(2)).toEqual([2]);
+    expect(selectedIndexes([2, 0])).toEqual([0, 2]);
+    expect(selectedIndexes("x")).toEqual([]);
+  });
+  it("computes the remaining time from the start time", () => {
+    const start = new Date("2026-10-01T10:00:00Z").toISOString();
+    expect(remainingMs(start, 45, Date.parse("2026-10-01T10:30:00Z"))).toBe(15 * 60_000);
+    expect(remainingMs(start, 45, Date.parse("2026-10-01T12:00:00Z"))).toBe(0);
+  });
+});

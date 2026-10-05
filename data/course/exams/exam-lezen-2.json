@@ -1,0 +1,630 @@
+{
+  "id": "exam-lezen-2",
+  "skill": "lezen",
+  "title": "Proefexamen Lezen 2",
+  "durationMinutes": 65,
+  "items": [
+    {
+      "id": "exam-lezen-2-q-001",
+      "type": "reading",
+      "tags": [
+        "lezen:brief"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "brief",
+        "title": "Ouderavond groep 6",
+        "body": "Van: Basisschool De Linde\nAan: Ouders van groep 6\nDatum: 15 oktober\n\nBeste ouders,\n\nOp woensdag 30 oktober is er een ouderavond voor groep 6. De avond begint om 19.30 uur en duurt tot ongeveer 21.00 uur. De juf vertelt over het schooladvies en over wat uw kind dit jaar gaat leren.\n\nU hoeft zich niet aan te melden. Kunt u niet komen? Dan kunt u een kort gesprek van tien minuten aanvragen bij de juf, op een andere dag.\n\nMet vriendelijke groet,\nJuf Anna"
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-2-q-001-1",
+          "type": "mc",
+          "tags": [
+            "lezen:brief"
+          ],
+          "prompt": "Waar gaat de ouderavond over?",
+          "options": [
+            "Over het schoolreisje",
+            "Over het schooladvies en wat kinderen gaan leren",
+            "Over de vakanties",
+            "Over de kosten van school"
+          ],
+          "answer": 1,
+          "explanation": "'… over het schooladvies en over wat uw kind dit jaar gaat leren.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-001-2",
+          "type": "mc",
+          "tags": [
+            "lezen:brief"
+          ],
+          "prompt": "Hoe laat begint de avond?",
+          "options": [
+            "Om 21.00 uur",
+            "Om 18.00 uur",
+            "Om 19.30 uur",
+            "Om 20.00 uur"
+          ],
+          "answer": 2,
+          "explanation": "'De avond begint om 19.30 uur.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-001-3",
+          "type": "mc",
+          "tags": [
+            "lezen:brief"
+          ],
+          "prompt": "Wat kunnen ouders doen die niet kunnen komen?",
+          "options": [
+            "Een brief schrijven aan de gemeente",
+            "Hun kind thuislaten",
+            "De avond verplaatsen",
+            "Een kort gesprek van tien minuten aanvragen"
+          ],
+          "answer": 3,
+          "explanation": "'… een kort gesprek van tien minuten aanvragen bij de juf.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-2-q-002",
+      "type": "reading",
+      "tags": [
+        "lezen:email"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "email",
+        "title": "Toets verplaatst",
+        "body": "Van: Marieke Jansen\nAan: Cursisten Nederlands A2\nOnderwerp: Toets verplaatst\n\nBeste cursisten,\n\nDe toets van vrijdag 8 november is verplaatst naar vrijdag 15 november. Dat komt omdat het lokaal op 8 november wordt geschilderd. De les van donderdag gaat wel gewoon door.\n\nLeer voor de toets de woorden van hoofdstuk 5 en 6. U mag een woordenboek meenemen, maar u mag geen telefoon gebruiken.\n\nSucces!\nMarieke"
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-2-q-002-1",
+          "type": "mc",
+          "tags": [
+            "lezen:email"
+          ],
+          "prompt": "Wanneer is de toets nu?",
+          "options": [
+            "Op vrijdag 8 november",
+            "Op donderdag",
+            "Op vrijdag 15 november",
+            "Op maandag"
+          ],
+          "answer": 2,
+          "explanation": "'… verplaatst naar vrijdag 15 november.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-002-2",
+          "type": "mc",
+          "tags": [
+            "lezen:email"
+          ],
+          "prompt": "Waarom is de toets verplaatst?",
+          "options": [
+            "De docent is ziek.",
+            "Het is een feestdag.",
+            "Er zijn te weinig cursisten.",
+            "Het lokaal wordt geschilderd."
+          ],
+          "answer": 3,
+          "explanation": "'… omdat het lokaal op 8 november wordt geschilderd.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-002-3",
+          "type": "mc",
+          "tags": [
+            "lezen:email"
+          ],
+          "prompt": "Wat mag u meenemen naar de toets?",
+          "options": [
+            "Een woordenboek",
+            "Een telefoon",
+            "Een computer",
+            "Niets"
+          ],
+          "answer": 0,
+          "explanation": "'U mag een woordenboek meenemen, maar u mag geen telefoon gebruiken.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-2-q-003",
+      "type": "reading",
+      "tags": [
+        "lezen:advertentie"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "advertentie",
+        "title": "Kamer te huur",
+        "body": "Kamer te huur in Amersfoort, in een huis met twee andere bewoners.\n\n- Grote kamer van 18 vierkante meter, met bureau en bed\n- Gebruik van keuken, badkamer en tuin\n- Huur: per maand, inclusief gas, water, licht en internet\n- Beschikbaar vanaf 1 november\n- Roken en huisdieren zijn niet toegestaan\n\nWij zoeken iemand die werkt of studeert. U kunt de kamer bekijken op zaterdag 19 oktober tussen 14.00 en 16.00 uur. Maak vooraf een afspraak.\n\nContact: Tel: 06-5555 1234 (alleen 's avonds)"
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-2-q-003-1",
+          "type": "mc",
+          "tags": [
+            "lezen:advertentie"
+          ],
+          "prompt": "Wat zit er in de huur?",
+          "options": [
+            "Alleen gas en water",
+            "Alleen de kamer",
+            "Een tuinhuis",
+            "Gas, water, licht en internet"
+          ],
+          "answer": 3,
+          "explanation": "'Inclusief gas, water, licht en internet.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-003-2",
+          "type": "mc",
+          "tags": [
+            "lezen:advertentie"
+          ],
+          "prompt": "Wat is niet toegestaan?",
+          "options": [
+            "Roken en huisdieren",
+            "Bezoek",
+            "Studeren",
+            "Muziek"
+          ],
+          "answer": 0,
+          "explanation": "'Roken en huisdieren zijn niet toegestaan.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-003-3",
+          "type": "mc",
+          "tags": [
+            "lezen:advertentie"
+          ],
+          "prompt": "Wanneer kunt u bellen?",
+          "options": [
+            "Alleen 's ochtends",
+            "Alleen 's avonds",
+            "De hele dag",
+            "Alleen op zaterdag"
+          ],
+          "answer": 1,
+          "explanation": "'Tel: … (alleen 's avonds).'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-2-q-004",
+      "type": "reading",
+      "tags": [
+        "lezen:mededeling"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "bericht",
+        "title": "Mededeling NS",
+        "body": "Reizigers van en naar Utrecht:\n\nVanwege werkzaamheden vertrekken de treinen naar Amsterdam van maandag 4 tot en met vrijdag 8 november van spoor 5 in plaats van spoor 3. Volg de borden of vraag het aan een medewerker.\n\nDe treinen naar Rotterdam vertrekken wel van het gewone spoor, spoor 7.\n\nOp zaterdag 9 en zondag 10 november rijden alle treinen weer van de gewone sporen.\n\nWij vragen uw begrip voor deze verandering."
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-2-q-004-1",
+          "type": "mc",
+          "tags": [
+            "lezen:mededeling"
+          ],
+          "prompt": "Van welk spoor vertrekken de treinen naar Amsterdam op 5 november?",
+          "options": [
+            "Van spoor 5",
+            "Van spoor 3",
+            "Van spoor 7",
+            "Van spoor 9"
+          ],
+          "answer": 0,
+          "explanation": "'… van spoor 5 in plaats van spoor 3.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-004-2",
+          "type": "mc",
+          "tags": [
+            "lezen:mededeling"
+          ],
+          "prompt": "Van welk spoor vertrekken de treinen naar Rotterdam?",
+          "options": [
+            "Van spoor 5",
+            "Van spoor 7",
+            "Van spoor 3",
+            "Dat is onbekend"
+          ],
+          "answer": 1,
+          "explanation": "'… naar Rotterdam vertrekken wel van het gewone spoor, spoor 7.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-004-3",
+          "type": "mc",
+          "tags": [
+            "lezen:mededeling"
+          ],
+          "prompt": "Wanneer vertrekken de treinen naar Amsterdam weer van spoor 3?",
+          "options": [
+            "Vanaf maandag 4 november",
+            "Vanaf vrijdag 8 november",
+            "Vanaf zaterdag 9 november",
+            "Dat staat niet in de tekst"
+          ],
+          "answer": 2,
+          "explanation": "'Op zaterdag 9 en zondag 10 november rijden alle treinen weer van de gewone sporen.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-2-q-005",
+      "type": "reading",
+      "tags": [
+        "lezen:rooster"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "rooster",
+        "title": "Buslijn 21: Centrum – Sportpark",
+        "body": "Vertrek Centrum | Aankomst Sportpark\n8.00 | 8.20\n8.30 | 8.50\n9.00 | 9.20\n9.30 | 9.50\n10.00 | 10.20\n\nDe bus rijdt elke 30 minuten van maandag tot en met zaterdag. Op zondag rijdt de bus niet. Op feestdagen rijdt de bus ook niet.\n\nDe bus stopt onderweg bij vier haltes. Het sportpark is de laatste halte. Kinderen onder de vier jaar reizen gratis."
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-2-q-005-1",
+          "type": "mc",
+          "tags": [
+            "lezen:rooster"
+          ],
+          "prompt": "Hoe lang duurt de reis van het centrum naar het sportpark?",
+          "options": [
+            "10 minuten",
+            "20 minuten",
+            "30 minuten",
+            "50 minuten"
+          ],
+          "answer": 1,
+          "explanation": "8.00 → 8.20 is 20 minuten.",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-005-2",
+          "type": "mc",
+          "tags": [
+            "lezen:rooster"
+          ],
+          "prompt": "U wilt om 9.00 uur op het sportpark zijn. Welke bus neemt u?",
+          "options": [
+            "Die van 9.00 uur",
+            "Die van 9.30 uur",
+            "Die van 8.30 uur",
+            "Die van 8.00 uur"
+          ],
+          "answer": 2,
+          "explanation": "De bus van 8.30 uur komt om 8.50 uur aan, de bus van 9.00 uur komt om 9.20 uur aan: te laat.",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-005-3",
+          "type": "mc",
+          "tags": [
+            "lezen:rooster"
+          ],
+          "prompt": "Wanneer rijdt de bus niet?",
+          "options": [
+            "Op zaterdag",
+            "Op maandag",
+            "Elke ochtend",
+            "Op zondag en op feestdagen"
+          ],
+          "answer": 3,
+          "explanation": "'Op zondag rijdt de bus niet. Op feestdagen rijdt de bus ook niet.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-2-q-006",
+      "type": "reading",
+      "tags": [
+        "lezen:brief"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "brief",
+        "title": "Uw parkeervergunning",
+        "body": "Van: Gemeente Delft\nAan: De heer P. de Vries\nDatum: 6 september\n\nGeachte heer De Vries,\n\nUw aanvraag voor een parkeervergunning is goedgekeurd. De vergunning geldt voor één jaar, vanaf 1 oktober.\n\nU hoeft de vergunning niet op te halen. U krijgt hem per post, binnen vijf werkdagen. Leg de vergunning achter de voorruit van uw auto.\n\nVerhuist u? Of krijgt u een andere auto? Laat dit dan binnen twee weken aan ons weten.\n\nMet vriendelijke groet,\nGemeente Delft"
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-2-q-006-1",
+          "type": "mc",
+          "tags": [
+            "lezen:brief"
+          ],
+          "prompt": "Wat is het doel van de brief?",
+          "options": [
+            "Een boete geven",
+            "Vragen om een kopie van het paspoort",
+            "Laten weten dat de aanvraag is goedgekeurd",
+            "Een afspraak maken"
+          ],
+          "answer": 2,
+          "explanation": "'Uw aanvraag … is goedgekeurd.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-006-2",
+          "type": "mc",
+          "tags": [
+            "lezen:brief"
+          ],
+          "prompt": "Hoe krijgt de heer De Vries de vergunning?",
+          "options": [
+            "Bij het loket",
+            "Per e-mail",
+            "Via zijn buurman",
+            "Per post"
+          ],
+          "answer": 3,
+          "explanation": "'U krijgt hem per post.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-006-3",
+          "type": "mc",
+          "tags": [
+            "lezen:brief"
+          ],
+          "prompt": "Wanneer moet hij iets laten weten aan de gemeente?",
+          "options": [
+            "Als hij verhuist of een andere auto krijgt",
+            "Elke maand",
+            "Als hij op vakantie gaat",
+            "Nooit"
+          ],
+          "answer": 0,
+          "explanation": "'Verhuist u? Of krijgt u een andere auto? Laat dit … weten.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-2-q-007",
+      "type": "reading",
+      "tags": [
+        "lezen:folder"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "folder",
+        "title": "Computercursus voor beginners",
+        "body": "Wilt u leren werken met de computer? In de bibliotheek geven wij een cursus voor beginners.\n\nU leert onder andere: e-mailen, zoeken op internet en inloggen met DigiD.\n\nDe cursus bestaat uit vijf lessen op maandagochtend, van 10.00 tot 12.00 uur. Eerste les: 4 november. U werkt op een computer van de bibliotheek, dus u hoeft zelf niets mee te nemen.\n\nDe cursus is gratis voor leden van de bibliotheek. Bent u geen lid? Dan betaalt u een klein bedrag. Aanmelden kan bij de balie."
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-2-q-007-1",
+          "type": "mc",
+          "tags": [
+            "lezen:folder"
+          ],
+          "prompt": "Wat leert u in de cursus?",
+          "options": [
+            "Alleen tekstverwerking",
+            "Programmeren",
+            "Een nieuwe taal",
+            "E-mailen, zoeken op internet en inloggen met DigiD"
+          ],
+          "answer": 3,
+          "explanation": "'E-mailen, zoeken op internet en inloggen met DigiD.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-007-2",
+          "type": "mc",
+          "tags": [
+            "lezen:folder"
+          ],
+          "prompt": "Wat moet u meenemen?",
+          "options": [
+            "Niets",
+            "Een laptop",
+            "Een telefoon",
+            "Een USB-stick"
+          ],
+          "answer": 0,
+          "explanation": "'U hoeft zelf niets mee te nemen.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-007-3",
+          "type": "mc",
+          "tags": [
+            "lezen:folder"
+          ],
+          "prompt": "Wie betaalt niets?",
+          "options": [
+            "Alle bezoekers",
+            "Leden van de bibliotheek",
+            "Mensen met een laptop",
+            "Mensen zonder DigiD"
+          ],
+          "answer": 1,
+          "explanation": "'De cursus is gratis voor leden van de bibliotheek.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-2-q-008",
+      "type": "reading",
+      "tags": [
+        "lezen:artikel"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "folder",
+        "title": "Zwembad tijdelijk dicht",
+        "body": "Zwembad De Kuil is van maandag 2 december tot en met vrijdag 13 december gesloten voor onderhoud. In deze twee weken wordt het bad schoongemaakt en worden de kleedkamers vernieuwd.\n\nZwemlessen gaan in deze periode niet door. De lessen beginnen weer op maandag 16 december. Heeft u een abonnement? Dan wordt uw abonnement automatisch twee weken verlengd.\n\nU kunt in deze periode zwemmen in zwembad Noord. Dat zwembad is open van 8.00 tot 21.00 uur. Toon uw pas bij de kassa, dan betaalt u niets extra."
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-2-q-008-1",
+          "type": "mc",
+          "tags": [
+            "lezen:artikel"
+          ],
+          "prompt": "Hoe lang is zwembad De Kuil dicht?",
+          "options": [
+            "Twee weken",
+            "Twee dagen",
+            "Twee maanden",
+            "Een week"
+          ],
+          "answer": 0,
+          "explanation": "Van 2 tot en met 13 december: twee weken.",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-008-2",
+          "type": "mc",
+          "tags": [
+            "lezen:artikel"
+          ],
+          "prompt": "Wat gebeurt er met een abonnement?",
+          "options": [
+            "Het stopt.",
+            "Het wordt automatisch twee weken verlengd.",
+            "Het wordt duurder.",
+            "Het moet opnieuw worden gekocht."
+          ],
+          "answer": 1,
+          "explanation": "'… wordt uw abonnement automatisch twee weken verlengd.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-008-3",
+          "type": "mc",
+          "tags": [
+            "lezen:artikel"
+          ],
+          "prompt": "Wat moet u doen om in zwembad Noord te zwemmen zonder extra betaling?",
+          "options": [
+            "Een afspraak maken",
+            "Vooraf betalen",
+            "Uw pas laten zien",
+            "Een brief meenemen"
+          ],
+          "answer": 2,
+          "explanation": "'Toon uw pas bij de kassa, dan betaalt u niets extra.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-2-q-009",
+      "type": "reading",
+      "tags": [
+        "lezen:email"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "email",
+        "title": "Afspraak monteur",
+        "body": "Van: Installatiebedrijf Warm Huis\nAan: Mevrouw A. Haddad\nOnderwerp: Afspraak monteur\n\nGeachte mevrouw Haddad,\n\nWij bevestigen uw afspraak voor het onderhoud van uw verwarming. De monteur komt op dinsdag 12 november tussen 13.00 en 17.00 uur. Het werk duurt ongeveer een uur.\n\nU moet thuis zijn. Kunt u niet thuis zijn, of past de tijd niet? Bel ons dan uiterlijk maandag 11 november voor 12.00 uur. U kunt de afspraak gratis wijzigen.\n\nMet vriendelijke groet,\nWarm Huis"
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-2-q-009-1",
+          "type": "mc",
+          "tags": [
+            "lezen:email"
+          ],
+          "prompt": "Wat is het doel van de e-mail?",
+          "options": [
+            "Een nieuwe verwarming verkopen",
+            "Een afspraak voor onderhoud bevestigen",
+            "Een klacht beantwoorden",
+            "Een rekening sturen"
+          ],
+          "answer": 1,
+          "explanation": "'Wij bevestigen uw afspraak voor het onderhoud van uw verwarming.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-009-2",
+          "type": "mc",
+          "tags": [
+            "lezen:email"
+          ],
+          "prompt": "Wanneer komt de monteur?",
+          "options": [
+            "Op maandag 11 november",
+            "Op dinsdag 12 november om 12.00 uur",
+            "Op dinsdag 12 november tussen 13.00 en 17.00 uur",
+            "Op woensdag 13 november"
+          ],
+          "answer": 2,
+          "explanation": "'… dinsdag 12 november tussen 13.00 en 17.00 uur.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-2-q-009-3",
+          "type": "mc",
+          "tags": [
+            "lezen:email"
+          ],
+          "prompt": "Tot wanneer kunt u de afspraak gratis wijzigen?",
+          "options": [
+            "Tot dinsdag 12 november",
+            "Tot vrijdag",
+            "Dat kan niet",
+            "Tot maandag 11 november om 12.00 uur"
+          ],
+          "answer": 3,
+          "explanation": "'Bel ons dan uiterlijk maandag 11 november voor 12.00 uur.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    }
+  ],
+  "passScore": 0.7
+}

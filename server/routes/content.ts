@@ -37,21 +37,6 @@ contentRouter.get("/units/:unitId", async (req, res) => {
   res.json(unit);
 });
 
-contentRouter.get("/exams", async (_req, res) => {
-  const content = await getContent();
-  res.json([...content.exams.values()].map((exam) => ({ id: exam.id, skill: exam.skill, title: exam.title, durationMinutes: exam.durationMinutes })));
-});
-
-contentRouter.get("/exams/:id", async (req, res) => {
-  const content = await getContent();
-  const exam = content.exams.get(req.params.id);
-  if (!exam) {
-    res.status(404).json({ error: { code: "not_found", message: "Dit examen bestaat niet." } });
-    return;
-  }
-  res.json(exam);
-});
-
 contentRouter.get("/samenvatting", async (_req, res) => {
   try {
     const md = await fs.readFile(path.resolve("data/course/basis/samenvatting.md"), "utf-8");

@@ -1,0 +1,689 @@
+{
+  "id": "exam-knm-2",
+  "skill": "knm",
+  "title": "Proefexamen KNM 2",
+  "durationMinutes": 45,
+  "items": [
+    {
+      "id": "exam-knm-2-q-001",
+      "tags": [
+        "knm:onderwijs"
+      ],
+      "explanation": "Na het vmbo ga je vaak naar het mbo.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is het mbo?",
+      "options": [
+        "Een beroepsopleiding na het vmbo",
+        "Een basisschool",
+        "Een universiteit",
+        "Een peuterspeelzaal"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-2-q-002",
+      "tags": [
+        "knm:omgang"
+      ],
+      "explanation": "Op 4 mei is de Dodenherdenking om 20.00 uur.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Op welke dag herdenkt Nederland de doden?",
+      "options": [
+        "Op 5 mei",
+        "Op 4 mei",
+        "Op 27 april",
+        "Op 1 juli"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-2-q-003",
+      "tags": [
+        "knm:staat"
+      ],
+      "explanation": "In de Grondwet staan de grondrechten.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is de Grondwet?",
+      "options": [
+        "Een lijst met straffen",
+        "Een wet voor gemeenten",
+        "De belangrijkste wet van het land",
+        "Een boek over de koning"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-2-q-004",
+      "tags": [
+        "knm:wonen"
+      ],
+      "explanation": "Lekkage is een grote reparatie voor de verhuurder.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Er is een lekkage in de keuken van het huurhuis van Sanne. Wie moet dit oplossen?",
+      "options": [
+        "Sanne",
+        "De buurvrouw",
+        "De politie",
+        "De verhuurder"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-2-q-005",
+      "tags": [
+        "knm:staat"
+      ],
+      "explanation": "In een rechtsstaat geldt de wet voor iedereen.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat betekent rechtsstaat?",
+      "options": [
+        "Iedereen moet zich aan de wet houden, ook de overheid.",
+        "Alleen burgers houden zich aan de wet.",
+        "De koning bepaalt de wet.",
+        "De politie mag alles."
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-2-q-006",
+      "tags": [
+        "knm:onderwijs"
+      ],
+      "explanation": "Na groep 8 gaan kinderen naar het voortgezet onderwijs.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat gebeurt er na groep 8?",
+      "options": [
+        "Meteen de universiteit",
+        "Schooladvies en doorstroomtoets, daarna voortgezet onderwijs",
+        "Een inburgeringsexamen",
+        "Leerplicht stopt voor altijd"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-2-q-007",
+      "tags": [
+        "knm:werk"
+      ],
+      "explanation": "In Nederland bestaat een wettelijk minimumloon.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is het wettelijk minimumloon?",
+      "options": [
+        "Het hoogste loon van een bedrijf",
+        "Het loon van een uitzendbureau",
+        "Het laagste loon dat je volgens de wet mag krijgen",
+        "Een toeslag van de overheid"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-2-q-008",
+      "tags": [
+        "knm:instanties"
+      ],
+      "explanation": "Het UWV helpt bij werk en bij arbeidsongeschiktheid.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat doet het UWV naast een WW-uitkering?",
+      "options": [
+        "Het geeft paspoorten.",
+        "Het verhuurt woningen.",
+        "Het regelt vaccinaties.",
+        "Het helpt bij werk zoeken en regelt uitkeringen bij langdurige ziekte."
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-2-q-009",
+      "tags": [
+        "knm:instanties"
+      ],
+      "explanation": "Vluchtelingenwerk en maatschappelijk werk helpen mensen.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is Vluchtelingenwerk?",
+      "options": [
+        "Een organisatie die begeleiding en hulp geeft",
+        "Een bank voor vluchtelingen",
+        "Een deel van de politie",
+        "Een inburgeringsexamen"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-2-q-010",
+      "tags": [
+        "knm:onderwijs"
+      ],
+      "explanation": "Vanaf 4 jaar mag een kind naar de basisschool.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Hoe oud is een kind meestal in groep 1?",
+      "options": [
+        "8 jaar",
+        "4 jaar",
+        "12 jaar",
+        "2 jaar"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-2-q-011",
+      "tags": [
+        "knm:instanties"
+      ],
+      "explanation": "Toeslagen regelt de Belastingdienst.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Welke instantie betaalt toeslagen, zoals zorgtoeslag en huurtoeslag?",
+      "options": [
+        "De SVB",
+        "DUO",
+        "De Belastingdienst",
+        "De gemeente"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-2-q-012",
+      "tags": [
+        "knm:gezondheid"
+      ],
+      "explanation": "Bij de drogist koop je bijvoorbeeld paracetamol.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is een drogist?",
+      "options": [
+        "Een dokter voor kinderen",
+        "Een afdeling van het ziekenhuis",
+        "Een soort verzekering",
+        "Een winkel met medicijnen zonder recept"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-2-q-013",
+      "tags": [
+        "knm:geschiedenis"
+      ],
+      "explanation": "Nederland was medeoprichter van de Europese Unie.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Nederland werkt samen met andere Europese landen in een organisatie. Hoe heet die?",
+      "options": [
+        "De Europese Unie",
+        "De Verenigde Naties alleen",
+        "De VOC",
+        "De Eerste Kamer"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-2-q-014",
+      "tags": [
+        "knm:werk"
+      ],
+      "explanation": "Bijstand komt van de gemeente.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is bijstand?",
+      "options": [
+        "Geld van de SVB voor ouderen",
+        "Geld van de gemeente voor mensen zonder ander inkomen",
+        "Geld voor je zorgverzekering",
+        "Extra loon van je werkgever"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-2-q-015",
+      "tags": [
+        "knm:werk"
+      ],
+      "explanation": "Zwartwerken mag niet.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Mag je werken zonder belasting te betalen?",
+      "options": [
+        "Ja, als je baas het goed vindt.",
+        "Ja, in de eerste maand.",
+        "Nee, dat heet zwartwerken en is verboden.",
+        "Ja, als je weinig verdient."
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-2-q-016",
+      "tags": [
+        "knm:staat"
+      ],
+      "explanation": "Discriminatie is verboden.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat betekent discriminatie?",
+      "options": [
+        "Mensen helpen",
+        "Mensen een baan geven",
+        "Mensen uitnodigen",
+        "Mensen slechter behandelen vanwege bijvoorbeeld afkomst of geloof"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-2-q-017",
+      "tags": [
+        "knm:omgang"
+      ],
+      "explanation": "Oud en Nieuw is aan het eind van het jaar.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is Oud en Nieuw?",
+      "options": [
+        "De laatste avond van het jaar en het begin van het nieuwe jaar",
+        "De verjaardag van de koning",
+        "Een herdenking van de oorlog",
+        "Het feest van Sinterklaas"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-2-q-018",
+      "tags": [
+        "knm:staat"
+      ],
+      "explanation": "De regering is de koning samen met de ministers.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wie vormen samen de regering?",
+      "options": [
+        "De rechters en de burgemeester",
+        "De koning en de ministers",
+        "De Eerste en Tweede Kamer",
+        "De gemeenteraad en de wethouders"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-2-q-019",
+      "tags": [
+        "knm:geschiedenis"
+      ],
+      "explanation": "De Deltawerken beschermen Zeeland tegen het water.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Waar liggen de Deltawerken?",
+      "options": [
+        "In Groningen",
+        "In Limburg",
+        "In Zeeland",
+        "In Utrecht"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-2-q-020",
+      "tags": [
+        "knm:werk"
+      ],
+      "explanation": "Vakantiegeld krijg je meestal in mei of juni.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Fatima krijgt in juni extra geld van haar werkgever, bovenop haar salaris. Wat is dit meestal?",
+      "options": [
+        "Een toeslag",
+        "Bijstand",
+        "Kinderbijslag",
+        "Vakantiegeld"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-2-q-021",
+      "tags": [
+        "knm:gezondheid"
+      ],
+      "explanation": "Je gaat naar een specialist met een verwijzing van de huisarts.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat doet een specialist?",
+      "options": [
+        "Een specialist is dokter voor één ziekte of lichaamsdeel.",
+        "Een specialist verkoopt medicijnen.",
+        "Een specialist helpt bij zwangerschap.",
+        "Een specialist controleert baby's."
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-2-q-022",
+      "tags": [
+        "knm:instanties"
+      ],
+      "explanation": "De bibliotheek helpt ook bij taal en computer.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Waar kun je boeken lenen en hulp krijgen bij taal en computer?",
+      "options": [
+        "Bij de gemeente",
+        "In de bibliotheek",
+        "Bij de IND",
+        "Bij het UWV"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-2-q-023",
+      "tags": [
+        "knm:wonen"
+      ],
+      "explanation": "De Huurcommissie helpt bij ruzie over huur en onderhoud.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat doet de Huurcommissie?",
+      "options": [
+        "Ze verhuurt woningen.",
+        "Ze geeft hypotheken.",
+        "Ze helpt bij problemen over huurprijs of onderhoud.",
+        "Ze haalt afval op."
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-2-q-024",
+      "tags": [
+        "knm:geschiedenis"
+      ],
+      "explanation": "Na de Tweede Wereldoorlog was er wederopbouw.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is wederopbouw?",
+      "options": [
+        "Het bouwen van dijken in de Gouden Eeuw",
+        "Het weghalen van de polders",
+        "Het afschaffen van de slavernij",
+        "Het opnieuw opbouwen van het land na de oorlog"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-2-q-025",
+      "tags": [
+        "knm:geschiedenis"
+      ],
+      "explanation": "Indonesië was een kolonie en werd na de Tweede Wereldoorlog onafhankelijk.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Welk land was een kolonie van Nederland?",
+      "options": [
+        "Indonesië",
+        "Duitsland",
+        "België",
+        "Frankrijk"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-2-q-026",
+      "tags": [
+        "knm:gezondheid"
+      ],
+      "explanation": "Een aanvullende verzekering is extra bovenop de basisverzekering.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is een aanvullende verzekering?",
+      "options": [
+        "De verplichte basisverzekering",
+        "Een extra verzekering, bijvoorbeeld voor de tandarts",
+        "Een toeslag van de overheid",
+        "Een verwijzing"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-2-q-027",
+      "tags": [
+        "knm:staat"
+      ],
+      "explanation": "De macht is verdeeld, zodat niemand te veel macht heeft.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is de trias politica?",
+      "options": [
+        "De drie politieke partijen",
+        "De drie koningen",
+        "De verdeling van de macht in wetgevende, uitvoerende en rechterlijke macht",
+        "De drie provincies"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-2-q-028",
+      "tags": [
+        "knm:gezondheid"
+      ],
+      "explanation": "Het consultatiebureau is voor baby's en jonge kinderen.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat gebeurt er op het consultatiebureau?",
+      "options": [
+        "Volwassenen krijgen een operatie.",
+        "Er worden medicijnen verkocht.",
+        "Er worden verzekeringen afgesloten.",
+        "De groei en vaccinaties van baby's worden gecontroleerd."
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-2-q-029",
+      "tags": [
+        "knm:wonen"
+      ],
+      "explanation": "Het huurcontract bevat de afspraken tussen huurder en verhuurder.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat moet je tekenen als je een huis huurt?",
+      "options": [
+        "Een huurcontract",
+        "Een hypotheek",
+        "Een loonstrook",
+        "Een recept"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-2-q-030",
+      "tags": [
+        "knm:onderwijs"
+      ],
+      "explanation": "Tot je een startkwalificatie hebt of 18 bent, geldt de kwalificatieplicht.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is een startkwalificatie?",
+      "options": [
+        "Een basisschooldiploma",
+        "Een havo-, vwo- of mbo-2-diploma",
+        "Een cursus Nederlands",
+        "Een schooladvies"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-2-q-031",
+      "tags": [
+        "knm:onderwijs"
+      ],
+      "explanation": "De zomervakantie duurt ongeveer 6 weken.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Hoe lang duurt de zomervakantie ongeveer?",
+      "options": [
+        "Ongeveer 2 weken",
+        "Ongeveer 6 maanden",
+        "Ongeveer 6 weken",
+        "Ongeveer 1 week"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-2-q-032",
+      "tags": [
+        "knm:wonen"
+      ],
+      "explanation": "Waterschapsbelasting hoort bij de vaste lasten.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat betaal je aan het waterschap?",
+      "options": [
+        "Huurtoeslag",
+        "Zorgtoeslag",
+        "Eigen risico",
+        "Waterschapsbelasting"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-2-q-033",
+      "tags": [
+        "knm:omgang"
+      ],
+      "explanation": "Je feliciteert ook de familie.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "De buurvrouw van Ahmed heeft een baby gekregen. Wat zegt hij?",
+      "options": [
+        "Gefeliciteerd met je baby!",
+        "Sterkte!",
+        "Goede reis!",
+        "Succes met je baan!"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-2-q-034",
+      "tags": [
+        "knm:geschiedenis"
+      ],
+      "explanation": "Er was Jodenvervolging in de Tweede Wereldoorlog.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat gebeurde er tijdens de Duitse bezetting met de Joden?",
+      "options": [
+        "Ze kregen extra rechten.",
+        "Ze werden vervolgd.",
+        "Ze werden koning.",
+        "Ze verhuisden naar Suriname."
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-2-q-035",
+      "tags": [
+        "knm:omgang"
+      ],
+      "explanation": "U is formeel.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Met wie gebruik je meestal \"u\"?",
+      "options": [
+        "Met vrienden",
+        "Met kinderen",
+        "Met onbekenden, oudere mensen en instanties",
+        "Met je collega's altijd"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-2-q-036",
+      "tags": [
+        "knm:wonen"
+      ],
+      "explanation": "Groente- en fruitafval hoort in het gft.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "In welke bak gooi je schillen van groente?",
+      "options": [
+        "In de papierbak",
+        "In de glasbak",
+        "In de pmd-zak",
+        "In de gft-bak"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "exam-knm-2-q-037",
+      "tags": [
+        "knm:instanties"
+      ],
+      "explanation": "De Belastingdienst regelt belasting en toeslagen.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat doet de Belastingdienst?",
+      "options": [
+        "Belasting innen en toeslagen regelen",
+        "Paspoorten uitgeven",
+        "Verblijfsvergunningen geven",
+        "Inburgeringsexamens afnemen"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "exam-knm-2-q-038",
+      "tags": [
+        "knm:werk"
+      ],
+      "explanation": "Een tijdelijk contract heeft een einddatum.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat is het verschil tussen een tijdelijk en een vast contract?",
+      "options": [
+        "Een vast contract eindigt na een jaar.",
+        "Een tijdelijk contract eindigt na een bepaalde tijd.",
+        "Een tijdelijk contract is voor altijd.",
+        "Er is geen verschil."
+      ],
+      "answer": 1
+    },
+    {
+      "id": "exam-knm-2-q-039",
+      "tags": [
+        "knm:gezondheid"
+      ],
+      "explanation": "Je schrijft je in bij een huisarts bij jou in de buurt.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Waar schrijf je je in als je een huisarts zoekt?",
+      "options": [
+        "Bij de gemeente",
+        "Bij de SVB",
+        "Bij een huisarts in de buurt",
+        "Bij een drogist"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "exam-knm-2-q-040",
+      "tags": [
+        "knm:omgang"
+      ],
+      "explanation": "Vrijheid van meningsuiting is binnen de wet.",
+      "difficulty": 1,
+      "type": "mc",
+      "prompt": "Wat mag niet bij vrijheid van meningsuiting?",
+      "options": [
+        "Je mening zeggen",
+        "Kritiek hebben op een politicus",
+        "Anders denken dan je buurman",
+        "Mensen bedreigen of discrimineren"
+      ],
+      "answer": 3
+    }
+  ],
+  "passScore": 0.7
+}

@@ -1,0 +1,630 @@
+{
+  "id": "exam-lezen-1",
+  "skill": "lezen",
+  "title": "Proefexamen Lezen 1",
+  "durationMinutes": 65,
+  "items": [
+    {
+      "id": "exam-lezen-1-q-001",
+      "type": "reading",
+      "tags": [
+        "lezen:brief"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "brief",
+        "title": "Uw nieuwe zorgpas",
+        "body": "Van: Zorgverzekeraar Vitaal\nAan: De heer M. Kaya\nDatum: 4 januari\n\nGeachte heer Kaya,\n\nU bent per 1 januari verzekerd bij Vitaal. Uw nieuwe zorgpas stuurt u binnen twee weken. U hoeft zelf niets te doen.\n\nHeeft u de pas na 18 januari nog niet? Bel dan met onze klantenservice. Het nummer staat op onze website. Neem uw polisnummer mee; dit staat bovenaan deze brief.\n\nNeem de pas altijd mee naar de huisarts, de apotheek en het ziekenhuis.\n\nMet vriendelijke groet,\nVitaal"
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-1-q-001-1",
+          "type": "mc",
+          "tags": [
+            "lezen:brief"
+          ],
+          "prompt": "Wat is het doel van deze brief?",
+          "options": [
+            "Een afspraak maken met de huisarts",
+            "Vertellen dat de zorgpas wordt gestuurd",
+            "Het polisnummer wijzigen",
+            "Een betaling vragen"
+          ],
+          "answer": 1,
+          "explanation": "In de brief staat: Uw nieuwe zorgpas stuurt u binnen twee weken.",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-001-2",
+          "type": "mc",
+          "tags": [
+            "lezen:brief"
+          ],
+          "prompt": "Wat moet de heer Kaya doen als hij op 20 januari nog geen pas heeft?",
+          "options": [
+            "Een nieuwe brief schrijven",
+            "Naar de huisarts gaan",
+            "De klantenservice bellen",
+            "Wachten tot februari"
+          ],
+          "answer": 2,
+          "explanation": "Na 18 januari nog geen pas? Bel de klantenservice.",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-001-3",
+          "type": "mc",
+          "tags": [
+            "lezen:brief"
+          ],
+          "prompt": "Wanneer moet hij de pas meenemen?",
+          "options": [
+            "Alleen naar het ziekenhuis",
+            "Alleen naar de gemeente",
+            "Nooit",
+            "Naar de huisarts, apotheek en het ziekenhuis"
+          ],
+          "answer": 3,
+          "explanation": "Neem de pas altijd mee naar de zorgverleners.",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-1-q-002",
+      "type": "reading",
+      "tags": [
+        "lezen:email"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "email",
+        "title": "Teamlunch verplaatst",
+        "body": "Van: Sanne de Vries\nAan: Alle collega's\nOnderwerp: Teamlunch verplaatst\n\nHoi allemaal,\n\nDe teamlunch van donderdag gaat niet door, want de kok is ziek. We doen de lunch nu op vrijdag 14 juni, om 12.30 uur in de kantine.\n\nKun je vrijdag niet komen? Laat het mij dan vóór woensdag weten. Heb je een allergie of eet je geen vlees? Zeg het even, dan houden we daar rekening mee.\n\nGroeten,\nSanne"
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-1-q-002-1",
+          "type": "mc",
+          "tags": [
+            "lezen:email"
+          ],
+          "prompt": "Waarom gaat de lunch van donderdag niet door?",
+          "options": [
+            "Het is een feestdag.",
+            "De kantine is dicht.",
+            "De kok is ziek.",
+            "Er zijn te weinig collega's."
+          ],
+          "answer": 2,
+          "explanation": "'… want de kok is ziek.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-002-2",
+          "type": "mc",
+          "tags": [
+            "lezen:email"
+          ],
+          "prompt": "Wanneer is de nieuwe lunch?",
+          "options": [
+            "Op donderdag om 12.30 uur",
+            "Op woensdag om 12.30 uur",
+            "Op vrijdag om 13.30 uur",
+            "Op vrijdag 14 juni om 12.30 uur"
+          ],
+          "answer": 3,
+          "explanation": "'Op vrijdag 14 juni, om 12.30 uur.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-002-3",
+          "type": "mc",
+          "tags": [
+            "lezen:email"
+          ],
+          "prompt": "Wat moeten collega's doen als zij niet kunnen komen?",
+          "options": [
+            "Het vóór woensdag aan Sanne laten weten",
+            "Een andere collega vragen",
+            "Het in de kantine zeggen",
+            "Niets doen"
+          ],
+          "answer": 0,
+          "explanation": "'Laat het mij dan vóór woensdag weten.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-1-q-003",
+      "type": "reading",
+      "tags": [
+        "lezen:advertentie"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "advertentie",
+        "title": "Schoonmaker gezocht",
+        "body": "Basisschool De Waaier zoekt een schoonmaker.\n\nWerktijden: maandag tot en met vrijdag van 16.00 tot 19.00 uur.\nWerk: u maakt de lokalen en de gang schoon.\nWat vragen wij? U werkt zorgvuldig en bent op tijd. Ervaring is fijn, maar niet nodig.\nWat bieden wij? Een tijdelijk contract voor een jaar. Bij goed werk is er daarna een vast contract.\n\nIs dit iets voor u? Bel meneer Jansen op 020-555 11 22. Bel tussen 9.00 en 12.00 uur. Of mail naar werk@dewaaier.example."
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-1-q-003-1",
+          "type": "mc",
+          "tags": [
+            "lezen:advertentie"
+          ],
+          "prompt": "Wanneer moet de schoonmaker werken?",
+          "options": [
+            "Alleen in het weekend",
+            "'s Ochtends van 8.00 tot 12.00 uur",
+            "'s Avonds van 20.00 tot 23.00 uur",
+            "Van maandag tot en met vrijdag in de late middag"
+          ],
+          "answer": 3,
+          "explanation": "'Maandag tot en met vrijdag van 16.00 tot 19.00 uur.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-003-2",
+          "type": "mc",
+          "tags": [
+            "lezen:advertentie"
+          ],
+          "prompt": "Wat is een voorwaarde voor de baan?",
+          "options": [
+            "Zorgvuldig en op tijd werken",
+            "Vijf jaar ervaring hebben",
+            "Een diploma schoonmaken hebben",
+            "Een eigen auto hebben"
+          ],
+          "answer": 0,
+          "explanation": "'U werkt zorgvuldig en bent op tijd. Ervaring is niet nodig.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-003-3",
+          "type": "mc",
+          "tags": [
+            "lezen:advertentie"
+          ],
+          "prompt": "Hoe laat kunt u bellen?",
+          "options": [
+            "Tussen 16.00 en 19.00 uur",
+            "Tussen 9.00 en 12.00 uur",
+            "Na 19.00 uur",
+            "De hele dag"
+          ],
+          "answer": 1,
+          "explanation": "'Bel tussen 9.00 en 12.00 uur.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-1-q-004",
+      "type": "reading",
+      "tags": [
+        "lezen:rooster"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "rooster",
+        "title": "Openingstijden gemeentehuis",
+        "body": "Dag | Loket open | Telefoon\nMaandag | 9.00 – 17.00 | 9.00 – 17.00\nDinsdag | 9.00 – 17.00 | 9.00 – 17.00\nWoensdag | 9.00 – 12.00 | 9.00 – 12.00\nDonderdag | 9.00 – 20.00 | 9.00 – 17.00\nVrijdag | Gesloten | 9.00 – 12.00\n\nVoor een paspoort of rijbewijs moet u vooraf een afspraak maken. Voor andere vragen kunt u zonder afspraak langskomen."
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-1-q-004-1",
+          "type": "mc",
+          "tags": [
+            "lezen:rooster"
+          ],
+          "prompt": "Wanneer kunt u donderdagavond nog terecht aan het loket?",
+          "options": [
+            "Tot 20.00 uur",
+            "Tot 17.00 uur",
+            "Tot 12.00 uur",
+            "Dat kan niet"
+          ],
+          "answer": 0,
+          "explanation": "Donderdag loket: 9.00 – 20.00.",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-004-2",
+          "type": "mc",
+          "tags": [
+            "lezen:rooster"
+          ],
+          "prompt": "Op welke dag is het loket gesloten?",
+          "options": [
+            "Op woensdag",
+            "Op vrijdag",
+            "Op maandag",
+            "Op donderdag"
+          ],
+          "answer": 1,
+          "explanation": "Vrijdag: Gesloten.",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-004-3",
+          "type": "mc",
+          "tags": [
+            "lezen:rooster"
+          ],
+          "prompt": "Wat moet u doen voor een paspoort?",
+          "options": [
+            "Alleen bellen op woensdag",
+            "Altijd 's avonds komen",
+            "Een afspraak maken",
+            "Niets, u kunt zomaar komen"
+          ],
+          "answer": 2,
+          "explanation": "'Voor een paspoort of rijbewijs moet u vooraf een afspraak maken.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-1-q-005",
+      "type": "reading",
+      "tags": [
+        "lezen:folder"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "folder",
+        "title": "Taalcafé in de bibliotheek",
+        "body": "Wilt u Nederlands oefenen? Kom naar het taalcafé!\n\nWanneer? Elke woensdag van 10.00 tot 11.30 uur.\nWaar? In de bibliotheek, naast de koffiecorner.\nWie? Iedereen die Nederlands wil oefenen. U hoeft zich niet aan te melden.\n\nU praat in kleine groepen met vrijwilligers. Het is gratis. Een kopje koffie of thee kost wel 1 euro.\n\nTijdens de schoolvakanties is er geen taalcafé."
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-1-q-005-1",
+          "type": "mc",
+          "tags": [
+            "lezen:folder"
+          ],
+          "prompt": "Wanneer is het taalcafé?",
+          "options": [
+            "Elke dinsdagmiddag",
+            "Elke woensdagochtend",
+            "Elke zaterdag",
+            "Elke avond"
+          ],
+          "answer": 1,
+          "explanation": "'Elke woensdag van 10.00 tot 11.30 uur.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-005-2",
+          "type": "mc",
+          "tags": [
+            "lezen:folder"
+          ],
+          "prompt": "Wat moet u doen om mee te doen?",
+          "options": [
+            "Zich aanmelden bij de balie",
+            "Betalen bij de ingang",
+            "Niets, u hoeft zich niet aan te melden.",
+            "Een boek meenemen"
+          ],
+          "answer": 2,
+          "explanation": "'U hoeft zich niet aan te melden.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-005-3",
+          "type": "mc",
+          "tags": [
+            "lezen:folder"
+          ],
+          "prompt": "Wanneer is er geen taalcafé?",
+          "options": [
+            "Op woensdag",
+            "In de ochtend",
+            "Als het regent",
+            "In de schoolvakanties"
+          ],
+          "answer": 3,
+          "explanation": "'Tijdens de schoolvakanties is er geen taalcafé.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-1-q-006",
+      "type": "reading",
+      "tags": [
+        "lezen:bericht"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "bericht",
+        "title": "Fiets gevonden",
+        "body": "Beste buurtgenoten,\n\nVorige week zaterdag heb ik een kinderfiets gevonden bij de speeltuin aan de Lindelaan. De fiets is rood en heeft een zwarte tas. Ik denk dat een kind hem heeft laten staan.\n\nIs het jouw fiets, of ken je de eigenaar? Stuur mij dan een bericht of kom langs op nummer 23. Ik ben thuis na 17.00 uur.\n\nDe fiets staat nu in mijn schuur. Als niemand reageert, breng ik hem volgende maand naar de politie.\n\nGroeten,\nOlga (Lindelaan 23)"
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-1-q-006-1",
+          "type": "mc",
+          "tags": [
+            "lezen:bericht"
+          ],
+          "prompt": "Waar heeft Olga de fiets gevonden?",
+          "options": [
+            "Op het station",
+            "Bij school",
+            "Bij de speeltuin",
+            "In de gracht"
+          ],
+          "answer": 2,
+          "explanation": "'… gevonden bij de speeltuin aan de Lindelaan.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-006-2",
+          "type": "mc",
+          "tags": [
+            "lezen:bericht"
+          ],
+          "prompt": "Wat moet de eigenaar doen?",
+          "options": [
+            "Naar de politie gaan",
+            "Een brief naar de gemeente schrijven",
+            "Een nieuwe fiets kopen",
+            "Olga een bericht sturen of langskomen"
+          ],
+          "answer": 3,
+          "explanation": "'Stuur mij dan een bericht of kom langs op nummer 23.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-006-3",
+          "type": "mc",
+          "tags": [
+            "lezen:bericht"
+          ],
+          "prompt": "Wat gebeurt er als niemand reageert?",
+          "options": [
+            "Olga brengt de fiets volgende maand naar de politie.",
+            "Olga houdt de fiets.",
+            "Olga verkoopt de fiets.",
+            "Olga zet de fiets weer bij de speeltuin."
+          ],
+          "answer": 0,
+          "explanation": "'… breng ik hem volgende maand naar de politie.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-1-q-007",
+      "type": "reading",
+      "tags": [
+        "lezen:artikel"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "folder",
+        "title": "Nieuwe bushaltes in Zuid",
+        "body": "Vanaf maandag 3 juni heeft buslijn 7 twee nieuwe haltes: Molenplein en Sportpark. De bus rijdt dan niet meer via de Stationsstraat. Reizigers van de Stationsstraat kunnen de bus nemen bij de halte Molenplein. Dat is vijf minuten lopen.\n\nDe bus rijdt nog steeds elke tien minuten van 7.00 tot 19.00 uur. 's Avonds rijdt hij elk half uur.\n\nDe gemeente verwacht dat de reis naar het centrum twee minuten korter wordt. Meer informatie vindt u op de website van de gemeente."
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-1-q-007-1",
+          "type": "mc",
+          "tags": [
+            "lezen:artikel"
+          ],
+          "prompt": "Wat verandert er op 3 juni?",
+          "options": [
+            "Buslijn 7 stopt.",
+            "Er komt een nieuwe treinlijn.",
+            "De bus wordt gratis.",
+            "Buslijn 7 krijgt twee nieuwe haltes."
+          ],
+          "answer": 3,
+          "explanation": "'Vanaf maandag 3 juni heeft buslijn 7 twee nieuwe haltes.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-007-2",
+          "type": "mc",
+          "tags": [
+            "lezen:artikel"
+          ],
+          "prompt": "Waar kunnen reizigers van de Stationsstraat instappen?",
+          "options": [
+            "Bij de halte Molenplein",
+            "Bij de halte Sportpark",
+            "In de Stationsstraat",
+            "Bij het centrum"
+          ],
+          "answer": 0,
+          "explanation": "'… de bus nemen bij de halte Molenplein.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-007-3",
+          "type": "mc",
+          "tags": [
+            "lezen:artikel"
+          ],
+          "prompt": "Hoe vaak rijdt de bus 's avonds?",
+          "options": [
+            "Elke tien minuten",
+            "Elk half uur",
+            "Elk uur",
+            "Niet"
+          ],
+          "answer": 1,
+          "explanation": "''s Avonds rijdt hij elk half uur.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-1-q-008",
+      "type": "reading",
+      "tags": [
+        "lezen:brief"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "brief",
+        "title": "Huur wordt later betaald",
+        "body": "Van: Woningcorporatie Thuis\nAan: Mevrouw F. Yilmaz\nDatum: 12 maart\n\nGeachte mevrouw Yilmaz,\n\nWij hebben uw huur van maart nog niet ontvangen. De huur moet uiterlijk de eerste van de maand op onze rekening staan.\n\nBetaalt u de huur binnen 7 dagen? Dan hoeft u niets extra te betalen. Betaalt u later? Dan kunnen wij extra kosten rekenen.\n\nHeeft u financiële problemen? Neem dan contact met ons op. Wij kunnen samen een oplossing zoeken.\n\nMet vriendelijke groet,\nThuis"
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-1-q-008-1",
+          "type": "mc",
+          "tags": [
+            "lezen:brief"
+          ],
+          "prompt": "Wat is het probleem?",
+          "options": [
+            "De huur van maart is nog niet betaald.",
+            "De huur is te hoog.",
+            "De woning is kapot.",
+            "De huurder moet verhuizen."
+          ],
+          "answer": 0,
+          "explanation": "'Wij hebben uw huur van maart nog niet ontvangen.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-008-2",
+          "type": "mc",
+          "tags": [
+            "lezen:brief"
+          ],
+          "prompt": "Wat gebeurt er als mevrouw Yilmaz binnen 7 dagen betaalt?",
+          "options": [
+            "Zij krijgt een boete.",
+            "Zij hoeft niets extra te betalen.",
+            "Zij moet verhuizen.",
+            "Zij krijgt korting."
+          ],
+          "answer": 1,
+          "explanation": "'Binnen 7 dagen? Dan hoeft u niets extra te betalen.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-008-3",
+          "type": "mc",
+          "tags": [
+            "lezen:brief"
+          ],
+          "prompt": "Wat kan mevrouw Yilmaz doen bij geldproblemen?",
+          "options": [
+            "De politie bellen",
+            "Een nieuwe woning zoeken",
+            "Contact opnemen met de woningcorporatie",
+            "Niets doen"
+          ],
+          "answer": 2,
+          "explanation": "'Neem dan contact met ons op.'",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-lezen-1-q-009",
+      "type": "reading",
+      "tags": [
+        "lezen:formulier"
+      ],
+      "prompt": "Lees de tekst en beantwoord de vragen.",
+      "document": {
+        "kind": "document",
+        "docType": "formulier",
+        "title": "Aanmelding zwemles kinderen",
+        "body": "Zwembad De Golf – zwemles voor kinderen (6 tot 12 jaar)\n\nLes: elke zaterdag, van 9.00 tot 10.00 uur. De lessen beginnen op 7 september en duren 20 weken.\nMeld uw kind aan vóór 25 augustus bij de kassa of op de website.\n\nWat neemt u mee?\n- Het ingevulde aanmeldformulier\n- Een kopie van het legitimatiebewijs van uw kind of een uittreksel van de gemeente\n\nHet kind neemt bij elke les een handdoek, een zwembroek of badpak en een badmuts mee. Brillen zijn niet toegestaan in het water."
+      },
+      "questions": [
+        {
+          "id": "exam-lezen-1-q-009-1",
+          "type": "mc",
+          "tags": [
+            "lezen:formulier"
+          ],
+          "prompt": "Wanneer begint de zwemles?",
+          "options": [
+            "Op 25 augustus",
+            "Op 7 september",
+            "Op 9.00 uur",
+            "Na 20 weken"
+          ],
+          "answer": 1,
+          "explanation": "'De lessen beginnen op 7 september.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-009-2",
+          "type": "mc",
+          "tags": [
+            "lezen:formulier"
+          ],
+          "prompt": "Tot wanneer kunt u uw kind aanmelden?",
+          "options": [
+            "Tot 7 september",
+            "Tot 20 weken",
+            "Tot 25 augustus",
+            "Tot zaterdag"
+          ],
+          "answer": 2,
+          "explanation": "'Meld uw kind aan vóór 25 augustus.'",
+          "difficulty": 1
+        },
+        {
+          "id": "exam-lezen-1-q-009-3",
+          "type": "mc",
+          "tags": [
+            "lezen:formulier"
+          ],
+          "prompt": "Wat moet een kind bij elke les meenemen?",
+          "options": [
+            "Een bril",
+            "Een kopie van het paspoort",
+            "Het aanmeldformulier",
+            "Een handdoek, zwemkleding en een badmuts"
+          ],
+          "answer": 3,
+          "explanation": "Een handdoek, zwembroek of badpak en een badmuts.",
+          "difficulty": 1
+        }
+      ],
+      "explanation": "Zoek het antwoord in de tekst.",
+      "difficulty": 1
+    }
+  ],
+  "passScore": 0.7
+}

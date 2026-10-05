@@ -1,11 +1,24 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import { useSettingsStore } from "../stores/settings";
+import { api } from "../api/client";
 import AppButton from "../components/ui/AppButton.vue";
 
 const store = useSettingsStore();
 const newKey = ref("");
 const saved = ref(false);
+const resetText = ref("");
+const resetMessage = ref<{ ok: boolean; text: string } | null>(null);
+
+async function resetProgress() {
+  try {
+    await api.post("/progress/reset", { confirm: resetText.value });
+    resetText.value = "";
+    resetMessage.value = { ok: true, text: "Je voortgang is gewist. Er is eerst een backup gemaakt in data/user/backups." };
+  } catch (e) {
+    resetMessage.value = { ok: false, text: (e as Error).message };
+  }
+}
 
 onMounted(() => store.load());
 
@@ -67,6 +80,24 @@ const themes = [
             <input type="checkbox" class="h-5 w-5 accent-[var(--brand)]" :checked="store.settings.spellcheckWriting" @change="patch({ spellcheckWriting: ($event.target as HTMLInputElement).checked })" />
             Spellingcontrole bij schrijven
           </label>
+        </div>
+      </section>
+
+      <section class="card p-6">
+        <h2 class="text-xl font-bold">Mijn gegevens</h2>
+        <p class="mt-1 text-muted">Al je voortgang staat in de map <code class="rounded bg-surface-2 px-1">data/user</code> op deze computer. Elke dag wordt er automatisch een backup gemaakt (de laatste 14 dagen blijven bewaard).</p>
+        <a href="/api/export" download class="mt-3 inline-block">
+          <AppButton variant="secondary">⬇ Download mijn gegevens</AppButton>
+        </a>
+        <p class="mt-1 text-sm text-muted">De API-sleutel zit niet in dit bestand.</p>
+
+        <div class="mt-6 rounded-2xl border border-bad/40 bg-bad-bg p-4">
+          <h3 class="font-bold text-bad">Voortgang wissen</h3>
+          <p class="mt-1">Dit wist je voortgang en woordkaartjes. Je schrijfteksten blijven staan. Er wordt eerst een backup gemaakt.</p>
+          <label for="reset" class="mt-3 block font-semibold">Typ <strong>RESET</strong> om te bevestigen</label>
+          <input id="reset" v-model="resetText" class="input mt-1" autocomplete="off" />
+          <AppButton class="mt-3" variant="bad" :disabled="resetText !== 'RESET'" @click="resetProgress">Wis mijn voortgang</AppButton>
+          <p v-if="resetMessage" role="status" class="mt-3 font-semibold" :class="resetMessage.ok ? 'text-good' : 'text-bad'">{{ resetMessage.ok ? "✓" : "✗" }} {{ resetMessage.text }}</p>
         </div>
       </section>
 
