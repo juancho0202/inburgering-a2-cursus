@@ -4,12 +4,21 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "node:path";
 import { VitePWA } from "vite-plugin-pwa";
 import { coursePlugin } from "./scripts/vitePluginCourse";
+import { SECURITY_HEADERS, netlifyHeadersFile } from "./scripts/securityHeaders";
 
 export default defineConfig({
   plugins: [
     vue(),
     tailwindcss(),
     coursePlugin(),
+    {
+      // Writes Netlify's _headers file (CSP etc.) next to the built site.
+      name: "netlify-headers",
+      apply: "build",
+      generateBundle() {
+        this.emitFile({ type: "asset", fileName: "_headers", source: netlifyHeadersFile() });
+      },
+    },
     // Installable and works offline (everything except Claude). New versions install themselves in the background.
     VitePWA({
       registerType: "autoUpdate",
@@ -48,6 +57,8 @@ export default defineConfig({
       },
     }),
   ],
+  // The browser tests run against `vite preview` with the same security headers as the deployed site.
+  preview: { headers: SECURITY_HEADERS },
   // Unit tests only; the browser tests in tests/e2e run with Playwright (npm run e2e).
   test: { include: ["tests/unit/**/*.test.ts"] },
   resolve: {

