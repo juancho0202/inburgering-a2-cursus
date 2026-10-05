@@ -118,7 +118,7 @@ const restart = async () => {
       </div>
     </template>
 
-    <ExerciseShell v-else :key="stepIndex" :exercise="step.exercise" :is-last="isLast" class="slide-up" @done="advance" @exit="exit" />
+    <ExerciseShell v-else :key="stepIndex" :exercise="step.exercise" :is-last="isLast" @done="advance" @exit="exit" />
   </div>
   <p v-else class="text-muted">Even laden…</p>
 </template>

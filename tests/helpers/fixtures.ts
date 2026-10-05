@@ -59,6 +59,7 @@ export function fixtureContent(): Content {
     { id: "v-werken", nl: "werken", article: null, pos: "verb" as const, plural: null, definitionNl: "Je doet je baan.", example: "Ik werk.", tags: [], level: "A2" as const, source: "course" as const },
   ];
   return {
+    version: "test0001",
     course: { id: "t", title: "Test" },
     modules: new Map([
       ["basis", { id: "basis", title: "Basis", description: "d", icon: "book", units: ["basis-a"] }],

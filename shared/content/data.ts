@@ -146,6 +146,7 @@ export function contentFromData(data: ContentData): Content {
   for (const mod of data.modules) for (const id of mod.units) if (byId.has(id)) units.set(id, byId.get(id)!);
   for (const u of data.units) if (!units.has(u.id)) units.set(u.id, u);
   return {
+    version: data.version,
     course: data.course,
     modules: new Map(data.modules.map((m) => [m.id, m])),
     units,
