@@ -69,7 +69,7 @@ async function patch(p: Parameters<typeof store.update>[0]) {
   setTimeout(() => (saved.value = false), 1500);
 }
 const themes = [
-  { value: "system", label: "Automatisch" },
+  { value: "system", label: "Auto" },
   { value: "light", label: "Licht" },
   { value: "dark", label: "Donker" },
 ] as const;
