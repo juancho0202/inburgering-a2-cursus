@@ -14,6 +14,8 @@
   --good-bg: #e3f4e8;
   --bad: #b3261e;
   --bad-bg: #fbe6e4;
+  --flag: #c0392b;
+  --flag-bg: #fdecea;
   --brand: #e8710a;
   --brand-strong: #c45e05;
   --brand-bg: #fdf0e1;
@@ -31,6 +33,8 @@
   --good-bg: #17301f;
   --bad: #ff8f87;
   --bad-bg: #3a1c1a;
+  --flag: #f28b82;
+  --flag-bg: #3d1f1d;
   --brand: #ff9438;
   --brand-strong: #ffb067;
   --brand-bg: #3a2512;
@@ -47,6 +51,8 @@
   --color-good-bg: var(--good-bg);
   --color-bad: var(--bad);
   --color-bad-bg: var(--bad-bg);
+  --color-flag: var(--flag);
+  --color-flag-bg: var(--flag-bg);
   --color-brand: var(--brand);
   --color-brand-strong: var(--brand-strong);
   --color-brand-bg: var(--brand-bg);

@@ -36,8 +36,13 @@ async function send() {
 </script>
 
 <template>
-  <button ref="trigger" type="button" class="rounded-xl px-3 py-1.5 text-sm font-semibold text-muted transition hover:bg-surface-2 hover:text-ink" @click="show">
-    ⚑ {{ label ?? "Meld een fout" }}
+  <button
+    ref="trigger"
+    type="button"
+    class="inline-flex items-center gap-1.5 rounded-xl border border-flag/40 px-3 py-1.5 text-sm font-semibold text-muted transition hover:border-flag hover:bg-flag-bg hover:text-flag"
+    @click="show"
+  >
+    <span aria-hidden="true" class="text-flag">⚑</span> {{ label ?? "Meld een fout" }}
   </button>
 
   <Teleport to="body">
