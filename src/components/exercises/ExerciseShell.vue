@@ -118,6 +118,7 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey, true));
       <span class="text-sm text-muted">Deze oefening is gemaakt door Claude.</span>
     </p>
     <ExerciseRenderer ref="renderer" :key="renderKey" :exercise="exercise" :checked="checked" :prefill="prefill" />
+    <div class="mt-10 flex justify-center"><ReportIssue :item-id="exercise.id" /></div>
 
     <div class="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface/95 backdrop-blur" role="region" aria-label="Controle">
       <div v-if="result" role="status" aria-live="polite" class="slide-up max-h-[45vh] overflow-y-auto border-b border-line" :class="result.score === null ? 'bg-surface-2' : result.correct ? 'bg-good-bg' : 'bg-bad-bg'">
@@ -159,7 +160,6 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey, true));
         <div class="flex gap-1">
           <AppButton variant="ghost" @click="emit('exit')">Stoppen</AppButton>
           <AppButton v-if="isGenerated && !flagged" variant="ghost" @click="flag">Klopt niet</AppButton>
-          <ReportIssue :item-id="exercise.id" />
         </div>
         <div class="flex gap-2">
           <AppButton v-if="isWriting && checked" variant="secondary" size="lg" @click="retry">Probeer opnieuw</AppButton>

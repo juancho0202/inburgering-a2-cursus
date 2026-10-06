@@ -113,13 +113,11 @@ const restart = async () => {
         <p v-if="stepIndex === 0" class="mb-5 text-muted">{{ unit.goal }}</p>
         <div v-else class="mb-5" />
         <LessonBlocks :blocks="step.blocks" />
+        <div class="mt-10 flex justify-center"><ReportIssue :item-id="step.id" /></div>
       </div>
       <div class="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface/95 backdrop-blur">
         <div class="mx-auto flex max-w-4xl items-center justify-between gap-3 px-4 py-3">
-          <div class="flex items-center gap-1">
-            <AppButton variant="ghost" @click="stepIndex === 0 ? exit() : goTo(stepIndex - 1)">{{ stepIndex === 0 ? "Stoppen" : "← Vorige" }}</AppButton>
-            <ReportIssue :item-id="step.id" />
-          </div>
+          <AppButton variant="ghost" @click="stepIndex === 0 ? exit() : goTo(stepIndex - 1)">{{ stepIndex === 0 ? "Stoppen" : "← Vorige" }}</AppButton>
           <AppButton size="lg" @click="advance">{{ isLast ? "Afronden" : "Volgende →" }}</AppButton>
         </div>
       </div>
