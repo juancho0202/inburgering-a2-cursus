@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { useRoute, useRouter, RouterLink } from "vue-router";
 import { api } from "../api/client";
 import type { Progress, Unit } from "@shared/types";
@@ -29,6 +29,7 @@ const unitId = computed(() => String(route.params.id));
 async function start(fromStart = false) {
   error.value = null;
   finished.value = false;
+  summary.value = null;
   try {
     const [u, p] = await Promise.all([api.get<Unit>(`/units/${unitId.value}`), api.get<Progress>("/progress")]);
     unit.value = u;
@@ -41,7 +42,9 @@ async function start(fromStart = false) {
     error.value = (e as Error).message;
   }
 }
-onMounted(() => start());
+// The router reuses this component when only :id changes (e.g. "Volgende les"),
+// so reset and reload the unit instead of keeping the previous end screen.
+watch(unitId, () => start(), { immediate: true });
 
 const step = computed(() => unit.value?.steps[stepIndex.value]);
 const total = computed(() => unit.value?.steps.length ?? 0);
