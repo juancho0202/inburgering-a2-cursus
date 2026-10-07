@@ -123,14 +123,14 @@ These are the kinds of bugs that have actually been found here. For each compone
 | Exam result and writing feedback queue | `components/ExamResultView.test.ts` |
 | App shell (menu, focus mode, theme) | `components/App.test.ts` |
 | "Klaar voor vandaag" dialog | `components/FinishSessionDialog.test.ts` |
-| Dashboard and module page | `components/Dashboard.test.ts` |
+| Dashboard and module page | `components/Dashboard.test.ts` (where "Begin met leren" goes is decided in `shared/services/dashboard.ts`, tested in `services-progress.test.ts`) |
 | Words and verbs lists | `components/WordLists.test.ts` |
 | Settings, report a mistake, import | `components/SettingsAndReport.test.ts` |
 | Lesson blocks, documents, exams list, writing history, welcome | `components/LessonContent.test.ts` |
 | Install hint / storage protection | `components/InstallHint.test.ts` |
 | Progress bar/ring, summary page | `components/Progress.test.ts` |
 
-Known gaps (not component tests, but worth a look when you are nearby): `src/lib/*` (`storage.ts`, `progressFile.ts`, `backgrounds.ts`) and `src/stores/*` have no direct tests; the SpeakButton/voice choice is untested because jsdom has no speech synthesis.
+Known gaps (not component tests, but worth a look when you are nearby): `src/lib/*` (`storage.ts`, `progressFile.ts`) and `src/stores/*` have no direct tests (`backgrounds.ts` is covered by `tests/unit/backgrounds.test.ts`); the SpeakButton/voice choice is untested because jsdom has no speech synthesis.
 
 ## Checklist when you finish a change
 
