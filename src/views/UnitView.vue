@@ -34,7 +34,8 @@ async function start(fromStart = false) {
     const [u, p] = await Promise.all([api.get<Unit>(`/units/${unitId.value}`), api.get<Progress>("/progress")]);
     unit.value = u;
     const saved = p.units[u.id];
-    const resumeAt = !fromStart && saved?.status === "in_progress" ? Math.min(saved.stepIndex, u.steps.length - 1) : 0;
+    // A completed lesson that was reopened and left halfway keeps its step too (completing resets it to 0).
+    const resumeAt = !fromStart && saved && saved.stepIndex > 0 ? Math.min(saved.stepIndex, u.steps.length - 1) : 0;
     stepIndex.value = resumeAt;
     resumed.value = resumeAt > 0;
     if (!content.course) content.load();
