@@ -62,15 +62,24 @@ async function goTo(index: number) {
   api.post(`/units/${unitId.value}/step`, { stepIndex: index }).catch(() => {});
 }
 
+// Finishing is slow (it saves to the database), and a double tap or a held-down Enter key would otherwise finish
+// the lesson twice: the second time no words are new any more, so the end screen would lose its word count.
+let finishing = false;
 async function advance() {
   if (!unit.value) return;
   if (!isLast.value) return goTo(stepIndex.value + 1);
-  const p = await api.get<Progress>("/progress");
-  const s = unitScore(unit.value, p);
-  const res = await api.post<{ wordsIntroduced: number }>(`/units/${unitId.value}/complete`, { score: s.score });
-  const hard = await api.get<unknown[]>(`/practice?mode=hard&unit=${unitId.value}`).catch(() => []);
-  summary.value = { ...s, words: res.wordsIntroduced, hard: hard.length };
-  finished.value = true;
+  if (finishing) return;
+  finishing = true;
+  try {
+    const p = await api.get<Progress>("/progress");
+    const s = unitScore(unit.value, p);
+    const res = await api.post<{ wordsIntroduced: number }>(`/units/${unitId.value}/complete`, { score: s.score });
+    const hard = await api.get<unknown[]>(`/practice?mode=hard&unit=${unitId.value}`).catch(() => []);
+    summary.value = { ...s, words: res.wordsIntroduced, hard: hard.length };
+    finished.value = true;
+  } finally {
+    finishing = false;
+  }
 }
 
 const exit = () => router.push(unit.value ? `/module/${unit.value.moduleId}` : "/");
