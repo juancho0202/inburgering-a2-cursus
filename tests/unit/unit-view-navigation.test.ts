@@ -10,10 +10,13 @@ const lessonUnit = (id: string, title: string) => ({
   steps: [{ type: "lesson", id: `${id}-l-01`, title: `Stap ${id}`, blocks: [] }],
 });
 const units: Record<string, ReturnType<typeof lessonUnit>> = { a: lessonUnit("a", "Les A"), b: lessonUnit("b", "Les B") };
+units.c = lessonUnit("c", "Les C");
+units.c.steps.push({ type: "lesson", id: "c-l-02", title: "Stap c2", blocks: [] }, { type: "lesson", id: "c-l-03", title: "Stap c3", blocks: [] });
+let savedUnits: Record<string, unknown> = {};
 
 const get = vi.fn(async (path: string) => {
   if (path.startsWith("/units/")) return units[path.split("/")[2]];
-  if (path === "/progress") return { units: {}, items: {} };
+  if (path === "/progress") return { units: savedUnits, items: {} };
   if (path === "/course") return { modules: [{ id: "m", units: [{ id: "a", title: "Les A" }, { id: "b", title: "Les B" }] }] };
   return [];
 });
@@ -36,6 +39,24 @@ const button = (w: Awaited<ReturnType<typeof setup>>["wrapper"], text: string) =
 describe("UnitView navigation", () => {
   beforeEach(() => {
     get.mockClear();
+    savedUnits = {};
+  });
+
+  it.each(["in_progress", "completed"])("resumes at the saved step of a %s lesson", async (status) => {
+    savedUnits = { c: { status, stepIndex: 2, bestScore: 1, attempts: 1, completedAt: null } };
+    const { router, wrapper } = await setup();
+    await router.push("/unit/c");
+    await flushPromises();
+    expect(wrapper.text()).toContain("Stap c3");
+    expect(wrapper.text()).toContain("3 / 3");
+  });
+
+  it("starts a completed lesson at the beginning when no step was saved", async () => {
+    savedUnits = { c: { status: "completed", stepIndex: 0, bestScore: 1, attempts: 1, completedAt: "x" } };
+    const { router, wrapper } = await setup();
+    await router.push("/unit/c");
+    await flushPromises();
+    expect(wrapper.text()).toContain("1 / 3");
   });
 
   it("starts the next lesson when 'Volgende les' is used after finishing one", async () => {
