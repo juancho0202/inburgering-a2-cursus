@@ -29,12 +29,18 @@ export async function dashboard(env: Env) {
     completed: mod.units.filter((id) => completed.has(id)).length,
   }));
 
+  // Where "Begin met leren" goes: the first lesson (in course order) that is not completed yet.
+  const nextUnitId =
+    [...env.content.modules.values()].flatMap((m) => m.units).find((id) => !completed.has(id)) ??
+    [...env.content.modules.values()].flatMap((m) => m.units)[0] ??
+    null;
   const lastUnit = lastLoc ? env.content.units.get(lastLoc.unitId) : undefined;
   const nextExam = [...env.content.exams.values()].find((e) => !exams.some((r) => r.examId === e.id && r.finishedAt));
 
   return {
     lastLocation:
       lastLoc && lastUnit ? { unitId: lastUnit.id, unitTitle: lastUnit.title, stepIndex: lastLoc.stepIndex, stepCount: lastUnit.steps.length } : null,
+    nextUnitId,
     dailyGoalMinutes: settings.dailyGoalMinutes,
     minutesToday: Math.round((stats.minutes[day] ?? 0) * 10) / 10,
     streak: stats.streak,
