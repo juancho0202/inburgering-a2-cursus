@@ -7,9 +7,23 @@ export const backgrounds = Object.entries(found)
   .map(([, url]) => url);
 
 const LAST_KEY = "dashboardBackground";
+const ready = new Set<string>();
+let queued: string | null = null;
 
-/** A random background that is not the one shown last time (remembered on this device). */
-export function pickBackground(): string {
+/** Download and decode an image ahead of time, so it can be shown without a blank moment. */
+function preload(url: string) {
+  if (!url || ready.has(url) || typeof Image === "undefined") return;
+  const img = new Image();
+  img.src = url;
+  void img.decode().then(() => ready.add(url), () => undefined);
+}
+
+/** True when the image is already downloaded, so it can appear instantly. */
+export function isBackgroundReady(url: string): boolean {
+  return ready.has(url);
+}
+
+function randomOther(): string {
   if (backgrounds.length <= 1) return backgrounds[0] ?? "";
   let last = -1;
   try {
@@ -25,4 +39,19 @@ export function pickBackground(): string {
     // ignore
   }
   return backgrounds[next];
+}
+
+/** Choose the next dashboard background and start downloading it (called once at app start). */
+export function primeBackground() {
+  queued ??= randomOther();
+  preload(queued);
+}
+
+/** A random background that is not the one shown last time; the one after it is preloaded already. */
+export function pickBackground(): string {
+  const current = queued ?? randomOther();
+  queued = randomOther();
+  preload(current);
+  preload(queued);
+  return current;
 }
