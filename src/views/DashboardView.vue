@@ -7,10 +7,11 @@ import AppButton from "../components/ui/AppButton.vue";
 import ProgressBar from "../components/ui/ProgressBar.vue";
 import ProgressRing from "../components/ui/ProgressRing.vue";
 import { useContentStore } from "../stores/content";
-import { pickBackground } from "../lib/backgrounds";
+import { isBackgroundReady, pickBackground } from "../lib/backgrounds";
 import { useSessionStore } from "../stores/session";
 
 interface Dashboard {
+  nextUnitId: string | null;
   lastLocation: { unitId: string; unitTitle: string; stepIndex: number; stepCount: number } | null;
   dailyGoalMinutes: number;
   minutesToday: number;
@@ -28,7 +29,7 @@ const content = useContentStore();
 const session = useSessionStore();
 // A different background each time the dashboard opens; it fades in once it has loaded.
 const background = pickBackground();
-const backgroundLoaded = ref(false);
+const backgroundLoaded = ref(isBackgroundReady(background));
 const data = ref<Dashboard | null>(null);
 const error = ref<string | null>(null);
 
@@ -41,14 +42,13 @@ onMounted(async () => {
   }
 });
 
-const firstUnit = () => content.course?.modules.find((m) => m.units.length)?.units[0]?.id;
 const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.slice(8)}` : t.replace(":", " · "));
 </script>
 
 <template>
   <!-- Fixed background photo with a soft veil so the cards stay readable -->
   <div class="pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
-    <img :src="background" alt="" class="h-full w-full object-cover transition-opacity duration-700" :class="backgroundLoaded ? 'opacity-100' : 'opacity-0'" @load="backgroundLoaded = true" />
+    <img :src="background" alt="" :class="['h-full w-full object-cover transition-opacity duration-700', backgroundLoaded ? 'opacity-100' : 'opacity-0']" @load="backgroundLoaded = true" />
     <div class="absolute inset-0 bg-bg/35 dark:bg-bg/60" />
   </div>
   <p v-if="error" class="rounded-2xl bg-bad-bg p-4 text-bad">{{ error }}</p>
@@ -64,7 +64,7 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
           <RouterLink v-if="data.lastLocation" :to="`/unit/${data.lastLocation.unitId}`">
             <AppButton size="lg">▶ Verder waar ik was</AppButton>
           </RouterLink>
-          <RouterLink v-else-if="firstUnit()" :to="`/unit/${firstUnit()}`">
+          <RouterLink v-else-if="data.nextUnitId" :to="`/unit/${data.nextUnitId}`">
             <AppButton size="lg">▶ Begin met leren</AppButton>
           </RouterLink>
           <RouterLink to="/woorden/herhalen">
