@@ -167,6 +167,48 @@ describe("dashboard and practice", () => {
     expect(d.newCount).toBe(5);
   });
 
+  describe("where 'Begin met leren' goes (nextUnitId)", () => {
+    it("a new learner starts at the first lesson in course order", async () => {
+      const { env } = makeEnv();
+      expect((await dashboard(env)).nextUnitId).toBe("basis-a");
+    });
+
+    it("moves on to the next lesson, also into the next module, once a lesson is completed", async () => {
+      const { env } = makeEnv();
+      await completeUnit(env, "basis-a", { score: 1 });
+      expect((await dashboard(env)).nextUnitId).toBe("knm-wonen");
+      await completeUnit(env, "knm-wonen", { score: 1 });
+      expect((await dashboard(env)).nextUnitId).toBe("schrijven-kort");
+    });
+
+    it("a lesson that is only started still counts as not done", async () => {
+      const { env } = makeEnv();
+      await setUnitStep(env, "basis-a", { stepIndex: 2 });
+      expect((await dashboard(env)).nextUnitId).toBe("basis-a");
+    });
+
+    it("takes the first unfinished lesson even when a later one was finished", async () => {
+      const { env } = makeEnv();
+      await completeUnit(env, "knm-wonen", { score: 1 });
+      expect((await dashboard(env)).nextUnitId).toBe("basis-a");
+    });
+
+    it("when everything is completed it points at the first lesson again (to practise)", async () => {
+      const { env } = makeEnv();
+      for (const id of ["basis-a", "knm-wonen", "schrijven-kort"]) await completeUnit(env, id, { score: 1 });
+      expect((await dashboard(env)).nextUnitId).toBe("basis-a");
+    });
+
+    it("skips modules without lessons, and is null when there are no lessons at all", async () => {
+      const { env } = makeEnv();
+      const real = [...env.content.modules];
+      env.content.modules = new Map([["proefexamens", { id: "proefexamens", title: "Proef", description: "d", icon: "timer", units: [] }], ...real]);
+      expect((await dashboard(env)).nextUnitId).toBe("basis-a");
+      env.content.modules = new Map([["proefexamens", { id: "proefexamens", title: "Proef", description: "d", icon: "timer", units: [] }]]);
+      expect((await dashboard(env)).nextUnitId).toBeNull();
+    });
+  });
+
   it("finds hard items and the weakest tags, and builds practice sessions from them", async () => {
     const { env } = makeEnv();
     for (let i = 0; i < 3; i++) await recordAttempt(env, answer("basis-a-q-001", false)); // basis:a, wrong 3x

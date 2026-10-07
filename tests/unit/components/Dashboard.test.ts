@@ -6,6 +6,9 @@ import ModuleView from "../../../src/views/ModuleView.vue";
 import { clickButton, fakeApi, mountApp } from "../../helpers/component";
 import { useSessionStore } from "../../../src/stores/session";
 
+const background = vi.hoisted(() => ({ ready: false }));
+vi.mock("../../../src/lib/backgrounds", () => ({ pickBackground: () => "/bg-test.jpg", isBackgroundReady: () => background.ready }));
+
 vi.mock("../../../src/api/client", async () => {
   const h = await import("../../helpers/component");
   return { api: h.fakeApi.api, ApiRequestError: h.ApiRequestError };
@@ -23,13 +26,14 @@ const course = {
   ],
 };
 const dashboard = (extra: Record<string, unknown> = {}) => ({
-  lastLocation: null, dailyGoalMinutes: 20, minutesToday: 5, streak: { current: 1, best: 4 }, dueCount: 3, newCount: 2,
+  nextUnitId: "basis-a", lastLocation: null, dailyGoalMinutes: 20, minutesToday: 5, streak: { current: 1, best: 4 }, dueCount: 3, newCount: 2,
   modules: [{ id: "basis", title: "Basis", total: 3, completed: 1 }, { id: "exams", title: "Proefexamens", total: 0, completed: 0 }],
   hardCount: 0, weakTags: [], backupReminder: { show: false, daysAgo: null, unsavedAnswers: 0 }, nextExam: null, ...extra,
 });
 
 beforeEach(() => {
   fakeApi.reset();
+  background.ready = false;
   fakeApi.on("GET", "/course", course);
 });
 
@@ -39,17 +43,41 @@ describe("DashboardView", () => {
     return mountApp(DashboardView, { routePath: "/", url: "/" });
   };
 
-  it("a new learner is sent to the very first lesson (skipping modules without lessons)", async () => {
-    const { wrapper } = await open(dashboard());
-    expect(wrapper.find("a[href='/unit/basis-a']").text()).toContain("Begin met leren");
+  it("a new learner is sent to the lesson the app names as next, not to one worked out from the course list", async () => {
+    const { wrapper } = await open(dashboard({ nextUnitId: "basis-c" }));
+    expect(wrapper.find("a[href='/unit/basis-c']").text()).toContain("Begin met leren");
+    expect(wrapper.find("a[href='/unit/basis-a']").exists()).toBe(false);
     expect(wrapper.text()).toContain("Klaar om te leren?");
   });
 
-  it("someone who was in the middle of a lesson is sent back to that lesson", async () => {
-    const { wrapper } = await open(dashboard({ lastLocation: { unitId: "basis-b", unitTitle: "Les B", stepIndex: 3, stepCount: 9 } }));
+  it("no lesson to start and nowhere to continue: no start button, but reviewing words is still offered", async () => {
+    const { wrapper } = await open(dashboard({ nextUnitId: null }));
+    expect(wrapper.text()).not.toContain("Begin met leren");
+    expect(wrapper.text()).not.toContain("Verder waar ik was");
+    expect(wrapper.find("a[href='/woorden/herhalen']").exists()).toBe(true);
+  });
+
+  it("the background fades in once it has loaded", async () => {
+    const { wrapper } = await open(dashboard());
+    const img = wrapper.find("img");
+    expect(img.attributes("src")).toBe("/bg-test.jpg");
+    expect(img.classes()).toContain("opacity-0");
+    await img.trigger("load");
+    expect(img.classes()).toContain("opacity-100");
+    expect(img.classes()).not.toContain("opacity-0");
+  });
+
+  it("a background that was preloaded is visible at once, without a blank moment", async () => {
+    background.ready = true;
+    const { wrapper } = await open(dashboard());
+    expect(wrapper.find("img").classes()).toContain("opacity-100");
+  });
+
+  it("someone who was in the middle of a lesson is sent back to that lesson, not to the next new one", async () => {
+    const { wrapper } = await open(dashboard({ nextUnitId: "basis-c", lastLocation: { unitId: "basis-b", unitTitle: "Les B", stepIndex: 3, stepCount: 9 } }));
     expect(wrapper.find("a[href='/unit/basis-b']").text()).toContain("Verder waar ik was");
     expect(wrapper.text()).toContain("Je was bezig met: Les B.");
-    expect(wrapper.find("a[href='/unit/basis-a']").exists()).toBe(false);
+    expect(wrapper.find("a[href='/unit/basis-c']").exists()).toBe(false);
   });
 
   it("the review button counts due and new cards together", async () => {
