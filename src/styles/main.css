@@ -77,6 +77,17 @@
   button {
     cursor: pointer;
   }
+  /* Dropdown still showing its disabled placeholder: grey it out as a "tap to choose" hint */
+  select:has(option[value=""][disabled]:checked) {
+    color: var(--muted);
+    opacity: 0.6;
+  }
+  select:has(option[value=""][disabled]:checked):disabled {
+    opacity: 1;
+  }
+  select option {
+    color: var(--ink);
+  }
   :focus-visible {
     outline: 3px solid var(--brand);
     outline-offset: 2px;
