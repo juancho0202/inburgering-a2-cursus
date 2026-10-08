@@ -64,6 +64,8 @@
 @layer base {
   html {
     font-size: 18px;
+    /* No double-tap-to-zoom; iOS Safari ignores user-scalable=no */
+    touch-action: manipulation;
   }
   body {
     background: var(--bg);
