@@ -116,44 +116,48 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
       </div>
     </section>
 
-    <section v-if="data.backupReminder.show" class="card flex flex-wrap items-center gap-4 p-5" aria-label="Voortgang bewaren">
-      <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand-bg text-3xl" aria-hidden="true">💾</span>
-      <div class="min-w-0 flex-1">
-        <h2 class="text-lg font-bold">Bewaar je voortgang</h2>
-        <p class="text-muted">
-          {{ data.backupReminder.daysAgo === null ? "Je hebt je voortgang nog niet bewaard." : `Laatst bewaard: ${data.backupReminder.daysAgo} dagen geleden.` }}
-          Je voortgang staat alleen in deze browser.
-        </p>
+    <section v-if="data.backupReminder.show" class="card flex flex-col gap-4 p-5 sm:flex-row sm:items-center" aria-label="Voortgang bewaren">
+      <div class="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
+        <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand-bg text-3xl" aria-hidden="true">💾</span>
+        <div class="min-w-0 flex-1">
+          <h2 class="text-lg font-bold">Bewaar je voortgang</h2>
+          <p class="text-muted">
+            {{ data.backupReminder.daysAgo === null ? "Je hebt je voortgang nog niet bewaard." : `Laatst bewaard: ${data.backupReminder.daysAgo} dagen geleden.` }}
+            Je voortgang staat alleen in deze browser.
+          </p>
+        </div>
       </div>
-      <AppButton variant="secondary" @click="session.openFinish()">Bewaar nu</AppButton>
+      <AppButton variant="secondary" class="w-full sm:w-auto" @click="session.openFinish()">Bewaar nu</AppButton>
     </section>
 
-    <section v-if="data.nextExam" class="card flex flex-wrap items-center gap-4 p-5">
-      <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-amber-100 text-3xl dark:bg-amber-950" aria-hidden="true">⏱️</span>
-      <div class="min-w-0 flex-1">
-        <h2 class="text-lg font-bold">Probeer een proefexamen</h2>
-        <p class="text-muted">{{ data.nextExam.title }} · {{ data.nextExam.durationMinutes }} minuten</p>
+    <section v-if="data.nextExam" class="card flex flex-col gap-4 p-5 sm:flex-row sm:items-center">
+      <div class="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
+        <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-amber-100 text-3xl dark:bg-amber-950" aria-hidden="true">⏱️</span>
+        <div class="min-w-0 flex-1">
+          <h2 class="text-lg font-bold">Probeer een proefexamen</h2>
+          <p class="text-muted">{{ data.nextExam.title }} · {{ data.nextExam.durationMinutes }} minuten</p>
+        </div>
       </div>
-      <RouterLink to="/examens"><AppButton variant="secondary">Naar de examens</AppButton></RouterLink>
+      <RouterLink to="/examens" class="block sm:inline-block"><AppButton variant="secondary" class="w-full sm:w-auto">Naar de examens</AppButton></RouterLink>
     </section>
 
     <section class="card p-6">
       <h2 class="text-2xl font-bold">Dit moet je meer oefenen</h2>
       <p v-if="!data.weakTags.length && !data.hardCount" class="mt-2 text-muted">Nog geen zwakke punten. Doe een paar lessen, dan zie je hier wat beter kan.</p>
       <ul v-else class="mt-3 grid gap-2">
-        <li v-for="t in data.weakTags" :key="t.tag" class="flex items-center justify-between gap-3 rounded-2xl bg-surface-2 px-4 py-3">
+        <li v-for="t in data.weakTags" :key="t.tag" class="flex flex-col gap-3 rounded-2xl bg-surface-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p class="font-bold">{{ tagLabel(t.tag) }}</p>
             <p class="text-sm text-muted">{{ Math.round(t.accuracy * 100) }}% goed ({{ t.seen }} antwoorden)</p>
           </div>
-          <div class="flex flex-wrap justify-end gap-2">
-            <RouterLink :to="{ path: '/oefenen', query: { tag: t.tag } }"><AppButton variant="secondary">Oefen dit</AppButton></RouterLink>
-            <RouterLink v-if="!t.tag.startsWith('writing:')" :to="{ path: '/oefenen', query: { gen: 'tag', tag: t.tag } }"><AppButton variant="ghost">🤖 Meer met Claude</AppButton></RouterLink>
+          <div class="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:justify-end">
+            <RouterLink :to="{ path: '/oefenen', query: { tag: t.tag } }" class="block"><AppButton variant="secondary" class="w-full sm:w-auto">Oefen dit</AppButton></RouterLink>
+            <RouterLink v-if="!t.tag.startsWith('writing:')" class="block" :to="{ path: '/oefenen', query: { gen: 'tag', tag: t.tag } }"><AppButton variant="ghost" class="w-full sm:w-auto">🤖 Meer met Claude</AppButton></RouterLink>
           </div>
         </li>
-        <li v-if="data.hardCount" class="flex items-center justify-between gap-3 rounded-2xl bg-bad-bg px-4 py-3">
+        <li v-if="data.hardCount" class="flex flex-col gap-3 rounded-2xl bg-bad-bg px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
           <p class="font-bold">{{ data.hardCount }} moeilijke {{ data.hardCount === 1 ? "vraag" : "vragen" }}</p>
-          <RouterLink :to="{ path: '/oefenen', query: { mode: 'hard' } }"><AppButton variant="secondary">Moeilijke vragen</AppButton></RouterLink>
+          <RouterLink :to="{ path: '/oefenen', query: { mode: 'hard' } }" class="block"><AppButton variant="secondary" class="w-full sm:w-auto">Moeilijke vragen</AppButton></RouterLink>
         </li>
       </ul>
     </section>
