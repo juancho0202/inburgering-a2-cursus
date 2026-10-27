@@ -3,6 +3,7 @@
   "moduleId": "basis",
   "title": "Tijd, getallen en datums",
   "goal": "Je kunt de klok lezen en getallen, geld en datums gebruiken.",
+  "scene": "afspraak",
   "estimatedMinutes": 25,
   "tags": [
     "basis:tijd"
@@ -91,6 +92,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "Half elf betekent de helft van elf uur, dus 10.30.",
         "difficulty": 1,
         "type": "mc",
@@ -111,6 +113,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "Kwart over = 15 minuten na het hele uur. Kwart over acht is 8.15.",
         "difficulty": 1,
         "type": "mc",
@@ -131,6 +134,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "Kwart voor = 15 minuten vóór het hele uur. Kwart voor twee is 1.45.",
         "difficulty": 1,
         "type": "mc",
@@ -151,6 +155,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "Half elf is 10.30. Tien minuten ervoor is 10.20.",
         "difficulty": 2,
         "type": "mc",
@@ -171,6 +176,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "Half elf is 10.30. Vijf minuten erna is 10.35.",
         "difficulty": 2,
         "type": "mc",
@@ -191,6 +197,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "Tien voor elf = tien minuten vóór 11.00, dus 10.50.",
         "difficulty": 1,
         "type": "mc",
@@ -211,6 +218,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "Half zeven is de helft vóór zeven uur: 6.30.",
         "difficulty": 1,
         "type": "mc",
@@ -231,10 +239,12 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "Half negen is 8.30. Vijf minuten ervoor is 8.25.",
         "difficulty": 2,
         "type": "mc",
-        "prompt": "Je hoort: \"vijf voor half negen\". Welke tijd is dat?",
+        "prompt": "Luister. Welke tijd hoor je?",
+        "listen": "vijf voor half negen",
         "options": [
           "8.35",
           "9.25",
@@ -251,6 +261,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "10.45 is 15 minuten vóór 11.00: kwart voor elf.",
         "difficulty": 1,
         "type": "mc",
@@ -271,6 +282,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "3.30: je zegt het volgende uur: half vier.",
         "difficulty": 1,
         "type": "mc",
@@ -291,6 +303,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "12.15 is 15 minuten na 12.00: kwart over twaalf.",
         "difficulty": 1,
         "type": "mc",
@@ -309,6 +322,10 @@
       "id": "basis-tijd-l-02",
       "title": "Dagen, getallen en geld",
       "blocks": [
+        {
+          "kind": "picture",
+          "scene": "kassa"
+        },
         {
           "kind": "text",
           "md": "**Dagdelen:** 's ochtends (6–12), 's middags (12–18), 's avonds (18–24), 's nachts (0–6).\n\n**Dagen:** maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag. Let op: *dinsdag* en *donderdag* lijken op elkaar."
@@ -338,10 +355,12 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "getallen",
         "explanation": "Dertig is 30. Dertien is 13.",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "Welk getal hoor je? \"dertig\"",
+        "prompt": "Luister. Welk getal hoor je?",
+        "listen": "dertig",
         "options": [
           "13",
           "33",
@@ -358,10 +377,12 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "getallen",
         "explanation": "Veertien = 14. Veertig = 40.",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "Welk getal hoor je? \"veertien\"",
+        "prompt": "Luister. Welk getal hoor je?",
+        "listen": "veertien",
         "options": [
           "14",
           "40",
@@ -378,10 +399,12 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "getallen",
         "explanation": "Zeventig = 70. Zeventien = 17.",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "Welk getal hoor je? \"zeventig\"",
+        "prompt": "Luister. Welk getal hoor je?",
+        "listen": "zeventig",
         "options": [
           "17",
           "70",
@@ -398,6 +421,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "getallen",
         "explanation": "Het kleine getal eerst: een-en-twintig = 21.",
         "difficulty": 1,
         "type": "mc",
@@ -418,6 +442,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "getallen",
         "explanation": "Acht-en-veertig = 48.",
         "difficulty": 2,
         "type": "mc",
@@ -438,6 +463,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "geld",
         "explanation": "Eerst de euro's, dan de centen: twaalf euro vijftig.",
         "difficulty": 1,
         "type": "mc",
@@ -458,6 +484,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "geld",
         "explanation": "Drie euro, dan 75 cent: vijfenzeventig.",
         "difficulty": 2,
         "type": "mc",
@@ -478,6 +505,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "kalender",
         "explanation": "Morgen is donderdag, overmorgen is vrijdag.",
         "difficulty": 1,
         "type": "mc",
@@ -498,6 +526,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "kalender",
         "explanation": "Bij een datum zeg je het gewone getal: op drie mei.",
         "difficulty": 1,
         "type": "mc",
@@ -518,6 +547,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "kalender",
         "explanation": "Binnenkort betekent: over korte tijd.",
         "difficulty": 1,
         "type": "mc",
@@ -538,6 +568,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "Kwart over = 15 minuten na het hele uur.",
         "difficulty": 1,
         "type": "gap-fill",
@@ -557,6 +588,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "Je zegt half elf voor 10.30.",
         "difficulty": 1,
         "type": "gap-fill",
@@ -576,6 +608,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "kalender",
         "explanation": "Vandaag is dinsdag, dus morgen is het woensdag.",
         "difficulty": 2,
         "type": "gap-fill",
@@ -595,6 +628,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "Tussen 6 en 12 uur is het 's ochtends.",
         "difficulty": 1,
         "type": "gap-fill",
@@ -614,6 +648,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "Tussen 18 en 24 uur is het 's avonds.",
         "difficulty": 1,
         "type": "gap-fill",
@@ -633,6 +668,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "Half = het volgende uur min 30 minuten. Kwart over/voor = 15 minuten.",
         "difficulty": 2,
         "type": "match",
@@ -664,6 +700,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "getallen",
         "explanation": "Let op het einde van het woord: -tien (13–19) of -tig (30–90).",
         "difficulty": 1,
         "type": "match",
@@ -695,6 +732,7 @@
         "tags": [
           "basis:tijd"
         ],
+        "spot": "klok",
         "explanation": "'s ochtends 6–12, 's middags 12–18, 's avonds 18–24, 's nachts 0–6.",
         "difficulty": 1,
         "type": "match",

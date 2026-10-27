@@ -3,6 +3,7 @@
   "moduleId": "knm",
   "title": "Wonen",
   "goal": "Je weet hoe je een huis huurt, wat de huisbaas doet en wat jij moet doen.",
+  "scene": "verhuizen",
   "estimatedMinutes": 25,
   "tags": [
     "knm:wonen"
@@ -161,6 +162,10 @@
       "title": "Wie doet wat?",
       "blocks": [
         {
+          "kind": "picture",
+          "scene": "reparatie"
+        },
+        {
           "kind": "text",
           "md": "**De huurder** betaalt de huur op tijd, doet **kleine reparaties** zelf (bijvoorbeeld een kraan of lamp) en gaat netjes met het huis om.\n\n**De verhuurder (huisbaas)** doet **grote reparaties**: dak, verwarming (cv-ketel), lekkage.\n\nProblemen met huurprijs of onderhoud? Dan kun je naar de **Huurcommissie**."
         },
@@ -297,6 +302,10 @@
       "title": "Verhuizen en kosten",
       "blocks": [
         {
+          "kind": "picture",
+          "scene": "verhuisbus"
+        },
+        {
           "kind": "text",
           "md": "**Verhuizen?** Geef het **binnen 5 dagen** door aan de **gemeente** (inschrijven in de **BRP**).\n\n**Vaste lasten:** huur, **energie** (gas, water, licht), internet, **gemeentelijke belastingen** (afvalstoffenheffing, rioolheffing) en **waterschapsbelasting**."
         },
@@ -415,6 +424,10 @@
       "id": "knm-wonen-l-04",
       "title": "Buren, afval en veiligheid",
       "blocks": [
+        {
+          "kind": "picture",
+          "scene": "afval"
+        },
         {
           "kind": "text",
           "md": "**Afval scheiden:** papier, glas, plastic/pmd, gft (groente, fruit, tuin) en restafval. **Grofvuil** haal je op via de gemeente.\n\n**Overlast van buren?** Praat eerst met de buren. Lukt dat niet, dan kan **buurtbemiddeling** helpen.\n\nZorg voor een **rookmelder**. Bij brand of gevaar bel je **112**."

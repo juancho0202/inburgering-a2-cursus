@@ -3,6 +3,7 @@
   "moduleId": "lezen",
   "title": "Advertenties",
   "goal": "Je begrijpt advertenties voor werk, huizen, spullen en cursussen.",
+  "scene": "prikbord",
   "estimatedMinutes": 25,
   "tags": [
     "lezen:advertentie"

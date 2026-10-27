@@ -3,6 +3,8 @@ import { computed, onMounted, ref } from "vue";
 import { useRoute, RouterLink } from "vue-router";
 import { api } from "../api/client";
 import { moduleStyle } from "../lib/moduleStyle";
+import { scene } from "../lib/illustrations";
+import FadeImage from "../components/ui/FadeImage.vue";
 import { useContentStore } from "../stores/content";
 import type { Progress } from "@shared/types";
 
@@ -48,7 +50,10 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
             {{ statusOf(u.id)?.status === "completed" ? "✓" : i + 1 }}
           </span>
           <div class="min-w-0 flex-1">
-            <p class="text-xs font-bold uppercase tracking-wide text-muted">Les {{ i + 1 }}</p>
+            <p class="flex flex-wrap items-center gap-x-2 text-xs font-bold uppercase tracking-wide text-muted">
+              Les {{ i + 1 }}
+              <span v-if="u.id === recommended" class="rounded-full bg-brand-bg px-2 py-0.5 text-brand-strong normal-case tracking-normal">Volgende</span>
+            </p>
             <h2 class="text-lg font-bold group-hover:text-brand-strong">{{ u.title }}</h2>
             <p class="text-sm text-muted">
               {{ u.estimatedMinutes }} min · {{ u.stepCount }} stappen
@@ -56,7 +61,9 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
               <template v-else-if="statusOf(u.id)"> · bezig (stap {{ statusOf(u.id)!.stepIndex + 1 }})</template>
             </p>
           </div>
-          <span v-if="u.id === recommended" class="rounded-full bg-brand-bg px-3 py-1 text-sm font-bold text-brand-strong">Volgende</span>
+          <span v-if="scene(u.scene)" class="aspect-[3/2] w-20 shrink-0 overflow-hidden rounded-xl border border-line bg-[#fff8ee] sm:w-32" aria-hidden="true">
+            <FadeImage :src="scene(u.scene)!.url" alt="" width="480" height="320" class="h-full w-full object-cover dark:brightness-90" />
+          </span>
         </RouterLink>
       </li>
     </ol>

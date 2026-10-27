@@ -3,6 +3,7 @@
   "moduleId": "lezen",
   "title": "Zo lees je slim",
   "goal": "Je leest slimmer: eerst de vraag, dan zoeken naar kernwoorden en signaalwoorden.",
+  "scene": "klas",
   "estimatedMinutes": 25,
   "tags": [
     "lezen:strategie"

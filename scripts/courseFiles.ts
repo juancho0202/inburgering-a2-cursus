@@ -2,9 +2,16 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { buildContentData, contentFromData, type ContentData, type ContentError } from "../shared/content/data.js";
 import type { Content } from "../shared/content/types.js";
-import { validateContent } from "../shared/content/validate.js";
+import { validateContent, type PictureIds } from "../shared/content/validate.js";
 
 export const COURSE_DIR = path.resolve("data/course");
+const ASSETS_DIR = path.resolve("src/assets");
+
+/** The ids of the illustrations (from the index.json that npm run illustrations writes next to them). */
+async function pictureIds(): Promise<PictureIds> {
+  const ids = async (folder: string) => new Set(Object.keys(JSON.parse(await fs.readFile(path.join(ASSETS_DIR, folder, "index.json"), "utf-8"))));
+  return { scenes: await ids("scenes"), spots: await ids("spots") };
+}
 
 /** Reads every .json and .md file under data/course (posix paths relative to it). */
 export async function readCourseFiles(dir = COURSE_DIR): Promise<Record<string, string>> {
@@ -35,5 +42,5 @@ export interface LoadedCourse {
 
 export async function loadCourse(dir = COURSE_DIR): Promise<LoadedCourse> {
   const { data, errors } = buildContentData(await readCourseFiles(dir));
-  return { data, content: contentFromData(data), problems: validateContent(data, errors), parseErrors: errors };
+  return { data, content: contentFromData(data), problems: validateContent(data, errors, await pictureIds()), parseErrors: errors };
 }

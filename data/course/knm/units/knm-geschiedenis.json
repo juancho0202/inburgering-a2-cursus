@@ -3,6 +3,7 @@
   "moduleId": "knm",
   "title": "Geschiedenis en geografie",
   "goal": "Je kent de belangrijkste feiten over het land, het water en de geschiedenis van Nederland.",
+  "scene": "polder",
   "estimatedMinutes": 25,
   "tags": [
     "knm:geschiedenis"
@@ -265,6 +266,10 @@
       "title": "Koninkrijk en Gouden Eeuw",
       "blocks": [
         {
+          "kind": "picture",
+          "scene": "grachten"
+        },
+        {
           "kind": "text",
           "md": "Het **Koninkrijk der Nederlanden** bestaat uit **Nederland, Aruba, Curaçao en Sint Maarten** (landen). **Bonaire, Sint Eustatius en Saba** zijn bijzondere gemeenten van Nederland.\n\nIn de **Gouden Eeuw** (17e eeuw) was Nederland rijk door **handel** (de **VOC**). Er waren beroemde schilders zoals **Rembrandt**. Maar er was ook **slavenhandel** en **slavernij** in de koloniën."
         },
@@ -419,6 +424,10 @@
       "id": "knm-geschiedenis-l-03",
       "title": "De twintigste eeuw",
       "blocks": [
+        {
+          "kind": "picture",
+          "scene": "museum"
+        },
         {
           "kind": "text",
           "md": "In de **Tweede Wereldoorlog** was Nederland bezet door **Duitsland** (**1940–1945**). Er was **Jodenvervolging**. **Anne Frank** schreef een dagboek in Amsterdam. Nederland werd **bevrijd op 5 mei 1945**.\n\nNa de oorlog was er **wederopbouw**. In de jaren zestig en zeventig kwamen **gastarbeiders** (onder meer uit **Turkije** en **Marokko**). Er was ook migratie uit **Suriname** en **Indonesië**.\n\nNederland was **medeoprichter van de Europese Unie** en is lid van de **NAVO**. Sinds **2002** betalen we met de **euro** (daarvoor de **gulden**)."

@@ -3,6 +3,7 @@
   "moduleId": "lezen",
   "title": "Roosters en tabellen",
   "goal": "Je leest tabellen met tijden, prijzen en opening.",
+  "scene": "station",
   "estimatedMinutes": 25,
   "tags": [
     "lezen:rooster"

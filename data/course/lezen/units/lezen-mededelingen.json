@@ -3,6 +3,7 @@
   "moduleId": "lezen",
   "title": "Mededelingen en borden",
   "goal": "Je begrijpt mededelingen op stations, in gebouwen en in winkels.",
+  "scene": "mededeling",
   "estimatedMinutes": 25,
   "tags": [
     "lezen:mededeling"

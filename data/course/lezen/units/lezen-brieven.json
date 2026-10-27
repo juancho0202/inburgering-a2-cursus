@@ -3,6 +3,7 @@
   "moduleId": "lezen",
   "title": "Brieven van instanties",
   "goal": "Je begrijpt brieven van de gemeente, huisbaas, school, verzekeraar en Belastingdienst.",
+  "scene": "post",
   "estimatedMinutes": 25,
   "tags": [
     "lezen:brief"

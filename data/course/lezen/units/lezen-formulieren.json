@@ -3,6 +3,7 @@
   "moduleId": "lezen",
   "title": "Formulieren en folders",
   "goal": "Je begrijpt formulieren en folders: wat moet je meenemen, wat moet je invullen en voor welke datum.",
+  "scene": "folder",
   "estimatedMinutes": 25,
   "tags": [
     "lezen:formulier"
