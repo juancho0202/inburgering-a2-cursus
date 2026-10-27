@@ -1,5 +1,5 @@
 // Shared helpers for component tests (see tests/README.md).
-import { afterEach, vi } from "vitest";
+import { afterEach } from "vitest";
 import { enableAutoUnmount, flushPromises, mount, type VueWrapper } from "@vue/test-utils";
 import { createPinia, setActivePinia } from "pinia";
 import { createMemoryHistory, createRouter, type RouteRecordRaw } from "vue-router";
@@ -7,12 +7,6 @@ import type { Component } from "vue";
 
 // Unmount after every test, so window key listeners of earlier tests never leak into later ones.
 enableAutoUnmount(afterEach);
-
-// jsdom has no HTMLImageElement.decode; every browser the app supports does. Pictures are warmed up with it
-// (src/lib/illustrations.ts), so without this a lesson with drawings would fail to open in a test.
-if (typeof HTMLImageElement !== "undefined" && !HTMLImageElement.prototype.decode) {
-  HTMLImageElement.prototype.decode = () => Promise.resolve();
-}
 
 /** Same shape as the real error, so components that check `instanceof ApiRequestError` behave the same. */
 export class ApiRequestError extends Error {
@@ -132,7 +126,3 @@ export async function pressKey(key: string, target: EventTarget = window) {
 }
 
 export { flushPromises };
-export const resetMocks = () => {
-  fakeApi.reset();
-  vi.restoreAllMocks();
-};

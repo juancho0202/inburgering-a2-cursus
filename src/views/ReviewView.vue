@@ -97,24 +97,26 @@ const grades: { grade: Grade; label: string; style: "bad" | "secondary" | "good"
   { grade: "makkelijk", label: "Makkelijk", style: "primary" },
 ];
 
-// Saving a grade takes a moment, and until it is done the screen still shows the answered state. A second Enter
-// (key repeat, double tap) in that moment would grade the next card without it ever being shown.
+// Saving a grade takes a moment. The graded card stays on screen until it is saved (taking it off the queue first
+// would show the next card with this card's answer state), and a second Enter (key repeat, double tap) in that
+// moment is ignored, so it cannot grade the same card twice.
 let grading = false;
 async function grade(g: Grade) {
-  if (grading) return;
-  const item = queue.value.shift();
-  if (!item) return;
+  const item = queue.value[0];
+  if (grading || !item) return;
   grading = true;
   try {
     await api.post("/srs/review", { cardId: item.card.id, grade: g });
   } catch (e) {
     error.value = (e as Error).message;
+  } finally {
+    grading = false;
   }
+  queue.value.shift();
   // "Opnieuw" shows the card again later in this session.
   if (g === "opnieuw") queue.value.push(item);
   else reviewed.value++;
   prepare();
-  grading = false;
 }
 
 function onKey(e: KeyboardEvent) {

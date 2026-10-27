@@ -125,24 +125,30 @@ async function goTo(index: number) {
 
 // Finishing is slow (it saves to the database), and a double tap or a held-down Enter key would otherwise finish
 // the lesson twice: the second time no words are new any more, so the end screen would lose its word count.
-let finishing = false;
+// Holds the id of the lesson being finished.
+let finishing: string | null = null;
 async function advance() {
-  if (!unit.value) return;
+  const u = unit.value;
+  if (!u) return;
   if (!isLast.value) return goTo(stepIndex.value + 1);
-  if (finishing) return;
-  finishing = true;
+  const id = unitId.value;
+  if (finishing === id) return;
+  finishing = id;
   try {
     const p = await api.get<Progress>("/progress");
-    const s = unitScore(unit.value, p);
-    const res = await api.post<{ wordsIntroduced: number }>(`/units/${unitId.value}/complete`, { score: s.score });
-    const hard = await api.get<unknown[]>(`/practice?mode=hard&unit=${unitId.value}`).catch(() => []);
+    const s = unitScore(u, p);
+    const res = await api.post<{ wordsIntroduced: number }>(`/units/${id}/complete`, { score: s.score });
+    const hard = await api.get<unknown[]>(`/practice?mode=hard&unit=${id}`).catch(() => []);
+    // The learner went to another lesson in the meantime (e.g. browser back): this one is saved, but its end screen
+    // must not appear over the new lesson.
+    if (unitId.value !== id) return;
     summary.value = { ...s, words: res.wordsIntroduced, hard: hard.length };
     finished.value = true;
-    const passed = s.score >= unit.value.passScore;
+    const passed = s.score >= u.passScore;
     sounds.complete(passed);
     speech.announce(passed ? "Les klaar! Goed gedaan." : "Les klaar! Probeer het nog een keer.", 900);
   } finally {
-    finishing = false;
+    if (finishing === id) finishing = null;
   }
 }
 

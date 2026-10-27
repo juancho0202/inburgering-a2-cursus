@@ -214,6 +214,21 @@ describe("moving to another lesson while this page is open", () => {
     expect(wrapper.text()).toContain("Les B");
   });
 
+  it("leaving for another lesson while 'Afronden' is still saving does not put the old end screen over the new lesson", async () => {
+    const pending = deferred<{ wordsIntroduced: number }>();
+    fakeApi.on("POST", "/units/a/complete", () => pending.promise);
+    const { wrapper, router } = await open("a");
+    await clickButton(wrapper, "Afronden");
+    await router.push("/unit/b"); // e.g. browser back/forward
+    await flushPromises();
+    pending.resolve({ wordsIntroduced: 3 });
+    await flushPromises();
+    expect(fakeApi.to("POST", "/units/a/complete")).toHaveLength(1); // the old lesson is still saved as completed
+    expect(wrapper.text()).not.toContain("Les klaar!");
+    expect(wrapper.text()).toContain("Les B");
+    expect(stepCounter(wrapper)).toEqual([1, 3]);
+  });
+
   it("browser back/forward between lessons loads the right lesson each time", async () => {
     const { wrapper, router } = await open("a");
     await router.push("/unit/b");

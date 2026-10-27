@@ -1,3 +1,5 @@
+import { whenDecoded } from "./images";
+
 // Every image in src/assets named bg*.webp (plus the original tulips) can be a dashboard background.
 // Only the URLs are collected here: the browser downloads just the one that is shown.
 const found = import.meta.glob<string>("../assets/{bg*,tulips*}.webp", { eager: true, query: "?url", import: "default" });
@@ -34,7 +36,7 @@ function preload(url: string) {
   started.add(url);
   const img = new Image();
   img.src = url;
-  img.decode().then(
+  whenDecoded(img).then(
     () => ready.add(url),
     () => started.delete(url), // a failed download may be tried again later
   );

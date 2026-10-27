@@ -151,6 +151,21 @@ describe("keyboard", () => {
     expect(wrapper.text()).toContain("Betekenis van boom");
     expect(wrapper.text()).not.toContain("✓ Goed zo!");
   });
+
+  it("while the grade is being saved, the answered card stays on screen (the next card's answer is not shown)", async () => {
+    const saving = deferred();
+    fakeApi.on("POST", "/srs/review", () => saving.promise);
+    const { wrapper } = await open([meaning("fiets"), meaning("boom")]);
+    await type(wrapper, "fiets");
+    await clickButton(wrapper, "Controleer");
+    await clickButton(wrapper, "Goed");
+    expect(wrapper.text()).toContain("Dit is een fiets in een zin.");
+    expect(wrapper.text()).not.toContain("Dit is een boom in een zin."); // only in the answer box, never blanked
+    saving.resolve({});
+    await flushPromises();
+    expect(wrapper.text()).toContain("Betekenis van boom");
+    expect(wrapper.text()).not.toContain("✓ Goed zo!");
+  });
 });
 
 describe("'Opnieuw' and progress", () => {

@@ -14,7 +14,9 @@ const walk = (dir: string): string[] =>
 
 const components = walk(path.join(root, "src")).filter((f) => f.endsWith(".vue")).map((f) => path.relative(root, f).replaceAll(path.sep, "/"));
 const testSource = walk(path.join(root, "tests/unit/components")).filter((f) => f.endsWith(".test.ts")).map((f) => readFileSync(f, "utf8")).join("\n");
-const importedByATest = (file: string) => testSource.includes(`/${path.basename(file)}"`);
+// The full path, imported (not just mentioned in a vi.mock): two components with the same file name in different
+// folders are told apart.
+const importedByATest = (file: string) => testSource.includes(` from "../../../${file}"`);
 
 /** Only for components with no logic of their own, or ones that are fully exercised through a parent that is tested. */
 const NOT_TESTED_DIRECTLY: Record<string, string> = {

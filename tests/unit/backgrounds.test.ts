@@ -177,6 +177,18 @@ describe("preloading", () => {
     expect(requested().filter((u) => u === first)).toHaveLength(1);
   });
 
+  it("works in a browser without Image.decode (older phones): the app starts, and a loaded picture is ready", async () => {
+    FakeImage.decode = () => undefined as unknown as Decode;
+    const { primeBackground, pickBackground, isBackgroundReady } = await load();
+    expect(() => primeBackground()).not.toThrow();
+    const url = requested()[0];
+    expect(isBackgroundReady(url)).toBe(false);
+    (FakeImage.all[0] as unknown as { onload: () => void }).onload();
+    await flush();
+    expect(isBackgroundReady(url)).toBe(true);
+    expect(pickBackground()).toBe(url);
+  });
+
   it("does not break where images cannot be created (no Image in the environment)", async () => {
     vi.stubGlobal("Image", undefined);
     const { backgrounds, primeBackground, pickBackground } = await load();

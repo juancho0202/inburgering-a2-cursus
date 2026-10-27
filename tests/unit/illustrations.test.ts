@@ -1,6 +1,6 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import type { Exercise } from "@shared/types";
-import { scene, spotFor } from "../../src/lib/illustrations";
+import { scene, spotFor, warmImages } from "../../src/lib/illustrations";
 
 const mc = (id: string, prompt: string, extra: Partial<Exercise> = {}): Exercise =>
   ({ id, tags: [], explanation: "e", difficulty: 1, type: "mc", prompt, options: ["a", "b"], answer: 0, ...extra }) as Exercise;
@@ -51,5 +51,16 @@ describe("illustrations", () => {
     expect(spotFor(e)).toEqual(spotFor(e));
     const sides = new Set(Array.from({ length: 20 }, (_, i) => spotFor(mc(`q-${i}`, "Kies."))?.side));
     expect(sides).toEqual(new Set(["left", "right"]));
+  });
+});
+
+describe("warming up pictures", () => {
+  afterEach(() => vi.unstubAllGlobals());
+
+  it("works in a browser without Image.decode (older phones): the picture is still requested", () => {
+    const made: { src: string }[] = [];
+    vi.stubGlobal("Image", class { src = ""; decoding = ""; constructor() { made.push(this); } });
+    expect(() => warmImages(["/a.svg", "/b.svg", "/a.svg"])).not.toThrow();
+    expect(made.map((i) => i.src)).toEqual(["/a.svg", "/b.svg"]);
   });
 });
