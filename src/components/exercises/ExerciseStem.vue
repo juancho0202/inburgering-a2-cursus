@@ -4,6 +4,7 @@ import { renderMdInline } from "../../composables/markdown";
 import { useSpeech } from "../../composables/useSpeech";
 import { spotKey } from "../../lib/illustrations";
 import { listenKey } from "./types";
+import FadeImage from "../ui/FadeImage.vue";
 defineProps<{ prompt: string; context?: string }>();
 // A little drawing beside the question, like in the margin of a language book (decorative).
 const spot = inject(spotKey, null);
@@ -30,16 +31,8 @@ const showText = ref(false);
         <p v-else class="rounded-xl bg-surface-2 px-3 py-1.5 text-lg">“{{ listen }}”</p>
       </div>
     </div>
-    <img
-      v-if="spot"
-      :src="spot.url"
-      alt=""
-      aria-hidden="true"
-      width="200"
-      height="220"
-      decoding="async"
-      class="w-20 shrink-0 rounded-2xl bg-[#fff8ee] p-1 sm:w-28 dark:brightness-90"
-      :class="{ 'sm:order-first': spot.side === 'left' }"
-    />
+    <span v-if="spot" class="w-20 shrink-0 rounded-2xl bg-[#fff8ee] p-1 sm:w-28" :class="{ 'sm:order-first': spot.side === 'left' }" aria-hidden="true">
+      <FadeImage :src="spot.url" alt="" width="200" height="220" class="block h-auto w-full dark:brightness-90" />
+    </span>
   </div>
 </template>

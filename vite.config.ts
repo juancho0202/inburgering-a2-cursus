@@ -43,10 +43,10 @@ export default defineConfig({
         // The app, the course and the lazy chunks are stored up front. The background photos and the
         // lesson illustrations are not (together they are big): each one is kept the first time it is shown.
         globPatterns: ["**/*.{js,css,html,svg,png,woff2}"],
-        globIgnores: ["**/bg*.jpg", "**/tulips*.jpg", "assets/*.svg"],
+        globIgnores: ["**/bg*.webp", "**/tulips*.webp", "assets/*.svg"],
         runtimeCaching: [
           {
-            urlPattern: /\/assets\/.*\.jpg$/,
+            urlPattern: /\/assets\/.*\.webp$/,
             handler: "CacheFirst",
             options: { cacheName: "backgrounds", expiration: { maxEntries: 15 }, cacheableResponse: { statuses: [0, 200] } },
           },

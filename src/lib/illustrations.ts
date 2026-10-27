@@ -1,5 +1,5 @@
 import type { InjectionKey } from "vue";
-import type { Exercise } from "@shared/types";
+import type { Exercise, Unit } from "@shared/types";
 import sceneAlts from "../assets/scenes/index.json";
 import spotAlts from "../assets/spots/index.json";
 
@@ -123,4 +123,33 @@ export function spotFor(exercise: Exercise): SpotPicture | null {
   const pool = BY_TOPIC.find(([prefix]) => exercise.tags.some((t) => t.startsWith(prefix)))?.[1] ?? PEOPLE;
   const found = spot(exercise.spot ?? aboutSpot(exercise)) ?? spot(pool[Math.floor(h / 2) % pool.length]);
   return found && { ...found, side };
+}
+
+// ----- warming up: download and decode pictures before they are shown, so they appear without a blank moment -----
+
+/** Kept so the decoded pictures stay in memory. */
+const warmed = new Map<string, HTMLImageElement>();
+
+export function warmImages(urls: (string | undefined)[]) {
+  if (typeof Image === "undefined") return;
+  for (const url of urls) {
+    if (!url || warmed.has(url)) continue;
+    const img = new Image();
+    img.decoding = "async";
+    img.src = url;
+    warmed.set(url, img);
+    void img.decode().catch(() => warmed.delete(url));
+  }
+}
+
+export const warmScenes = (ids: (string | undefined)[]) => warmImages(ids.map((id) => scene(id)?.url));
+
+/** The pictures inside a lesson (after its cover) and the drawings beside its exercises. */
+export function warmUnit(unit: Unit) {
+  const urls: (string | undefined)[] = [];
+  for (const step of unit.steps) {
+    if (step.type === "lesson") for (const b of step.blocks) if (b.kind === "picture") urls.push(scene(b.scene)?.url);
+    if (step.type === "exercise") urls.push(spotFor(step.exercise)?.url);
+  }
+  warmImages(urls);
 }

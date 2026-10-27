@@ -16,6 +16,7 @@ import ReportIssue from "../components/ReportIssue.vue";
 import ExerciseShell from "../components/exercises/ExerciseShell.vue";
 import ReadAlongButton from "../components/ui/ReadAlongButton.vue";
 import ScenePicture from "../components/ScenePicture.vue";
+import { warmUnit } from "../lib/illustrations";
 
 const route = useRoute();
 const router = useRouter();
@@ -40,6 +41,7 @@ async function start(fromStart = false) {
   try {
     const [u, p] = await Promise.all([api.get<Unit>(`/units/${unitId.value}`), api.get<Progress>("/progress")]);
     unit.value = u;
+    warmUnit(u);
     const saved = p.units[u.id];
     // A completed lesson that was reopened and left halfway keeps its step too (completing resets it to 0).
     const resumeAt = !fromStart && saved && saved.stepIndex > 0 ? Math.min(saved.stepIndex, u.steps.length - 1) : 0;

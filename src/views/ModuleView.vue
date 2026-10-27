@@ -4,6 +4,7 @@ import { useRoute, RouterLink } from "vue-router";
 import { api } from "../api/client";
 import { moduleStyle } from "../lib/moduleStyle";
 import { scene } from "../lib/illustrations";
+import FadeImage from "../components/ui/FadeImage.vue";
 import { useContentStore } from "../stores/content";
 import type { Progress } from "@shared/types";
 
@@ -60,17 +61,9 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
               <template v-else-if="statusOf(u.id)"> · bezig (stap {{ statusOf(u.id)!.stepIndex + 1 }})</template>
             </p>
           </div>
-          <img
-            v-if="scene(u.scene)"
-            :src="scene(u.scene)!.url"
-            alt=""
-            aria-hidden="true"
-            width="480"
-            height="320"
-            loading="lazy"
-            decoding="async"
-            class="aspect-[3/2] w-20 shrink-0 rounded-xl border border-line bg-[#fff8ee] object-cover sm:w-32 dark:brightness-90"
-          />
+          <span v-if="scene(u.scene)" class="aspect-[3/2] w-20 shrink-0 overflow-hidden rounded-xl border border-line bg-[#fff8ee] sm:w-32" aria-hidden="true">
+            <FadeImage :src="scene(u.scene)!.url" alt="" width="480" height="320" class="h-full w-full object-cover dark:brightness-90" />
+          </span>
         </RouterLink>
       </li>
     </ol>
