@@ -165,7 +165,7 @@ const restart = async () => {
   <div v-else-if="unit && step">
     <div class="mb-6">
       <div class="mb-2 flex items-center justify-between gap-3">
-        <h1 class="truncate text-lg font-bold text-muted">{{ unit.title }}</h1>
+        <h1 class="truncate text-lg font-bold text-muted"><template v-if="lessonNumber">Les {{ lessonNumber }} · </template>{{ unit.title }}</h1>
         <span class="text-sm font-semibold text-muted">{{ stepIndex + 1 }} / {{ total }}</span>
       </div>
       <ProgressBar :value="stepIndex / total" :label="`Stap ${stepIndex + 1} van ${total}`" />

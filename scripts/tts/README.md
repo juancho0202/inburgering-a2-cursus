@@ -5,9 +5,10 @@ The voices that read the lessons aloud are recorded ahead of time with
 The app ships only the audio files (`public/audio/voice/*.m4a` + `manifest.json`); lines without a clip fall back to
 the device's own voice.
 
-Lessons take turns between three voices by their number in the module (lesson 1 ronnie, 2 alex, 3 mls speaker 7,
+Lessons take turns between three voices by their number in the module (lesson 1 ronnie, 2 alex, 3 nathalie,
 4 ronnie, …). The list is `LESSON_VOICES` in `src/lib/announce.ts`; change it there and run `npm run voice`.
-The mls voice is CC BY 4.0 and is credited on the About page; ronnie and alex are CC0.
+All three are CC0. nathalie is Flemish (nl_BE) and the only female Dutch voice in Piper. Avoid the multi-speaker
+nl_NL-mls voice: it reads many lines as gibberish.
 
 ## Set up (once)
 
@@ -17,7 +18,7 @@ python3 -m venv .tts/piper-venv
 mkdir -p .tts/voices   # then download each voice in LESSON_VOICES: <model>.onnx + <model>.onnx.json
 ```
 
-Voices come from [rhasspy/piper-voices](https://huggingface.co/rhasspy/piper-voices) (`nl/nl_NL/...`); check each file's
+Voices come from [rhasspy/piper-voices](https://huggingface.co/rhasspy/piper-voices) (`nl/nl_NL/...`, `nl/nl_BE/...`); check each file's
 md5 against `voices.json` in that repository. Everything lives in `.tts/` (git-ignored); delete the folder to remove it.
 
 ## Record

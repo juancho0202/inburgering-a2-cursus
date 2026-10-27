@@ -48,6 +48,7 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
             {{ statusOf(u.id)?.status === "completed" ? "✓" : i + 1 }}
           </span>
           <div class="min-w-0 flex-1">
+            <p class="text-xs font-bold uppercase tracking-wide text-muted">Les {{ i + 1 }}</p>
             <h2 class="text-lg font-bold group-hover:text-brand-strong">{{ u.title }}</h2>
             <p class="text-sm text-muted">
               {{ u.estimatedMinutes }} min · {{ u.stepCount }} stappen
