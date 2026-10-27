@@ -43,10 +43,8 @@ function impulse(c: AudioContext, seconds: number): AudioBuffer {
 function audio(): AudioContext | null {
   if (typeof AudioContext === "undefined") return null;
   if (!ctx) {
-    // iOS plays Web Audio as "ambient" sound, which the silent switch mutes (the voice clips, being media, are not).
-    // "playback" makes these sounds behave like the clips. Safari 17+; elsewhere the property doesn't exist.
-    const session = (navigator as Navigator & { audioSession?: { type: string } }).audioSession;
-    if (session) session.type = "playback";
+    // Don't set navigator.audioSession.type = "playback" (to play through the iPhone's silent switch): on iOS it
+    // silenced these sounds altogether, sound on or off.
     ctx = new AudioContext();
     const comp = ctx.createDynamicsCompressor();
     comp.threshold.value = -16;
