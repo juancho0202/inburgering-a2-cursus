@@ -9,7 +9,7 @@ import { getSettings, updateSettings } from "./settings.js";
 import { dueCards, introduce, reviewSrsCard, verbList, vocabList } from "./srs.js";
 import { listWriting, saveWriting } from "./writing.js";
 import { getWelcome, markWelcomeSeen } from "./welcome.js";
-import { addFlag, listFlags, removeFlag } from "./flags.js";
+import { addFlag, flagTarget, listFlags, removeFlag } from "./flags.js";
 import { explain, feedbackWriting, flagGenerated, generate } from "./claude.js";
 
 export type Method = "GET" | "POST" | "PUT";
@@ -115,6 +115,7 @@ const routes: [Method, string, Handler][] = [
   ["POST", "/session/exported", (c) => markExported(c.env)],
   ["POST", "/flags", (c) => addFlag(c.env, c.body)],
   ["GET", "/flags", (c) => listFlags(c.env)],
+  ["GET", "/flags/target/:id", (c) => flagTarget(c.env, c.params.id)],
   ["POST", "/flags/:id/remove", (c) => removeFlag(c.env, c.params.id)],
   ["GET", "/welcome", (c) => getWelcome(c.env)],
   ["POST", "/welcome/seen", (c) => markWelcomeSeen(c.env)],

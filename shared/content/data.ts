@@ -85,10 +85,12 @@ export function buildContentData(files: Record<string, string>): { data: Content
     let m: RegExpMatchArray | null;
     if (file === "course.json" || /^[^/]+\/module\.json$/.test(file)) {
       known.add(file);
-    } else if ((m = file.match(/^([^/]+)\/units\/[^/]+\.json$/))) {
+    } else if ((m = file.match(/^([^/]+)\/units\/([^/]+)\.json$/))) {
       const unit = parse(file, UnitSchema);
       if (unit) {
         if (unit.moduleId !== m[1]) fail(file, `moduleId "${unit.moduleId}" past niet bij de map "${m[1]}"`);
+        // "Meld een fout" links to the file by id, so the name must match.
+        if (unit.id !== m[2]) fail(file, `id "${unit.id}" past niet bij de bestandsnaam "${m[2]}.json"`);
         units.push(unit);
       }
     } else if (/^[^/]+\/vocab\/[^/]+\.json$/.test(file)) {
@@ -97,9 +99,12 @@ export function buildContentData(files: Record<string, string>): { data: Content
     } else if (/^[^/]+\/verbs\.json$/.test(file)) {
       const list = parse(file, z.array(VerbEntrySchema));
       if (list) verbs.push(...list);
-    } else if (/^exams\/[^/]+\.json$/.test(file)) {
+    } else if ((m = file.match(/^exams\/([^/]+)\.json$/))) {
       const exam = parse(file, ExamSchema);
-      if (exam) exams.push(exam);
+      if (exam) {
+        if (exam.id !== m[1]) fail(file, `id "${exam.id}" past niet bij de bestandsnaam "${m[1]}.json"`);
+        exams.push(exam);
+      }
     } else if (/^[^/]+\/samenvatting\.md$/.test(file)) {
       samenvatting = files[file];
     } else if ((m = file.match(/^knm\/facts\/(.+)\.md$/))) {
