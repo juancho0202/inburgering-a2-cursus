@@ -1,0 +1,19 @@
+{
+  "id": "luisteren",
+  "title": "Luisteren A2",
+  "description": "Oefen met gesprekken, telefoontjes, voicemails, omroepberichten en de radio.",
+  "icon": "headphones",
+  "units": [
+    "luisteren-strategie",
+    "luisteren-getallen",
+    "luisteren-afspraken",
+    "luisteren-voicemail",
+    "luisteren-omroep",
+    "luisteren-de-weg",
+    "luisteren-winkel",
+    "luisteren-werk",
+    "luisteren-school-buurt",
+    "luisteren-radio",
+    "luisteren-gemengd"
+  ]
+}

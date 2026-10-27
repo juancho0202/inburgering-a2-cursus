@@ -1,7 +1,8 @@
 import type { ContentData } from "./data.js";
+import { subQuestions } from "./questions.js";
 
 /**
- * Every stable id in the course: modules, units, lessons, exercises (and reading questions), words, verbs,
+ * Every stable id in the course: modules, units, lessons, exercises (and their questions about a text or fragment), words, verbs,
  * exams and exam questions. Progress files refer to these ids, so they must never disappear or change
  * (see SPEC §6.2). Removing one on purpose is allowed, but must be a conscious step.
  */
@@ -14,7 +15,7 @@ export function collectContentIds(data: ContentData): string[] {
       if (step.type === "lesson") ids.add(step.id);
       else {
         ids.add(step.exercise.id);
-        if (step.exercise.type === "reading") for (const q of step.exercise.questions) ids.add(q.id);
+        for (const q of subQuestions(step.exercise)) ids.add(q.id);
       }
     }
   }
@@ -25,7 +26,7 @@ export function collectContentIds(data: ContentData): string[] {
     for (const item of exam.items) {
       if ("ref" in item) continue;
       ids.add(item.id);
-      if (item.type === "reading") for (const q of item.questions) ids.add(q.id);
+      for (const q of subQuestions(item)) ids.add(q.id);
     }
   }
   return [...ids].sort();

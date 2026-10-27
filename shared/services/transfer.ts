@@ -23,6 +23,7 @@ import {
 } from "../schemas/transfer.js";
 import { ServiceError, deviceId, invalid, now, nowIso, today, type Env } from "./context.js";
 import type { Exercise } from "../types.js";
+import { subQuestions } from "../content/questions.js";
 
 const SNAPSHOT_KEY = "importSnapshot";
 
@@ -221,7 +222,7 @@ function unknownItemCount(env: Env, file: ProgressFile): number {
   const known = new Set<string>();
   const addExercise = (ex: Exercise) => {
     known.add(ex.id);
-    if (ex.type === "reading") for (const q of ex.questions) known.add(q.id);
+    for (const q of subQuestions(ex)) known.add(q.id);
   };
   for (const u of env.content.units.values()) for (const s of u.steps) if (s.type === "exercise") addExercise(s.exercise);
   for (const e of env.content.exams.values()) {

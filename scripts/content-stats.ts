@@ -7,6 +7,8 @@ const TARGETS = {
   lezenTexts: 30,
   lezenQuestions: 120,
   synonymPairs: 40,
+  luisterenFragments: 50,
+  luisterenQuestions: 120,
   knmQuestions: 200,
   knmPerTheme: 25,
   schrijvenTasks: 16,
@@ -22,6 +24,8 @@ async function main() {
   let lezenTexts = 0;
   let lezenQuestions = 0;
   let synonymPairs = 0;
+  let luisterenFragments = 0;
+  let luisterenQuestions = 0;
   let knmQuestions = 0;
   let schrijvenTasks = 0;
   let formFill = 0;
@@ -43,7 +47,7 @@ async function main() {
       if (step.type !== "exercise") continue;
       const ex = step.exercise;
       countMc(ex as never);
-      if (ex.type === "reading") for (const q of ex.questions) countMc(q as never);
+      if (ex.type === "reading" || ex.type === "listening") for (const q of ex.questions) countMc(q as never);
       perUnit.set(unit.id, (perUnit.get(unit.id) ?? 0) + 1);
       if (unit.moduleId === "basis") basisExercises += 1;
       if (unit.moduleId === "knm") {
@@ -55,6 +59,11 @@ async function main() {
         lezenTexts += 1;
         lezenQuestions += ex.questions.length;
       }
+      if (ex.type === "listening") {
+        luisterenFragments += 1;
+        luisterenQuestions += ex.questions.length;
+      }
+      if (unit.moduleId === "luisteren" && ex.type === "mc" && ex.listen) luisterenQuestions += 1;
       if (ex.type === "writing") schrijvenTasks += 1;
       if (ex.type === "form-fill") formFill += 1;
     }
@@ -70,6 +79,8 @@ async function main() {
   console.log(line("Lezen teksten", lezenTexts, TARGETS.lezenTexts));
   console.log(line("Lezen vragen", lezenQuestions, TARGETS.lezenQuestions));
   console.log(line("Lezen synoniemenparen", synonymPairs, TARGETS.synonymPairs));
+  console.log(line("Luisteren fragmenten", luisterenFragments, TARGETS.luisterenFragments));
+  console.log(line("Luisteren vragen", luisterenQuestions, TARGETS.luisterenQuestions));
   console.log(line("KNM vragen", knmQuestions, TARGETS.knmQuestions));
   for (const id of KNM_THEMES) console.log("  " + line(id, perTheme.get(id) ?? 0, TARGETS.knmPerTheme));
   console.log(line("Schrijven taken", schrijvenTasks, TARGETS.schrijvenTasks));
@@ -77,7 +88,8 @@ async function main() {
   const biasPct = mcTotal ? Math.round((mcLongest / mcTotal) * 100) : 0;
   console.log(`${biasPct <= 40 ? "OK " : "!! "}Juiste antwoord is het langste (mc): ${biasPct}% van ${mcTotal} (doel: <= 40%, kans: ~30%)`);
   const bySkill = (skill: string) => [...content.exams.values()].filter((e) => e.skill === skill).length;
-  console.log(`${bySkill("lezen") >= 2 && bySkill("knm") >= 2 && bySkill("schrijven") >= 2 ? "OK " : "!! "}Proefexamens: ${bySkill("lezen")} Lezen, ${bySkill("knm")} KNM, ${bySkill("schrijven")} Schrijven (doel: 2 / 2 / 2)`);
+  const skills = ["lezen", "luisteren", "knm", "schrijven"];
+  console.log(`${skills.every((s) => bySkill(s) >= 2) ? "OK " : "!! "}Proefexamens: ${bySkill("lezen")} Lezen, ${bySkill("luisteren")} Luisteren, ${bySkill("knm")} KNM, ${bySkill("schrijven")} Schrijven (doel: 2 / 2 / 2 / 2)`);
 }
 
 main().catch((err) => {

@@ -11,6 +11,7 @@ import AppButton from "../components/ui/AppButton.vue";
 import ProgressBar from "../components/ui/ProgressBar.vue";
 import WritingFeedbackPanel from "../components/WritingFeedbackPanel.vue";
 import ReportIssue from "../components/ReportIssue.vue";
+import FragmentPlayer from "../components/FragmentPlayer.vue";
 import { DISCLAIMER, themeLabel } from "../lib/examLabels";
 
 type Result = Progress["exams"][number];
@@ -71,6 +72,11 @@ function yourAnswer(q: (typeof questions.value)[number]): string {
   return sel.length ? ex.options[sel[0]] : "Niet beantwoord";
 }
 const correctText = (ex: Exercise) => (ex.type === "mc" ? ex.options[ex.answer] : "");
+/** The listening fragment a question is about (Luisteren), to hear the answer again. */
+const fragmentOf = (q: (typeof questions.value)[number]) => {
+  const item = exam.value ? examExercises(exam.value).find((i) => i.id === q.itemId) : undefined;
+  return item?.type === "listening" ? item.fragment : undefined;
+};
 
 // ----- Schrijven -----
 const tasks = computed(() => (exam.value?.skill === "schrijven" ? examExercises(exam.value) : []));
@@ -127,7 +133,7 @@ const retryable = computed(() => tasks.value.some((t) => taskState.value[t.id]?.
     <!-- KNM / Lezen -->
     <template v-if="exam.skill !== 'schrijven'">
       <section v-if="themes.length" class="card p-6">
-        <h2 class="mb-3 text-xl font-bold">{{ exam.skill === "knm" ? "Score per thema" : "Score per soort tekst" }}</h2>
+        <h2 class="mb-3 text-xl font-bold">{{ exam.skill === "knm" ? "Score per thema" : exam.skill === "luisteren" ? "Score per soort fragment" : "Score per soort tekst" }}</h2>
         <div class="grid gap-3">
           <div v-for="t in themes" :key="t.tag">
             <div class="flex justify-between text-sm font-bold"><span>{{ t.label }}</span><span>{{ t.good }} / {{ t.total }}</span></div>
@@ -148,6 +154,15 @@ const retryable = computed(() => tasks.value.some((t) => taskState.value[t.id]?.
             <p class="mt-1 text-bad">✗ Jouw antwoord: {{ yourAnswer(q) }}</p>
             <p class="text-good">✓ Goed antwoord: {{ correctText(q.exercise) }}</p>
             <p class="mt-1 text-muted">{{ q.exercise.explanation }}</p>
+            <details v-if="fragmentOf(q)" class="mt-2">
+              <summary class="cursor-pointer font-bold text-brand-strong">Luister nog een keer en lees de tekst</summary>
+              <FragmentPlayer
+                class="mt-2"
+                :fragment="fragmentOf(q)!"
+                show-text
+                :marks="q.exercise.answerLine !== undefined ? { [q.exercise.answerLine]: 'Het antwoord' } : undefined"
+              />
+            </details>
             <div class="mt-1 -ml-3"><ReportIssue :item-id="q.id" /></div>
           </li>
         </ol>

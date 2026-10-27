@@ -44,6 +44,8 @@ simple **A2 Inburgering course** focused on three exams:
 
 Spreken (speaking) is **out of scope**; the learner will prepare it separately.
 Luisteren (listening) is **already done**, but the vocabulary and grammar from it are reused.
+*(2026-10-27: a Luisteren A2 module and two Luisteren mock exams were added after all, for the friends who use the app.
+See §2 and `scripts/tts/README.md`.)*
 
 **Learner profile**
 
@@ -69,6 +71,7 @@ Use these facts for exam simulation and strategy lessons. (Source: DUO, inburger
 | Lezen A2 | Computer. Short everyday texts, multiple-choice questions. | 65 min | Finding information in letters, e-mails, ads, notices, schedules, forms, short articles. |
 | KNM | Computer. Multiple-choice questions, often a short everyday situation ("Wat moet Fatima doen?"). | 45 min | 8 themes (below). The question does not say which theme it belongs to. |
 | Schrijven A2 | **Pen and paper**. 4 writing tasks. | 40 min | Filling in a form, writing a short note/message, writing an (informal or formal) e-mail or letter. |
+| Luisteren A2 | Computer. 25 multiple-choice questions about about 10 fragments (films and recordings: conversations, phone calls, voicemails, announcements, radio, someone explaining), 2–3 questions per fragment. Usually 3 options, sometimes 4 or pictures. The situation and question are on screen first (the question can be played too); the fragment can be paused and rewound 10 s. | 45 min | Mostly one specific detail (when, where, who, why, what someone must do). The answer is usually said almost word for word; a wrong option is often said first and then corrected ("Nee, wacht …"). |
 
 **KNM's 8 official themes**
 

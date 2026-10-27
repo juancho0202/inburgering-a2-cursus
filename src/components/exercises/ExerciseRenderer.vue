@@ -8,6 +8,7 @@ import WordOrderExercise from "./WordOrderExercise.vue";
 import MatchExercise from "./MatchExercise.vue";
 import ConjugateExercise from "./ConjugateExercise.vue";
 import ReadingExercise from "./ReadingExercise.vue";
+import ListeningExercise from "./ListeningExercise.vue";
 import FormFillExercise from "./FormFillExercise.vue";
 import WritingExercise from "./WritingExercise.vue";
 import type { EvalResult, ExerciseHandle } from "./types";
@@ -32,6 +33,7 @@ const components = {
   match: MatchExercise,
   conjugate: ConjugateExercise,
   reading: ReadingExercise,
+  listening: ListeningExercise,
   "form-fill": FormFillExercise,
   writing: WritingExercise,
 } as const;

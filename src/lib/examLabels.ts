@@ -8,6 +8,14 @@ const KNM: Record<string, string> = {
   staat: "Staatsinrichting en rechtsstaat",
   onderwijs: "Onderwijs en opvoeding",
 };
+const LUISTEREN: Record<string, string> = {
+  gesprek: "Gesprekken",
+  telefoon: "Telefoongesprekken",
+  voicemail: "Voicemails",
+  omroep: "Omroepberichten",
+  radio: "Radio",
+  uitleg: "Uitleg",
+};
 const LEZEN: Record<string, string> = {
   brief: "Brieven",
   email: "E-mails",
@@ -23,11 +31,12 @@ const LEZEN: Record<string, string> = {
 /** "knm:wonen" → "Wonen" */
 export function themeLabel(tag: string): string {
   const [kind, name] = tag.split(":");
-  return (kind === "knm" ? KNM[name] : kind === "lezen" ? LEZEN[name] : undefined) ?? name ?? tag;
+  const labels: Record<string, Record<string, string>> = { knm: KNM, lezen: LEZEN, luisteren: LUISTEREN };
+  return labels[kind]?.[name] ?? name ?? tag;
 }
 
-export const skillLabel: Record<string, string> = { lezen: "Lezen A2", knm: "KNM", schrijven: "Schrijven A2" };
-export const skillEmoji: Record<string, string> = { lezen: "📖", knm: "🏛️", schrijven: "✍️" };
+export const skillLabel: Record<string, string> = { lezen: "Lezen A2", luisteren: "Luisteren A2", knm: "KNM", schrijven: "Schrijven A2" };
+export const skillEmoji: Record<string, string> = { lezen: "📖", luisteren: "🎧", knm: "🏛️", schrijven: "✍️" };
 
 export const DISCLAIMER = "Dit is een oefenexamen. De echte score van DUO kan anders zijn.";
 

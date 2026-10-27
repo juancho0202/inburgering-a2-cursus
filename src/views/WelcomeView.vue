@@ -17,7 +17,7 @@ async function start() {
     <header class="text-center">
       <div class="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-brand text-3xl font-extrabold text-white" aria-hidden="true">NL</div>
       <h1 class="mt-4 text-4xl font-extrabold tracking-tight">Welkom bij Inburgering A2</h1>
-      <p class="mt-2 text-lg text-muted">Oefen Lezen, KNM en Schrijven, in je eigen tempo.</p>
+      <p class="mt-2 text-lg text-muted">Oefen Lezen, Luisteren, KNM en Schrijven, in je eigen tempo.</p>
       <AppButton size="lg" class="mt-5" @click="start">▶ Begin met leren</AppButton>
     </header>
 

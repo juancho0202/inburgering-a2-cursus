@@ -9,7 +9,7 @@ import {
   VerbEntrySchema,
   ExamSchema,
 } from "./schemas/content.js";
-import type { Exercise, LessonBlock } from "./schemas/content.js";
+import type { Exercise, Fragment, LessonBlock } from "./schemas/content.js";
 import {
   ProgressSchema,
   UnitProgressSchema,
@@ -24,7 +24,7 @@ import {
 export type Course = z.infer<typeof CourseSchema>;
 export type ModuleDef = z.infer<typeof ModuleSchema>;
 export type Unit = z.infer<typeof UnitSchema>;
-export type { Exercise, LessonBlock };
+export type { Exercise, Fragment, LessonBlock };
 export type Step = z.infer<typeof StepSchema>;
 export type VocabEntry = z.infer<typeof VocabEntrySchema>;
 export type VocabFile = z.infer<typeof VocabFileSchema>;

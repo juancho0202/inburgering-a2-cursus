@@ -2,7 +2,7 @@ import { z } from "zod";
 import { matchesAny } from "../logic/answers.js";
 import { POINTS_PER_WRITING_TASK, examExercises, examQuestions, gradeExam, isAnswered, remainingMs } from "../logic/exam.js";
 import type { ExamRecord } from "../schemas/store.js";
-import type { Exam } from "../types.js";
+import type { Exam, Exercise } from "../types.js";
 import { invalid, newId, notFound, now, nowIso, ServiceError, type Env } from "./context.js";
 import { addAttempt } from "./progress.js";
 
@@ -139,11 +139,30 @@ export async function submitExam(env: Env, rid: string, body: unknown): Promise<
   return result;
 }
 
-/** The questions answered wrong (or not at all) in a finished attempt, for "Oefen je fouten". */
-export async function examMistakes(env: Env, rid: string) {
+/**
+ * The questions answered wrong (or not at all) in a finished attempt, for "Oefen je fouten".
+ * A question about a recording cannot be answered without it: those come with their fragment (only the wrong ones).
+ */
+export async function examMistakes(env: Env, rid: string): Promise<Exercise[]> {
   const result = await getExamResult(env, rid);
   const exam = getExamOrThrow(env, result.examId);
-  return examQuestions(exam)
-    .filter((q) => (result.details[q.id] as { correct?: boolean } | undefined)?.correct === false)
-    .map((q) => q.exercise);
+  const items = new Map(examExercises(exam).map((i) => [i.id, i]));
+  const fragments = new Map<string, Extract<Exercise, { type: "listening" }>>();
+  const out: Exercise[] = [];
+  for (const q of examQuestions(exam)) {
+    if ((result.details[q.id] as { correct?: boolean } | undefined)?.correct !== false) continue;
+    const item = items.get(q.itemId);
+    if (item?.type !== "listening") {
+      out.push(q.exercise);
+      continue;
+    }
+    let practice = fragments.get(item.id);
+    if (!practice) {
+      practice = { ...item, questions: [] };
+      fragments.set(item.id, practice);
+      out.push(practice);
+    }
+    practice.questions.push(q.exercise);
+  }
+  return out;
 }

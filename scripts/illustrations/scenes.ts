@@ -8,6 +8,7 @@ import { basisScenes } from "./scenes-basis.js";
 import { knmScenes } from "./scenes-knm.js";
 import { werkWonenScenes } from "./scenes-werk-wonen.js";
 import { lezenSchrijvenScenes } from "./scenes-lezen-schrijven.js";
+import { luisterenScenes } from "./scenes-luisteren.js";
 
 export interface Scene {
   /** Alt text: what is in the picture, in simple Dutch. */
@@ -686,5 +687,6 @@ export const scenes: Record<string, Scene> = {
   ...knmScenes,
   ...werkWonenScenes,
   ...lezenSchrijvenScenes,
+  ...luisterenScenes,
 };
 

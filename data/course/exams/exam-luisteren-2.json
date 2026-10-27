@@ -1,0 +1,932 @@
+{
+  "id": "exam-luisteren-2",
+  "skill": "luisteren",
+  "title": "Proefexamen Luisteren 2",
+  "durationMinutes": 45,
+  "items": [
+    {
+      "id": "exam-luisteren-2-q-001",
+      "type": "listening",
+      "tags": [
+        "luisteren:gesprek"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+      "fragment": {
+        "kind": "gesprek",
+        "situation": "Sven en zijn collega Nadia praten in de pauze.",
+        "scene": "kantoor",
+        "speakers": [
+          {
+            "name": "Sven",
+            "voice": "ronnie"
+          },
+          {
+            "name": "Nadia",
+            "voice": "nathalie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Sven",
+            "nl": "Nadia, wat ga jij doen in de vakantie?"
+          },
+          {
+            "speaker": "Nadia",
+            "nl": "Ik ga met mijn kinderen naar mijn ouders in Marokko. Drie weken."
+          },
+          {
+            "speaker": "Sven",
+            "nl": "Mooi! Gaan jullie met het vliegtuig?"
+          },
+          {
+            "speaker": "Nadia",
+            "nl": "Eerst wilden we met de auto gaan. Maar dat is te ver met kleine kinderen. Dus we vliegen."
+          },
+          {
+            "speaker": "Sven",
+            "nl": "Wanneer vertrekken jullie?"
+          },
+          {
+            "speaker": "Nadia",
+            "nl": "Op twaalf juli. En jij?"
+          },
+          {
+            "speaker": "Sven",
+            "nl": "Wij blijven thuis. We hebben net een huis gekocht. Ik ga de keuken schilderen."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-2-q-001-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Hoe lang gaat Nadia op vakantie?",
+          "options": [
+            "Twee weken.",
+            "Drie weken.",
+            "Vier weken."
+          ],
+          "answer": 1,
+          "explanation": "'Drie weken.'",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-2-q-001-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Hoe gaat Nadia naar Marokko?",
+          "options": [
+            "Met het vliegtuig.",
+            "Met de auto.",
+            "Met de boot."
+          ],
+          "answer": 0,
+          "explanation": "'Eerst wilden we met de auto gaan. Maar … Dus we vliegen.'",
+          "difficulty": 1,
+          "answerLine": 3
+        },
+        {
+          "id": "exam-luisteren-2-q-001-3",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Wat gaat Sven in de vakantie doen?",
+          "options": [
+            "Hij gaat naar zijn ouders.",
+            "Hij gaat een huis kopen.",
+            "Hij gaat zijn keuken schilderen."
+          ],
+          "answer": 2,
+          "explanation": "'Ik ga de keuken schilderen.' Het huis heeft hij al gekocht.",
+          "difficulty": 1,
+          "answerLine": 6
+        }
+      ],
+      "explanation": "'Eerst wilden we …' is het oude plan. Na 'maar' en 'dus' komt wat ze echt doen.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-2-q-002",
+      "type": "listening",
+      "tags": [
+        "luisteren:omroep"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar het omroepbericht.",
+      "fragment": {
+        "kind": "omroep",
+        "situation": "Lisa staat op het station. Ze wacht op de sprinter naar Leiden.",
+        "speakers": [
+          {
+            "name": "Omroeper",
+            "voice": "ronnie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Omroeper",
+            "nl": "Dames en heren, de sprinter naar Leiden van elf uur twee rijdt vandaag niet."
+          },
+          {
+            "speaker": "Omroeper",
+            "nl": "Reizigers naar Leiden kunnen de intercity nemen van elf uur zestien, van spoor acht."
+          },
+          {
+            "speaker": "Omroeper",
+            "nl": "Let op: deze intercity stopt niet in Voorschoten. Reizigers naar Voorschoten nemen de bus, vanaf het busstation."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-2-q-002-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:omroep"
+          ],
+          "prompt": "Welke trein kan Lisa nemen naar Leiden?",
+          "options": [
+            "De sprinter van 11.02 uur.",
+            "De intercity van 11.02 uur.",
+            "De intercity van 11.16 uur."
+          ],
+          "answer": 2,
+          "explanation": "'Reizigers naar Leiden kunnen de intercity nemen van elf uur zestien.' De sprinter rijdt niet.",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-2-q-002-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:omroep"
+          ],
+          "prompt": "Wat moeten reizigers naar Voorschoten doen?",
+          "options": [
+            "De bus nemen.",
+            "Op de volgende sprinter wachten.",
+            "Naar spoor 8 gaan."
+          ],
+          "answer": 0,
+          "explanation": "'Reizigers naar Voorschoten nemen de bus.' De intercity stopt daar niet.",
+          "difficulty": 1,
+          "answerLine": 2
+        }
+      ],
+      "explanation": "Elf uur twee = 11.02 uur. Elf uur zestien = 11.16 uur.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-2-q-003",
+      "type": "listening",
+      "tags": [
+        "luisteren:telefoon"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+      "fragment": {
+        "kind": "telefoon",
+        "situation": "Het is zondagavond. Ali belt de huisartsenpost, want zijn dochter heeft hoge koorts.",
+        "speakers": [
+          {
+            "name": "Assistente",
+            "voice": "nathalie",
+            "phone": true
+          },
+          {
+            "name": "Ali",
+            "voice": "alex"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Assistente",
+            "nl": "Huisartsenpost, goedenavond. Waar belt u voor?"
+          },
+          {
+            "speaker": "Ali",
+            "nl": "Goedenavond. Mijn dochter is drie jaar. Ze heeft sinds vanmiddag koorts. Nu is het negenendertig komma vijf."
+          },
+          {
+            "speaker": "Assistente",
+            "nl": "Drinkt ze nog goed?"
+          },
+          {
+            "speaker": "Ali",
+            "nl": "Ja, ze drinkt wel. Maar ze wil niet eten."
+          },
+          {
+            "speaker": "Assistente",
+            "nl": "Geef haar een paracetamol voor kinderen, en laat haar veel drinken. Wordt de koorts hoger dan veertig graden? Bel dan meteen terug."
+          },
+          {
+            "speaker": "Assistente",
+            "nl": "Gaat het morgen niet beter? Bel dan uw eigen huisarts."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-2-q-003-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:telefoon"
+          ],
+          "prompt": "Hoe hoog is de koorts van de dochter van Ali?",
+          "options": [
+            "38,5 graden.",
+            "39,5 graden.",
+            "40 graden."
+          ],
+          "answer": 1,
+          "explanation": "'Nu is het negenendertig komma vijf.'",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-2-q-003-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:telefoon"
+          ],
+          "prompt": "Wanneer moet Ali meteen terugbellen?",
+          "options": [
+            "Als zijn dochter niet wil eten.",
+            "Als het morgen niet beter gaat.",
+            "Als de koorts hoger wordt dan 40 graden."
+          ],
+          "answer": 2,
+          "explanation": "'Wordt de koorts hoger dan veertig graden? Bel dan meteen terug.' Als het morgen niet beter gaat, belt Ali de eigen huisarts.",
+          "difficulty": 1,
+          "answerLine": 4
+        }
+      ],
+      "explanation": "Twee keer 'bel dan': meteen terugbellen (huisartsenpost) of morgen de eigen huisarts bellen.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-2-q-004",
+      "type": "listening",
+      "tags": [
+        "luisteren:voicemail"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar de voicemail.",
+      "fragment": {
+        "kind": "voicemail",
+        "situation": "Ruben heeft een voicemail van de sportschool.",
+        "speakers": [
+          {
+            "name": "Kim",
+            "voice": "nathalie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Kim",
+            "nl": "Hallo Ruben, met Kim van Sportschool Fit."
+          },
+          {
+            "speaker": "Kim",
+            "nl": "Je hebt je opgegeven voor de nieuwe yogales op donderdagavond. Leuk!"
+          },
+          {
+            "speaker": "Kim",
+            "nl": "Maar de les begint een week later: niet op vier april, maar op elf april."
+          },
+          {
+            "speaker": "Kim",
+            "nl": "De tijd blijft hetzelfde, van half acht tot half negen. Neem een handdoek mee. Tot dan!"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-2-q-004-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:voicemail"
+          ],
+          "prompt": "Wanneer is de eerste yogales?",
+          "options": [
+            "Donderdag 11 april.",
+            "Donderdag 4 april.",
+            "Donderdag 14 april."
+          ],
+          "answer": 0,
+          "explanation": "'Niet op vier april, maar op elf april.'",
+          "difficulty": 1,
+          "answerLine": 2
+        },
+        {
+          "id": "exam-luisteren-2-q-004-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:voicemail"
+          ],
+          "prompt": "Wat moet Ruben meenemen?",
+          "options": [
+            "Een handdoek.",
+            "Een yogamat.",
+            "Een fles water."
+          ],
+          "answer": 0,
+          "explanation": "'Neem een handdoek mee.'",
+          "difficulty": 1,
+          "answerLine": 3
+        }
+      ],
+      "explanation": "'Niet …, maar …': het tweede deel is het goede antwoord.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-2-q-005",
+      "type": "listening",
+      "tags": [
+        "luisteren:uitleg"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar de uitleg.",
+      "fragment": {
+        "kind": "uitleg",
+        "situation": "Mei wil in de bibliotheek een computer gebruiken. Een medewerker legt uit hoe dat werkt.",
+        "scene": "bibliotheek",
+        "speakers": [
+          {
+            "name": "Medewerker",
+            "voice": "alex"
+          },
+          {
+            "name": "Mei",
+            "voice": "nathalie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Medewerker",
+            "nl": "Wilt u een computer gebruiken? Dat kan met uw bibliotheekpas."
+          },
+          {
+            "speaker": "Medewerker",
+            "nl": "Leden mogen elke dag een uur gratis op de computer. Daarna kost het een euro per uur."
+          },
+          {
+            "speaker": "Mei",
+            "nl": "Kan ik ook iets printen?"
+          },
+          {
+            "speaker": "Medewerker",
+            "nl": "Ja. Printen kost tien cent per pagina. U betaalt bij de balie. Niet met contant geld, maar met uw pinpas."
+          },
+          {
+            "speaker": "Mei",
+            "nl": "En als ik hulp nodig heb?"
+          },
+          {
+            "speaker": "Medewerker",
+            "nl": "Op dinsdagochtend is hier een vrijwilliger. Die helpt u graag, bijvoorbeeld met DigiD of met e-mail."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-2-q-005-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:uitleg"
+          ],
+          "prompt": "Hoe lang mag Mei elke dag gratis op de computer?",
+          "options": [
+            "Een half uur.",
+            "Een uur.",
+            "Twee uur."
+          ],
+          "answer": 1,
+          "explanation": "'Leden mogen elke dag een uur gratis op de computer.'",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-2-q-005-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:uitleg"
+          ],
+          "prompt": "Hoe betaalt Mei voor het printen?",
+          "options": [
+            "Met contant geld.",
+            "Met haar bibliotheekpas.",
+            "Met haar pinpas."
+          ],
+          "answer": 2,
+          "explanation": "'Niet met contant geld, maar met uw pinpas.'",
+          "difficulty": 1,
+          "answerLine": 3
+        },
+        {
+          "id": "exam-luisteren-2-q-005-3",
+          "type": "mc",
+          "tags": [
+            "luisteren:uitleg"
+          ],
+          "prompt": "Wanneer kan Mei hulp krijgen van een vrijwilliger?",
+          "options": [
+            "Op dinsdagochtend.",
+            "Elke dag.",
+            "Op dinsdagmiddag."
+          ],
+          "answer": 0,
+          "explanation": "'Op dinsdagochtend is hier een vrijwilliger.'",
+          "difficulty": 1,
+          "answerLine": 5
+        }
+      ],
+      "explanation": "De bibliotheekpas is voor de computer, de pinpas is om te betalen.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-2-q-006",
+      "type": "listening",
+      "tags": [
+        "luisteren:gesprek"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+      "fragment": {
+        "kind": "gesprek",
+        "situation": "Jeroen en Amira gaan zaterdag koken voor vrienden. Ze praten over het eten.",
+        "scene": "keuken",
+        "speakers": [
+          {
+            "name": "Amira",
+            "voice": "nathalie"
+          },
+          {
+            "name": "Jeroen",
+            "voice": "ronnie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Amira",
+            "nl": "Wat gaan we zaterdag koken? Eerst soep?"
+          },
+          {
+            "speaker": "Jeroen",
+            "nl": "Ja, tomatensoep. En daarna rijst met kip."
+          },
+          {
+            "speaker": "Amira",
+            "nl": "Hanna eet geen vlees, weet je nog? Zullen we vis maken in plaats van kip?"
+          },
+          {
+            "speaker": "Jeroen",
+            "nl": "Ze eet ook geen vis. Dan maken we rijst met groente."
+          },
+          {
+            "speaker": "Amira",
+            "nl": "Goed. Hoeveel mensen komen er?"
+          },
+          {
+            "speaker": "Jeroen",
+            "nl": "Wij twee en vier vrienden, dus zes."
+          },
+          {
+            "speaker": "Amira",
+            "nl": "Ik doe morgen de boodschappen. Maak jij het toetje?"
+          },
+          {
+            "speaker": "Jeroen",
+            "nl": "Ja, ik maak een appeltaart."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-2-q-006-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Wat koken Jeroen en Amira na de soep?",
+          "options": [
+            "Rijst met kip.",
+            "Rijst met vis.",
+            "Rijst met groente."
+          ],
+          "answer": 2,
+          "explanation": "Hanna eet geen vlees en geen vis. 'Dan maken we rijst met groente.'",
+          "difficulty": 1,
+          "answerLine": 3
+        },
+        {
+          "id": "exam-luisteren-2-q-006-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Voor hoeveel mensen koken ze?",
+          "options": [
+            "Voor vier mensen.",
+            "Voor zes mensen.",
+            "Voor acht mensen."
+          ],
+          "answer": 1,
+          "explanation": "'Wij twee en vier vrienden, dus zes.'",
+          "difficulty": 1,
+          "answerLine": 5
+        },
+        {
+          "id": "exam-luisteren-2-q-006-3",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Wat doet Jeroen?",
+          "options": [
+            "Hij maakt een appeltaart.",
+            "Hij doet de boodschappen.",
+            "Hij maakt de soep."
+          ],
+          "answer": 0,
+          "explanation": "'Ja, ik maak een appeltaart.' Amira doet de boodschappen.",
+          "difficulty": 1,
+          "answerLine": 7
+        }
+      ],
+      "explanation": "Het plan verandert twee keer: kip, vis, groente. Luister tot het einde.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-2-q-007",
+      "type": "listening",
+      "tags": [
+        "luisteren:radio"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar de radio.",
+      "fragment": {
+        "kind": "radio",
+        "situation": "Ivan luistert naar het nieuws op de radio.",
+        "speakers": [
+          {
+            "name": "Nieuwslezeres",
+            "voice": "nathalie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Nieuwslezeres",
+            "nl": "Het wordt de komende dagen erg warm: tot vierendertig graden."
+          },
+          {
+            "speaker": "Nieuwslezeres",
+            "nl": "Het Rode Kruis geeft tips. Drink elke dag minstens twee liter water."
+          },
+          {
+            "speaker": "Nieuwslezeres",
+            "nl": "Blijf tussen twaalf en vier uur 's middags zo veel mogelijk binnen."
+          },
+          {
+            "speaker": "Nieuwslezeres",
+            "nl": "En let op oudere mensen in uw buurt. Vraag of ze iets nodig hebben."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-2-q-007-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:radio"
+          ],
+          "prompt": "Hoeveel water moet je elke dag minstens drinken?",
+          "options": [
+            "Een liter.",
+            "Twee liter.",
+            "Drie liter."
+          ],
+          "answer": 1,
+          "explanation": "'Drink elke dag minstens twee liter water.'",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-2-q-007-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:radio"
+          ],
+          "prompt": "Wanneer kun je het beste binnen blijven?",
+          "options": [
+            "Tussen 10.00 en 12.00 uur.",
+            "Tussen 16.00 en 20.00 uur.",
+            "Tussen 12.00 en 16.00 uur."
+          ],
+          "answer": 2,
+          "explanation": "'Blijf tussen twaalf en vier uur 's middags zo veel mogelijk binnen.' Vier uur 's middags is 16.00 uur.",
+          "difficulty": 1,
+          "answerLine": 2
+        }
+      ],
+      "explanation": "Vier uur 's middags = 16.00 uur.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-2-q-008",
+      "type": "listening",
+      "tags": [
+        "luisteren:telefoon"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+      "fragment": {
+        "kind": "telefoon",
+        "situation": "Fenna gaat verhuizen. Ze belt een verhuisbedrijf.",
+        "speakers": [
+          {
+            "name": "Medewerker",
+            "voice": "alex",
+            "phone": true
+          },
+          {
+            "name": "Fenna",
+            "voice": "nathalie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Medewerker",
+            "nl": "Verhuisbedrijf Van Leeuwen, goedemorgen."
+          },
+          {
+            "speaker": "Fenna",
+            "nl": "Goedemorgen. Ik ga eind mei verhuizen, van Zwolle naar Deventer. Wat kost een verhuizing?"
+          },
+          {
+            "speaker": "Medewerker",
+            "nl": "Hoe groot is uw huis?"
+          },
+          {
+            "speaker": "Fenna",
+            "nl": "Het is een appartement met twee slaapkamers, op de derde verdieping. Er is geen lift."
+          },
+          {
+            "speaker": "Medewerker",
+            "nl": "Zonder lift wordt het iets duurder. Ik denk ongeveer achthonderd euro. Ik kom graag eerst kijken, dan weet ik het precies."
+          },
+          {
+            "speaker": "Fenna",
+            "nl": "Kunt u volgende week maandag komen?"
+          },
+          {
+            "speaker": "Medewerker",
+            "nl": "Maandag ben ik er niet. Dinsdag wel, om vier uur."
+          },
+          {
+            "speaker": "Fenna",
+            "nl": "Dinsdag om vier uur is goed."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-2-q-008-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:telefoon"
+          ],
+          "prompt": "Waar gaat Fenna wonen?",
+          "options": [
+            "In Deventer.",
+            "In Zwolle.",
+            "In Den Bosch."
+          ],
+          "answer": 0,
+          "explanation": "'Van Zwolle naar Deventer.' Ze woont nu in Zwolle.",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-2-q-008-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:telefoon"
+          ],
+          "prompt": "Waarom wordt de verhuizing duurder?",
+          "options": [
+            "Het huis is groot.",
+            "Er is geen lift.",
+            "Het is ver weg."
+          ],
+          "answer": 1,
+          "explanation": "'Zonder lift wordt het iets duurder.'",
+          "difficulty": 1,
+          "answerLine": 4
+        },
+        {
+          "id": "exam-luisteren-2-q-008-3",
+          "type": "mc",
+          "tags": [
+            "luisteren:telefoon"
+          ],
+          "prompt": "Wanneer komt de medewerker kijken?",
+          "options": [
+            "Maandag om 16.00 uur.",
+            "Dinsdag om 14.00 uur.",
+            "Dinsdag om 16.00 uur."
+          ],
+          "answer": 2,
+          "explanation": "'Maandag ben ik er niet. Dinsdag wel, om vier uur.'",
+          "difficulty": 1,
+          "answerLine": 6
+        }
+      ],
+      "explanation": "Van … naar …: na 'naar' komt de nieuwe plaats.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-2-q-009",
+      "type": "listening",
+      "tags": [
+        "luisteren:gesprek"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+      "fragment": {
+        "kind": "gesprek",
+        "situation": "Olena is bij de balie van het zwembad. Ze wil haar dochter opgeven voor zwemles.",
+        "speakers": [
+          {
+            "name": "Olena",
+            "voice": "nathalie"
+          },
+          {
+            "name": "Medewerker",
+            "voice": "ronnie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Olena",
+            "nl": "Goedemiddag. Ik wil mijn dochter opgeven voor zwemles. Ze is zes jaar."
+          },
+          {
+            "speaker": "Medewerker",
+            "nl": "Dat kan. Er is les op woensdagmiddag en op zaterdagochtend. Maar op woensdag is de groep helaas vol."
+          },
+          {
+            "speaker": "Olena",
+            "nl": "Dan wordt het zaterdag."
+          },
+          {
+            "speaker": "Medewerker",
+            "nl": "Goed. Er is wel een wachtlijst van ongeveer twee maanden."
+          },
+          {
+            "speaker": "Olena",
+            "nl": "Twee maanden? Dat is lang. Maar goed, zet haar maar op de lijst."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-2-q-009-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Wanneer krijgt de dochter van Olena zwemles?",
+          "options": [
+            "Op woensdagmiddag.",
+            "Op zaterdagochtend.",
+            "Op zaterdagmiddag."
+          ],
+          "answer": 1,
+          "explanation": "Woensdag is vol. Olena zegt: 'Dan wordt het zaterdag.' De les is op zaterdagochtend.",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-2-q-009-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Hoe lang is de wachtlijst ongeveer?",
+          "options": [
+            "Twee maanden.",
+            "Twee weken.",
+            "Zes maanden."
+          ],
+          "answer": 0,
+          "explanation": "'Er is wel een wachtlijst van ongeveer twee maanden.' Zes is de leeftijd van haar dochter.",
+          "difficulty": 1,
+          "answerLine": 3
+        }
+      ],
+      "explanation": "Na 'helaas' komt een probleem: woensdag is vol.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-2-q-010",
+      "type": "listening",
+      "tags": [
+        "luisteren:uitleg"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar de uitleg.",
+      "fragment": {
+        "kind": "uitleg",
+        "situation": "Sara doet mee aan een fietstocht. De gids vertelt hoe het gaat.",
+        "scene": "polder",
+        "speakers": [
+          {
+            "name": "Gids",
+            "voice": "alex"
+          },
+          {
+            "name": "Sara",
+            "voice": "nathalie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Gids",
+            "nl": "Welkom allemaal bij de fietstocht door de polder. We fietsen vandaag dertig kilometer."
+          },
+          {
+            "speaker": "Gids",
+            "nl": "Na een uur stoppen we bij een boerderij. Daar kunt u koffie drinken en kaas proeven."
+          },
+          {
+            "speaker": "Sara",
+            "nl": "Hoe laat zijn we weer terug?"
+          },
+          {
+            "speaker": "Gids",
+            "nl": "Om ongeveer vier uur zijn we weer hier bij het station."
+          },
+          {
+            "speaker": "Gids",
+            "nl": "Krijgt u een lekke band? Geen probleem, ik heb gereedschap bij me. Maar fiets wel altijd achter mij."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-2-q-010-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:uitleg"
+          ],
+          "prompt": "Hoe ver fietsen ze vandaag?",
+          "options": [
+            "13 kilometer.",
+            "40 kilometer.",
+            "30 kilometer."
+          ],
+          "answer": 2,
+          "explanation": "'We fietsen vandaag dertig kilometer.' Dertig = 30.",
+          "difficulty": 1,
+          "answerLine": 0
+        },
+        {
+          "id": "exam-luisteren-2-q-010-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:uitleg"
+          ],
+          "prompt": "Wat kun je doen bij de boerderij?",
+          "options": [
+            "Koffie drinken en kaas proeven.",
+            "Een fiets huren voor de tocht.",
+            "Lunchen en even uitrusten."
+          ],
+          "answer": 0,
+          "explanation": "'Daar kunt u koffie drinken en kaas proeven.'",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-2-q-010-3",
+          "type": "mc",
+          "tags": [
+            "luisteren:uitleg"
+          ],
+          "prompt": "Waar moeten de deelnemers altijd fietsen?",
+          "options": [
+            "Naast de gids.",
+            "Voor de gids.",
+            "Achter de gids."
+          ],
+          "answer": 2,
+          "explanation": "'Maar fiets wel altijd achter mij.'",
+          "difficulty": 1,
+          "answerLine": 4
+        }
+      ],
+      "explanation": "Dertien en dertig lijken op elkaar. Luister naar het einde: -tien of -tig.",
+      "difficulty": 1
+    }
+  ],
+  "passScore": 0.7
+}

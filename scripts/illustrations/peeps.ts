@@ -106,6 +106,17 @@ export function peep(p: Peep): string {
   return `<g transform="translate(${r(ox)} ${r(oy)}) scale(${r4(sx)} ${r4(Math.abs(sx))})">${inner}</g>`;
 }
 
+/** Where the head (with its hair) is on the canvas, to put something on it: headphones, a phone at the ear. */
+export function headBox(p: Peep): { x: number; y: number; w: number; h: number } {
+  const { head } = LAYOUT[kindOf(p.pose)];
+  const sym = lib[`head/${p.head}`];
+  const [sx, ox, oy] = placement(p);
+  const s = Math.abs(sx);
+  const x1 = ox + head[0] * sx;
+  const x2 = ox + (head[0] + sym.w) * sx;
+  return { x: Math.min(x1, x2), y: oy + head[1] * s, w: sym.w * s, h: sym.h * s };
+}
+
 /**
  * The hand that reaches out furthest in the direction the peep looks (for poses like "robot_dance" or
  * "pointing_finger"), on the canvas.
