@@ -85,6 +85,13 @@ describe("DashboardView", () => {
     expect(wrapper.find("a[href='/woorden/herhalen']").text()).toContain("(5)");
   });
 
+  it("with no words due and none new, the review button is left out", async () => {
+    const { wrapper } = await open(dashboard({ dueCount: 0, newCount: 0 }));
+    expect(wrapper.find("a[href='/woorden/herhalen']").exists()).toBe(false);
+    const onlyNew = await open(dashboard({ dueCount: 0, newCount: 4 }));
+    expect(onlyNew.wrapper.find("a[href='/woorden/herhalen']").text()).toContain("(4)");
+  });
+
   it("modules show their progress; the exam module has no lesson count", async () => {
     const { wrapper } = await open(dashboard());
     expect(wrapper.find("a[href='/module/basis']").text()).toContain("1 van 3 lessen klaar");
@@ -127,9 +134,10 @@ describe("DashboardView", () => {
     expect(wrapper.text()).toContain("2 moeilijke vragen");
   });
 
-  it("without weak points a friendly note is shown", async () => {
+  it("without weak points a friendly note says how to get them, in one sentence", async () => {
     const { wrapper } = await open(dashboard());
-    expect(wrapper.text()).toContain("Nog geen zwakke punten.");
+    const note = wrapper.findAll("section").find((s) => s.text().includes("Dit moet je meer oefenen"))!;
+    expect(note.find("p").text()).toBe("Doe een paar lessen, dan zie je hier wat beter kan.");
   });
 
   it("a load error is shown", async () => {

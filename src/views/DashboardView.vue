@@ -84,28 +84,30 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
           <RouterLink v-else-if="data.nextUnitId" :to="`/unit/${data.nextUnitId}`">
             <AppButton size="lg">▶ Begin met leren</AppButton>
           </RouterLink>
-          <RouterLink to="/woorden/herhalen">
+          <!-- Hidden when there is nothing to review: a "(0)" button only pushes the modules further down on a phone. -->
+          <RouterLink v-if="data.dueCount + data.newCount" to="/woorden/herhalen">
             <AppButton size="lg" variant="secondary">🔤 Woorden herhalen ({{ data.dueCount + data.newCount }})</AppButton>
           </RouterLink>
         </div>
       </div>
     </section>
 
-    <section class="grid gap-4 sm:grid-cols-2" aria-label="Vandaag">
-      <div class="card flex items-center gap-5 p-5">
-        <ProgressRing :value="data.minutesToday / data.dailyGoalMinutes">
+    <!-- Two small tiles side by side, also on a phone, so the modules come into view sooner -->
+    <section class="grid grid-cols-2 gap-4" aria-label="Vandaag">
+      <div class="card flex flex-col items-center gap-3 p-4 text-center sm:flex-row sm:gap-5 sm:p-5 sm:text-left">
+        <ProgressRing :value="data.minutesToday / data.dailyGoalMinutes" :size="80">
           <span class="text-lg font-extrabold leading-none">{{ Math.round(data.minutesToday) }}<span class="block text-xs font-semibold text-muted">min</span></span>
         </ProgressRing>
         <div>
-          <h2 class="text-lg font-bold">Doel van vandaag</h2>
-          <p class="text-muted">{{ Math.round(data.minutesToday) }} van {{ data.dailyGoalMinutes }} minuten</p>
+          <h2 class="font-bold sm:text-lg">Doel van vandaag</h2>
+          <p class="text-sm text-muted sm:text-base">{{ Math.round(data.minutesToday) }} van {{ data.dailyGoalMinutes }} minuten</p>
         </div>
       </div>
-      <div class="card flex items-center gap-5 p-5">
-        <div class="grid h-24 w-24 place-items-center rounded-full bg-brand-bg text-4xl" aria-hidden="true">🔥</div>
+      <div class="card flex flex-col items-center gap-3 p-4 text-center sm:flex-row sm:gap-5 sm:p-5 sm:text-left">
+        <div class="grid h-20 w-20 shrink-0 place-items-center rounded-full bg-brand-bg text-3xl" aria-hidden="true">🔥</div>
         <div>
-          <h2 class="text-lg font-bold">Reeks</h2>
-          <p class="text-3xl font-extrabold">{{ data.streak.current }} <span class="text-base font-semibold text-muted">{{ data.streak.current === 1 ? "dag" : "dagen" }}</span></p>
+          <h2 class="font-bold sm:text-lg">Reeks</h2>
+          <p class="text-2xl font-extrabold sm:text-3xl">{{ data.streak.current }} <span class="text-sm font-semibold text-muted sm:text-base">{{ data.streak.current === 1 ? "dag" : "dagen" }}</span></p>
           <p class="text-sm text-muted">Beste: {{ data.streak.best }}</p>
         </div>
       </div>
@@ -163,7 +165,7 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
 
     <section class="card p-6">
       <h2 class="text-2xl font-bold">Dit moet je meer oefenen</h2>
-      <p v-if="!data.weakTags.length && !data.hardCount" class="mt-2 text-muted">Nog geen zwakke punten. Doe een paar lessen, dan zie je hier wat beter kan.</p>
+      <p v-if="!data.weakTags.length && !data.hardCount" class="mt-2 text-muted">Doe een paar lessen, dan zie je hier wat beter kan.</p>
       <ul v-else class="mt-3 grid gap-2">
         <li v-for="t in data.weakTags" :key="t.tag" class="flex flex-col gap-3 rounded-2xl bg-surface-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
