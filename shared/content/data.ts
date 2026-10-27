@@ -31,7 +31,7 @@ export interface ContentError {
   message: string;
 }
 
-const EXAM_ORDER = ["lezen", "knm", "schrijven"];
+const EXAM_ORDER = ["lezen", "luisteren", "knm", "schrijven"];
 
 const issues = (err: z.ZodError) => err.issues.map((i) => `${i.path.join(".") || "(root)"}: ${i.message}`).join("\n  ");
 

@@ -27,7 +27,7 @@ onMounted(async () => {
 });
 
 const groups = computed(() =>
-  (["lezen", "knm", "schrijven"] as const).map((skill) => ({ skill, rows: (exams.value ?? []).filter((e) => e.skill === skill) })).filter((g) => g.rows.length),
+  (["lezen", "luisteren", "knm", "schrijven"] as const).map((skill) => ({ skill, rows: (exams.value ?? []).filter((e) => e.skill === skill) })).filter((g) => g.rows.length),
 );
 const fmt = (iso: string) => new Date(iso).toLocaleDateString("nl-NL", { day: "numeric", month: "short" });
 const pct = (a: { score: number; max: number }) => (a.max ? Math.round((a.score / a.max) * 100) : 0);

@@ -8,7 +8,7 @@ import KeyGuide from "./KeyGuide.vue";
     <section class="card p-6">
       <h2 class="text-xl font-bold">Wat is dit?</h2>
       <p class="mt-2">
-        Een app om te oefenen voor het inburgeringsexamen (niveau A2): <strong>Lezen</strong>, <strong>KNM</strong> en <strong>Schrijven</strong>. Met lessen, woorden herhalen, oefeningen en proefexamens. Alles is in eenvoudig Nederlands.
+        Een app om te oefenen voor het inburgeringsexamen (niveau A2): <strong>Lezen</strong>, <strong>Luisteren</strong>, <strong>KNM</strong> en <strong>Schrijven</strong>. Met lessen, woorden herhalen, oefeningen en proefexamens. Alles is in eenvoudig Nederlands.
       </p>
       <p class="mt-3 rounded-2xl bg-brand-bg px-4 py-3 font-semibold text-brand-strong">
         Deze app is <strong>niet van DUO</strong> en heeft er niets mee te maken. Alle teksten en vragen zijn zelf gemaakt. Een proefexamen hier zegt niets zeker over je echte score.
@@ -43,7 +43,7 @@ import KeyGuide from "./KeyGuide.vue";
     <section class="card p-6">
       <h2 class="text-xl font-bold">Stemmen en geluid</h2>
       <p class="mt-2">
-        De stemmen die de lessen voorlezen zijn gemaakt met <a href="https://github.com/OHF-Voice/piper1-gpl" class="font-semibold underline">Piper</a> (open source).
+        De stemmen die de lessen voorlezen en de mensen in de luisterfragmenten zijn gemaakt met <a href="https://github.com/OHF-Voice/piper1-gpl" class="font-semibold underline">Piper</a> (open source).
         De stemmen ronnie, alex en nathalie zijn gemaakt met opnames uit het publieke domein (CC0).
         De muziek en de geluidjes worden in de app zelf gemaakt.
       </p>

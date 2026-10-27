@@ -1,4 +1,5 @@
 import type { Exam, Exercise } from "../types.js";
+import { hasQuestions } from "../content/questions.js";
 
 export interface ExamQuestion {
   id: string;
@@ -13,11 +14,11 @@ export function examExercises(exam: Exam): Exercise[] {
   return exam.items.filter((i): i is Exercise => "type" in i);
 }
 
-/** Gradable multiple-choice questions, with reading sub-questions flattened. */
+/** Gradable multiple-choice questions, with the questions about a text or recording flattened. */
 export function examQuestions(exam: Exam): ExamQuestion[] {
   const out: ExamQuestion[] = [];
   for (const item of examExercises(exam)) {
-    if (item.type === "reading") {
+    if (hasQuestions(item)) {
       for (const q of item.questions) out.push({ id: q.id, itemId: item.id, exercise: q, tags: q.tags.length ? q.tags : item.tags });
     } else if (item.type === "mc") out.push({ id: item.id, itemId: item.id, exercise: item, tags: item.tags });
   }
@@ -35,8 +36,8 @@ export function isAnswered(answer: unknown): boolean {
   return selectedIndexes(answer).length > 0;
 }
 
-/** Group key for the breakdown: knm:<theme> or lezen:<type>. */
-export const themeOf = (tags: string[]): string | null => tags.find((t) => /^(knm|lezen):/.test(t)) ?? null;
+/** Group key for the breakdown: knm:<theme>, lezen:<type of text> or luisteren:<kind of fragment>. */
+export const themeOf = (tags: string[]): string | null => tags.find((t) => /^(knm|lezen|luisteren):/.test(t)) ?? null;
 
 export interface GradeResult {
   score: number;

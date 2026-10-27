@@ -1,0 +1,937 @@
+{
+  "id": "exam-luisteren-1",
+  "skill": "luisteren",
+  "title": "Proefexamen Luisteren 1",
+  "durationMinutes": 45,
+  "items": [
+    {
+      "id": "exam-luisteren-1-q-001",
+      "type": "listening",
+      "tags": [
+        "luisteren:gesprek"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+      "fragment": {
+        "kind": "gesprek",
+        "situation": "Linda komt haar buurman Ahmed tegen in de supermarkt. Ze praten met elkaar.",
+        "speakers": [
+          {
+            "name": "Linda",
+            "voice": "nathalie"
+          },
+          {
+            "name": "Ahmed",
+            "voice": "ronnie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Linda",
+            "nl": "Hé Ahmed, hoe gaat het? Ik hoorde dat je een nieuwe baan hebt."
+          },
+          {
+            "speaker": "Ahmed",
+            "nl": "Ja! Sinds twee weken werk ik bij een fietsenwinkel. Ik repareer fietsen."
+          },
+          {
+            "speaker": "Linda",
+            "nl": "Leuk! Is het ver van huis?"
+          },
+          {
+            "speaker": "Ahmed",
+            "nl": "Nee, het is maar tien minuten fietsen. Eerst werkte ik in Rotterdam. Toen was ik elke dag een uur onderweg."
+          },
+          {
+            "speaker": "Linda",
+            "nl": "Dat is fijn. Werk je ook in het weekend?"
+          },
+          {
+            "speaker": "Ahmed",
+            "nl": "Alleen op zaterdag. Maar op maandag ben ik vrij."
+          },
+          {
+            "speaker": "Linda",
+            "nl": "Mijn fiets maakt een raar geluid. Mag ik een keer langskomen?"
+          },
+          {
+            "speaker": "Ahmed",
+            "nl": "Natuurlijk. Kom maar op dinsdag, dan is het rustig."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-1-q-001-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Wat voor werk doet Ahmed nu?",
+          "options": [
+            "Hij verkoopt fietsen.",
+            "Hij repareert fietsen.",
+            "Hij werkt in een supermarkt."
+          ],
+          "answer": 1,
+          "explanation": "Ahmed zegt: 'Ik repareer fietsen.'",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-1-q-001-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Hoe lang fietst Ahmed naar zijn werk?",
+          "options": [
+            "Tien minuten.",
+            "Een half uur.",
+            "Een uur."
+          ],
+          "answer": 0,
+          "explanation": "'Het is maar tien minuten fietsen.' Een uur was het naar Rotterdam, zijn oude werk.",
+          "difficulty": 1,
+          "answerLine": 3
+        },
+        {
+          "id": "exam-luisteren-1-q-001-3",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Wanneer is Ahmed vrij?",
+          "options": [
+            "Op zaterdag.",
+            "Op dinsdag.",
+            "Op maandag."
+          ],
+          "answer": 2,
+          "explanation": "'Alleen op zaterdag. Maar op maandag ben ik vrij.'",
+          "difficulty": 1,
+          "answerLine": 5
+        }
+      ],
+      "explanation": "Let op 'eerst': Rotterdam is het oude werk van Ahmed.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-1-q-002",
+      "type": "listening",
+      "tags": [
+        "luisteren:telefoon"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+      "fragment": {
+        "kind": "telefoon",
+        "situation": "Monique belt het consultatiebureau. Ze heeft een vraag over een afspraak voor haar baby.",
+        "speakers": [
+          {
+            "name": "Erik",
+            "voice": "ronnie",
+            "phone": true
+          },
+          {
+            "name": "Monique",
+            "voice": "nathalie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Erik",
+            "nl": "Consultatiebureau Noord, met Erik."
+          },
+          {
+            "speaker": "Monique",
+            "nl": "Goedemorgen, met Monique de Wit. Mijn dochter Sofie moet volgende week een prik krijgen. Maar dan zijn we op vakantie."
+          },
+          {
+            "speaker": "Erik",
+            "nl": "Geen probleem. Wanneer bent u terug?"
+          },
+          {
+            "speaker": "Monique",
+            "nl": "Over drie weken."
+          },
+          {
+            "speaker": "Erik",
+            "nl": "Dan maak ik een nieuwe afspraak voor over vier weken, op donderdag om half drie. Neemt u het groeiboekje van Sofie mee?"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-1-q-002-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:telefoon"
+          ],
+          "prompt": "Waarom belt Monique?",
+          "options": [
+            "Sofie is ziek.",
+            "Ze wil informatie over een vakantie.",
+            "Ze kan niet naar de afspraak komen."
+          ],
+          "answer": 2,
+          "explanation": "Volgende week heeft Sofie een afspraak, 'maar dan zijn we op vakantie'.",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-1-q-002-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:telefoon"
+          ],
+          "prompt": "Wanneer is de nieuwe afspraak?",
+          "options": [
+            "Over vier weken, op donderdag.",
+            "Over drie weken, op donderdag.",
+            "Volgende week, op donderdag."
+          ],
+          "answer": 0,
+          "explanation": "Erik zegt: 'Over vier weken, op donderdag om half drie.' Over drie weken is Monique terug.",
+          "difficulty": 1,
+          "answerLine": 4
+        }
+      ],
+      "explanation": "Drie weken en vier weken: Monique is over drie weken terug, de afspraak is een week later.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-1-q-003",
+      "type": "listening",
+      "tags": [
+        "luisteren:omroep"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar het omroepbericht.",
+      "fragment": {
+        "kind": "omroep",
+        "situation": "Hamid zit in de wachtkamer van het ziekenhuis. Hij hoort een bericht.",
+        "speakers": [
+          {
+            "name": "Omroeper",
+            "voice": "alex"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Omroeper",
+            "nl": "Beste bezoekers. Door een storing werkt de lift bij ingang A op dit moment niet."
+          },
+          {
+            "speaker": "Omroeper",
+            "nl": "Moet u naar de derde of de vierde verdieping? Neem dan de lift bij ingang B."
+          },
+          {
+            "speaker": "Omroeper",
+            "nl": "Die lift is aan het einde van de gang, naast het restaurant."
+          },
+          {
+            "speaker": "Omroeper",
+            "nl": "Wij denken dat de lift bij ingang A vanmiddag om drie uur weer werkt."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-1-q-003-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:omroep"
+          ],
+          "prompt": "Welke lift kun je nu gebruiken?",
+          "options": [
+            "De lift bij ingang A.",
+            "De lift bij ingang B.",
+            "De lift bij de wachtkamer."
+          ],
+          "answer": 1,
+          "explanation": "'Neem dan de lift bij ingang B.'",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-1-q-003-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:omroep"
+          ],
+          "prompt": "Hoe laat werkt de lift bij ingang A waarschijnlijk weer?",
+          "options": [
+            "Om 13.00 uur.",
+            "Om 14.00 uur.",
+            "Om 15.00 uur."
+          ],
+          "answer": 2,
+          "explanation": "'Vanmiddag om drie uur.' Dat is 15.00 uur.",
+          "difficulty": 1,
+          "answerLine": 3
+        }
+      ],
+      "explanation": "Twee liften: A werkt niet, B wel.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-1-q-004",
+      "type": "listening",
+      "tags": [
+        "luisteren:voicemail"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar de voicemail.",
+      "fragment": {
+        "kind": "voicemail",
+        "situation": "Johan heeft een voicemail van zijn zus Marieke.",
+        "speakers": [
+          {
+            "name": "Marieke",
+            "voice": "nathalie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Marieke",
+            "nl": "Hoi Johan, met Marieke."
+          },
+          {
+            "speaker": "Marieke",
+            "nl": "Mama wordt zondag zeventig, weet je nog? We gaan met de hele familie uit eten."
+          },
+          {
+            "speaker": "Marieke",
+            "nl": "Ik heb een tafel gereserveerd bij het Italiaanse restaurant aan de haven, om vijf uur."
+          },
+          {
+            "speaker": "Marieke",
+            "nl": "Wil jij een cadeau kopen? Mama wil graag een nieuwe tas. Ik betaal de helft."
+          },
+          {
+            "speaker": "Marieke",
+            "nl": "Bel je me even terug? Doei!"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-1-q-004-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:voicemail"
+          ],
+          "prompt": "Waarom gaat de familie uit eten?",
+          "options": [
+            "Mama is jarig.",
+            "Marieke gaat verhuizen.",
+            "Johan heeft een nieuwe baan."
+          ],
+          "answer": 0,
+          "explanation": "'Mama wordt zondag zeventig.' Ze is jarig.",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-1-q-004-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:voicemail"
+          ],
+          "prompt": "Wat moet Johan doen?",
+          "options": [
+            "Een tafel reserveren.",
+            "Een tas kopen voor mama.",
+            "Het eten betalen."
+          ],
+          "answer": 1,
+          "explanation": "'Wil jij een cadeau kopen? Mama wil graag een nieuwe tas.' Marieke heeft de tafel al gereserveerd.",
+          "difficulty": 1,
+          "answerLine": 3
+        }
+      ],
+      "explanation": "Marieke heeft al iets gedaan (de tafel). Wat moet Johan nog doen?",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-1-q-005",
+      "type": "listening",
+      "tags": [
+        "luisteren:uitleg"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar de uitleg.",
+      "fragment": {
+        "kind": "uitleg",
+        "situation": "Elif begint met een cursus naaien in het buurthuis. De docent vertelt hoe de cursus gaat.",
+        "scene": "buurthuis",
+        "speakers": [
+          {
+            "name": "Docent",
+            "voice": "ronnie"
+          },
+          {
+            "name": "Elif",
+            "voice": "nathalie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Docent",
+            "nl": "Welkom bij de cursus naaien. De cursus duurt acht weken. We hebben elke dinsdagavond les, van zeven tot negen uur."
+          },
+          {
+            "speaker": "Docent",
+            "nl": "De naaimachines zijn van het buurthuis. Die hoeft u niet mee te nemen."
+          },
+          {
+            "speaker": "Docent",
+            "nl": "Stof koopt u zelf. Voor de eerste les heeft u een meter stof nodig."
+          },
+          {
+            "speaker": "Elif",
+            "nl": "Waar kan ik stof kopen?"
+          },
+          {
+            "speaker": "Docent",
+            "nl": "Op de markt, op zaterdag. Daar is het goedkoop."
+          },
+          {
+            "speaker": "Docent",
+            "nl": "In de laatste les maken we een tas. Die mag u mee naar huis nemen."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-1-q-005-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:uitleg"
+          ],
+          "prompt": "Hoe lang duurt de cursus?",
+          "options": [
+            "Zeven weken.",
+            "Acht weken.",
+            "Negen weken."
+          ],
+          "answer": 1,
+          "explanation": "'De cursus duurt acht weken.' Zeven en negen uur zijn de tijden van de les.",
+          "difficulty": 1,
+          "answerLine": 0
+        },
+        {
+          "id": "exam-luisteren-1-q-005-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:uitleg"
+          ],
+          "prompt": "Wat moet Elif zelf kopen?",
+          "options": [
+            "Een naaimachine.",
+            "Een tas.",
+            "Stof."
+          ],
+          "answer": 2,
+          "explanation": "'Stof koopt u zelf.' De naaimachines zijn van het buurthuis.",
+          "difficulty": 1,
+          "answerLine": 2
+        },
+        {
+          "id": "exam-luisteren-1-q-005-3",
+          "type": "mc",
+          "tags": [
+            "luisteren:uitleg"
+          ],
+          "prompt": "Waar kan Elif goedkope stof kopen?",
+          "options": [
+            "Op de markt.",
+            "In het buurthuis.",
+            "In een winkel in de stad."
+          ],
+          "answer": 0,
+          "explanation": "'Op de markt, op zaterdag. Daar is het goedkoop.'",
+          "difficulty": 1,
+          "answerLine": 4
+        }
+      ],
+      "explanation": "Zeven, acht, negen: de cursus duurt acht weken, de les is van zeven tot negen uur.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-1-q-006",
+      "type": "listening",
+      "tags": [
+        "luisteren:gesprek"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+      "fragment": {
+        "kind": "gesprek",
+        "situation": "Thomas en Saskia willen een wasmachine kopen. Ze praten met een verkoper.",
+        "speakers": [
+          {
+            "name": "Verkoper",
+            "voice": "alex"
+          },
+          {
+            "name": "Saskia",
+            "voice": "nathalie"
+          },
+          {
+            "name": "Thomas",
+            "voice": "ronnie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Verkoper",
+            "nl": "Goedemiddag. Kan ik u helpen?"
+          },
+          {
+            "speaker": "Saskia",
+            "nl": "Ja, onze wasmachine is kapot. We zoeken een nieuwe."
+          },
+          {
+            "speaker": "Verkoper",
+            "nl": "Deze hier is in de aanbieding. Hij kost vierhonderd euro, en hij is heel zuinig."
+          },
+          {
+            "speaker": "Thomas",
+            "nl": "Vierhonderd euro is te duur voor ons. Heeft u er ook een voor ongeveer driehonderd euro?"
+          },
+          {
+            "speaker": "Verkoper",
+            "nl": "Ja, deze. Die kost tweehonderdnegenennegentig euro. En wij brengen hem gratis bij u thuis."
+          },
+          {
+            "speaker": "Saskia",
+            "nl": "Kunt u hem morgen brengen?"
+          },
+          {
+            "speaker": "Verkoper",
+            "nl": "Morgen niet, maar overmorgen wel. Dan nemen we ook uw oude wasmachine mee."
+          },
+          {
+            "speaker": "Thomas",
+            "nl": "Prima, dan nemen we die."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-1-q-006-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Waarom kopen Thomas en Saskia de eerste wasmachine niet?",
+          "options": [
+            "Hij is te groot.",
+            "Hij is te duur.",
+            "Hij is niet zuinig."
+          ],
+          "answer": 1,
+          "explanation": "Thomas zegt: 'Vierhonderd euro is te duur voor ons.'",
+          "difficulty": 1,
+          "answerLine": 3
+        },
+        {
+          "id": "exam-luisteren-1-q-006-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Hoeveel kost de wasmachine die ze kopen?",
+          "options": [
+            "€ 299.",
+            "€ 300.",
+            "€ 400."
+          ],
+          "answer": 0,
+          "explanation": "'Die kost tweehonderdnegenennegentig euro.' Dat is € 299.",
+          "difficulty": 1,
+          "answerLine": 4
+        },
+        {
+          "id": "exam-luisteren-1-q-006-3",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Wanneer krijgen ze de nieuwe wasmachine?",
+          "options": [
+            "Vandaag.",
+            "Morgen.",
+            "Overmorgen."
+          ],
+          "answer": 2,
+          "explanation": "'Morgen niet, maar overmorgen wel.'",
+          "difficulty": 1,
+          "answerLine": 6
+        }
+      ],
+      "explanation": "Thomas vraagt een wasmachine van 'ongeveer driehonderd euro'. De prijs die de verkoper noemt, is net iets lager.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-1-q-007",
+      "type": "listening",
+      "tags": [
+        "luisteren:radio"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar de radio.",
+      "fragment": {
+        "kind": "radio",
+        "situation": "Joyce luistert naar het nieuws op de lokale radio.",
+        "speakers": [
+          {
+            "name": "Nieuwslezer",
+            "voice": "alex"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Nieuwslezer",
+            "nl": "Bij het station is vandaag een nieuwe fietsenstalling opengegaan. Er is plek voor drieduizend fietsen."
+          },
+          {
+            "speaker": "Nieuwslezer",
+            "nl": "De eerste vierentwintig uur is gratis. Daarna kost het één euro per dag."
+          },
+          {
+            "speaker": "Nieuwslezer",
+            "nl": "De gemeente hoopt dat er nu minder fietsen op straat staan. Fietsen die buiten de stalling staan, worden vanaf volgende maand weggehaald."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-1-q-007-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:radio"
+          ],
+          "prompt": "Hoeveel kost de fietsenstalling de eerste dag?",
+          "options": [
+            "Niets.",
+            "€ 1.",
+            "€ 3."
+          ],
+          "answer": 0,
+          "explanation": "'De eerste vierentwintig uur is gratis.'",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-1-q-007-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:radio"
+          ],
+          "prompt": "Wat gebeurt er vanaf volgende maand?",
+          "options": [
+            "De stalling wordt nog veel groter.",
+            "Parkeren in de stalling wordt duurder.",
+            "Fietsen buiten de stalling worden weggehaald."
+          ],
+          "answer": 2,
+          "explanation": "'Fietsen die buiten de stalling staan, worden vanaf volgende maand weggehaald.'",
+          "difficulty": 1,
+          "answerLine": 2
+        }
+      ],
+      "explanation": "Vierentwintig uur is een dag. Die eerste dag is gratis.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-1-q-008",
+      "type": "listening",
+      "tags": [
+        "luisteren:telefoon"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+      "fragment": {
+        "kind": "telefoon",
+        "situation": "Wendy belt de klantenservice van haar internetbedrijf. Haar internet doet het niet.",
+        "speakers": [
+          {
+            "name": "Dennis",
+            "voice": "ronnie",
+            "phone": true
+          },
+          {
+            "name": "Wendy",
+            "voice": "nathalie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Dennis",
+            "nl": "Klantenservice van NetSnel, u spreekt met Dennis."
+          },
+          {
+            "speaker": "Wendy",
+            "nl": "Goedemiddag, met Wendy Bos. Mijn internet doet het al twee dagen niet."
+          },
+          {
+            "speaker": "Dennis",
+            "nl": "Wat vervelend. Heeft u het modem al uit- en weer aangezet?"
+          },
+          {
+            "speaker": "Wendy",
+            "nl": "Ja, twee keer. Maar het lampje blijft rood."
+          },
+          {
+            "speaker": "Dennis",
+            "nl": "Dan stuur ik een monteur. Hij kan vrijdag komen, tussen één en vijf uur."
+          },
+          {
+            "speaker": "Wendy",
+            "nl": "Vrijdag ben ik niet thuis. Kan het ook zaterdag?"
+          },
+          {
+            "speaker": "Dennis",
+            "nl": "Zaterdagochtend kan, tussen acht en twaalf uur."
+          },
+          {
+            "speaker": "Wendy",
+            "nl": "Dat is goed."
+          },
+          {
+            "speaker": "Dennis",
+            "nl": "U krijgt een berichtje op uw telefoon als de monteur onderweg is."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-1-q-008-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:telefoon"
+          ],
+          "prompt": "Hoe lang doet het internet van Wendy het al niet?",
+          "options": [
+            "Twee uur.",
+            "Twee dagen.",
+            "Twee weken."
+          ],
+          "answer": 1,
+          "explanation": "'Mijn internet doet het al twee dagen niet.'",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-1-q-008-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:telefoon"
+          ],
+          "prompt": "Wanneer komt de monteur?",
+          "options": [
+            "Vrijdag tussen 13.00 en 17.00 uur.",
+            "Zaterdag tussen 13.00 en 17.00 uur.",
+            "Zaterdag tussen 8.00 en 12.00 uur."
+          ],
+          "answer": 2,
+          "explanation": "Vrijdag is Wendy niet thuis. 'Zaterdagochtend kan, tussen acht en twaalf uur.'",
+          "difficulty": 1,
+          "answerLine": 6
+        },
+        {
+          "id": "exam-luisteren-1-q-008-3",
+          "type": "mc",
+          "tags": [
+            "luisteren:telefoon"
+          ],
+          "prompt": "Hoe hoort Wendy dat de monteur onderweg is?",
+          "options": [
+            "Ze krijgt een berichtje op haar telefoon.",
+            "Ze krijgt een e-mail van NetSnel.",
+            "De monteur belt haar eerst op."
+          ],
+          "answer": 0,
+          "explanation": "'U krijgt een berichtje op uw telefoon als de monteur onderweg is.'",
+          "difficulty": 1,
+          "answerLine": 8
+        }
+      ],
+      "explanation": "Het eerste voorstel (vrijdag) past niet. Luister naar wat Wendy kiest.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-1-q-009",
+      "type": "listening",
+      "tags": [
+        "luisteren:radio"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar de radio.",
+      "fragment": {
+        "kind": "radio",
+        "situation": "Kemal wil zaterdag naar het strand. Hij luistert naar het weerbericht.",
+        "speakers": [
+          {
+            "name": "Weervrouw",
+            "voice": "nathalie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Weervrouw",
+            "nl": "Het weer voor het weekend. Zaterdag wordt het zonnig en warm: vierentwintig graden."
+          },
+          {
+            "speaker": "Weervrouw",
+            "nl": "Aan de kust is er wel veel wind. Daardoor is het daar wat kouder, ongeveer twintig graden."
+          },
+          {
+            "speaker": "Weervrouw",
+            "nl": "Op zondag komen er buien, vooral in de middag. Neem dan een paraplu mee."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-1-q-009-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:radio"
+          ],
+          "prompt": "Hoe warm wordt het zaterdag aan de kust?",
+          "options": [
+            "Ongeveer 20 graden.",
+            "Ongeveer 24 graden.",
+            "Ongeveer 14 graden."
+          ],
+          "answer": 0,
+          "explanation": "'Aan de kust … ongeveer twintig graden.' Vierentwintig graden is in de rest van het land.",
+          "difficulty": 1,
+          "answerLine": 1
+        },
+        {
+          "id": "exam-luisteren-1-q-009-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:radio"
+          ],
+          "prompt": "Wanneer komen er buien?",
+          "options": [
+            "Op zaterdagochtend.",
+            "Op zondagmiddag.",
+            "Op zondagochtend."
+          ],
+          "answer": 1,
+          "explanation": "'Op zondag komen er buien, vooral in de middag.'",
+          "difficulty": 1,
+          "answerLine": 2
+        }
+      ],
+      "explanation": "Het strand is aan de kust. Daar is het weer anders dan in de rest van het land.",
+      "difficulty": 1
+    },
+    {
+      "id": "exam-luisteren-1-q-010",
+      "type": "listening",
+      "tags": [
+        "luisteren:gesprek"
+      ],
+      "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+      "fragment": {
+        "kind": "gesprek",
+        "situation": "Mevrouw Kaya praat met de mentor van haar zoon Emre op de middelbare school.",
+        "speakers": [
+          {
+            "name": "Mentor",
+            "voice": "alex"
+          },
+          {
+            "name": "Mevrouw Kaya",
+            "voice": "nathalie"
+          }
+        ],
+        "lines": [
+          {
+            "speaker": "Mentor",
+            "nl": "Goedemiddag, mevrouw Kaya. Fijn dat u kon komen. Ik wil het met u hebben over Emre."
+          },
+          {
+            "speaker": "Mevrouw Kaya",
+            "nl": "Is er iets?"
+          },
+          {
+            "speaker": "Mentor",
+            "nl": "Emre komt de laatste tijd vaak te laat. Deze maand al vijf keer."
+          },
+          {
+            "speaker": "Mevrouw Kaya",
+            "nl": "Vijf keer? Dat wist ik niet. Hij gaat altijd op tijd van huis."
+          },
+          {
+            "speaker": "Mentor",
+            "nl": "Hij zegt dat hij eerst een vriend ophaalt. Maar die vriend is vaak niet op tijd klaar."
+          },
+          {
+            "speaker": "Mevrouw Kaya",
+            "nl": "Ik praat vanavond met hem."
+          },
+          {
+            "speaker": "Mentor",
+            "nl": "Graag. Komt hij nog een keer te laat? Dan moet hij een week lang om acht uur op school zijn. Een half uur eerder dan normaal."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "exam-luisteren-1-q-010-1",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Hoe vaak kwam Emre deze maand te laat?",
+          "options": [
+            "Drie keer.",
+            "Vijf keer.",
+            "Acht keer."
+          ],
+          "answer": 1,
+          "explanation": "'Deze maand al vijf keer.'",
+          "difficulty": 1,
+          "answerLine": 2
+        },
+        {
+          "id": "exam-luisteren-1-q-010-2",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Waarom komt Emre te laat?",
+          "options": [
+            "Hij slaapt te lang.",
+            "De bus is vaak te laat.",
+            "Hij haalt eerst een vriend op."
+          ],
+          "answer": 2,
+          "explanation": "'Hij zegt dat hij eerst een vriend ophaalt. Maar die vriend is vaak niet op tijd klaar.'",
+          "difficulty": 1,
+          "answerLine": 4
+        },
+        {
+          "id": "exam-luisteren-1-q-010-3",
+          "type": "mc",
+          "tags": [
+            "luisteren:gesprek"
+          ],
+          "prompt": "Wat gebeurt er als Emre nog een keer te laat komt?",
+          "options": [
+            "Hij moet een week om 8.00 uur op school zijn.",
+            "Hij moet een week om 8.30 uur op school zijn.",
+            "De mentor belt mevrouw Kaya."
+          ],
+          "answer": 0,
+          "explanation": "'Dan moet hij een week lang om acht uur op school zijn.' Half negen is de normale tijd.",
+          "difficulty": 1,
+          "answerLine": 6
+        }
+      ],
+      "explanation": "'Een half uur eerder dan normaal': acht uur is de nieuwe tijd, half negen de normale.",
+      "difficulty": 1
+    }
+  ],
+  "passScore": 0.7
+}

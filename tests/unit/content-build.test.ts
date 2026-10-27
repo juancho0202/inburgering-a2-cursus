@@ -115,8 +115,8 @@ describe("the real course", () => {
     expect(result.data.samenvatting.length).toBeGreaterThan(1000);
     expect(Object.keys(result.data.facts)).toHaveLength(8);
   });
-  it("lists exams as Lezen, KNM, Schrijven", () => {
-    expect([...result.content.exams.values()].map((e) => e.skill)).toEqual(["lezen", "lezen", "knm", "knm", "schrijven", "schrijven"]);
+  it("lists exams as Lezen, Luisteren, KNM, Schrijven", () => {
+    expect([...result.content.exams.values()].map((e) => e.skill)).toEqual(["lezen", "lezen", "luisteren", "luisteren", "knm", "knm", "schrijven", "schrijven"]);
   });
   it("keeps the demo unit out of the module list but available", () => {
     expect(result.content.modules.get("basis")!.units).not.toContain("basis-demo");

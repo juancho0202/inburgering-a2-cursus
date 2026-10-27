@@ -296,3 +296,61 @@ describe("writing and form exams", () => {
     expect(nav(wrapper, 1).attributes("aria-label")).toBe("Vraag 1: half beantwoord");
   });
 });
+
+describe("listening exams", () => {
+  const fragment = (n: number) => ({
+    kind: "gesprek",
+    situation: `Situatie ${n}`,
+    speakers: [{ name: "Ana", voice: "nathalie" }, { name: "Bas", voice: "ronnie" }],
+    lines: [{ speaker: "Ana", nl: `Hallo ${n}` }, { speaker: "Bas", nl: `Dag ${n}` }],
+  });
+  const listening = (n: number) => ({
+    id: `f${n}`, type: "listening", tags: ["luisteren:gesprek"], prompt: "Luister", explanation: "e", difficulty: 1,
+    fragment: fragment(n),
+    questions: [{ ...mc(`f${n}-a`, ["a", "b", "c"]), answerLine: 0 }, { ...mc(`f${n}-b`, ["x", "y", "z"]), answerLine: 1 }],
+  });
+  const playing = { paused: true, pause: vi.fn(function (this: { paused: boolean }) { this.paused = true; }) };
+
+  beforeEach(() => {
+    playing.pause.mockClear();
+    // One recording for every fragment, so the player uses its Audio element.
+    vi.stubGlobal("fetch", vi.fn(async () => ({ ok: true, json: async () => ({ fragments: new Proxy({}, { get: () => ({ duration: 4, starts: [1, 2] }) }) }) })));
+    vi.stubGlobal("Audio", class {
+      currentTime = 0;
+      paused = true;
+      play = vi.fn(async () => { this.paused = false; Object.assign(playing, { audio: this }); });
+      pause = vi.fn(() => { this.paused = true; playing.pause(); });
+    });
+  });
+  afterEach(async () => {
+    (await import("../../../src/composables/useFragmentPlayer")).forgetFragmentTimings();
+    vi.unstubAllGlobals();
+  });
+
+  it("shows one fragment per page with its questions, hides the text, and saves each answer under its question", async () => {
+    (await import("../../../src/composables/useFragmentPlayer")).forgetFragmentTimings();
+    setup({ items: [listening(1), listening(2)], examExtra: { skill: "luisteren" } });
+    const { wrapper } = await open();
+    expect(wrapper.text()).toContain("Fragment 1 van 2");
+    expect(wrapper.text()).toContain("Situatie 1");
+    expect(wrapper.text()).not.toContain("Hallo 1");
+    expect(buttonWith(wrapper, "Ik kan nu niet luisteren")).toBeUndefined();
+    await choose(wrapper, "b");
+    expect(wrapper.find("nav button[aria-label^='Fragment 1:']").attributes("aria-label")).toBe("Fragment 1: half beantwoord");
+    await choose(wrapper, "z");
+    await tick(400);
+    expect(saves().at(-1)).toMatchObject({ answers: { "f1-a": [1], "f1-b": [2] } });
+    expect(wrapper.find("nav button[aria-label^='Fragment 1:']").attributes("aria-label")).toBe("Fragment 1: beantwoord");
+  });
+
+  it("going to the next fragment stops the one that is playing", async () => {
+    (await import("../../../src/composables/useFragmentPlayer")).forgetFragmentTimings();
+    setup({ items: [listening(1), listening(2)], examExtra: { skill: "luisteren" } });
+    const { wrapper } = await open();
+    await clickButton(wrapper, "Luister");
+    expect(playing.pause).not.toHaveBeenCalled();
+    await clickButton(wrapper, "Volgende");
+    expect(playing.pause).toHaveBeenCalled();
+    expect(wrapper.text()).toContain("Situatie 2");
+  });
+});

@@ -1,0 +1,618 @@
+{
+  "id": "luisteren-de-weg",
+  "moduleId": "luisteren",
+  "title": "De weg vragen",
+  "goal": "Je verstaat een routebeschrijving: rechtsaf, linksaf, rechtdoor en waar iets is.",
+  "scene": "route",
+  "estimatedMinutes": 25,
+  "tags": [
+    "luisteren:de-weg"
+  ],
+  "vocabRefs": [
+    "basis-vocab-vervoer-richting-008",
+    "basis-vocab-vervoer-richting-009",
+    "basis-vocab-vervoer-richting-010",
+    "basis-vocab-vervoer-richting-027",
+    "basis-vocab-luisteren-013",
+    "basis-vocab-luisteren-014",
+    "basis-vocab-luisteren-015",
+    "basis-vocab-luisteren-012",
+    "basis-vocab-vervoer-richting-030",
+    "basis-vocab-vervoer-richting-031"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "luisteren-de-weg-l-01",
+      "title": "Rechtsaf, linksaf, rechtdoor",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Als je de weg vraagt, hoor je een **routebeschrijving**. Luister naar **de richting** (rechts, links, rechtdoor) en naar **waar** je moet afslaan."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Je hoort",
+            "Wat doe je?"
+          ],
+          "rows": [
+            [
+              "Ga rechtdoor.",
+              "Ga verder in dezelfde richting. ⬆"
+            ],
+            [
+              "Ga rechtsaf. / Sla rechts af.",
+              "Ga naar rechts. ➡"
+            ],
+            [
+              "Ga linksaf. / Sla links af.",
+              "Ga naar links. ⬅"
+            ],
+            [
+              "Neem de tweede straat links.",
+              "Tel de straten: bij de tweede straat ga je naar links."
+            ],
+            [
+              "Bij het stoplicht …",
+              "Waar de lampen rood, oranje en groen zijn."
+            ],
+            [
+              "Bij de rotonde …",
+              "Bij het ronde kruispunt."
+            ],
+            [
+              "Steek over.",
+              "Ga naar de andere kant van de straat."
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Rechtsaf** en **rechtdoor** klinken bijna hetzelfde. Luister naar het einde: rechts-**af** = afslaan naar rechts. Recht-**door** = niet afslaan, verder lopen."
+        },
+        {
+          "kind": "example",
+          "nl": "Ga bij de kerk rechtdoor.",
+          "note": "Niet afslaan."
+        },
+        {
+          "kind": "example",
+          "nl": "Ga bij het tweede stoplicht rechtsaf.",
+          "note": "Naar rechts."
+        },
+        {
+          "kind": "example",
+          "nl": "Neem de derde straat links.",
+          "note": "Tel: één, twee, drie. Dan naar links."
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "luisteren-de-weg-l-02",
+      "title": "Waar is het?",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Je hoort",
+            "Betekenis"
+          ],
+          "rows": [
+            [
+              "naast de bakker",
+              "direct links of rechts van de bakker"
+            ],
+            [
+              "tegenover het station",
+              "aan de andere kant van de straat"
+            ],
+            [
+              "op de hoek",
+              "waar twee straten bij elkaar komen"
+            ],
+            [
+              "achter de kerk",
+              "aan de andere kant van de kerk"
+            ],
+            [
+              "tussen de bank en de apotheek",
+              "met de bank aan de ene kant en de apotheek aan de andere kant"
+            ],
+            [
+              "aan het einde van de straat",
+              "waar de straat stopt"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Teken de route op een papiertje als je oefent: één pijl voor elke stap."
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "luisteren-de-weg-l-03",
+      "title": "Luister en lees mee",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Olga vraagt de weg naar de bibliotheek. Luister en lees mee. **Teken de route.**"
+        },
+        {
+          "kind": "fragment",
+          "fragment": {
+            "kind": "gesprek",
+            "situation": "Olga vraagt een man de weg naar de bibliotheek.",
+            "speakers": [
+              {
+                "name": "Olga",
+                "voice": "nathalie"
+              },
+              {
+                "name": "Man",
+                "voice": "ronnie"
+              }
+            ],
+            "lines": [
+              {
+                "speaker": "Olga",
+                "nl": "Pardon, weet u waar de bibliotheek is?"
+              },
+              {
+                "speaker": "Man",
+                "nl": "Ja hoor. Ga hier rechtdoor tot het stoplicht."
+              },
+              {
+                "speaker": "Man",
+                "nl": "Bij het stoplicht gaat u linksaf. Dat is de Stationsstraat."
+              },
+              {
+                "speaker": "Man",
+                "nl": "Dan neemt u de tweede straat rechts."
+              },
+              {
+                "speaker": "Man",
+                "nl": "De bibliotheek is aan de linkerkant, naast de supermarkt."
+              },
+              {
+                "speaker": "Olga",
+                "nl": "Dus: rechtdoor, bij het stoplicht links, de tweede straat rechts. Dank u wel!"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "text",
+          "md": "Olga **herhaalt** de route. Dat is slim: zo weet je zeker dat je het goed hebt gehoord."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-de-weg-q-001",
+        "type": "mc",
+        "tags": [
+          "luisteren:de-weg"
+        ],
+        "prompt": "Luister. Wat doe je bij het stoplicht?",
+        "options": [
+          "Rechtsaf",
+          "Rechtdoor",
+          "Linksaf"
+        ],
+        "answer": 1,
+        "explanation": "Bij het stoplicht ga je rechtdoor. Pas daarna, bij de eerste straat, ga je naar links.",
+        "difficulty": 1,
+        "listen": "Ga bij het stoplicht rechtdoor, en neem dan de eerste straat links."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-de-weg-q-002",
+        "type": "mc",
+        "tags": [
+          "luisteren:de-weg"
+        ],
+        "prompt": "Luister. Welke straat moet je nemen?",
+        "options": [
+          "De tweede straat rechts",
+          "De derde straat rechts",
+          "De derde straat links"
+        ],
+        "answer": 1,
+        "explanation": "'Neem de derde straat rechts.'",
+        "difficulty": 1,
+        "listen": "Neem de derde straat rechts. Dat is de Molenweg."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-de-weg-q-003",
+        "type": "mc",
+        "tags": [
+          "luisteren:de-weg"
+        ],
+        "prompt": "Luister. Waar is de apotheek?",
+        "options": [
+          "Naast het gemeentehuis",
+          "Tegenover het gemeentehuis",
+          "Tegenover de bloemenwinkel"
+        ],
+        "answer": 1,
+        "explanation": "De apotheek is tegenover het gemeentehuis. Naast de apotheek is de bloemenwinkel.",
+        "difficulty": 1,
+        "listen": "De apotheek is tegenover het gemeentehuis, naast de bloemenwinkel."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-de-weg-q-004",
+        "type": "listening",
+        "tags": [
+          "luisteren:gesprek"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+        "fragment": {
+          "kind": "gesprek",
+          "situation": "Samir is nieuw in de stad. Hij vraagt een vrouw de weg naar het station.",
+          "speakers": [
+            {
+              "name": "Samir",
+              "voice": "alex"
+            },
+            {
+              "name": "Vrouw",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Samir",
+              "nl": "Sorry mevrouw, hoe kom ik bij het station?"
+            },
+            {
+              "speaker": "Vrouw",
+              "nl": "Het station? Dat is niet ver. Lopend is het tien minuten."
+            },
+            {
+              "speaker": "Vrouw",
+              "nl": "Ga hier eerst rechtdoor, over de brug."
+            },
+            {
+              "speaker": "Vrouw",
+              "nl": "Na de brug gaat u rechtsaf. Daar is een groot plein."
+            },
+            {
+              "speaker": "Vrouw",
+              "nl": "Steek het plein over. Het station is aan de andere kant van het plein."
+            },
+            {
+              "speaker": "Samir",
+              "nl": "Rechtdoor, over de brug, rechtsaf, en dan over het plein."
+            },
+            {
+              "speaker": "Vrouw",
+              "nl": "Precies. U kunt ook de bus nemen, lijn vier. Maar lopen gaat sneller."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-de-weg-q-004-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Hoe lang moet Samir lopen?",
+            "options": [
+              "5 minuten",
+              "10 minuten",
+              "4 minuten"
+            ],
+            "answer": 1,
+            "explanation": "'Lopend is het tien minuten.' Vier is het nummer van de bus.",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-de-weg-q-004-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Wat doet Samir na de brug?",
+            "options": [
+              "Hij gaat rechtdoor",
+              "Hij gaat rechtsaf",
+              "Hij gaat linksaf"
+            ],
+            "answer": 1,
+            "explanation": "'Na de brug gaat u rechtsaf.'",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-de-weg-q-004-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Waar is het station?",
+            "options": [
+              "Aan het einde van de brug",
+              "Aan de andere kant van het plein",
+              "Midden op het plein"
+            ],
+            "answer": 1,
+            "explanation": "'Het station is aan de andere kant van het plein.'",
+            "difficulty": 1,
+            "answerLine": 4
+          }
+        ],
+        "explanation": "Rechtdoor en rechtsaf: luister naar het einde van het woord. Eerst rechtdoor (over de brug), daarna rechtsaf.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-de-weg-q-005",
+        "type": "listening",
+        "tags": [
+          "luisteren:telefoon"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+        "fragment": {
+          "kind": "telefoon",
+          "situation": "Lisa gaat naar de verjaardag van haar collega Tom. Ze belt hem, want ze kan zijn huis niet vinden.",
+          "speakers": [
+            {
+              "name": "Tom",
+              "voice": "ronnie",
+              "phone": true
+            },
+            {
+              "name": "Lisa",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Tom",
+              "nl": "Hoi Lisa! Waar ben je?"
+            },
+            {
+              "speaker": "Lisa",
+              "nl": "Ik sta bij de supermarkt in de Kerkstraat. Maar ik zie jouw straat niet."
+            },
+            {
+              "speaker": "Tom",
+              "nl": "O, je bent bijna hier. Loop de Kerkstraat uit tot de rotonde."
+            },
+            {
+              "speaker": "Tom",
+              "nl": "Bij de rotonde ga je linksaf. Dat is de Parkweg."
+            },
+            {
+              "speaker": "Tom",
+              "nl": "Mijn huis is nummer twaalf. Het huis met de blauwe deur, tegenover de speeltuin."
+            },
+            {
+              "speaker": "Lisa",
+              "nl": "Linksaf bij de rotonde, nummer twaalf, blauwe deur. Ik ben er over vijf minuten!"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-de-weg-q-005-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Waar is Lisa nu?",
+            "options": [
+              "Bij de rotonde",
+              "Bij de supermarkt",
+              "Bij de speeltuin"
+            ],
+            "answer": 1,
+            "explanation": "Lisa zegt: 'Ik sta bij de supermarkt in de Kerkstraat.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-de-weg-q-005-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wat moet Lisa doen bij de rotonde?",
+            "options": [
+              "Rechtsaf gaan",
+              "Linksaf gaan",
+              "Rechtdoor gaan"
+            ],
+            "answer": 1,
+            "explanation": "'Bij de rotonde ga je linksaf.'",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-de-weg-q-005-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Welk huis is het huis van Tom?",
+            "options": [
+              "Nummer 12, met de blauwe deur",
+              "Nummer 20, met de blauwe deur",
+              "Nummer 12, naast de speeltuin"
+            ],
+            "answer": 0,
+            "explanation": "'Mijn huis is nummer twaalf. Het huis met de blauwe deur, tegenover de speeltuin.'",
+            "difficulty": 1,
+            "answerLine": 4
+          }
+        ],
+        "explanation": "Lisa herhaalt de route aan het einde. Zo kun je controleren of je het goed hebt gehoord.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-de-weg-q-006",
+        "type": "listening",
+        "tags": [
+          "luisteren:gesprek"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+        "fragment": {
+          "kind": "gesprek",
+          "situation": "Yasmin staat bij een bushalte. Ze vraagt een man welke bus naar het ziekenhuis gaat.",
+          "scene": "bushalte",
+          "speakers": [
+            {
+              "name": "Yasmin",
+              "voice": "nathalie"
+            },
+            {
+              "name": "Man",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Yasmin",
+              "nl": "Pardon, welke bus gaat naar het ziekenhuis?"
+            },
+            {
+              "speaker": "Man",
+              "nl": "Lijn zes gaat naar het ziekenhuis. Maar die stopt hier niet."
+            },
+            {
+              "speaker": "Man",
+              "nl": "U kunt hier beter lijn negen nemen, tot het station."
+            },
+            {
+              "speaker": "Man",
+              "nl": "Bij het station stapt u over op lijn zes. Die stopt voor de deur van het ziekenhuis."
+            },
+            {
+              "speaker": "Yasmin",
+              "nl": "Dus eerst negen, dan zes. Hoe vaak rijdt de bus?"
+            },
+            {
+              "speaker": "Man",
+              "nl": "Elk kwartier. Kijk, daar komt lijn negen al."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-de-weg-q-006-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Welke bus neemt Yasmin eerst?",
+            "options": [
+              "Lijn 6",
+              "Lijn 9",
+              "Lijn 19"
+            ],
+            "answer": 1,
+            "explanation": "Lijn zes stopt hier niet. 'U kunt hier beter lijn negen nemen.'",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-de-weg-q-006-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Waar stapt Yasmin over?",
+            "options": [
+              "Bij het ziekenhuis",
+              "Bij het station",
+              "Bij de bushalte"
+            ],
+            "answer": 1,
+            "explanation": "'Bij het station stapt u over op lijn zes.'",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-de-weg-q-006-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Hoe vaak rijdt de bus?",
+            "options": [
+              "Elke 10 minuten",
+              "Elke 15 minuten",
+              "Elk half uur"
+            ],
+            "answer": 1,
+            "explanation": "'Elk kwartier.' Een kwartier is 15 minuten.",
+            "difficulty": 1,
+            "answerLine": 5
+          }
+        ],
+        "explanation": "Lijn zes hoor je als eerste, maar die stopt hier niet. Yasmin neemt eerst lijn negen.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-de-weg-q-007",
+        "type": "mc",
+        "tags": [
+          "luisteren:de-weg"
+        ],
+        "prompt": "Je hoort: 'Steek de straat over.' Wat doe je?",
+        "options": [
+          "Je loopt naar de andere kant van de straat.",
+          "Je loopt verder in dezelfde straat.",
+          "Je gaat de volgende straat in."
+        ],
+        "answer": 0,
+        "explanation": "Oversteken = naar de andere kant van de straat gaan.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-de-weg-q-008",
+        "type": "mc",
+        "tags": [
+          "luisteren:de-weg"
+        ],
+        "prompt": "Luister. Waar is de ingang?",
+        "options": [
+          "Aan de voorkant",
+          "Aan de achterkant",
+          "Naast het gebouw"
+        ],
+        "answer": 1,
+        "explanation": "'De ingang is niet aan de voorkant … De ingang is aan de achterkant.'",
+        "difficulty": 1,
+        "listen": "De ingang is niet aan de voorkant. Loop om het gebouw heen. De ingang is aan de achterkant, bij de fietsenstalling."
+      }
+    }
+  ]
+}

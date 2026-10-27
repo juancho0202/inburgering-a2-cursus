@@ -1,0 +1,736 @@
+{
+  "id": "luisteren-school-buurt",
+  "moduleId": "luisteren",
+  "title": "School, buren en buurthuis",
+  "goal": "Je verstaat gesprekken met de leraar, met je buren en in het buurthuis.",
+  "scene": "buurthuis",
+  "estimatedMinutes": 25,
+  "tags": [
+    "luisteren:school-buurt"
+  ],
+  "vocabRefs": [
+    "basis-vocab-school-kinderen-001",
+    "basis-vocab-school-kinderen-002",
+    "basis-vocab-school-kinderen-005",
+    "basis-vocab-school-kinderen-019",
+    "basis-vocab-persoon-017",
+    "basis-vocab-wonen-004",
+    "basis-vocab-wonen-009",
+    "basis-vocab-wonen-041"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "luisteren-school-buurt-l-01",
+      "title": "Op school en in de buurt",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Op school praat je met de juf of de meester over je kind: hoe het gaat, een schoolreisje, of wat je kind moet meenemen. In de buurt praat je met je buren. Of je hoort iets in het **buurthuis**: een activiteit, een cursus of een probleem in de straat."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Je hoort",
+            "Betekenis"
+          ],
+          "rows": [
+            [
+              "Uw zoon doet goed mee in de klas.",
+              "Het gaat goed met hem op school."
+            ],
+            [
+              "Ze heeft nog moeite met lezen.",
+              "Lezen is nog moeilijk voor haar."
+            ],
+            [
+              "Wilt u hier uw handtekening zetten?",
+              "Wilt u hier uw naam schrijven?"
+            ],
+            [
+              "Iedereen is welkom.",
+              "Je mag komen."
+            ],
+            [
+              "U kunt zich opgeven tot vrijdag.",
+              "Zeg vóór het einde van vrijdag dat je komt."
+            ],
+            [
+              "Dat mag niet zomaar.",
+              "Daar zijn regels voor."
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "In een gesprek met de juf gaat een vraag vaak over **wat de ouder moet doen**. Luister naar *wilt u …*, *kunt u …* en *vergeet niet …*."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-school-buurt-q-001",
+        "type": "listening",
+        "tags": [
+          "luisteren:gesprek"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+        "fragment": {
+          "kind": "gesprek",
+          "situation": "Karim praat met de juf van zijn dochter Yara.",
+          "scene": "schoolplein",
+          "speakers": [
+            {
+              "name": "Juf Anouk",
+              "voice": "nathalie"
+            },
+            {
+              "name": "Karim",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Juf Anouk",
+              "nl": "Fijn dat u er bent, meneer Haddad. Yara doet het goed in groep vier."
+            },
+            {
+              "speaker": "Juf Anouk",
+              "nl": "Ze rekent heel goed. Maar met lezen heeft ze nog moeite."
+            },
+            {
+              "speaker": "Karim",
+              "nl": "Kunnen wij thuis iets doen?"
+            },
+            {
+              "speaker": "Juf Anouk",
+              "nl": "Ja. Lees elke avond een kwartier samen met haar. Dat helpt echt."
+            },
+            {
+              "speaker": "Karim",
+              "nl": "Dat doen we. Ze vindt boeken over dieren leuk."
+            },
+            {
+              "speaker": "Juf Anouk",
+              "nl": "Dan kunt u met haar naar de bibliotheek gaan. Kinderen zijn daar gratis lid."
+            },
+            {
+              "speaker": "Karim",
+              "nl": "Goed idee. Dat doen we zaterdag."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-school-buurt-q-001-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Waar heeft Yara nog moeite mee?",
+            "options": [
+              "Met rekenen",
+              "Met lezen",
+              "Met schrijven"
+            ],
+            "answer": 1,
+            "explanation": "'Ze rekent heel goed. Maar met lezen heeft ze nog moeite.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-school-buurt-q-001-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Wat moet Karim thuis doen?",
+            "options": [
+              "Elke avond een kwartier samen lezen",
+              "Elke avond een kwartier samen rekenen",
+              "Elke week nieuwe boeken kopen"
+            ],
+            "answer": 0,
+            "explanation": "'Lees elke avond een kwartier samen met haar.'",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-school-buurt-q-001-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Wanneer gaan ze naar de bibliotheek?",
+            "options": [
+              "Vandaag",
+              "Zaterdag",
+              "Zondag"
+            ],
+            "answer": 1,
+            "explanation": "Karim zegt: 'Dat doen we zaterdag.'",
+            "difficulty": 1,
+            "answerLine": 6
+          }
+        ],
+        "explanation": "Na 'maar' komt het probleem: Yara rekent goed, maar lezen is moeilijk.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-school-buurt-q-002",
+        "type": "listening",
+        "tags": [
+          "luisteren:uitleg"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de uitleg.",
+        "fragment": {
+          "kind": "uitleg",
+          "situation": "Meester Joost vertelt de ouders van groep zes over het schoolreisje.",
+          "speakers": [
+            {
+              "name": "Meester Joost",
+              "voice": "ronnie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Meester Joost",
+              "nl": "Beste ouders, op vrijdag veertien juni gaan we op schoolreisje naar de dierentuin."
+            },
+            {
+              "speaker": "Meester Joost",
+              "nl": "We vertrekken om half negen met de bus. Wees dus op tijd: om kwart over acht op school."
+            },
+            {
+              "speaker": "Meester Joost",
+              "nl": "We zijn om vier uur terug."
+            },
+            {
+              "speaker": "Meester Joost",
+              "nl": "Uw kind moet een lunchpakket en iets te drinken meenemen. Geld is niet nodig."
+            },
+            {
+              "speaker": "Meester Joost",
+              "nl": "Het schoolreisje kost vijftien euro. U kunt betalen tot één juni."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-school-buurt-q-002-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Hoe laat moeten de kinderen op school zijn?",
+            "options": [
+              "Om 8.15 uur",
+              "Om 8.30 uur",
+              "Om 8.45 uur"
+            ],
+            "answer": 0,
+            "explanation": "'Om kwart over acht op school.' Om half negen vertrekt de bus.",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-school-buurt-q-002-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Wat hoeven de kinderen niet mee te nemen?",
+            "options": [
+              "Een lunchpakket",
+              "Iets te drinken",
+              "Geld"
+            ],
+            "answer": 2,
+            "explanation": "'Geld is niet nodig.'",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-school-buurt-q-002-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Tot wanneer kunnen de ouders betalen?",
+            "options": [
+              "Tot 1 juni",
+              "Tot 14 juni",
+              "Tot 15 juni"
+            ],
+            "answer": 0,
+            "explanation": "'U kunt betalen tot één juni.' Veertien juni is de dag van het schoolreisje.",
+            "difficulty": 1,
+            "answerLine": 4
+          }
+        ],
+        "explanation": "Twee tijden: de bus vertrekt om half negen, maar de kinderen moeten om kwart over acht op school zijn.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-school-buurt-q-003",
+        "type": "listening",
+        "tags": [
+          "luisteren:gesprek"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+        "fragment": {
+          "kind": "gesprek",
+          "situation": "Jan woont naast Esra. Hij belt bij haar aan.",
+          "scene": "buren",
+          "speakers": [
+            {
+              "name": "Esra",
+              "voice": "nathalie"
+            },
+            {
+              "name": "Jan",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Esra",
+              "nl": "Hallo buurman! Kom binnen."
+            },
+            {
+              "speaker": "Jan",
+              "nl": "Hallo Esra. Ik wil je even iets vertellen. Wij geven zaterdag een feest, voor de verjaardag van mijn vrouw."
+            },
+            {
+              "speaker": "Jan",
+              "nl": "Het kan misschien laat worden. Tot een uur 's nachts."
+            },
+            {
+              "speaker": "Esra",
+              "nl": "O, dat is goed. Fijn dat je het zegt."
+            },
+            {
+              "speaker": "Jan",
+              "nl": "Je bent ook welkom, hoor! Vanaf acht uur."
+            },
+            {
+              "speaker": "Esra",
+              "nl": "Leuk, dank je. Ik help eerst mijn zus met verhuizen. Om negen uur ben ik er."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-school-buurt-q-003-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Waarom geven Jan en zijn vrouw een feest?",
+            "options": [
+              "Ze zijn verhuisd",
+              "Zijn vrouw is jarig",
+              "Ze zijn getrouwd"
+            ],
+            "answer": 1,
+            "explanation": "'Wij geven zaterdag een feest, voor de verjaardag van mijn vrouw.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-school-buurt-q-003-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Tot hoe laat duurt het feest misschien?",
+            "options": [
+              "Tot 0.00 uur",
+              "Tot 1.00 uur",
+              "Tot 2.00 uur"
+            ],
+            "answer": 1,
+            "explanation": "'Tot een uur 's nachts.'",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-school-buurt-q-003-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Hoe laat komt Esra naar het feest?",
+            "options": [
+              "Om 20.00 uur",
+              "Om 21.00 uur",
+              "Om 1.00 uur"
+            ],
+            "answer": 1,
+            "explanation": "Het feest begint om acht uur. Maar Esra zegt: 'Om negen uur ben ik er.'",
+            "difficulty": 1,
+            "answerLine": 5
+          }
+        ],
+        "explanation": "Het feest begint om acht uur, maar Esra komt later. Luister wat zíj zegt.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-school-buurt-q-004",
+        "type": "listening",
+        "tags": [
+          "luisteren:uitleg"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de uitleg.",
+        "fragment": {
+          "kind": "uitleg",
+          "situation": "Ana is in het buurthuis. Een medewerker vertelt over de activiteiten.",
+          "scene": "buurthuis",
+          "speakers": [
+            {
+              "name": "Wim",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Wim",
+              "nl": "Welkom in buurthuis De Zon. Ik vertel even wat er deze maand te doen is."
+            },
+            {
+              "speaker": "Wim",
+              "nl": "Elke maandagochtend is er een taalcafé. Daar kunt u Nederlands praten met vrijwilligers. Het is gratis."
+            },
+            {
+              "speaker": "Wim",
+              "nl": "Op woensdagmiddag is er een computercursus. Die kost vijf euro per les."
+            },
+            {
+              "speaker": "Wim",
+              "nl": "En op de laatste zaterdag van de maand koken we samen. Iedereen neemt iets mee uit zijn eigen land."
+            },
+            {
+              "speaker": "Wim",
+              "nl": "Wilt u meedoen met de computercursus? Geef u dan op bij de balie, vóór vrijdag."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-school-buurt-q-004-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Wanneer is het taalcafé?",
+            "options": [
+              "Op maandagochtend",
+              "Op woensdagmiddag",
+              "Op zaterdag"
+            ],
+            "answer": 0,
+            "explanation": "'Elke maandagochtend is er een taalcafé.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-school-buurt-q-004-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Wat kost de computercursus?",
+            "options": [
+              "Niets",
+              "€ 5 per les",
+              "€ 15 per les"
+            ],
+            "answer": 1,
+            "explanation": "'Die kost vijf euro per les.' Het taalcafé is gratis.",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-school-buurt-q-004-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Wat moet je doen als je de computercursus wilt volgen?",
+            "options": [
+              "Je opgeven bij de balie",
+              "Iets te eten meenemen",
+              "Een vrijwilliger bellen"
+            ],
+            "answer": 0,
+            "explanation": "'Geef u dan op bij de balie, vóór vrijdag.'",
+            "difficulty": 1,
+            "answerLine": 4
+          }
+        ],
+        "explanation": "Drie activiteiten op drie dagen. Lees de vraag: over welke activiteit gaat het?",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-school-buurt-q-005",
+        "type": "listening",
+        "tags": [
+          "luisteren:telefoon"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+        "fragment": {
+          "kind": "telefoon",
+          "situation": "De verwarming van Olga is kapot. Ze belt de woningcorporatie.",
+          "speakers": [
+            {
+              "name": "Medewerker",
+              "voice": "ronnie",
+              "phone": true
+            },
+            {
+              "name": "Olga",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Medewerker",
+              "nl": "Woningcorporatie Thuis, goedemiddag."
+            },
+            {
+              "speaker": "Olga",
+              "nl": "Goedemiddag, met Olga Petrova, Lindelaan zeven. Mijn verwarming doet het niet. Het is heel koud in huis."
+            },
+            {
+              "speaker": "Medewerker",
+              "nl": "Wat vervelend. Sinds wanneer is dat?"
+            },
+            {
+              "speaker": "Olga",
+              "nl": "Sinds gisteravond."
+            },
+            {
+              "speaker": "Medewerker",
+              "nl": "Ik stuur een monteur. Hij kan morgen komen, tussen acht en twaalf uur."
+            },
+            {
+              "speaker": "Olga",
+              "nl": "Morgenochtend werk ik. Kan hij ook na twaalf uur komen?"
+            },
+            {
+              "speaker": "Medewerker",
+              "nl": "Dan wordt het donderdag, tussen één en vijf uur."
+            },
+            {
+              "speaker": "Olga",
+              "nl": "Liever toch morgen. Ik vraag mijn buurvrouw of zij de deur opendoet."
+            },
+            {
+              "speaker": "Medewerker",
+              "nl": "Prima. Dan komt de monteur morgenochtend."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-school-buurt-q-005-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wat is het probleem?",
+            "options": [
+              "De kraan lekt",
+              "De verwarming doet het niet",
+              "De deur is kapot"
+            ],
+            "answer": 1,
+            "explanation": "'Mijn verwarming doet het niet.'",
+            "difficulty": 2,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-school-buurt-q-005-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wanneer komt de monteur?",
+            "options": [
+              "Morgen tussen 8.00 en 12.00 uur",
+              "Donderdag tussen 13.00 en 17.00 uur",
+              "Vandaag na 12.00 uur"
+            ],
+            "answer": 0,
+            "explanation": "Donderdag is te laat voor Olga. 'Liever toch morgen.' De medewerker zegt: 'Dan komt de monteur morgenochtend.'",
+            "difficulty": 2,
+            "answerLine": 8
+          },
+          {
+            "id": "luisteren-school-buurt-q-005-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wie doet de deur open voor de monteur?",
+            "options": [
+              "Olga",
+              "De buurvrouw van Olga",
+              "De huisbaas"
+            ],
+            "answer": 1,
+            "explanation": "Olga werkt morgen. 'Ik vraag mijn buurvrouw of zij de deur opendoet.'",
+            "difficulty": 2,
+            "answerLine": 7
+          }
+        ],
+        "explanation": "Het plan verandert twee keer. Aan het einde kiest Olga toch voor morgenochtend.",
+        "difficulty": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-school-buurt-q-006",
+        "type": "mc",
+        "tags": [
+          "luisteren:school-buurt"
+        ],
+        "prompt": "Luister. Wat vraagt de buurman?",
+        "options": [
+          "Of je zijn planten water geeft",
+          "Of je mee op vakantie gaat",
+          "Of je zijn post wilt halen"
+        ],
+        "answer": 0,
+        "explanation": "'Wil jij mijn planten water geven?'",
+        "difficulty": 1,
+        "listen": "Goedemorgen! Ik ga een week op vakantie. Wil jij mijn planten water geven?"
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-school-buurt-q-007",
+        "type": "listening",
+        "tags": [
+          "luisteren:gesprek"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+        "fragment": {
+          "kind": "gesprek",
+          "situation": "Rachid zet een oude kast buiten. Zijn buurvrouw praat met hem.",
+          "speakers": [
+            {
+              "name": "Buurvrouw",
+              "voice": "nathalie"
+            },
+            {
+              "name": "Rachid",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Buurvrouw",
+              "nl": "Hé Rachid, zet je die kast hier op de stoep?"
+            },
+            {
+              "speaker": "Rachid",
+              "nl": "Ja, hij is oud. Ik heb een nieuwe gekocht."
+            },
+            {
+              "speaker": "Buurvrouw",
+              "nl": "Dat mag niet zomaar. Je kunt een boete krijgen."
+            },
+            {
+              "speaker": "Rachid",
+              "nl": "O? Wat moet ik dan doen?"
+            },
+            {
+              "speaker": "Buurvrouw",
+              "nl": "Bel de gemeente, of maak een afspraak op de website. Dan halen ze hem gratis op. In onze straat komen ze op dinsdag."
+            },
+            {
+              "speaker": "Rachid",
+              "nl": "Dan zet ik hem maandagavond buiten."
+            },
+            {
+              "speaker": "Buurvrouw",
+              "nl": "Ja, maandagavond na zeven uur. Eerder mag niet."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-school-buurt-q-007-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Wat kan er gebeuren als Rachid de kast zomaar buiten zet?",
+            "options": [
+              "Hij krijgt een boete",
+              "De kast wordt gestolen",
+              "De buren worden boos"
+            ],
+            "answer": 0,
+            "explanation": "'Dat mag niet zomaar. Je kunt een boete krijgen.'",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-school-buurt-q-007-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Wanneer haalt de gemeente het grofvuil op in hun straat?",
+            "options": [
+              "Op maandag",
+              "Op dinsdag",
+              "Op woensdag"
+            ],
+            "answer": 1,
+            "explanation": "'In onze straat komen ze op dinsdag.'",
+            "difficulty": 1,
+            "answerLine": 4
+          },
+          {
+            "id": "luisteren-school-buurt-q-007-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Wanneer mag Rachid de kast buiten zetten?",
+            "options": [
+              "Maandagavond na 19.00 uur",
+              "Maandagochtend",
+              "Dinsdagavond na 19.00 uur"
+            ],
+            "answer": 0,
+            "explanation": "'Maandagavond na zeven uur. Eerder mag niet.'",
+            "difficulty": 1,
+            "answerLine": 6
+          }
+        ],
+        "explanation": "Grofvuil (een kast, een bank) mag niet zomaar op straat. Je maakt een afspraak met de gemeente.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

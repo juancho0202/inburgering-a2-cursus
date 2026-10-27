@@ -55,7 +55,23 @@ let generation = 0;
 const reading = ref(false);
 const activeId = ref<string | null>(null);
 
+/** Another sound that plays now (a listening fragment): it stops whenever the voice stops or starts. */
+let otherSound: (() => void) | null = null;
+
+/** Start another sound: stops the voice (and any other such sound); `stop` is called when something else starts. */
+export function claimSound(stop: () => void) {
+  stopSpeech();
+  otherSound = stop;
+}
+/** That sound ended by itself. */
+export function releaseSound(stop: () => void) {
+  if (otherSound === stop) otherSound = null;
+}
+
 export function stopSpeech() {
+  const other = otherSound;
+  otherSound = null;
+  other?.();
   generation++;
   if (pending) clearTimeout(pending);
   pending = null;
@@ -66,6 +82,24 @@ export function stopSpeech() {
   finishLine = null;
   reading.value = false;
   activeId.value = null;
+}
+
+/**
+ * Say a line with the device's own voice (for listening fragments that have no recording). `pitch` tells the
+ * people in a conversation apart. Resolves when it has been said or was stopped; false when there is no voice.
+ */
+export function sayWithDevice(text: string, opts: { pitch?: number; rate?: number } = {}): Promise<boolean> {
+  if (!voice.value) pickVoice(); // the voices can arrive after the page loaded
+  if (typeof speechSynthesis === "undefined" || !voice.value) return Promise.resolve(false);
+  return new Promise((done) => {
+    const u = new SpeechSynthesisUtterance(speakable(text));
+    u.lang = "nl-NL";
+    u.voice = voice.value;
+    u.pitch = opts.pitch ?? 1;
+    u.rate = opts.rate ?? 0.95;
+    u.onend = u.onerror = () => done(true);
+    speechSynthesis.speak(u);
+  });
 }
 
 export function useSpeech() {

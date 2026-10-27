@@ -1,0 +1,568 @@
+{
+  "id": "luisteren-radio",
+  "moduleId": "luisteren",
+  "title": "Nieuws, weer en verkeer",
+  "goal": "Je verstaat korte berichten op de radio: het nieuws, het weerbericht en de verkeersinformatie.",
+  "scene": "radio",
+  "estimatedMinutes": 25,
+  "tags": [
+    "luisteren:radio"
+  ],
+  "vocabRefs": [
+    "basis-vocab-luisteren-019",
+    "basis-vocab-luisteren-020",
+    "basis-vocab-luisteren-021",
+    "basis-vocab-vrije-tijd-weer-012",
+    "basis-vocab-vrije-tijd-weer-013",
+    "basis-vocab-vrije-tijd-weer-014",
+    "basis-vocab-vervoer-richting-034",
+    "basis-vocab-luisteren-022",
+    "basis-vocab-luisteren-023",
+    "basis-vocab-luisteren-024"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "luisteren-radio-l-01",
+      "title": "Het nieuws",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Op de radio en op tv hoor je korte nieuwsberichten. De mensen praten vrij snel en gebruiken soms moeilijke woorden. Maar voor het examen hoef je niet alles te verstaan. Luister naar de **hoofdpunten**: **wat** is er gebeurd, **waar**, en **wanneer**?"
+        },
+        {
+          "kind": "tip",
+          "md": "Het belangrijkste staat bijna altijd in de **eerste zin** van een nieuwsbericht. Daarna komen de details."
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "luisteren-radio-l-02",
+      "title": "Het weer en het verkeer",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Je hoort",
+            "Betekenis"
+          ],
+          "rows": [
+            [
+              "Het wordt zonnig.",
+              "Er is veel zon."
+            ],
+            [
+              "Er zijn buien.",
+              "Het regent soms een tijdje."
+            ],
+            [
+              "Het is bewolkt.",
+              "Er zijn veel wolken."
+            ],
+            [
+              "Het wordt vijftien graden.",
+              "Het is 15 °C."
+            ],
+            [
+              "In het noorden … / In het zuiden …",
+              "Het weer is niet overal hetzelfde."
+            ],
+            [
+              "Er staat een file op de A2.",
+              "Veel auto's rijden langzaam of staan stil."
+            ],
+            [
+              "De weg is afgesloten.",
+              "Je kunt er niet langs."
+            ],
+            [
+              "Volg de omleiding.",
+              "Rijd een andere weg."
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Bij het weerbericht gaat een vraag vaak over **één dag** of **één deel van het land**. Luister goed: vandaag of morgen? Het noorden of het zuiden?"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-radio-q-001",
+        "type": "listening",
+        "tags": [
+          "luisteren:radio"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de radio.",
+        "fragment": {
+          "kind": "radio",
+          "situation": "Lotte luistert naar het weerbericht. Ze wil morgen gaan fietsen.",
+          "speakers": [
+            {
+              "name": "Weerman",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Weerman",
+              "nl": "En dan het weer. Vandaag is het nog grijs en nat, met veel regen."
+            },
+            {
+              "speaker": "Weerman",
+              "nl": "Morgen wordt het beter. In de ochtend is het nog bewolkt, maar in de middag komt de zon."
+            },
+            {
+              "speaker": "Weerman",
+              "nl": "Het wordt achttien graden."
+            },
+            {
+              "speaker": "Weerman",
+              "nl": "Overmorgen, op zondag, is het weer slecht: veel wind en buien."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-radio-q-001-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Hoe is het weer morgenmiddag?",
+            "options": [
+              "Bewolkt",
+              "Zonnig",
+              "Regenachtig"
+            ],
+            "answer": 1,
+            "explanation": "'In de ochtend is het nog bewolkt, maar in de middag komt de zon.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-radio-q-001-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Hoe warm wordt het morgen?",
+            "options": [
+              "8 graden",
+              "18 graden",
+              "28 graden"
+            ],
+            "answer": 1,
+            "explanation": "'Het wordt achttien graden.'",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-radio-q-001-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Wanneer kan Lotte het beste gaan fietsen?",
+            "options": [
+              "Vandaag",
+              "Morgenmiddag",
+              "Zondag"
+            ],
+            "answer": 1,
+            "explanation": "Vandaag regent het en zondag is er wind en regen. Morgenmiddag schijnt de zon.",
+            "difficulty": 1,
+            "answerLine": 1
+          }
+        ],
+        "explanation": "Drie dagen in één weerbericht: vandaag, morgen en zondag. Over welke dag gaat de vraag?",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-radio-q-002",
+        "type": "listening",
+        "tags": [
+          "luisteren:radio"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de radio.",
+        "fragment": {
+          "kind": "radio",
+          "situation": "Bram rijdt met de auto naar zijn werk in Utrecht. Hij luistert naar de verkeersinformatie.",
+          "speakers": [
+            {
+              "name": "Presentatrice",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Presentatrice",
+              "nl": "Het is half acht. Hier is de verkeersinformatie."
+            },
+            {
+              "speaker": "Presentatrice",
+              "nl": "Op de A12 bij Utrecht staat een file van acht kilometer, door een ongeluk."
+            },
+            {
+              "speaker": "Presentatrice",
+              "nl": "U heeft daar ongeveer een half uur vertraging."
+            },
+            {
+              "speaker": "Presentatrice",
+              "nl": "De A2 bij Amsterdam is vanaf vanavond afgesloten, tot maandagochtend. Er wordt aan de weg gewerkt. Volg de omleiding."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-radio-q-002-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Waarom staat er een file op de A12?",
+            "options": [
+              "Door een ongeluk",
+              "Door werk aan de weg",
+              "Door het weer"
+            ],
+            "answer": 0,
+            "explanation": "'Een file van acht kilometer, door een ongeluk.' Het werk aan de weg is op de A2.",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-radio-q-002-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Hoeveel vertraging is er bij Utrecht?",
+            "options": [
+              "8 minuten",
+              "Ongeveer een half uur",
+              "Ongeveer een uur"
+            ],
+            "answer": 1,
+            "explanation": "'U heeft daar ongeveer een half uur vertraging.' Acht is het aantal kilometers.",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-radio-q-002-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Tot wanneer is de A2 bij Amsterdam afgesloten?",
+            "options": [
+              "Tot vanavond",
+              "Tot maandagochtend",
+              "Tot half acht"
+            ],
+            "answer": 1,
+            "explanation": "'Vanaf vanavond afgesloten, tot maandagochtend.'",
+            "difficulty": 1,
+            "answerLine": 3
+          }
+        ],
+        "explanation": "Twee wegen, twee problemen. Lees de vraag: over welke weg gaat het?",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-radio-q-003",
+        "type": "listening",
+        "tags": [
+          "luisteren:radio"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de radio.",
+        "fragment": {
+          "kind": "radio",
+          "situation": "Fatima luistert naar het nieuws van de lokale radio.",
+          "speakers": [
+            {
+              "name": "Nieuwslezer",
+              "voice": "ronnie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Nieuwslezer",
+              "nl": "Het nieuws uit de regio. In Zuidwijk gaat volgende maand een nieuw zwembad open."
+            },
+            {
+              "speaker": "Nieuwslezer",
+              "nl": "Het oude zwembad was te klein en te oud. Het ging vorig jaar dicht."
+            },
+            {
+              "speaker": "Nieuwslezer",
+              "nl": "Het nieuwe zwembad heeft een groot bad en een speciaal bad voor kinderen."
+            },
+            {
+              "speaker": "Nieuwslezer",
+              "nl": "Op de eerste dag kan iedereen gratis zwemmen."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-radio-q-003-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Wat gaat er volgende maand open in Zuidwijk?",
+            "options": [
+              "Een nieuwe school",
+              "Een nieuw zwembad",
+              "Een nieuwe sporthal"
+            ],
+            "answer": 1,
+            "explanation": "De eerste zin: 'In Zuidwijk gaat volgende maand een nieuw zwembad open.'",
+            "difficulty": 1,
+            "answerLine": 0
+          },
+          {
+            "id": "luisteren-radio-q-003-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Waarom ging het oude zwembad dicht?",
+            "options": [
+              "Het was te klein en te oud",
+              "Er kwamen te weinig mensen",
+              "Het was te duur"
+            ],
+            "answer": 0,
+            "explanation": "'Het oude zwembad was te klein en te oud.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-radio-q-003-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Wat is er speciaal op de eerste dag?",
+            "options": [
+              "Er is een groot feest",
+              "Iedereen kan gratis zwemmen",
+              "Alleen kinderen mogen zwemmen"
+            ],
+            "answer": 1,
+            "explanation": "'Op de eerste dag kan iedereen gratis zwemmen.'",
+            "difficulty": 1,
+            "answerLine": 3
+          }
+        ],
+        "explanation": "Het belangrijkste staat in de eerste zin van een nieuwsbericht.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-radio-q-004",
+        "type": "mc",
+        "tags": [
+          "luisteren:radio"
+        ],
+        "prompt": "Luister. Hoe is het weer morgen in het noorden?",
+        "options": [
+          "Zonnig en warm",
+          "Bewolkt, met af en toe regen",
+          "Koud, met veel sneeuw"
+        ],
+        "answer": 1,
+        "explanation": "Het zuiden krijgt zon. 'In het noorden is het bewolkt, met af en toe een bui.'",
+        "difficulty": 1,
+        "listen": "Morgen is er in het zuiden veel zon. In het noorden is het bewolkt, met af en toe een bui."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-radio-q-005",
+        "type": "listening",
+        "tags": [
+          "luisteren:radio"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de radio.",
+        "fragment": {
+          "kind": "radio",
+          "situation": "Mehmet hoort op de radio een bericht over de trein.",
+          "speakers": [
+            {
+              "name": "Nieuwslezer",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Nieuwslezer",
+              "nl": "Dit weekend rijden er geen treinen tussen Amsterdam en Haarlem."
+            },
+            {
+              "speaker": "Nieuwslezer",
+              "nl": "Er wordt gewerkt aan het spoor, van zaterdagochtend vroeg tot zondagavond laat."
+            },
+            {
+              "speaker": "Nieuwslezer",
+              "nl": "Er rijden wel bussen. Reizigers moeten rekenen op een half uur extra reistijd."
+            },
+            {
+              "speaker": "Nieuwslezer",
+              "nl": "Vanaf maandagochtend rijden de treinen weer normaal."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-radio-q-005-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Waarom rijden er dit weekend geen treinen?",
+            "options": [
+              "Er is een staking",
+              "Er wordt gewerkt aan het spoor",
+              "Het weer is slecht"
+            ],
+            "answer": 1,
+            "explanation": "'Er wordt gewerkt aan het spoor.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-radio-q-005-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Wanneer rijden de treinen weer normaal?",
+            "options": [
+              "Zondagavond",
+              "Maandagochtend",
+              "Zaterdagochtend"
+            ],
+            "answer": 1,
+            "explanation": "'Vanaf maandagochtend rijden de treinen weer normaal.'",
+            "difficulty": 1,
+            "answerLine": 3
+          }
+        ],
+        "explanation": "Zaterdagochtend en zondagavond zijn het begin en het einde van het werk. De treinen rijden weer vanaf maandagochtend.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-radio-q-006",
+        "type": "listening",
+        "tags": [
+          "luisteren:radio"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de radio.",
+        "fragment": {
+          "kind": "radio",
+          "situation": "Noor luistert naar het nieuws op de radio.",
+          "speakers": [
+            {
+              "name": "Nieuwslezeres",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Nieuwslezeres",
+              "nl": "De gemeente gaat het afval anders ophalen."
+            },
+            {
+              "speaker": "Nieuwslezeres",
+              "nl": "Vanaf één maart komt de vuilniswagen niet meer elke week, maar één keer per twee weken."
+            },
+            {
+              "speaker": "Nieuwslezeres",
+              "nl": "Plastic en papier blijven apart. Die gooit u net als nu in een aparte container."
+            },
+            {
+              "speaker": "Nieuwslezeres",
+              "nl": "Op de website van de gemeente kunt u zien op welke dagen het afval wordt opgehaald."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-radio-q-006-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Wat verandert er vanaf 1 maart?",
+            "options": [
+              "Het afval wordt minder vaak opgehaald",
+              "Het afval wordt vaker opgehaald",
+              "Mensen moeten betalen voor plastic"
+            ],
+            "answer": 0,
+            "explanation": "'Niet meer elke week, maar één keer per twee weken.' Dat is minder vaak.",
+            "difficulty": 2,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-radio-q-006-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Waar kun je zien wanneer het afval wordt opgehaald?",
+            "options": [
+              "In de krant",
+              "Op de website van de gemeente",
+              "In een brief van de gemeente"
+            ],
+            "answer": 1,
+            "explanation": "'Op de website van de gemeente kunt u zien op welke dagen het afval wordt opgehaald.'",
+            "difficulty": 2,
+            "answerLine": 3
+          }
+        ],
+        "explanation": "'Niet meer …, maar …': het tweede deel is de nieuwe situatie.",
+        "difficulty": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-radio-q-007",
+        "type": "mc",
+        "tags": [
+          "luisteren:radio"
+        ],
+        "prompt": "Je hoort in de verkeersinformatie: 'Volg de omleiding.' Wat doe je?",
+        "options": [
+          "Je rijdt een andere weg.",
+          "Je wacht tot de weg weer open is.",
+          "Je neemt de trein."
+        ],
+        "answer": 0,
+        "explanation": "Een omleiding is een andere weg, als de gewone weg dicht is.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

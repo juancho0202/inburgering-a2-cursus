@@ -1,0 +1,603 @@
+{
+  "id": "luisteren-voicemail",
+  "moduleId": "luisteren",
+  "title": "Voicemail en berichten",
+  "goal": "Je verstaat een voicemail: wie belt er, waarom, en wat moet je doen?",
+  "scene": "voicemail",
+  "estimatedMinutes": 25,
+  "tags": [
+    "luisteren:voicemail"
+  ],
+  "vocabRefs": [
+    "basis-vocab-post-internet-telefoon-025",
+    "basis-vocab-post-internet-telefoon-026",
+    "basis-vocab-post-internet-telefoon-027",
+    "basis-vocab-post-internet-telefoon-024",
+    "basis-vocab-luisteren-007",
+    "basis-vocab-post-internet-telefoon-012",
+    "basis-vocab-post-internet-telefoon-028"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "luisteren-voicemail-l-01",
+      "title": "Wie, waarom, wat?",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Een voicemail is een bericht dat iemand voor je inspreekt. Je hoort maar **één persoon**. Een voicemail heeft bijna altijd drie delen:\n\n1. **Wie belt er?** *Hallo, met Ingrid van de bibliotheek.*\n2. **Waarom belt hij of zij?** *Het boek dat u wilde lenen, is binnen.*\n3. **Wat moet je doen?** *U kunt het tot vrijdag ophalen.*"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Deel",
+            "Let op deze woorden"
+          ],
+          "rows": [
+            [
+              "Wie?",
+              "met …, u spreekt met …, hoi, met …"
+            ],
+            [
+              "Waarom?",
+              "ik bel omdat …, ik bel over …, helaas …"
+            ],
+            [
+              "Wat moet je doen?",
+              "wilt u …, kun je …, bel me terug, vergeet niet …, u hoeft niet …"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Let op **niet** en **geen**: *U hoeft niet terug te bellen* is iets heel anders dan *U moet terugbellen*."
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "luisteren-voicemail-l-02",
+      "title": "Luister en lees mee",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Samir heeft een voicemail van de bibliotheek. Luister en lees mee. **Wie belt er, waarom, en wat moet Samir doen?**"
+        },
+        {
+          "kind": "fragment",
+          "fragment": {
+            "kind": "voicemail",
+            "situation": "Samir heeft een voicemail van de bibliotheek.",
+            "speakers": [
+              {
+                "name": "Ingrid",
+                "voice": "nathalie"
+              }
+            ],
+            "lines": [
+              {
+                "speaker": "Ingrid",
+                "nl": "Hallo meneer Benali, met Ingrid van de bibliotheek."
+              },
+              {
+                "speaker": "Ingrid",
+                "nl": "Ik bel omdat het boek dat u wilde lenen, binnen is."
+              },
+              {
+                "speaker": "Ingrid",
+                "nl": "U kunt het ophalen tot en met vrijdag. Daarna gaat het boek terug."
+              },
+              {
+                "speaker": "Ingrid",
+                "nl": "Neemt u uw bibliotheekpas mee? Tot ziens!"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "text",
+          "md": "**Wie?** Ingrid van de bibliotheek. **Waarom?** Het boek is binnen. **Wat moet Samir doen?** Het boek ophalen, uiterlijk vrijdag, met zijn pas."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-voicemail-q-001",
+        "type": "listening",
+        "tags": [
+          "luisteren:voicemail"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de voicemail.",
+        "fragment": {
+          "kind": "voicemail",
+          "situation": "Aisha heeft een voicemail van de school van haar zoon.",
+          "speakers": [
+            {
+              "name": "Juf Marloes",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Juf Marloes",
+              "nl": "Hallo mevrouw Bouzid, met juf Marloes van groep vijf."
+            },
+            {
+              "speaker": "Juf Marloes",
+              "nl": "Ik bel over Adam. Hij is net gevallen op het schoolplein."
+            },
+            {
+              "speaker": "Juf Marloes",
+              "nl": "Het is niet ernstig, maar hij heeft pijn aan zijn arm."
+            },
+            {
+              "speaker": "Juf Marloes",
+              "nl": "Wilt u hem zo snel mogelijk van school halen? Misschien moet u even naar de huisarts."
+            },
+            {
+              "speaker": "Juf Marloes",
+              "nl": "U kunt mij bellen op het nummer van de school. Tot zo."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-voicemail-q-001-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Waarom belt de juf?",
+            "options": [
+              "Adam is ziek",
+              "Adam is gevallen",
+              "Adam is zijn jas kwijt"
+            ],
+            "answer": 1,
+            "explanation": "De juf zegt: 'Hij is net gevallen op het schoolplein.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-voicemail-q-001-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Wat moet Aisha doen?",
+            "options": [
+              "Adam van school halen",
+              "Een e-mail naar de juf sturen",
+              "Een afspraak met de juf maken"
+            ],
+            "answer": 0,
+            "explanation": "De juf vraagt: 'Wilt u hem zo snel mogelijk van school halen?'",
+            "difficulty": 1,
+            "answerLine": 3
+          }
+        ],
+        "explanation": "Een voicemail: wie belt (de juf), waarom (Adam is gevallen), wat moet je doen (Adam ophalen).",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-voicemail-q-002",
+        "type": "listening",
+        "tags": [
+          "luisteren:voicemail"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de voicemail.",
+        "fragment": {
+          "kind": "voicemail",
+          "situation": "Daan heeft een voicemail van zijn vriend Bas.",
+          "speakers": [
+            {
+              "name": "Bas",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Bas",
+              "nl": "Hoi Daan, met Bas."
+            },
+            {
+              "speaker": "Bas",
+              "nl": "We zouden morgen om acht uur gaan voetballen, toch?"
+            },
+            {
+              "speaker": "Bas",
+              "nl": "Nou, het veld is morgen dicht. Er komt nieuw gras."
+            },
+            {
+              "speaker": "Bas",
+              "nl": "Daarom spelen we op zondag, om elf uur. Op hetzelfde veld."
+            },
+            {
+              "speaker": "Bas",
+              "nl": "Kun je me even een berichtje sturen? Dan weet ik of je komt. Doei!"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-voicemail-q-002-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Waarom kunnen ze morgen niet voetballen?",
+            "options": [
+              "Het gaat regenen",
+              "Het veld is dicht",
+              "Bas moet werken"
+            ],
+            "answer": 1,
+            "explanation": "Bas zegt: 'Het veld is morgen dicht. Er komt nieuw gras.'",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-voicemail-q-002-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Wanneer gaan ze voetballen?",
+            "options": [
+              "Morgen om 8 uur",
+              "Zondag om 11 uur",
+              "Zaterdag om 11 uur"
+            ],
+            "answer": 1,
+            "explanation": "'Daarom spelen we op zondag, om elf uur.' Morgen om acht uur was het oude plan.",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-voicemail-q-002-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Wat moet Daan doen?",
+            "options": [
+              "Bas terugbellen",
+              "Bas een bericht sturen",
+              "Naar het veld gaan"
+            ],
+            "answer": 1,
+            "explanation": "Bas vraagt: 'Kun je me even een berichtje sturen?'",
+            "difficulty": 1,
+            "answerLine": 4
+          }
+        ],
+        "explanation": "Eerst hoor je het oude plan. Na 'daarom' komt het nieuwe plan.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-voicemail-q-003",
+        "type": "mc",
+        "tags": [
+          "luisteren:voicemail"
+        ],
+        "prompt": "Luister. Wat moet Petra doen?",
+        "options": [
+          "Sara vanavond terugbellen",
+          "Niets, ze ziet Sara morgen",
+          "Sara een e-mail sturen"
+        ],
+        "answer": 1,
+        "explanation": "'Je hoeft me niet terug te bellen.' Petra hoeft niets te doen.",
+        "difficulty": 1,
+        "listen": "Hoi Petra, met Sara. Je hoeft me niet terug te bellen. Ik zie je morgen gewoon op je werk."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-voicemail-q-004",
+        "type": "listening",
+        "tags": [
+          "luisteren:voicemail"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de voicemail.",
+        "fragment": {
+          "kind": "voicemail",
+          "situation": "Meneer Visser heeft een voicemail van de apotheek.",
+          "speakers": [
+            {
+              "name": "Lisa",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Lisa",
+              "nl": "Goedemiddag meneer Visser, met Lisa van Apotheek De Brug."
+            },
+            {
+              "speaker": "Lisa",
+              "nl": "Uw medicijnen zijn vandaag niet binnengekomen."
+            },
+            {
+              "speaker": "Lisa",
+              "nl": "Ze komen morgen, na twaalf uur."
+            },
+            {
+              "speaker": "Lisa",
+              "nl": "U kunt ze ophalen tot half zes. Op zaterdag zijn we dicht."
+            },
+            {
+              "speaker": "Lisa",
+              "nl": "Heeft u nog genoeg pillen tot morgen? Zo niet, bel ons dan even. Dag!"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-voicemail-q-004-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Wanneer kan meneer Visser zijn medicijnen ophalen?",
+            "options": [
+              "Vandaag voor 17.30 uur",
+              "Morgen na 12.00 uur",
+              "Zaterdag na 12.00 uur"
+            ],
+            "answer": 1,
+            "explanation": "Lisa zegt: 'Ze komen morgen, na twaalf uur.'",
+            "difficulty": 2,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-voicemail-q-004-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Wanneer moet meneer Visser de apotheek bellen?",
+            "options": [
+              "Als hij niet genoeg pillen heeft",
+              "Als hij op zaterdag wil komen",
+              "Als hij de medicijnen niet meer wil"
+            ],
+            "answer": 0,
+            "explanation": "'Heeft u nog genoeg pillen tot morgen? Zo niet, bel ons dan even.'",
+            "difficulty": 2,
+            "answerLine": 4
+          }
+        ],
+        "explanation": "'Zo niet' betekent: als dat niet zo is. Meneer Visser belt alleen als hij te weinig pillen heeft.",
+        "difficulty": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-voicemail-q-005",
+        "type": "listening",
+        "tags": [
+          "luisteren:voicemail"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de voicemail.",
+        "fragment": {
+          "kind": "voicemail",
+          "situation": "Mehmet werkt in een supermarkt. Hij heeft een voicemail van zijn leidinggevende.",
+          "speakers": [
+            {
+              "name": "Anouk",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Anouk",
+              "nl": "Hoi Mehmet, met Anouk van de winkel."
+            },
+            {
+              "speaker": "Anouk",
+              "nl": "Jij werkt morgen van negen tot vijf, toch? Maar Ilse is ziek."
+            },
+            {
+              "speaker": "Anouk",
+              "nl": "Kun jij morgen later beginnen en blijven tot we dichtgaan? Dus van twaalf uur tot negen uur 's avonds."
+            },
+            {
+              "speaker": "Anouk",
+              "nl": "Je krijgt de extra uren natuurlijk betaald."
+            },
+            {
+              "speaker": "Anouk",
+              "nl": "Laat je het me vanavond nog weten? Je kunt me bellen of appen. Bedankt!"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-voicemail-q-005-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Waarom belt Anouk?",
+            "options": [
+              "Mehmet was te laat",
+              "Een collega is ziek",
+              "De winkel is morgen dicht"
+            ],
+            "answer": 1,
+            "explanation": "Anouk zegt: 'Maar Ilse is ziek.' Ilse is een collega.",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-voicemail-q-005-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Wanneer werkt Mehmet morgen, als hij ja zegt?",
+            "options": [
+              "Van 9.00 tot 17.00 uur",
+              "Van 12.00 tot 21.00 uur",
+              "Van 12.00 tot 17.00 uur"
+            ],
+            "answer": 1,
+            "explanation": "'Van twaalf uur tot negen uur 's avonds.' Negen uur 's avonds is 21.00 uur.",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-voicemail-q-005-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Wanneer moet Mehmet het laten weten?",
+            "options": [
+              "Vanavond",
+              "Morgenochtend",
+              "Morgen om 12 uur"
+            ],
+            "answer": 0,
+            "explanation": "Anouk vraagt: 'Laat je het me vanavond nog weten?'",
+            "difficulty": 1,
+            "answerLine": 4
+          }
+        ],
+        "explanation": "'Van negen tot vijf' is het oude rooster. Het nieuwe rooster komt daarna.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-voicemail-q-006",
+        "type": "mc",
+        "tags": [
+          "luisteren:voicemail"
+        ],
+        "prompt": "In een voicemail hoor je: 'U hoeft niets mee te nemen.' Wat betekent dat?",
+        "options": [
+          "U moet alles meenemen.",
+          "U neemt niets mee.",
+          "U neemt alleen uw pas mee."
+        ],
+        "answer": 1,
+        "explanation": "Niet hoeven = het is niet nodig. U neemt niets mee.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-voicemail-q-007",
+        "type": "listening",
+        "tags": [
+          "luisteren:voicemail"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de voicemail.",
+        "fragment": {
+          "kind": "voicemail",
+          "situation": "Noor heeft een voicemail van de pakketbezorger.",
+          "speakers": [
+            {
+              "name": "Bezorger",
+              "voice": "ronnie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Bezorger",
+              "nl": "Goedemiddag, met de pakketbezorger."
+            },
+            {
+              "speaker": "Bezorger",
+              "nl": "Ik sta bij uw deur met een pakket, maar u bent niet thuis."
+            },
+            {
+              "speaker": "Bezorger",
+              "nl": "Ik heb het pakket bij uw buren gelegd, op nummer veertien."
+            },
+            {
+              "speaker": "Bezorger",
+              "nl": "Zijn zij er niet? Dan ligt het pakket morgen bij de supermarkt op de hoek."
+            },
+            {
+              "speaker": "Bezorger",
+              "nl": "Neem dan wel uw legitimatiebewijs mee. Fijne dag!"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-voicemail-q-007-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Waar is het pakket nu?",
+            "options": [
+              "Bij de buren op nummer 14",
+              "Bij de buren op nummer 40",
+              "In de supermarkt"
+            ],
+            "answer": 0,
+            "explanation": "'Ik heb het pakket bij uw buren gelegd, op nummer veertien.'",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-voicemail-q-007-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Wat moet Noor meenemen naar de supermarkt?",
+            "options": [
+              "Haar legitimatiebewijs",
+              "Haar bankpas",
+              "Een brief van de bezorger"
+            ],
+            "answer": 0,
+            "explanation": "'Neem dan wel uw legitimatiebewijs mee.'",
+            "difficulty": 1,
+            "answerLine": 4
+          }
+        ],
+        "explanation": "Veertien (14) en veertig (40) lijken op elkaar. Luister naar het einde: -tien.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-voicemail-q-008",
+        "type": "mc",
+        "tags": [
+          "luisteren:voicemail"
+        ],
+        "prompt": "Luister. Waarom belt Jan?",
+        "options": [
+          "Hij wil zijn sleutels ophalen",
+          "Hij wil vanavond samen eten",
+          "Hij heeft nieuwe sleutels"
+        ],
+        "answer": 0,
+        "explanation": "'Ik bel even omdat ik mijn sleutels bij jou heb laten liggen.' Na omdat komt de reden.",
+        "difficulty": 1,
+        "listen": "Hoi, met Jan. Ik bel even omdat ik mijn sleutels bij jou heb laten liggen. Ik kom ze vanavond halen."
+      }
+    }
+  ]
+}
