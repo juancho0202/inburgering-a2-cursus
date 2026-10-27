@@ -89,7 +89,7 @@ const ExerciseBase = {
   difficulty: z.union([z.literal(1), z.literal(2), z.literal(3)]).default(1),
 };
 
-export const ExerciseSchema: z.ZodType<Exercise, z.ZodTypeDef, any> = z.discriminatedUnion("type", [
+export const ExerciseSchema: z.ZodType<Exercise, any> = z.discriminatedUnion("type", [
   z.object({ ...ExerciseBase, type: z.literal("mc"), options: z.array(z.string()).min(2), answer: z.number().int() }),
   z.object({ ...ExerciseBase, type: z.literal("mc-multi"), options: z.array(z.string()).min(2), answers: z.array(z.number().int()) }),
   z.object({ ...ExerciseBase, type: z.literal("true-false"), statement: z.string(), answer: z.boolean() }),
