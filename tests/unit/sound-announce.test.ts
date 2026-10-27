@@ -13,6 +13,12 @@ describe("voice announcements", () => {
       .toBe("Klopt dit? Half acht is 8.30.");
   });
 
+  it("reads only the question of a gap with a choice list", () => {
+    const e = { ...base, type: "gap-choice" as const, prompt: "Kies de goede vorm.", text: "___ jij vandaag werken?", options: [["Moet", "Moeten"]], answers: [0] };
+    expect(exerciseAnnouncement(e)).toBe("Kies de goede vorm.");
+    expect(exerciseAnnouncement(e, false)).toBe("");
+  });
+
   it("names the lesson on the first step only", () => {
     const step = { type: "lesson" as const, id: "l", title: "De of het?", blocks: [] };
     expect(stepAnnouncement(step, { first: true, unitTitle: "De of het", lessonNumber: 11 })).toBe("Les 11. De of het. De of het?");
