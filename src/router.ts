@@ -24,6 +24,27 @@ export const router = createRouter({
   scrollBehavior: () => ({ top: 0 }),
 });
 
+// After a new deploy, an open tab still asks for the old page chunks, which no longer exist, and the click
+// silently does nothing. Load the new version at the page the learner clicked (once, so a real outage can't loop).
+const RELOAD_KEY = "chunk-reload";
+router.onError((error, to) => {
+  if (!/dynamically imported module|Importing a module script failed|error loading dynamically/i.test(String(error?.message))) return;
+  try {
+    if (sessionStorage.getItem(RELOAD_KEY) === to.fullPath) return;
+    sessionStorage.setItem(RELOAD_KEY, to.fullPath);
+  } catch {
+    // without sessionStorage, reload anyway: the fresh page has the new chunks
+  }
+  window.location.assign(to.fullPath);
+});
+router.afterEach(() => {
+  try {
+    sessionStorage.removeItem(RELOAD_KEY);
+  } catch {
+    // nothing to clean up
+  }
+});
+
 // A first visit to the home page shows the welcome screen once (per device).
 router.beforeEach(async (to) => {
   if (to.path !== "/") return true;
