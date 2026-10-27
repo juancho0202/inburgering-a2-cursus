@@ -34,6 +34,8 @@ export const LessonBlockSchema = z.discriminatedUnion("kind", [
     title: z.string(),
     body: z.string(),
   }),
+  /** An illustration from src/assets/scenes (the id is the file name). */
+  z.object({ kind: z.literal("picture"), scene: z.string(), caption: z.string().optional() }),
 ]);
 
 export type LessonBlock = z.infer<typeof LessonBlockSchema>;
@@ -45,6 +47,10 @@ interface ExerciseBaseFields {
   context?: string;
   explanation: string;
   difficulty: 1 | 2 | 3;
+  /** A drawing from src/assets/spots next to the question; without it the app picks one that suits the topic. */
+  spot?: string;
+  /** A listening task: what the learner hears (played by the voice, not shown before the answer). */
+  listen?: string;
 }
 
 export type Exercise =
@@ -87,6 +93,8 @@ const ExerciseBase = {
   context: z.string().optional(),
   explanation: z.string(),
   difficulty: z.union([z.literal(1), z.literal(2), z.literal(3)]).default(1),
+  spot: z.string().optional(),
+  listen: z.string().optional(),
 };
 
 export const ExerciseSchema: z.ZodType<Exercise, any> = z.discriminatedUnion("type", [
@@ -145,6 +153,8 @@ export const UnitSchema = z.object({
   moduleId: z.string(),
   title: z.string(),
   goal: z.string(),
+  /** The cover illustration (src/assets/scenes), shown in the lesson list and at the start of the lesson. */
+  scene: z.string().optional(),
   estimatedMinutes: z.number().int(),
   tags: z.array(z.string()).default([]),
   vocabRefs: z.array(z.string()).default([]),

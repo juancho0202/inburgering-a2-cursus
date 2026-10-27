@@ -8,6 +8,7 @@ import ProgressBar from "../components/ui/ProgressBar.vue";
 import ProgressRing from "../components/ui/ProgressRing.vue";
 import { useContentStore } from "../stores/content";
 import { isBackgroundReady, pickBackground } from "../lib/backgrounds";
+import { warmScenes } from "../lib/illustrations";
 import { useSessionStore } from "../stores/session";
 
 interface Dashboard {
@@ -27,9 +28,12 @@ interface Dashboard {
 
 const content = useContentStore();
 const session = useSessionStore();
-// A different background each time the dashboard opens; it fades in once it has loaded.
+// A different background each time the dashboard opens. One that is ready at once (it was downloaded ahead of time)
+// just appears; only one that takes longer fades in, so there is no blank moment and no needless fade.
 const background = pickBackground();
 const backgroundLoaded = ref(isBackgroundReady(background));
+const backgroundFades = ref(false);
+setTimeout(() => (backgroundFades.value = !backgroundLoaded.value), 120);
 const data = ref<Dashboard | null>(null);
 const error = ref<string | null>(null);
 
@@ -37,10 +41,17 @@ onMounted(async () => {
   try {
     const [d] = await Promise.all([api.get<Dashboard>("/dashboard"), content.course ? null : content.load()]);
     data.value = d;
+    // The module the learner will most likely open next: get its lesson pictures ready while they look around.
+    const unitId = d.lastLocation?.unitId ?? d.nextUnitId;
+    const next = content.course?.modules.find((m) => m.units.some((u) => u.id === unitId));
+    if (next) setTimeout(() => warmModule(next.id), 600);
   } catch (e) {
     error.value = (e as Error).message;
   }
 });
+
+/** Download the lesson pictures of a module (when it is about to be opened), so its list shows them at once. */
+const warmModule = (id: string) => warmScenes(content.course?.modules.find((m) => m.id === id)?.units.map((u) => u.scene) ?? []);
 
 const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.slice(8)}` : t.replace(":", " · "));
 </script>
@@ -48,7 +59,13 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
 <template>
   <!-- Fixed background photo with a soft veil so the cards stay readable -->
   <div class="pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
-    <img :src="background" alt="" :class="['h-full w-full object-cover transition-opacity duration-700', backgroundLoaded ? 'opacity-100' : 'opacity-0']" @load="backgroundLoaded = true" />
+    <img
+      :src="background"
+      alt=""
+      fetchpriority="high"
+      :class="['h-full w-full object-cover', backgroundFades && 'transition-opacity duration-500', backgroundLoaded ? 'opacity-100' : 'opacity-0']"
+      @load="backgroundLoaded = true"
+    />
     <div class="absolute inset-0 bg-bg/35 dark:bg-bg/60" />
   </div>
   <p v-if="error" class="rounded-2xl bg-bad-bg p-4 text-bad">{{ error }}</p>
@@ -102,6 +119,9 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
           :key="m.id"
           :to="`/module/${m.id}`"
           class="card group block p-5 transition hover:-translate-y-0.5 hover:shadow-lg"
+          @pointerenter="warmModule(m.id)"
+          @focus="warmModule(m.id)"
+          @touchstart.passive="warmModule(m.id)"
         >
           <div class="flex items-center gap-4">
             <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl text-3xl" :class="moduleStyle(m.id).tile" aria-hidden="true">{{ moduleStyle(m.id).emoji }}</span>

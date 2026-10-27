@@ -5,6 +5,7 @@ import { api } from "../api/client";
 export interface CourseUnit {
   id: string;
   title: string;
+  scene?: string;
   estimatedMinutes: number;
   stepCount: number;
 }

@@ -3,6 +3,7 @@
   "moduleId": "basis",
   "title": "Niet of geen",
   "goal": "Je kiest tussen niet en geen en zet niet op de goede plek.",
+  "scene": "koelkast",
   "estimatedMinutes": 15,
   "tags": [
     "basis:niet-geen",

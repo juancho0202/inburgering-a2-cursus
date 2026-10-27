@@ -1,3 +1,5 @@
+import type { InjectionKey } from "vue";
+
 export interface EvalResult {
   correct: boolean;
   /** 0–1 contribution to the unit score; null = not scored (e.g. free writing). */
@@ -23,3 +25,6 @@ export const shuffled = <T,>(arr: T[]): T[] => {
   }
   return a;
 };
+
+/** What there is to hear in a listening exercise (provided by the exercise shell, played by the question). */
+export const listenKey: InjectionKey<string | null> = Symbol("listen");

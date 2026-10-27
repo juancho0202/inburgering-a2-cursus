@@ -3,6 +3,7 @@
   "moduleId": "basis",
   "title": "Demo: alle oefeningen",
   "goal": "Probeer elk type oefening een keer.",
+  "scene": "kennismaken",
   "estimatedMinutes": 10,
   "tags": [
     "demo"

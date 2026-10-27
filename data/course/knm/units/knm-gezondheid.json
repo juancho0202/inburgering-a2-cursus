@@ -3,6 +3,7 @@
   "moduleId": "knm",
   "title": "Gezondheid en gezondheidszorg",
   "goal": "Je weet naar wie je gaat als je ziek bent en hoe de zorgverzekering werkt.",
+  "scene": "huisarts",
   "estimatedMinutes": 25,
   "tags": [
     "knm:gezondheid"
@@ -176,6 +177,10 @@
       "title": "Zorgverzekering",
       "blocks": [
         {
+          "kind": "picture",
+          "scene": "zorgverzekering"
+        },
+        {
           "kind": "text",
           "md": "Iedereen die in Nederland woont of werkt moet een **zorgverzekering (basisverzekering)** hebben.\n\n**Eigen risico:** een deel van de zorgkosten betaal je zelf per jaar. Het bedrag verandert. De **huisarts** valt niet onder het eigen risico.\n\n**Zorgtoeslag:** bij een laag inkomen kun je zorgtoeslag krijgen van de **Belastingdienst**.\n\n**Tandarts:** bij volwassenen meestal **niet** in de basisverzekering. Je kunt een **aanvullende verzekering** nemen."
         },
@@ -294,6 +299,10 @@
       "id": "knm-gezondheid-l-03",
       "title": "Apotheek, consultatiebureau en meer",
       "blocks": [
+        {
+          "kind": "picture",
+          "scene": "apotheek"
+        },
         {
           "kind": "text",
           "md": "**Apotheek:** medicijnen met een **recept** van de huisarts. **Drogist:** medicijnen **zonder recept** (bijvoorbeeld paracetamol).\n\n**Consultatiebureau:** controle van baby's en jonge kinderen (groei, vaccinaties). **Verloskundige:** zwangerschap en bevalling. **GGD:** gezondheid in de regio en vaccinaties.\n\n**Beroepsgeheim:** de dokter vertelt niets aan anderen zonder jouw toestemming.\n\n**Afspraak afzeggen?** Doe dat op tijd (vaak minstens 24 uur van tevoren), anders moet je soms betalen."

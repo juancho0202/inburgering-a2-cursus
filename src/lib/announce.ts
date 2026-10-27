@@ -83,10 +83,13 @@ export function blockText(b: LessonBlock): string {
 
 /**
  * Everything the voice reads for a step, in order: the heading (on the first step with the lesson's name),
- * the lesson's goal on step 1, then each readable block (ids "block-0", "block-1", …).
+ * then for a listening exercise what there is to hear ("listen"), or for a lesson the goal on step 1
+ * and each readable block (ids "block-0", "block-1", …).
  */
 export function stepSegments(step: Step, opts: { first: boolean; unitTitle: string; lessonNumber?: number; goal?: string }): Segment[] {
   const segments: Segment[] = [{ id: "heading", text: stepAnnouncement(step, opts) }];
+  // A listening task: after the question, the voice says what the learner has to listen to.
+  if (step.type === "exercise" && step.exercise.listen) segments.push({ id: "listen", text: step.exercise.listen });
   if (step.type !== "lesson") return segments;
   if (opts.goal) segments.push({ id: "goal", text: opts.goal });
   step.blocks.forEach((b, i) => {

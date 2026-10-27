@@ -3,6 +3,7 @@
   "moduleId": "lezen",
   "title": "E-mails en berichten",
   "goal": "Je begrijpt e-mails en berichten van collega's, docenten, buren en bedrijven.",
+  "scene": "tram",
   "estimatedMinutes": 25,
   "tags": [
     "lezen:email"

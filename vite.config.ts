@@ -40,15 +40,20 @@ export default defineConfig({
         ],
       },
       workbox: {
-        // The app, the course and the lazy chunks are stored up front. The background photos are not
-        // (they are big): each one is kept the first time it is shown.
+        // The app, the course and the lazy chunks are stored up front. The background photos and the
+        // lesson illustrations are not (together they are big): each one is kept the first time it is shown.
         globPatterns: ["**/*.{js,css,html,svg,png,woff2}"],
-        globIgnores: ["**/bg*.jpg", "**/tulips*.jpg"],
+        globIgnores: ["**/bg*.webp", "**/tulips*.webp", "assets/*.svg"],
         runtimeCaching: [
           {
-            urlPattern: /\/assets\/.*\.jpg$/,
+            urlPattern: /\/assets\/.*\.webp$/,
             handler: "CacheFirst",
             options: { cacheName: "backgrounds", expiration: { maxEntries: 15 }, cacheableResponse: { statuses: [0, 200] } },
+          },
+          {
+            urlPattern: /\/assets\/.*\.svg$/,
+            handler: "CacheFirst",
+            options: { cacheName: "illustrations", expiration: { maxEntries: 150 }, cacheableResponse: { statuses: [0, 200] } },
           },
           // The recorded lesson voice (scripts/tts): each clip is kept once it has played; the list is checked online first.
           { urlPattern: /\/audio\/voice\/manifest\.json$/, handler: "NetworkFirst", options: { cacheName: "voice-list" } },

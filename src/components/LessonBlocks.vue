@@ -4,6 +4,7 @@ import type { LessonBlock, VocabEntry } from "@shared/types";
 import { renderMd } from "../composables/markdown";
 import { useVocabStore } from "../stores/vocab";
 import DocumentCard from "./DocumentCard.vue";
+import ScenePicture from "./ScenePicture.vue";
 import SpeakButton from "./ui/SpeakButton.vue";
 
 /** `active`: the block being read aloud (highlighted). */
@@ -34,9 +35,12 @@ const word = (id: string): VocabEntry | undefined => vocab.byId(id);
         </table>
       </div>
 
-      <aside v-else-if="block.kind === 'tip'" class="flex gap-3 rounded-2xl border border-brand/40 bg-brand-bg px-4 py-3">
-        <span aria-hidden="true" class="text-xl">💡</span>
-        <div class="prose-nl" v-html="renderMd(block.md)" />
+      <!-- "Leertip": a card with a tab on top, like the tips in the margin of a language book -->
+      <aside v-else-if="block.kind === 'tip'" class="mt-3">
+        <p class="relative z-10 ml-4 inline-flex items-center gap-1.5 rounded-t-xl border border-b-0 border-brand/40 bg-brand-bg px-3 pt-1 text-sm font-extrabold uppercase tracking-wide text-brand-strong">
+          <span aria-hidden="true">💡</span> Leertip
+        </p>
+        <div class="prose-nl -mt-px rounded-2xl border border-brand/40 bg-brand-bg px-4 py-3" v-html="renderMd(block.md)" />
       </aside>
 
       <div v-else-if="block.kind === 'example'" class="flex items-center gap-3 rounded-2xl border-l-4 border-good bg-good-bg px-4 py-3">
@@ -71,6 +75,8 @@ const word = (id: string): VocabEntry | undefined => vocab.byId(id);
       </div>
 
       <DocumentCard v-else-if="block.kind === 'document'" :doc="block" />
+
+      <ScenePicture v-else-if="block.kind === 'picture'" :id="block.scene" :caption="block.caption" class="max-w-xl" />
     </div>
   </div>
 </template>

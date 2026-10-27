@@ -3,6 +3,7 @@
   "moduleId": "schrijven",
   "title": "Een kort bericht",
   "goal": "Je schrijft een kort briefje of bericht (25–50 woorden) met alle punten van de opdracht.",
+  "scene": "briefje",
   "estimatedMinutes": 30,
   "tags": [
     "schrijven:kort-bericht"

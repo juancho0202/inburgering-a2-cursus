@@ -28,7 +28,24 @@ npm run validate     # controleert alle cursusbestanden in data/course/
 npm run check-ids    # faalt als een vaste id uit een eerdere versie verdwenen is
 npm run e2e          # browsertests (Playwright, telefoonformaat; eerst: npx playwright install chromium)
 npm run stats        # telt vragen, woorden en teksten t.o.v. de doelen
+npm run illustrations # tekent de illustraties opnieuw (scripts/illustrations → src/assets/scenes en spots)
 ```
+
+### Illustraties
+
+Elke les begint met een tekening (een "scène"), en naast de oefeningen staat een kleine tekening, zoals in een taalboek. Alles is SVG en wordt met code getekend in `scripts/illustrations/`:
+
+- `kit.ts`: achtergronden en voorwerpen (kamers, grachtenpanden, tafels, tekstballonnen…);
+- `peeps.ts` + `peeps.json`: de mensen, gemaakt van [Open Peeps](https://www.openpeeps.com) van Pablo Stanley (CC0). `peeps-extract.ts` heeft `peeps.json` uit het Sketch-bestand van Open Peeps gehaald; dat hoeft alleen opnieuw voor nieuwe onderdelen;
+- `scenes*.ts`: de scènes (480 × 320), `spots.ts`: de losse tekeningen naast oefeningen.
+
+`npm run illustrations` schrijft de SVG's naar `src/assets/scenes/` en `src/assets/spots/`, met een `index.json` (alt-tekst per tekening). In een les gebruik je ze zo:
+
+- `"scene": "keuken"` in een unit: de omslag (in de lijst met lessen en bovenaan de les);
+- `{ "kind": "picture", "scene": "apotheek" }` als blok in een lesstap;
+- `"spot": "hond"` in een oefening (anders kiest de app een tekening die bij het thema past).
+
+De build faalt als een les een tekening noemt die niet bestaat.
 
 ### Meldingen van fouten verzamelen
 

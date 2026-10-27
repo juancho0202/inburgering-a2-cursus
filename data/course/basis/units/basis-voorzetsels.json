@@ -3,6 +3,7 @@
   "moduleId": "basis",
   "title": "Voorzetsels en richting",
   "goal": "Je gebruikt voorzetsels van plaats en richting, en je begrijpt een route.",
+  "scene": "route",
   "estimatedMinutes": 15,
   "tags": [
     "basis:voorzetsels",
@@ -68,7 +69,8 @@
         "explanation": "Links = linksaf. Tweede straat = niet de eerste.",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "Je hoort: \"Neem de tweede straat links.\" Wat doe je?",
+        "prompt": "Luister naar de route. Wat doe je?",
+        "listen": "Neem de tweede straat links.",
         "options": [
           "Je gaat bij de tweede straat naar links.",
           "Je gaat bij de tweede straat naar rechts.",
@@ -89,7 +91,8 @@
         "explanation": "Rechtsaf = naar rechts afslaan.",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "Je hoort: \"Bij het stoplicht gaat u rechtsaf.\" Wat doe je?",
+        "prompt": "Luister naar de route. Wat doe je?",
+        "listen": "Bij het stoplicht gaat u rechtsaf.",
         "options": [
           "Je slaat links af.",
           "Je slaat rechts af.",

@@ -3,6 +3,7 @@
   "moduleId": "basis",
   "title": "Bijzinnen",
   "goal": "Je maakt bijzinnen met de werkwoorden aan het eind.",
+  "scene": "regen",
   "estimatedMinutes": 20,
   "tags": [
     "basis:bijzin",

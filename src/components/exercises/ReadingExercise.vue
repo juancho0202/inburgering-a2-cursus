@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, provide, ref } from "vue";
 import type { Exercise } from "@shared/types";
 import DocumentCard from "../DocumentCard.vue";
 import McExercise from "./McExercise.vue";
 import TrueFalseExercise from "./TrueFalseExercise.vue";
 import GapFillExercise from "./GapFillExercise.vue";
-import type { EvalResult, ExerciseHandle } from "./types";
+import { listenKey, type EvalResult, type ExerciseHandle } from "./types";
+import { spotKey } from "../../lib/illustrations";
 
 const props = defineProps<{ exercise: Extract<Exercise, { type: "reading" }>; checked: boolean }>();
 
@@ -30,6 +31,9 @@ function evaluate(): EvalResult {
   };
 }
 defineExpose({ ready, evaluate });
+// The text is the picture here: no drawings next to the questions.
+provide(spotKey, null);
+provide(listenKey, null);
 </script>
 
 <template>

@@ -3,6 +3,7 @@
   "moduleId": "lezen",
   "title": "Korte artikelen",
   "goal": "Je leest korte nieuwsberichten en artikelen en vindt de belangrijkste informatie.",
+  "scene": "krant",
   "estimatedMinutes": 25,
   "tags": [
     "lezen:artikel"

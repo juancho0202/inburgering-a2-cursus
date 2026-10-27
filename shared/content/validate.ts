@@ -1,10 +1,17 @@
 import type { ContentData, ContentError } from "./data.js";
 
+/** The illustrations that exist (ids of src/assets/scenes and src/assets/spots). */
+export interface PictureIds {
+  scenes: Set<string>;
+  spots: Set<string>;
+}
+
 /**
  * Checks on top of the schemas: unique ids, references that exist, answer indexes, exam rules.
+ * With `pictures`, also that every scene and spot a lesson names exists.
  * Returns readable (Dutch) messages; an empty list means the course is valid.
  */
-export function validateContent(data: ContentData, parseErrors: ContentError[] = []): string[] {
+export function validateContent(data: ContentData, parseErrors: ContentError[] = [], pictures?: PictureIds): string[] {
   const errors: string[] = parseErrors.map((e) => `${e.file}\n  ${e.message}`);
   const add = (msg: string) => errors.push(msg);
 
@@ -23,11 +30,23 @@ export function validateContent(data: ContentData, parseErrors: ContentError[] =
     for (const id of mod.units) if (!unitIds.has(id)) add(`Module "${mod.id}" noemt de les "${id}", maar die bestaat niet`);
   }
 
+  const checkScene = (scene: string, where: string) => {
+    if (pictures && !pictures.scenes.has(scene)) add(`Illustratie "${scene}" bestaat niet (${where}); zie src/assets/scenes`);
+  };
+  const checkSpot = (spot: string | undefined, where: string) => {
+    if (spot && pictures && !pictures.spots.has(spot)) add(`Tekening "${spot}" bestaat niet (${where}); zie src/assets/spots`);
+  };
+
   for (const unit of data.units) {
     addId(unit.id, "units");
+    if (unit.scene) checkScene(unit.scene, unit.id);
     for (const step of unit.steps) {
-      if (step.type !== "exercise") continue;
+      if (step.type === "lesson") {
+        for (const block of step.blocks) if (block.kind === "picture") checkScene(block.scene, step.id);
+        continue;
+      }
       const ex = step.exercise;
+      checkSpot(ex.spot, ex.id);
       addId(ex.id, unit.id);
       if (!ex.explanation.trim()) add(`Lege explanation bij ${ex.id}`);
       if ((ex.type === "mc" || ex.type === "mc-multi") && new Set(ex.options).size !== ex.options.length) add(`Dubbele opties bij ${ex.id}`);
@@ -66,6 +85,7 @@ export function validateContent(data: ContentData, parseErrors: ContentError[] =
         continue;
       }
       addId(item.id, exam.id);
+      checkSpot(item.spot, item.id);
       if (!item.explanation.trim()) add(`Lege explanation bij ${item.id}`);
       const questions = item.type === "reading" ? item.questions : [item];
       for (const q of questions) {
