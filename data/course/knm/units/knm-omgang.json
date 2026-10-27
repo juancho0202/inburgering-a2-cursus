@@ -3,6 +3,7 @@
   "moduleId": "knm",
   "title": "Omgangsvormen, waarden en normen",
   "goal": "Je weet hoe je je gedraagt in Nederland en welke waarden belangrijk zijn.",
+  "scene": "kennismaken",
   "estimatedMinutes": 25,
   "tags": [
     "knm:omgang"
@@ -194,6 +195,10 @@
       "title": "Gelijkheid en vrijheid",
       "blocks": [
         {
+          "kind": "picture",
+          "scene": "diversiteit"
+        },
+        {
           "kind": "text",
           "md": "In Nederland zijn **mannen en vrouwen gelijk**. **Homoseksuele mensen** mogen trouwen (sinds 2001).\n\nEr is **vrijheid van godsdienst** en **vrijheid van meningsuiting**. Dat is binnen de wet: **discriminatie** en **bedreigen** mogen niet.\n\nEr is **scheiding van kerk en staat**: de overheid is niet van één godsdienst."
         },
@@ -353,6 +358,10 @@
       "id": "knm-omgang-l-03",
       "title": "Buren, feesten en afval",
       "blocks": [
+        {
+          "kind": "picture",
+          "scene": "buren"
+        },
         {
           "kind": "text",
           "md": "**Buren:** maak kennis als je verhuist en let op **geluid**, vooral 's avonds en 's nachts.\n\n**Verjaardag:** je zegt *gefeliciteerd*. Je feliciteert ook de familie (*Gefeliciteerd met je zoon*)."

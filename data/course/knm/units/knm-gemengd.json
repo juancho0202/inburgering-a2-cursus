@@ -3,6 +3,7 @@
   "moduleId": "knm",
   "title": "Gemengd",
   "goal": "Je oefent KNM-vragen van alle thema's door elkaar, zonder te weten welk thema het is.",
+  "scene": "verjaardag",
   "estimatedMinutes": 30,
   "tags": [
     "knm:gemengd"

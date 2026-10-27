@@ -3,6 +3,7 @@
   "moduleId": "basis",
   "title": "Mijn woorden",
   "goal": "Je oefent de woorden uit jouw eigen lijst met moeilijke woorden.",
+  "scene": "studeren",
   "estimatedMinutes": 15,
   "tags": [
     "basis:mijn-woorden",

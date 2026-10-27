@@ -3,6 +3,7 @@
   "moduleId": "basis",
   "title": "Tijd, getallen en datums",
   "goal": "Je kunt de klok lezen en getallen, geld en datums gebruiken.",
+  "scene": "afspraak",
   "estimatedMinutes": 25,
   "tags": [
     "basis:tijd"
@@ -234,7 +235,8 @@
         "explanation": "Half negen is 8.30. Vijf minuten ervoor is 8.25.",
         "difficulty": 2,
         "type": "mc",
-        "prompt": "Je hoort: \"vijf voor half negen\". Welke tijd is dat?",
+        "prompt": "Luister. Welke tijd hoor je?",
+        "listen": "vijf voor half negen",
         "options": [
           "8.35",
           "9.25",
@@ -310,6 +312,10 @@
       "title": "Dagen, getallen en geld",
       "blocks": [
         {
+          "kind": "picture",
+          "scene": "kassa"
+        },
+        {
           "kind": "text",
           "md": "**Dagdelen:** 's ochtends (6–12), 's middags (12–18), 's avonds (18–24), 's nachts (0–6).\n\n**Dagen:** maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag. Let op: *dinsdag* en *donderdag* lijken op elkaar."
         },
@@ -341,7 +347,8 @@
         "explanation": "Dertig is 30. Dertien is 13.",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "Welk getal hoor je? \"dertig\"",
+        "prompt": "Luister. Welk getal hoor je?",
+        "listen": "dertig",
         "options": [
           "13",
           "33",
@@ -361,7 +368,8 @@
         "explanation": "Veertien = 14. Veertig = 40.",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "Welk getal hoor je? \"veertien\"",
+        "prompt": "Luister. Welk getal hoor je?",
+        "listen": "veertien",
         "options": [
           "14",
           "40",
@@ -381,7 +389,8 @@
         "explanation": "Zeventig = 70. Zeventien = 17.",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "Welk getal hoor je? \"zeventig\"",
+        "prompt": "Luister. Welk getal hoor je?",
+        "listen": "zeventig",
         "options": [
           "17",
           "70",

@@ -3,6 +3,7 @@
   "moduleId": "basis",
   "title": "De of het",
   "goal": "Je kiest de of het met regels, en je maakt meervoud en verkleinwoord.",
+  "scene": "woonkamer",
   "estimatedMinutes": 20,
   "tags": [
     "basis:de-het",

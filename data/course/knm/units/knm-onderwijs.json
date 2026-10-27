@@ -3,6 +3,7 @@
   "moduleId": "knm",
   "title": "Onderwijs en opvoeding",
   "goal": "Je weet hoe het Nederlandse onderwijs werkt en wat ouders moeten doen.",
+  "scene": "schoolplein",
   "estimatedMinutes": 25,
   "tags": [
     "knm:onderwijs"
@@ -216,6 +217,10 @@
       "title": "Na de basisschool",
       "blocks": [
         {
+          "kind": "picture",
+          "scene": "mbo"
+        },
+        {
           "kind": "text",
           "md": "Eind **groep 8**: **schooladvies** + **doorstroomtoets** → **voortgezet onderwijs**: **vmbo** (4 jaar), **havo** (5 jaar), **vwo** (6 jaar).\n\nDaarna: **mbo** (na vmbo), **hbo** (na havo of mbo-4), **universiteit / wo** (na vwo).\n\n**Studiefinanciering** voor mbo, hbo en wo komt van **DUO**."
         },
@@ -423,6 +428,10 @@
       "id": "knm-onderwijs-l-03",
       "title": "Ouders, opvang en opvoeding",
       "blocks": [
+        {
+          "kind": "picture",
+          "scene": "oudergesprek"
+        },
         {
           "kind": "text",
           "md": "**Vrij van school?** Alleen in de **vakanties** (de **zomervakantie** duurt ongeveer 6 weken). Buiten de vakantie vrij nemen mag alleen met **toestemming van de school**.\n\n**Ouders:** **ouderavond**, **10-minutengesprek** met de leraar, **rapport**, **medezeggenschapsraad (MR)**, **ouderraad (OR)**.\n\n**Kinderopvang:** **kinderdagverblijf** (0–4 jaar) en **buitenschoolse opvang (bso)**. Je kunt **kinderopvangtoeslag** aanvragen. **Peuterspeelzaal / voorschool:** voorbereiding op school en taalontwikkeling."

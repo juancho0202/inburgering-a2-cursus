@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import { computed, onBeforeUnmount, onMounted, provide, ref } from "vue";
 import { RouterLink } from "vue-router";
 import type { Exercise } from "@shared/types";
 import type { Explanation } from "@shared/schemas/claude";
@@ -10,10 +10,14 @@ import { stopSpeech } from "../../composables/useSpeech";
 import AppButton from "../ui/AppButton.vue";
 import ReportIssue from "../ReportIssue.vue";
 import ExerciseRenderer from "./ExerciseRenderer.vue";
-import type { EvalResult } from "./types";
+import { spotFor, spotKey } from "../../lib/illustrations";
+import { listenKey, type EvalResult } from "./types";
 
 const props = defineProps<{ exercise: Exercise; isLast?: boolean }>();
 const emit = defineEmits<{ done: [result: EvalResult]; exit: [] }>();
+
+provide(spotKey, spotFor(props.exercise));
+provide(listenKey, props.exercise.listen ?? null);
 
 const settings = useSettingsStore();
 const sounds = useSounds();

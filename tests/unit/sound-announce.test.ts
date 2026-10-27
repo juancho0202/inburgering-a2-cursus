@@ -36,6 +36,15 @@ describe("voice announcements", () => {
     expect(segs[3].text).toBe("Tip: Oefen hardop.");
   });
 
+  it("plays a listening task after its question, as a line of its own", () => {
+    const exercise = { id: "q", tags: [], explanation: "e", difficulty: 1 as const, type: "mc" as const, prompt: "Luister. Welk getal hoor je?", listen: "veertien", options: ["14", "40"], answer: 0 };
+    const segs = stepSegments({ type: "exercise", exercise }, { first: false, unitTitle: "Tijd" });
+    expect(segs).toEqual([
+      { id: "heading", text: "Luister. Welk getal hoor je?" },
+      { id: "listen", text: "veertien" },
+    ]);
+  });
+
   it("gives list items and lines their own pause", () => {
     expect(speakable("Je ziet:\n- de bus\n- de trein")).toBe("Je ziet: de bus. de trein");
   });

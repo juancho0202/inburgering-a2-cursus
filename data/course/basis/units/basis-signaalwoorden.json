@@ -3,6 +3,7 @@
   "moduleId": "basis",
   "title": "Signaalwoorden",
   "goal": "Je herkent signaalwoorden in teksten en weet wat ze betekenen.",
+  "scene": "bibliotheek",
   "estimatedMinutes": 15,
   "tags": [
     "basis:signaalwoorden",

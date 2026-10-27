@@ -3,6 +3,7 @@
   "moduleId": "knm",
   "title": "Instanties",
   "goal": "Je weet welke instantie je moet hebben voor welke vraag.",
+  "scene": "gemeente",
   "estimatedMinutes": 25,
   "tags": [
     "knm:instanties"
@@ -202,6 +203,10 @@
       "id": "knm-instanties-l-02",
       "title": "Landelijke instanties",
       "blocks": [
+        {
+          "kind": "picture",
+          "scene": "belasting"
+        },
         {
           "kind": "table",
           "headers": [
@@ -478,6 +483,10 @@
       "id": "knm-instanties-l-03",
       "title": "Hulpnummers en veiligheid",
       "blocks": [
+        {
+          "kind": "picture",
+          "scene": "alarm"
+        },
         {
           "kind": "text",
           "md": "**112** bel je bij **spoed** en gevaar (politie, ambulance, brandweer).\n\n**0900-8844** bel je als je de politie nodig hebt, maar het **geen spoed** is.\n\n**Woningcorporatie:** sociale huurwoningen. **Huisarts / huisartsenpost:** gezondheid."

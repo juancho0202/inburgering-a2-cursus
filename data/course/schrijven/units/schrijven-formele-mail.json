@@ -3,6 +3,7 @@
   "moduleId": "schrijven",
   "title": "Een formele e-mail of brief",
   "goal": "Je schrijft een formele e-mail of brief (50–100 woorden) aan de gemeente, huisbaas, school, bedrijf of dokter.",
+  "scene": "kantoor",
   "estimatedMinutes": 35,
   "tags": [
     "schrijven:formeel"

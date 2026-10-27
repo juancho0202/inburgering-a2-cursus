@@ -3,6 +3,7 @@
   "moduleId": "schrijven",
   "title": "Een formulier invullen",
   "goal": "Je vult persoonlijke gegevens, datums en korte antwoorden goed in op een formulier.",
+  "scene": "formulier",
   "estimatedMinutes": 25,
   "tags": [
     "schrijven:formulier"

@@ -3,6 +3,7 @@
   "moduleId": "knm",
   "title": "Staatsinrichting en rechtsstaat",
   "goal": "Je weet hoe Nederland wordt bestuurd en welke rechten en regels er zijn.",
+  "scene": "parlement",
   "estimatedMinutes": 25,
   "tags": [
     "knm:staat"
@@ -228,6 +229,10 @@
       "title": "Verkiezingen en bestuur",
       "blocks": [
         {
+          "kind": "picture",
+          "scene": "stemmen"
+        },
+        {
           "kind": "text",
           "md": "Vanaf **18 jaar** mag je stemmen. Je stemt voor de **Tweede Kamer** (alleen Nederlanders), **Provinciale Staten**, **gemeenteraad**, **waterschap** en **Europees Parlement**. Bij de gemeenteraad mogen ook **EU-burgers** en andere niet-Nederlanders stemmen na **5 jaar** legaal verblijf. **Stemmen is geheim en niet verplicht.**\n\n**Gemeente:** gemeenteraad (gekozen), **burgemeester** (benoemd), **wethouders** (college van B en W).\n\n**Provincie:** Provinciale Staten, Gedeputeerde Staten, **commissaris van de Koning**."
         },
@@ -409,6 +414,10 @@
       "id": "knm-staat-l-03",
       "title": "Rechtsstaat en grondrechten",
       "blocks": [
+        {
+          "kind": "picture",
+          "scene": "rechtbank"
+        },
         {
           "kind": "text",
           "md": "De **Grondwet** is de belangrijkste wet. In **artikel 1** staat: iedereen is **gelijk** en **discriminatie is verboden**.\n\n**Scheiding der machten (trias politica):** **wetgevende macht** (regering en parlement), **uitvoerende macht** (de regering) en **rechterlijke macht** (rechters, onafhankelijk).\n\n**Rechtsstaat:** iedereen moet zich aan de wet houden, ook de overheid. Je bent **onschuldig tot het tegendeel bewezen is** en je hebt **recht op een advocaat**."

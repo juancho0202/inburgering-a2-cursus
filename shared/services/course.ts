@@ -9,7 +9,7 @@ export function courseTree(env: Env) {
     units: mod.units.map((unitId) => {
       const unit = env.content.units.get(unitId);
       return unit
-        ? { id: unit.id, title: unit.title, estimatedMinutes: unit.estimatedMinutes, stepCount: unit.steps.length }
+        ? { id: unit.id, title: unit.title, scene: unit.scene, estimatedMinutes: unit.estimatedMinutes, stepCount: unit.steps.length }
         : { id: unitId, title: "(ontbreekt)", estimatedMinutes: 0, stepCount: 0 };
     }),
   }));

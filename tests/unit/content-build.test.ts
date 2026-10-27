@@ -91,6 +91,17 @@ describe("validating the course", () => {
     expect(p).toContain("een KNM-examen heeft 40 vragen");
     expect(p).toContain("alleen meerkeuze en leestekst");
   });
+
+  it("checks that the illustrations a lesson names exist", () => {
+    const files = good();
+    const lesson = { type: "lesson", id: "basis-a-l-01", title: "t", blocks: [{ kind: "picture", scene: "maan" }] };
+    files["basis/units/basis-a.json"] = unit("basis-a", [lesson, ex({ ...mc("basis-a-q-001"), spot: "draak" })], { scene: "keuken" });
+    const { data, errors } = buildContentData(files);
+    const p = validateContent(data, errors, { scenes: new Set(["keuken"]), spots: new Set(["hond"]) }).join("\n");
+    expect(p).toContain('Illustratie "maan" bestaat niet (basis-a-l-01)');
+    expect(p).toContain('Tekening "draak" bestaat niet (basis-a-q-001)');
+    expect(p).not.toContain("keuken");
+  });
 });
 
 describe("the real course", () => {

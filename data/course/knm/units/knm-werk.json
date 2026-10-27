@@ -3,6 +3,7 @@
   "moduleId": "knm",
   "title": "Werk en inkomen",
   "goal": "Je weet hoe je werk zoekt, wat in een contract staat en welke instanties je helpen.",
+  "scene": "sollicitatie",
   "estimatedMinutes": 25,
   "tags": [
     "knm:werk"
@@ -162,6 +163,10 @@
       "title": "Contract en loon",
       "blocks": [
         {
+          "kind": "picture",
+          "scene": "contract"
+        },
+        {
           "kind": "text",
           "md": "In je **arbeidscontract** staat of de baan **tijdelijk** of **vast** is. Vaak is er eerst een **proeftijd**.\n\nOp je **loonstrook** zie je je **bruto** en **netto** salaris. Netto is wat je krijgt nadat de belasting eraf is.\n\nJe krijgt vaak **vakantiegeld** (meestal in mei of juni) en je hebt **vakantiedagen**. Er is een **wettelijk minimumloon**."
         },
@@ -296,6 +301,10 @@
       "id": "knm-werk-l-03",
       "title": "Ziek zijn en je rechten",
       "blocks": [
+        {
+          "kind": "picture",
+          "scene": "ziekmelden"
+        },
         {
           "kind": "text",
           "md": "**Ziek?** Bel **meteen** je werkgever (**ziekmelden**) volgens de regels van je werk.\n\n**Zwartwerken** (werken zonder belasting te betalen) mag niet.\n\n**Discriminatie** op je werk mag niet. Mannen en vrouwen hebben dezelfde rechten.\n\nEen **vakbond** komt op voor werknemers. In grotere bedrijven is er een **ondernemingsraad (OR)**."
@@ -436,6 +445,10 @@
       "id": "knm-werk-l-04",
       "title": "Instanties voor werk en geld",
       "blocks": [
+        {
+          "kind": "picture",
+          "scene": "post"
+        },
         {
           "kind": "table",
           "headers": [

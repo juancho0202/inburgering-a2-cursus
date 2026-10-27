@@ -3,6 +3,7 @@
   "moduleId": "basis",
   "title": "Werkwoorden: nu",
   "goal": "Je gebruikt de goede vorm van het werkwoord in de tegenwoordige tijd.",
+  "scene": "keuken",
   "estimatedMinutes": 20,
   "tags": [
     "basis:werkwoorden",

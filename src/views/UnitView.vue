@@ -15,6 +15,7 @@ import LessonBlocks from "../components/LessonBlocks.vue";
 import ReportIssue from "../components/ReportIssue.vue";
 import ExerciseShell from "../components/exercises/ExerciseShell.vue";
 import ReadAlongButton from "../components/ui/ReadAlongButton.vue";
+import ScenePicture from "../components/ScenePicture.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -178,6 +179,8 @@ const restart = async () => {
         <ReadAlongButton class="mb-3" :reading="reading" label="Lees voor" @toggle="toggleRead" />
         <p v-if="stepIndex === 0" class="read-along mb-5 text-muted" :class="{ 'is-reading': isRead('goal') }">{{ unit.goal }}</p>
         <div v-else class="mb-3" />
+        <!-- The lesson opens with its picture, like a chapter in a language book -->
+        <ScenePicture v-if="stepIndex === 0 && unit.scene" :id="unit.scene" class="mb-6 max-w-2xl" />
         <LessonBlocks :blocks="step.blocks" :active="activeBlock" />
         <div class="mt-10 flex justify-center"><ReportIssue :item-id="step.id" /></div>
       </div>
@@ -190,6 +193,7 @@ const restart = async () => {
     </template>
 
     <template v-else>
+      <ScenePicture v-if="stepIndex === 0 && unit.scene" :id="unit.scene" class="mb-6 max-w-xl" />
       <ReadAlongButton class="mb-4" :reading="reading" label="Lees de vraag voor" @toggle="toggleRead" />
       <ExerciseShell :key="stepIndex" :exercise="step.exercise" :is-last="isLast" @done="advance" @exit="exit" />
     </template>
