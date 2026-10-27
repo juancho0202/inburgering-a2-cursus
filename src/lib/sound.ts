@@ -43,6 +43,10 @@ function impulse(c: AudioContext, seconds: number): AudioBuffer {
 function audio(): AudioContext | null {
   if (typeof AudioContext === "undefined") return null;
   if (!ctx) {
+    // iOS plays Web Audio as "ambient" sound, which the silent switch mutes (the voice clips, being media, are not).
+    // "playback" makes these sounds behave like the clips. Safari 17+; elsewhere the property doesn't exist.
+    const session = (navigator as Navigator & { audioSession?: { type: string } }).audioSession;
+    if (session) session.type = "playback";
     ctx = new AudioContext();
     const comp = ctx.createDynamicsCompressor();
     comp.threshold.value = -16;
@@ -61,8 +65,9 @@ function audio(): AudioContext | null {
     const n = noise.getChannelData(0);
     for (let i = 0; i < n.length; i++) n[i] = Math.random() * 2 - 1;
   }
-  // Browsers start the context suspended until the page has had a click or key press.
-  if (ctx.state === "suspended") void ctx.resume().catch(() => {});
+  // Browsers start the context suspended until the page has had a click or key press; iOS also "interrupts" it
+  // after a call, Siri or the app going to the background, and it stays silent until resumed.
+  if (ctx.state !== "running") void ctx.resume().catch(() => {});
   return ctx;
 }
 
