@@ -25,7 +25,7 @@ export function speakable(text: string): string {
 export const LESSON_VOICES: { id: string; model: string; speaker?: number }[] = [
   { id: "ronnie", model: "nl_NL-ronnie-medium" },
   { id: "alex", model: "nl_NL-alex-medium" },
-  { id: "mls-7", model: "nl_NL-mls-medium", speaker: 7 },
+  { id: "nathalie", model: "nl_BE-nathalie-medium" },
 ];
 export const lessonVoice = (lessonNumber = 1) => LESSON_VOICES[(lessonNumber - 1) % LESSON_VOICES.length].id;
 
