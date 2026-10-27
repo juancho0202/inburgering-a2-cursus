@@ -42,16 +42,24 @@ export function voiceKey(text: string, voice: string): string {
 /** Fixed lines spoken outside the steps. */
 export const LESSON_DONE = { passed: "Les klaar! Goed gedaan.", failed: "Les klaar! Probeer het nog een keer." };
 
-/** What the voice says for an exercise: the question, plus the sentence or statement it is about. */
-export function exerciseAnnouncement(e: Exercise): string {
-  if (e.type === "true-false") return `${e.prompt} ${e.statement}`;
-  if (e.type === "gap-fill" || e.type === "gap-choice") return `${e.prompt} ${e.text}`;
-  return e.prompt;
+/**
+ * What the voice says for an exercise: the question, plus the sentence or statement it is about.
+ * Without the prompt (the same instruction as the exercise before) only that sentence or statement is left.
+ */
+export function exerciseAnnouncement(e: Exercise, withPrompt = true): string {
+  const prompt = withPrompt ? e.prompt : "";
+  if (e.type === "true-false") return `${prompt} ${e.statement}`.trim();
+  if (e.type === "gap-fill" || e.type === "gap-choice") return `${prompt} ${e.text}`.trim();
+  return prompt;
 }
 
-/** What the voice says when a step appears. The first step also names the lesson ("Les 3. De of het."). */
-export function stepAnnouncement(step: Step, opts: { first: boolean; unitTitle: string; lessonNumber?: number }): string {
-  const body = step.type === "lesson" ? step.title : exerciseAnnouncement(step.exercise);
+/**
+ * What the voice says when a step appears. The first step also names the lesson ("Les 3. De of het.").
+ * An exercise with the same instruction as `previousPrompt` (the exercise just before) doesn't repeat it.
+ */
+export function stepAnnouncement(step: Step, opts: { first: boolean; unitTitle: string; lessonNumber?: number; previousPrompt?: string }): string {
+  const body =
+    step.type === "lesson" ? step.title : exerciseAnnouncement(step.exercise, step.exercise.prompt !== opts.previousPrompt);
   if (!opts.first) return body;
   const intro = opts.lessonNumber ? `Les ${opts.lessonNumber}. ${opts.unitTitle}.` : `${opts.unitTitle}.`;
   return step.type === "lesson" && step.title === opts.unitTitle ? intro : `${intro} ${body}`;
@@ -86,8 +94,12 @@ export function blockText(b: LessonBlock): string {
  * then for a listening exercise what there is to hear ("listen"), or for a lesson the goal on step 1
  * and each readable block (ids "block-0", "block-1", …).
  */
-export function stepSegments(step: Step, opts: { first: boolean; unitTitle: string; lessonNumber?: number; goal?: string }): Segment[] {
-  const segments: Segment[] = [{ id: "heading", text: stepAnnouncement(step, opts) }];
+export function stepSegments(
+  step: Step,
+  opts: { first: boolean; unitTitle: string; lessonNumber?: number; goal?: string; previousPrompt?: string },
+): Segment[] {
+  const heading = stepAnnouncement(step, opts);
+  const segments: Segment[] = heading ? [{ id: "heading", text: heading }] : [];
   // A listening task: after the question, the voice says what the learner has to listen to.
   if (step.type === "exercise" && step.exercise.listen) segments.push({ id: "listen", text: step.exercise.listen });
   if (step.type !== "lesson") return segments;

@@ -45,6 +45,14 @@ describe("voice announcements", () => {
     ]);
   });
 
+  it("doesn't repeat the instruction of the exercise before, but still reads the sentence", () => {
+    const order = { ...base, type: "mc" as const, prompt: "Zet de woorden in de goede volgorde.", options: ["a", "b"], answer: 0 };
+    expect(stepSegments({ type: "exercise", exercise: order }, { first: false, unitTitle: "Tijd", previousPrompt: order.prompt })).toEqual([]);
+    expect(stepSegments({ type: "exercise", exercise: order }, { first: false, unitTitle: "Tijd", previousPrompt: "Kies." })[0].text).toBe(order.prompt);
+    const gap = { ...base, type: "gap-fill" as const, prompt: "Vul in.", text: "Ik ___ thuis.", answers: [["ben"]] };
+    expect(stepAnnouncement({ type: "exercise", exercise: gap }, { first: false, unitTitle: "Tijd", previousPrompt: "Vul in." })).toBe("Ik ___ thuis.");
+  });
+
   it("gives list items and lines their own pause", () => {
     expect(speakable("Je ziet:\n- de bus\n- de trein")).toBe("Je ziet: de bus. de trein");
   });
