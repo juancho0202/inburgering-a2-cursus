@@ -1,4 +1,5 @@
 import type { Exercise, LessonBlock, Unit } from "@shared/types";
+import { VOICES } from "@shared/content/voices";
 
 type Step = Unit["steps"][number];
 
@@ -22,11 +23,7 @@ export function speakable(text: string): string {
  * The voices of the recorded clips (Piper models, see scripts/tts). Lessons take turns by their number in the module:
  * lesson 1 the first voice, lesson 2 the second, lesson 4 the first again, … the same in every module.
  */
-export const LESSON_VOICES: { id: string; model: string; speaker?: number }[] = [
-  { id: "ronnie", model: "nl_NL-ronnie-medium" },
-  { id: "alex", model: "nl_NL-alex-medium" },
-  { id: "nathalie", model: "nl_BE-nathalie-medium" },
-];
+export const LESSON_VOICES: { id: string; model: string; speaker?: number }[] = [...VOICES];
 export const lessonVoice = (lessonNumber = 1) => LESSON_VOICES[(lessonNumber - 1) % LESSON_VOICES.length].id;
 
 /** File name of the recorded clip for a text in a voice (FNV-1a of both): the same in the generator and the app. */
@@ -92,7 +89,8 @@ export function blockText(b: LessonBlock): string {
 
 /**
  * Everything the voice reads for a step, in order: the heading (on the first step with the lesson's name),
- * then for a listening exercise what there is to hear ("listen"), or for a lesson the goal on step 1
+ * then for a listening exercise what there is to hear ("listen"), for a listening fragment who is talking where
+ * ("situation"; the fragment itself is its own recording), or for a lesson the goal on step 1
  * and each readable block (ids "block-0", "block-1", …).
  */
 export function stepSegments(
@@ -103,6 +101,7 @@ export function stepSegments(
   const segments: Segment[] = heading ? [{ id: "heading", text: heading }] : [];
   // A listening task: after the question, the voice says what the learner has to listen to.
   if (step.type === "exercise" && step.exercise.listen) segments.push({ id: "listen", text: step.exercise.listen });
+  if (step.type === "exercise" && step.exercise.type === "listening") segments.push({ id: "situation", text: step.exercise.fragment.situation });
   if (step.type !== "lesson") return segments;
   if (opts.goal) segments.push({ id: "goal", text: opts.goal });
   step.blocks.forEach((b, i) => {

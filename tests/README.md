@@ -104,6 +104,7 @@ These are the kinds of bugs that have actually been found here. For each compone
 - `fakeApi.on` is "newest wins": if a helper registers defaults, register your override *after* calling it.
 - `<Teleport to="body">` content (e.g. `ReportIssue`) is in `document.body`, not in `wrapper`.
 - jsdom has no `matchMedia`, `speechSynthesis` or real layout. Stub what you need; don't assert on sizes or visibility from CSS.
+- jsdom cannot play audio. For listening fragments stub `Audio` with a small fake whose `at(seconds)` fires `timeupdate`, stub `fetch` for `/audio/fragments/manifest.json`, and call `forgetFragmentTimings()` between tests (the list is loaded once). See `components/Listening.test.ts`.
 - jsdom never loads images and has no `HTMLImageElement.decode` (the app falls back to the load event, see `src/lib/images.ts`), so a picture never becomes "ready" by itself. To test "already downloaded", stub the `complete` and `naturalWidth` getters (see `Pictures.test.ts`).
 - Mock modules by their path as the component imports them: `../../../src/lib/progressFile`, `../../../src/lib/storage`.
 - Random order (`shuffled`): find options by their text, never by position; mock `Math.random` only to test a rule about the shuffle itself.
@@ -115,6 +116,7 @@ These are the kinds of bugs that have actually been found here. For each compone
 | Area | Test file |
 | --- | --- |
 | Exercise types (mc, true/false, gap, conjugate, word order, match, form, reading) | `components/exercises.test.ts` |
+| Listening: fragment player (recording, device voice, none), listening exercise, in the shell | `components/Listening.test.ts` (rules, recording key, exam grading: `listening.test.ts`) |
 | Exercise frame: check, save, explain, flag, retry | `components/ExerciseShell.test.ts` |
 | Writing task + Claude feedback | `components/WritingExercise.test.ts` |
 | Lesson player | `components/UnitView.test.ts` |

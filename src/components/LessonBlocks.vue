@@ -4,6 +4,7 @@ import type { LessonBlock, VocabEntry } from "@shared/types";
 import { renderMd } from "../composables/markdown";
 import { useVocabStore } from "../stores/vocab";
 import DocumentCard from "./DocumentCard.vue";
+import FragmentPlayer from "./FragmentPlayer.vue";
 import ScenePicture from "./ScenePicture.vue";
 import SpeakButton from "./ui/SpeakButton.vue";
 
@@ -78,6 +79,9 @@ const word = (id: string): VocabEntry | undefined => vocab.byId(id);
       <DocumentCard v-else-if="block.kind === 'document'" :doc="block" />
 
       <ScenePicture v-else-if="block.kind === 'picture'" :id="block.scene" :caption="block.caption" class="max-w-xl" />
+
+      <!-- In a lesson the text of a fragment is in view: listen and read along -->
+      <FragmentPlayer v-else-if="block.kind === 'fragment'" :fragment="block.fragment" show-text class="max-w-2xl" />
     </div>
   </div>
 </template>

@@ -1,0 +1,724 @@
+{
+  "id": "luisteren-werk",
+  "moduleId": "luisteren",
+  "title": "Werk en cursus",
+  "goal": "Je verstaat je leidinggevende, collega's en je docent: instructies, roosters en afspraken.",
+  "scene": "magazijn",
+  "estimatedMinutes": 25,
+  "tags": [
+    "luisteren:werk"
+  ],
+  "vocabRefs": [
+    "basis-vocab-werk-008",
+    "basis-vocab-werk-003",
+    "basis-vocab-werk-004",
+    "basis-vocab-tijd-003",
+    "basis-vocab-werk-025",
+    "basis-vocab-werk-031",
+    "basis-vocab-luisteren-017",
+    "basis-vocab-luisteren-018",
+    "basis-vocab-cursus-opleiding-007"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "luisteren-werk-l-01",
+      "title": "Instructies op het werk",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Op het werk legt iemand vaak iets uit: hoe iets werkt, wat je moet doen, of wat je **niet** mag doen. In het examen hoor je vragen als: *Wat moet Ahmed eerst doen?* of *Wat mag hij niet doen?*"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Je hoort",
+            "Betekenis"
+          ],
+          "rows": [
+            [
+              "Eerst …, daarna …, als laatste …",
+              "De volgorde: wat doe je eerst?"
+            ],
+            [
+              "Je moet altijd …",
+              "Dat is een regel."
+            ],
+            [
+              "Je mag niet …",
+              "Dat is verboden."
+            ],
+            [
+              "Het is niet nodig om …",
+              "Dat hoeft niet."
+            ],
+            [
+              "Vergeet niet om …",
+              "Denk eraan."
+            ],
+            [
+              "Kun jij mijn dienst overnemen?",
+              "Kun jij voor mij werken?"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Let op de volgorde: **eerst**, **dan**, **daarna**, **als laatste**. Een vraag kan gaan over wat iemand **eerst** doet."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-werk-q-001",
+        "type": "listening",
+        "tags": [
+          "luisteren:uitleg"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de uitleg.",
+        "fragment": {
+          "kind": "uitleg",
+          "situation": "Ahmed begint vandaag in een magazijn. Zijn leidinggevende Petra legt uit hoe het werkt.",
+          "scene": "magazijn",
+          "speakers": [
+            {
+              "name": "Petra",
+              "voice": "nathalie"
+            },
+            {
+              "name": "Ahmed",
+              "voice": "ronnie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Petra",
+              "nl": "Welkom, Ahmed. Ik laat je eerst het magazijn zien."
+            },
+            {
+              "speaker": "Petra",
+              "nl": "Je werkt van zeven uur 's ochtends tot half vier. Om tien uur heb je een kwartier pauze, en om twaalf uur een half uur."
+            },
+            {
+              "speaker": "Petra",
+              "nl": "Hier liggen de veiligheidsschoenen. Die moet je altijd dragen in het magazijn."
+            },
+            {
+              "speaker": "Ahmed",
+              "nl": "En een helm? Moet ik die ook op?"
+            },
+            {
+              "speaker": "Petra",
+              "nl": "Nee, een helm is hier niet nodig. Wel handschoenen als je dozen tilt."
+            },
+            {
+              "speaker": "Petra",
+              "nl": "Ben je ziek? Bel mij dan voor half zeven. Een berichtje sturen is niet genoeg."
+            },
+            {
+              "speaker": "Ahmed",
+              "nl": "Duidelijk. Bellen, niet appen."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-werk-q-001-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Hoe laat begint Ahmed met werken?",
+            "options": [
+              "Om 6.30 uur",
+              "Om 7.00 uur",
+              "Om 7.30 uur"
+            ],
+            "answer": 1,
+            "explanation": "'Je werkt van zeven uur 's ochtends tot half vier.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-werk-q-001-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Wat moet Ahmed altijd dragen in het magazijn?",
+            "options": [
+              "Een helm",
+              "Veiligheidsschoenen",
+              "Handschoenen"
+            ],
+            "answer": 1,
+            "explanation": "'Hier liggen de veiligheidsschoenen. Die moet je altijd dragen.' Handschoenen alleen als hij dozen tilt.",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-werk-q-001-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Wat moet Ahmed doen als hij ziek is?",
+            "options": [
+              "Petra een bericht sturen",
+              "Petra voor half zeven bellen",
+              "Een e-mail sturen"
+            ],
+            "answer": 1,
+            "explanation": "'Bel mij dan voor half zeven. Een berichtje sturen is niet genoeg.'",
+            "difficulty": 1,
+            "answerLine": 5
+          }
+        ],
+        "explanation": "Altijd, niet nodig, alleen als …: let goed op wat een regel is en wat niet.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-werk-q-002",
+        "type": "listening",
+        "tags": [
+          "luisteren:gesprek"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+        "fragment": {
+          "kind": "gesprek",
+          "situation": "Sanne en haar collega Kevin werken in een restaurant. Sanne wil Kevin iets vragen.",
+          "speakers": [
+            {
+              "name": "Sanne",
+              "voice": "nathalie"
+            },
+            {
+              "name": "Kevin",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Sanne",
+              "nl": "Kevin, mag ik je iets vragen? Kun jij zaterdag mijn dienst overnemen?"
+            },
+            {
+              "speaker": "Kevin",
+              "nl": "Zaterdag? Welke dienst heb je dan?"
+            },
+            {
+              "speaker": "Sanne",
+              "nl": "De avonddienst, van vijf tot elf. Mijn zus gaat trouwen."
+            },
+            {
+              "speaker": "Kevin",
+              "nl": "O, gefeliciteerd! Zaterdagavond kan ik wel. Maar dan wil ik graag ruilen. Kun jij mijn dienst van dinsdag doen?"
+            },
+            {
+              "speaker": "Sanne",
+              "nl": "Dinsdagochtend?"
+            },
+            {
+              "speaker": "Kevin",
+              "nl": "Nee, dinsdagmiddag, van twaalf tot vijf."
+            },
+            {
+              "speaker": "Sanne",
+              "nl": "Dat is goed. Ik zeg het tegen de chef. Dan past hij het rooster aan."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-werk-q-002-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Waarom kan Sanne zaterdag niet werken?",
+            "options": [
+              "Ze is ziek",
+              "Haar zus gaat trouwen",
+              "Ze is jarig"
+            ],
+            "answer": 1,
+            "explanation": "Sanne zegt: 'Mijn zus gaat trouwen.'",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-werk-q-002-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Wanneer werkt Sanne voor Kevin?",
+            "options": [
+              "Dinsdagochtend",
+              "Dinsdagmiddag",
+              "Zaterdagavond"
+            ],
+            "answer": 1,
+            "explanation": "Sanne vraagt 'dinsdagochtend?', maar Kevin zegt: 'Nee, dinsdagmiddag.'",
+            "difficulty": 1,
+            "answerLine": 5
+          },
+          {
+            "id": "luisteren-werk-q-002-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Wie past het rooster aan?",
+            "options": [
+              "Sanne",
+              "Kevin",
+              "De chef"
+            ],
+            "answer": 2,
+            "explanation": "'Ik zeg het tegen de chef. Dan past hij het rooster aan.'",
+            "difficulty": 1,
+            "answerLine": 6
+          }
+        ],
+        "explanation": "'Nee, …' betekent: wat je net hoorde, klopt niet. Het goede antwoord komt daarna.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-werk-q-003",
+        "type": "listening",
+        "tags": [
+          "luisteren:uitleg"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de uitleg.",
+        "fragment": {
+          "kind": "uitleg",
+          "situation": "Mila zit op taalles. De docent vertelt iets over de toets.",
+          "scene": "klas",
+          "speakers": [
+            {
+              "name": "Docent",
+              "voice": "alex"
+            },
+            {
+              "name": "Mila",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Docent",
+              "nl": "Goedemorgen allemaal. Volgende week is de toets. Niet op maandag, zoals ik eerst zei, maar op dinsdag."
+            },
+            {
+              "speaker": "Docent",
+              "nl": "De toets gaat over hoofdstuk vier en vijf. Hoofdstuk zes hoeft niet."
+            },
+            {
+              "speaker": "Docent",
+              "nl": "Neem een pen mee. Een woordenboek mag niet."
+            },
+            {
+              "speaker": "Mila",
+              "nl": "Hoe lang duurt de toets?"
+            },
+            {
+              "speaker": "Docent",
+              "nl": "Een uur. We beginnen om negen uur, dus wees op tijd."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-werk-q-003-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Wanneer is de toets?",
+            "options": [
+              "Op maandag",
+              "Op dinsdag",
+              "Op woensdag"
+            ],
+            "answer": 1,
+            "explanation": "'Niet op maandag, zoals ik eerst zei, maar op dinsdag.'",
+            "difficulty": 1,
+            "answerLine": 0
+          },
+          {
+            "id": "luisteren-werk-q-003-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Waarover gaat de toets?",
+            "options": [
+              "Hoofdstuk 4 en 5",
+              "Hoofdstuk 4, 5 en 6",
+              "Hoofdstuk 5 en 6"
+            ],
+            "answer": 0,
+            "explanation": "'De toets gaat over hoofdstuk vier en vijf. Hoofdstuk zes hoeft niet.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-werk-q-003-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Wat mag niet bij de toets?",
+            "options": [
+              "Een pen",
+              "Een woordenboek",
+              "Een telefoon"
+            ],
+            "answer": 1,
+            "explanation": "'Neem een pen mee. Een woordenboek mag niet.'",
+            "difficulty": 1,
+            "answerLine": 2
+          }
+        ],
+        "explanation": "'Niet …, maar …' en 'hoeft niet': kleine woorden, maar ze veranderen alles.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-werk-q-004",
+        "type": "listening",
+        "tags": [
+          "luisteren:telefoon"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+        "fragment": {
+          "kind": "telefoon",
+          "situation": "Rachid is ziek. Hij belt zijn leidinggevende.",
+          "speakers": [
+            {
+              "name": "Ingrid",
+              "voice": "nathalie",
+              "phone": true
+            },
+            {
+              "name": "Rachid",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Ingrid",
+              "nl": "Met Ingrid."
+            },
+            {
+              "speaker": "Rachid",
+              "nl": "Goedemorgen Ingrid, met Rachid. Ik ben ziek. Ik heb griep en veel koorts."
+            },
+            {
+              "speaker": "Ingrid",
+              "nl": "Wat vervelend. Ben je al naar de dokter geweest?"
+            },
+            {
+              "speaker": "Rachid",
+              "nl": "Nee, nog niet. Ik bel vandaag de huisarts."
+            },
+            {
+              "speaker": "Ingrid",
+              "nl": "Goed. Blijf maar thuis tot je beter bent. Kun je donderdag weer bellen? Dan weet ik of je vrijdag komt."
+            },
+            {
+              "speaker": "Rachid",
+              "nl": "Ja, dat doe ik."
+            },
+            {
+              "speaker": "Ingrid",
+              "nl": "En de vergadering van woensdag? Wil je Johan vragen of hij de presentatie doet?"
+            },
+            {
+              "speaker": "Rachid",
+              "nl": "Ik stuur hem vandaag een mail."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-werk-q-004-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wat heeft Rachid?",
+            "options": [
+              "Hoofdpijn",
+              "Griep",
+              "Rugpijn"
+            ],
+            "answer": 1,
+            "explanation": "'Ik heb griep en veel koorts.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-werk-q-004-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wanneer moet Rachid Ingrid weer bellen?",
+            "options": [
+              "Op woensdag",
+              "Op donderdag",
+              "Op vrijdag"
+            ],
+            "answer": 1,
+            "explanation": "'Kun je donderdag weer bellen? Dan weet ik of je vrijdag komt.'",
+            "difficulty": 1,
+            "answerLine": 4
+          },
+          {
+            "id": "luisteren-werk-q-004-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wat vraagt Ingrid over de vergadering?",
+            "options": [
+              "Of Rachid Johan vraagt voor de presentatie",
+              "Of Rachid toch naar de vergadering komt",
+              "Of Rachid de presentatie mailt"
+            ],
+            "answer": 0,
+            "explanation": "'Wil je Johan vragen of hij de presentatie doet?'",
+            "difficulty": 1,
+            "answerLine": 6
+          }
+        ],
+        "explanation": "Drie dagen: woensdag (vergadering), donderdag (bellen), vrijdag (misschien werken). Welke dag zoekt de vraag?",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-werk-q-005",
+        "type": "listening",
+        "tags": [
+          "luisteren:uitleg"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de uitleg.",
+        "fragment": {
+          "kind": "uitleg",
+          "situation": "Bas werkt in een groot kantoor. Een collega legt uit wat je moet doen bij brand.",
+          "speakers": [
+            {
+              "name": "Mevrouw Smit",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Mevrouw Smit",
+              "nl": "Hoort u het alarm? Dan moet u meteen het gebouw uit."
+            },
+            {
+              "speaker": "Mevrouw Smit",
+              "nl": "Gebruik nooit de lift. Neem altijd de trap."
+            },
+            {
+              "speaker": "Mevrouw Smit",
+              "nl": "Uw tas en uw jas laat u liggen."
+            },
+            {
+              "speaker": "Mevrouw Smit",
+              "nl": "Buiten gaat u naar het verzamelpunt. Dat is op het parkeerterrein, bij de grote boom."
+            },
+            {
+              "speaker": "Mevrouw Smit",
+              "nl": "Daar kijken wij of iedereen er is. Ga dus niet naar huis!"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-werk-q-005-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Wat moet je doen als je het alarm hoort?",
+            "options": [
+              "Eerst je tas en je jas pakken",
+              "Meteen het gebouw uit gaan",
+              "Met de lift naar beneden gaan"
+            ],
+            "answer": 1,
+            "explanation": "'Hoort u het alarm? Dan moet u meteen het gebouw uit.'",
+            "difficulty": 1,
+            "answerLine": 0
+          },
+          {
+            "id": "luisteren-werk-q-005-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Waar is het verzamelpunt?",
+            "options": [
+              "Bij de ingang",
+              "Op het parkeerterrein",
+              "Bij de lift"
+            ],
+            "answer": 1,
+            "explanation": "'Dat is op het parkeerterrein, bij de grote boom.'",
+            "difficulty": 1,
+            "answerLine": 3
+          }
+        ],
+        "explanation": "Bij een uitleg hoor je regels: altijd, nooit, meteen, niet. Die woorden zijn belangrijk.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-werk-q-006",
+        "type": "mc",
+        "tags": [
+          "luisteren:werk"
+        ],
+        "prompt": "Luister. Wat moet de nieuwe collega eerst doen?",
+        "options": [
+          "De lijst met taken pakken",
+          "Werkkleding aantrekken",
+          "Zijn naam op het bord schrijven"
+        ],
+        "answer": 1,
+        "explanation": "'Eerst trek je je werkkleding aan.' Daarna en als laatste komen later.",
+        "difficulty": 1,
+        "listen": "Eerst trek je je werkkleding aan. Daarna pak je de lijst met taken. Als laatste schrijf je je naam op het bord."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-werk-q-007",
+        "type": "listening",
+        "tags": [
+          "luisteren:gesprek"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+        "fragment": {
+          "kind": "gesprek",
+          "situation": "Priya heeft een sollicitatiegesprek bij een hotel.",
+          "scene": "sollicitatie",
+          "speakers": [
+            {
+              "name": "Manager",
+              "voice": "ronnie"
+            },
+            {
+              "name": "Priya",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Manager",
+              "nl": "Welkom, Priya. Je solliciteert naar de baan bij de receptie. Waarom wil je hier werken?"
+            },
+            {
+              "speaker": "Priya",
+              "nl": "Ik vind het leuk om met mensen te praten. En ik spreek drie talen: Nederlands, Engels en Hindi."
+            },
+            {
+              "speaker": "Manager",
+              "nl": "Mooi. Bij ons werk je ook in het weekend. Is dat een probleem?"
+            },
+            {
+              "speaker": "Priya",
+              "nl": "Nee, het weekend is geen probleem. Maar op woensdag kan ik niet, dan heb ik taalles."
+            },
+            {
+              "speaker": "Manager",
+              "nl": "Dat is goed te regelen. Je begint met een contract voor zes maanden."
+            },
+            {
+              "speaker": "Priya",
+              "nl": "En wanneer hoor ik of ik de baan krijg?"
+            },
+            {
+              "speaker": "Manager",
+              "nl": "Ik bel je vrijdag."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-werk-q-007-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Waarom wil Priya in het hotel werken?",
+            "options": [
+              "Ze woont dichtbij",
+              "Ze praat graag met mensen",
+              "Ze wil in het weekend werken"
+            ],
+            "answer": 1,
+            "explanation": "'Ik vind het leuk om met mensen te praten.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-werk-q-007-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Wanneer kan Priya niet werken?",
+            "options": [
+              "In het weekend",
+              "Op woensdag",
+              "Op vrijdag"
+            ],
+            "answer": 1,
+            "explanation": "'Maar op woensdag kan ik niet, dan heb ik taalles.'",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-werk-q-007-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Hoe lang is het eerste contract?",
+            "options": [
+              "3 maanden",
+              "6 maanden",
+              "1 jaar"
+            ],
+            "answer": 1,
+            "explanation": "'Je begint met een contract voor zes maanden.'",
+            "difficulty": 1,
+            "answerLine": 4
+          }
+        ],
+        "explanation": "'Geen probleem' en 'kan ik niet': luister goed wat wel en wat niet kan.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

@@ -8,7 +8,7 @@ import { normalizeAnswer } from "../logic/answers.js";
 import { writingTag } from "../logic/corrections.js";
 import type { GeneratedRecord } from "../schemas/store.js";
 import { invalid, newId, nowIso, notFound, ServiceError, type Env } from "./context.js";
-import { findExercise, findWritingExercise } from "./lookup.js";
+import { findExercise, findParent, findWritingExercise } from "./lookup.js";
 import { addAttempt } from "./progress.js";
 import { recordUsage } from "./settings.js";
 import { summarizeWriting } from "./exams.js";
@@ -87,13 +87,19 @@ export async function explain(env: Env, body: unknown) {
 
   const learner = describeAnswer(ex, parsed.data.learnerAnswer);
   const key = `${ex.id}::${normalizeAnswer(learner)}`;
+  // A question about a listening fragment means nothing without what was said.
+  const parent = await findParent(env, ex.id);
+  const context =
+    parent?.type === "listening"
+      ? `${parent.fragment.situation}\nWat de cursist hoorde:\n${parent.fragment.lines.map((l) => `${l.speaker}: ${l.nl}`).join("\n")}`
+      : ex.context;
   const cached = await env.store.explanations.get(key);
   if (cached) return { explanation: cached.explanation, rule: cached.rule, extraExamples: cached.extraExamples, cached: true };
 
   try {
     const { explanation, usage } = await explainMistake(gatewayOrThrow(env), {
       prompt: ex.prompt,
-      context: ex.context,
+      context,
       correct: describeCorrect(ex),
       options: optionsOf(ex),
       explanation: ex.explanation,

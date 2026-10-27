@@ -1,0 +1,620 @@
+{
+  "id": "luisteren-gemengd",
+  "moduleId": "luisteren",
+  "title": "Examentraining",
+  "goal": "Je oefent zoals op het examen: verschillende fragmenten, met 2 of 3 vragen bij elk fragment.",
+  "scene": "oefenen",
+  "estimatedMinutes": 30,
+  "tags": [
+    "luisteren:gemengd"
+  ],
+  "vocabRefs": [
+    "basis-vocab-luisteren-001",
+    "basis-vocab-luisteren-002"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "luisteren-gemengd-l-01",
+      "title": "Oefenen zoals op het examen",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In deze les oefen je zoals op het examen. Je hoort verschillende soorten fragmenten. Doe het zo:\n\n1. Lees de situatie en alle vragen.\n2. Luister één keer naar het hele fragment.\n3. Kies je antwoorden.\n4. Luister nog een keer om te controleren.\n\nNa het controleren zie je de tekst. Bij elk antwoord zie je in welke zin het staat. Tik op een zin om die nog een keer te horen."
+        },
+        {
+          "kind": "tip",
+          "md": "Maak je een fout? Kijk wat voor fout het was. Een verkeerde **tijd of dag**? Een verkeerde **persoon**? Of veranderde het plan **aan het einde**? Zo weet je waar je de volgende keer op moet letten."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-gemengd-q-001",
+        "type": "listening",
+        "tags": [
+          "luisteren:gesprek"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+        "fragment": {
+          "kind": "gesprek",
+          "situation": "Ingrid en haar buurman Kofi praten op straat.",
+          "scene": "buren",
+          "speakers": [
+            {
+              "name": "Ingrid",
+              "voice": "nathalie"
+            },
+            {
+              "name": "Kofi",
+              "voice": "ronnie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Kofi",
+              "nl": "Hoi Ingrid! Ik heb je lang niet gezien."
+            },
+            {
+              "speaker": "Ingrid",
+              "nl": "Hoi Kofi! Ik was drie weken in Polen, bij mijn familie."
+            },
+            {
+              "speaker": "Kofi",
+              "nl": "Leuk! Was het lekker weer?"
+            },
+            {
+              "speaker": "Ingrid",
+              "nl": "De eerste week niet, toen regende het elke dag. Maar daarna was het heel warm."
+            },
+            {
+              "speaker": "Kofi",
+              "nl": "Hier was het de hele tijd koud. Zeg, kom je volgende week bij ons eten? Mijn vrouw kookt iets uit Ghana."
+            },
+            {
+              "speaker": "Ingrid",
+              "nl": "Graag! Welke dag?"
+            },
+            {
+              "speaker": "Kofi",
+              "nl": "Vrijdag? Of nee, vrijdag gaat mijn vrouw naar haar moeder. Zaterdag."
+            },
+            {
+              "speaker": "Ingrid",
+              "nl": "Zaterdag is goed. Zal ik een toetje meenemen?"
+            },
+            {
+              "speaker": "Kofi",
+              "nl": "Lekker. Kom maar om zes uur."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-gemengd-q-001-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Hoe lang was Ingrid in Polen?",
+            "options": [
+              "1 week",
+              "2 weken",
+              "3 weken"
+            ],
+            "answer": 2,
+            "explanation": "'Ik was drie weken in Polen.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-gemengd-q-001-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Hoe was het weer in de eerste week in Polen?",
+            "options": [
+              "Warm",
+              "Het regende",
+              "Koud"
+            ],
+            "answer": 1,
+            "explanation": "'De eerste week niet, toen regende het elke dag.'",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-gemengd-q-001-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Wanneer gaat Ingrid bij Kofi eten?",
+            "options": [
+              "Vrijdag om 18.00 uur",
+              "Zaterdag om 18.00 uur",
+              "Zaterdag om 16.00 uur"
+            ],
+            "answer": 1,
+            "explanation": "'Vrijdag? Of nee, … Zaterdag.' En: 'Kom maar om zes uur.'",
+            "difficulty": 1,
+            "answerLine": 6
+          }
+        ],
+        "explanation": "'Of nee' betekent: het plan verandert. Kofi zegt eerst vrijdag, daarna zaterdag.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-gemengd-q-002",
+        "type": "listening",
+        "tags": [
+          "luisteren:voicemail"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de voicemail.",
+        "fragment": {
+          "kind": "voicemail",
+          "situation": "Mila heeft een voicemail van de kinderopvang.",
+          "speakers": [
+            {
+              "name": "Sharon",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Sharon",
+              "nl": "Hallo Mila, met Sharon van kinderopvang De Vlinder."
+            },
+            {
+              "speaker": "Sharon",
+              "nl": "Ik bel over volgende week vrijdag. Dan zijn we dicht, want alle leidsters hebben een cursus."
+            },
+            {
+              "speaker": "Sharon",
+              "nl": "Kunt u voor die dag andere opvang regelen voor Noah?"
+            },
+            {
+              "speaker": "Sharon",
+              "nl": "Maandag zijn we gewoon weer open, vanaf half acht."
+            },
+            {
+              "speaker": "Sharon",
+              "nl": "U krijgt ook nog een e-mail met informatie. Fijne dag!"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-gemengd-q-002-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Waarom is de kinderopvang volgende week vrijdag dicht?",
+            "options": [
+              "Het is een feestdag",
+              "De leidsters hebben een cursus",
+              "Het gebouw wordt verbouwd"
+            ],
+            "answer": 1,
+            "explanation": "'Dan zijn we dicht, want alle leidsters hebben een cursus.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-gemengd-q-002-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Wat moet Mila doen?",
+            "options": [
+              "Een e-mail naar Sharon sturen",
+              "Andere opvang regelen voor Noah",
+              "Noah om half acht brengen"
+            ],
+            "answer": 1,
+            "explanation": "'Kunt u voor die dag andere opvang regelen voor Noah?'",
+            "difficulty": 1,
+            "answerLine": 2
+          }
+        ],
+        "explanation": "Na 'want' komt de reden.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-gemengd-q-003",
+        "type": "listening",
+        "tags": [
+          "luisteren:omroep"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het omroepbericht.",
+        "fragment": {
+          "kind": "omroep",
+          "situation": "Pieter is in het museum. Hij hoort een bericht.",
+          "speakers": [
+            {
+              "name": "Omroeper",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Omroeper",
+              "nl": "Beste bezoekers, het museum gaat over twintig minuten dicht."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "De winkel en het café sluiten al over tien minuten."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "Uw jas kunt u ophalen bij de garderobe, naast de uitgang."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "Morgen is het museum gesloten. Woensdag zijn we weer open, vanaf tien uur."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-gemengd-q-003-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Wanneer gaat het café dicht?",
+            "options": [
+              "Over 10 minuten",
+              "Over 20 minuten",
+              "Over 30 minuten"
+            ],
+            "answer": 0,
+            "explanation": "'De winkel en het café sluiten al over tien minuten.' Het museum sluit over twintig minuten.",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-gemengd-q-003-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Wanneer is het museum weer open?",
+            "options": [
+              "Morgen om 10.00 uur",
+              "Woensdag om 10.00 uur",
+              "Woensdag om 12.00 uur"
+            ],
+            "answer": 1,
+            "explanation": "'Morgen is het museum gesloten. Woensdag zijn we weer open, vanaf tien uur.'",
+            "difficulty": 1,
+            "answerLine": 3
+          }
+        ],
+        "explanation": "Het museum en het café gaan niet tegelijk dicht. Lees goed waar de vraag over gaat.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-gemengd-q-004",
+        "type": "listening",
+        "tags": [
+          "luisteren:telefoon"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+        "fragment": {
+          "kind": "telefoon",
+          "situation": "Samir belt een taxi. Hij moet morgen naar het ziekenhuis.",
+          "speakers": [
+            {
+              "name": "Centrale",
+              "voice": "nathalie",
+              "phone": true
+            },
+            {
+              "name": "Samir",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Centrale",
+              "nl": "Taxicentrale, goedemiddag."
+            },
+            {
+              "speaker": "Samir",
+              "nl": "Goedemiddag. Ik wil een taxi bestellen voor morgen. Ik moet om negen uur in het ziekenhuis zijn."
+            },
+            {
+              "speaker": "Centrale",
+              "nl": "Wat is uw adres?"
+            },
+            {
+              "speaker": "Samir",
+              "nl": "Molenstraat drieëntwintig."
+            },
+            {
+              "speaker": "Centrale",
+              "nl": "Molenstraat drieëntwintig. De rit duurt ongeveer twintig minuten. Dan komt de taxi om twintig over acht."
+            },
+            {
+              "speaker": "Samir",
+              "nl": "Kan het iets eerder? Ik wil niet te laat komen."
+            },
+            {
+              "speaker": "Centrale",
+              "nl": "Goed, dan om acht uur. U kunt in de taxi met uw pinpas betalen."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-gemengd-q-004-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wat is het adres van Samir?",
+            "options": [
+              "Molenstraat 23",
+              "Molenstraat 32",
+              "Molenstraat 20"
+            ],
+            "answer": 0,
+            "explanation": "Drie-en-twintig = 23.",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-gemengd-q-004-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Hoe laat komt de taxi?",
+            "options": [
+              "Om 8.00 uur",
+              "Om 8.20 uur",
+              "Om 9.00 uur"
+            ],
+            "answer": 0,
+            "explanation": "Eerst twintig over acht. Samir wil eerder. 'Goed, dan om acht uur.'",
+            "difficulty": 1,
+            "answerLine": 6
+          },
+          {
+            "id": "luisteren-gemengd-q-004-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Hoe kan Samir betalen?",
+            "options": [
+              "Alleen contant",
+              "Met zijn pinpas",
+              "Later, met een rekening"
+            ],
+            "answer": 1,
+            "explanation": "'U kunt in de taxi met uw pinpas betalen.'",
+            "difficulty": 1,
+            "answerLine": 6
+          }
+        ],
+        "explanation": "Twintig over acht is het eerste voorstel. Samir wil eerder: acht uur.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-gemengd-q-005",
+        "type": "listening",
+        "tags": [
+          "luisteren:radio"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de radio.",
+        "fragment": {
+          "kind": "radio",
+          "situation": "Ana hoort op de radio een bericht over een festival.",
+          "speakers": [
+            {
+              "name": "Presentator",
+              "voice": "ronnie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Presentator",
+              "nl": "Dit weekend is het Wereldfestival in het stadspark."
+            },
+            {
+              "speaker": "Presentator",
+              "nl": "Er is muziek uit veel verschillende landen, en er zijn kraampjes met eten."
+            },
+            {
+              "speaker": "Presentator",
+              "nl": "Het festival begint zaterdag om twaalf uur en het eindigt zondag om zes uur 's avonds."
+            },
+            {
+              "speaker": "Presentator",
+              "nl": "Je hoeft niet te betalen. Kom liever met de fiets, want er is weinig parkeerplaats."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-gemengd-q-005-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Waar is het festival?",
+            "options": [
+              "In het centrum",
+              "In het stadspark",
+              "Op het plein"
+            ],
+            "answer": 1,
+            "explanation": "'Dit weekend is het Wereldfestival in het stadspark.'",
+            "difficulty": 1,
+            "answerLine": 0
+          },
+          {
+            "id": "luisteren-gemengd-q-005-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Wat kost het festival?",
+            "options": [
+              "Niets",
+              "€ 6",
+              "€ 12"
+            ],
+            "answer": 0,
+            "explanation": "'Je hoeft niet te betalen.' Het is gratis.",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-gemengd-q-005-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:radio"
+            ],
+            "prompt": "Waarom kun je beter met de fiets komen?",
+            "options": [
+              "Het is mooi weer",
+              "Er is weinig parkeerplaats",
+              "Er rijden geen bussen"
+            ],
+            "answer": 1,
+            "explanation": "'Kom liever met de fiets, want er is weinig parkeerplaats.'",
+            "difficulty": 1,
+            "answerLine": 3
+          }
+        ],
+        "explanation": "'Je hoeft niet te betalen' betekent: het is gratis.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-gemengd-q-006",
+        "type": "listening",
+        "tags": [
+          "luisteren:uitleg"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de uitleg.",
+        "fragment": {
+          "kind": "uitleg",
+          "situation": "Rachid haalt medicijnen bij de apotheek. De apotheker legt uit hoe hij ze moet gebruiken.",
+          "speakers": [
+            {
+              "name": "Apotheker",
+              "voice": "nathalie"
+            },
+            {
+              "name": "Rachid",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Apotheker",
+              "nl": "Dit zijn uw pillen tegen de ontsteking. U neemt drie keer per dag één pil."
+            },
+            {
+              "speaker": "Apotheker",
+              "nl": "Neem de pil tijdens het eten, met een glas water."
+            },
+            {
+              "speaker": "Rachid",
+              "nl": "Mag ik er alcohol bij drinken?"
+            },
+            {
+              "speaker": "Apotheker",
+              "nl": "Nee, liever niet. En u kunt er moe van worden. Rijd dus niet zelf auto."
+            },
+            {
+              "speaker": "Apotheker",
+              "nl": "Neem de pillen tot het doosje leeg is. Ook als u zich al beter voelt."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-gemengd-q-006-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Hoe vaak moet Rachid een pil nemen?",
+            "options": [
+              "1 keer per dag",
+              "2 keer per dag",
+              "3 keer per dag",
+              "4 keer per dag"
+            ],
+            "answer": 2,
+            "explanation": "'U neemt drie keer per dag één pil.'",
+            "difficulty": 1,
+            "answerLine": 0
+          },
+          {
+            "id": "luisteren-gemengd-q-006-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Wanneer moet Rachid de pil nemen?",
+            "options": [
+              "Voor het eten",
+              "Tijdens het eten",
+              "Na het eten",
+              "Voor het slapen"
+            ],
+            "answer": 1,
+            "explanation": "'Neem de pil tijdens het eten, met een glas water.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-gemengd-q-006-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:uitleg"
+            ],
+            "prompt": "Wanneer mag Rachid stoppen met de pillen?",
+            "options": [
+              "Als hij zich beter voelt",
+              "Na drie dagen",
+              "Als het doosje leeg is",
+              "Als hij moe wordt"
+            ],
+            "answer": 2,
+            "explanation": "'Neem de pillen tot het doosje leeg is. Ook als u zich al beter voelt.'",
+            "difficulty": 1,
+            "answerLine": 4
+          }
+        ],
+        "explanation": "Soms zijn er 4 antwoorden. Lees ze allemaal voordat je luistert.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

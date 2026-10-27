@@ -3,7 +3,7 @@ import { answerOne, openMenu, startFresh } from "./helpers";
 
 test("first visit: welcome screen once, then the dashboard with all modules", async ({ page }) => {
   await startFresh(page);
-  for (const name of ["Basis Nederlands", "Lezen A2", "Kennis van de Nederlandse Maatschappij", "Schrijven A2", "Proefexamens"]) {
+  for (const name of ["Basis Nederlands", "Lezen A2", "Luisteren A2", "Kennis van de Nederlandse Maatschappij", "Schrijven A2", "Proefexamens"]) {
     await expect(page.getByRole("heading", { name })).toBeVisible();
   }
   await expect(page.getByText("Niet van DUO")).toBeVisible();

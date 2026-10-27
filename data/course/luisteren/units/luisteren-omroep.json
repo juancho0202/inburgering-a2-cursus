@@ -1,0 +1,638 @@
+{
+  "id": "luisteren-omroep",
+  "moduleId": "luisteren",
+  "title": "Omroepberichten",
+  "goal": "Je verstaat omroepberichten op het station, in de trein, in de winkel en in het zwembad.",
+  "scene": "perron",
+  "estimatedMinutes": 25,
+  "tags": [
+    "luisteren:omroep"
+  ],
+  "vocabRefs": [
+    "basis-vocab-vervoer-richting-007",
+    "basis-vocab-vervoer-richting-001",
+    "basis-vocab-vervoer-richting-002",
+    "basis-vocab-vervoer-richting-020",
+    "basis-vocab-vervoer-richting-003",
+    "basis-vocab-luisteren-009",
+    "basis-vocab-luisteren-010",
+    "basis-vocab-luisteren-011",
+    "basis-vocab-luisteren-008"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "luisteren-omroep-l-01",
+      "title": "Op het station",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Een omroepbericht hoor je door een **luidspreker**. Eerst klinkt een **belletje**. Dan zegt iemand iets voor **iedereen**: *Dames en heren, …*\n\nOp het station gaat het bijna altijd over: **welke trein**, **welk spoor**, **hoeveel vertraging**, of een trein **rijdt niet**."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Je hoort",
+            "Betekenis"
+          ],
+          "rows": [
+            [
+              "De trein heeft tien minuten vertraging.",
+              "De trein komt tien minuten later."
+            ],
+            [
+              "De trein vertrekt van spoor vijf in plaats van spoor drie.",
+              "Ga naar spoor vijf."
+            ],
+            [
+              "De trein rijdt vandaag niet. / De trein valt uit.",
+              "Er is geen trein."
+            ],
+            [
+              "Door een storing …",
+              "Er is een probleem met de trein of het spoor."
+            ],
+            [
+              "Er rijden bussen in plaats van treinen.",
+              "Neem de bus (vervangend vervoer)."
+            ],
+            [
+              "U kunt overstappen in Utrecht.",
+              "In Utrecht neemt u een andere trein."
+            ],
+            [
+              "Ik herhaal: …",
+              "Ik zeg het nog een keer."
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Een omroepbericht wordt vaak **herhaald**. Heb je het de eerste keer niet goed gehoord? Luister dan naar de herhaling."
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "luisteren-omroep-l-02",
+      "title": "In de winkel en in het zwembad",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Ook in de supermarkt, het zwembad, het museum of het ziekenhuis hoor je omroepberichten. Ze gaan vaak over: **de winkel gaat dicht**, **iets is anders dan normaal**, of **iemand moet ergens naartoe komen**."
+        },
+        {
+          "kind": "example",
+          "nl": "Over vijftien minuten gaat de winkel dicht.",
+          "note": "De winkel sluit bijna."
+        },
+        {
+          "kind": "example",
+          "nl": "Kassa drie gaat nu open.",
+          "note": "Je kunt nu ook bij kassa drie betalen."
+        },
+        {
+          "kind": "example",
+          "nl": "Wil de eigenaar van de rode auto naar de receptie komen?",
+          "note": "Iemand moet naar de receptie."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-omroep-q-001",
+        "type": "listening",
+        "tags": [
+          "luisteren:omroep"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het omroepbericht.",
+        "fragment": {
+          "kind": "omroep",
+          "situation": "Ana staat op het station in Utrecht. Ze wil naar Amsterdam.",
+          "speakers": [
+            {
+              "name": "Omroeper",
+              "voice": "ronnie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Omroeper",
+              "nl": "Dames en heren, de intercity naar Amsterdam Centraal, vertrektijd tien uur achttien, vertrekt vandaag van spoor elf."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "Niet van spoor zeven, maar van spoor elf."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "De trein heeft ongeveer vijf minuten vertraging."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "Onze excuses hiervoor."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-omroep-q-001-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Van welk spoor vertrekt de trein naar Amsterdam?",
+            "options": [
+              "Spoor 7",
+              "Spoor 11",
+              "Spoor 18"
+            ],
+            "answer": 1,
+            "explanation": "'Niet van spoor zeven, maar van spoor elf.'",
+            "difficulty": 2,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-omroep-q-001-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Hoe laat vertrekt de trein ongeveer?",
+            "options": [
+              "Om 10.18 uur",
+              "Om 10.23 uur",
+              "Om 10.13 uur"
+            ],
+            "answer": 1,
+            "explanation": "De trein vertrekt normaal om 10.18 uur. Met vijf minuten vertraging wordt dat ongeveer 10.23 uur.",
+            "difficulty": 2,
+            "answerLine": 2
+          }
+        ],
+        "explanation": "Na 'niet …, maar …' hoor je de goede informatie. En vertraging betekent: later dan de vertrektijd.",
+        "difficulty": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-omroep-q-002",
+        "type": "listening",
+        "tags": [
+          "luisteren:omroep"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het omroepbericht.",
+        "fragment": {
+          "kind": "omroep",
+          "situation": "Pieter wacht op het station in Arnhem op de trein naar Nijmegen.",
+          "speakers": [
+            {
+              "name": "Omroeper",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Omroeper",
+              "nl": "Dames en heren, door een storing rijden er vandaag geen treinen tussen Arnhem en Nijmegen."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "Er rijden bussen in plaats van treinen."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "De bussen vertrekken aan de achterkant van het station, bij de uitgang Zuid."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "De reis duurt ongeveer twintig minuten langer."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "Ik herhaal: er rijden bussen in plaats van treinen. Ze vertrekken bij de uitgang Zuid."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-omroep-q-002-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Hoe gaat Pieter naar Nijmegen?",
+            "options": [
+              "Met de trein",
+              "Met de bus",
+              "Met de taxi"
+            ],
+            "answer": 1,
+            "explanation": "'Er rijden bussen in plaats van treinen.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-omroep-q-002-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Waar moet Pieter naartoe?",
+            "options": [
+              "Naar de uitgang Zuid",
+              "Naar spoor 2",
+              "Naar de voorkant van het station"
+            ],
+            "answer": 0,
+            "explanation": "'De bussen vertrekken aan de achterkant van het station, bij de uitgang Zuid.'",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-omroep-q-002-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Hoeveel langer duurt de reis?",
+            "options": [
+              "10 minuten",
+              "20 minuten",
+              "30 minuten"
+            ],
+            "answer": 1,
+            "explanation": "'De reis duurt ongeveer twintig minuten langer.'",
+            "difficulty": 1,
+            "answerLine": 3
+          }
+        ],
+        "explanation": "Hoor je het niet de eerste keer? In een omroepbericht komt de belangrijkste informatie vaak nog een keer: 'Ik herhaal …'",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-omroep-q-003",
+        "type": "listening",
+        "tags": [
+          "luisteren:omroep"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het omroepbericht.",
+        "fragment": {
+          "kind": "omroep",
+          "situation": "Li doet boodschappen in de supermarkt.",
+          "speakers": [
+            {
+              "name": "Omroeper",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Omroeper",
+              "nl": "Beste klanten, over een kwartier gaat de winkel dicht."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "Wilt u uw boodschappen naar de kassa brengen?"
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "Kassa één en twee zijn open. U kunt ook betalen bij de zelfscankassa's bij de uitgang."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "Morgen zijn wij open vanaf acht uur. Wij wensen u een fijne avond."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-omroep-q-003-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Wanneer gaat de winkel dicht?",
+            "options": [
+              "Over 15 minuten",
+              "Over 5 minuten",
+              "Over 30 minuten"
+            ],
+            "answer": 0,
+            "explanation": "'Over een kwartier gaat de winkel dicht.' Een kwartier is 15 minuten.",
+            "difficulty": 1,
+            "answerLine": 0
+          },
+          {
+            "id": "luisteren-omroep-q-003-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Hoe laat gaat de winkel morgen open?",
+            "options": [
+              "Om 7.00 uur",
+              "Om 8.00 uur",
+              "Om 9.00 uur"
+            ],
+            "answer": 1,
+            "explanation": "'Morgen zijn wij open vanaf acht uur.'",
+            "difficulty": 1,
+            "answerLine": 3
+          }
+        ],
+        "explanation": "Een kwartier = 15 minuten. Een half uur = 30 minuten.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-omroep-q-004",
+        "type": "mc",
+        "tags": [
+          "luisteren:omroep"
+        ],
+        "prompt": "Luister. Naar welk spoor moeten de reizigers?",
+        "options": [
+          "Spoor 4a",
+          "Spoor 4b",
+          "Spoor 14"
+        ],
+        "answer": 1,
+        "explanation": "Je hoort het twee keer: spoor vier b.",
+        "difficulty": 1,
+        "listen": "De trein naar Groningen vertrekt van spoor vier b. Ik herhaal: spoor vier b."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-omroep-q-005",
+        "type": "listening",
+        "tags": [
+          "luisteren:omroep"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het omroepbericht.",
+        "fragment": {
+          "kind": "omroep",
+          "situation": "Kofi is met zijn kinderen in het zwembad.",
+          "speakers": [
+            {
+              "name": "Omroeper",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Omroeper",
+              "nl": "Beste bezoekers, om half vijf gaat het grote bad dicht. Dan is er zwemles."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "Het kleine bad en de glijbaan blijven open tot zes uur."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "Kinderen onder de acht jaar mogen alleen met een volwassene in het water."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "Veel zwemplezier!"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-omroep-q-005-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Wat gebeurt er om half vijf?",
+            "options": [
+              "Het hele zwembad gaat dicht",
+              "Het grote bad gaat dicht",
+              "Het kleine bad gaat dicht"
+            ],
+            "answer": 1,
+            "explanation": "'Om half vijf gaat het grote bad dicht.' Het kleine bad blijft open.",
+            "difficulty": 1,
+            "answerLine": 0
+          },
+          {
+            "id": "luisteren-omroep-q-005-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Tot hoe laat is de glijbaan open?",
+            "options": [
+              "Tot 16.30 uur",
+              "Tot 17.00 uur",
+              "Tot 18.00 uur"
+            ],
+            "answer": 2,
+            "explanation": "'Het kleine bad en de glijbaan blijven open tot zes uur.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-omroep-q-005-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Welke kinderen mogen alleen met een volwassene zwemmen?",
+            "options": [
+              "Kinderen onder de 8 jaar",
+              "Kinderen onder de 18 jaar",
+              "Alle kinderen"
+            ],
+            "answer": 0,
+            "explanation": "'Kinderen onder de acht jaar mogen alleen met een volwassene in het water.'",
+            "difficulty": 1,
+            "answerLine": 2
+          }
+        ],
+        "explanation": "Groot bad en klein bad: lees de vragen goed. Over welk bad gaat de vraag?",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-omroep-q-006",
+        "type": "listening",
+        "tags": [
+          "luisteren:omroep"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het omroepbericht.",
+        "fragment": {
+          "kind": "omroep",
+          "situation": "Esra is in het winkelcentrum. Ze hoort een bericht door de luidspreker.",
+          "speakers": [
+            {
+              "name": "Omroeper",
+              "voice": "ronnie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Omroeper",
+              "nl": "Dames en heren, bij de informatiebalie ligt een zwarte tas met sleutels en een portemonnee."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "De tas is gevonden bij de ingang, naast de bakker."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "Bent u deze tas kwijt? Kom dan naar de informatiebalie op de eerste verdieping."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-omroep-q-006-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Wat is er gevonden?",
+            "options": [
+              "Een zwarte tas",
+              "Een zwarte jas",
+              "Een telefoon"
+            ],
+            "answer": 0,
+            "explanation": "'Bij de informatiebalie ligt een zwarte tas met sleutels en een portemonnee.'",
+            "difficulty": 1,
+            "answerLine": 0
+          },
+          {
+            "id": "luisteren-omroep-q-006-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Waar is de informatiebalie?",
+            "options": [
+              "Naast de bakker",
+              "Op de eerste verdieping",
+              "Bij de ingang"
+            ],
+            "answer": 1,
+            "explanation": "'Kom dan naar de informatiebalie op de eerste verdieping.' Naast de bakker is gevonden, niet de balie.",
+            "difficulty": 1,
+            "answerLine": 2
+          }
+        ],
+        "explanation": "Je hoort twee plaatsen: waar de tas is gevonden, en waar de balie is. Lees de vraag goed.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-omroep-q-007",
+        "type": "listening",
+        "tags": [
+          "luisteren:omroep"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het omroepbericht.",
+        "fragment": {
+          "kind": "omroep",
+          "situation": "Sven zit in de trein naar Rotterdam. De conducteur zegt iets.",
+          "speakers": [
+            {
+              "name": "Conducteur",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Conducteur",
+              "nl": "Goedemiddag, dames en heren. Over een paar minuten komen we aan in Gouda."
+            },
+            {
+              "speaker": "Conducteur",
+              "nl": "Reizigers naar Rotterdam: deze trein rijdt vandaag niet verder dan Gouda."
+            },
+            {
+              "speaker": "Conducteur",
+              "nl": "U kunt in Gouda overstappen op de sprinter naar Rotterdam. Die vertrekt van spoor drie, recht tegenover deze trein."
+            },
+            {
+              "speaker": "Conducteur",
+              "nl": "Wij wensen u een goede reis."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-omroep-q-007-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Waar moet Sven overstappen?",
+            "options": [
+              "In Gouda",
+              "In Rotterdam",
+              "In Utrecht"
+            ],
+            "answer": 0,
+            "explanation": "'U kunt in Gouda overstappen op de sprinter naar Rotterdam.'",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-omroep-q-007-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Van welk spoor vertrekt de sprinter naar Rotterdam?",
+            "options": [
+              "Spoor 2",
+              "Spoor 3",
+              "Spoor 13"
+            ],
+            "answer": 1,
+            "explanation": "'Die vertrekt van spoor drie, recht tegenover deze trein.'",
+            "difficulty": 1,
+            "answerLine": 2
+          }
+        ],
+        "explanation": "Overstappen = uit deze trein gaan en in een andere trein stappen.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-omroep-q-008",
+        "type": "mc",
+        "tags": [
+          "luisteren:omroep"
+        ],
+        "prompt": "Je hoort op het station: 'De trein valt uit.' Wat betekent dat?",
+        "options": [
+          "De trein komt later.",
+          "De trein rijdt niet.",
+          "De trein is vol."
+        ],
+        "answer": 1,
+        "explanation": "Uitvallen = niet rijden. Er komt geen trein.",
+        "difficulty": 1
+      }
+    }
+  ]
+}

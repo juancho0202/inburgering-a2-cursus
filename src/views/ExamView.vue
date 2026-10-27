@@ -3,12 +3,17 @@ import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from "vue"
 import { useRoute, useRouter } from "vue-router";
 import type { Exam, Exercise } from "@shared/types";
 import { isAnswered } from "@shared/logic/exam";
+import { hasQuestions } from "@shared/content/questions";
 import { countWords } from "@shared/logic/answers";
 import { api } from "../api/client";
 import { useSettingsStore } from "../stores/settings";
 import AppButton from "../components/ui/AppButton.vue";
 import DocumentCard from "../components/DocumentCard.vue";
 import McExercise from "../components/exercises/McExercise.vue";
+import FragmentPlayer from "../components/FragmentPlayer.vue";
+import SpeakButton from "../components/ui/SpeakButton.vue";
+import { useSpeech } from "../composables/useSpeech";
+import { LESSON_VOICES } from "../lib/announce";
 import { DISCLAIMER, formatTime, skillLabel } from "../lib/examLabels";
 
 interface ExamState {
@@ -22,6 +27,8 @@ interface ExamState {
 const route = useRoute();
 const router = useRouter();
 const settings = useSettingsStore();
+// The questions of a listening exam are read by the first lesson voice (scripts/tts records them in it).
+useSpeech().setVoice(LESSON_VOICES[0].id);
 
 const exam = ref<Exam | null>(null);
 const state = ref<ExamState | null>(null);
@@ -41,6 +48,8 @@ const warned = new Set<number>();
 
 const items = computed(() => (exam.value?.items.filter((i): i is Exercise => "type" in i) ?? []) as Exercise[]);
 const page = computed(() => items.value[position.value]);
+/** What one page is called: a writing task, a listening fragment (with 2 or 3 questions) or a question. */
+const pageName = computed(() => (exam.value?.skill === "schrijven" ? "Opdracht" : exam.value?.skill === "luisteren" ? "Fragment" : "Vraag"));
 const remaining = computed(() => {
   if (!exam.value || !state.value) return 0;
   return Math.max(0, Date.parse(state.value.startedAt) + exam.value.durationMinutes * 60_000 - now.value);
@@ -116,7 +125,7 @@ const text = (id: string) => (typeof answers[id] === "string" ? (answers[id] as 
 
 function pageState(item: Exercise): "answered" | "partial" | "open" {
   if (item.type === "mc") return isAnswered(answers[item.id]) ? "answered" : "open";
-  if (item.type === "reading") {
+  if (hasQuestions(item)) {
     const n = item.questions.filter((q) => isAnswered(answers[q.id])).length;
     return n === item.questions.length ? "answered" : n > 0 ? "partial" : "open";
   }
@@ -185,7 +194,7 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
     <div class="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1fr_15rem]">
       <!-- question -->
       <section v-if="page" :key="page.id" aria-live="off">
-        <p class="mb-3 text-sm font-bold uppercase tracking-wide text-muted">{{ exam.skill === "schrijven" ? "Opdracht" : "Vraag" }} {{ position + 1 }} van {{ items.length }}</p>
+        <p class="mb-3 text-sm font-bold uppercase tracking-wide text-muted">{{ pageName }} {{ position + 1 }} van {{ items.length }}</p>
 
         <McExercise v-if="page.type === 'mc'" :exercise="page" :checked="false" :initial="initialMc(page.id)" :shuffle="false" @change="setMc(page.id, $event)" />
 
@@ -194,6 +203,20 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
           <div class="grid gap-5">
             <div v-for="(q, i) in page.questions" :key="q.id" class="card p-5">
               <p class="mb-2 text-sm font-bold text-muted">Vraag {{ i + 1 }}</p>
+              <McExercise v-if="q.type === 'mc'" :exercise="q" :checked="false" :keys="false" :initial="initialMc(q.id)" :shuffle="false" @change="setMc(q.id, $event)" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Listening: the fragment on one side, its questions on the other, like the exam screen -->
+        <div v-else-if="page.type === 'listening'" class="grid gap-6 lg:grid-cols-2 lg:items-start">
+          <div class="lg:sticky lg:top-28">
+            <p class="mb-3 text-lg font-semibold">Lees eerst de vragen. Luister daarna naar het fragment.</p>
+            <FragmentPlayer :fragment="page.fragment" :allow-peek="false" />
+          </div>
+          <div class="grid gap-5">
+            <div v-for="(q, i) in page.questions" :key="q.id" class="card p-5">
+              <p class="mb-2 flex items-center justify-between gap-2 text-sm font-bold text-muted">Vraag {{ i + 1 }} <SpeakButton :text="q.prompt" /></p>
               <McExercise v-if="q.type === 'mc'" :exercise="q" :checked="false" :keys="false" :initial="initialMc(q.id)" :shuffle="false" @change="setMc(q.id, $event)" />
             </div>
           </div>
@@ -246,7 +269,7 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
                 i === position ? 'border-brand ring-2 ring-brand/40' : 'border-line',
                 pageState(it) === 'answered' ? 'bg-good-bg text-good' : pageState(it) === 'partial' ? 'bg-brand-bg text-brand-strong' : 'bg-surface',
               ]"
-              :aria-label="`${exam.skill === 'schrijven' ? 'Opdracht' : 'Vraag'} ${i + 1}: ${pageState(it) === 'answered' ? 'beantwoord' : pageState(it) === 'partial' ? 'half beantwoord' : 'open'}${isFlagged(it.id) ? ', gemarkeerd' : ''}`"
+              :aria-label="`${pageName} ${i + 1}: ${pageState(it) === 'answered' ? 'beantwoord' : pageState(it) === 'partial' ? 'half beantwoord' : 'open'}${isFlagged(it.id) ? ', gemarkeerd' : ''}`"
               :aria-current="i === position ? 'step' : undefined"
               @click="go(i)"
             >

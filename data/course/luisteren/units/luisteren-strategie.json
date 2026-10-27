@@ -1,0 +1,666 @@
+{
+  "id": "luisteren-strategie",
+  "moduleId": "luisteren",
+  "title": "Zo luister je slim",
+  "goal": "Je weet hoe het examen Luisteren werkt. Je leest eerst de vragen en je luistert tot het einde.",
+  "scene": "luisterexamen",
+  "estimatedMinutes": 25,
+  "tags": [
+    "luisteren:strategie"
+  ],
+  "vocabRefs": [
+    "basis-vocab-luisteren-001",
+    "basis-vocab-luisteren-002",
+    "basis-vocab-cursus-opleiding-008",
+    "basis-vocab-cursus-opleiding-028",
+    "basis-vocab-cursus-opleiding-029",
+    "basis-vocab-vervoer-richting-007",
+    "basis-vocab-post-internet-telefoon-025"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "luisteren-strategie-l-01",
+      "title": "Het examen Luisteren",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Het examen Luisteren doe je op de computer. Het duurt **45 minuten**. Je beantwoordt **25 vragen** over ongeveer **10 fragmenten**.\n\n- Een fragment is een **filmpje** of een **geluidsfragment**.\n- Je hoort bijvoorbeeld een gesprek, een telefoongesprek, een voicemail, een omroepbericht, de radio of iemand die iets uitlegt.\n- Bij elk fragment horen **2 of 3 vragen**.\n- Je kiest steeds één antwoord: meestal A, B of C. Soms zijn er 4 antwoorden, of kies je een plaatje."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Op het scherm",
+            "Wat zie je?"
+          ],
+          "rows": [
+            [
+              "Links",
+              "Wie er praten en waar. Daaronder het filmpje of het geluid."
+            ],
+            [
+              "Rechts",
+              "De vraag en de antwoorden. Je kunt de vraag ook laten voorlezen."
+            ],
+            [
+              "Onder",
+              "Vorige, Volgende en een overzicht van alle vragen."
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "In het oefenexamen van DUO kun je het fragment **pauzeren** en een stukje **terugspoelen**. Probeer toch om het de eerste keer goed te verstaan. Dan heb je tijd over om te controleren."
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "luisteren-strategie-l-02",
+      "title": "Eerst de vragen, dan luisteren",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Zo luister je slim:\n\n1. **Lees de situatie.** Wie praten er? Waar zijn ze?\n2. **Lees de vragen en de antwoorden.** Wat moet je horen: een dag, een tijd, een plaats, een persoon, een reden?\n3. **Luister naar het hele fragment.** Stop niet bij het eerste woord dat je herkent.\n4. **Kies het antwoord.** Vaak hoor je bijna dezelfde woorden als in het goede antwoord.\n5. **Twijfel je?** Luister nog een keer naar dat stukje."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Vraagwoord",
+            "Je luistert naar …"
+          ],
+          "rows": [
+            [
+              "Wanneer?",
+              "een dag, een datum of een tijd"
+            ],
+            [
+              "Hoe laat?",
+              "een tijd: half tien, kwart over drie"
+            ],
+            [
+              "Waar? Waar naartoe?",
+              "een plaats: thuis, op het station, bij de bakker"
+            ],
+            [
+              "Wie?",
+              "een persoon: de buurman, de juf, haar zoon"
+            ],
+            [
+              "Waarom?",
+              "een reden: want, omdat, daarom"
+            ],
+            [
+              "Wat moet … doen?",
+              "een opdracht: moet, wilt u, vergeet niet"
+            ],
+            [
+              "Hoeveel?",
+              "een getal of een prijs"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Hoor je een woord uit een antwoord? Dat is nog niet altijd het goede antwoord. Luister goed: **wie** zegt het, en **klopt het aan het einde nog?**"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "luisteren-strategie-l-03",
+      "title": "Pas op: het plan verandert",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In bijna elk gesprek verandert er iets. Iemand zegt eerst iets, en daarna iets anders. In het examen staat het eerste plan vaak óók bij de antwoorden. Luister daarom altijd tot het einde.\n\nDeze woorden zeggen: **let op, nu komt er iets anders.**"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Je hoort",
+            "Betekenis"
+          ],
+          "rows": [
+            [
+              "Nee, wacht …",
+              "Wat ik net zei, klopt niet."
+            ],
+            [
+              "Of nee, …",
+              "Ik verander mijn plan."
+            ],
+            [
+              "… toch …",
+              "Het is anders dan je denkt."
+            ],
+            [
+              "Liever …",
+              "Dat vind ik beter."
+            ],
+            [
+              "In plaats van …",
+              "Niet dat, maar dit."
+            ],
+            [
+              "Sorry, ik bedoel …",
+              "Ik maakte een fout."
+            ],
+            [
+              "Maar … / Helaas …",
+              "Er is een probleem."
+            ]
+          ]
+        },
+        {
+          "kind": "example",
+          "nl": "We beginnen om negen uur. Nee, wacht, om half tien.",
+          "note": "Het goede antwoord: half tien."
+        },
+        {
+          "kind": "example",
+          "nl": "Ik neem de bus. Of nee, ik ga toch met de fiets.",
+          "note": "Hij gaat met de fiets."
+        },
+        {
+          "kind": "example",
+          "nl": "Kom maar op dinsdag. Sorry, ik bedoel woensdag.",
+          "note": "De afspraak is op woensdag."
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "luisteren-strategie-l-04",
+      "title": "Luister en lees mee",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Luister naar Noor en Daan. Lees mee. **Waar verandert het plan?**"
+        },
+        {
+          "kind": "fragment",
+          "fragment": {
+            "kind": "gesprek",
+            "situation": "Noor en Daan maken een plan voor zaterdag.",
+            "scene": "keuken",
+            "speakers": [
+              {
+                "name": "Noor",
+                "voice": "nathalie"
+              },
+              {
+                "name": "Daan",
+                "voice": "alex"
+              }
+            ],
+            "lines": [
+              {
+                "speaker": "Noor",
+                "nl": "Daan, gaan we zaterdag naar het strand?"
+              },
+              {
+                "speaker": "Daan",
+                "nl": "Leuk! Hoe laat?"
+              },
+              {
+                "speaker": "Noor",
+                "nl": "Om tien uur? Dan nemen we de trein van kwart over tien."
+              },
+              {
+                "speaker": "Daan",
+                "nl": "Zaterdag gaat het regenen, denk ik. Zullen we liever naar het museum gaan?"
+              },
+              {
+                "speaker": "Noor",
+                "nl": "Ja, goed idee. Het museum gaat om elf uur open."
+              },
+              {
+                "speaker": "Daan",
+                "nl": "Dan zie ik je om half elf bij het station."
+              },
+              {
+                "speaker": "Noor",
+                "nl": "Prima. Tot zaterdag!"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "text",
+          "md": "Eerst willen ze naar het strand. Maar Daan zegt **liever** het museum. Ze zien elkaar om **half elf** bij het station, niet om tien uur."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-strategie-q-001",
+        "type": "listening",
+        "tags": [
+          "luisteren:gesprek"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+        "fragment": {
+          "kind": "gesprek",
+          "situation": "Fatima en haar collega Marco willen deze week samen lunchen.",
+          "scene": "kantoor",
+          "speakers": [
+            {
+              "name": "Fatima",
+              "voice": "nathalie"
+            },
+            {
+              "name": "Marco",
+              "voice": "ronnie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Marco",
+              "nl": "Fatima, zullen we deze week samen lunchen?"
+            },
+            {
+              "speaker": "Fatima",
+              "nl": "Ja, leuk. Kan het vrijdag?"
+            },
+            {
+              "speaker": "Marco",
+              "nl": "Vrijdag werk ik thuis. Donderdag kan ik wel."
+            },
+            {
+              "speaker": "Fatima",
+              "nl": "Donderdag is goed. Om twaalf uur?"
+            },
+            {
+              "speaker": "Marco",
+              "nl": "Liever om half één. Ik heb tot twaalf uur een vergadering, en die duurt vaak langer."
+            },
+            {
+              "speaker": "Fatima",
+              "nl": "Oké, half één. Gaan we naar het café op de hoek?"
+            },
+            {
+              "speaker": "Marco",
+              "nl": "Daar is het altijd zo druk. Ik neem brood mee, dan eten we in het park."
+            },
+            {
+              "speaker": "Fatima",
+              "nl": "Goed plan. Dan neem ik fruit mee."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-strategie-q-001-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Wanneer lunchen Fatima en Marco samen?",
+            "options": [
+              "Op donderdag",
+              "Op vrijdag",
+              "Op woensdag"
+            ],
+            "answer": 0,
+            "explanation": "Fatima vraagt vrijdag, maar dan werkt Marco thuis. Fatima zegt: 'Donderdag is goed.'",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-strategie-q-001-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Hoe laat lunchen ze?",
+            "options": [
+              "Om 12.00 uur",
+              "Om 12.30 uur",
+              "Om 13.00 uur"
+            ],
+            "answer": 1,
+            "explanation": "Marco zegt: 'Liever om half één.' Half één is 12.30 uur.",
+            "difficulty": 1,
+            "answerLine": 4
+          },
+          {
+            "id": "luisteren-strategie-q-001-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Waar eten ze?",
+            "options": [
+              "In het café op de hoek",
+              "In het park",
+              "Op kantoor"
+            ],
+            "answer": 1,
+            "explanation": "Het café is te druk. Marco zegt: 'Dan eten we in het park.'",
+            "difficulty": 1,
+            "answerLine": 6
+          }
+        ],
+        "explanation": "Het plan verandert drie keer. Luister tot het einde: donderdag, half één, in het park.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-strategie-q-002",
+        "type": "mc",
+        "tags": [
+          "luisteren:strategie"
+        ],
+        "prompt": "Luister. Hoe laat komt de monteur?",
+        "options": [
+          "Om 15.00 uur",
+          "Om 16.00 uur",
+          "Om 14.00 uur"
+        ],
+        "answer": 1,
+        "explanation": "Eerst hoor je drie uur. Maar dan: 'Nee, sorry, om vier uur.' Vier uur is 16.00 uur.",
+        "difficulty": 1,
+        "listen": "De monteur komt om drie uur. Nee, sorry, om vier uur."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-strategie-q-003",
+        "type": "mc",
+        "tags": [
+          "luisteren:strategie"
+        ],
+        "prompt": "Luister. Hoe gaat de man deze week naar zijn werk?",
+        "options": [
+          "Met de auto",
+          "Met de trein",
+          "Met de fiets"
+        ],
+        "answer": 1,
+        "explanation": "Meestal neemt hij de auto. Maar deze week is de auto kapot, dus hij gaat met de trein.",
+        "difficulty": 1,
+        "listen": "Ik ga meestal met de auto naar mijn werk. Maar deze week is de auto kapot, dus ik ga met de trein."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-strategie-q-004",
+        "type": "listening",
+        "tags": [
+          "luisteren:telefoon"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+        "fragment": {
+          "kind": "telefoon",
+          "situation": "Sanne belt naar de school van haar kinderen.",
+          "speakers": [
+            {
+              "name": "Meester Bram",
+              "voice": "alex",
+              "phone": true
+            },
+            {
+              "name": "Sanne",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Meester Bram",
+              "nl": "Basisschool De Linde, met meester Bram."
+            },
+            {
+              "speaker": "Sanne",
+              "nl": "Goedemorgen, met Sanne Bakker. Ik ben de moeder van Tim en Lotte."
+            },
+            {
+              "speaker": "Meester Bram",
+              "nl": "Goedemorgen. Wat kan ik voor u doen?"
+            },
+            {
+              "speaker": "Sanne",
+              "nl": "Lotte is ziek. Ze heeft koorts. Ze blijft vandaag thuis."
+            },
+            {
+              "speaker": "Meester Bram",
+              "nl": "Wat vervelend. En Tim? Komt hij wel?"
+            },
+            {
+              "speaker": "Sanne",
+              "nl": "Ja, Tim komt wel. Mijn man brengt hem zo."
+            },
+            {
+              "speaker": "Meester Bram",
+              "nl": "Goed. Wilt u morgen voor half negen bellen, als Lotte nog ziek is?"
+            },
+            {
+              "speaker": "Sanne",
+              "nl": "Ja, dat doe ik. Dank u wel."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-strategie-q-004-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wie is er ziek?",
+            "options": [
+              "Tim",
+              "Lotte",
+              "Sanne"
+            ],
+            "answer": 1,
+            "explanation": "Sanne zegt: 'Lotte is ziek. Ze heeft koorts.'",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-strategie-q-004-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wie brengt Tim naar school?",
+            "options": [
+              "Sanne",
+              "Meester Bram",
+              "De vader van Tim"
+            ],
+            "answer": 2,
+            "explanation": "Sanne zegt: 'Mijn man brengt hem zo.' De man van Sanne is de vader van Tim.",
+            "difficulty": 1,
+            "answerLine": 5
+          },
+          {
+            "id": "luisteren-strategie-q-004-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wat moet Sanne doen als Lotte morgen nog ziek is?",
+            "options": [
+              "Voor half negen bellen",
+              "Een e-mail sturen",
+              "Lotte naar school brengen"
+            ],
+            "answer": 0,
+            "explanation": "De meester vraagt: 'Wilt u morgen voor half negen bellen?'",
+            "difficulty": 1,
+            "answerLine": 6
+          }
+        ],
+        "explanation": "Let op wie iets doet. 'Mijn man' is de vader van Tim en Lotte.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-strategie-q-005",
+        "type": "mc",
+        "tags": [
+          "luisteren:strategie"
+        ],
+        "prompt": "Welke vraag gaat over een reden?",
+        "options": [
+          "Waarom komt Ali niet naar de les?",
+          "Wanneer komt Ali naar de les?",
+          "Waar heeft Ali les?"
+        ],
+        "answer": 0,
+        "explanation": "Waarom? vraagt naar een reden. Luister dan naar want, omdat of daarom.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-strategie-q-006",
+        "type": "match",
+        "tags": [
+          "luisteren:strategie"
+        ],
+        "prompt": "Welk vraagwoord past bij wat je hoort?",
+        "pairs": [
+          [
+            "Wanneer?",
+            "op dinsdag"
+          ],
+          [
+            "Hoe laat?",
+            "om kwart over twee"
+          ],
+          [
+            "Waar?",
+            "bij het station"
+          ],
+          [
+            "Waarom?",
+            "omdat de bus niet rijdt"
+          ],
+          [
+            "Hoeveel?",
+            "drie euro vijftig"
+          ]
+        ],
+        "explanation": "Weet je welk vraagwoord er staat? Dan weet je waar je naar moet luisteren.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-strategie-q-007",
+        "type": "listening",
+        "tags": [
+          "luisteren:voicemail"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de voicemail.",
+        "fragment": {
+          "kind": "voicemail",
+          "situation": "Meneer Yilmaz heeft een voicemail van de tandarts.",
+          "speakers": [
+            {
+              "name": "Ingrid",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Ingrid",
+              "nl": "Goedemiddag meneer Yilmaz, u spreekt met Ingrid van Tandartspraktijk Het Plein."
+            },
+            {
+              "speaker": "Ingrid",
+              "nl": "U heeft een afspraak op maandag drie juni om negen uur."
+            },
+            {
+              "speaker": "Ingrid",
+              "nl": "Helaas is de tandarts die dag ziek."
+            },
+            {
+              "speaker": "Ingrid",
+              "nl": "Wij hebben een nieuwe afspraak voor u: woensdag vijf juni, om kwart over twee."
+            },
+            {
+              "speaker": "Ingrid",
+              "nl": "Kunt u dan niet? Bel ons dan even terug."
+            },
+            {
+              "speaker": "Ingrid",
+              "nl": "Neemt u ook uw nieuwe zorgpas mee? Dank u wel en tot ziens."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-strategie-q-007-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Wanneer is de nieuwe afspraak?",
+            "options": [
+              "Maandag 3 juni om 9.00 uur",
+              "Woensdag 5 juni om 14.15 uur",
+              "Woensdag 5 juni om 14.45 uur"
+            ],
+            "answer": 1,
+            "explanation": "'Woensdag vijf juni, om kwart over twee.' Kwart over twee is 14.15 uur.",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-strategie-q-007-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Wat moet meneer Yilmaz meenemen?",
+            "options": [
+              "Zijn paspoort",
+              "Zijn nieuwe zorgpas",
+              "Een brief van de huisarts"
+            ],
+            "answer": 1,
+            "explanation": "Ingrid vraagt: 'Neemt u ook uw nieuwe zorgpas mee?'",
+            "difficulty": 1,
+            "answerLine": 5
+          }
+        ],
+        "explanation": "Eerst hoor je de oude afspraak (maandag). Na 'helaas' komt het nieuwe plan.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-strategie-q-008",
+        "type": "mc",
+        "tags": [
+          "luisteren:strategie"
+        ],
+        "prompt": "Luister. Waar gaan ze naartoe?",
+        "options": [
+          "Naar de markt",
+          "Naar het park",
+          "Naar het strand"
+        ],
+        "answer": 1,
+        "explanation": "Eerst de markt. Maar dan: 'Of nee, … We gaan gewoon naar het park.'",
+        "difficulty": 1,
+        "listen": "Zullen we zaterdag naar de markt gaan? Of nee, dan is het daar zo druk. We gaan gewoon naar het park."
+      }
+    }
+  ]
+}

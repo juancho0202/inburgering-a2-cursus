@@ -312,4 +312,36 @@ export function bubble(x: number, y: number, label: string, opts: { size?: numbe
   );
 }
 
+/** Sound going out: arcs that open to the right (dir 1) or the left (dir -1). */
+export function waves(x: number, y: number, dir = 1, s = 1, color = C.orange) {
+  return [10, 20, 30]
+    .map((r) => {
+      const rr = r * s;
+      return stroke(`M${x + dir * rr * 0.5} ${y - rr * 0.87}A${rr} ${rr} 0 0 ${dir > 0 ? 1 : 0} ${x + dir * rr * 0.5} ${y + rr * 0.87}`, color, 3);
+    })
+    .join("");
+}
+
+/** A loudspeaker horn, the kind on a platform or in a hall. */
+export function horn(x: number, y: number, dir = 1, s = 1) {
+  return g(path("M0 -8H14L40 -24V24L14 8H0Z", C.grey, true) + rect(-8, -10, 10, 20, C.navy, 2, true) + waves(48, 0, 1, 0.9, C.orange), `translate(${x} ${y}) scale(${dir * s} ${s})`);
+}
+
+export function radioSet(x: number, base: number, s = 1) {
+  return g(
+    stroke("M30 -64L58 -100", INK, 3) +
+      circle(58, -100, 3, INK) +
+      rect(-60, -66, 120, 66, C.red, 10, true) +
+      rect(-50, -56, 52, 46, "#7a2e2a", 6) +
+      [0, 1, 2, 3].map((i) => stroke(`M-46 ${-48 + i * 11}H-2`, "#ffffff55", 2)).join("") +
+      rect(12, -56, 38, 16, C.paperDoc, 3, true) +
+      stroke("M20 -48H42", C.grey, 2) +
+      circle(22, -22, 8, C.yellow, true) +
+      circle(42, -22, 8, C.yellow, true) +
+      rect(-48, 0, 12, 6, INK, 2) +
+      rect(36, 0, 12, 6, INK, 2),
+    `translate(${x} ${base - 6 * s}) scale(${s})`,
+  );
+}
+
 export const heart = (x: number, y: number, s = 1, color = C.rose) => g(path("M0 6C-14-4-8-16 0-8C8-16 14-4 0 6Z", color, true), `translate(${n(x)} ${n(y)}) scale(${s})`);

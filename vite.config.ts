@@ -26,7 +26,7 @@ export default defineConfig({
       manifest: {
         name: "Inburgering A2",
         short_name: "Inburgering",
-        description: "Oefen Lezen, KNM en Schrijven voor het inburgeringsexamen (A2).",
+        description: "Oefen Lezen, Luisteren, KNM en Schrijven voor het inburgeringsexamen (A2).",
         lang: "nl",
         start_url: "/",
         scope: "/",
@@ -61,6 +61,13 @@ export default defineConfig({
             urlPattern: /\/audio\/voice\/.*\.m4a$/,
             handler: "CacheFirst",
             options: { cacheName: "voice", expiration: { maxEntries: 1000 }, cacheableResponse: { statuses: [0, 200] } },
+          },
+          // The listening fragments, the same way. Range requests (seeking) are answered from the kept file.
+          { urlPattern: /\/audio\/fragments\/manifest\.json$/, handler: "NetworkFirst", options: { cacheName: "fragment-list" } },
+          {
+            urlPattern: /\/audio\/fragments\/.*\.m4a$/,
+            handler: "CacheFirst",
+            options: { cacheName: "fragments", expiration: { maxEntries: 200 }, cacheableResponse: { statuses: [0, 200] }, rangeRequests: true },
           },
         ],
         navigateFallback: "/index.html",

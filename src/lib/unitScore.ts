@@ -1,4 +1,5 @@
 import type { Progress, Unit } from "@shared/types";
+import { hasQuestions } from "@shared/content/questions";
 
 /** Scored item ids of a unit: every question that has a right/wrong answer. */
 export function scoredItemIds(unit: Unit): string[] {
@@ -7,7 +8,7 @@ export function scoredItemIds(unit: Unit): string[] {
     if (step.type !== "exercise") continue;
     const ex = step.exercise;
     if (ex.type === "writing") continue;
-    if (ex.type === "reading") ids.push(...ex.questions.map((q) => q.id));
+    if (hasQuestions(ex)) ids.push(...ex.questions.map((q) => q.id));
     else if (ex.type === "form-fill") {
       if (ex.fields.some((f) => f.expected !== undefined)) ids.push(ex.id);
     } else ids.push(ex.id);
