@@ -79,8 +79,7 @@ const activeBlock = computed(() => {
   return id?.startsWith("block-") ? Number(id.slice(6)) : null;
 });
 
-async function readFrom(from: number, delayMs = 0) {
-  const list = segments.value;
+async function readFrom(from: number, delayMs = 0, list = segments.value) {
   const at = await speech.read(list, { from, delayMs });
   if (segments.value === list) resumeAt = at >= list.length ? 0 : at;
 }
@@ -96,14 +95,14 @@ function announceStep(opening = false) {
   speech.setVoice(lessonVoice(lessonNumber.value));
   const first = opening && stepIndex.value === 0;
   const wait = first && lessonNumber.value ? sounds.lessonMelody(lessonNumber.value, Math.max(moduleIndex.value, 0)) : 0;
-  segments.value = stepSegments(s, {
-    first,
-    unitTitle: unit.value.title,
-    lessonNumber: lessonNumber.value,
-    goal: stepIndex.value === 0 ? unit.value.goal : undefined,
-  });
+  const opts = { first, unitTitle: unit.value.title, lessonNumber: lessonNumber.value, goal: stepIndex.value === 0 ? unit.value.goal : undefined };
+  segments.value = stepSegments(s, opts);
+  // Several exercises in a row with the same instruction: it's said once. The "Lees voor" button still reads it,
+  // and reopening a lesson says it again.
+  const prev = opening ? undefined : unit.value.steps[stepIndex.value - 1];
+  const auto = prev?.type === "exercise" ? stepSegments(s, { ...opts, previousPrompt: prev.exercise.prompt }) : segments.value;
   resumeAt = 0;
-  if (speech.autoRead.value) void readFrom(0, wait);
+  if (speech.autoRead.value) void readFrom(0, wait, auto);
   else speech.stop();
 }
 onBeforeUnmount(() => {
