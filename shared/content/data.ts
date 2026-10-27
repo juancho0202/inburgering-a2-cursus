@@ -44,7 +44,7 @@ export function buildContentData(files: Record<string, string>): { data: Content
   const errors: ContentError[] = [];
   const fail = (file: string, message: string) => errors.push({ file, message });
 
-  const parse = <T>(file: string, schema: z.ZodType<T, z.ZodTypeDef, unknown>): T | null => {
+  const parse = <T>(file: string, schema: z.ZodType<T, unknown>): T | null => {
     let raw: unknown;
     try {
       raw = JSON.parse(files[file]);

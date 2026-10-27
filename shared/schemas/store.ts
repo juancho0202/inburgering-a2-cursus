@@ -70,6 +70,12 @@ export const SettingsRecordSchema = z.object({
   speechRate: z.number(),
   spellcheckWriting: z.boolean(),
   theme: z.enum(["light", "dark", "system"]),
+  /** Short chimes on right/wrong answers and at the end of a lesson. */
+  soundEffects: z.boolean().default(true),
+  /** Read the lesson title and each question aloud (Dutch voice). */
+  voiceAnnouncements: z.boolean().default(true),
+  /** A short melody at the start of a lesson: one per lesson number, a little different per module. */
+  lessonMusic: z.boolean().default(true),
   updatedAt: z.string().optional(),
 });
 export type SettingsRecord = z.infer<typeof SettingsRecordSchema>;
@@ -80,6 +86,9 @@ export const defaultSettingsRecord = (): SettingsRecord => ({
   speechRate: 0.95,
   spellcheckWriting: false,
   theme: "system",
+  soundEffects: true,
+  voiceAnnouncements: true,
+  lessonMusic: true,
 });
 
 export const UsageRecordSchema = z.object({ month: z.string(), requests: z.number().int(), inputTokens: z.number().int(), outputTokens: z.number().int() });

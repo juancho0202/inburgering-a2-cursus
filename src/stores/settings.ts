@@ -10,6 +10,9 @@ interface SettingsView {
   speechRate: number;
   spellcheckWriting: boolean;
   theme: "light" | "dark" | "system";
+  soundEffects: boolean;
+  voiceAnnouncements: boolean;
+  lessonMusic: boolean;
   usage: { month: string; requests: number; inputTokens: number; outputTokens: number };
 }
 

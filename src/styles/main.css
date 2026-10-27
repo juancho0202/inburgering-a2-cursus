@@ -205,3 +205,44 @@
 .drawer-leave-to .drawer-panel {
   transform: translateX(-100%);
 }
+
+/* Read-along: the part being read gets a brand-coloured bar (the space is reserved, so nothing moves). */
+.read-along {
+  margin-left: -1rem;
+  border-left: 4px solid transparent;
+  padding-left: calc(1rem - 4px);
+  transition: border-color 0.2s ease;
+}
+.read-along.is-reading {
+  border-left-color: var(--brand);
+}
+
+/* Three little bars that move while the voice reads. */
+.sound-bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 0.9em;
+}
+.sound-bars i {
+  width: 3px;
+  height: 100%;
+  border-radius: 1px;
+  background: currentColor;
+  animation: sound-bar 0.9s ease-in-out infinite;
+}
+.sound-bars i:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.sound-bars i:nth-child(3) {
+  animation-delay: -0.6s;
+}
+@keyframes sound-bar {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
