@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { useSettingsStore } from "../stores/settings";
 import { api } from "../api/client";
 import ImportSection from "../components/ImportSection.vue";
@@ -79,6 +79,9 @@ const soundOptions = [
   { key: "soundEffects", label: "Geluidjes", hint: "Een kort geluid bij een goed of fout antwoord en aan het eind van een les." },
   { key: "lessonMusic", label: "Melodie bij de start", hint: "Elke les begint met een korte melodie. Les 1, 2, 3… hebben elk hun eigen melodie." },
 ] as const;
+/** "Geen geluid": on when all three are off; switching it sets all three at once. */
+const silent = computed(() => soundOptions.every((o) => store.settings?.[o.key] === false));
+const setSilent = (off: boolean) => patch({ voiceAnnouncements: !off, soundEffects: !off, lessonMusic: !off });
 const themes = [
   { value: "system", label: "Auto" },
   { value: "light", label: "Licht" },
@@ -115,6 +118,10 @@ const themes = [
       <section class="card p-6">
         <h2 class="text-xl font-bold">Geluid</h2>
         <div class="mt-3 grid gap-3">
+          <label class="flex items-start gap-3 border-b border-line pb-3">
+            <input type="checkbox" class="mt-1 h-5 w-5 shrink-0 accent-[var(--brand)]" :checked="silent" @change="setSilent(($event.target as HTMLInputElement).checked)" />
+            <span><span class="font-semibold">🔇 Geen geluid</span><span class="block text-sm text-muted">Geen stem, geen geluidjes en geen melodie. De knoppen 🔊 en ▶ Lees voor werken nog wel.</span></span>
+          </label>
           <label v-for="o in soundOptions" :key="o.key" class="flex items-start gap-3">
             <input type="checkbox" class="mt-1 h-5 w-5 shrink-0 accent-[var(--brand)]" :checked="store.settings[o.key]" @change="patch({ [o.key]: ($event.target as HTMLInputElement).checked })" />
             <span><span class="font-semibold">{{ o.label }}</span><span class="block text-sm text-muted">{{ o.hint }}</span></span>
