@@ -6,7 +6,8 @@ import { useVocabStore } from "../stores/vocab";
 import DocumentCard from "./DocumentCard.vue";
 import SpeakButton from "./ui/SpeakButton.vue";
 
-const props = defineProps<{ blocks: LessonBlock[] }>();
+/** `active`: the block being read aloud (highlighted). */
+const props = defineProps<{ blocks: LessonBlock[]; active?: number | null }>();
 const vocab = useVocabStore();
 const needsVocab = computed(() => props.blocks.some((b) => b.kind === "vocab"));
 onMounted(() => needsVocab.value && vocab.load());
@@ -15,7 +16,7 @@ const word = (id: string): VocabEntry | undefined => vocab.byId(id);
 
 <template>
   <div class="grid gap-5">
-    <template v-for="(block, i) in blocks" :key="i">
+    <div v-for="(block, i) in blocks" :key="i" class="read-along" :class="{ 'is-reading': active === i }">
       <div v-if="block.kind === 'text'" class="prose-nl text-lg" v-html="renderMd(block.md)" />
 
       <div v-else-if="block.kind === 'table'" class="overflow-x-auto">
@@ -70,6 +71,6 @@ const word = (id: string): VocabEntry | undefined => vocab.byId(id);
       </div>
 
       <DocumentCard v-else-if="block.kind === 'document'" :doc="block" />
-    </template>
+    </div>
   </div>
 </template>

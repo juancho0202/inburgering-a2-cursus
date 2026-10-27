@@ -39,5 +39,15 @@ import KeyGuide from "./KeyGuide.vue";
       <KeyGuide class="mt-3" />
       <RouterLink to="/instellingen" class="mt-3 inline-block font-semibold text-brand-strong underline">Naar Instellingen</RouterLink>
     </section>
+
+    <section class="card p-6">
+      <h2 class="text-xl font-bold">Stemmen en geluid</h2>
+      <p class="mt-2">
+        De stemmen die de lessen voorlezen zijn gemaakt met <a href="https://github.com/OHF-Voice/piper1-gpl" class="font-semibold underline">Piper</a> (open source).
+        De stemmen ronnie en alex zijn gemaakt met opnames uit het publieke domein (CC0). De derde stem komt uit
+        <a href="https://openslr.org/94/" class="font-semibold underline">Multilingual LibriSpeech</a> (Pratap e.a., 2020), CC BY 4.0.
+        De muziek en de geluidjes worden in de app zelf gemaakt.
+      </p>
+    </section>
   </div>
 </template>

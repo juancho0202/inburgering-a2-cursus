@@ -15,7 +15,8 @@
     "test": "vitest run",
     "migrate-old-progress": "tsx scripts/migrate-old-progress.ts",
     "e2e": "playwright test",
-    "check-ids": "tsx scripts/check-ids.ts"
+    "check-ids": "tsx scripts/check-ids.ts",
+    "voice": "tsx scripts/tts/export-texts.ts && sandbox-exec -p '(version 1)(allow default)(deny network*)' .tts/piper-venv/bin/python -I scripts/tts/generate.py"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",

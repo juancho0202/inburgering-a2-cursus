@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
+import { computed, onBeforeUnmount, ref, watch } from "vue";
 import { useRoute, useRouter, RouterLink } from "vue-router";
 import { api } from "../api/client";
 import type { Progress, Unit } from "@shared/types";
 import { unitScore } from "../lib/unitScore";
+import { lessonVoice, stepSegments, type Segment } from "../lib/announce";
+import { useSpeech } from "../composables/useSpeech";
+import { useSounds } from "../composables/useSounds";
 import { useContentStore } from "../stores/content";
 import { useSessionStore } from "../stores/session";
 import AppButton from "../components/ui/AppButton.vue";
@@ -11,11 +14,14 @@ import ProgressBar from "../components/ui/ProgressBar.vue";
 import LessonBlocks from "../components/LessonBlocks.vue";
 import ReportIssue from "../components/ReportIssue.vue";
 import ExerciseShell from "../components/exercises/ExerciseShell.vue";
+import ReadAlongButton from "../components/ui/ReadAlongButton.vue";
 
 const route = useRoute();
 const router = useRouter();
 const content = useContentStore();
 const session = useSessionStore();
+const speech = useSpeech();
+const sounds = useSounds();
 
 const unit = ref<Unit | null>(null);
 const error = ref<string | null>(null);
@@ -38,7 +44,8 @@ async function start(fromStart = false) {
     const resumeAt = !fromStart && saved && saved.stepIndex > 0 ? Math.min(saved.stepIndex, u.steps.length - 1) : 0;
     stepIndex.value = resumeAt;
     resumed.value = resumeAt > 0;
-    if (!content.course) content.load();
+    if (!content.course) await content.load().catch(() => {});
+    announceStep(true);
   } catch (e) {
     error.value = (e as Error).message;
   }
@@ -52,6 +59,55 @@ const total = computed(() => unit.value?.steps.length ?? 0);
 const isLast = computed(() => stepIndex.value >= total.value - 1);
 
 const siblings = computed(() => content.course?.modules.find((m) => m.id === unit.value?.moduleId)?.units ?? []);
+const moduleIndex = computed(() => content.course?.modules.findIndex((m) => m.id === unit.value?.moduleId) ?? -1);
+const lessonNumber = computed(() => {
+  const i = siblings.value.findIndex((u) => u.id === unitId.value);
+  return i >= 0 ? i + 1 : undefined;
+});
+
+// ----- read-along -----
+/** What the voice reads on this step; `resumeAt` is where "▶" continues after a stop. */
+const segments = ref<Segment[]>([]);
+let resumeAt = 0;
+const reading = computed(() => speech.reading.value);
+const isRead = (id: string) => speech.activeId.value === id;
+const activeBlock = computed(() => {
+  const id = speech.activeId.value;
+  return id?.startsWith("block-") ? Number(id.slice(6)) : null;
+});
+
+async function readFrom(from: number, delayMs = 0) {
+  const list = segments.value;
+  const at = await speech.read(list, { from, delayMs });
+  if (segments.value === list) resumeAt = at >= list.length ? 0 : at;
+}
+function toggleRead() {
+  if (speech.reading.value) speech.stop();
+  else void readFrom(resumeAt);
+}
+
+/** Read the step aloud. Opening a lesson at step 1 first plays the tune of its lesson number. */
+function announceStep(opening = false) {
+  const s = step.value;
+  if (!unit.value || !s) return;
+  speech.setVoice(lessonVoice(lessonNumber.value));
+  const first = opening && stepIndex.value === 0;
+  const wait = first && lessonNumber.value ? sounds.lessonMelody(lessonNumber.value, Math.max(moduleIndex.value, 0)) : 0;
+  segments.value = stepSegments(s, {
+    first,
+    unitTitle: unit.value.title,
+    lessonNumber: lessonNumber.value,
+    goal: stepIndex.value === 0 ? unit.value.goal : undefined,
+  });
+  resumeAt = 0;
+  if (speech.autoRead.value) void readFrom(0, wait);
+  else speech.stop();
+}
+onBeforeUnmount(() => {
+  speech.stop();
+  sounds.stopMusic();
+});
+
 const nextUnit = computed(() => {
   const i = siblings.value.findIndex((u) => u.id === unitId.value);
   return i >= 0 ? siblings.value[i + 1] : undefined;
@@ -60,6 +116,8 @@ const nextUnit = computed(() => {
 async function goTo(index: number) {
   resumed.value = false;
   stepIndex.value = index;
+  sounds.stopMusic();
+  announceStep();
   api.post(`/units/${unitId.value}/step`, { stepIndex: index }).catch(() => {});
 }
 
@@ -72,6 +130,9 @@ async function advance() {
   const hard = await api.get<unknown[]>(`/practice?mode=hard&unit=${unitId.value}`).catch(() => []);
   summary.value = { ...s, words: res.wordsIntroduced, hard: hard.length };
   finished.value = true;
+  const passed = s.score >= unit.value.passScore;
+  sounds.complete(passed);
+  speech.announce(passed ? "Les klaar! Goed gedaan." : "Les klaar! Probeer het nog een keer.", 900);
 }
 
 const exit = () => router.push(unit.value ? `/module/${unit.value.moduleId}` : "/");
@@ -113,10 +174,11 @@ const restart = async () => {
 
     <template v-if="step.type === 'lesson'">
       <div :key="stepIndex" class="slide-up pb-28">
-        <h2 class="mb-1 text-3xl font-extrabold tracking-tight">{{ step.title }}</h2>
-        <p v-if="stepIndex === 0" class="mb-5 text-muted">{{ unit.goal }}</p>
-        <div v-else class="mb-5" />
-        <LessonBlocks :blocks="step.blocks" />
+        <h2 class="read-along mb-2 text-3xl font-extrabold tracking-tight" :class="{ 'is-reading': isRead('heading') }">{{ step.title }}</h2>
+        <ReadAlongButton class="mb-3" :reading="reading" label="Lees voor" @toggle="toggleRead" />
+        <p v-if="stepIndex === 0" class="read-along mb-5 text-muted" :class="{ 'is-reading': isRead('goal') }">{{ unit.goal }}</p>
+        <div v-else class="mb-3" />
+        <LessonBlocks :blocks="step.blocks" :active="activeBlock" />
         <div class="mt-10 flex justify-center"><ReportIssue :item-id="step.id" /></div>
       </div>
       <div class="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface/95 backdrop-blur">
@@ -127,7 +189,10 @@ const restart = async () => {
       </div>
     </template>
 
-    <ExerciseShell v-else :key="stepIndex" :exercise="step.exercise" :is-last="isLast" @done="advance" @exit="exit" />
+    <template v-else>
+      <ReadAlongButton class="mb-4" :reading="reading" label="Lees de vraag voor" @toggle="toggleRead" />
+      <ExerciseShell :key="stepIndex" :exercise="step.exercise" :is-last="isLast" @done="advance" @exit="exit" />
+    </template>
   </div>
   <p v-else class="text-muted">Even laden…</p>
 </template>

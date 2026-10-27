@@ -50,6 +50,13 @@ export default defineConfig({
             handler: "CacheFirst",
             options: { cacheName: "backgrounds", expiration: { maxEntries: 15 }, cacheableResponse: { statuses: [0, 200] } },
           },
+          // The recorded lesson voice (scripts/tts): each clip is kept once it has played; the list is checked online first.
+          { urlPattern: /\/audio\/voice\/manifest\.json$/, handler: "NetworkFirst", options: { cacheName: "voice-list" } },
+          {
+            urlPattern: /\/audio\/voice\/.*\.m4a$/,
+            handler: "CacheFirst",
+            options: { cacheName: "voice", expiration: { maxEntries: 1000 }, cacheableResponse: { statuses: [0, 200] } },
+          },
         ],
         navigateFallback: "/index.html",
         // Anthropic calls (BYOK) must always go to the network.
