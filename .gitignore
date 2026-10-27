@@ -6,3 +6,6 @@ data/user/
 *.tsbuildinfo
 playwright-report/
 test-results/
+
+# Local text-to-speech tooling (venv + model cache), see scripts/tts/
+.tts/

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { useSettingsStore } from "../stores/settings";
 import { api } from "../api/client";
 import ImportSection from "../components/ImportSection.vue";
@@ -8,6 +8,8 @@ import InstallHint from "../components/InstallHint.vue";
 import { useSessionStore } from "../stores/session";
 import { MODELS } from "@shared/claude/models";
 import AppButton from "../components/ui/AppButton.vue";
+import { useSpeech } from "../composables/useSpeech";
+import { playComplete, playCorrect, playLessonMelody, playWrong } from "../lib/sound";
 
 const store = useSettingsStore();
 const session = useSessionStore();
@@ -68,6 +70,18 @@ async function patch(p: Parameters<typeof store.update>[0]) {
   saved.value = true;
   setTimeout(() => (saved.value = false), 1500);
 }
+const speech = useSpeech();
+const tryModules = ["Basis", "Lezen", "KNM", "Schrijven", "Examens"];
+const tryModule = ref(0);
+const tryLesson = ref(1);
+const soundOptions = [
+  { key: "voiceAnnouncements", label: "Voorlezen", hint: "Een stem leest de titel van de les en elke vraag voor." },
+  { key: "soundEffects", label: "Geluidjes", hint: "Een kort geluid bij een goed of fout antwoord en aan het eind van een les." },
+  { key: "lessonMusic", label: "Melodie bij de start", hint: "Elke les begint met een korte melodie. Les 1, 2, 3… hebben elk hun eigen melodie." },
+] as const;
+/** "Geen geluid": on when all three are off; switching it sets all three at once. */
+const silent = computed(() => soundOptions.every((o) => store.settings?.[o.key] === false));
+const setSilent = (off: boolean) => patch({ voiceAnnouncements: !off, soundEffects: !off, lessonMusic: !off });
 const themes = [
   { value: "system", label: "Auto" },
   { value: "light", label: "Licht" },
@@ -98,6 +112,33 @@ const themes = [
           >
             {{ t.label }}
           </button>
+        </div>
+      </section>
+
+      <section class="card p-6">
+        <h2 class="text-xl font-bold">Geluid</h2>
+        <div class="mt-3 grid gap-3">
+          <label class="flex items-start gap-3 border-b border-line pb-3">
+            <input type="checkbox" class="mt-1 h-5 w-5 shrink-0 accent-[var(--brand)]" :checked="silent" @change="setSilent(($event.target as HTMLInputElement).checked)" />
+            <span><span class="font-semibold">🔇 Geen geluid</span><span class="block text-sm text-muted">Geen stem, geen geluidjes en geen melodie. De knoppen 🔊 en ▶ Lees voor werken nog wel.</span></span>
+          </label>
+          <label v-for="o in soundOptions" :key="o.key" class="flex items-start gap-3">
+            <input type="checkbox" class="mt-1 h-5 w-5 shrink-0 accent-[var(--brand)]" :checked="store.settings[o.key]" @change="patch({ [o.key]: ($event.target as HTMLInputElement).checked })" />
+            <span><span class="font-semibold">{{ o.label }}</span><span class="block text-sm text-muted">{{ o.hint }}</span></span>
+          </label>
+          <div class="mt-1 flex flex-wrap items-center gap-2" aria-label="Probeer de geluiden">
+            <AppButton variant="secondary" @click="playCorrect()">▶ Goed</AppButton>
+            <AppButton variant="secondary" @click="playWrong()">▶ Fout</AppButton>
+            <AppButton variant="secondary" @click="playComplete(true)">▶ Les klaar</AppButton>
+            <select v-model.number="tryModule" class="input w-auto py-2" aria-label="Module">
+              <option v-for="(m, i) in tryModules" :key="m" :value="i">{{ m }}</option>
+            </select>
+            <select v-model.number="tryLesson" class="input w-auto py-2" aria-label="Les">
+              <option v-for="n in 16" :key="n" :value="n">Les {{ n }}</option>
+            </select>
+            <AppButton variant="secondary" @click="playLessonMelody(tryLesson, tryModule)">▶ Melodie</AppButton>
+          </div>
+          <p v-if="speech.ready.value && !speech.available.value" class="text-sm text-muted">Je apparaat heeft geen Nederlandse stem. Voeg er een toe in de instellingen van je systeem.</p>
         </div>
       </section>
 

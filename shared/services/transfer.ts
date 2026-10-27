@@ -187,6 +187,9 @@ export function convertLegacyExport(legacy: LegacyExport): ProgressFile {
       speechRate: st.speechRate ?? 0.95,
       spellcheckWriting: st.spellcheckWriting ?? false,
       theme: st.theme ?? "system",
+      soundEffects: true,
+      voiceAnnouncements: true,
+      lessonMusic: true,
       updatedAt: progress.lastActivityAt ?? startedAt,
     };
   }

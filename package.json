@@ -15,7 +15,8 @@
     "test": "vitest run",
     "migrate-old-progress": "tsx scripts/migrate-old-progress.ts",
     "e2e": "playwright test",
-    "check-ids": "tsx scripts/check-ids.ts"
+    "check-ids": "tsx scripts/check-ids.ts",
+    "voice": "tsx scripts/tts/export-texts.ts && sandbox-exec -p '(version 1)(allow default)(deny network*)' .tts/piper-venv/bin/python -I scripts/tts/generate.py"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",
@@ -27,7 +28,7 @@
     "vite-plugin-pwa": "^2.0.0",
     "vue": "^3.5.0",
     "vue-router": "^4.5.0",
-    "zod": "^3.24.0"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",

@@ -24,6 +24,9 @@ const UpdateSchema = z
     speechRate: z.number().min(0.3).max(2),
     spellcheckWriting: z.boolean(),
     theme: z.enum(["light", "dark", "system"]),
+    soundEffects: z.boolean(),
+    voiceAnnouncements: z.boolean(),
+    lessonMusic: z.boolean(),
   })
   .partial();
 

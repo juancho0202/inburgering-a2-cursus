@@ -5,6 +5,8 @@ import type { Exercise } from "@shared/types";
 import type { Explanation } from "@shared/schemas/claude";
 import { api } from "../../api/client";
 import { useSettingsStore } from "../../stores/settings";
+import { useSounds } from "../../composables/useSounds";
+import { stopSpeech } from "../../composables/useSpeech";
 import AppButton from "../ui/AppButton.vue";
 import ReportIssue from "../ReportIssue.vue";
 import ExerciseRenderer from "./ExerciseRenderer.vue";
@@ -14,6 +16,7 @@ const props = defineProps<{ exercise: Exercise; isLast?: boolean }>();
 const emit = defineEmits<{ done: [result: EvalResult]; exit: [] }>();
 
 const settings = useSettingsStore();
+const sounds = useSounds();
 const renderer = ref<InstanceType<typeof ExerciseRenderer> | null>(null);
 const result = ref<EvalResult | null>(null);
 const saveError = ref<string | null>(null);
@@ -42,6 +45,8 @@ async function check() {
   if (checked.value || !ready.value || !renderer.value) return;
   const r = renderer.value.evaluate();
   result.value = r;
+  stopSpeech();
+  if (r.score !== null) (r.correct ? sounds.correct : sounds.wrong)();
   const durationMs = Date.now() - startedAt;
   const items = r.parts ?? [{ itemId: props.exercise.id, correct: r.correct, answer: r.answer }];
   try {
