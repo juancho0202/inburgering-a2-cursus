@@ -44,12 +44,13 @@ export const LESSON_DONE = { passed: "Les klaar! Goed gedaan.", failed: "Les kla
 
 /**
  * What the voice says for an exercise: the question, plus the sentence or statement it is about.
+ * A gap with a choice list is just the question: read aloud, the sentence around the gap makes no sense.
  * Without the prompt (the same instruction as the exercise before) only that sentence or statement is left.
  */
 export function exerciseAnnouncement(e: Exercise, withPrompt = true): string {
   const prompt = withPrompt ? e.prompt : "";
   if (e.type === "true-false") return `${prompt} ${e.statement}`.trim();
-  if (e.type === "gap-fill" || e.type === "gap-choice") return `${prompt} ${e.text}`.trim();
+  if (e.type === "gap-fill") return `${prompt} ${e.text}`.trim();
   return prompt;
 }
 
