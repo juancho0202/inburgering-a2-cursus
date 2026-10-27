@@ -2,6 +2,7 @@ import { z } from "zod";
 import type { FlagRecord } from "../schemas/store.js";
 import { invalid, newId, nowIso, type Env } from "./context.js";
 import { findExercise } from "./lookup.js";
+import { findItemSource } from "../content/lookup.js";
 
 const FlagInput = z.object({ itemId: z.string().trim().min(1).max(200), note: z.string().trim().max(500).default("") });
 
@@ -33,4 +34,9 @@ export async function listFlags(env: Env) {
 export async function removeFlag(env: Env, id: string): Promise<{ ok: true }> {
   await env.store.flags.delete(id);
   return { ok: true };
+}
+
+/** The course file an item comes from, for a GitHub issue. `source` is null for items outside data/course. */
+export function flagTarget(env: Env, itemId: string) {
+  return { itemId, source: findItemSource(env.content, itemId) };
 }

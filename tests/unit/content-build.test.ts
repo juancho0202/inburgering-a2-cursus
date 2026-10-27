@@ -62,6 +62,9 @@ describe("building the course data", () => {
     expect(buildContentData({}).errors[0]).toMatchObject({ file: "course.json" });
     expect(buildContentData({ ...good(), "basis/rommel.json": "{}" }).errors).toEqual([{ file: "basis/rommel.json", message: "Onbekend bestand: staat dit op de goede plek?" }]);
     expect(buildContentData({ ...good(), "knm/units/basis-a.json": unit("basis-a", []) }).errors[0].message).toContain('past niet bij de map "knm"');
+    expect(buildContentData({ ...good(), "basis/units/basis-b.json": unit("basis-a", []) }).errors[0].message).toBe('id "basis-a" past niet bij de bestandsnaam "basis-b.json"');
+    const exam = JSON.stringify({ id: "exam-knm-x", skill: "knm", title: "t", durationMinutes: 45, passScore: 0.7, items: [mc("e1")] });
+    expect(buildContentData({ ...good(), "exams/exam-knm-y.json": exam }).errors[0].message).toContain('past niet bij de bestandsnaam "exam-knm-y.json"');
     const { "exams/module.json": _m, ...withoutExams } = good();
     expect(buildContentData(withoutExams).errors).toEqual([{ file: "exams/module.json", message: "Bestand ontbreekt" }]);
   });

@@ -207,8 +207,9 @@ Also:
    in batches, for a review of grammar, naturalness, A2 level, wrong answers and ambiguous distractors. It writes
    `docs/content-review.md` with findings per item id. We fix what is clearly right and mark doubtful points for
    colleagues.
-2. **"Meld een fout" on every item** (lessons, exercises, exam questions). A short note is saved to `flags`. Flags
-   travel in progress files, so a friend can send you their file and you run
+2. **"Meld een fout" on every item** (lessons, exercises, exam questions). It opens a prefilled GitHub issue that
+   names the item id and its file in `data/course/`. Without a GitHub account, a short note is saved to `flags`
+   instead. Flags travel in progress files, so a friend can send you their file and you run
    `npm run flags -- <file>` to get a list with item ids and notes.
 3. **Colleagues, if available:** give them `docs/content-review.md` plus a printed sample per module.
 

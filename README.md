@@ -32,7 +32,9 @@ npm run stats        # telt vragen, woorden en teksten t.o.v. de doelen
 
 ### Meldingen van fouten verzamelen
 
-Elke les en vraag heeft een knop **Meld een fout**. De meldingen zitten in het voortgangsbestand. Om ze te lezen:
+Elke les en vraag heeft een knop **Meld een fout**. Die opent een ingevuld issue op GitHub (formulier: `.github/ISSUE_TEMPLATE/inhoud-fout.yml`), met de id van het onderdeel en een link naar het bestand in `data/course/`. De naam van een unit- of examenbestand moet daarom gelijk zijn aan de id erin; de build controleert dat.
+
+Wie geen GitHub-account heeft, kan de melding op het apparaat bewaren. Die meldingen zitten in het voortgangsbestand. Om ze te lezen:
 
 ```bash
 npm run flags -- voortgang-van-een-vriend.json [nog-een-bestand.json]
