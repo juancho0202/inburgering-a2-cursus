@@ -100,7 +100,8 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
         </ProgressRing>
         <div>
           <h2 class="font-bold sm:text-lg">Doel van vandaag</h2>
-          <p class="text-sm text-muted sm:text-base">{{ Math.round(data.minutesToday) }} van {{ data.dailyGoalMinutes }} minuten</p>
+          <!-- Phone: the ring already shows the minutes; the tiles stay short -->
+          <p class="hidden text-muted sm:block">{{ Math.round(data.minutesToday) }} van {{ data.dailyGoalMinutes }} minuten</p>
         </div>
       </div>
       <div class="card flex flex-col items-center gap-3 p-4 text-center sm:flex-row sm:gap-5 sm:p-5 sm:text-left">
@@ -108,7 +109,7 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
         <div>
           <h2 class="font-bold sm:text-lg">Reeks</h2>
           <p class="text-2xl font-extrabold sm:text-3xl">{{ data.streak.current }} <span class="text-sm font-semibold text-muted sm:text-base">{{ data.streak.current === 1 ? "dag" : "dagen" }}</span></p>
-          <p class="text-sm text-muted">Beste: {{ data.streak.best }}</p>
+          <p class="hidden text-sm text-muted sm:block">Beste: {{ data.streak.best }}</p>
         </div>
       </div>
     </section>
