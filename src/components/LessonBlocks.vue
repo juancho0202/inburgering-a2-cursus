@@ -17,7 +17,8 @@ const word = (id: string): VocabEntry | undefined => vocab.byId(id);
 
 <template>
   <div class="grid gap-5">
-    <div v-for="(block, i) in blocks" :key="i" class="read-along" :class="{ 'is-reading': active === i }">
+    <!-- min-w-0: a wide table scrolls inside its own box instead of stretching the grid (and the page) on phones -->
+    <div v-for="(block, i) in blocks" :key="i" class="read-along min-w-0" :class="{ 'is-reading': active === i }">
       <div v-if="block.kind === 'text'" class="prose-nl text-lg" v-html="renderMd(block.md)" />
 
       <div v-else-if="block.kind === 'table'" class="overflow-x-auto">
