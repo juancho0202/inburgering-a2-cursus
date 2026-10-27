@@ -120,16 +120,26 @@ describe("ReportIssue", () => {
   const open = () => mountApp(ReportIssue, { props: { itemId: "basis-a-q-003" } });
   const dialog = () => document.body.querySelector("[role=dialog]") as HTMLElement | null;
 
+  const source = { file: "basis/units/basis-a.json", title: "Welke dag is het?" };
+  const dialogButton = (text: string) => [...document.body.querySelectorAll("button")].find((b) => b.textContent?.includes(text));
+  const typeNote = (text: string) => {
+    const note = document.body.querySelector("#report-note") as HTMLTextAreaElement;
+    note.value = text;
+    note.dispatchEvent(new Event("input"));
+  };
+  beforeEach(() => fakeApi.on("GET", "/flags/target/basis-a-q-003", { itemId: "basis-a-q-003", source: null }));
+
   it("sends the item and the note, confirms, and starts empty the next time", async () => {
     fakeApi.on("POST", "/flags", {});
     const { wrapper } = await open();
     await wrapper.find("button").trigger("click");
     await flushPromises();
     expect(document.activeElement?.id).toBe("report-note"); // typing can start at once
-    const note = document.body.querySelector("#report-note") as HTMLTextAreaElement;
-    note.value = "Er zijn twee goede antwoorden.";
-    note.dispatchEvent(new Event("input"));
-    [...document.body.querySelectorAll("button")].find((b) => b.textContent?.includes("Verstuur melding"))!.click();
+    expect(dialog()?.textContent).toContain("bewaard op dit apparaat");
+    expect(dialog()?.querySelector("a")).toBeNull(); // Claude's exercises have no course file, so no GitHub
+    typeNote("Er zijn twee goede antwoorden.");
+    await flushPromises();
+    dialogButton("Bewaar melding")!.click();
     await flushPromises();
     expect(fakeApi.to("POST", "/flags")[0].body).toEqual({ itemId: "basis-a-q-003", note: "Er zijn twee goede antwoorden." });
     expect(dialog()?.textContent).toContain("Bedankt! Je melding is bewaard.");
@@ -148,10 +158,61 @@ describe("ReportIssue", () => {
     const { wrapper } = await open();
     await wrapper.find("button").trigger("click");
     await flushPromises();
-    [...document.body.querySelectorAll("button")].find((b) => b.textContent?.includes("Verstuur melding"))!.click();
+    typeNote("Twee goede antwoorden");
+    await flushPromises();
+    dialogButton("Bewaar melding")!.click();
     await flushPromises();
     expect(dialog()?.textContent).toContain("✗ Opslaan mislukt.");
     expect(dialog()?.textContent).not.toContain("Bedankt");
+    expect((document.body.querySelector("#report-note") as HTMLTextAreaElement).value).toBe("Twee goede antwoorden");
+  });
+
+  it("an item from the course is reported as a GitHub issue with the form filled in", async () => {
+    fakeApi.on("GET", "/flags/target/basis-a-q-003", { itemId: "basis-a-q-003", source });
+    const { wrapper } = await open();
+    await wrapper.find("button").trigger("click");
+    await flushPromises();
+    expect(dialog()?.textContent).toContain("openbaar issue op GitHub");
+    typeNote("  Er zijn twee goede antwoorden. ");
+    await flushPromises();
+    const link = dialog()!.querySelector("a")!;
+    const url = new URL(link.href);
+    expect(url.pathname).toMatch(/\/issues\/new$/);
+    expect(url.searchParams.get("onderdeel")).toBe("basis-a-q-003");
+    expect(url.searchParams.get("vraag")).toBe("Welke dag is het?");
+    expect(url.searchParams.get("bestand")).toMatch(/\/data\/course\/basis\/units\/basis-a\.json$/);
+    expect(url.searchParams.get("toelichting")).toBe("Er zijn twee goede antwoorden.");
+    expect(link.target).toBe("_blank");
+    expect(link.rel).toContain("noopener");
+
+    link.addEventListener("click", (e) => e.preventDefault(), { once: true }); // jsdom cannot open a tab
+    link.click();
+    await flushPromises();
+    expect(dialog()?.textContent).toContain("GitHub is geopend in een nieuw tabblad.");
+    expect(fakeApi.to("POST", "/flags")).toHaveLength(0); // nothing is kept on the device as well
+  });
+
+  it("without a GitHub account the note can still be kept on this device", async () => {
+    fakeApi.on("GET", "/flags/target/basis-a-q-003", { itemId: "basis-a-q-003", source });
+    fakeApi.on("POST", "/flags", {});
+    const { wrapper } = await open();
+    await wrapper.find("button").trigger("click");
+    await flushPromises();
+    typeNote("Spelfout");
+    await flushPromises();
+    dialogButton("Bewaar de melding op dit apparaat")!.click();
+    await flushPromises();
+    expect(fakeApi.to("POST", "/flags")[0].body).toEqual({ itemId: "basis-a-q-003", note: "Spelfout" });
+    expect(dialog()?.textContent).toContain("Bedankt! Je melding is bewaard.");
+  });
+
+  it("when the course file cannot be looked up, the note is kept on this device", async () => {
+    fakeApi.fail("GET", "/flags/target/basis-a-q-003", "Database niet beschikbaar.");
+    const { wrapper } = await open();
+    await wrapper.find("button").trigger("click");
+    await flushPromises();
+    expect(dialog()?.querySelector("a")).toBeNull();
+    expect(dialogButton("Bewaar melding")).toBeDefined();
   });
 
   it("Escape closes without sending", async () => {

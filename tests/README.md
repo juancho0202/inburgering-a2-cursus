@@ -104,6 +104,7 @@ These are the kinds of bugs that have actually been found here. For each compone
 - `fakeApi.on` is "newest wins": if a helper registers defaults, register your override *after* calling it.
 - `<Teleport to="body">` content (e.g. `ReportIssue`) is in `document.body`, not in `wrapper`.
 - jsdom has no `matchMedia`, `speechSynthesis` or real layout. Stub what you need; don't assert on sizes or visibility from CSS.
+- jsdom never loads images and has no `HTMLImageElement.decode`; `tests/helpers/component.ts` adds a `decode` that resolves at once. To test "already downloaded", stub the `complete` and `naturalWidth` getters (see `Pictures.test.ts`).
 - Mock modules by their path as the component imports them: `../../../src/lib/progressFile`, `../../../src/lib/storage`.
 - Random order (`shuffled`): find options by their text, never by position; mock `Math.random` only to test a rule about the shuffle itself.
 
