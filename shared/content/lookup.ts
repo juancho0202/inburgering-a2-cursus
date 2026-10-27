@@ -22,3 +22,33 @@ export function findExerciseInContent(content: Content, id: string): Exercise | 
   }
   return undefined;
 }
+
+/**
+ * Where an item lives under data/course, with a short readable title (exercise prompt or lesson title).
+ * Unit and exam files are named after their id (checked when the course is built).
+ * Null for anything that is not in the course files, such as exercises made by Claude.
+ */
+export function findItemSource(content: Content, id: string): { file: string; title: string } | null {
+  for (const unit of content.units.values()) {
+    const file = `${unit.moduleId}/units/${unit.id}.json`;
+    for (const step of unit.steps) {
+      if (step.type === "lesson") {
+        if (step.id === id) return { file, title: `Les: ${step.title}` };
+        continue;
+      }
+      if (step.exercise.id === id) return { file, title: step.exercise.prompt };
+      if (step.exercise.type === "reading") {
+        const q = step.exercise.questions.find((x) => x.id === id);
+        if (q) return { file, title: q.prompt };
+      }
+    }
+  }
+  for (const exam of content.exams.values()) {
+    const file = `exams/${exam.id}.json`;
+    const q = examQuestions(exam).find((x) => x.id === id);
+    if (q) return { file, title: q.exercise.prompt };
+    const item = examExercises(exam).find((x) => x.id === id);
+    if (item) return { file, title: item.prompt };
+  }
+  return null;
+}

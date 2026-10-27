@@ -1,0 +1,29 @@
+# Opened from the app's "Meld een fout" button, which fills in these fields (see src/lib/github.ts).
+name: Fout in de cursus
+description: Iets klopt niet in een les, oefening of examenvraag.
+title: "Fout in "
+labels: ["inhoud"]
+body:
+  - type: textarea
+    id: toelichting
+    attributes:
+      label: Wat klopt niet?
+      description: Bijvoorbeeld "er zijn twee goede antwoorden" of "dit woord is verkeerd gespeld".
+    validations:
+      required: true
+  - type: input
+    id: onderdeel
+    attributes:
+      label: Onderdeel (id)
+      description: De id van de les of vraag. Die vult de app zelf in.
+    validations:
+      required: true
+  - type: input
+    id: bestand
+    attributes:
+      label: Bestand
+      description: Het cursusbestand in data/course waar het onderdeel in staat.
+  - type: textarea
+    id: vraag
+    attributes:
+      label: Vraag of les

@@ -1,6 +1,6 @@
 import type { Content } from "../shared/content/types.js";
 import { parseProgressFile } from "../shared/services/transfer.js";
-import { findExerciseInContent } from "../shared/content/lookup.js";
+import { findItemSource } from "../shared/content/lookup.js";
 
 export interface FlagLine {
   id: string;
@@ -21,13 +21,8 @@ export function collectFlags(files: unknown[]): FlagLine[] {
 }
 
 function describe(content: Content, itemId: string): string {
-  const ex = findExerciseInContent(content, itemId);
-  if (ex) return ex.prompt;
-  for (const unit of content.units.values()) {
-    const lesson = unit.steps.find((s) => s.type === "lesson" && s.id === itemId);
-    if (lesson && lesson.type === "lesson") return `Les: ${lesson.title}`;
-  }
-  return "(onderdeel bestaat niet meer)";
+  const source = findItemSource(content, itemId);
+  return source ? `${source.title}  (${source.file})` : "(onderdeel bestaat niet meer)";
 }
 
 /** A readable list for the content author, grouped by item. */

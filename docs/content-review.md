@@ -18,4 +18,4 @@ Reviewed by Claude, not by a native speaker (decision: no native-speaker review)
 - A native speaker would still catch unnatural phrasing.
 
 ## Flag workflow
-Learners can report a wrong item with the report button. Flags live in the progress file and in Settings, "Mijn meldingen". Run `npm run flags -- <progress-file>...` to merge friends' flags into one report, then fix the JSON in `data/course/`, keeping ids stable.
+Learners can report a wrong item with the report button. It opens a prefilled GitHub issue (label `inhoud`) with the item id and a link to its file in `data/course/`. Learners without a GitHub account can save the note on their device instead: those flags live in the progress file and in Settings, "Mijn meldingen". Run `npm run flags -- <progress-file>...` to merge friends' flags into one report, then fix the JSON in `data/course/`, keeping ids stable.

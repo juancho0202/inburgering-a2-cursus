@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { collectFlags, formatFlags } from "../../scripts/flagsReport";
-import { addFlag, listFlags, removeFlag } from "../../shared/services/flags";
+import { addFlag, flagTarget, listFlags, removeFlag } from "../../shared/services/flags";
+import { newIssueUrl } from "../../src/lib/github";
 import { applyImport, buildProgressFile } from "../../shared/services/transfer";
 import { createApiRouter } from "../../shared/services/router";
 import { makeEnv } from "../helpers/fixtures";
@@ -65,5 +66,30 @@ describe("Meld een fout", () => {
     expect(text).toContain("Vraag basis-a-q-001");
     expect(text).toContain("Eerste");
     expect(formatFlags([], a.content)).toBe("Geen meldingen gevonden.");
+  });
+
+  it("finds the course file of lessons, exercises, reading questions and exam questions", async () => {
+    const { env } = makeEnv();
+    const file = (id: string) => flagTarget(env, id).source?.file ?? null;
+    expect(file("basis-a-l-01")).toBe("basis/units/basis-a.json");
+    expect(file("basis-a-q-001")).toBe("basis/units/basis-a.json");
+    expect(file("knm-wonen-q-002-1")).toBe("knm/units/knm-wonen.json");
+    expect(file("exam-knm-t-q-001")).toBe("exams/exam-knm-t.json");
+    expect(file("gen-basis-a-1-1")).toBeNull();
+    const res = await createApiRouter(async () => env).handle("GET", "/flags/target/basis-a-l-01");
+    expect(res.body).toEqual({ itemId: "basis-a-l-01", source: { file: "basis/units/basis-a.json", title: "Les: Uitleg" } });
+  });
+
+  it("builds a GitHub link that fills in the issue form", () => {
+    const url = new URL(newIssueUrl({ itemId: "basis-a-q-001", file: "basis/units/basis-a.json", title: "Wat is & goed?", note: "  Twee goede antwoorden. " }));
+    expect(url.origin + url.pathname).toBe("https://github.com/juancho0202/inburgering-a2-cursus/issues/new");
+    expect(Object.fromEntries(url.searchParams)).toEqual({
+      template: "inhoud-fout.yml",
+      title: "Fout in basis-a-q-001",
+      onderdeel: "basis-a-q-001",
+      bestand: "https://github.com/juancho0202/inburgering-a2-cursus/blob/main/data/course/basis/units/basis-a.json",
+      vraag: "Wat is & goed?",
+      toelichting: "Twee goede antwoorden.",
+    });
   });
 });
