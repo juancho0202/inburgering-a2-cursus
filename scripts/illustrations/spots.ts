@@ -66,6 +66,25 @@ function calendarBig() {
   return out + rect(-46, -140, 8, 20, C.grey, 3, true) + rect(38, -140, 8, 20, C.grey, 3, true);
 }
 
+/** A grey wheelie bin without a label: it must not hint which bin is the answer in questions about sorting waste. */
+const bin = () =>
+  path("M-50-150H50L42 0H-42Z", "#8d96a3", true) +
+  rect(-58, -166, 116, 20, "#7a838f", 6, true) +
+  rect(-14, -176, 28, 12, INK, 4) +
+  stroke("M-24-120V-30M0-120V-30M24-120V-30", "#6f7884", 4) +
+  circle(-34, 4, 12, C.black, true) +
+  circle(34, 4, 12, C.black, true);
+
+/** Number cards, for questions about numbers. Numbers that are no answer option anywhere in the course. */
+const numberCards = () =>
+  ([
+    [-58, -96, "2", C.sky2, -8],
+    [0, -112, "5", C.orange, 4],
+    [56, -86, "9", C.teal, 10],
+  ] as const)
+    .map(([x, y, label, color, a]) => g(rect(-30, -38, 60, 76, color, 8, true) + text(0, 14, label, 34, C.white, 800), `translate(${x} ${y}) rotate(${a})`))
+    .join("");
+
 const pills = () =>
   rect(-30, -120, 60, 110, C.white, 6, true) + rect(-34, -134, 68, 18, C.red, 4, true) + rect(-24, -96, 48, 40, C.white, 2, true) + text(0, -80, "2x per", 10, INK, 700) + text(0, -66, "dag", 10, INK, 700) +
   g(rect(-20, -8, 40, 16, C.white, 8, true) + rect(0, -8, 20, 16, C.sky2, 8, true), "translate(50 -10) rotate(-30)");
@@ -109,6 +128,8 @@ export const spots: Record<string, Spot> = {
   kalender: { alt: "Een kalender.", draw: () => big(1, calendarBig(), 100, 200) },
   brief: { alt: "Een brief in een envelop.", draw: () => big(1, envelope(0, -60, 150, 96, C.white) + g(rect(-50, -100, 100, 60, C.paperDoc, 3, true) + stroke("M-36-84H36M-36-72H20", C.grey, 3), "rotate(-6)"), 100, 210) },
   geld: { alt: "Een portemonnee met geld.", draw: () => big(1, wallet(), 100, 200) },
+  getallen: { alt: "Kaartjes met getallen.", draw: () => big(1, numberCards(), 100, 216) },
+  afval: { alt: "Een container voor afval.", draw: () => big(1, bin(), 100, 200) },
   sleutels: { alt: "Sleutels.", draw: () => big(1.3, keysBig(), 104, 170) },
   medicijnen: { alt: "Medicijnen.", draw: () => big(1, pills(), 90, 210) },
   boek: { alt: "Een boek.", draw: () => big(2.6, openBook(0, 0), 100, 150) },

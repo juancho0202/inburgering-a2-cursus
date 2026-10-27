@@ -284,6 +284,7 @@
           "basis:signaalwoorden",
           "lezen"
         ],
+        "spot": "denken",
         "explanation": "Maar: het adres op de website is nog oud.",
         "difficulty": 2,
         "type": "mc",
