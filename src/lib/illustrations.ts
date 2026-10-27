@@ -2,6 +2,7 @@ import type { InjectionKey } from "vue";
 import type { Exercise, Unit } from "@shared/types";
 import sceneAlts from "../assets/scenes/index.json";
 import spotAlts from "../assets/spots/index.json";
+import { whenDecoded } from "./images";
 
 // The drawings come from scripts/illustrations (npm run illustrations). Only the URLs are bundled:
 // the browser downloads a picture the first time it is shown.
@@ -138,7 +139,7 @@ export function warmImages(urls: (string | undefined)[]) {
     img.decoding = "async";
     img.src = url;
     warmed.set(url, img);
-    void img.decode().catch(() => warmed.delete(url));
+    void whenDecoded(img).catch(() => warmed.delete(url));
   }
 }
 
