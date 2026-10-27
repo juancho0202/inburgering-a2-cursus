@@ -98,6 +98,32 @@ describe("KNM and Lezen results", () => {
   });
 });
 
+describe("Luisteren results", () => {
+  const listening = {
+    id: "f1", type: "listening", tags: ["luisteren:telefoon"], prompt: "Luister", explanation: "e", difficulty: 1,
+    fragment: {
+      kind: "telefoon", situation: "Ali belt de huisarts.",
+      speakers: [{ name: "Ali", voice: "alex" }, { name: "Assistente", voice: "nathalie", phone: true }],
+      lines: [{ speaker: "Ali", nl: "Mijn dochter heeft koorts." }, { speaker: "Assistente", nl: "Bel terug boven de veertig graden." }],
+    },
+    questions: [{ ...mc("f1-a", "luisteren:telefoon"), answerLine: 1 }, { ...mc("f1-b", "luisteren:telefoon"), answerLine: 0 }],
+  };
+
+  it("lets the learner hear and read a fragment again at a wrong answer, with the answer marked", async () => {
+    const { wrapper } = await open(
+      examOf("luisteren", [listening]),
+      resultOf({ score: 1, max: 2, answers: { "f1-a": [2], "f1-b": [0] }, details: { "f1-a": { correct: false }, "f1-b": { correct: true } }, byTheme: { "luisteren:telefoon": [1, 2] } }),
+    );
+    expect(wrapper.text()).toContain("Score per soort fragment");
+    expect(wrapper.text()).toContain("Telefoongesprekken");
+    const replay = wrapper.findAll("details");
+    expect(replay).toHaveLength(1);
+    expect(replay[0].text()).toContain("Luister nog een keer en lees de tekst");
+    const marked = replay[0].findAll("li button").find((b) => b.text().includes("Het antwoord"))!;
+    expect(marked.text()).toContain("Bel terug boven de veertig graden.");
+  });
+});
+
 describe("Schrijven results", () => {
   const exam = examOf("schrijven", [writing("w1"), writing("w2"), form]);
   const pending = {

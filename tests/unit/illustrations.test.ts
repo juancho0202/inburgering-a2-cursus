@@ -44,6 +44,9 @@ describe("illustrations", () => {
   it("falls back to the topic, and to people for grammar", () => {
     expect(alt(mc("j", "Wat is een borg?", { tags: ["knm:wonen"] }))).toBe("Een Nederlands huis.");
     expect(PEOPLE).toContain(alt(mc("k", "Kies de goede vorm.", { tags: ["grammar:zinsbouw"] })));
+    expect(alt(mc("l", "Luister. Wat moet Petra doen?", { tags: ["luisteren:voicemail"] }))).toBe("Een koptelefoon.");
+    // what the question is about still comes first
+    expect(alt(mc("m", "Luister. Hoe laat begint de les?", { tags: ["luisteren:getallen"] }))).toBe("Een klok.");
   });
 
   it("is always the same for the same question, on both sides", () => {

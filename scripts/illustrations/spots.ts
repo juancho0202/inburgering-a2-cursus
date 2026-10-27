@@ -2,7 +2,7 @@
  * Spot illustrations: one person, animal or object without a background, to stand next to an exercise
  * (like the little drawings in the margin of a language book). Canvas SW × SH, transparent.
  */
-import { C, INK, SKIN, bike, box, circle, clock, ellipse, envelope, g, gable, laptop, openBook, path, phone, plant, rect, stroke, text, tulips, windmill } from "./kit.js";
+import { C, INK, SKIN, bike, box, circle, clock, ellipse, envelope, g, gable, horn, laptop, openBook, path, phone, plant, radioSet, rect, stroke, text, tulips, waves, windmill } from "./kit.js";
 import { peep, type Peep } from "./peeps.js";
 
 export const SW = 200;
@@ -96,6 +96,13 @@ const flowersBig = () =>
 
 const ballot = () => rect(-60, -100, 120, 100, C.white, 8, true) + rect(-24, -104, 48, 8, INK, 3) + text(0, -40, "STEMBUS", 14, C.navy, 800) + g(rect(-14, -20, 28, 40, C.white, 2, true) + stroke("M-8-8h16M-8 0h10", C.grey, 2) + stroke("M-6 10l4 4l8-10", C.red, 2.5), "translate(0 -120)");
 
+/** Over-ear headphones on their own: the sign for a listening task. */
+const headphonesBig = () =>
+  stroke("M-62-40C-62-150 62-150 62-40", INK, 16) +
+  stroke("M-62-40C-62-150 62-150 62-40", C.navy, 10) +
+  [-1, 1].map((d) => rect(d * 64 - 20, -66, 40, 72, C.orange, 16, true) + rect(d * 64 - 9, -52, 18, 44, "#ffffff44", 8)).join("") +
+  waves(96, -30, 1, 1.1);
+
 const graduation = () =>
   path("M-80-80L0-110L80-80L0-50Z", INK, true) + path("M-44-66V-36Q0-16 44-36V-66L0-50Z", "#3a4054", true) + stroke("M80-80V-40", C.yellow, 3) + circle(80, -36, 6, C.yellow, true) + g(openBook(0, 0), "translate(0 0) scale(1.6)");
 
@@ -140,6 +147,9 @@ export const spots: Record<string, Spot> = {
   diploma: { alt: "Een studentenhoed en een boek.", draw: () => big(1, graduation(), 100, 200) },
   plant: { alt: "Een plant.", draw: () => big(2.1, plant(0, 0), 100, 212) },
   computer: { alt: "Een laptop.", draw: () => big(2.4, laptop(0, 0), 100, 160) },
+  koptelefoon: { alt: "Een koptelefoon.", draw: () => big(0.95, headphonesBig(), 80, 170) },
+  luidspreker: { alt: "Een luidspreker met een omroepbericht.", draw: () => big(1.9, horn(0, 0), 40, 110) },
+  radio: { alt: "Een radio.", draw: () => big(1.35, radioSet(0, 0), 96, 186) },
 };
 
 // The dog and cow of the scenes, at their own origin.

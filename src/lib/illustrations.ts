@@ -86,6 +86,7 @@ const BY_TOPIC: [string, string[]][] = [
   ["knm:omgang", ["uitleggen", "denken"]],
   ["basis:tijd", ["klok"]],
   ["basis:voorzetsels", ["fietser", "lopen", "wijzen"]],
+  ["luisteren:", ["koptelefoon"]],
 ];
 const PEOPLE = ["uitleggen", "idee", "denken", "wijzen", "lezen", "laptop"];
 

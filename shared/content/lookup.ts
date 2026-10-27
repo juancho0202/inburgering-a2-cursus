@@ -1,17 +1,16 @@
 import type { Exercise } from "../types.js";
 import { examExercises, examQuestions } from "../logic/exam.js";
 import type { Content } from "./types.js";
+import { subQuestions } from "./questions.js";
 
-/** Finds an exercise (or reading sub-question) by id in the course, including exam items. */
+/** Finds an exercise (or a question about a text or fragment) by id in the course, including exam items. */
 export function findExerciseInContent(content: Content, id: string): Exercise | undefined {
   for (const unit of content.units.values()) {
     for (const step of unit.steps) {
       if (step.type !== "exercise") continue;
       if (step.exercise.id === id) return step.exercise;
-      if (step.exercise.type === "reading") {
-        const q = step.exercise.questions.find((x) => x.id === id);
-        if (q) return q;
-      }
+      const q = subQuestions(step.exercise).find((x) => x.id === id);
+      if (q) return q;
     }
   }
   for (const exam of content.exams.values()) {
@@ -37,10 +36,8 @@ export function findItemSource(content: Content, id: string): { file: string; ti
         continue;
       }
       if (step.exercise.id === id) return { file, title: step.exercise.prompt };
-      if (step.exercise.type === "reading") {
-        const q = step.exercise.questions.find((x) => x.id === id);
-        if (q) return { file, title: q.prompt };
-      }
+      const q = subQuestions(step.exercise).find((x) => x.id === id);
+      if (q) return { file, title: q.prompt };
     }
   }
   for (const exam of content.exams.values()) {

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { VOICE_IDS } from "../content/voices.js";
 
 export const CourseSchema = z.object({
   id: z.string(),
@@ -13,6 +14,38 @@ export const ModuleSchema = z.object({
   icon: z.string(),
   units: z.array(z.string()),
 });
+
+/**
+ * What a listening fragment is, as in the exam: a conversation (a film in the exam), a phone call, a voicemail,
+ * an announcement, the radio (news, weather, traffic) or someone explaining something. The kind decides the
+ * icon and the sound around the voices (a ring tone, a beep, a chime, a jingle).
+ */
+export const FRAGMENT_KINDS = ["gesprek", "telefoon", "voicemail", "omroep", "radio", "uitleg"] as const;
+
+/**
+ * A listening fragment: people talking, each with a recorded voice. `npm run voice` records it as one sound file
+ * (scripts/tts); the text is only shown after the answers are checked.
+ */
+export const FragmentSchema = z.object({
+  kind: z.enum(FRAGMENT_KINDS),
+  /** Who is listening to what, like the exam's first lines: "Sonja belt de huisarts. Ze wil een afspraak maken." */
+  situation: z.string(),
+  /** An illustration from src/assets/scenes, in place of the film. */
+  scene: z.string().optional(),
+  speakers: z
+    .array(
+      z.object({
+        name: z.string(),
+        voice: z.enum(VOICE_IDS),
+        /** Heard through a telephone (everyone in a voicemail is). */
+        phone: z.boolean().optional(),
+      }),
+    )
+    .min(1),
+  lines: z.array(z.object({ speaker: z.string(), nl: z.string() })).min(1),
+});
+
+export type Fragment = z.infer<typeof FragmentSchema>;
 
 export const LessonBlockSchema = z.discriminatedUnion("kind", [
   z.object({ kind: z.literal("text"), md: z.string() }),
@@ -36,6 +69,8 @@ export const LessonBlockSchema = z.discriminatedUnion("kind", [
   }),
   /** An illustration from src/assets/scenes (the id is the file name). */
   z.object({ kind: z.literal("picture"), scene: z.string(), caption: z.string().optional() }),
+  /** A listening fragment to listen to with the text in view (the line being said is highlighted). */
+  z.object({ kind: z.literal("fragment"), fragment: FragmentSchema }),
 ]);
 
 export type LessonBlock = z.infer<typeof LessonBlockSchema>;
@@ -51,6 +86,8 @@ interface ExerciseBaseFields {
   spot?: string;
   /** A listening task: what the learner hears (played by the voice, not shown before the answer). */
   listen?: string;
+  /** A question about a listening fragment: the line (counting from 0) where the answer is said, to hear it again after checking. */
+  answerLine?: number;
 }
 
 export type Exercise =
@@ -69,6 +106,7 @@ export type Exercise =
       answers: string[];
     })
   | (ExerciseBaseFields & { type: "reading"; document: LessonBlock; questions: Exercise[] })
+  | (ExerciseBaseFields & { type: "listening"; fragment: Fragment; questions: Exercise[] })
   | (ExerciseBaseFields & {
       type: "form-fill";
       formTitle: string;
@@ -95,6 +133,7 @@ const ExerciseBase = {
   difficulty: z.union([z.literal(1), z.literal(2), z.literal(3)]).default(1),
   spot: z.string().optional(),
   listen: z.string().optional(),
+  answerLine: z.number().int().min(0).optional(),
 };
 
 export const ExerciseSchema: z.ZodType<Exercise, any> = z.discriminatedUnion("type", [
@@ -118,6 +157,12 @@ export const ExerciseSchema: z.ZodType<Exercise, any> = z.discriminatedUnion("ty
     type: z.literal("reading"),
     document: LessonBlockSchema,
     questions: z.array(z.lazy(() => ExerciseSchema)),
+  }),
+  z.object({
+    ...ExerciseBase,
+    type: z.literal("listening"),
+    fragment: FragmentSchema,
+    questions: z.array(z.lazy(() => ExerciseSchema)).min(1),
   }),
   z.object({
     ...ExerciseBase,
@@ -197,7 +242,7 @@ export const VerbEntrySchema = z.object({
 
 export const ExamSchema = z.object({
   id: z.string(),
-  skill: z.enum(["lezen", "knm", "schrijven"]),
+  skill: z.enum(["lezen", "luisteren", "knm", "schrijven"]),
   title: z.string(),
   durationMinutes: z.number().int(),
   items: z.array(z.union([ExerciseSchema, z.object({ ref: z.string() })])),

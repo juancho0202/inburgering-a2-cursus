@@ -1,0 +1,620 @@
+{
+  "id": "luisteren-getallen",
+  "moduleId": "luisteren",
+  "title": "Getallen, tijden en prijzen",
+  "goal": "Je verstaat tijden, datums, prijzen en telefoonnummers.",
+  "scene": "kassa",
+  "estimatedMinutes": 25,
+  "tags": [
+    "luisteren:getallen"
+  ],
+  "vocabRefs": [
+    "basis-vocab-tijd-007",
+    "basis-vocab-tijd-008",
+    "basis-vocab-tijd-009",
+    "basis-vocab-tijd-029",
+    "basis-vocab-winkelen-geld-019",
+    "basis-vocab-winkelen-geld-030",
+    "basis-vocab-post-internet-telefoon-021"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "luisteren-getallen-l-01",
+      "title": "Tijden",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In bijna elk fragment hoor je een tijd. Bij de antwoorden staan tijden als getallen: **9.30 uur**. In het fragment hoor je woorden: **half tien**."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Je hoort",
+            "Je leest"
+          ],
+          "rows": [
+            [
+              "negen uur",
+              "9.00 uur"
+            ],
+            [
+              "kwart over negen",
+              "9.15 uur"
+            ],
+            [
+              "vijf voor half tien",
+              "9.25 uur"
+            ],
+            [
+              "half tien",
+              "9.30 uur"
+            ],
+            [
+              "tien over half tien",
+              "9.40 uur"
+            ],
+            [
+              "kwart voor tien",
+              "9.45 uur"
+            ],
+            [
+              "veertien uur (op het station, op de radio)",
+              "14.00 uur"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Half** is lastig: **half drie** is 2.30 uur, niet 3.30 uur. Denk: het is nog een half uur tot drie uur."
+        },
+        {
+          "kind": "example",
+          "nl": "We beginnen om half drie.",
+          "note": "14.30 uur"
+        },
+        {
+          "kind": "example",
+          "nl": "De trein vertrekt om tien over half negen.",
+          "note": "8.40 uur"
+        },
+        {
+          "kind": "example",
+          "nl": "De winkel sluit om kwart voor zes.",
+          "note": "17.45 uur"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "luisteren-getallen-l-02",
+      "title": "Getallen die op elkaar lijken",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Sommige getallen klinken bijna hetzelfde. Luister naar het **einde** van het woord: **-tien** of **-tig**."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "… -tien",
+            "… -tig"
+          ],
+          "rows": [
+            [
+              "dertien (13)",
+              "dertig (30)"
+            ],
+            [
+              "veertien (14)",
+              "veertig (40)"
+            ],
+            [
+              "vijftien (15)",
+              "vijftig (50)"
+            ],
+            [
+              "zestien (16)",
+              "zestig (60)"
+            ],
+            [
+              "zeventien (17)",
+              "zeventig (70)"
+            ],
+            [
+              "achttien (18)",
+              "tachtig (80)"
+            ],
+            [
+              "negentien (19)",
+              "negentig (90)"
+            ]
+          ]
+        },
+        {
+          "kind": "text",
+          "md": "Bij getallen boven de twintig hoor je **eerst het laatste cijfer**: vijf-en-twintig = **25**, twee-en-veertig = **42**."
+        },
+        {
+          "kind": "tip",
+          "md": "Schrijf het getal op als je oefent. Zo hoor je het verschil steeds beter."
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "luisteren-getallen-l-03",
+      "title": "Prijzen, datums en telefoonnummers",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Je hoort",
+            "Je leest"
+          ],
+          "rows": [
+            [
+              "twee euro vijftig",
+              "€ 2,50"
+            ],
+            [
+              "negentien euro negenennegentig",
+              "€ 19,99"
+            ],
+            [
+              "vijfenzeventig cent",
+              "€ 0,75"
+            ],
+            [
+              "de eerste mei",
+              "1 mei"
+            ],
+            [
+              "dinsdag drie maart",
+              "dinsdag 3 maart"
+            ],
+            [
+              "nul zes, twaalf, vierendertig, zesenvijftig, achtenzeventig",
+              "06-12 34 56 78"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Een prijs zeg je zonder 'komma': **twee euro vijftig**. Een telefoonnummer zeggen mensen per cijfer of per twee cijfers."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-getallen-q-001",
+        "type": "mc",
+        "tags": [
+          "luisteren:getallen"
+        ],
+        "prompt": "Luister. Hoe laat begint de les?",
+        "options": [
+          "9.15 uur",
+          "9.45 uur",
+          "8.45 uur"
+        ],
+        "answer": 0,
+        "explanation": "Kwart over negen = 15 minuten na negen uur: 9.15 uur.",
+        "difficulty": 1,
+        "listen": "De les begint om kwart over negen."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-getallen-q-002",
+        "type": "mc",
+        "tags": [
+          "luisteren:getallen"
+        ],
+        "prompt": "Luister. Hoe laat vertrekt de bus?",
+        "options": [
+          "15.30 uur",
+          "16.30 uur",
+          "14.30 uur"
+        ],
+        "answer": 0,
+        "explanation": "Half vier = nog een half uur tot vier uur: 3.30 uur, dus 15.30 uur.",
+        "difficulty": 1,
+        "listen": "De bus vertrekt om half vier."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-getallen-q-003",
+        "type": "mc",
+        "tags": [
+          "luisteren:getallen"
+        ],
+        "prompt": "Luister. Welk getal hoor je?",
+        "options": [
+          "18",
+          "80",
+          "8"
+        ],
+        "answer": 0,
+        "explanation": "Acht-tien = 18. Tachtig = 80.",
+        "difficulty": 1,
+        "listen": "achttien"
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-getallen-q-004",
+        "type": "mc",
+        "tags": [
+          "luisteren:getallen"
+        ],
+        "prompt": "Luister. Welk getal hoor je?",
+        "options": [
+          "19",
+          "90",
+          "9"
+        ],
+        "answer": 1,
+        "explanation": "Negen-tig = 90. Negentien = 19.",
+        "difficulty": 1,
+        "listen": "negentig"
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-getallen-q-005",
+        "type": "mc",
+        "tags": [
+          "luisteren:getallen"
+        ],
+        "prompt": "Luister. Hoeveel kost het brood?",
+        "options": [
+          "€ 2,45",
+          "€ 2,54",
+          "€ 2,55"
+        ],
+        "answer": 0,
+        "explanation": "Twee euro vijfenveertig: vijf-en-veertig = 45. Dus € 2,45.",
+        "difficulty": 1,
+        "listen": "Dit brood kost twee euro vijfenveertig."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-getallen-q-006",
+        "type": "mc",
+        "tags": [
+          "luisteren:getallen"
+        ],
+        "prompt": "Luister. Wanneer is het feest?",
+        "options": [
+          "Zaterdag 18 mei",
+          "Zaterdag 8 mei",
+          "Zaterdag 28 mei"
+        ],
+        "answer": 0,
+        "explanation": "Achttien = 18. Dus zaterdag 18 mei.",
+        "difficulty": 1,
+        "listen": "Het feest is op zaterdag achttien mei."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-getallen-q-007",
+        "type": "listening",
+        "tags": [
+          "luisteren:telefoon"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+        "fragment": {
+          "kind": "telefoon",
+          "situation": "Olga belt naar de bioscoop. Ze wil vanavond naar een film.",
+          "speakers": [
+            {
+              "name": "Medewerker",
+              "voice": "ronnie",
+              "phone": true
+            },
+            {
+              "name": "Olga",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Medewerker",
+              "nl": "Bioscoop Het Witte Doek, goedemiddag."
+            },
+            {
+              "speaker": "Olga",
+              "nl": "Goedemiddag. Hoe laat begint de film vanavond?"
+            },
+            {
+              "speaker": "Medewerker",
+              "nl": "Er zijn twee voorstellingen: om kwart over zeven en om tien over half tien."
+            },
+            {
+              "speaker": "Olga",
+              "nl": "Kwart over zeven is te vroeg voor mij. Ik neem de late voorstelling."
+            },
+            {
+              "speaker": "Medewerker",
+              "nl": "Prima. Hoeveel kaartjes wilt u?"
+            },
+            {
+              "speaker": "Olga",
+              "nl": "Twee, alstublieft. Wat kost een kaartje?"
+            },
+            {
+              "speaker": "Medewerker",
+              "nl": "Een kaartje kost twaalf euro vijftig. Twee kaartjes zijn dus vijfentwintig euro."
+            },
+            {
+              "speaker": "Olga",
+              "nl": "Goed. Kan ik bij de kassa betalen?"
+            },
+            {
+              "speaker": "Medewerker",
+              "nl": "Ja, dat kan. Kom wel een kwartier van tevoren."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-getallen-q-007-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Hoe laat begint de film die Olga kiest?",
+            "options": [
+              "19.15 uur",
+              "21.40 uur",
+              "21.30 uur"
+            ],
+            "answer": 1,
+            "explanation": "Olga neemt de late voorstelling: tien over half tien. Dat is 21.40 uur.",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-getallen-q-007-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Hoeveel betaalt Olga in totaal?",
+            "options": [
+              "€ 12,50",
+              "€ 25,00",
+              "€ 22,50"
+            ],
+            "answer": 1,
+            "explanation": "'Twee kaartjes zijn dus vijfentwintig euro.'",
+            "difficulty": 1,
+            "answerLine": 6
+          },
+          {
+            "id": "luisteren-getallen-q-007-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wat moet Olga doen?",
+            "options": [
+              "Een kwartier van tevoren komen",
+              "Vooraf op internet betalen",
+              "Om kwart over zeven komen"
+            ],
+            "answer": 0,
+            "explanation": "De medewerker zegt: 'Kom wel een kwartier van tevoren.'",
+            "difficulty": 1,
+            "answerLine": 8
+          }
+        ],
+        "explanation": "Er zijn twee tijden. Luister welke tijd Olga kiest: de late voorstelling.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-getallen-q-008",
+        "type": "listening",
+        "tags": [
+          "luisteren:omroep"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het omroepbericht.",
+        "fragment": {
+          "kind": "omroep",
+          "situation": "Kofi staat op het station in Amersfoort. Hij wil naar Zwolle.",
+          "speakers": [
+            {
+              "name": "Omroeper",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Omroeper",
+              "nl": "Dames en heren, de intercity naar Zwolle van vijftien uur zeven vertrekt vandaag niet van spoor vier, maar van spoor zes."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "De trein heeft ongeveer tien minuten vertraging."
+            },
+            {
+              "speaker": "Omroeper",
+              "nl": "Ik herhaal: de intercity naar Zwolle vertrekt van spoor zes."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-getallen-q-008-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Van welk spoor vertrekt de trein naar Zwolle?",
+            "options": [
+              "Spoor 4",
+              "Spoor 6",
+              "Spoor 10"
+            ],
+            "answer": 1,
+            "explanation": "'Niet van spoor vier, maar van spoor zes.' En in de herhaling: spoor zes.",
+            "difficulty": 1,
+            "answerLine": 0
+          },
+          {
+            "id": "luisteren-getallen-q-008-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:omroep"
+            ],
+            "prompt": "Hoeveel vertraging heeft de trein?",
+            "options": [
+              "Ongeveer 7 minuten",
+              "Ongeveer 10 minuten",
+              "Ongeveer 15 minuten"
+            ],
+            "answer": 1,
+            "explanation": "'De trein heeft ongeveer tien minuten vertraging.' 15.07 uur is de vertrektijd, niet de vertraging.",
+            "difficulty": 1,
+            "answerLine": 1
+          }
+        ],
+        "explanation": "In een omroepbericht hoor je veel getallen: een tijd, een spoor, minuten vertraging. Lees de vraag: welk getal zoek je?",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-getallen-q-009",
+        "type": "listening",
+        "tags": [
+          "luisteren:voicemail"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar de voicemail.",
+        "fragment": {
+          "kind": "voicemail",
+          "situation": "Petra heeft een voicemail van de garage.",
+          "speakers": [
+            {
+              "name": "Jan",
+              "voice": "ronnie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Jan",
+              "nl": "Hallo mevrouw De Vries, met Jan van Garage Snel."
+            },
+            {
+              "speaker": "Jan",
+              "nl": "Uw auto is klaar. U kunt hem vandaag ophalen, tot zes uur."
+            },
+            {
+              "speaker": "Jan",
+              "nl": "De reparatie kost honderdachtenveertig euro."
+            },
+            {
+              "speaker": "Jan",
+              "nl": "Heeft u nog vragen? Bel me dan op nul zes, zevenenveertig, negentien, achtentwintig, vijfendertig."
+            },
+            {
+              "speaker": "Jan",
+              "nl": "Tot straks!"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-getallen-q-009-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Hoeveel kost de reparatie?",
+            "options": [
+              "€ 148",
+              "€ 184",
+              "€ 140"
+            ],
+            "answer": 0,
+            "explanation": "Honderd-acht-en-veertig = 148.",
+            "difficulty": 2,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-getallen-q-009-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Wat is het telefoonnummer van Jan?",
+            "options": [
+              "06-47 19 28 35",
+              "06-47 19 28 53",
+              "06-74 19 28 35"
+            ],
+            "answer": 0,
+            "explanation": "Zevenenveertig = 47, negentien = 19, achtentwintig = 28, vijfendertig = 35.",
+            "difficulty": 2,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-getallen-q-009-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:voicemail"
+            ],
+            "prompt": "Tot hoe laat kan Petra de auto ophalen?",
+            "options": [
+              "Tot 16.00 uur",
+              "Tot 18.00 uur",
+              "Tot 17.30 uur"
+            ],
+            "answer": 1,
+            "explanation": "'Tot zes uur.' Een garage is 's middags open: zes uur is 18.00 uur.",
+            "difficulty": 2,
+            "answerLine": 1
+          }
+        ],
+        "explanation": "Bij getallen boven de twintig hoor je eerst het laatste cijfer: zeven-en-veertig = 47.",
+        "difficulty": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-getallen-q-010",
+        "type": "mc",
+        "tags": [
+          "luisteren:getallen"
+        ],
+        "prompt": "Luister. Wat is het huisnummer?",
+        "options": [
+          "45",
+          "54",
+          "44"
+        ],
+        "answer": 1,
+        "explanation": "Vier-en-vijftig = 54. Je hoort eerst de vier, maar je schrijft hem als laatste.",
+        "difficulty": 1,
+        "listen": "Ik woon in de Lindestraat, nummer vierenvijftig."
+      }
+    }
+  ]
+}

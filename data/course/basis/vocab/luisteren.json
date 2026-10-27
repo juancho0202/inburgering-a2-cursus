@@ -1,0 +1,342 @@
+{
+  "theme": "luisteren",
+  "title": "Luisteren",
+  "entries": [
+    {
+      "id": "basis-vocab-luisteren-001",
+      "nl": "het fragment",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de fragmenten",
+      "definitionNl": "Een kort stukje van een film of van een geluid.",
+      "example": "Bij elk fragment horen twee of drie vragen.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-002",
+      "nl": "herhalen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Nog een keer zeggen.",
+      "example": "Kunt u dat herhalen, alstublieft?",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-003",
+      "nl": "verzetten",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Een afspraak naar een andere dag of tijd zetten.",
+      "example": "Ik wil mijn afspraak verzetten naar vrijdag.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-004",
+      "nl": "het spreekuur",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de spreekuren",
+      "definitionNl": "De tijd dat je bij de dokter kunt komen.",
+      "example": "Het spreekuur van de huisarts is 's ochtends.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-005",
+      "nl": "doorverbinden",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Aan de telefoon: iemand naar een andere persoon sturen.",
+      "example": "Een moment, ik verbind u door met de afdeling.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-006",
+      "nl": "aan de lijn blijven",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Wachten aan de telefoon. Je hangt niet op.",
+      "example": "Blijft u even aan de lijn? Ik kijk in de agenda.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-007",
+      "nl": "de pieptoon",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de pieptonen",
+      "definitionNl": "Het geluid voordat je een voicemail inspreekt.",
+      "example": "Spreek een bericht in na de pieptoon.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-008",
+      "nl": "de luidspreker",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de luidsprekers",
+      "definitionNl": "Hieruit komt het geluid, bijvoorbeeld van een omroepbericht.",
+      "example": "Op het station hoor je een bericht door de luidspreker.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-009",
+      "nl": "uitvallen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Niet rijden of niet doorgaan.",
+      "example": "De trein naar Leiden valt vandaag uit.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-010",
+      "nl": "de storing",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de storingen",
+      "definitionNl": "Een probleem: iets werkt niet goed.",
+      "example": "Door een storing rijden er geen treinen.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-011",
+      "nl": "het vervangend vervoer",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Bussen die rijden als er geen treinen zijn.",
+      "example": "Er is vervangend vervoer met bussen.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-012",
+      "nl": "afslaan",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Een andere straat in gaan, naar links of naar rechts.",
+      "example": "Sla bij de kerk links af.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-013",
+      "nl": "de rotonde",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de rotondes",
+      "definitionNl": "Een rond kruispunt. Je rijdt er in een cirkel omheen.",
+      "example": "Ga bij de rotonde rechtsaf.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-014",
+      "nl": "de kruising",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de kruisingen",
+      "definitionNl": "De plek waar twee wegen elkaar kruisen.",
+      "example": "Bij de kruising gaat u rechtdoor.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-015",
+      "nl": "oversteken",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Naar de andere kant van de straat gaan.",
+      "example": "Steek de straat over bij het zebrapad.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-016",
+      "nl": "de klantenservice",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "De afdeling van een bedrijf die vragen van klanten beantwoordt.",
+      "example": "Bel de klantenservice als je internet het niet doet.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-017",
+      "nl": "een dienst overnemen",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Voor een collega werken op zijn of haar tijd.",
+      "example": "Kun jij zaterdag mijn dienst overnemen?",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-018",
+      "nl": "het verzamelpunt",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de verzamelpunten",
+      "definitionNl": "De plek waar iedereen naartoe gaat, bijvoorbeeld bij brand.",
+      "example": "Bij brand gaat iedereen naar het verzamelpunt.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-019",
+      "nl": "het nieuws",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Berichten op radio, tv of internet over wat er gebeurd is.",
+      "example": "Ik luister elke ochtend naar het nieuws.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-020",
+      "nl": "het weerbericht",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de weerberichten",
+      "definitionNl": "Op radio of tv: hoe het weer wordt.",
+      "example": "Volgens het weerbericht gaat het morgen regenen.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-021",
+      "nl": "de bui",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de buien",
+      "definitionNl": "Een korte tijd regen.",
+      "example": "Morgen zijn er buien, vooral in de middag.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-022",
+      "nl": "de verkeersinformatie",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Informatie over files en wegen.",
+      "example": "Op de radio hoor je om half acht de verkeersinformatie.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-023",
+      "nl": "afgesloten",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Dicht: je kunt er niet langs.",
+      "example": "De weg is dit weekend afgesloten.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-luisteren-024",
+      "nl": "de omleiding",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de omleidingen",
+      "definitionNl": "Een andere weg als de gewone weg dicht is.",
+      "example": "Volg de omleiding naar het centrum.",
+      "tags": [
+        "thema:luisteren"
+      ],
+      "level": "A2",
+      "source": "course"
+    }
+  ]
+}

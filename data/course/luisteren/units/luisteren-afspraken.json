@@ -1,0 +1,748 @@
+{
+  "id": "luisteren-afspraken",
+  "moduleId": "luisteren",
+  "title": "Een afspraak maken",
+  "goal": "Je verstaat een telefoongesprek over een afspraak: wanneer, waar en wat je moet meenemen.",
+  "scene": "telefoneren",
+  "estimatedMinutes": 25,
+  "tags": [
+    "luisteren:afspraken"
+  ],
+  "vocabRefs": [
+    "basis-vocab-tijd-002",
+    "basis-vocab-luisteren-003",
+    "basis-vocab-gezondheid-029",
+    "basis-vocab-luisteren-004",
+    "basis-vocab-luisteren-005",
+    "basis-vocab-luisteren-006",
+    "basis-vocab-school-kinderen-004",
+    "basis-vocab-gemeente-instanties-003"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "luisteren-afspraken-l-01",
+      "title": "Aan de telefoon",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Een telefoongesprek begint bijna altijd zo:\n\n- De ander zegt **de naam van de praktijk of het bedrijf**: *Huisartsenpraktijk De Linde, goedemorgen.*\n- Dan zeg jij **je naam** en **waarom je belt**: *Met Ahmed Yilmaz. Ik wil graag een afspraak maken.*\n\nIn het examen gaan de vragen vaak over: **wanneer** is de afspraak, **waarom** belt iemand, en wat moet iemand **meenemen** of **doen**?"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Je hoort",
+            "Betekenis"
+          ],
+          "rows": [
+            [
+              "Ik wil een afspraak maken.",
+              "Ik wil een dag en tijd afspreken."
+            ],
+            [
+              "Ik wil mijn afspraak verzetten.",
+              "Ik wil een andere dag of tijd."
+            ],
+            [
+              "Ik wil mijn afspraak afzeggen.",
+              "Ik kom niet."
+            ],
+            [
+              "Kan het ook eerder? / later?",
+              "Is er een andere tijd?"
+            ],
+            [
+              "Ik verbind u door.",
+              "U gaat praten met een andere persoon."
+            ],
+            [
+              "Blijft u even aan de lijn?",
+              "Wacht even. Niet ophangen."
+            ],
+            [
+              "Wilt u … meenemen?",
+              "Neem dit mee."
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Bij een afspraak hoor je vaak **twee of drie tijden**. De eerste tijd past meestal niet. Luister naar de tijd waar **allebei** ja tegen zeggen."
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "id": "luisteren-afspraken-l-02",
+      "title": "Luister en lees mee",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Esra belt de gemeente. Luister en lees mee. **Wanneer is de afspraak, en wat neemt Esra mee?**"
+        },
+        {
+          "kind": "fragment",
+          "fragment": {
+            "kind": "telefoon",
+            "situation": "Esra belt de gemeente. Ze wil een nieuw paspoort.",
+            "speakers": [
+              {
+                "name": "Medewerker",
+                "voice": "alex",
+                "phone": true
+              },
+              {
+                "name": "Esra",
+                "voice": "nathalie"
+              }
+            ],
+            "lines": [
+              {
+                "speaker": "Medewerker",
+                "nl": "Gemeente Almere, goedemiddag. U spreekt met Peter."
+              },
+              {
+                "speaker": "Esra",
+                "nl": "Goedemiddag, met Esra Demir. Mijn paspoort is bijna verlopen. Ik wil een nieuw paspoort aanvragen."
+              },
+              {
+                "speaker": "Medewerker",
+                "nl": "Dan maak ik een afspraak voor u. Kunt u donderdagochtend?"
+              },
+              {
+                "speaker": "Esra",
+                "nl": "Nee, dan werk ik. Kan het ook in de middag?"
+              },
+              {
+                "speaker": "Medewerker",
+                "nl": "Ja. Donderdag om tien voor drie?"
+              },
+              {
+                "speaker": "Esra",
+                "nl": "Prima."
+              },
+              {
+                "speaker": "Medewerker",
+                "nl": "Neem uw oude paspoort mee, en een nieuwe pasfoto."
+              },
+              {
+                "speaker": "Esra",
+                "nl": "Dat doe ik. Dank u wel."
+              }
+            ]
+          }
+        },
+        {
+          "kind": "text",
+          "md": "De afspraak is op donderdag om **tien voor drie**: 14.50 uur. Esra neemt haar **oude paspoort** en een **pasfoto** mee."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-afspraken-q-001",
+        "type": "listening",
+        "tags": [
+          "luisteren:telefoon"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+        "fragment": {
+          "kind": "telefoon",
+          "situation": "Yusuf belt de huisarts. Hij heeft al een week last van zijn rug.",
+          "speakers": [
+            {
+              "name": "Assistente",
+              "voice": "nathalie",
+              "phone": true
+            },
+            {
+              "name": "Yusuf",
+              "voice": "ronnie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Assistente",
+              "nl": "Huisartsenpraktijk De Linde, goedemorgen, u spreekt met Karin."
+            },
+            {
+              "speaker": "Yusuf",
+              "nl": "Goedemorgen, met Yusuf El Amrani. Ik heb al een week pijn in mijn rug. Kan ik vandaag bij de dokter komen?"
+            },
+            {
+              "speaker": "Assistente",
+              "nl": "Vandaag zit het spreekuur helemaal vol, het spijt me. Morgen kan wel. Om tien over half negen?"
+            },
+            {
+              "speaker": "Yusuf",
+              "nl": "Dan moet ik werken. Kan het ook later?"
+            },
+            {
+              "speaker": "Assistente",
+              "nl": "Even kijken. Om kwart over elf is er nog plaats."
+            },
+            {
+              "speaker": "Yusuf",
+              "nl": "Kwart over elf is goed."
+            },
+            {
+              "speaker": "Assistente",
+              "nl": "Dan zie ik u morgen om kwart over elf. Neemt u uw medicijnen mee? Dan kan de dokter zien wat u gebruikt."
+            },
+            {
+              "speaker": "Yusuf",
+              "nl": "Dat doe ik. Dank u wel. Tot morgen."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-afspraken-q-001-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wanneer gaat Yusuf naar de huisarts?",
+            "options": [
+              "Vandaag",
+              "Morgen",
+              "Over een week"
+            ],
+            "answer": 1,
+            "explanation": "Vandaag is het spreekuur vol. 'Morgen kan wel.'",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-afspraken-q-001-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Hoe laat is de afspraak?",
+            "options": [
+              "Om 8.40 uur",
+              "Om 11.15 uur",
+              "Om 11.45 uur"
+            ],
+            "answer": 1,
+            "explanation": "Om tien over half negen moet Yusuf werken. Hij kiest kwart over elf: 11.15 uur.",
+            "difficulty": 1,
+            "answerLine": 4
+          },
+          {
+            "id": "luisteren-afspraken-q-001-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wat moet Yusuf meenemen?",
+            "options": [
+              "Zijn medicijnen",
+              "Zijn zorgpas",
+              "Een verwijsbrief"
+            ],
+            "answer": 0,
+            "explanation": "Karin vraagt: 'Neemt u uw medicijnen mee?'",
+            "difficulty": 1,
+            "answerLine": 6
+          }
+        ],
+        "explanation": "De eerste tijd (tien over half negen) past niet. Ze kiezen kwart over elf.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-afspraken-q-002",
+        "type": "listening",
+        "tags": [
+          "luisteren:telefoon"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+        "fragment": {
+          "kind": "telefoon",
+          "situation": "Lotte belt de kapper. Ze kan niet naar haar afspraak komen.",
+          "speakers": [
+            {
+              "name": "Rachid",
+              "voice": "alex",
+              "phone": true
+            },
+            {
+              "name": "Lotte",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Rachid",
+              "nl": "Kapsalon Knip, met Rachid."
+            },
+            {
+              "speaker": "Lotte",
+              "nl": "Hoi Rachid, met Lotte Jansen. Ik heb morgen om vier uur een afspraak. Maar mijn dochter is jarig. Kan ik mijn afspraak verzetten?"
+            },
+            {
+              "speaker": "Rachid",
+              "nl": "Natuurlijk. Wanneer wilt u komen?"
+            },
+            {
+              "speaker": "Lotte",
+              "nl": "Kan het zaterdag?"
+            },
+            {
+              "speaker": "Rachid",
+              "nl": "Zaterdag zit helemaal vol. Vrijdag heb ik nog plaats, om half elf of om drie uur."
+            },
+            {
+              "speaker": "Lotte",
+              "nl": "Om drie uur haal ik mijn zoon van school. Dan neem ik half elf."
+            },
+            {
+              "speaker": "Rachid",
+              "nl": "Goed. Vrijdag om half elf. Tot dan!"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-afspraken-q-002-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Waarom belt Lotte?",
+            "options": [
+              "Ze wil naar een andere kapper",
+              "Ze wil haar afspraak verzetten",
+              "Ze wil een afspraak voor haar dochter"
+            ],
+            "answer": 1,
+            "explanation": "Lotte vraagt: 'Kan ik mijn afspraak verzetten?' Verzetten = naar een andere dag of tijd.",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-afspraken-q-002-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wanneer gaat Lotte naar de kapper?",
+            "options": [
+              "Zaterdag om 10.30 uur",
+              "Vrijdag om 10.30 uur",
+              "Vrijdag om 15.00 uur"
+            ],
+            "answer": 1,
+            "explanation": "Zaterdag is vol, en om drie uur kan Lotte niet. Ze kiest vrijdag om half elf.",
+            "difficulty": 1,
+            "answerLine": 5
+          }
+        ],
+        "explanation": "Twee tijden passen niet: zaterdag is vol, en om drie uur haalt Lotte haar zoon. Dus: vrijdag om half elf.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-afspraken-q-003",
+        "type": "mc",
+        "tags": [
+          "luisteren:afspraken"
+        ],
+        "prompt": "Luister. Wat wil de vrouw?",
+        "options": [
+          "Een afspraak maken",
+          "Haar afspraak afzeggen",
+          "Haar afspraak verzetten"
+        ],
+        "answer": 1,
+        "explanation": "Ze zegt: 'Ik wil de afspraak afzeggen.' Afzeggen = je komt niet. Ze vraagt niet om een nieuwe afspraak.",
+        "difficulty": 1,
+        "listen": "Goedemorgen. Ik heb vrijdag een afspraak bij de tandarts, maar ik kan niet komen. Ik wil de afspraak afzeggen."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-afspraken-q-004",
+        "type": "listening",
+        "tags": [
+          "luisteren:telefoon"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+        "fragment": {
+          "kind": "telefoon",
+          "situation": "Karim belt de gemeente. Hij is net verhuisd.",
+          "speakers": [
+            {
+              "name": "Medewerker",
+              "voice": "nathalie",
+              "phone": true
+            },
+            {
+              "name": "Karim",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Medewerker",
+              "nl": "Gemeente Utrecht, goedemiddag."
+            },
+            {
+              "speaker": "Karim",
+              "nl": "Goedemiddag, met Karim Haddad. Ik ben vorige week verhuisd. Moet ik mijn nieuwe adres doorgeven?"
+            },
+            {
+              "speaker": "Medewerker",
+              "nl": "Ja, dat moet. Dat kan op de website, met uw DigiD."
+            },
+            {
+              "speaker": "Karim",
+              "nl": "Ik heb nog geen DigiD. Kan het ook bij het loket?"
+            },
+            {
+              "speaker": "Medewerker",
+              "nl": "Ja, dan maak ik een afspraak voor u. Dinsdag om twee uur?"
+            },
+            {
+              "speaker": "Karim",
+              "nl": "Ja, dat is goed."
+            },
+            {
+              "speaker": "Medewerker",
+              "nl": "Neemt u dan uw paspoort mee, en uw huurcontract."
+            },
+            {
+              "speaker": "Karim",
+              "nl": "Mijn paspoort en mijn huurcontract. Prima, dank u wel."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-afspraken-q-004-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Waarom belt Karim de gemeente?",
+            "options": [
+              "Hij wil een nieuw paspoort",
+              "Hij wil zijn nieuwe adres doorgeven",
+              "Hij wil een DigiD aanvragen"
+            ],
+            "answer": 1,
+            "explanation": "Karim is verhuisd. Hij vraagt: 'Moet ik mijn nieuwe adres doorgeven?'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-afspraken-q-004-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Waarom gaat Karim naar het loket?",
+            "options": [
+              "Hij heeft nog geen DigiD",
+              "De website werkt niet",
+              "Hij wil een medewerker spreken"
+            ],
+            "answer": 0,
+            "explanation": "Karim zegt: 'Ik heb nog geen DigiD. Kan het ook bij het loket?'",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-afspraken-q-004-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wat moet Karim meenemen?",
+            "options": [
+              "Zijn paspoort en zijn huurcontract",
+              "Zijn paspoort en een pasfoto",
+              "Zijn DigiD en zijn huurcontract"
+            ],
+            "answer": 0,
+            "explanation": "'Neemt u dan uw paspoort mee, en uw huurcontract.' Karim herhaalt het ook.",
+            "difficulty": 1,
+            "answerLine": 6
+          }
+        ],
+        "explanation": "Karim herhaalt wat hij moet meenemen. Dat is slim: zo weet hij zeker dat hij het goed heeft gehoord.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-afspraken-q-005",
+        "type": "listening",
+        "tags": [
+          "luisteren:telefoon"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+        "fragment": {
+          "kind": "telefoon",
+          "situation": "Priya belt de fysiotherapeut. Ze heeft vanmiddag een afspraak.",
+          "speakers": [
+            {
+              "name": "Mark",
+              "voice": "ronnie",
+              "phone": true
+            },
+            {
+              "name": "Priya",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Mark",
+              "nl": "Fysiotherapie Centrum, goedemorgen. Met Mark."
+            },
+            {
+              "speaker": "Priya",
+              "nl": "Goedemorgen, met Priya Sharma. Ik heb vanmiddag om vier uur een afspraak, maar ik ben ziek. Ik heb koorts."
+            },
+            {
+              "speaker": "Mark",
+              "nl": "Dat is vervelend. Wilt u een nieuwe afspraak maken?"
+            },
+            {
+              "speaker": "Priya",
+              "nl": "Ja, graag. Maar pas volgende week."
+            },
+            {
+              "speaker": "Mark",
+              "nl": "Blijft u even aan de lijn? Ik kijk in de agenda."
+            },
+            {
+              "speaker": "Mark",
+              "nl": "Volgende week dinsdag om negen uur. Kan dat?"
+            },
+            {
+              "speaker": "Priya",
+              "nl": "Dinsdag werk ik. Woensdag is beter."
+            },
+            {
+              "speaker": "Mark",
+              "nl": "Woensdag om negen uur kan ook. Dan zet ik u op woensdag."
+            },
+            {
+              "speaker": "Priya",
+              "nl": "Fijn, dank u wel."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-afspraken-q-005-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Waarom kan Priya vanmiddag niet komen?",
+            "options": [
+              "Ze moet werken",
+              "Ze is ziek",
+              "Ze is op vakantie"
+            ],
+            "answer": 1,
+            "explanation": "Priya zegt: 'Ik ben ziek. Ik heb koorts.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-afspraken-q-005-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wanneer is de nieuwe afspraak?",
+            "options": [
+              "Dinsdag om 9.00 uur",
+              "Woensdag om 9.00 uur",
+              "Woensdag om 16.00 uur"
+            ],
+            "answer": 1,
+            "explanation": "Dinsdag werkt Priya. Mark zegt: 'Woensdag om negen uur kan ook.'",
+            "difficulty": 1,
+            "answerLine": 7
+          }
+        ],
+        "explanation": "'Blijft u even aan de lijn?' betekent: wacht even, niet ophangen.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-afspraken-q-006",
+        "type": "mc",
+        "tags": [
+          "luisteren:afspraken"
+        ],
+        "prompt": "Je hoort aan de telefoon: 'Blijft u even aan de lijn?' Wat doe je?",
+        "options": [
+          "Je hangt op en belt later terug.",
+          "Je wacht even aan de telefoon.",
+          "Je zegt je naam en je adres."
+        ],
+        "answer": 1,
+        "explanation": "Aan de lijn blijven = aan de telefoon wachten. Je hangt niet op.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-afspraken-q-007",
+        "type": "listening",
+        "tags": [
+          "luisteren:telefoon"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+        "fragment": {
+          "kind": "telefoon",
+          "situation": "Tomas belt het ziekenhuis. Hij heeft een vraag over zijn afspraak.",
+          "speakers": [
+            {
+              "name": "Telefonist",
+              "voice": "nathalie",
+              "phone": true
+            },
+            {
+              "name": "Tomas",
+              "voice": "ronnie"
+            },
+            {
+              "name": "Bas",
+              "voice": "alex",
+              "phone": true
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Telefonist",
+              "nl": "Ziekenhuis Oost, goedemiddag."
+            },
+            {
+              "speaker": "Tomas",
+              "nl": "Goedemiddag, met Tomas Novak. Ik heb een vraag over mijn afspraak bij de oogarts."
+            },
+            {
+              "speaker": "Telefonist",
+              "nl": "Dan verbind ik u door met de afdeling Oogheelkunde. Een moment."
+            },
+            {
+              "speaker": "Bas",
+              "nl": "Oogheelkunde, met Bas."
+            },
+            {
+              "speaker": "Tomas",
+              "nl": "Hallo, ik heb donderdag een afspraak bij de oogarts. Mag ik zelf met de auto komen?"
+            },
+            {
+              "speaker": "Bas",
+              "nl": "Nee, liever niet. De dokter doet druppels in uw ogen. Daarna kunt u een paar uur niet goed zien."
+            },
+            {
+              "speaker": "Tomas",
+              "nl": "O. Dan vraag ik of mijn vrouw me brengt."
+            },
+            {
+              "speaker": "Bas",
+              "nl": "Dat is een goed idee. U kunt ook de bus nemen. Die stopt voor de deur."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-afspraken-q-007-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Met wie praat Tomas over zijn vraag?",
+            "options": [
+              "Met de telefonist van het ziekenhuis",
+              "Met Bas van de afdeling Oogheelkunde",
+              "Met de oogarts zelf"
+            ],
+            "answer": 1,
+            "explanation": "De telefonist verbindt Tomas door. Dan zegt Bas: 'Oogheelkunde, met Bas.'",
+            "difficulty": 2,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-afspraken-q-007-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Waarom kan Tomas beter niet zelf met de auto komen?",
+            "options": [
+              "Er is bij het ziekenhuis geen parkeerplaats",
+              "Na de druppels kan hij niet goed zien",
+              "De weg naar het ziekenhuis is afgesloten"
+            ],
+            "answer": 1,
+            "explanation": "Bas zegt: 'Daarna kunt u een paar uur niet goed zien.'",
+            "difficulty": 2,
+            "answerLine": 5
+          },
+          {
+            "id": "luisteren-afspraken-q-007-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wat zegt Bas over de bus?",
+            "options": [
+              "De bus stopt voor de deur",
+              "De bus rijdt niet op donderdag",
+              "De bus is erg duur"
+            ],
+            "answer": 0,
+            "explanation": "Bas zegt: 'U kunt ook de bus nemen. Die stopt voor de deur.'",
+            "difficulty": 2,
+            "answerLine": 7
+          }
+        ],
+        "explanation": "'Ik verbind u door' betekent: u gaat met iemand anders praten. Let op wie er daarna praat.",
+        "difficulty": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-afspraken-q-008",
+        "type": "mc",
+        "tags": [
+          "luisteren:afspraken"
+        ],
+        "prompt": "Luister. Wat moet de man meenemen?",
+        "options": [
+          "Zijn legitimatiebewijs en zijn verzekeringspas",
+          "Zijn legitimatiebewijs en een pasfoto",
+          "Zijn verzekeringspas en een brief"
+        ],
+        "answer": 0,
+        "explanation": "Hij moet twee dingen meenemen: zijn legitimatiebewijs en zijn verzekeringspas.",
+        "difficulty": 1,
+        "listen": "Wilt u bij de afspraak uw legitimatiebewijs en uw verzekeringspas meenemen?"
+      }
+    }
+  ]
+}

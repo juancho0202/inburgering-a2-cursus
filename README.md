@@ -1,9 +1,9 @@
 # Inburgering A2 Trainer
 
-Een app om te oefenen voor het inburgeringsexamen (A2): **Lezen**, **KNM** en **Schrijven**.
+Een app om te oefenen voor het inburgeringsexamen (A2): **Lezen**, **Luisteren**, **KNM** en **Schrijven**.
 Niet van DUO. Alle teksten en vragen zijn zelf gemaakt.
 
-*An app to practise for the Dutch civic integration exam (A2): reading, KNM (knowledge of Dutch society) and writing. Not affiliated with DUO.*
+*An app to practise for the Dutch civic integration exam (A2): reading, listening, KNM (knowledge of Dutch society) and writing. Not affiliated with DUO.*
 
 ## Hoe werkt het?
 
@@ -46,6 +46,27 @@ Elke les begint met een tekening (een "scène"), en naast de oefeningen staat ee
 - `"spot": "hond"` in een oefening (anders kiest de app een tekening die bij het thema past).
 
 De build faalt als een les een tekening noemt die niet bestaat.
+
+### Luisterfragmenten
+
+De module Luisteren werkt zoals het examen: je leest de situatie en de vragen, en dan luister je naar een fragment (een gesprek, telefoongesprek, voicemail, omroepbericht, de radio of een uitleg). Na het controleren zie je de tekst, met bij elke vraag de zin waar het antwoord staat. Een fragment schrijf je zo:
+
+```json
+{
+  "type": "listening",
+  "fragment": {
+    "kind": "telefoon",
+    "situation": "Yusuf belt de huisarts.",
+    "speakers": [{ "name": "Assistente", "voice": "nathalie", "phone": true }, { "name": "Yusuf", "voice": "ronnie" }],
+    "lines": [{ "speaker": "Assistente", "nl": "Huisartsenpraktijk De Linde, goedemorgen." }, { "speaker": "Yusuf", "nl": "…" }]
+  },
+  "questions": [{ "type": "mc", "prompt": "…", "options": ["…"], "answer": 1, "explanation": "…", "answerLine": 2 }]
+}
+```
+
+- Elke spreker heeft een eigen stem (`ronnie`, `alex` of `nathalie`; nathalie is de enige vrouwenstem).
+- `answerLine` is de regel (vanaf 0) waar het antwoord staat. Schrijf getallen en tijden in woorden ("kwart over elf"); in de antwoorden als cijfers ("11.15 uur").
+- Neem daarna de stemmen op met `npm run voice` (zie `scripts/tts/README.md`). Zonder opname leest het apparaat de zinnen voor.
 
 ### Meldingen van fouten verzamelen
 

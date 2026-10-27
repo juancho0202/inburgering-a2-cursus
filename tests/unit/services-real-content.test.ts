@@ -16,9 +16,9 @@ beforeAll(async () => {
 });
 
 describe("services on the real course", () => {
-  it("shows all five modules and a dashboard on an empty store", async () => {
+  it("shows all six modules and a dashboard on an empty store", async () => {
     const { env } = makeEnv({ content });
-    expect(courseTree(env).modules.map((m) => m.id)).toEqual(["basis", "lezen", "knm", "schrijven", "exams"]);
+    expect(courseTree(env).modules.map((m) => m.id)).toEqual(["basis", "lezen", "luisteren", "knm", "schrijven", "exams"]);
     const d = await dashboard(env);
     expect(d.modules.every((m) => m.completed === 0)).toBe(true);
     expect(d.nextExam).not.toBeNull();

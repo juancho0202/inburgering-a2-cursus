@@ -1,0 +1,686 @@
+{
+  "id": "luisteren-winkel",
+  "moduleId": "luisteren",
+  "title": "Winkel, markt en balie",
+  "goal": "Je verstaat gesprekken in een winkel, op de markt en bij een balie: de prijs, ruilen en openingstijden.",
+  "scene": "markt",
+  "estimatedMinutes": 25,
+  "tags": [
+    "luisteren:winkel"
+  ],
+  "vocabRefs": [
+    "basis-vocab-winkelen-geld-001",
+    "basis-vocab-winkelen-geld-003",
+    "basis-vocab-winkelen-geld-004",
+    "basis-vocab-winkelen-geld-005",
+    "basis-vocab-winkelen-geld-017",
+    "basis-vocab-winkelen-geld-018",
+    "basis-vocab-winkelen-geld-022",
+    "basis-vocab-kleding-016"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "luisteren-winkel-l-01",
+      "title": "In de winkel",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Je hoort",
+            "Betekenis"
+          ],
+          "rows": [
+            [
+              "Kan ik u helpen?",
+              "De verkoper wil je helpen."
+            ],
+            [
+              "Ik kijk alleen even rond.",
+              "Ik wil nu nog niets kopen."
+            ],
+            [
+              "Heeft u deze in een andere maat?",
+              "Groter of kleiner."
+            ],
+            [
+              "Wilt u pinnen of contant betalen?",
+              "Met de pinpas of met geld."
+            ],
+            [
+              "Heeft u de bon nog?",
+              "Het papiertje van de kassa."
+            ],
+            [
+              "U kunt het ruilen.",
+              "U krijgt iets anders."
+            ],
+            [
+              "U krijgt uw geld terug.",
+              "U betaalt niets."
+            ],
+            [
+              "Twee voor de prijs van één.",
+              "Een aanbieding: één betalen, twee krijgen."
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "In de winkel gaat het vaak over **geld**. Let op: de prijs van één, of van alles samen? Met korting of zonder?"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-winkel-q-001",
+        "type": "listening",
+        "tags": [
+          "luisteren:gesprek"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+        "fragment": {
+          "kind": "gesprek",
+          "situation": "Marco koopt fruit op de markt.",
+          "speakers": [
+            {
+              "name": "Verkoopster",
+              "voice": "nathalie"
+            },
+            {
+              "name": "Marco",
+              "voice": "ronnie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Verkoopster",
+              "nl": "Goedemorgen! Zegt u het maar."
+            },
+            {
+              "speaker": "Marco",
+              "nl": "Goedemorgen. Wat kosten de appels?"
+            },
+            {
+              "speaker": "Verkoopster",
+              "nl": "Een kilo appels kost twee euro. Twee kilo voor drie euro vijftig."
+            },
+            {
+              "speaker": "Marco",
+              "nl": "Dan neem ik twee kilo. En heeft u ook aardbeien?"
+            },
+            {
+              "speaker": "Verkoopster",
+              "nl": "De aardbeien zijn helaas op. Maar ik heb mooie peren."
+            },
+            {
+              "speaker": "Marco",
+              "nl": "Nee, dank u. Alleen de appels."
+            },
+            {
+              "speaker": "Verkoopster",
+              "nl": "Dat is dan drie euro vijftig."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-winkel-q-001-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Hoeveel kilo appels koopt Marco?",
+            "options": [
+              "1 kilo",
+              "2 kilo",
+              "3 kilo"
+            ],
+            "answer": 1,
+            "explanation": "Marco zegt: 'Dan neem ik twee kilo.'",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-winkel-q-001-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Waarom koopt Marco geen aardbeien?",
+            "options": [
+              "Ze zijn te duur",
+              "Ze zijn op",
+              "Hij vindt ze niet lekker"
+            ],
+            "answer": 1,
+            "explanation": "'De aardbeien zijn helaas op.' Op = er zijn er geen meer.",
+            "difficulty": 1,
+            "answerLine": 4
+          },
+          {
+            "id": "luisteren-winkel-q-001-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Hoeveel betaalt Marco?",
+            "options": [
+              "€ 2,00",
+              "€ 3,50",
+              "€ 4,00"
+            ],
+            "answer": 1,
+            "explanation": "'Dat is dan drie euro vijftig.' Twee kilo is goedkoper dan twee keer één kilo.",
+            "difficulty": 1,
+            "answerLine": 6
+          }
+        ],
+        "explanation": "Na 'helaas' komt een probleem: de aardbeien zijn op.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-winkel-q-002",
+        "type": "listening",
+        "tags": [
+          "luisteren:gesprek"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+        "fragment": {
+          "kind": "gesprek",
+          "situation": "Fatima brengt schoenen terug naar de winkel.",
+          "speakers": [
+            {
+              "name": "Fatima",
+              "voice": "nathalie"
+            },
+            {
+              "name": "Verkoper",
+              "voice": "alex"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Verkoper",
+              "nl": "Goedemiddag. Kan ik u helpen?"
+            },
+            {
+              "speaker": "Fatima",
+              "nl": "Ja. Ik heb deze schoenen vorige week gekocht. Maar ze zijn te klein."
+            },
+            {
+              "speaker": "Verkoper",
+              "nl": "Heeft u de bon nog?"
+            },
+            {
+              "speaker": "Fatima",
+              "nl": "Ja, hier is de bon."
+            },
+            {
+              "speaker": "Verkoper",
+              "nl": "Wilt u een grotere maat? Of wilt u uw geld terug?"
+            },
+            {
+              "speaker": "Fatima",
+              "nl": "Ik wil graag een maat groter. Maat negenendertig."
+            },
+            {
+              "speaker": "Verkoper",
+              "nl": "Even kijken. Maat negenendertig hebben we niet meer in het zwart. Wel in het bruin."
+            },
+            {
+              "speaker": "Fatima",
+              "nl": "Bruin vind ik niet zo mooi. Dan wil ik toch liever mijn geld terug."
+            },
+            {
+              "speaker": "Verkoper",
+              "nl": "Dat is goed. U krijgt het geld terug op uw pinpas."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-winkel-q-002-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Wat is het probleem met de schoenen?",
+            "options": [
+              "Ze zijn kapot",
+              "Ze zijn te klein",
+              "Ze zijn te groot"
+            ],
+            "answer": 1,
+            "explanation": "Fatima zegt: 'Maar ze zijn te klein.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-winkel-q-002-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Wat krijgt Fatima?",
+            "options": [
+              "Schoenen in maat 39",
+              "Bruine schoenen",
+              "Haar geld terug"
+            ],
+            "answer": 2,
+            "explanation": "Eerst wil ze maat 39. Die is er alleen in het bruin. 'Dan wil ik toch liever mijn geld terug.'",
+            "difficulty": 1,
+            "answerLine": 7
+          },
+          {
+            "id": "luisteren-winkel-q-002-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Hoe krijgt Fatima het geld terug?",
+            "options": [
+              "Contant",
+              "Op haar pinpas",
+              "Met een cadeaubon"
+            ],
+            "answer": 1,
+            "explanation": "'U krijgt het geld terug op uw pinpas.'",
+            "difficulty": 1,
+            "answerLine": 8
+          }
+        ],
+        "explanation": "'Toch liever' betekent: ik verander mijn plan. Luister tot het einde.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-winkel-q-003",
+        "type": "mc",
+        "tags": [
+          "luisteren:winkel"
+        ],
+        "prompt": "Luister. Hoeveel kost één pak koffie deze week?",
+        "options": [
+          "€ 3,00",
+          "€ 6,00",
+          "€ 12,00"
+        ],
+        "answer": 0,
+        "explanation": "Twee pakken kosten samen zes euro. Eén pak kost dus drie euro.",
+        "difficulty": 2,
+        "listen": "Deze week is de koffie in de aanbieding: twee pakken voor zes euro."
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-winkel-q-004",
+        "type": "listening",
+        "tags": [
+          "luisteren:gesprek"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+        "fragment": {
+          "kind": "gesprek",
+          "situation": "Mevrouw Jansen bestelt een taart bij de bakker.",
+          "speakers": [
+            {
+              "name": "Bakker",
+              "voice": "ronnie"
+            },
+            {
+              "name": "Mevrouw Jansen",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Bakker",
+              "nl": "Goedemiddag, wat mag het zijn?"
+            },
+            {
+              "speaker": "Mevrouw Jansen",
+              "nl": "Ik wil graag een taart bestellen voor zaterdag. Mijn man wordt zestig."
+            },
+            {
+              "speaker": "Bakker",
+              "nl": "Gefeliciteerd! Voor hoeveel personen?"
+            },
+            {
+              "speaker": "Mevrouw Jansen",
+              "nl": "Voor twaalf personen."
+            },
+            {
+              "speaker": "Bakker",
+              "nl": "Dan heeft u een grote taart nodig. Wilt u een appeltaart of een slagroomtaart?"
+            },
+            {
+              "speaker": "Mevrouw Jansen",
+              "nl": "Een slagroomtaart, met aardbeien."
+            },
+            {
+              "speaker": "Bakker",
+              "nl": "Prima. U kunt de taart zaterdag ophalen vanaf negen uur. Hij kost vijfendertig euro."
+            },
+            {
+              "speaker": "Mevrouw Jansen",
+              "nl": "Moet ik nu betalen?"
+            },
+            {
+              "speaker": "Bakker",
+              "nl": "Nee hoor, dat mag zaterdag."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-winkel-q-004-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Voor hoeveel personen is de taart?",
+            "options": [
+              "Voor 12 personen",
+              "Voor 20 personen",
+              "Voor 60 personen"
+            ],
+            "answer": 0,
+            "explanation": "'Voor twaalf personen.' Zestig is de leeftijd van haar man.",
+            "difficulty": 1,
+            "answerLine": 3
+          },
+          {
+            "id": "luisteren-winkel-q-004-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Welke taart bestelt mevrouw Jansen?",
+            "options": [
+              "Een appeltaart",
+              "Een slagroomtaart met aardbeien",
+              "Een appeltaart met slagroom"
+            ],
+            "answer": 1,
+            "explanation": "'Een slagroomtaart, met aardbeien.'",
+            "difficulty": 1,
+            "answerLine": 5
+          },
+          {
+            "id": "luisteren-winkel-q-004-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Wanneer betaalt mevrouw Jansen?",
+            "options": [
+              "Nu",
+              "Op zaterdag",
+              "Op vrijdag"
+            ],
+            "answer": 1,
+            "explanation": "De bakker zegt: 'Nee hoor, dat mag zaterdag.'",
+            "difficulty": 1,
+            "answerLine": 8
+          }
+        ],
+        "explanation": "Je hoort veel getallen: zestig (de leeftijd), twaalf (personen), negen uur, vijfendertig euro. Welk getal zoekt de vraag?",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-winkel-q-005",
+        "type": "listening",
+        "tags": [
+          "luisteren:telefoon"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het telefoongesprek.",
+        "fragment": {
+          "kind": "telefoon",
+          "situation": "Bram belt de fietsenmaker. Zijn fiets heeft een lekke band.",
+          "speakers": [
+            {
+              "name": "Fietsenmaker",
+              "voice": "alex",
+              "phone": true
+            },
+            {
+              "name": "Bram",
+              "voice": "ronnie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Fietsenmaker",
+              "nl": "Fietsenmaker Van Dam, goedemorgen."
+            },
+            {
+              "speaker": "Bram",
+              "nl": "Goedemorgen. Mijn fiets heeft een lekke band. Kan ik vandaag langskomen?"
+            },
+            {
+              "speaker": "Fietsenmaker",
+              "nl": "Vandaag is het erg druk. Als u de fiets voor twaalf uur brengt, is hij morgen klaar."
+            },
+            {
+              "speaker": "Bram",
+              "nl": "Pas morgen? Ik heb hem morgenochtend nodig voor mijn werk."
+            },
+            {
+              "speaker": "Fietsenmaker",
+              "nl": "Dan kunt u hem morgenvroeg om acht uur brengen. Dan maak ik hem meteen. Een band plakken duurt een kwartier."
+            },
+            {
+              "speaker": "Bram",
+              "nl": "Dat is goed. Wat kost het?"
+            },
+            {
+              "speaker": "Fietsenmaker",
+              "nl": "Plakken kost twaalf euro. Een nieuwe binnenband kost twintig euro."
+            },
+            {
+              "speaker": "Bram",
+              "nl": "Prima. Tot morgen om acht uur."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-winkel-q-005-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wat is er met de fiets van Bram?",
+            "options": [
+              "Hij heeft een lekke band",
+              "Het licht is kapot",
+              "De rem doet het niet"
+            ],
+            "answer": 0,
+            "explanation": "Bram zegt: 'Mijn fiets heeft een lekke band.'",
+            "difficulty": 1,
+            "answerLine": 1
+          },
+          {
+            "id": "luisteren-winkel-q-005-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Wanneer brengt Bram zijn fiets?",
+            "options": [
+              "Vandaag voor 12.00 uur",
+              "Morgen om 8.00 uur",
+              "Morgen om 12.00 uur"
+            ],
+            "answer": 1,
+            "explanation": "Vandaag is het druk. 'Dan kunt u hem morgenvroeg om acht uur brengen.' Bram zegt: 'Tot morgen om acht uur.'",
+            "difficulty": 1,
+            "answerLine": 4
+          },
+          {
+            "id": "luisteren-winkel-q-005-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:telefoon"
+            ],
+            "prompt": "Hoeveel kost het plakken van de band?",
+            "options": [
+              "€ 12",
+              "€ 20",
+              "€ 15"
+            ],
+            "answer": 0,
+            "explanation": "'Plakken kost twaalf euro.' Twintig euro is voor een nieuwe binnenband.",
+            "difficulty": 1,
+            "answerLine": 6
+          }
+        ],
+        "explanation": "Het eerste voorstel (vandaag voor twaalf uur brengen) past niet. Ze kiezen morgenvroeg om acht uur.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-winkel-q-006",
+        "type": "listening",
+        "tags": [
+          "luisteren:gesprek"
+        ],
+        "prompt": "Lees eerst de vragen. Luister dan naar het gesprek.",
+        "fragment": {
+          "kind": "gesprek",
+          "situation": "Olga wil lid worden van de bibliotheek. Ze praat met een medewerker.",
+          "speakers": [
+            {
+              "name": "Medewerker",
+              "voice": "ronnie"
+            },
+            {
+              "name": "Olga",
+              "voice": "nathalie"
+            }
+          ],
+          "lines": [
+            {
+              "speaker": "Medewerker",
+              "nl": "Goedemiddag. Kan ik u helpen?"
+            },
+            {
+              "speaker": "Olga",
+              "nl": "Ja, ik wil graag lid worden van de bibliotheek."
+            },
+            {
+              "speaker": "Medewerker",
+              "nl": "Dat kan. Een abonnement voor volwassenen kost vierenveertig euro per jaar."
+            },
+            {
+              "speaker": "Olga",
+              "nl": "En mijn dochter? Ze is twaalf."
+            },
+            {
+              "speaker": "Medewerker",
+              "nl": "Kinderen tot achttien jaar zijn gratis lid. Mag ik uw legitimatiebewijs?"
+            },
+            {
+              "speaker": "Olga",
+              "nl": "Alstublieft."
+            },
+            {
+              "speaker": "Medewerker",
+              "nl": "Dank u. U mag tien boeken tegelijk lenen, voor drie weken."
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "luisteren-winkel-q-006-1",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Hoeveel kost een abonnement voor Olga?",
+            "options": [
+              "€ 14 per jaar",
+              "€ 44 per jaar",
+              "€ 40 per jaar"
+            ],
+            "answer": 1,
+            "explanation": "'Een abonnement voor volwassenen kost vierenveertig euro per jaar.'",
+            "difficulty": 1,
+            "answerLine": 2
+          },
+          {
+            "id": "luisteren-winkel-q-006-2",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Moet Olga ook voor haar dochter betalen?",
+            "options": [
+              "Ja, ze betaalt de helft",
+              "Nee, zij is gratis lid",
+              "Ja, ze betaalt hetzelfde"
+            ],
+            "answer": 1,
+            "explanation": "'Kinderen tot achttien jaar zijn gratis lid.' De dochter is twaalf.",
+            "difficulty": 1,
+            "answerLine": 4
+          },
+          {
+            "id": "luisteren-winkel-q-006-3",
+            "type": "mc",
+            "tags": [
+              "luisteren:gesprek"
+            ],
+            "prompt": "Hoe lang mag Olga een boek lenen?",
+            "options": [
+              "2 weken",
+              "3 weken",
+              "10 weken"
+            ],
+            "answer": 1,
+            "explanation": "'U mag tien boeken tegelijk lenen, voor drie weken.' Tien is het aantal boeken.",
+            "difficulty": 1,
+            "answerLine": 6
+          }
+        ],
+        "explanation": "Vier-en-veertig = 44. Luister bij getallen boven de twintig eerst naar het laatste cijfer.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "luisteren-winkel-q-007",
+        "type": "mc",
+        "tags": [
+          "luisteren:winkel"
+        ],
+        "prompt": "Je hoort bij de kassa: 'Wilt u de bon?' Wat vraagt de medewerker?",
+        "options": [
+          "Of u het papiertje met de prijzen wilt",
+          "Of u met uw pinpas wilt betalen",
+          "Of u een plastic tas wilt kopen"
+        ],
+        "answer": 0,
+        "explanation": "De bon is het papiertje van de kassa. Daarop staat wat je hebt gekocht en betaald.",
+        "difficulty": 1
+      }
+    }
+  ]
+}
