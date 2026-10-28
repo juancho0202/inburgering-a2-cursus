@@ -1,8 +1,10 @@
 /**
- * The landing page in index.html (see scripts/landingPage.ts) shows on "/" until this device has started.
+ * The landing page in index.html (see scripts/site.ts) shows on "/" until this device has started.
  * public/boot.js reads the same key before the first paint and sets the `app` class when the landing page is skipped.
  */
 const STARTED_KEY = "appStarted";
+/** The app's database (src/db/dexieStore.ts). */
+const DB_NAME = "inburgering-a2";
 
 export const showsLanding = () => !document.documentElement.classList.contains("app");
 
@@ -15,13 +17,27 @@ function rememberStarted() {
 }
 
 /**
+ * Could this device have used the app before? Only then is the app worth downloading to ask it. New visitors and
+ * search engines have no database, so the landing page stays light for them. Without the list, assume it could.
+ */
+export async function hasLocalData(idb: IDBFactory | undefined = globalThis.indexedDB): Promise<boolean> {
+  if (!idb) return false;
+  if (typeof idb.databases !== "function") return true;
+  try {
+    return (await idb.databases()).some((d) => d.name === DB_NAME);
+  } catch {
+    return true;
+  }
+}
+
+/**
  * Mounts the app, unless the landing page is showing: then the app waits for the start link (a normal page load).
  * A learner from before the landing page has no key yet; `isReturning` finds them so they skip it from now on.
  */
-export async function startApp(mount: () => void, isReturning: () => Promise<boolean>) {
+export async function startApp(mount: () => void | Promise<void>, isReturning: () => Promise<boolean>) {
   if (!showsLanding()) {
     rememberStarted();
-    mount();
+    await mount();
     return;
   }
   let returning = false;
@@ -33,5 +49,5 @@ export async function startApp(mount: () => void, isReturning: () => Promise<boo
   if (!returning) return;
   rememberStarted();
   document.documentElement.classList.add("app");
-  mount();
+  await mount();
 }

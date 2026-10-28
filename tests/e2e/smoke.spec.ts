@@ -213,3 +213,41 @@ test("the policy really blocks data leaving to any other site (and inline script
   expect(result.injectedRan).toBe(false);
   expect(result.violations).toEqual(expect.arrayContaining(["connect-src", "script-src-elem", "img-src"]));
 });
+
+test("a first visit to the landing page downloads none of the app", async ({ page }) => {
+  const loaded: string[] = [];
+  page.on("request", (r) => loaded.push(new URL(r.url()).pathname));
+  await page.goto("/");
+  await expect(page.getByRole("heading", { level: 1, name: "Free inburgering practice exam (A2)" })).toBeVisible();
+  await page.waitForTimeout(1500);
+  const scripts = loaded.filter((p) => p.endsWith(".js"));
+  // boot.js and the tiny entry; not the app, the course, the pictures or the offline copy
+  expect(scripts.filter((p) => p !== "/boot.js"), scripts.join(", ")).toHaveLength(1);
+  expect(loaded.filter((p) => /course-data|\.webp$|\/sw\.js$/.test(p))).toEqual([]);
+  expect(await page.evaluate(async () => (await navigator.serviceWorker.getRegistrations()).length)).toBe(0);
+  // and the start link still opens the app
+  await page.getByRole("link", { name: "Start practising, it's free" }).first().click();
+  await expect(page.getByRole("heading", { name: "Welkom bij Inburgering A2" })).toBeVisible();
+});
+
+test("the guides open from the landing page, also once the app is installed for offline use", async ({ page }) => {
+  const violations: string[] = [];
+  await page.addInitScript(() => document.addEventListener("securitypolicyviolation", (e) => console.error(`CSP ${e.violatedDirective}`)));
+  page.on("console", (m) => m.type() === "error" && violations.push(m.text()));
+  await page.goto("/");
+  await page.getByRole("link", { name: "How to book your inburgering exam at DUO" }).click();
+  await expect(page).toHaveURL(/\/guides\/book-inburgering-exam\/$/);
+  await expect(page.getByRole("heading", { level: 1, name: "How to book your inburgering exam at DUO" })).toBeVisible();
+  await expect(page.getByText(/Last checked: .*This is an unofficial guide/)).toBeVisible();
+
+  // a learner with the offline copy installed must still get the guide, not the app
+  await startFresh(page);
+  await page.evaluate(async () => await navigator.serviceWorker.ready);
+  await page.reload();
+  expect(await page.evaluate(() => !!navigator.serviceWorker.controller)).toBe(true);
+  await page.goto("/guides/mijn-inburgering-login/");
+  await expect(page.getByRole("heading", { level: 1, name: "How to log in to Mijn Inburgering" })).toBeVisible();
+  await page.goto("/guides/");
+  await expect(page.getByRole("heading", { level: 1, name: "Guides to the inburgering process" })).toBeVisible();
+  expect(violations).toEqual([]);
+});
