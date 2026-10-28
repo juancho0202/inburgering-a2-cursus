@@ -1,29 +1,55 @@
 {
   "meta": {
-    "title": "Inburgering Practice Exam (Free, A2) | TrainForInburgering",
+    "title": "Inburgering Practice Exam (Free, A2) | Train for Inburgering",
     "description": "Free inburgering practice exam and exam practice for A2: Reading, Listening, KNM and Writing. No account needed, works offline. Not affiliated with DUO.",
     "ogTitle": "Free inburgering practice exam (A2)",
-    "siteName": "TrainForInburgering"
+    "ogImageAlt": "Train for Inburgering: free inburgering practice exam (A2)",
+    "siteName": "Train for Inburgering"
   },
   "landing": {
-    "brand": "TrainForInburgering",
+    "brand": "Train for Inburgering",
     "heading": "Free inburgering practice exam (A2)",
     "tagline": "Inburgering exam practice for Reading, Listening, KNM and Writing. Explained in English, practised in Dutch, just like the real exam.",
     "start": "Start practising, it's free",
+    "language": "Language",
     "partsHeading": "What you can practise",
     "parts": [
       { "title": "Reading (Lezen)", "text": "Short Dutch texts like letters, notices and ads, with questions." },
       { "title": "Listening (Luisteren)", "text": "Short Dutch conversations with audio and questions." },
       { "title": "KNM", "text": "Knowledge of Dutch society: work, health, housing, school and the government." },
       { "title": "Writing (Schrijven)", "text": "Write short messages and fill in forms. Optional feedback from Claude with your own API key." },
-      { "title": "Practice exams", "text": "Timed mock exams that work like the real exam, with your score at the end." }
+      { "title": "Practice exams", "text": "Timed mock exams that work like the real exam, with your score at the end." },
+      { "title": "Speaking (Spreken): not yet", "text": "Speaking is not in the app yet. Use DUO's free official practice exams for it." }
     ],
-    "whyHeading": "Why TrainForInburgering",
+    "whyHeading": "Why practise here",
     "why": [
-      { "title": "Free, no account", "text": "Your progress stays on your own device." },
+      { "title": "Free, no account", "text": "No paywall and no sign-up. Your progress stays on your own device." },
       { "title": "Works offline", "text": "Add it to your home screen and practise on the train." },
       { "title": "Made for A2", "text": "Lessons, words and exercises at the level of the A2 exam." }
     ],
-    "disclaimer": "TrainForInburgering is not part of DUO or the Dutch government. All texts and questions are our own. A practice score here does not guarantee your real exam result."
+    "guidesHeading": "Guides to the DUO process",
+    "guidesNote": "",
+    "faqHeading": "Frequently asked questions",
+    "faq": [
+      { "q": "Is this the official inburgering exam?", "a": "No. Train for Inburgering is not part of DUO. You take the real exam at a DUO exam location. DUO also has free [official practice exams](https://www.inburgeren.nl/en/taking-the-integration-exam/practicing.jsp): try those too, so you know the real exam screens." },
+      { "q": "Is it really free?", "a": "Yes. There is no account, no paywall and no advertising. Only the optional writing feedback from Claude uses your own Anthropic API key, which Anthropic charges you for." },
+      { "q": "Which parts of the exam can I practise?", "a": "Reading, Listening, Writing and KNM (knowledge of Dutch society), plus timed practice exams. Speaking is not in the app yet." },
+      { "q": "Is the app in English?", "a": "The buttons and explanations are in English, Dutch or Spanish, as you choose. The exercises are in Dutch, like the real exam." },
+      { "q": "Do I need the A2 exam or B1?", "a": "[Mijn Inburgering](/guides/mijn-inburgering-login/) shows which exams you have to take and at which level. Under the 2021 law, your PIP (the integration plan you made with your municipality) says it too. This course is for A2." },
+      { "q": "Does it work on my phone?", "a": "Yes. Open it in your phone's browser and add it to your home screen. After the first visit it also works without internet." }
+    ],
+    "disclaimer": "Train for Inburgering is not part of DUO or the Dutch government. All texts and questions are our own. A practice score here does not guarantee your real exam result."
+  },
+  "guide": {
+    "lastChecked": "Last checked: {date}",
+    "unofficial": "This is an unofficial guide. DUO can change its process at any time; the official information is on inburgeren.nl.",
+    "more": "More guides",
+    "allGuides": "All guides",
+    "indexTitle": "Inburgering guides: Mijn Inburgering, booking and results | Train for Inburgering",
+    "indexDescription": "Plain-English guides to the DUO inburgering process: log in to Mijn Inburgering, book your exam, check your results and practise for the A2 exam.",
+    "indexHeading": "Guides to the inburgering process",
+    "indexIntro": "Short, plain-English guides to the steps around the inburgering exam. Unofficial: always check inburgeren.nl as well.",
+    "ctaHeading": "Practise for the A2 exam",
+    "ctaText": "Free practice for Reading, Listening, KNM and Writing, with timed practice exams."
   }
 }

@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Gratis oefenexamen inburgering (A2) | Train for Inburgering",
+    "description": "Gratis oefenen voor het inburgeringsexamen A2: Lezen, Luisteren, KNM en Schrijven. Geen account nodig, werkt ook zonder internet. Niet van DUO.",
+    "ogTitle": "Gratis oefenexamen inburgering (A2)",
+    "ogImageAlt": "Train for Inburgering: gratis oefenexamen inburgering (A2)",
+    "siteName": "Train for Inburgering"
+  },
+  "landing": {
+    "brand": "Train for Inburgering",
+    "heading": "Gratis oefenexamen inburgering (A2)",
+    "tagline": "Oefen voor het inburgeringsexamen: Lezen, Luisteren, KNM en Schrijven. Met uitleg in het Nederlands, Engels of Spaans. Je oefent in het Nederlands, net als op het echte examen.",
+    "start": "Begin met oefenen, het is gratis",
+    "language": "Taal",
+    "partsHeading": "Wat kun je oefenen?",
+    "parts": [
+      { "title": "Lezen", "text": "Korte Nederlandse teksten, zoals brieven, berichten en advertenties, met vragen." },
+      { "title": "Luisteren", "text": "Korte gesprekken in het Nederlands, met geluid en vragen." },
+      { "title": "KNM", "text": "Kennis van de Nederlandse Maatschappij: werk, gezondheid, wonen, school en de overheid." },
+      { "title": "Schrijven", "text": "Korte berichten schrijven en formulieren invullen. Met je eigen API-sleutel krijg je ook feedback van Claude." },
+      { "title": "Oefenexamens", "text": "Examens met een tijd, net als het echte examen. Aan het eind zie je je score." },
+      { "title": "Spreken: nog niet", "text": "Spreken zit nog niet in de app. Gebruik daarvoor de gratis oefenexamens van DUO." }
+    ],
+    "whyHeading": "Waarom hier oefenen?",
+    "why": [
+      { "title": "Gratis, geen account", "text": "Je betaalt niets en je hoeft je niet aan te melden. Je voortgang blijft op je eigen apparaat." },
+      { "title": "Werkt zonder internet", "text": "Zet de app op je beginscherm en oefen ook in de trein." },
+      { "title": "Gemaakt voor A2", "text": "Lessen, woorden en oefeningen op het niveau van het A2-examen." }
+    ],
+    "guidesHeading": "Uitleg over de stappen bij DUO",
+    "guidesNote": "Deze uitleg is nog in het Engels.",
+    "faqHeading": "Veelgestelde vragen",
+    "faq": [
+      { "q": "Is dit het echte inburgeringsexamen?", "a": "Nee. Train for Inburgering is niet van DUO. Het echte examen doe je op een examenlocatie van DUO. DUO heeft ook gratis [officiële oefenexamens](https://www.inburgeren.nl/examen-doen/oefenen.jsp). Doe die ook, dan ken je de schermen van het echte examen." },
+      { "q": "Is het echt gratis?", "a": "Ja. Er is geen account, je betaalt niets en er is geen reclame. Alleen voor feedback van Claude op je schrijfopdrachten gebruik je je eigen API-sleutel van Anthropic. Daarvoor betaal je aan Anthropic." },
+      { "q": "Welke onderdelen kan ik oefenen?", "a": "Lezen, Luisteren, Schrijven en KNM (Kennis van de Nederlandse Maatschappij), en oefenexamens met een tijd. Spreken zit nog niet in de app." },
+      { "q": "In welke taal is de app?", "a": "De knoppen en de uitleg zijn in het Nederlands, Engels of Spaans. Je kiest het zelf. De oefeningen zijn in het Nederlands, net als op het echte examen." },
+      { "q": "Moet ik het A2-examen of het B1-examen doen?", "a": "In [Mijn Inburgering](https://www.inburgeren.nl/inloggen-mijn-inburgering/) zie je welke examens je moet doen, en op welk niveau. Inburger je met de wet van 2021? Dan staat het ook in je PIP (het plan dat je met de gemeente hebt gemaakt). Deze cursus is voor A2." },
+      { "q": "Werkt het op mijn telefoon?", "a": "Ja. Open de site in de browser van je telefoon en zet hem op je beginscherm. Na het eerste bezoek werkt hij ook zonder internet." }
+    ],
+    "disclaimer": "Train for Inburgering is niet van DUO en niet van de Nederlandse overheid. Alle teksten en vragen zijn zelf gemaakt. Een score bij het oefenen zegt niet zeker iets over je echte examen."
+  }
+}

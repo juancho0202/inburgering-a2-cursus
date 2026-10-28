@@ -213,3 +213,87 @@ test("the policy really blocks data leaving to any other site (and inline script
   expect(result.injectedRan).toBe(false);
   expect(result.violations).toEqual(expect.arrayContaining(["connect-src", "script-src-elem", "img-src"]));
 });
+
+test("a first visit to the landing page downloads none of the app", async ({ page }) => {
+  const loaded: string[] = [];
+  page.on("request", (r) => loaded.push(new URL(r.url()).pathname));
+  await page.goto("/");
+  await expect(page.getByRole("heading", { level: 1, name: "Free inburgering practice exam (A2)" })).toBeVisible();
+  await page.waitForTimeout(1500);
+  const scripts = loaded.filter((p) => p.endsWith(".js"));
+  // boot.js and the tiny entry; not the app, the course, the pictures or the offline copy
+  expect(scripts.filter((p) => p !== "/boot.js"), scripts.join(", ")).toHaveLength(1);
+  expect(loaded.filter((p) => /course-data|\.webp$|\/sw\.js$/.test(p))).toEqual([]);
+  expect(await page.evaluate(async () => (await navigator.serviceWorker.getRegistrations()).length)).toBe(0);
+  // the FAQ: the first answer is open, the others open with a tap
+  await expect(page.getByText("No. Train for Inburgering is not part of DUO.")).toBeVisible();
+  await expect(page.getByText("Yes. There is no account, no paywall")).toBeHidden();
+  await page.getByText("Is it really free?").click();
+  await expect(page.getByText("Yes. There is no account, no paywall")).toBeVisible();
+  // and the start link still opens the app
+  await page.getByRole("link", { name: "Start practising, it's free" }).first().click();
+  await expect(page.getByRole("heading", { name: "Welkom bij Inburgering A2" })).toBeVisible();
+});
+
+test("the guides open from the landing page, also once the app is installed for offline use", async ({ page }) => {
+  const violations: string[] = [];
+  await page.addInitScript(() => document.addEventListener("securitypolicyviolation", (e) => console.error(`CSP ${e.violatedDirective}`)));
+  page.on("console", (m) => m.type() === "error" && violations.push(m.text()));
+  await page.goto("/");
+  // the whole card opens the guide, the picture too (a tap where a person would tap, not on the link element)
+  const icon = page.locator(".site-card-link", { hasText: "How to book your inburgering exam at DUO" }).locator(".site-guide-icon");
+  await icon.scrollIntoViewIfNeeded();
+  const picture = await icon.boundingBox();
+  await page.mouse.click(picture!.x + picture!.width / 2, picture!.y + picture!.height / 2);
+  await expect(page).toHaveURL(/\/guides\/book-inburgering-exam\/$/);
+  await expect(page.getByRole("heading", { level: 1, name: "How to book your inburgering exam at DUO" })).toBeVisible();
+  await expect(page.getByText(/Last checked: .*This is an unofficial guide/)).toBeVisible();
+  // DUO's own pages open in a new tab, so the guide stays open
+  await page.context().route("https://www.inburgeren.nl/**", (route) => route.fulfill({ body: "DUO" })); // no real network in tests
+  const popup = page.waitForEvent("popup");
+  await page.getByRole("link", { name: "registration page" }).first().click();
+  const duo = await popup;
+  await duo.waitForLoadState();
+  expect(new URL(duo.url()).host).toBe("www.inburgeren.nl");
+  await duo.close();
+  await expect(page).toHaveURL(/\/guides\/book-inburgering-exam\/$/);
+
+  // a learner with the offline copy installed must still get the guide, not the app
+  await startFresh(page);
+  await page.evaluate(async () => await navigator.serviceWorker.ready);
+  await page.reload();
+  expect(await page.evaluate(() => !!navigator.serviceWorker.controller)).toBe(true);
+  await page.goto("/guides/mijn-inburgering-login/");
+  await expect(page.getByRole("heading", { level: 1, name: "How to log in to Mijn Inburgering" })).toBeVisible();
+  await page.goto("/guides/");
+  await expect(page.getByRole("heading", { level: 1, name: "Guides to the inburgering process" })).toBeVisible();
+  await page.goto("/nl/");
+  await expect(page.getByRole("heading", { level: 1, name: "Gratis oefenexamen inburgering (A2)" })).toBeVisible();
+  expect(violations).toEqual([]);
+});
+
+test("the language menu goes to the landing page in that language, and its start link opens the app in it", async ({ page }) => {
+  await page.goto("/");
+  await page.locator(".site-lang summary").click();
+  await page.getByRole("link", { name: "Nederlands" }).click();
+  await expect(page).toHaveURL(/\/nl\/$/);
+  await expect(page.getByRole("heading", { level: 1, name: "Gratis oefenexamen inburgering (A2)" })).toBeVisible();
+  await expect(page.locator("html")).toHaveAttribute("lang", "nl");
+
+  await page.locator(".site-lang summary").click();
+  await page.getByRole("link", { name: "Español" }).click();
+  await expect(page).toHaveURL(/\/es\/$/);
+  await expect(page.getByRole("heading", { level: 1, name: "Examen de práctica de inburgering gratis (A2)" })).toBeVisible();
+
+  // a narrow phone: the header (name and menu) fits, nothing scrolls sideways
+  await page.setViewportSize({ width: 320, height: 640 });
+  for (const path of ["/", "/nl/", "/es/"]) {
+    await page.goto(path);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth), `${path} scrolls sideways`).toBeLessThanOrEqual(0);
+  }
+
+  // the Spanish start link opens the app with Spanish chosen, and the address loses ?lang=
+  await page.getByRole("link", { name: "Empieza a practicar, es gratis" }).first().click();
+  await expect(page.getByRole("radio", { name: "Español" })).toHaveAttribute("aria-checked", "true");
+  expect(page.url()).not.toContain("lang=");
+});

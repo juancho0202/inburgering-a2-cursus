@@ -5,14 +5,14 @@ import path from "node:path";
 import { VitePWA } from "vite-plugin-pwa";
 import { coursePlugin } from "./scripts/vitePluginCourse";
 import { SECURITY_HEADERS, netlifyHeadersFile } from "./scripts/securityHeaders";
-import { landingPlugin } from "./scripts/landingPage";
+import { STATIC_DIRS, sitePlugin } from "./scripts/site";
 
 export default defineConfig({
   plugins: [
     vue(),
     tailwindcss(),
     coursePlugin(),
-    landingPlugin(),
+    sitePlugin(),
     {
       // Writes Netlify's _headers file (CSP etc.) next to the built site.
       name: "netlify-headers",
@@ -47,7 +47,7 @@ export default defineConfig({
         // The app, the course and the lazy chunks are stored up front. The background photos and the
         // lesson illustrations are not (together they are big): each one is kept the first time it is shown.
         globPatterns: ["**/*.{js,css,html,svg,png,woff2}"],
-        globIgnores: ["**/bg*.webp", "**/tulips*.webp", "assets/*.svg"],
+        globIgnores: ["**/bg*.webp", "**/tulips*.webp", "assets/*.svg", "og-image.png"],
         runtimeCaching: [
           {
             urlPattern: /\/assets\/.*\.webp$/,
@@ -75,8 +75,9 @@ export default defineConfig({
           },
         ],
         navigateFallback: "/index.html",
-        // Anthropic calls (BYOK) must always go to the network.
-        navigateFallbackDenylist: [/^\/api\//],
+        // Anthropic calls (BYOK) must always go to the network; the guides and the other languages' landing pages
+        // are pages of their own, not the app.
+        navigateFallbackDenylist: [/^\/api\//, ...STATIC_DIRS.map((dir) => new RegExp(`^/${dir}(/|$)`))],
       },
     }),
   ],

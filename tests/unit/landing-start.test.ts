@@ -3,7 +3,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { startApp } from "../../src/lib/landing";
+import { hasLocalData, startApp } from "../../src/lib/landing";
 
 const bootSource = readFileSync(path.resolve(__dirname, "../../public/boot.js"), "utf8");
 const root = document.documentElement;
@@ -88,5 +88,28 @@ describe("startApp", () => {
     await startApp(mount, () => Promise.reject(new Error("no IndexedDB")));
     expect(mount).not.toHaveBeenCalled();
     expect(landingShown()).toBe(true);
+  });
+});
+
+describe("hasLocalData", () => {
+  const idb = (names: string[] | Error) =>
+    ({ databases: () => (names instanceof Error ? Promise.reject(names) : Promise.resolve(names.map((name) => ({ name, version: 1 })))) }) as unknown as IDBFactory;
+
+  it("a new visitor (no app database) does not need the app", async () => {
+    expect(await hasLocalData(idb([]))).toBe(false);
+    expect(await hasLocalData(idb(["some-other-site-db"]))).toBe(false);
+  });
+
+  it("a device with the app's database may be a returning learner", async () => {
+    expect(await hasLocalData(idb(["inburgering-a2-secrets", "inburgering-a2"]))).toBe(true);
+  });
+
+  it("when the browser cannot list databases, it asks the app to be sure", async () => {
+    expect(await hasLocalData({} as IDBFactory)).toBe(true);
+    expect(await hasLocalData(idb(new Error("blocked")))).toBe(true);
+  });
+
+  it("without IndexedDB there is nothing to come back to", async () => {
+    expect(await hasLocalData(undefined)).toBe(false);
   });
 });

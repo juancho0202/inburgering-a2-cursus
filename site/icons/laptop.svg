@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 128">
+  <rect class="i-tile" width="96" height="128" rx="20"/>
+  <ellipse class="i-soft" cx="48" cy="104" rx="36" ry="4.5"/>
+  <g transform="translate(0 6)">
+    <!-- lid and screen, with someone logging in -->
+    <rect class="i-main" x="17" y="38" width="62" height="46" rx="7"/>
+    <rect class="i-cut" x="23" y="44" width="50" height="33" rx="3.5"/>
+    <circle class="i-main" cx="48" cy="55" r="5.5"/>
+    <path class="i-main" d="M37.5 72c0-6.5 4.5-9.5 10.5-9.5s10.5 3 10.5 9.5z"/>
+    <!-- base -->
+    <path class="i-main" d="M12 84h72a4 4 0 0 1 4 4v1a6 6 0 0 1-6 6H14a6 6 0 0 1-6-6v-1a4 4 0 0 1 4-4z"/>
+    <path class="i-deep" d="M8.3 91h79.4A6 6 0 0 1 82 95H14a6 6 0 0 1-5.7-4z"/>
+    <rect class="i-deep" x="40" y="84" width="16" height="3" rx="1.5"/>
+  </g>
+  <path class="i-deep" d="M81 16l2.2 5.8 5.8 2.2-5.8 2.2-2.2 5.8-2.2-5.8-5.8-2.2 5.8-2.2z"/>
+  <circle class="i-soft" cx="16" cy="26" r="3"/>
+</svg>
