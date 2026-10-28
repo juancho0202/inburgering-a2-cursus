@@ -33,7 +33,7 @@
       { "q": "Is it really free?", "a": "Yes. There is no account, no paywall and no advertising. Only the optional writing feedback from Claude uses your own Anthropic API key, which Anthropic charges you for." },
       { "q": "Which parts of the exam can I practise?", "a": "Reading, Listening, Writing and KNM (knowledge of Dutch society), plus timed practice exams. Speaking is not in the app yet." },
       { "q": "Is the app in English?", "a": "The buttons and explanations are in English, Dutch or Spanish, as you choose. The exercises are in Dutch, like the real exam." },
-      { "q": "Do I need the A2 exam or B1?", "a": "That depends on when your integration started. [Mijn Inburgering](/guides/mijn-inburgering-login/) shows which exams you have to do. This course is for A2." },
+      { "q": "Do I need the A2 exam or B1?", "a": "[Mijn Inburgering](/guides/mijn-inburgering-login/) shows which exams you have to take and at which level. Under the 2021 law, your PIP (the integration plan you made with your municipality) says it too. This course is for A2." },
       { "q": "Does it work on my phone?", "a": "Yes. Open it in your phone's browser and add it to your home screen. After the first visit it also works without internet." }
     ],
     "disclaimer": "Train for Inburgering is not part of DUO or the Dutch government. All texts and questions are our own. A practice score here does not guarantee your real exam result."
