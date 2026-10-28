@@ -102,12 +102,12 @@ describe("which link is highlighted", () => {
     const { wrapper } = await open("/");
     expect(current(wrapper)).toEqual(["🏠Leren"]);
     const other = await open("/woorden");
-    expect(current(other.wrapper)).toEqual(["🔤Woorden"]);
+    expect(current(other.wrapper)).toEqual(["📕Woorden"]);
   });
 
   it("a sub page keeps its parent highlighted; similar names do not mix up (Woorden vs Werkwoorden)", async () => {
     const sub = await open("/woorden/herhalen");
-    expect(current(sub.wrapper)).toEqual(["🔤Woorden"]);
+    expect(current(sub.wrapper)).toEqual(["📕Woorden"]);
     const verbs = await open("/werkwoorden");
     expect(current(verbs.wrapper)).toEqual(["🔁Werkwoorden"]);
   });

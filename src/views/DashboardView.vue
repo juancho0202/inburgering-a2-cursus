@@ -5,6 +5,7 @@ import { api } from "../api/client";
 import { moduleStyle } from "../lib/moduleStyle";
 import AppButton from "../components/ui/AppButton.vue";
 import ProgressBar from "../components/ui/ProgressBar.vue";
+import GoalGauge from "../components/ui/GoalGauge.vue";
 import ProgressRing from "../components/ui/ProgressRing.vue";
 import { useContentStore } from "../stores/content";
 import { isBackgroundReady, pickBackground } from "../lib/backgrounds";
@@ -70,7 +71,10 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
   </div>
   <p v-if="error" class="rounded-2xl bg-bad-bg p-4 text-bad">{{ error }}</p>
   <div v-else-if="data" class="glass-cards grid gap-6">
-    <section class="card relative overflow-hidden p-6 sm:p-8">
+    <!-- From tablet width the two small tiles sit inside the welcome card, on its right: the card spans both columns
+         (one big card, as on a phone) and its text stays in the left one, so the tiles never cover it. -->
+    <div class="grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:gap-0">
+    <section class="card relative overflow-hidden p-6 sm:p-8 md:col-span-2 md:col-start-1 md:row-start-1 md:grid md:grid-cols-subgrid">
       <div class="absolute -right-10 -top-10 h-44 w-44 rounded-full bg-brand-bg" aria-hidden="true" />
       <div class="relative">
         <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Welkom terug! 👋</h1>
@@ -84,32 +88,31 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
           <RouterLink v-else-if="data.nextUnitId" :to="`/unit/${data.nextUnitId}`">
             <AppButton size="lg">▶ Begin met leren</AppButton>
           </RouterLink>
-          <RouterLink to="/woorden/herhalen">
-            <AppButton size="lg" variant="secondary">🔤 Woorden herhalen ({{ data.dueCount + data.newCount }})</AppButton>
+          <!-- Hidden when there is nothing to review: a "(0)" button only pushes the modules further down on a phone. -->
+          <RouterLink v-if="data.dueCount + data.newCount" to="/woorden/herhalen">
+            <AppButton size="lg" variant="secondary">📕 Woorden herhalen ({{ data.dueCount + data.newCount }})</AppButton>
           </RouterLink>
         </div>
       </div>
     </section>
 
-    <section class="grid gap-4 sm:grid-cols-2" aria-label="Vandaag">
-      <div class="card flex items-center gap-5 p-5">
-        <ProgressRing :value="data.minutesToday / data.dailyGoalMinutes">
-          <span class="text-lg font-extrabold leading-none">{{ Math.round(data.minutesToday) }}<span class="block text-xs font-semibold text-muted">min</span></span>
-        </ProgressRing>
-        <div>
-          <h2 class="text-lg font-bold">Doel van vandaag</h2>
-          <p class="text-muted">{{ Math.round(data.minutesToday) }} van {{ data.dailyGoalMinutes }} minuten</p>
-        </div>
+    <!-- Two small tiles side by side, phone-sized on every screen, so the modules come into view sooner -->
+    <section class="relative grid grid-cols-2 gap-4 md:col-start-2 md:row-start-1 md:self-center md:py-8 md:pr-8" aria-label="Vandaag">
+      <div class="card relative flex flex-col items-center justify-center p-4 pb-8 md:w-36">
+        <GoalGauge :minutes="data.minutesToday" :goal="data.dailyGoalMinutes" />
+        <span class="text-xs font-semibold text-muted" aria-hidden="true">minuten</span>
+        <!-- The titles are small tabs on the bottom edge, so they cost no height -->
+        <h2 class="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-t-xl bg-brand-bg px-3 py-1 text-xs font-bold text-brand-strong"><span aria-hidden="true">⏱️</span> Vandaag</h2>
       </div>
-      <div class="card flex items-center gap-5 p-5">
-        <div class="grid h-24 w-24 place-items-center rounded-full bg-brand-bg text-4xl" aria-hidden="true">🔥</div>
-        <div>
-          <h2 class="text-lg font-bold">Reeks</h2>
-          <p class="text-3xl font-extrabold">{{ data.streak.current }} <span class="text-base font-semibold text-muted">{{ data.streak.current === 1 ? "dag" : "dagen" }}</span></p>
-          <p class="text-sm text-muted">Beste: {{ data.streak.best }}</p>
-        </div>
+      <div class="card relative flex flex-col items-center justify-center p-4 pb-8 md:w-36">
+        <!-- A plain circle, without progress: a streak has no target. As tall as the goal gauge with its label. -->
+        <ProgressRing :value="0" :size="104">
+          <span class="text-2xl font-extrabold leading-none">{{ data.streak.current }}<span class="block text-xs font-semibold text-muted">{{ data.streak.current === 1 ? "dag" : "dagen" }}</span></span>
+        </ProgressRing>
+        <h2 class="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-t-xl bg-brand-bg px-3 py-1 text-xs font-bold text-brand-strong"><span aria-hidden="true">🔥</span> Reeks</h2>
       </div>
     </section>
+    </div>
 
     <section>
       <h2 class="glass mb-3 inline-block rounded-2xl px-4 py-1 text-2xl font-bold">Modules</h2>
@@ -163,7 +166,7 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
 
     <section class="card p-6">
       <h2 class="text-2xl font-bold">Dit moet je meer oefenen</h2>
-      <p v-if="!data.weakTags.length && !data.hardCount" class="mt-2 text-muted">Nog geen zwakke punten. Doe een paar lessen, dan zie je hier wat beter kan.</p>
+      <p v-if="!data.weakTags.length && !data.hardCount" class="mt-2 text-muted">Doe een paar lessen, dan zie je hier wat beter kan.</p>
       <ul v-else class="mt-3 grid gap-2">
         <li v-for="t in data.weakTags" :key="t.tag" class="flex flex-col gap-3 rounded-2xl bg-surface-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
