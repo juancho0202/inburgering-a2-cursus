@@ -49,7 +49,7 @@ watch(menuOpen, (open) => (document.body.style.overflow = open ? "hidden" : ""))
 
 const links = [
   { to: "/", label: "Leren", icon: "🏠" },
-  { to: "/woorden", label: "Woorden", icon: "🔤" },
+  { to: "/woorden", label: "Woorden", icon: "📕" },
   { to: "/werkwoorden", label: "Werkwoorden", icon: "🔁" },
   { to: "/examens", label: "Examens", icon: "⏱️" },
   { to: "/samenvatting", label: "Samenvatting", icon: "📝" },

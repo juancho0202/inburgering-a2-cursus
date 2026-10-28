@@ -1,10 +1,12 @@
 // @vitest-environment jsdom
 // Progress indicators and the summary page: values outside 0–100% must not break the picture.
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import GoalGauge from "../../../src/components/ui/GoalGauge.vue";
 import ProgressBar from "../../../src/components/ui/ProgressBar.vue";
 import ProgressRing from "../../../src/components/ui/ProgressRing.vue";
 import SamenvattingView from "../../../src/views/SamenvattingView.vue";
-import { fakeApi, mountApp } from "../../helpers/component";
+import { flushPromises } from "@vue/test-utils";
+import { clickButton, fakeApi, mountApp } from "../../helpers/component";
 
 vi.mock("../../../src/api/client", async () => {
   const h = await import("../../helpers/component");
@@ -55,6 +57,39 @@ describe("ProgressRing (daily goal)", () => {
   });
 });
 
+describe("GoalGauge (daily goal)", () => {
+  const gauge = (minutes: number, goal = 30) => mountApp(GoalGauge, { props: { minutes, goal } }).then((m) => m.wrapper);
+  const needle = (w: Awaited<ReturnType<typeof gauge>>) => {
+    const l = w.find("line");
+    return { x: Number(l.attributes("x2")), y: Number(l.attributes("y2")) };
+  };
+
+  it("shows the minutes done, with 0 and the goal at the ends of the scale", async () => {
+    const w = await gauge(7.6);
+    expect(w.findAll("text").map((t) => t.text())).toEqual(["8", "0", "30"]);
+    expect(w.find("svg").attributes("aria-label")).toBe("8 van 30 minuten");
+  });
+
+  it("halfway to the goal the needle points straight up", async () => {
+    const { x, y } = needle(await gauge(15));
+    expect(x).toBeCloseTo(50);
+    expect(y).toBeCloseTo(20);
+  });
+
+  it("past the goal the number keeps counting but the needle stays at the end of the scale", async () => {
+    const over = await gauge(45);
+    expect(over.findAll("text")[0].text()).toBe("45");
+    expect(needle(over)).toEqual(needle(await gauge(30)));
+    expect(needle(await gauge(30)).y).toBeGreaterThan(needle(await gauge(29)).y); // still moving just before the goal
+  });
+
+  it("no minutes yet: the needle rests at 0, not below it", async () => {
+    expect(needle(await gauge(0))).toEqual(needle(await gauge(-3)));
+    expect(needle(await gauge(0)).x).toBeLessThan(50);
+    expect((await gauge(0)).findAll("path")).toHaveLength(1); // only the grey scale, no orange dot
+  });
+});
+
 describe("SamenvattingView", () => {
   it("builds a table of contents from the second-level headings, each pointing at its heading", async () => {
     fakeApi.on("GET", "/samenvatting", { md: "# Titel\n\n## Wonen en huur\n\ntekst\n\n## Gezondheid & zorg\n\nmeer tekst\n\n### Onderdeel" });
@@ -64,6 +99,35 @@ describe("SamenvattingView", () => {
     const ids = wrapper.findAll("article h2").map((h) => h.attributes("id"));
     expect(links.map((a) => a.attributes("href"))).toEqual(ids.map((id) => `#${id}`));
     expect(ids).toEqual(["wonen-en-huur", "gezondheid-zorg"]);
+  });
+
+  it("choosing a section folds the contents and scrolls smoothly to that heading, without leaving the page", async () => {
+    fakeApi.on("GET", "/samenvatting", { md: "# Titel\n\n## Wonen en huur\n\ntekst\n\n## Gezondheid & zorg\n\nmeer tekst" });
+    const scrolled: { id: string; folded: boolean; how?: ScrollIntoViewOptions }[] = [];
+    const toggle = () => document.querySelector("nav button")!;
+    // jsdom has no scrolling: record which element is asked to scroll into view, and whether the list was folded then
+    Element.prototype.scrollIntoView = function (this: Element, how?: boolean | ScrollIntoViewOptions) {
+      scrolled.push({ id: this.id, folded: toggle().getAttribute("aria-expanded") === "false", how: how as ScrollIntoViewOptions });
+    };
+    try {
+      const { wrapper, router } = await mountApp(SamenvattingView, { routePath: "/samenvatting", url: "/samenvatting" });
+      expect(toggle().getAttribute("aria-expanded")).toBe("true");
+      // The browser's own "#id" jump must not happen: it goes through the router, which scrolls every navigation to the top
+      const click = new MouseEvent("click", { bubbles: true, cancelable: true });
+      wrapper.findAll("nav a").find((a) => a.text() === "Gezondheid & zorg")!.element.dispatchEvent(click);
+      expect(click.defaultPrevented).toBe(true);
+      await flushPromises();
+      // folded before scrolling, so the heading ends up where it stays
+      expect(scrolled).toEqual([{ id: "gezondheid-zorg", folded: true, how: { behavior: "smooth", block: "start" } }]);
+      expect(wrapper.find("#inhoud-lijst").classes()).toContain("hidden");
+      expect(router.currentRoute.value.fullPath).toBe("/samenvatting");
+      // the folded bar opens again to pick another section
+      await clickButton(wrapper, "Inhoud");
+      expect(toggle().getAttribute("aria-expanded")).toBe("true");
+      expect(wrapper.find("#inhoud-lijst").classes()).not.toContain("hidden");
+    } finally {
+      delete (Element.prototype as Partial<Element>).scrollIntoView;
+    }
   });
 
   it("shows HTML typed into the text as text", async () => {
