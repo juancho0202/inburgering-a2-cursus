@@ -38,10 +38,16 @@ describe("landing page in index.html", () => {
   it("puts the heading, the start link, the FAQ and the guide links in the HTML itself", () => {
     expect(body).toContain("<h1>Free inburgering practice exam (A2)</h1>");
     expect(body.match(/<a class="site-start" href="\/welkom">Start practising, it's free<\/a>/g)).toHaveLength(2);
-    expect(body).toContain("<h3>Is this the official inburgering exam?</h3>");
+    expect(body).toContain("<h2>Frequently asked questions</h2>");
     for (const g of loadGuides()) expect(body).toContain(`<a href="/guides/${g.slug}/">`);
     // the landing page comes before the app's mount point, and the app is still there
     expect(body.indexOf('id="landing"')).toBeLessThan(body.indexOf('<div id="app">'));
+  });
+
+  it("shows the FAQ as accordions: every answer in the HTML, only the first one open", () => {
+    const items = [...body.matchAll(/<details( open)?>\s*<summary>([^<]+)<\/summary>\s*<p>/g)];
+    expect(items.map((m) => m[2])).toEqual(en.landing.faq.map((f) => f.q.replace(/'/g, "'")));
+    expect(items.map((m) => !!m[1])).toEqual(en.landing.faq.map((_, i) => i === 0));
   });
 
   it("says plainly that Speaking is not in the app yet", () => {

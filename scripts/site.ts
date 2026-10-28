@@ -167,7 +167,10 @@ export function renderLanding(s: SiteStrings, guides: Guide[] = loadGuides()): s
         </section>
         <section class="site-faq">
           <h2>${esc(l.faqHeading)}</h2>
-          ${l.faq.map((f) => `<h3>${esc(f.q)}</h3>\n          <p>${md.renderInline(f.a)}</p>`).join("\n          ")}
+          ${l.faq
+            // Native accordions: no script, and the closed answers are still in the HTML for search engines.
+            .map((f, i) => `<details${i === 0 ? " open" : ""}>\n            <summary>${esc(f.q)}</summary>\n            <p>${md.renderInline(f.a)}</p>\n          </details>`)
+            .join("\n          ")}
         </section>
         <p class="site-note">${esc(l.disclaimer)}</p>
         ${startLink(s)}

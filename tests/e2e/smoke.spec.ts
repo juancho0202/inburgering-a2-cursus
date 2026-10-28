@@ -225,6 +225,11 @@ test("a first visit to the landing page downloads none of the app", async ({ pag
   expect(scripts.filter((p) => p !== "/boot.js"), scripts.join(", ")).toHaveLength(1);
   expect(loaded.filter((p) => /course-data|\.webp$|\/sw\.js$/.test(p))).toEqual([]);
   expect(await page.evaluate(async () => (await navigator.serviceWorker.getRegistrations()).length)).toBe(0);
+  // the FAQ: the first answer is open, the others open with a tap
+  await expect(page.getByText("No. Train for Inburgering is not part of DUO.")).toBeVisible();
+  await expect(page.getByText("Yes. There is no account, no paywall")).toBeHidden();
+  await page.getByText("Is it really free?").click();
+  await expect(page.getByText("Yes. There is no account, no paywall")).toBeVisible();
   // and the start link still opens the app
   await page.getByRole("link", { name: "Start practising, it's free" }).first().click();
   await expect(page.getByRole("heading", { name: "Welkom bij Inburgering A2" })).toBeVisible();

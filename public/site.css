@@ -152,11 +152,49 @@ body:has(> .site) {
   margin: 0;
   padding-left: 1.25rem;
 }
-.site-faq h3 {
-  margin-top: 1.25rem;
+.site-faq details {
+  border: 1px solid var(--l-line);
+  border-radius: 1rem;
+  background: var(--l-surface);
 }
-.site-faq p {
-  max-width: 44rem;
+.site-faq details + details {
+  margin-top: 0.5rem;
+}
+.site-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+.site-faq summary::-webkit-details-marker {
+  display: none;
+}
+/* A chevron that turns when the answer is open */
+.site-faq summary::after {
+  content: "";
+  flex: none;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-right: 2px solid var(--l-muted);
+  border-bottom: 2px solid var(--l-muted);
+  transform: rotate(45deg);
+  transition: transform 0.15s;
+}
+.site-faq details[open] summary::after {
+  transform: rotate(-135deg);
+}
+.site-faq summary:focus-visible {
+  outline: 3px solid var(--l-brand);
+  outline-offset: 2px;
+}
+.site-faq details p {
+  padding: 0 1rem 1rem;
+  color: var(--l-muted);
 }
 .site-main > .site-note {
   margin-top: 2.5rem;
