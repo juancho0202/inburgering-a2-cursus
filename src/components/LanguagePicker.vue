@@ -10,7 +10,7 @@ const lang = useLanguageStore();
 
 <template>
   <div>
-    <h2 id="language-title" class="text-xl font-bold"><span aria-hidden="true">🌐 </span><UiLabel k="language.choose" /></h2>
+    <h2 id="language-title" class="text-xl font-bold"><span aria-hidden="true">🌐 </span><UiLabel variant="heading" k="language.choose" /></h2>
     <div class="mt-3 grid gap-2 sm:grid-cols-3" role="radiogroup" aria-labelledby="language-title">
       <button
         v-for="l in LANGUAGES"

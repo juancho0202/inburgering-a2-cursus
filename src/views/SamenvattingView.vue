@@ -48,7 +48,7 @@ async function goTo(id: string) {
       >
         <UiLabel k="summary.contents" /> <span aria-hidden="true" class="transition-transform" :class="tocOpen && 'rotate-180'">▾</span>
       </button>
-      <h2 class="mb-2 hidden text-sm font-bold uppercase tracking-wide text-muted lg:block"><UiLabel k="summary.contents" /></h2>
+      <h2 class="mb-2 hidden text-sm font-bold uppercase tracking-wide text-muted lg:block"><UiLabel variant="heading" k="summary.contents" /></h2>
       <ul id="inhoud-lijst" lang="nl" translate="no" class="max-h-[60vh] gap-1 overflow-y-auto lg:grid lg:max-h-none" :class="tocOpen ? 'grid' : 'hidden'">
         <li v-for="h in toc" :key="h.id">
           <a :href="`#${h.id}`" class="block rounded-lg px-2 py-1 font-semibold hover:bg-surface-2 hover:text-brand-strong" @click.prevent="goTo(h.id)">{{ h.title }}</a>

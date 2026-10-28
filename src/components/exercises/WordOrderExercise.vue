@@ -62,7 +62,7 @@ defineExpose({ ready, evaluate });
       >
         {{ t.text }}
       </button>
-      <span v-if="placed.length === 0" class="text-muted"><UiLabel k="exercise.orderHint" /></span>
+      <span v-if="placed.length === 0" class="text-muted"><UiLabel variant="inline" k="exercise.orderHint" /></span>
     </div>
     <div class="flex flex-wrap gap-2" aria-label="Woorden">
       <button

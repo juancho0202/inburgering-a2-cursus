@@ -709,21 +709,22 @@ carries a `dir` for right-to-left.
 
 | Layer | Examples | Language |
 | --- | --- | --- |
-| Labels | menu, buttons, headings, tabs | per immersion level (below) |
+| Labels | menu, buttons, headings, small chips | per immersion level (below) |
 | Longer app text | help, hints, empty states | the learner's language at levels 0–1, Dutch from level 2 |
 | Feedback | after an answer, word review, exam result, writing feedback headings | **Dutch first**, with an "In mijn taal" button that switches it (remembered: setting `feedbackInMyLanguage`) |
 | Learning material | lessons, exercises, options, explanations, words, audio, the mock exam | always Dutch, `lang="nl" translate="no"` |
 
 **Immersion level** (setting `immersion`, default 1; not shown when the language is Dutch):
 
-| Level | Labels | Longer text |
-| --- | --- | --- |
-| 0 My language | learner's language | learner's language |
-| 1 Dutch with my language | **Volgende** · *Next* (the Dutch word big, the translation small) | learner's language |
-| 2 Dutch, translation when I want | Dutch; a floating "🌐 Vertaling" button shows level 1 until the next page | Dutch (level 1 while peeking) |
-| 3 Dutch only | Dutch | Dutch |
+| Level | Buttons, menu items | Headings | Small labels (chips, table headers, in a sentence) | Longer text |
+| --- | --- | --- | --- | --- |
+| 0 My language | learner's language | learner's language | learner's language | learner's language |
+| 1 Dutch with my language | **Volgende**, with *Next* small under it | Dutch, with a flag (🇬🇧) that switches that heading to the learner's language and back | learner's language | learner's language |
+| 2 Dutch only | Dutch | Dutch | Dutch | Dutch |
 
-**Words that graduate.** At level 1 a label loses its translation once all its words are learned (Leitner box 4+)
+A translation is never put next to the Dutch on the same line (it looked cluttered).
+
+**Words that graduate.** At levels 0 and 1 a label is Dutch only once all its words are learned (Leitner box 4+)
 in "Woorden herhalen". The mapping label → words is `GLOSSARY` in `src/i18n/glossary.ts`; the words are course
 vocabulary (theme `app` plus a few existing words), taught in **Unit 0, "De woorden van de app"** (first unit of
 basis). In Unit 0's word cards the app shows each word's translation from its own messages (`APP_WORDS`).

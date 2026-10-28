@@ -62,8 +62,6 @@ watch(
 );
 // The mock exam is Dutch only, like the real exam.
 watch(() => !!route.meta.dutchOnly, (on) => (lang.dutchOnly = on), { immediate: true });
-// "Vertaling" (level 2) shows the translations until the next page.
-watch(() => route.fullPath, () => (lang.peek = false));
 // Close the menu after choosing a page; keep the page from scrolling behind it.
 watch(() => route.fullPath, () => closeMenu(false));
 watch(menuOpen, (open) => (document.body.style.overflow = open ? "hidden" : ""));
@@ -176,23 +174,12 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
     <FinishSessionDialog />
     <UpdateBanner />
 
-    <!-- Level 2 (Dutch, translation on request): one button shows the translations on this page -->
-    <button
-      v-if="lang.immersion === 2 && !lang.isDutch && !lang.dutchOnly"
-      type="button"
-      class="fixed bottom-24 right-3 z-30 rounded-full border-2 border-line bg-surface px-4 py-2 text-sm font-bold shadow-card transition hover:bg-surface-2 sm:right-5"
-      :aria-pressed="lang.peek"
-      @click="lang.peek = !lang.peek"
-    >
-      <span aria-hidden="true">🌐 </span><span lang="nl">{{ lang.nl(lang.peek ? "app.hideTranslation" : "app.showTranslation") }}</span>
-      <span class="ui-gloss" :lang="lang.locale"> · {{ lang.own(lang.peek ? "app.hideTranslation" : "app.showTranslation") }}</span>
-    </button>
 
     <main id="main" tabindex="-1" class="mx-auto w-full flex-1 px-4 py-6 sm:py-8" :class="route.meta.focus ? 'max-w-6xl' : 'max-w-5xl'">
       <RouterView />
     </main>
     <footer v-if="!route.meta.focus" class="border-t border-line px-4 py-4 text-center text-sm text-muted">
-      {{ lang.t("app.footer") }} · <RouterLink to="/over" class="font-semibold underline hover:text-ink"><UiLabel k="app.about" /></RouterLink>
+      {{ lang.t("app.footer") }} · <RouterLink to="/over" class="font-semibold underline hover:text-ink"><UiLabel variant="inline" k="app.about" /></RouterLink>
     </footer>
   </div>
 </template>

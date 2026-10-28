@@ -7,10 +7,10 @@ import es from "./messages/es";
 export type { UiLanguage };
 
 /** The languages in the picker, each named in its own language. `dir` is ready for right-to-left languages. */
-export const LANGUAGES: { code: UiLanguage; name: string; dir: "ltr" | "rtl" }[] = [
-  { code: "en", name: "English", dir: "ltr" },
-  { code: "nl", name: "Nederlands", dir: "ltr" },
-  { code: "es", name: "Español", dir: "ltr" },
+export const LANGUAGES: { code: UiLanguage; name: string; flag: string; dir: "ltr" | "rtl" }[] = [
+  { code: "en", name: "English", flag: "🇬🇧", dir: "ltr" },
+  { code: "nl", name: "Nederlands", flag: "🇳🇱", dir: "ltr" },
+  { code: "es", name: "Español", flag: "🇪🇸", dir: "ltr" },
 ];
 export const DEFAULT_LANGUAGE: UiLanguage = "en";
 
@@ -68,4 +68,5 @@ export const resetRequestedLanguage = () => (requested = null);
 /** The language to show before the learner has chosen one. */
 export const startLanguage = (): UiLanguage => rememberedLanguage() ?? requested ?? browserLanguage() ?? DEFAULT_LANGUAGE;
 
+export const flagOf = (lang: UiLanguage) => LANGUAGES.find((l) => l.code === lang)?.flag ?? "🌐";
 export const dirOf = (lang: UiLanguage) => LANGUAGES.find((l) => l.code === lang)?.dir ?? "ltr";

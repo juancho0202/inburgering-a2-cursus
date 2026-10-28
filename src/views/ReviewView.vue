@@ -150,14 +150,14 @@ function onKey(e: KeyboardEvent) {
 
   <div v-else class="mx-auto max-w-2xl">
     <div class="mb-6">
-      <div class="mb-2 flex justify-between text-sm font-semibold text-muted"><span><UiLabel k="review.title" /></span><span>{{ reviewed }} / {{ total }}</span></div>
+      <div class="mb-2 flex justify-between text-sm font-semibold text-muted"><span><UiLabel variant="inline" k="review.title" /></span><span>{{ reviewed }} / {{ total }}</span></div>
       <ProgressBar :value="total ? reviewed / total : 0" />
     </div>
 
     <div class="card p-6 sm:p-8" lang="nl">
       <!-- meaning -->
       <template v-if="type === 'meaning' && current.vocab">
-        <p class="text-sm font-bold uppercase tracking-wide text-muted"><UiLabel k="review.whichWord" /></p>
+        <p class="text-sm font-bold uppercase tracking-wide text-muted"><UiLabel variant="heading" k="review.whichWord" /></p>
         <p class="mt-2 text-2xl font-bold">{{ current.vocab.definitionNl }}</p>
         <p class="mt-2 italic text-muted">{{ gapExample }}</p>
         <label class="mt-5 block"><span class="sr-only">{{ lang.t("review.yourAnswer") }}</span>
@@ -167,7 +167,7 @@ function onKey(e: KeyboardEvent) {
 
       <!-- recognise -->
       <template v-else-if="type === 'recognise' && current.vocab">
-        <p class="text-sm font-bold uppercase tracking-wide text-muted"><UiLabel k="review.meaning" /></p>
+        <p class="text-sm font-bold uppercase tracking-wide text-muted"><UiLabel variant="heading" k="review.meaning" /></p>
         <p class="mt-2 flex items-center gap-3 text-4xl font-extrabold">{{ current.vocab.nl }} <SpeakButton :text="current.vocab.nl" /></p>
         <div v-if="!selfCheck" class="mt-5 grid gap-3">
           <button
@@ -196,7 +196,7 @@ function onKey(e: KeyboardEvent) {
 
       <!-- article -->
       <template v-else-if="type === 'article' && current.vocab">
-        <p class="text-sm font-bold uppercase tracking-wide text-muted"><UiLabel k="review.article" /></p>
+        <p class="text-sm font-bold uppercase tracking-wide text-muted"><UiLabel variant="heading" k="review.article" /></p>
         <p class="mt-2 text-4xl font-extrabold">{{ stripArticle(current.vocab.nl) }}</p>
         <div class="mt-5 grid grid-cols-2 gap-3">
           <button
@@ -215,7 +215,7 @@ function onKey(e: KeyboardEvent) {
 
       <!-- verb-forms -->
       <template v-else-if="type === 'verb-forms' && current.verb">
-        <p class="text-sm font-bold uppercase tracking-wide text-muted"><UiLabel k="review.participle" /></p>
+        <p class="text-sm font-bold uppercase tracking-wide text-muted"><UiLabel variant="heading" k="review.participle" /></p>
         <p class="mt-2 flex items-center gap-3 text-4xl font-extrabold">{{ current.verb.infinitive }} <SpeakButton :text="current.verb.infinitive" /></p>
         <p class="mt-1 text-muted">{{ current.verb.definitionNl }}</p>
         <div class="mt-5 flex flex-wrap items-center gap-3 text-xl">

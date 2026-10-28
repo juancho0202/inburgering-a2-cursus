@@ -97,7 +97,7 @@ defineExpose({ playFrom: player.playFrom });
     </div>
 
     <div v-if="textVisible" class="border-t border-line bg-surface-2/50 p-4">
-      <h3 class="mb-2 text-sm font-bold uppercase tracking-wide text-muted"><UiLabel k="player.text" /></h3>
+      <h3 class="mb-2 text-sm font-bold uppercase tracking-wide text-muted"><UiLabel variant="heading" k="player.text" /></h3>
       <ol class="grid gap-2">
         <li v-for="(l, i) in fragment.lines" :key="i" class="flex" :class="conversation && sideOf(l.speaker) > 0 ? 'justify-end' : ''">
           <button

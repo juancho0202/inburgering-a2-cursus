@@ -40,7 +40,7 @@ const countLabel = (e: ExamRow) => lang.t(e.skill === "schrijven" ? "exams.tasks
 
 <template>
   <div>
-    <h1 class="text-3xl font-extrabold tracking-tight"><UiLabel k="exams.title" /></h1>
+    <h1 class="text-3xl font-extrabold tracking-tight"><UiLabel variant="heading" k="exams.title" /></h1>
     <p class="mt-1 text-muted"><UiText k="exams.intro" /></p>
     <!-- Idea 5 of the language plan: the exam is Dutch only, like the real one. Said here, before it starts. -->
     <p v-if="!lang.isDutch" class="mt-3 rounded-2xl bg-surface-2 px-4 py-3 font-semibold">🇳🇱 {{ lang.own("exams.dutchOnly") }}</p>

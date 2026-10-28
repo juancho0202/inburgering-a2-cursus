@@ -88,7 +88,7 @@ function onDone(r: EvalResult) {
   <!-- Setup for Claude-made exercises -->
   <div v-if="genMode && !items" class="mx-auto max-w-xl">
     <div class="card p-6 sm:p-8">
-      <h1 class="text-2xl font-extrabold">🤖 <UiLabel k="practice.moreClaude" /></h1>
+      <h1 class="text-2xl font-extrabold">🤖 <UiLabel variant="heading" k="practice.moreClaude" /></h1>
       <template v-if="settings.settings && !settings.hasKey">
         <p class="mt-3 text-muted"><UiText k="practice.needKey" /></p>
         <RouterLink to="/instellingen"><AppButton class="mt-4"><UiLabel k="common.toSettings" /></AppButton></RouterLink>
@@ -96,7 +96,7 @@ function onDone(r: EvalResult) {
       <template v-else>
         <p class="mt-2 text-muted"><UiText k="practice.claudeHint" /></p>
         <fieldset class="mt-5">
-          <legend class="mb-2 font-bold"><UiLabel k="practice.type" /></legend>
+          <legend class="mb-2 font-bold"><UiLabel variant="heading" k="practice.type" /></legend>
           <div class="grid grid-cols-2 gap-2">
             <button
               v-for="t in typeOptions"
@@ -135,7 +135,7 @@ function onDone(r: EvalResult) {
 
   <div v-else-if="done" class="card slide-up mx-auto max-w-xl p-8 text-center">
     <div class="text-6xl" aria-hidden="true">🎯</div>
-    <h1 class="mt-3 text-3xl font-extrabold"><UiLabel k="common.done" /></h1>
+    <h1 class="mt-3 text-3xl font-extrabold"><UiLabel variant="heading" k="common.done" /></h1>
     <p class="mt-1 text-xl"><UiText k="common.score" md :params="{ good, total: items.length }" /></p>
     <RouterLink to="/"><AppButton size="lg" class="mt-6"><UiLabel k="practice.toStart" /></AppButton></RouterLink>
   </div>

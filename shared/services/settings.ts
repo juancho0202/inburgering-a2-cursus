@@ -29,7 +29,7 @@ const UpdateSchema = z
     lessonMusic: z.boolean(),
     moduleOrder: z.array(z.string().max(100)).max(100),
     language: z.enum(UI_LANGUAGES),
-    immersion: z.number().int().min(0).max(3),
+    immersion: z.number().int().min(0).max(2),
     feedbackInMyLanguage: z.boolean(),
   })
   .partial();

@@ -31,7 +31,7 @@ const state = (i: number) => (!props.checked || props.exercise.fields[i].expecte
 <template>
   <div>
     <ExerciseStem :prompt="exercise.prompt" :context="exercise.context" />
-    <p class="mb-4 rounded-2xl bg-surface-2 px-4 py-3"><strong><UiLabel k="exercise.situation" />:</strong> <span lang="nl" translate="no">{{ exercise.scenario }}</span></p>
+    <p class="mb-4 rounded-2xl bg-surface-2 px-4 py-3"><strong><UiLabel variant="inline" k="exercise.situation" />:</strong> <span lang="nl" translate="no">{{ exercise.scenario }}</span></p>
     <form class="card overflow-hidden" @submit.prevent>
       <h3 class="border-b border-line bg-surface-2 px-5 py-3 text-lg font-bold">{{ exercise.formTitle }}</h3>
       <div class="grid gap-4 p-5 sm:grid-cols-2">
@@ -46,7 +46,7 @@ const state = (i: number) => (!props.checked || props.exercise.fields[i].expecte
             class="input mt-1"
             :class="{ 'border-good bg-good-bg': state(i) === 'ok', 'border-bad bg-bad-bg': state(i) === 'bad' }"
           />
-          <span v-if="state(i) === 'bad'" class="text-sm text-bad"><UiLabel k="exercise.rightAnswer" />: <span lang="nl" translate="no">{{ field.expected }}</span></span>
+          <span v-if="state(i) === 'bad'" class="text-sm text-bad"><UiLabel variant="inline" k="exercise.rightAnswer" />: <span lang="nl" translate="no">{{ field.expected }}</span></span>
         </label>
       </div>
     </form>

@@ -164,7 +164,7 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey, true));
                 🤖 <UiLabel :k="w.label.k" :params="w.label.params" />
               </AppButton>
             </div>
-            <p v-else class="mt-1 text-sm text-muted">{{ lang.feedback("feedback.wantClaude") }} <RouterLink to="/instellingen" class="font-semibold underline"><UiLabel k="nav.settings" /></RouterLink>.</p>
+            <p v-else class="mt-1 text-sm text-muted">{{ lang.feedback("feedback.wantClaude") }} <RouterLink to="/instellingen" class="font-semibold underline"><UiLabel variant="inline" k="nav.settings" /></RouterLink>.</p>
             <template v-for="w in wrongItems" :key="'e' + w.itemId">
               <p v-if="explanations[w.itemId]?.loading" class="mt-2 font-semibold">{{ lang.feedback("feedback.thinking") }}</p>
               <p v-else-if="explanations[w.itemId]?.error" class="mt-2 font-semibold text-bad">✗ {{ explanations[w.itemId]?.error }}</p>

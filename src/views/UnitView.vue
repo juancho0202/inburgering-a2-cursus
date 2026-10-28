@@ -169,7 +169,7 @@ const restart = async () => {
 
   <div v-else-if="unit && finished && summary" class="card slide-up mx-auto max-w-xl p-8 text-center">
     <div class="text-6xl" aria-hidden="true">{{ summary.score >= unit.passScore ? "🎉" : "💪" }}</div>
-    <h1 class="mt-3 text-3xl font-extrabold"><UiLabel k="unit.done" /></h1>
+    <h1 class="mt-3 text-3xl font-extrabold"><UiLabel variant="heading" k="unit.done" /></h1>
     <p class="mt-1 text-xl"><UiText k="common.score" md :params="{ good: summary.good, total: summary.total }" /> ({{ Math.round(summary.score * 100) }}%)</p>
     <p class="mt-1 text-muted">{{ lang.feedback(summary.score >= unit.passScore ? "unit.passed" : "unit.notPassed") }}</p>
     <p v-if="summary.words" class="mt-2 rounded-2xl bg-brand-bg px-4 py-2 font-semibold">📕 {{ lang.t("unit.newCards", { n: summary.words }, summary.words) }}</p>
@@ -186,7 +186,7 @@ const restart = async () => {
   <div v-else-if="unit && step">
     <div class="mb-6">
       <div class="mb-2 flex items-center justify-between gap-3">
-        <h1 class="truncate text-lg font-bold text-muted"><template v-if="lessonNumber"><UiLabel k="settings.lessonN" :params="{ n: lessonNumber }" /> · </template><span lang="nl" translate="no">{{ unit.title }}</span></h1>
+        <h1 class="truncate text-lg font-bold text-muted"><template v-if="lessonNumber"><UiLabel variant="inline" k="settings.lessonN" :params="{ n: lessonNumber }" /> · </template><span lang="nl" translate="no">{{ unit.title }}</span></h1>
         <span class="text-sm font-semibold text-muted">{{ stepIndex + 1 }} / {{ total }}</span>
       </div>
       <ProgressBar :value="stepIndex / total" :label="lang.t('unit.stepOf', { n: stepIndex + 1, total })" />

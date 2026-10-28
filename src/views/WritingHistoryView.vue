@@ -42,7 +42,7 @@ const verdict = { voldoende: "bg-good-bg text-good", bijna: "bg-brand-bg text-br
   <div>
     <RouterLink to="/module/schrijven" class="text-muted hover:text-ink">← <UiLabel k="common.back" /></RouterLink>
     <div class="mb-6 mt-3 flex flex-wrap items-end justify-between gap-3">
-      <h1 class="text-3xl font-extrabold tracking-tight"><UiLabel k="writingHistory.title" /></h1>
+      <h1 class="text-3xl font-extrabold tracking-tight"><UiLabel variant="heading" k="writingHistory.title" /></h1>
       <label class="block">
         <span class="sr-only">{{ lang.t("writingHistory.kind") }}</span>
         <select v-model="filter" class="input !w-auto">
@@ -70,7 +70,7 @@ const verdict = { voldoende: "bg-good-bg text-good", bijna: "bg-brand-bg text-br
         <div v-if="open === r.id" class="slide-up mt-4 grid gap-4">
           <WritingFeedbackPanel v-if="r.feedback" :text="r.text" :feedback="r.feedback" />
           <div v-else class="rounded-2xl bg-surface-2 p-4">
-            <p class="mb-2 font-bold"><UiLabel k="exercise.yourText" /></p>
+            <p class="mb-2 font-bold"><UiLabel variant="heading" k="exercise.yourText" /></p>
             <p class="whitespace-pre-line text-lg">{{ r.text }}</p>
           </div>
         </div>

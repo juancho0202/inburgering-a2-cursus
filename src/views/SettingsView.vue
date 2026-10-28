@@ -93,14 +93,14 @@ const themes = [
   { value: "light", label: "settings.themeLight" },
   { value: "dark", label: "settings.themeDark" },
 ] as const;
-// How much of the app's own text is Dutch (see the language store). The examples show the "Next" button at each level.
-const levels = [0, 1, 2, 3] as const;
+// How much of the app's own text is Dutch (see the language store).
+const levels = [0, 1, 2] as const;
 </script>
 
 <template>
   <div class="mx-auto max-w-2xl">
     <div class="mb-6 flex items-center justify-between">
-      <h1 class="text-3xl font-extrabold tracking-tight"><UiLabel k="nav.settings" /></h1>
+      <h1 class="text-3xl font-extrabold tracking-tight"><UiLabel variant="heading" k="nav.settings" /></h1>
       <span v-if="saved" role="status" class="rounded-full bg-good-bg px-3 py-1 text-sm font-bold text-good">✓ {{ lang.t("settings.saved") }}</span>
     </div>
 
@@ -108,7 +108,7 @@ const levels = [0, 1, 2, 3] as const;
       <section class="card p-6">
         <LanguagePicker />
         <template v-if="!lang.isDutch">
-          <h2 id="immersion-title" class="mt-6 text-xl font-bold"><UiLabel k="settings.immersion" /></h2>
+          <h2 id="immersion-title" class="mt-6 text-xl font-bold"><UiLabel variant="heading" k="settings.immersion" /></h2>
           <p class="mt-1 text-sm text-muted"><UiText k="settings.immersionHint" /></p>
           <div class="mt-3 grid gap-2" role="radiogroup" aria-labelledby="immersion-title">
             <button
@@ -133,7 +133,7 @@ const levels = [0, 1, 2, 3] as const;
       </section>
 
       <section class="card p-6">
-        <h2 class="text-xl font-bold"><UiLabel k="settings.appearance" /></h2>
+        <h2 class="text-xl font-bold"><UiLabel variant="heading" k="settings.appearance" /></h2>
         <div class="mt-3 grid grid-cols-3 gap-2" role="radiogroup" :aria-label="lang.t('settings.theme')">
           <button
             v-for="t in themes"
@@ -151,7 +151,7 @@ const levels = [0, 1, 2, 3] as const;
       </section>
 
       <section class="card p-6">
-        <h2 class="text-xl font-bold"><UiLabel k="settings.sound" /></h2>
+        <h2 class="text-xl font-bold"><UiLabel variant="heading" k="settings.sound" /></h2>
         <div class="mt-3 grid gap-3">
           <label class="flex items-start gap-3 border-b border-line pb-3">
             <input type="checkbox" class="mt-1 h-5 w-5 shrink-0 accent-[var(--brand)]" :checked="silent" @change="setSilent(($event.target as HTMLInputElement).checked)" />
@@ -178,7 +178,7 @@ const levels = [0, 1, 2, 3] as const;
       </section>
 
       <section class="card p-6">
-        <h2 class="text-xl font-bold"><UiLabel k="nav.learn" /></h2>
+        <h2 class="text-xl font-bold"><UiLabel variant="heading" k="nav.learn" /></h2>
         <div class="mt-3 grid gap-4 sm:grid-cols-2">
           <label class="block"><span class="font-semibold">{{ lang.t("settings.minutesPerDay") }}</span>
             <input class="input mt-1" type="number" min="5" max="240" :value="store.settings.dailyGoalMinutes" @change="patch({ dailyGoalMinutes: num($event) })" /></label>
@@ -194,7 +194,7 @@ const levels = [0, 1, 2, 3] as const;
       </section>
 
       <section class="card p-6">
-        <h2 class="text-xl font-bold"><UiLabel k="settings.myData" /></h2>
+        <h2 class="text-xl font-bold"><UiLabel variant="heading" k="settings.myData" /></h2>
         <p class="mt-1 text-muted"><UiText k="settings.myDataHint" /></p>
         <div class="mt-4 grid gap-5">
           <div>
@@ -205,7 +205,7 @@ const levels = [0, 1, 2, 3] as const;
         </div>
 
         <div class="mt-6 rounded-2xl border border-bad/40 bg-bad-bg p-4">
-          <h3 class="font-bold text-bad"><UiLabel k="settings.reset" /></h3>
+          <h3 class="font-bold text-bad"><UiLabel variant="heading" k="settings.reset" /></h3>
           <p class="mt-1"><UiText k="settings.resetHint" /></p>
           <label for="reset" class="mt-3 block font-semibold"><UiText k="settings.resetConfirm" md /></label>
           <input id="reset" v-model="resetText" class="input mt-1" autocomplete="off" />
@@ -217,7 +217,7 @@ const levels = [0, 1, 2, 3] as const;
       <InstallHint />
 
       <section v-if="flags.length" class="card p-6">
-        <h2 class="text-xl font-bold"><UiLabel k="settings.flags" :params="{ n: flags.length }" /></h2>
+        <h2 class="text-xl font-bold"><UiLabel variant="heading" k="settings.flags" :params="{ n: flags.length }" /></h2>
         <p class="mt-1 text-sm text-muted"><UiText k="settings.flagsHint" /></p>
         <ul class="mt-3 grid gap-2">
           <li v-for="f in flags" :key="f.id" class="flex items-start justify-between gap-3 rounded-2xl bg-surface-2 p-3">
@@ -231,7 +231,7 @@ const levels = [0, 1, 2, 3] as const;
       </section>
 
       <section class="card p-6">
-        <h2 class="text-xl font-bold"><UiLabel k="settings.claude" /></h2>
+        <h2 class="text-xl font-bold"><UiLabel variant="heading" k="settings.claude" /></h2>
         <p class="mt-1 text-muted"><UiText k="settings.claudeHint" /></p>
         <p class="mt-3">{{ lang.t("settings.currentKey") }} <strong>{{ store.settings.apiKey ?? lang.t("settings.noKey") }}</strong></p>
 

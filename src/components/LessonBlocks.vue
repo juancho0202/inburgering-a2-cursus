@@ -47,7 +47,7 @@ const gloss = (id: string) => (APP_WORDS[id] && lang.proseLocale !== "nl" ? lang
       <!-- "Leertip": a card with a tab on top, like the tips in the margin of a language book -->
       <aside v-else-if="block.kind === 'tip'" class="mt-3">
         <p class="relative z-10 ml-4 inline-flex items-center gap-1.5 rounded-t-xl border border-b-0 border-brand/40 bg-brand-bg px-3 pt-1 text-sm font-extrabold uppercase tracking-wide text-brand-strong">
-          <span aria-hidden="true">💡</span> <UiLabel k="lesson.tip" />
+          <span aria-hidden="true">💡</span> <UiLabel variant="inline" k="lesson.tip" />
         </p>
         <div class="prose-nl -mt-px rounded-2xl border border-brand/40 bg-brand-bg px-4 py-3" v-html="renderMd(block.md)" />
       </aside>

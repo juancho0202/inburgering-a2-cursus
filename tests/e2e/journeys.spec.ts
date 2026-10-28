@@ -125,6 +125,7 @@ test.describe("languages", () => {
     await expect(page.getByRole("heading", { name: /Welkom terug/ })).toBeVisible();
     await expect(page.locator("html")).toHaveAttribute("lang", "es");
     await page.reload();
+    await page.getByRole("heading", { name: /Welkom terug!/ }).getByRole("button", { name: "En mi idioma" }).click();
     await expect(page.getByRole("heading", { name: /¡Bienvenido de nuevo!/ })).toBeVisible();
   });
 
@@ -132,7 +133,9 @@ test.describe("languages", () => {
     await page.goto("/");
     await expect(page.getByRole("radio", { name: "English" })).toHaveAttribute("aria-checked", "true");
     await page.getByRole("button", { name: /Begin met leren/ }).first().click();
-    await expect(page.getByRole("heading", { name: "Welkom terug! Welcome back! 👋" })).toBeVisible();
+    const heading = page.getByRole("heading", { name: /Welkom terug!/ });
+    await heading.getByRole("button", { name: "In my language" }).click();
+    await expect(page.getByRole("heading", { name: /Welcome back!/ })).toBeVisible();
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
     await page.goto("/examen/exam-knm-1");
     await expect(page.locator("html")).toHaveAttribute("lang", "nl");

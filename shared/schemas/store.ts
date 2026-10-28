@@ -85,10 +85,10 @@ export const SettingsRecordSchema = z.object({
   /** The learner's own language for the app's text. Not set until they choose one (the first-visit picker). */
   language: z.enum(UI_LANGUAGES).optional(),
   /**
-   * How much of the app's own text is Dutch: 0 = my language, 1 = Dutch with my language next to it,
-   * 2 = Dutch (translation on request), 3 = Dutch only. Ignored when the language is Dutch.
+   * How much of the app's own text is Dutch: 0 = my language, 1 = Dutch with my language, 2 = Dutch only.
+   * Ignored when the language is Dutch. Learned app words are Dutch at every level.
    */
-  immersion: z.number().int().min(0).max(3).default(1),
+  immersion: z.number().int().min(0).max(2).default(1),
   /** Feedback after an answer is Dutch first; this shows it in the learner's language instead. */
   feedbackInMyLanguage: z.boolean().default(false),
   updatedAt: z.string().optional(),

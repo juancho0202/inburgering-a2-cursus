@@ -136,7 +136,7 @@ These are the kinds of bugs that have actually been found here. For each compone
 | Install hint / storage protection | `components/InstallHint.test.ts` |
 | "Er is een nieuwe versie" banner and looking for updates (`src/lib/appUpdate.ts`) | `components/UpdateBanner.test.ts` |
 | Progress bar/ring, summary page | `components/Progress.test.ts` |
-| Languages: picker and `?lang=`, immersion levels, labels that graduate, Dutch-only exam, "In mijn taal" feedback, Unit 0 glosses | `components/Language.test.ts` |
+| Languages: picker and `?lang=`, immersion levels (button subtext, heading flags), labels that graduate, Dutch-only exam, "In mijn taal" feedback, Unit 0 glosses | `components/Language.test.ts` |
 
 Known gaps (not component tests, but worth a look when you are nearby): `src/lib/*` (`storage.ts`, `progressFile.ts`) and `src/stores/*` have no direct tests (`backgrounds.ts` is covered by `tests/unit/backgrounds.test.ts`); the SpeakButton/voice choice is untested because jsdom has no speech synthesis.
 

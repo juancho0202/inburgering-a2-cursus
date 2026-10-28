@@ -218,7 +218,7 @@ onBeforeUnmount(() => {
   <!-- In edit mode "Klaar" sticks below the top bar. CSS sticky (no scroll handler) so it never lags or jumps; the button
        spans every row of this section, and the rest of the page comes in through the slot, so it stays up to the end. -->
   <section class="grid grid-cols-[minmax(0,1fr)_auto] grid-rows-[auto_1fr] gap-3">
-    <h2 class="glass col-start-1 row-start-1 justify-self-start rounded-2xl px-4 py-1 text-2xl font-bold"><UiLabel k="modules.title" /></h2>
+    <h2 class="glass col-start-1 row-start-1 justify-self-start rounded-2xl px-4 py-1 text-2xl font-bold"><UiLabel variant="heading" k="modules.title" /></h2>
     <button
       type="button"
       class="glass col-start-2 row-span-2 row-start-1 inline-flex items-center gap-2 self-start rounded-2xl px-4 py-2 font-bold transition hover:text-brand-strong"

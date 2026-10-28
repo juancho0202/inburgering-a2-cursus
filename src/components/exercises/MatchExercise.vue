@@ -51,7 +51,7 @@ defineExpose({ ready, evaluate });
 <template>
   <div>
     <ExerciseStem :prompt="exercise.prompt" :context="exercise.context" />
-    <p class="-mt-3 mb-3 text-muted"><UiLabel k="exercise.matchHint" /></p>
+    <p class="-mt-3 mb-3 text-muted"><UiLabel variant="inline" k="exercise.matchHint" /></p>
     <div class="grid grid-cols-2 gap-x-6 gap-y-3">
       <div class="grid content-start gap-3">
         <button

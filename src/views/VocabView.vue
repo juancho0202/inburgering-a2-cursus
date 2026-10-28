@@ -45,7 +45,7 @@ const stateLabel = { new: "vocab.new", learning: "vocab.learning", learned: "voc
 <template>
   <div>
     <div class="mb-6 flex flex-wrap items-end justify-between gap-3">
-      <h1 class="text-3xl font-extrabold tracking-tight"><UiLabel k="nav.words" /></h1>
+      <h1 class="text-3xl font-extrabold tracking-tight"><UiLabel variant="heading" k="nav.words" /></h1>
       <RouterLink to="/woorden/herhalen"><AppButton>📕 <UiLabel k="review.title" /></AppButton></RouterLink>
     </div>
     <p v-if="ready && !available" class="mb-4 rounded-2xl bg-surface-2 px-4 py-2 text-sm text-muted">{{ lang.t("vocab.noVoice") }}</p>
@@ -83,7 +83,7 @@ const stateLabel = { new: "vocab.new", learning: "vocab.learning", learned: "voc
             <span
               class="ml-auto rounded-full px-2.5 py-0.5 text-xs font-bold"
               :class="e.state === 'learned' ? 'bg-good-bg text-good' : e.state === 'learning' ? 'bg-brand-bg text-brand-strong' : 'bg-surface-2 text-muted'"
-              ><UiLabel :k="stateLabel[e.state]" /></span
+              ><UiLabel variant="inline" :k="stateLabel[e.state]" /></span
             >
           </div>
           <p v-if="e.plural" class="text-sm text-muted">meervoud: {{ e.plural }}</p>

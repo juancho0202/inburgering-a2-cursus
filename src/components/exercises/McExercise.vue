@@ -61,7 +61,7 @@ defineExpose({ ready, evaluate });
 <template>
   <div>
     <ExerciseStem v-if="!hideStem" :prompt="exercise.prompt" :context="exercise.context" />
-    <p v-if="multi" class="-mt-3 mb-3 text-muted"><UiLabel k="exercise.chooseAll" /></p>
+    <p v-if="multi" class="-mt-3 mb-3 text-muted"><UiLabel variant="inline" k="exercise.chooseAll" /></p>
     <div class="grid gap-3" role="group" :aria-label="exercise.prompt">
       <OptionButton
         v-for="(orig, pos) in order"

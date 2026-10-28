@@ -71,7 +71,7 @@ async function save() {
   <Teleport to="body">
     <div v-if="open" class="fixed inset-0 z-[70] grid place-items-center bg-black/50 p-4" role="dialog" aria-modal="true" aria-labelledby="report-title" @keydown.esc="close">
       <div class="card w-full max-w-md p-6">
-        <h2 id="report-title" class="text-xl font-extrabold"><UiLabel k="report.button" /></h2>
+        <h2 id="report-title" class="text-xl font-extrabold"><UiLabel variant="heading" k="report.button" /></h2>
         <template v-if="!sent">
           <p v-if="issueUrl" class="mt-1 text-muted"><UiText k="report.githubHint" /></p>
           <p v-else class="mt-1 text-muted"><UiText k="report.localHint" /></p>

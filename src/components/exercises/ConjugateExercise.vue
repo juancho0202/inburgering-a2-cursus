@@ -40,7 +40,7 @@ defineExpose({ ready, evaluate });
   <div>
     <ExerciseStem :prompt="exercise.prompt" :context="exercise.context" />
     <div v-if="verb" class="card p-5">
-      <p class="text-muted"><UiLabel k="exercise.verb" />: <strong class="text-lg text-ink" lang="nl" translate="no">{{ verb.infinitive }}</strong> — <UiLabel :k="tenseLabel[exercise.tense]" /></p>
+      <p class="text-muted"><UiLabel variant="inline" k="exercise.verb" />: <strong class="text-lg text-ink" lang="nl" translate="no">{{ verb.infinitive }}</strong> — <UiLabel variant="inline" :k="tenseLabel[exercise.tense]" /></p>
       <div class="mt-3 flex flex-wrap items-center gap-2 text-xl">
         <span class="font-semibold">{{ exercise.person }}</span>
         <select

@@ -82,7 +82,7 @@ const accuracy = computed(() => (summary.value && summary.value.answersToday ? M
 <template>
   <div v-if="session.finishOpen" class="fixed inset-0 z-[60] grid place-items-center bg-black/50 p-4" role="dialog" aria-modal="true" aria-labelledby="finish-title" @keydown.esc="session.closeFinish()">
     <div ref="dialog" tabindex="-1" class="card max-h-[90vh] w-full max-w-lg overflow-y-auto p-6 outline-none">
-      <h2 id="finish-title" class="text-2xl font-extrabold"><UiLabel k="app.finish" /> 🌙</h2>
+      <h2 id="finish-title" class="text-2xl font-extrabold"><UiLabel variant="heading" k="app.finish" /> 🌙</h2>
       <p v-if="!summary" class="mt-3 text-muted">{{ lang.t("common.loading") }}</p>
 
       <template v-else>
@@ -92,7 +92,7 @@ const accuracy = computed(() => (summary.value && summary.value.answersToday ? M
         <p v-else class="mt-1 text-muted"><UiText k="finish.nothingYet" /></p>
 
         <div class="mt-4 rounded-2xl bg-surface-2 p-4">
-          <p class="font-bold"><UiLabel k="finish.otherDevice" /></p>
+          <p class="font-bold"><UiLabel variant="heading" k="finish.otherDevice" /></p>
           <p class="mt-1 text-sm text-muted"><UiText :k="sharing ? 'finish.otherDeviceShareHint' : 'finish.otherDeviceHint'" /></p>
           <label for="device" class="mt-3 block text-sm font-semibold">{{ lang.t("finish.deviceName") }}</label>
           <input id="device" v-model="deviceName" class="input mt-1" maxlength="40" :placeholder="lang.t('finish.devicePlaceholder')" autocomplete="off" />

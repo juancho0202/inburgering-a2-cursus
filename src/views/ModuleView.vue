@@ -54,8 +54,8 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
           </span>
           <div class="min-w-0 flex-1">
             <p class="flex flex-wrap items-center gap-x-2 text-xs font-bold uppercase tracking-wide text-muted">
-              <UiLabel k="settings.lessonN" :params="{ n: i + 1 }" />
-              <span v-if="u.id === recommended" class="rounded-full bg-brand-bg px-2 py-0.5 text-brand-strong normal-case tracking-normal"><UiLabel k="common.next" /></span>
+              <UiLabel variant="inline" k="settings.lessonN" :params="{ n: i + 1 }" />
+              <span v-if="u.id === recommended" class="rounded-full bg-brand-bg px-2 py-0.5 text-brand-strong normal-case tracking-normal"><UiLabel variant="inline" k="common.next" /></span>
             </p>
             <h2 class="text-lg font-bold group-hover:text-brand-strong" lang="nl" translate="no">{{ u.title }}</h2>
             <p class="text-sm text-muted">

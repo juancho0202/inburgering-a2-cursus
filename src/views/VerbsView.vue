@@ -35,7 +35,7 @@ async function practise() {
 <template>
   <div>
     <div class="mb-6 flex flex-wrap items-end justify-between gap-3">
-      <h1 class="text-3xl font-extrabold tracking-tight"><UiLabel k="nav.verbs" /></h1>
+      <h1 class="text-3xl font-extrabold tracking-tight"><UiLabel variant="heading" k="nav.verbs" /></h1>
       <AppButton @click="practise">🔁 <UiLabel k="verbs.practise" /></AppButton>
     </div>
 
@@ -44,19 +44,19 @@ async function practise() {
         <span class="sr-only">{{ lang.t("verbs.search") }}</span>
         <input v-model="search" type="search" :placeholder="lang.t('verbs.searchPlaceholder')" class="input" />
       </label>
-      <label class="flex items-center gap-2 font-semibold"><input v-model="separable" type="checkbox" class="h-5 w-5 accent-[var(--brand)]" /> <UiLabel k="verbs.separable" /></label>
-      <label class="flex items-center gap-2 font-semibold"><input v-model="irregular" type="checkbox" class="h-5 w-5 accent-[var(--brand)]" /> <UiLabel k="verbs.irregular" /></label>
+      <label class="flex items-center gap-2 font-semibold"><input v-model="separable" type="checkbox" class="h-5 w-5 accent-[var(--brand)]" /> <UiLabel variant="inline" k="verbs.separable" /></label>
+      <label class="flex items-center gap-2 font-semibold"><input v-model="irregular" type="checkbox" class="h-5 w-5 accent-[var(--brand)]" /> <UiLabel variant="inline" k="verbs.irregular" /></label>
     </div>
 
     <div class="card overflow-x-auto">
       <table class="w-full min-w-[40rem] border-collapse text-left">
         <thead class="bg-surface-2 text-sm uppercase tracking-wide text-muted">
           <tr>
-            <th class="px-4 py-3"><UiLabel k="exercise.verb" /></th>
+            <th class="px-4 py-3"><UiLabel variant="inline" k="exercise.verb" /></th>
             <th class="px-4 py-3">ik / jij / hij</th>
             <th class="px-4 py-3">wij</th>
-            <th class="px-4 py-3"><UiLabel k="verbs.past" /></th>
-            <th class="px-4 py-3"><UiLabel k="review.participle" /></th>
+            <th class="px-4 py-3"><UiLabel variant="inline" k="verbs.past" /></th>
+            <th class="px-4 py-3"><UiLabel variant="inline" k="review.participle" /></th>
           </tr>
         </thead>
         <tbody lang="nl" translate="no">

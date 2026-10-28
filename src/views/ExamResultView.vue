@@ -186,7 +186,7 @@ const retryable = computed(() => tasks.value.some((t) => taskState.value[t.id]?.
         <AppButton v-if="retryable && !running" class="ml-3" variant="secondary" @click="runPending"><UiLabel k="common.tryAgain" /></AppButton>
       </p>
       <p v-if="!settings.hasKey" class="card p-4 text-muted">
-        {{ f("result.noKey") }} <RouterLink to="/instellingen" class="font-semibold underline"><UiLabel k="nav.settings" /></RouterLink>.
+        {{ f("result.noKey") }} <RouterLink to="/instellingen" class="font-semibold underline"><UiLabel variant="inline" k="nav.settings" /></RouterLink>.
       </p>
 
       <section v-for="(t, i) in tasks" :key="t.id" class="card p-6">

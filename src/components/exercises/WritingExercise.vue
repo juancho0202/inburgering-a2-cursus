@@ -110,17 +110,17 @@ defineExpose({ ready, evaluate });
       <div v-else class="card p-5">
         <p class="font-bold">{{ lang.feedback("exercise.noFeedback") }}</p>
         <p class="text-muted">
-          {{ lang.feedback("exercise.addKeyFor") }} <RouterLink to="/instellingen" class="font-semibold text-brand-strong underline"><UiLabel k="nav.settings" /></RouterLink>. {{ lang.feedback("exercise.savedCheckYourself") }}
+          {{ lang.feedback("exercise.addKeyFor") }} <RouterLink to="/instellingen" class="font-semibold text-brand-strong underline"><UiLabel variant="inline" k="nav.settings" /></RouterLink>. {{ lang.feedback("exercise.savedCheckYourself") }}
         </p>
       </div>
 
       <!-- Self-check (always available) -->
       <div class="card p-5">
-        <h3 class="mb-2 font-bold"><UiLabel k="exercise.example" /></h3>
+        <h3 class="mb-2 font-bold"><UiLabel variant="heading" k="exercise.example" /></h3>
         <p class="whitespace-pre-line text-lg">{{ exercise.modelAnswer }}</p>
       </div>
       <div class="card p-5">
-        <h3 class="mb-2 font-bold"><UiLabel k="exercise.checkYourself" /></h3>
+        <h3 class="mb-2 font-bold"><UiLabel variant="heading" k="exercise.checkYourself" /></h3>
         <label v-for="(item, i) in exercise.checklist" :key="i" class="flex cursor-pointer items-center gap-3 py-1">
           <input v-model="ticked[i]" type="checkbox" class="h-5 w-5 accent-[var(--brand)]" />
           <span :class="{ 'line-through opacity-60': ticked[i] }">{{ item }}</span>

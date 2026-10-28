@@ -43,7 +43,7 @@ async function protect() {
 
 <template>
   <section class="card p-6">
-    <h2 class="text-xl font-bold"><UiLabel k="install.title" /></h2>
+    <h2 class="text-xl font-bold"><UiLabel variant="heading" k="install.title" /></h2>
     <template v-if="installed">
       <p class="mt-2 font-semibold text-good">✓ {{ lang.t("install.installed") }}</p>
     </template>

@@ -88,7 +88,7 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? lang.t("dashboard.wr
     <section class="card relative overflow-hidden p-6 sm:p-8 md:col-span-2 md:col-start-1 md:row-start-1 md:grid md:grid-cols-subgrid">
       <div class="absolute -right-10 -top-10 h-44 w-44 rounded-full bg-brand-bg" aria-hidden="true" />
       <div class="relative">
-        <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl"><UiLabel k="dashboard.welcomeBack" /> 👋</h1>
+        <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl"><UiLabel variant="heading" k="dashboard.welcomeBack" /> 👋</h1>
         <p class="mt-1 text-muted">
           <UiText v-if="data.lastLocation" k="dashboard.busyWith" :params="{ title: data.lastLocation.unitTitle }" />
           <UiText v-else k="dashboard.ready" />
@@ -115,14 +115,14 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? lang.t("dashboard.wr
         <GoalGauge :minutes="data.minutesToday" :goal="data.dailyGoalMinutes" />
         <span class="text-xs font-semibold text-muted" aria-hidden="true">{{ lang.t("dashboard.minutes") }}</span>
         <!-- The titles are small tabs on the bottom edge, so they cost no height -->
-        <h2 class="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-t-xl bg-brand-bg px-3 py-1 text-xs font-bold text-brand-strong"><span aria-hidden="true">⏱️</span> <UiLabel k="dashboard.today" /></h2>
+        <h2 class="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-t-xl bg-brand-bg px-3 py-1 text-xs font-bold text-brand-strong"><span aria-hidden="true">⏱️</span> <UiLabel variant="inline" k="dashboard.today" /></h2>
       </div>
       <div class="card relative flex flex-col items-center justify-center p-4 pb-8 md:w-36">
         <!-- A plain circle, without progress: a streak has no target. As tall as the goal gauge with its label. -->
         <ProgressRing :value="0" :size="104">
           <span class="text-2xl font-extrabold leading-none">{{ data.streak.current }}<span class="block text-xs font-semibold text-muted">{{ lang.t("dashboard.days", {}, data.streak.current) }}</span></span>
         </ProgressRing>
-        <h2 class="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-t-xl bg-brand-bg px-3 py-1 text-xs font-bold text-brand-strong"><span aria-hidden="true">🔥</span> <UiLabel k="dashboard.streak" /></h2>
+        <h2 class="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-t-xl bg-brand-bg px-3 py-1 text-xs font-bold text-brand-strong"><span aria-hidden="true">🔥</span> <UiLabel variant="inline" k="dashboard.streak" /></h2>
       </div>
     </section>
     </div>
@@ -133,7 +133,7 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? lang.t("dashboard.wr
         <div class="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
           <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand-bg text-3xl" aria-hidden="true">💾</span>
           <div class="min-w-0 flex-1">
-            <h2 class="text-lg font-bold"><UiLabel k="dashboard.backupTitle" /></h2>
+            <h2 class="text-lg font-bold"><UiLabel variant="heading" k="dashboard.backupTitle" /></h2>
             <p class="text-muted">
               <UiText v-if="data.backupReminder.daysAgo === null" k="dashboard.neverSaved" />
               <UiText v-else k="dashboard.savedDaysAgo" :params="{ days: data.backupReminder.daysAgo }" :count="data.backupReminder.daysAgo" />
@@ -148,7 +148,7 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? lang.t("dashboard.wr
         <div class="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
           <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-amber-100 text-3xl dark:bg-amber-950" aria-hidden="true">⏱️</span>
           <div class="min-w-0 flex-1">
-            <h2 class="text-lg font-bold"><UiLabel k="dashboard.tryExam" /></h2>
+            <h2 class="text-lg font-bold"><UiLabel variant="heading" k="dashboard.tryExam" /></h2>
             <p class="text-muted"><span lang="nl" translate="no">{{ data.nextExam.title }}</span> · {{ lang.t("common.minutes", { n: data.nextExam.durationMinutes }) }}</p>
           </div>
         </div>
@@ -156,7 +156,7 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? lang.t("dashboard.wr
       </section>
 
       <section class="card p-6">
-        <h2 class="text-2xl font-bold"><UiLabel k="dashboard.practiseMore" /></h2>
+        <h2 class="text-2xl font-bold"><UiLabel variant="heading" k="dashboard.practiseMore" /></h2>
         <p v-if="!data.weakTags.length && !data.hardCount" class="mt-2 text-muted"><UiText k="dashboard.practiseMoreEmpty" /></p>
         <ul v-else class="mt-3 grid gap-2">
           <li v-for="t in data.weakTags" :key="t.tag" class="flex flex-col gap-3 rounded-2xl bg-surface-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">

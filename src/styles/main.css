@@ -112,11 +112,29 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
   }
-  /* The learner's own language next to a Dutch label (bilingual mode) */
-  .ui-gloss {
-    font-size: 0.78em;
+  /* A Dutch button label with the learner's own language in small under it (bilingual mode) */
+  .ui-stack {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.15;
+  }
+  .ui-sub {
+    font-size: 0.72em;
     font-weight: 500;
-    opacity: 0.75;
+    opacity: 0.8;
+  }
+  /* The flag after a Dutch heading that switches it to the learner's language */
+  .ui-flag {
+    margin-inline-start: 0.4em;
+    border-radius: 0.5rem;
+    padding: 0 0.2em;
+    font-size: 0.75em;
+    vertical-align: middle;
+    line-height: 1;
+  }
+  .ui-flag:hover {
+    background: var(--surface-2);
   }
   .input {
     @apply w-full rounded-xl border-2 border-line bg-surface px-3 py-2 text-ink placeholder:text-muted focus:border-brand;

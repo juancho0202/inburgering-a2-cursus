@@ -23,7 +23,7 @@ async function start() {
   <div class="mx-auto grid max-w-3xl gap-6">
     <header class="text-center">
       <div class="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-brand text-3xl font-extrabold text-white" aria-hidden="true">NL</div>
-      <h1 class="mt-4 text-4xl font-extrabold tracking-tight"><UiLabel k="welcome.title" /></h1>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight"><UiLabel variant="heading" k="welcome.title" /></h1>
       <p class="mt-2 text-lg text-muted"><UiText k="welcome.intro" /></p>
     </header>
 
@@ -36,7 +36,7 @@ async function start() {
     <AboutContent />
 
     <section class="card p-6">
-      <h2 class="text-xl font-bold"><UiLabel k="welcome.otherDevice" /></h2>
+      <h2 class="text-xl font-bold"><UiLabel variant="heading" k="welcome.otherDevice" /></h2>
       <p class="mt-1 text-muted"><UiText k="welcome.otherDeviceHint" /></p>
       <div class="mt-3"><ImportSection @imported="start" /></div>
     </section>
