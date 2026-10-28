@@ -10,7 +10,7 @@ const page = fillIndexHtml(indexHtml);
 describe("landing page in index.html", () => {
   it("has the practice-exam title, description and canonical address in <head>", () => {
     const head = page.slice(0, page.indexOf("</head>"));
-    expect(head).toContain("<title>Inburgering Practice Exam (Free, A2) | TrainForInburgering</title>");
+    expect(head).toContain("<title>Inburgering Practice Exam (Free, A2) | Train for Inburgering</title>");
     expect(head).toMatch(/<meta name="description" content="Free inburgering practice exam[^"]+" \/>/);
     expect(head).toContain(`<link rel="canonical" href="${SITE_URL}/" />`);
     expect(head).toContain('<meta property="og:title" content="Free inburgering practice exam (A2)" />');
