@@ -191,7 +191,7 @@ describe("putting the modules in your own order", () => {
 
   it("the edit button shows a handle on every card; in edit mode a card does not open, and 'Klaar' ends it", async () => {
     const { wrapper, router } = await open();
-    await clickButton(wrapper, "Volgorde aanpassen");
+    await clickButton(wrapper, "Sorteren");
     expect(wrapper.findAll("[data-handle]").map((h) => h.attributes("aria-label"))).toEqual(["Verplaats Basis", "Verplaats KNM", "Verplaats Proefexamens"]);
     await card(wrapper, "knm").trigger("click");
     await flushPromises();
@@ -205,7 +205,7 @@ describe("putting the modules in your own order", () => {
 
   it("dragging a card by its handle onto another place moves it there and saves the new order once", async () => {
     const { wrapper } = await open();
-    await clickButton(wrapper, "Volgorde aanpassen");
+    await clickButton(wrapper, "Sorteren");
     pointer("pointerdown", handle(wrapper, "exams").element);
     under = card(wrapper, "knm").element;
     pointer("pointermove", window);
@@ -222,7 +222,7 @@ describe("putting the modules in your own order", () => {
 
   it("a drag that ends where it started saves nothing", async () => {
     const { wrapper } = await open();
-    await clickButton(wrapper, "Volgorde aanpassen");
+    await clickButton(wrapper, "Sorteren");
     pointer("pointerdown", handle(wrapper, "basis").element);
     under = card(wrapper, "knm").element;
     pointer("pointermove", window);
@@ -239,7 +239,7 @@ describe("putting the modules in your own order", () => {
     vi.useFakeTimers({ toFake: ["requestAnimationFrame", "cancelAnimationFrame"] });
     const scrollBy = vi.fn();
     window.scrollBy = scrollBy;
-    await clickButton(wrapper, "Volgorde aanpassen");
+    await clickButton(wrapper, "Sorteren");
     pointer("pointerdown", handle(wrapper, "exams").element);
     pointer("pointermove", window, { y: 10 });
     await vi.advanceTimersByTimeAsync(200);
@@ -253,7 +253,7 @@ describe("putting the modules in your own order", () => {
 
   it("the arrow keys on a handle move the card one place and keep the focus on it; past the end nothing happens", async () => {
     const { wrapper } = await open();
-    await clickButton(wrapper, "Volgorde aanpassen");
+    await clickButton(wrapper, "Sorteren");
     (handle(wrapper, "basis").element as HTMLElement).focus();
     await handle(wrapper, "basis").trigger("keydown", { key: "ArrowDown" });
     await flushPromises();
@@ -314,7 +314,7 @@ describe("putting the modules in your own order", () => {
   it("when saving fails the learner is told, the new order stays on screen, and the next move clears the message", async () => {
     const { wrapper } = await open();
     fakeApi.fail("PUT", "/settings", "Database niet beschikbaar.");
-    await clickButton(wrapper, "Volgorde aanpassen");
+    await clickButton(wrapper, "Sorteren");
     await handle(wrapper, "basis").trigger("keydown", { key: "ArrowDown" });
     await flushPromises();
     expect(wrapper.find("[role=alert]").text()).toBe("De volgorde is niet bewaard. Probeer het nog een keer.");
@@ -330,7 +330,7 @@ describe("putting the modules in your own order", () => {
     const { wrapper } = await open();
     const first = deferred();
     fakeApi.on("PUT", "/settings", () => first.promise);
-    await clickButton(wrapper, "Volgorde aanpassen");
+    await clickButton(wrapper, "Sorteren");
     await handle(wrapper, "basis").trigger("keydown", { key: "ArrowDown" });
     await handle(wrapper, "basis").trigger("keydown", { key: "ArrowDown" });
     await flushPromises();
@@ -352,7 +352,7 @@ describe("putting the modules in your own order", () => {
     expect(document.elementFromPoint).not.toHaveBeenCalled();
 
     const again = await open();
-    await clickButton(again.wrapper, "Volgorde aanpassen");
+    await clickButton(again.wrapper, "Sorteren");
     pointer("pointerdown", handle(again.wrapper, "basis").element);
     again.wrapper.unmount();
     pointer("pointermove", window);

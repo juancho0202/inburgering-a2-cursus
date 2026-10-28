@@ -211,11 +211,15 @@ onBeforeUnmount(() => {
       <h2 class="glass inline-block rounded-2xl px-4 py-1 text-2xl font-bold">Modules</h2>
       <button
         type="button"
-        class="glass rounded-2xl px-4 py-2 font-bold transition hover:text-brand-strong"
+        class="glass inline-flex items-center gap-2 rounded-2xl px-4 py-2 font-bold transition hover:text-brand-strong"
         :aria-pressed="editing"
         @click="toggleEditing"
       >
-        <span aria-hidden="true">{{ editing ? "✓" : "✏️" }}</span> {{ editing ? "Klaar" : "Volgorde aanpassen" }}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path v-if="editing" d="M5 12.5l4.5 4.5L19 7" />
+          <path v-else d="M7 20V4M3 8l4-4 4 4M17 4v16M13 16l4 4 4-4" />
+        </svg>
+        {{ editing ? "Klaar" : "Sorteren" }}
       </button>
     </div>
     <p v-if="editing" id="module-order-hint" class="glass mb-3 rounded-2xl px-4 py-2 text-sm">
