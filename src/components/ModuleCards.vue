@@ -30,6 +30,10 @@ const editing = ref(false);
 const dragId = ref<string | null>(null);
 const saveError = ref<string | null>(null);
 const status = ref("");
+/** The row with the heading and the button; once it scrolls away in edit mode, "Klaar" floats under the top bar. */
+const toolbar = ref<HTMLElement | null>(null);
+const floating = ref(false);
+let observer: IntersectionObserver | null = null;
 
 let hold: { id: string; x: number; y: number; timer: ReturnType<typeof setTimeout> } | null = null;
 let orderAtDragStart = "";
@@ -41,6 +45,16 @@ function toggleEditing() {
   editing.value = !editing.value;
   status.value = "";
 }
+
+watch(editing, (on) => {
+  observer?.disconnect();
+  observer = null;
+  floating.value = false;
+  if (!on || !toolbar.value || typeof IntersectionObserver === "undefined") return;
+  // The top bar (sticky, about 4.5rem) covers the top of the page: a row behind it counts as gone.
+  observer = new IntersectionObserver(([entry]) => (floating.value = !entry.isIntersecting), { rootMargin: "-80px 0px 0px 0px" });
+  observer.observe(toolbar.value);
+});
 
 // ----- holding a card (phone): edit mode, and the same finger can drag the card right away -----
 function pressStart(e: PointerEvent, id: string) {
@@ -202,16 +216,18 @@ onBeforeUnmount(() => {
   dragId.value = null;
   stopAutoScroll();
   unlisten();
+  observer?.disconnect();
 });
 </script>
 
 <template>
   <section>
-    <div class="mb-3 flex items-center justify-between gap-3">
+    <div ref="toolbar" class="mb-3 flex items-center justify-between gap-3">
       <h2 class="glass inline-block rounded-2xl px-4 py-1 text-2xl font-bold">Modules</h2>
       <button
         type="button"
         class="glass inline-flex items-center gap-2 rounded-2xl px-4 py-2 font-bold transition hover:text-brand-strong"
+        :class="floating && 'fixed right-[max(1rem,calc((100vw-64rem)/2+1rem))] top-20 z-20 shadow-lg'"
         :aria-pressed="editing"
         @click="toggleEditing"
       >
