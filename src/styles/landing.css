@@ -1,0 +1,132 @@
+/* The landing page in index.html (scripts/landingPage.ts). It is shown before the app's own styles load, so it
+   styles itself. public/boot.js adds the `app` class when the visit goes straight into the app. */
+html.app #landing {
+  display: none;
+}
+
+#landing {
+  --l-bg: #f6f4f1;
+  --l-surface: #ffffff;
+  --l-ink: #1f2328;
+  --l-muted: #5d6570;
+  --l-line: #e4dfd7;
+  --l-brand: #e8710a;
+  /* dark enough for white text (AA) */
+  --l-button: #a84f00;
+  min-height: 100vh;
+  background: var(--l-bg);
+  color: var(--l-ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+@media (prefers-color-scheme: dark) {
+  #landing {
+    --l-bg: #14171b;
+    --l-surface: #1d2127;
+    --l-ink: #eef0f2;
+    --l-muted: #a3acb7;
+    --l-line: #333a43;
+    --l-brand: #ff9438;
+  }
+}
+
+#landing * {
+  box-sizing: border-box;
+}
+.landing-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+.landing-logo {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  background: var(--l-brand);
+  color: #fff;
+  font-size: 1rem;
+}
+.landing-main {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1rem 1rem 3rem;
+}
+.landing-hero {
+  padding: 2rem 0 1rem;
+}
+/* the app's CSS reset makes headings normal weight */
+#landing h1,
+#landing h2,
+#landing h3 {
+  font-weight: 800;
+}
+#landing h3 {
+  font-weight: 700;
+}
+#landing h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.9rem, 6vw, 3rem);
+  line-height: 1.15;
+}
+#landing h2 {
+  margin: 2.5rem 0 1rem;
+  font-size: 1.4rem;
+}
+#landing h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+}
+#landing p {
+  margin: 0;
+}
+.landing-tagline {
+  max-width: 40rem;
+  color: var(--l-muted);
+  font-size: 1.15rem;
+}
+.landing-start {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 0.9rem;
+  background: var(--l-button);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.landing-start:hover {
+  background: #8f4300;
+}
+.landing-start:focus-visible {
+  outline: 3px solid var(--l-brand);
+  outline-offset: 3px;
+}
+.landing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.landing-card {
+  padding: 1rem;
+  border: 1px solid var(--l-line);
+  border-radius: 1rem;
+  background: var(--l-surface);
+}
+.landing-card p,
+.landing-disclaimer {
+  color: var(--l-muted);
+}
+.landing-disclaimer {
+  margin-top: 2.5rem !important;
+  font-size: 0.9rem;
+}

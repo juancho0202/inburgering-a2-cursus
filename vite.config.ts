@@ -5,12 +5,14 @@ import path from "node:path";
 import { VitePWA } from "vite-plugin-pwa";
 import { coursePlugin } from "./scripts/vitePluginCourse";
 import { SECURITY_HEADERS, netlifyHeadersFile } from "./scripts/securityHeaders";
+import { landingPlugin } from "./scripts/landingPage";
 
 export default defineConfig({
   plugins: [
     vue(),
     tailwindcss(),
     coursePlugin(),
+    landingPlugin(),
     {
       // Writes Netlify's _headers file (CSP etc.) next to the built site.
       name: "netlify-headers",

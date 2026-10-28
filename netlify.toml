@@ -6,6 +6,25 @@
 [build.environment]
   NODE_VERSION = "24"
 
+# One address for search engines: the .nl domain and www go to https://trainforinburgering.com (permanently).
+[[redirects]]
+  from = "https://trainforinburgering.nl/*"
+  to = "https://trainforinburgering.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.trainforinburgering.nl/*"
+  to = "https://trainforinburgering.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.trainforinburgering.com/*"
+  to = "https://trainforinburgering.com/:splat"
+  status = 301
+  force = true
+
 # Single-page app: every path serves index.html (real files such as /assets/* and /sw.js are served first).
 [[redirects]]
   from = "/*"

@@ -7,8 +7,26 @@ test("first visit: welcome screen once, then the dashboard with all modules", as
     await expect(page.getByRole("heading", { name })).toBeVisible();
   }
   await expect(page.getByText("Niet van DUO")).toBeVisible();
-  await page.goto("/"); // second visit: no welcome screen
+  await page.goto("/"); // second visit: no landing page, no welcome screen
   await expect(page.getByRole("heading", { name: /Welkom terug/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Free inburgering practice exam (A2)" })).toBeHidden();
+});
+
+test("a learner from before the landing page goes straight into the app at /", async ({ page }) => {
+  // started on the old version: welcome seen, but no landing-page key on this device yet
+  await startFresh(page);
+  await page.evaluate(() => localStorage.removeItem("appStarted"));
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: /Welkom terug/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Free inburgering practice exam (A2)" })).toBeHidden();
+  await page.goto("/"); // and from now on without even a glimpse of the landing page
+  await expect(page.getByRole("heading", { name: "Free inburgering practice exam (A2)" })).toBeHidden();
+});
+
+test("a first visit to an app page opens the app, not the landing page", async ({ page }) => {
+  await page.goto("/woorden");
+  await expect(page.getByRole("heading", { name: "Free inburgering practice exam (A2)" })).toBeHidden();
+  await expect(page).toHaveURL(/\/woorden$/);
 });
 
 test("a lesson resumes at the same step after a refresh", async ({ page }) => {
@@ -77,7 +95,7 @@ test("progress moves to another device with a file (save → fresh browser → m
   // "the phone": a fresh browser profile with nothing in it
   const phone = await browser.newContext({ ...testInfo.project.use });
   const p = await phone.newPage();
-  await p.goto("/");
+  await p.goto("/welkom");
   await expect(p.getByRole("heading", { name: "Welkom bij Inburgering A2" })).toBeVisible();
   await p.setInputFiles('input[type="file"]', file);
   await expect(p.getByText("van Laptop")).toBeVisible();

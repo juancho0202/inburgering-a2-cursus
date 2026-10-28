@@ -71,7 +71,7 @@ test("every screen opens without errors", async ({ page }) => {
   await startFresh(page);
   for (const path of ["/", "/module/basis", "/module/exams", "/oefenen", "/woorden", "/woorden/herhalen", "/werkwoorden", "/schrijven/geschiedenis", "/samenvatting", "/examens", "/over", "/instellingen", "/welkom"]) {
     await page.goto(path);
-    await expect(page.locator("main, #app").first()).not.toBeEmpty();
+    await expect(page.locator("#app")).not.toBeEmpty();
     await expect(page.getByText(/Er ging iets mis|Not found|404/i)).toHaveCount(0);
     await page.waitForTimeout(250);
     // Nothing may stick out past the side of a phone screen (a wide table once stretched the summary page)

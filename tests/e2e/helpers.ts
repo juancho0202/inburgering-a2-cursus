@@ -1,8 +1,11 @@
 import { expect, type Page } from "@playwright/test";
 
-/** First visit: the welcome screen shows once; start the course. */
+/** First visit: the landing page, then the welcome screen once; start the course. */
 export async function startFresh(page: Page) {
   await page.goto("/");
+  await expect(page.getByRole("heading", { level: 1, name: "Free inburgering practice exam (A2)" })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth), "landing page scrolls sideways").toBeLessThanOrEqual(0);
+  await page.getByRole("link", { name: "Start practising, it's free" }).first().click();
   await expect(page.getByRole("heading", { name: "Welkom bij Inburgering A2" })).toBeVisible();
   await page.getByRole("button", { name: /Begin met leren/ }).first().click();
   await expect(page.getByRole("heading", { name: /Welkom terug/ })).toBeVisible();
