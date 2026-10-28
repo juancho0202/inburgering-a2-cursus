@@ -98,18 +98,17 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
 
     <!-- Two small tiles side by side, phone-sized on every screen, so the modules come into view sooner -->
     <section class="relative grid grid-cols-2 gap-4 md:col-start-2 md:row-start-1 md:self-center md:py-8 md:pr-8" aria-label="Vandaag">
-      <div class="card flex flex-col items-center justify-center p-4 md:w-36">
+      <div class="card relative flex flex-col items-center justify-center p-4 pb-8 md:w-36">
         <GoalGauge :minutes="data.minutesToday" :goal="data.dailyGoalMinutes" />
         <span class="text-xs font-semibold text-muted" aria-hidden="true">minuten</span>
-        <!-- The gauge says it all; the label stays for screen readers -->
-        <h2 class="sr-only">Doel van vandaag</h2>
+        <!-- The titles are small tabs on the bottom edge, so they cost no height -->
+        <h2 class="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-t-xl bg-brand-bg px-3 py-1 text-xs font-bold text-brand-strong">Vandaag</h2>
       </div>
       <div class="card relative flex flex-col items-center justify-center p-4 pb-8 md:w-36">
         <!-- A plain circle, without progress: a streak has no target. As tall as the goal gauge with its label. -->
         <ProgressRing :value="0" :size="104">
           <span class="text-2xl font-extrabold leading-none">{{ data.streak.current }}<span class="block text-xs font-semibold text-muted">{{ data.streak.current === 1 ? "dag" : "dagen" }}</span></span>
         </ProgressRing>
-        <!-- The title is a small tab on the bottom edge, so it costs no height -->
         <h2 class="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-t-xl bg-brand-bg px-3 py-1 text-xs font-bold text-brand-strong"><span aria-hidden="true">🔥</span> Reeks</h2>
       </div>
     </section>
