@@ -74,7 +74,7 @@ test("every screen opens without errors", async ({ page }) => {
   await startFresh(page);
   for (const path of ["/", "/module/basis", "/module/exams", "/oefenen", "/woorden", "/woorden/herhalen", "/werkwoorden", "/schrijven/geschiedenis", "/samenvatting", "/examens", "/over", "/instellingen", "/welkom"]) {
     await page.goto(path);
-    await expect(page.locator("main, #app").first()).not.toBeEmpty();
+    await expect(page.locator("#app")).not.toBeEmpty();
     await expect(page.getByText(/Er ging iets mis|Not found|404/i)).toHaveCount(0);
     await page.waitForTimeout(250);
     // Nothing may stick out past the side of a phone screen (a wide table once stretched the summary page)
@@ -130,6 +130,7 @@ test.describe("languages", () => {
 
   test("an English browser starts in English with the Dutch words in front, and the mock exam is Dutch only", async ({ page }) => {
     await page.goto("/");
+    await page.getByRole("link", { name: "Start practising, it's free" }).first().click();
     await expect(page.getByRole("radio", { name: "English" })).toHaveAttribute("aria-checked", "true");
     await page.getByRole("button", { name: /Begin met leren/ }).first().click();
     await expect(page.getByRole("heading", { name: /Welcome back!/ })).toBeVisible();
@@ -147,7 +148,7 @@ test.describe("a small phone", () => {
     await startFresh(page);
     for (const path of ["/", "/module/basis", "/module/luisteren", "/module/knm", "/woorden", "/werkwoorden", "/examens", "/samenvatting", "/instellingen", "/over", "/unit/basis-tijd"]) {
       await page.goto(path);
-      await expect(page.locator("main h1").first()).toBeVisible();
+      await expect(page.locator("#app main h1").first()).toBeVisible();
       const [scroll, width] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
       expect(scroll, `${path} scrolls sideways`).toBeLessThanOrEqual(width);
     }

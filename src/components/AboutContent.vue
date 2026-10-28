@@ -40,5 +40,14 @@ import UiText from "./ui/UiText.vue";
         <UiText k="about.voices1" /> <a href="https://github.com/OHF-Voice/piper1-gpl" class="font-semibold underline">Piper</a> <UiText k="about.voices2" />
       </p>
     </section>
+
+    <section class="card p-6">
+      <h2 class="text-xl font-bold"><UiLabel variant="heading" k="about.creditTitle" /></h2>
+      <!-- A name and a username: browser translators must leave them alone -->
+      <p class="mt-2">
+        <UiText k="about.credit" /> <strong translate="no">Juan Muñoz</strong> ·
+        <a href="https://github.com/juancho0202" class="font-semibold underline" translate="no">github.com/juancho0202</a>
+      </p>
+    </section>
   </div>
 </template>

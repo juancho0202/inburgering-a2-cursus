@@ -27,7 +27,6 @@ const NOT_TESTED_DIRECTLY: Record<string, string> = {
   "src/components/exercises/ExerciseRenderer.vue": "Picks the component for the exercise type; covered through ExerciseShell, which renders every type via it.",
   "src/components/WritingFeedbackPanel.vue": "Display of Claude's feedback; covered through WritingExercise and ExamResultView. The correction segments are tested in logic.test.ts.",
   "src/components/KeyGuide.vue": "Static help text.",
-  "src/components/AboutContent.vue": "Static text.",
   "src/views/AboutView.vue": "Static text.",
 };
 
