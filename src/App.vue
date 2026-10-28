@@ -4,11 +4,13 @@ import { RouterLink, RouterView, useRoute } from "vue-router";
 import { useSettingsStore } from "./stores/settings";
 import { applyTheme } from "./composables/theme";
 import { useSessionStore } from "./stores/session";
+import { useReviewStore } from "./stores/review";
 import FinishSessionDialog from "./components/FinishSessionDialog.vue";
 
 const settings = useSettingsStore();
 const route = useRoute();
 const session = useSessionStore();
+const review = useReviewStore();
 function finishFromMenu() {
   closeMenu(false);
   session.openFinish();
@@ -89,20 +91,32 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
           <span aria-hidden="true">🌙</span><span class="hidden whitespace-nowrap xl:inline">Klaar voor vandaag</span>
         </button>
 
-        <!-- Mobile: hamburger button -->
-        <button
-          ref="menuButton"
-          type="button"
-          class="ml-auto grid h-11 w-11 place-items-center rounded-xl border-2 border-line text-ink transition hover:bg-surface-2 md:hidden"
-          aria-label="Menu openen"
-          aria-controls="mobile-menu"
-          :aria-expanded="menuOpen"
-          @click="openMenu"
-        >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" />
-          </svg>
-        </button>
+        <div class="ml-auto flex items-center gap-2 md:hidden">
+          <!-- Mobile: the dashboard's "Woorden herhalen" button, as a small badge. Only on the start page, where the count is fresh. -->
+          <RouterLink
+            v-if="route.path === '/' && review.count"
+            to="/woorden/herhalen"
+            class="flex h-11 items-center gap-1 rounded-xl border-2 border-line px-3 font-bold text-ink transition hover:bg-surface-2"
+            :aria-label="`Woorden herhalen (${review.count})`"
+          >
+            <span aria-hidden="true">📕</span><span aria-hidden="true">{{ review.count }}</span>
+          </RouterLink>
+
+          <!-- Mobile: hamburger button -->
+          <button
+            ref="menuButton"
+            type="button"
+            class="grid h-11 w-11 place-items-center rounded-xl border-2 border-line text-ink transition hover:bg-surface-2 md:hidden"
+            aria-label="Menu openen"
+            aria-controls="mobile-menu"
+            :aria-expanded="menuOpen"
+            @click="openMenu"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
 
