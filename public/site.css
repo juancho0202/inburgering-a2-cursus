@@ -52,6 +52,10 @@ body:has(> .site) {
   color: var(--l-link);
 }
 .site-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   max-width: 64rem;
   margin: 0 auto;
   padding: 0.75rem 1rem;
@@ -322,5 +326,126 @@ body:has(> .site) {
   }
   .site-card-guide:hover .site-guide-icon {
     transform: none;
+  }
+}
+
+/* Read by screen readers, not shown */
+.site-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.site-section-note {
+  margin: -0.5rem 0 1rem !important;
+  color: var(--l-muted);
+}
+
+/* Language menu in the header (a native <details>) */
+.site-lang {
+  position: relative;
+  flex: none;
+}
+.site-lang summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--l-line);
+  border-radius: 999px;
+  background: var(--l-surface);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.site-lang summary::-webkit-details-marker {
+  display: none;
+}
+.site-lang summary svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--l-muted);
+}
+.site-lang summary::after {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  margin: 0 0.1rem 0.2rem 0.15rem;
+  border-right: 2px solid var(--l-muted);
+  border-bottom: 2px solid var(--l-muted);
+  transform: rotate(45deg);
+}
+.site-lang[open] summary::after {
+  margin-bottom: -0.2rem;
+  transform: rotate(-135deg);
+}
+.site-lang summary:hover {
+  border-color: var(--l-brand);
+}
+.site-lang summary:focus-visible {
+  outline: 3px solid var(--l-brand);
+  outline-offset: 2px;
+}
+.site-lang-code {
+  display: none;
+}
+.site-lang ul {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  z-index: 10;
+  min-width: 11rem;
+  margin: 0;
+  padding: 0.35rem;
+  border: 1px solid var(--l-line);
+  border-radius: 0.9rem;
+  background: var(--l-surface);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.15);
+  list-style: none;
+}
+.site .site-lang a {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.6rem;
+  color: var(--l-ink);
+  text-decoration: none;
+}
+.site .site-lang a:hover {
+  background: var(--l-bg);
+}
+.site .site-lang a[aria-current="page"] {
+  color: var(--l-link);
+  font-weight: 700;
+}
+.site .site-lang a[aria-current="page"]::after {
+  content: "✓";
+}
+/* A narrow phone: the brand and the menu share one line, so the menu shows the language code */
+@media (max-width: 26rem) {
+  .site-lang-name {
+    display: none;
+  }
+  .site-lang-code {
+    display: inline;
+  }
+  .site .site-brand {
+    font-size: 1.05rem;
+    white-space: nowrap;
+  }
+  .site-lang summary {
+    padding: 0.4rem 0.6rem;
+  }
+  .site-top {
+    gap: 0.5rem;
+  }
+}
+/* The narrowest phones: the globe makes room for the name */
+@media (max-width: 22.5rem) {
+  .site-lang summary svg {
+    display: none;
   }
 }

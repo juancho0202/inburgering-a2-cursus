@@ -11,6 +11,7 @@
     "heading": "Free inburgering practice exam (A2)",
     "tagline": "Inburgering exam practice for Reading, Listening, KNM and Writing. Explained in English, practised in Dutch, just like the real exam.",
     "start": "Start practising, it's free",
+    "language": "Language",
     "partsHeading": "What you can practise",
     "parts": [
       { "title": "Reading (Lezen)", "text": "Short Dutch texts like letters, notices and ads, with questions." },
@@ -27,6 +28,7 @@
       { "title": "Made for A2", "text": "Lessons, words and exercises at the level of the A2 exam." }
     ],
     "guidesHeading": "Guides to the DUO process",
+    "guidesNote": "",
     "faqHeading": "Frequently asked questions",
     "faq": [
       { "q": "Is this the official inburgering exam?", "a": "No. Train for Inburgering is not part of DUO. You take the real exam at a DUO exam location. DUO also has free [official practice exams](https://www.inburgeren.nl/en/taking-the-integration-exam/practicing.jsp): try those too, so you know the real exam screens." },

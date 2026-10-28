@@ -267,5 +267,33 @@ test("the guides open from the landing page, also once the app is installed for 
   await expect(page.getByRole("heading", { level: 1, name: "How to log in to Mijn Inburgering" })).toBeVisible();
   await page.goto("/guides/");
   await expect(page.getByRole("heading", { level: 1, name: "Guides to the inburgering process" })).toBeVisible();
+  await page.goto("/nl/");
+  await expect(page.getByRole("heading", { level: 1, name: "Gratis oefenexamen inburgering (A2)" })).toBeVisible();
   expect(violations).toEqual([]);
+});
+
+test("the language menu goes to the landing page in that language, and its start link opens the app in it", async ({ page }) => {
+  await page.goto("/");
+  await page.locator(".site-lang summary").click();
+  await page.getByRole("link", { name: "Nederlands" }).click();
+  await expect(page).toHaveURL(/\/nl\/$/);
+  await expect(page.getByRole("heading", { level: 1, name: "Gratis oefenexamen inburgering (A2)" })).toBeVisible();
+  await expect(page.locator("html")).toHaveAttribute("lang", "nl");
+
+  await page.locator(".site-lang summary").click();
+  await page.getByRole("link", { name: "Español" }).click();
+  await expect(page).toHaveURL(/\/es\/$/);
+  await expect(page.getByRole("heading", { level: 1, name: "Examen de práctica de inburgering gratis (A2)" })).toBeVisible();
+
+  // a narrow phone: the header (name and menu) fits, nothing scrolls sideways
+  await page.setViewportSize({ width: 320, height: 640 });
+  for (const path of ["/", "/nl/", "/es/"]) {
+    await page.goto(path);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth), `${path} scrolls sideways`).toBeLessThanOrEqual(0);
+  }
+
+  // the Spanish start link opens the app with Spanish chosen, and the address loses ?lang=
+  await page.getByRole("link", { name: "Empieza a practicar, es gratis" }).first().click();
+  await expect(page.getByRole("radio", { name: "Español" })).toHaveAttribute("aria-checked", "true");
+  expect(page.url()).not.toContain("lang=");
 });

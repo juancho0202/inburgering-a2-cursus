@@ -5,7 +5,7 @@ import path from "node:path";
 import { VitePWA } from "vite-plugin-pwa";
 import { coursePlugin } from "./scripts/vitePluginCourse";
 import { SECURITY_HEADERS, netlifyHeadersFile } from "./scripts/securityHeaders";
-import { sitePlugin } from "./scripts/site";
+import { STATIC_DIRS, sitePlugin } from "./scripts/site";
 
 export default defineConfig({
   plugins: [
@@ -75,8 +75,9 @@ export default defineConfig({
           },
         ],
         navigateFallback: "/index.html",
-        // Anthropic calls (BYOK) must always go to the network; the guides are their own pages, not the app.
-        navigateFallbackDenylist: [/^\/api\//, /^\/guides(\/|$)/],
+        // Anthropic calls (BYOK) must always go to the network; the guides and the other languages' landing pages
+        // are pages of their own, not the app.
+        navigateFallbackDenylist: [/^\/api\//, ...STATIC_DIRS.map((dir) => new RegExp(`^/${dir}(/|$)`))],
       },
     }),
   ],

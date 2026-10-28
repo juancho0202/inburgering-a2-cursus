@@ -2,7 +2,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { fillIndexHtml, loadGuides, SITE_URL, type SiteStrings } from "../../scripts/site";
+import { fillIndexHtml, loadGuides, SITE_LANGUAGES, SITE_URL, type SiteStrings } from "../../scripts/site";
 import en from "../../site/strings/en.json";
 
 const indexHtml = readFileSync(path.resolve(__dirname, "../../index.html"), "utf8");
@@ -37,6 +37,7 @@ describe("landing page in index.html", () => {
 
   it("puts the heading, the start link, the FAQ and the guide links in the HTML itself", () => {
     expect(body).toContain("<h1>Free inburgering practice exam (A2)</h1>");
+    // into the app, which follows the browser's language: "/" is every visitor's default page
     expect(body.match(/<a class="site-start" href="\/welkom">Start practising, it's free<\/a>/g)).toHaveLength(2);
     expect(body).toContain("<h2>Frequently asked questions</h2>");
     // each guide as a card: its picture, its title as the link, its description under it
@@ -82,7 +83,7 @@ describe("landing page in index.html", () => {
     expect(body).toContain('<a href="https://www.inburgeren.nl/en/taking-the-integration-exam/practicing.jsp" target="_blank" rel="noopener noreferrer">official practice exams</a>');
     const evil = structuredClone(en) as SiteStrings;
     evil.landing.faq = [{ q: "<b>q</b>", a: 'x <img src=x onerror=alert(1)> [y](javascript:alert(1))' }];
-    const html = fillIndexHtml(indexHtml, evil);
+    const html = fillIndexHtml(indexHtml, { ...SITE_LANGUAGES[0], strings: evil });
     expect(html).not.toContain("<img src=x");
     expect(html).not.toContain("<b>q</b>");
     expect(html).not.toContain('href="javascript:');
@@ -93,7 +94,7 @@ describe("landing page in index.html", () => {
     evil.meta.title = "A </title><script>x()</script>";
     evil.landing.heading = "<img src=x onerror=alert(1)>";
     evil.meta.siteName = "</script><script>x()</script>";
-    const html = fillIndexHtml(indexHtml, evil);
+    const html = fillIndexHtml(indexHtml, { ...SITE_LANGUAGES[0], strings: evil });
     expect(html).not.toContain("<script>x()");
     expect(html).not.toContain("<img src=x");
     // the structured data still reads back as the same name

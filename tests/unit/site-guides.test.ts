@@ -119,9 +119,9 @@ describe("guide card pictures", () => {
 });
 
 describe("search files", () => {
-  it("the sitemap lists the landing page, the guides page and every guide, and no app screens", () => {
+  it("the sitemap lists the landing page in every language, the guides page and every guide, and no app screens", () => {
     const locs = [...pages["sitemap.xml"].matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
-    expect(locs).toEqual([`${SITE_URL}/`, `${SITE_URL}/guides/`, ...guides.map((g) => `${SITE_URL}/guides/${g.slug}/`)]);
+    expect(locs).toEqual([`${SITE_URL}/`, `${SITE_URL}/nl/`, `${SITE_URL}/es/`, `${SITE_URL}/guides/`, ...guides.map((g) => `${SITE_URL}/guides/${g.slug}/`)]);
   });
 
   it("robots.txt allows crawling and points to the sitemap", () => {
