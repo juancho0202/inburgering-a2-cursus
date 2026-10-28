@@ -22,6 +22,7 @@ const en: Messages = {
   },
   language: {
     choose: "Choose your language",
+    recommended: "Recommended",
     dutchStays: "Lessons, exercises and exams stay in Dutch. In Settings you choose how much Dutch you see in the rest of the app.",
   },
   welcome: {
@@ -83,7 +84,7 @@ const en: Messages = {
     level0: "My language",
     level0Hint: "Everything in the app in your language. A word you have learned is shown in Dutch.",
     level1: "Dutch with my language",
-    level1Hint: "Buttons in Dutch, with your language small underneath. The flag next to a title shows that title in your language. A word you have learned no longer gets a translation.",
+    level1Hint: "Buttons and titles in Dutch, with your language small underneath. A word you have learned no longer gets a translation.",
     level2: "Dutch only",
     level2Hint: "Like in real life. And like the exam.",
     feedbackOwn: "Feedback in my language",

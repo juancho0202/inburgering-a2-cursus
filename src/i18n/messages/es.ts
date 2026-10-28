@@ -22,6 +22,7 @@ const es: Messages = {
   },
   language: {
     choose: "Elige tu idioma",
+    recommended: "Recomendado",
     dutchStays: "Las lecciones, los ejercicios y los exámenes siguen en neerlandés. En Ajustes eliges cuánto neerlandés ves en el resto de la app.",
   },
   welcome: {
@@ -83,7 +84,7 @@ const es: Messages = {
     level0: "Mi idioma",
     level0Hint: "Todo lo de la app en tu idioma. Una palabra que ya aprendiste aparece en neerlandés.",
     level1: "Neerlandés con mi idioma",
-    level1Hint: "Botones en neerlandés, con tu idioma pequeño debajo. La bandera junto a un título muestra ese título en tu idioma. Una palabra que ya aprendiste deja de tener traducción.",
+    level1Hint: "Botones y títulos en neerlandés, con tu idioma pequeño debajo. Una palabra que ya aprendiste deja de tener traducción.",
     level2: "Solo neerlandés",
     level2Hint: "Como en la vida real. Y como el examen.",
     feedbackOwn: "Comentarios en mi idioma",

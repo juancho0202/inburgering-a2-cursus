@@ -21,6 +21,7 @@ const nl = {
   },
   language: {
     choose: "Kies je taal",
+    recommended: "Aanbevolen",
     dutchStays: "De lessen, oefeningen en examens blijven in het Nederlands. Bij Instellingen kies je hoeveel Nederlands je in de rest van de app ziet.",
   },
   welcome: {
@@ -82,7 +83,7 @@ const nl = {
     level0: "Mijn taal",
     level0Hint: "Alles van de app in jouw taal. Een woord dat je hebt geleerd, staat in het Nederlands.",
     level1: "Nederlands met mijn taal erbij",
-    level1Hint: "Knoppen in het Nederlands, met je eigen taal klein eronder. Met de vlag bij een titel zie je die titel in je eigen taal. Een woord dat je hebt geleerd, krijgt geen vertaling meer.",
+    level1Hint: "Knoppen en titels in het Nederlands, met je eigen taal klein eronder. Een woord dat je hebt geleerd, krijgt geen vertaling meer.",
     level2: "Alleen Nederlands",
     level2Hint: "Zoals in het echte leven. En zoals het examen.",
     feedbackOwn: "Feedback in mijn taal",

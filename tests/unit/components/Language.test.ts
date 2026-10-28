@@ -61,65 +61,48 @@ async function openApp(s: Settings, url = "/") {
   await flushPromises();
   return m;
 }
-const nextButton = (w: VueWrapper) => w.findAll("main button:not(.ui-flag)")[0];
-/** A button label: its Dutch line and the small line under it (null when there is none). */
+const nextButton = (w: VueWrapper) => w.findAll("main button")[0];
+/** A label: its Dutch line and the small line under it, or just its text when there is no second line. */
 const lines = (b: VueWrapper | ReturnType<VueWrapper["find"]>) => {
   const sub = b.find(".ui-sub");
   return sub.exists() ? [b.find("[lang=nl]").text(), sub.text()] : [b.text()];
 };
 const title = (w: VueWrapper) => w.find("#title");
-const flag = (w: VueWrapper) => w.find("#title button");
 
 describe("immersion levels (learner's language: English)", () => {
-  it("level 1: buttons are Dutch with English under them, headings are Dutch with a flag, the rest is English", async () => {
+  it("level 1: buttons and headings are Dutch with English in small under them, the rest is English", async () => {
     const { wrapper } = await openApp({ language: "en", immersion: 1 });
     expect(lines(nextButton(wrapper))).toEqual(["Volgende", "Next"]);
-    expect(title(wrapper).text()).toContain("Dit moet je meer oefenen");
-    expect(flag(wrapper).text()).toBe("🇬🇧");
+    expect(lines(title(wrapper))).toEqual(["Dit moet je meer oefenen", "Practise these more"]);
     expect(wrapper.find("#chip").text()).toBe("New");
     expect(wrapper.find("#prose").text()).toBe("Ready to learn? Start with a lesson.");
     expect(document.documentElement.lang).toBe("en");
   });
 
-  it("the flag switches only that heading to English, and back to Dutch", async () => {
-    const { wrapper } = await openApp({ language: "en", immersion: 1 });
-    await flag(wrapper).trigger("click");
-    expect(title(wrapper).text()).toContain("Practise these more");
-    expect(title(wrapper).text()).not.toContain("Dit moet je");
-    expect(flag(wrapper).text()).toBe("🇳🇱");
-    expect(flag(wrapper).attributes("aria-pressed")).toBe("true");
-    expect(lines(nextButton(wrapper))).toEqual(["Volgende", "Next"]);
-
-    await flag(wrapper).trigger("click");
-    expect(title(wrapper).text()).toContain("Dit moet je meer oefenen");
-  });
-
-  it("level 0 shows only English, without flags", async () => {
+  it("level 0 shows only English", async () => {
     const { wrapper } = await openApp({ language: "en", immersion: 0 });
     expect(lines(nextButton(wrapper))).toEqual(["Next"]);
-    expect(title(wrapper).text()).toBe("Practise these more");
-    expect(flag(wrapper).exists()).toBe(false);
+    expect(lines(title(wrapper))).toEqual(["Practise these more"]);
   });
 
   it("level 2 shows only Dutch, also the longer text, and the page says it is Dutch", async () => {
     const { wrapper } = await openApp({ language: "en", immersion: 2 });
     expect(lines(nextButton(wrapper))).toEqual(["Volgende"]);
-    expect(flag(wrapper).exists()).toBe(false);
+    expect(lines(title(wrapper))).toEqual(["Dit moet je meer oefenen"]);
     expect(wrapper.find("#chip").text()).toBe("Nieuw");
     expect(wrapper.find("#prose").text()).toBe("Klaar om te leren? Begin met een les.");
     expect(document.documentElement.lang).toBe("nl");
   });
 
-  it("with Dutch as the language there are no translations and no flags", async () => {
+  it("with Dutch as the language there are no translations", async () => {
     const { wrapper } = await openApp({ language: "nl", immersion: 1 });
     expect(lines(nextButton(wrapper))).toEqual(["Volgende"]);
-    expect(flag(wrapper).exists()).toBe(false);
+    expect(lines(title(wrapper))).toEqual(["Dit moet je meer oefenen"]);
   });
 
   it("works the same in Spanish", async () => {
     const { wrapper } = await openApp({ language: "es", immersion: 1 });
     expect(lines(nextButton(wrapper))).toEqual(["Volgende", "Siguiente"]);
-    expect(flag(wrapper).text()).toBe("🇪🇸");
     expect(document.documentElement.lang).toBe("es");
   });
 });
@@ -131,14 +114,14 @@ describe("labels that graduate to Dutch", () => {
     fakeApi.on("GET", "/vocab", vocab("learned"));
     const { wrapper } = await openApp({ language: "en", immersion: 1 });
     expect(lines(nextButton(wrapper))).toEqual(["Volgende"]);
-    expect(lines(wrapper.findAll("main button:not(.ui-flag)")[1])).toEqual(["Vorige", "Previous"]);
+    expect(lines(wrapper.findAll("main button")[1])).toEqual(["Vorige", "Previous"]);
   });
 
   it("at 'my language' a learned word is shown in Dutch", async () => {
     fakeApi.on("GET", "/vocab", vocab("learned"));
     const { wrapper } = await openApp({ language: "en", immersion: 0 });
     expect(lines(nextButton(wrapper))).toEqual(["Volgende"]);
-    expect(lines(wrapper.findAll("main button:not(.ui-flag)")[1])).toEqual(["Previous"]);
+    expect(lines(wrapper.findAll("main button")[1])).toEqual(["Previous"]);
   });
 
   it("a word that is still being learned keeps its translation", async () => {
@@ -189,6 +172,16 @@ describe("choosing a language", () => {
     expect(lines(buttonWith(wrapper, "Volgende")!)).toEqual(["Volgende", "Siguiente"]);
     // so the next visit starts in Spanish before the settings are loaded
     expect(localStorage.getItem("uiLanguage")).toBe("es");
+  });
+
+  it("Dutch comes first in the picker and is recommended, in the language the page is shown in", async () => {
+    serveSettings({ language: "es" });
+    const { wrapper } = await mountApp({ components: { LanguagePicker }, template: `<LanguagePicker />` });
+    await useSettingsStore().load();
+    await flushPromises();
+    const options = wrapper.findAll("[role=radio]");
+    expect(options[0].text()).toBe("Nederlands Recomendado");
+    expect(options.slice(1).map((o) => o.text())).toEqual(["English", "Español"]);
   });
 
   it("an existing learner without a language gets the picker on the start page, until they choose", async () => {

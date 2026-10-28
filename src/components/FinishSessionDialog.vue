@@ -82,7 +82,7 @@ const accuracy = computed(() => (summary.value && summary.value.answersToday ? M
 <template>
   <div v-if="session.finishOpen" class="fixed inset-0 z-[60] grid place-items-center bg-black/50 p-4" role="dialog" aria-modal="true" aria-labelledby="finish-title" @keydown.esc="session.closeFinish()">
     <div ref="dialog" tabindex="-1" class="card max-h-[90vh] w-full max-w-lg overflow-y-auto p-6 outline-none">
-      <h2 id="finish-title" class="text-2xl font-extrabold"><UiLabel variant="heading" k="app.finish" /> 🌙</h2>
+      <h2 id="finish-title" class="text-2xl font-extrabold"><span aria-hidden="true">🌙 </span><UiLabel variant="heading" k="app.finish" /></h2>
       <p v-if="!summary" class="mt-3 text-muted">{{ lang.t("common.loading") }}</p>
 
       <template v-else>

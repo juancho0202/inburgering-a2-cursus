@@ -25,6 +25,7 @@ const lang = useLanguageStore();
         @click="lang.choose(l.code)"
       >
         {{ l.name }}
+        <span v-if="l.code === 'nl'" class="block text-sm font-semibold opacity-80" :lang="lang.proseLocale">{{ lang.t("language.recommended") }}</span>
       </button>
     </div>
     <p v-if="!lang.isDutch" class="mt-2 text-sm text-muted"><UiText k="language.dutchStays" /></p>

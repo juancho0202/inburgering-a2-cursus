@@ -88,7 +88,7 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? lang.t("dashboard.wr
     <section class="card relative overflow-hidden p-6 sm:p-8 md:col-span-2 md:col-start-1 md:row-start-1 md:grid md:grid-cols-subgrid">
       <div class="absolute -right-10 -top-10 h-44 w-44 rounded-full bg-brand-bg" aria-hidden="true" />
       <div class="relative">
-        <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl"><UiLabel variant="heading" k="dashboard.welcomeBack" /> 👋</h1>
+        <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl"><span aria-hidden="true">👋 </span><UiLabel variant="heading" k="dashboard.welcomeBack" /></h1>
         <p class="mt-1 text-muted">
           <UiText v-if="data.lastLocation" k="dashboard.busyWith" :params="{ title: data.lastLocation.unitTitle }" />
           <UiText v-else k="dashboard.ready" />

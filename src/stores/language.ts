@@ -9,9 +9,9 @@ type Params = Record<string, unknown>;
 /** How a label is shown: only Dutch, only the learner's language, or Dutch with the learner's language too. */
 export type LabelMode = "nl" | "own" | "both";
 /**
- * Where a label sits. "button" (buttons, menu items): Dutch with the learner's language in small under it.
- * "heading": Dutch with a flag that switches that heading to the learner's language. "inline" (in a sentence, a chip,
- * a table header): too small for either, so the learner's language until its words are learned.
+ * Where a label sits. "button" (buttons, menu items) and "heading": Dutch with the learner's language in small under
+ * it (centred under a button, aligned like the heading under a heading). "inline" (in a sentence, a chip, a table
+ * header): no room for a second line, so the learner's language until its words are learned.
  */
 export type LabelVariant = "button" | "heading" | "inline";
 

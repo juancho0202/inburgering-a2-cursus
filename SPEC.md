@@ -719,10 +719,11 @@ carries a `dir` for right-to-left.
 | Level | Buttons, menu items | Headings | Small labels (chips, table headers, in a sentence) | Longer text |
 | --- | --- | --- | --- | --- |
 | 0 My language | learner's language | learner's language | learner's language | learner's language |
-| 1 Dutch with my language | **Volgende**, with *Next* small under it | Dutch, with a flag (🇬🇧) that switches that heading to the learner's language and back | learner's language | learner's language |
+| 1 Dutch with my language | **Volgende**, with *Next* small under it | Dutch, with the learner's language small under it | learner's language | learner's language |
 | 2 Dutch only | Dutch | Dutch | Dutch | Dutch |
 
-A translation is never put next to the Dutch on the same line (it looked cluttered).
+A translation is never put next to the Dutch on the same line (it looked cluttered), and there are no per-heading
+flags (tried, dropped): the small line under the Dutch is the one way a label is shown in two languages.
 
 **Words that graduate.** At levels 0 and 1 a label is Dutch only once all its words are learned (Leitner box 4+)
 in "Woorden herhalen". The mapping label → words is `GLOSSARY` in `src/i18n/glossary.ts`; the words are course
@@ -732,7 +733,8 @@ basis). In Unit 0's word cards the app shows each word's translation from its ow
 **The mock exam is Dutch only** (route meta `dutchOnly`), whatever the level, like the real exam. The exams page says
 so in the learner's language before the exam starts; the result page is feedback (Dutch first, with "In mijn taal").
 
-**Choosing.** The welcome page has a language picker (each language named in its own language). Before the learner
+**Choosing.** The welcome page has a language picker (each language named in its own language), with Nederlands
+first and marked "recommended" (the most practice). Before the learner
 chooses, the app uses: the language last used on this device (`localStorage`), else `?lang=xx` from the language
 landing pages (read once at start, then removed from the address), else the browser's language, else English.
 Starting the course saves the language shown. Learners from before languages existed get the picker on the start
