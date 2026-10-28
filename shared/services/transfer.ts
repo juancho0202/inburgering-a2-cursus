@@ -191,6 +191,7 @@ export function convertLegacyExport(legacy: LegacyExport): ProgressFile {
       soundEffects: true,
       voiceAnnouncements: true,
       lessonMusic: true,
+      moduleOrder: [],
       updatedAt: progress.lastActivityAt ?? startedAt,
     };
   }

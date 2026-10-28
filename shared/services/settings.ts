@@ -27,6 +27,7 @@ const UpdateSchema = z
     soundEffects: z.boolean(),
     voiceAnnouncements: z.boolean(),
     lessonMusic: z.boolean(),
+    moduleOrder: z.array(z.string().max(100)).max(100),
   })
   .partial();
 

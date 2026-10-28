@@ -199,6 +199,12 @@ describe("dashboard and practice", () => {
       expect((await dashboard(env)).nextUnitId).toBe("basis-a");
     });
 
+    it("follows the learner's own module order", async () => {
+      const { env } = makeEnv();
+      await updateSettings(env, { moduleOrder: ["schrijven", "knm"] });
+      expect((await dashboard(env)).nextUnitId).toBe("schrijven-kort");
+    });
+
     it("skips modules without lessons, and is null when there are no lessons at all", async () => {
       const { env } = makeEnv();
       const real = [...env.content.modules];
@@ -207,6 +213,17 @@ describe("dashboard and practice", () => {
       env.content.modules = new Map([["proefexamens", { id: "proefexamens", title: "Proef", description: "d", icon: "timer", units: [] }]]);
       expect((await dashboard(env)).nextUnitId).toBeNull();
     });
+  });
+
+  it("lists modules in the learner's order; modules they never placed follow in course order", async () => {
+    const { env } = makeEnv();
+    const courseOrder = (await dashboard(env)).modules.map((m) => m.id);
+    expect(courseOrder.slice(0, 3)).toEqual(["basis", "knm", "schrijven"]);
+    // "gone" is a module that no longer exists: it is ignored.
+    await updateSettings(env, { moduleOrder: ["schrijven", "gone", "knm"] });
+    const ids = (await dashboard(env)).modules.map((m) => m.id);
+    expect(ids).toEqual(["schrijven", "knm", ...courseOrder.filter((id) => id !== "schrijven" && id !== "knm")]);
+    await expect(updateSettings(env, { moduleOrder: "knm" })).rejects.toMatchObject({ status: 400 });
   });
 
   it("finds hard items and the weakest tags, and builds practice sessions from them", async () => {

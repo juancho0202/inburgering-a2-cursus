@@ -79,3 +79,34 @@ test("every screen opens without errors", async ({ page }) => {
   }
   expect(errors).toEqual([]);
 });
+
+test("holding a module card on a phone lets the same finger drag it to the top, and the order stays after a refresh", async ({ page }) => {
+  await startFresh(page);
+  const cards = page.locator("[data-module-id]");
+  const titles = () => cards.locator("h3").allInnerTexts();
+  const before = await titles();
+  const last = cards.last();
+  await last.scrollIntoViewIfNeeded();
+  const from = (await last.boundingBox())!;
+  // Real touch events (Playwright's touchscreen only taps): hold still, then drag up without lifting the finger.
+  const cdp = await page.context().newCDPSession(page);
+  const touch = (type: string, x: number, y: number) =>
+    cdp.send("Input.dispatchTouchEvent", { type, touchPoints: type === "touchEnd" ? [] : [{ x, y }] });
+  const x = from.x + from.width / 2;
+  let y = from.y + from.height / 2;
+  await touch("touchStart", x, y);
+  await page.waitForTimeout(800);
+  await expect(page.getByRole("button", { name: "Klaar" })).toBeVisible();
+  // Up to the top edge of the screen and rest there: the page scrolls along until the card is first.
+  while (y > 30) {
+    y = Math.max(30, y - 20);
+    await touch("touchMove", x, y);
+  }
+  await page.waitForTimeout(2500);
+  await touch("touchMove", x, y + 1);
+  await touch("touchEnd", x, y);
+  const moved = [before.at(-1)!, ...before.slice(0, -1)];
+  await expect.poll(titles).toEqual(moved);
+  await page.reload();
+  await expect.poll(titles).toEqual(moved);
+});
