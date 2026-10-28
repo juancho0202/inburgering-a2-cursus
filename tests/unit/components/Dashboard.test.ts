@@ -1,10 +1,11 @@
 // @vitest-environment jsdom
 // The start page and the module page: where "continue" leads and what is recommended next.
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import App from "../../../src/App.vue";
 import DashboardView from "../../../src/views/DashboardView.vue";
 import ModuleView from "../../../src/views/ModuleView.vue";
-import { clickButton, fakeApi, flushPromises, mountApp } from "../../helpers/component";
+import ModuleCards from "../../../src/components/ModuleCards.vue";
+import { buttonWith, clickButton, deferred, fakeApi, flushPromises, mountApp } from "../../helpers/component";
 import { useSessionStore } from "../../../src/stores/session";
 
 const background = vi.hoisted(() => ({ ready: false }));
@@ -150,6 +151,220 @@ describe("DashboardView", () => {
     fakeApi.fail("GET", "/dashboard", "Database niet beschikbaar.");
     const { wrapper } = await mountApp(DashboardView, { routePath: "/", url: "/" });
     expect(wrapper.text()).toContain("Database niet beschikbaar.");
+  });
+});
+
+describe("putting the modules in your own order", () => {
+  const three = [
+    { id: "basis", title: "Basis", total: 3, completed: 1 },
+    { id: "knm", title: "KNM", total: 2, completed: 0 },
+    { id: "exams", title: "Proefexamens", total: 0, completed: 0 },
+  ];
+  const open = () => {
+    fakeApi.on("GET", "/dashboard", dashboard({ modules: three }));
+    fakeApi.on("PUT", "/settings", (body) => ({ apiKey: null, ...(body as object) }));
+    return mountApp(DashboardView, { routePath: "/", url: "/" });
+  };
+  const titles = (w: any) => w.findAll("[data-module-id] h3").map((h: any) => h.text());
+  const card = (w: any, id: string) => w.find(`[data-module-id='${id}']`);
+  const handle = (w: any, id: string) => card(w, id).find("[data-handle]");
+  const saved = () => fakeApi.to("PUT", "/settings").map((c) => (c.body as { moduleOrder: string[] }).moduleOrder);
+  const pointer = (type: string, target: EventTarget, at: { x?: number; y?: number } = {}) =>
+    target.dispatchEvent(new PointerEvent(type, { bubbles: true, cancelable: true, button: 0, clientX: at.x ?? 100, clientY: at.y ?? 300 }));
+  // jsdom has no layout: say which card is under the finger.
+  let under: Element | null = null;
+  beforeEach(() => {
+    under = null;
+    document.elementFromPoint = vi.fn(() => under);
+  });
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it("without edit mode there are no drag handles and a card opens its module", async () => {
+    const { wrapper, router } = await open();
+    expect(wrapper.find("[data-handle]").exists()).toBe(false);
+    await card(wrapper, "knm").trigger("click");
+    await flushPromises();
+    expect(router.currentRoute.value.path).toBe("/module/knm");
+  });
+
+  it("the edit button shows a handle on every card; in edit mode a card does not open, and 'Klaar' ends it", async () => {
+    const { wrapper, router } = await open();
+    await clickButton(wrapper, "Volgorde aanpassen");
+    expect(wrapper.findAll("[data-handle]").map((h) => h.attributes("aria-label"))).toEqual(["Verplaats Basis", "Verplaats KNM", "Verplaats Proefexamens"]);
+    await card(wrapper, "knm").trigger("click");
+    await flushPromises();
+    expect(router.currentRoute.value.path).toBe("/");
+    await clickButton(wrapper, "Klaar");
+    expect(wrapper.find("[data-handle]").exists()).toBe(false);
+    await card(wrapper, "knm").trigger("click");
+    await flushPromises();
+    expect(router.currentRoute.value.path).toBe("/module/knm");
+  });
+
+  it("dragging a card by its handle onto another place moves it there and saves the new order once", async () => {
+    const { wrapper } = await open();
+    await clickButton(wrapper, "Volgorde aanpassen");
+    pointer("pointerdown", handle(wrapper, "exams").element);
+    under = card(wrapper, "knm").element;
+    pointer("pointermove", window);
+    under = card(wrapper, "basis").element.querySelector("h3");
+    pointer("pointermove", window);
+    await flushPromises();
+    expect(titles(wrapper)).toEqual(["Proefexamens", "Basis", "KNM"]);
+    expect(saved()).toEqual([]); // not while the finger is still down
+    pointer("pointerup", window);
+    await flushPromises();
+    expect(saved()).toEqual([["exams", "basis", "knm"]]);
+    expect(wrapper.find("[role=status]").text()).toBe("Proefexamens staat nu op plek 1 van 3.");
+  });
+
+  it("a drag that ends where it started saves nothing", async () => {
+    const { wrapper } = await open();
+    await clickButton(wrapper, "Volgorde aanpassen");
+    pointer("pointerdown", handle(wrapper, "basis").element);
+    under = card(wrapper, "knm").element;
+    pointer("pointermove", window);
+    // Back up: KNM now sits in the first place, where Basis was.
+    pointer("pointermove", window);
+    pointer("pointerup", window);
+    await flushPromises();
+    expect(titles(wrapper)).toEqual(["Basis", "KNM", "Proefexamens"]);
+    expect(saved()).toEqual([]);
+  });
+
+  it("a finger resting near the top edge keeps scrolling the page up, until it is lifted", async () => {
+    const { wrapper } = await open();
+    vi.useFakeTimers({ toFake: ["requestAnimationFrame", "cancelAnimationFrame"] });
+    const scrollBy = vi.fn();
+    window.scrollBy = scrollBy;
+    await clickButton(wrapper, "Volgorde aanpassen");
+    pointer("pointerdown", handle(wrapper, "exams").element);
+    pointer("pointermove", window, { y: 10 });
+    await vi.advanceTimersByTimeAsync(200);
+    expect(scrollBy.mock.calls.length).toBeGreaterThan(5);
+    expect(scrollBy).toHaveBeenLastCalledWith(0, -12);
+    pointer("pointerup", window);
+    scrollBy.mockClear();
+    await vi.advanceTimersByTimeAsync(200);
+    expect(scrollBy).not.toHaveBeenCalled();
+  });
+
+  it("the arrow keys on a handle move the card one place and keep the focus on it; past the end nothing happens", async () => {
+    const { wrapper } = await open();
+    await clickButton(wrapper, "Volgorde aanpassen");
+    (handle(wrapper, "basis").element as HTMLElement).focus();
+    await handle(wrapper, "basis").trigger("keydown", { key: "ArrowDown" });
+    await flushPromises();
+    expect(titles(wrapper)).toEqual(["KNM", "Basis", "Proefexamens"]);
+    expect(document.activeElement).toBe(handle(wrapper, "basis").element);
+    const errors = vi.spyOn(console, "error").mockImplementation(() => {});
+    const warnings = vi.spyOn(console, "warn").mockImplementation(() => {});
+    await handle(wrapper, "knm").trigger("keydown", { key: "ArrowUp" }); // already first
+    await handle(wrapper, "exams").trigger("keydown", { key: "ArrowDown" }); // already last
+    await flushPromises();
+    expect([...errors.mock.calls, ...warnings.mock.calls]).toEqual([]);
+    errors.mockRestore();
+    warnings.mockRestore();
+    expect(saved()).toEqual([["knm", "basis", "exams"]]);
+  });
+
+  it("holding a card opens edit mode, and the same finger can drag it right away", async () => {
+    const { wrapper, router } = await open();
+    vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
+    pointer("pointerdown", card(wrapper, "exams").find("h3").element);
+    await vi.advanceTimersByTimeAsync(599);
+    expect(wrapper.find("[data-handle]").exists()).toBe(false);
+    await vi.advanceTimersByTimeAsync(1);
+    expect(wrapper.find("[data-handle]").exists()).toBe(true);
+    under = card(wrapper, "basis").element;
+    pointer("pointermove", window);
+    pointer("pointerup", window);
+    // The release after a hold is not a tap that opens the module.
+    await card(wrapper, "basis").trigger("click");
+    await flushPromises();
+    expect(router.currentRoute.value.path).toBe("/");
+    expect(saved()).toEqual([["exams", "basis", "knm"]]);
+  });
+
+  it("a short tap or a finger that scrolls does not start edit mode", async () => {
+    const { wrapper } = await open();
+    vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
+    pointer("pointerdown", card(wrapper, "knm").element);
+    pointer("pointerup", window);
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(wrapper.find("[data-handle]").exists()).toBe(false);
+    pointer("pointerdown", card(wrapper, "knm").element, { y: 300 });
+    pointer("pointermove", window, { y: 330 });
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(wrapper.find("[data-handle]").exists()).toBe(false);
+  });
+
+  it("the phone's long-press menu is replaced by edit mode", async () => {
+    const { wrapper } = await open();
+    pointer("pointerdown", card(wrapper, "knm").element);
+    const menu = new MouseEvent("contextmenu", { bubbles: true, cancelable: true });
+    card(wrapper, "knm").element.dispatchEvent(menu);
+    await flushPromises();
+    expect(menu.defaultPrevented).toBe(true);
+    expect(wrapper.find("[data-handle]").exists()).toBe(true);
+  });
+
+  it("when saving fails the learner is told, the new order stays on screen, and the next move clears the message", async () => {
+    const { wrapper } = await open();
+    fakeApi.fail("PUT", "/settings", "Database niet beschikbaar.");
+    await clickButton(wrapper, "Volgorde aanpassen");
+    await handle(wrapper, "basis").trigger("keydown", { key: "ArrowDown" });
+    await flushPromises();
+    expect(wrapper.find("[role=alert]").text()).toBe("De volgorde is niet bewaard. Probeer het nog een keer.");
+    expect(titles(wrapper)).toEqual(["KNM", "Basis", "Proefexamens"]);
+    fakeApi.on("PUT", "/settings", {});
+    await handle(wrapper, "basis").trigger("keydown", { key: "ArrowDown" });
+    await flushPromises();
+    expect(wrapper.find("[role=alert]").exists()).toBe(false);
+    expect(saved().at(-1)).toEqual(["knm", "exams", "basis"]);
+  });
+
+  it("two quick moves are saved one after the other, so the last order wins", async () => {
+    const { wrapper } = await open();
+    const first = deferred();
+    fakeApi.on("PUT", "/settings", () => first.promise);
+    await clickButton(wrapper, "Volgorde aanpassen");
+    await handle(wrapper, "basis").trigger("keydown", { key: "ArrowDown" });
+    await handle(wrapper, "basis").trigger("keydown", { key: "ArrowDown" });
+    await flushPromises();
+    expect(saved()).toEqual([["knm", "basis", "exams"]]);
+    fakeApi.on("PUT", "/settings", {});
+    first.resolve({});
+    await flushPromises();
+    expect(saved()).toEqual([["knm", "basis", "exams"], ["knm", "exams", "basis"]]);
+  });
+
+  it("leaving the page during a hold or a drag leaves nothing running", async () => {
+    const { wrapper } = await open();
+    vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
+    pointer("pointerdown", card(wrapper, "knm").element);
+    wrapper.unmount();
+    await vi.advanceTimersByTimeAsync(1000);
+    pointer("pointermove", window);
+    pointer("pointerup", window);
+    expect(document.elementFromPoint).not.toHaveBeenCalled();
+
+    const again = await open();
+    await clickButton(again.wrapper, "Volgorde aanpassen");
+    pointer("pointerdown", handle(again.wrapper, "basis").element);
+    again.wrapper.unmount();
+    pointer("pointermove", window);
+    pointer("pointerup", window);
+    await flushPromises();
+    expect(document.elementFromPoint).not.toHaveBeenCalled();
+    expect(saved()).toEqual([]);
+  });
+
+  it("shows the modules in the order the app gives them", async () => {
+    const { wrapper } = await mountApp(ModuleCards, { props: { modules: [three[2], three[0], three[1]] } });
+    expect(titles(wrapper)).toEqual(["Proefexamens", "Basis", "KNM"]);
   });
 });
 

@@ -13,6 +13,7 @@ interface SettingsView {
   soundEffects: boolean;
   voiceAnnouncements: boolean;
   lessonMusic: boolean;
+  moduleOrder: string[];
   usage: { month: string; requests: number; inputTokens: number; outputTokens: number };
 }
 

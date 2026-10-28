@@ -126,7 +126,7 @@ These are the kinds of bugs that have actually been found here. For each compone
 | Exam result and writing feedback queue | `components/ExamResultView.test.ts` |
 | App shell (menu, focus mode, theme) | `components/App.test.ts` |
 | "Klaar voor vandaag" dialog | `components/FinishSessionDialog.test.ts` |
-| Dashboard and module page | `components/Dashboard.test.ts` (where "Begin met leren" goes is decided in `shared/services/dashboard.ts`, tested in `services-progress.test.ts`) |
+| Dashboard (incl. putting the modules in your own order: hold, drag, arrow keys) and module page | `components/Dashboard.test.ts` (where "Begin met leren" goes is decided in `shared/services/dashboard.ts`, tested in `services-progress.test.ts`) |
 | Words and verbs lists | `components/WordLists.test.ts` |
 | Settings, report a mistake, import | `components/SettingsAndReport.test.ts` |
 | Lesson blocks, documents, exams list, writing history, welcome | `components/LessonContent.test.ts` |

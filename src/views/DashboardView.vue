@@ -2,9 +2,8 @@
 import { onMounted, ref } from "vue";
 import { RouterLink } from "vue-router";
 import { api } from "../api/client";
-import { moduleStyle } from "../lib/moduleStyle";
 import AppButton from "../components/ui/AppButton.vue";
-import ProgressBar from "../components/ui/ProgressBar.vue";
+import ModuleCards from "../components/ModuleCards.vue";
 import GoalGauge from "../components/ui/GoalGauge.vue";
 import ProgressRing from "../components/ui/ProgressRing.vue";
 import { useContentStore } from "../stores/content";
@@ -118,30 +117,7 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
     </section>
     </div>
 
-    <section>
-      <h2 class="glass mb-3 inline-block rounded-2xl px-4 py-1 text-2xl font-bold">Modules</h2>
-      <div class="grid gap-4 sm:grid-cols-2">
-        <RouterLink
-          v-for="m in data.modules"
-          :key="m.id"
-          :to="`/module/${m.id}`"
-          class="card group block p-5 transition hover:-translate-y-0.5 hover:shadow-lg"
-          @pointerenter="warmModule(m.id)"
-          @focus="warmModule(m.id)"
-          @touchstart.passive="warmModule(m.id)"
-        >
-          <div class="flex items-center gap-4">
-            <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl text-3xl" :class="moduleStyle(m.id).tile" aria-hidden="true">{{ moduleStyle(m.id).emoji }}</span>
-            <div class="min-w-0 flex-1">
-              <h3 class="text-xl font-bold group-hover:text-brand-strong">{{ m.title }}</h3>
-              <p v-if="m.total" class="text-sm text-muted">{{ m.completed }} van {{ m.total }} lessen klaar</p>
-              <p v-else class="text-sm text-muted">Oefen onder examentijd</p>
-            </div>
-          </div>
-          <div v-if="m.total" class="mt-4"><ProgressBar :value="m.total ? m.completed / m.total : 0" :label="`Voortgang ${m.title}`" /></div>
-        </RouterLink>
-      </div>
-    </section>
+    <ModuleCards :modules="data.modules" @warm="warmModule" />
 
     <section v-if="data.backupReminder.show" class="card flex flex-col gap-4 p-5 sm:flex-row sm:items-center" aria-label="Voortgang bewaren">
       <div class="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
