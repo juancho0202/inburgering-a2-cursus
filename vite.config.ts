@@ -19,9 +19,11 @@ export default defineConfig({
         this.emitFile({ type: "asset", fileName: "_headers", source: netlifyHeadersFile() });
       },
     },
-    // Installable and works offline (everything except Claude). New versions install themselves in the background.
+    // Installable and works offline (everything except Claude). A new version downloads in the background and waits
+    // until the learner presses "Nu vernieuwen" (src/lib/appUpdate.ts registers it and keeps looking for updates).
     VitePWA({
-      registerType: "autoUpdate",
+      registerType: "prompt",
+      injectRegister: false,
       includeAssets: ["favicon.svg", "icons/apple-touch-icon.png"],
       manifest: {
         name: "Inburgering A2",

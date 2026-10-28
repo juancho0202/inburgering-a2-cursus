@@ -7,6 +7,7 @@ import "./styles/main.css";
 import { loadCourseContent } from "./content";
 import { requestPersistentStorage } from "./lib/storage";
 import { primeBackground } from "./lib/backgrounds";
+import { watchForUpdates } from "./lib/appUpdate";
 
 const app = createApp(App);
 app.use(createPinia());
@@ -17,3 +18,5 @@ app.mount("#app");
 void loadCourseContent();
 // Ask the browser to keep the learner's progress safe from automatic clean-up (installed apps usually get this).
 void requestPersistentStorage();
+// Offer a new version as soon as one is out (see UpdateBanner).
+watchForUpdates();
