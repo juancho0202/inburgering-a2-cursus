@@ -1,6 +1,10 @@
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 import { api } from "../api/client";
+import type { ExamDates, ExamSkill } from "@shared/logic/studyPlan";
+
+/** A change to the settings. For exam dates only the skills named change; `null` removes a date. */
+export type SettingsPatch = Partial<Omit<SettingsView, "examDates">> & { examDates?: Partial<Record<ExamSkill, string | null>> };
 
 interface SettingsView {
   apiKey: string | null;
@@ -13,6 +17,7 @@ interface SettingsView {
   soundEffects: boolean;
   voiceAnnouncements: boolean;
   lessonMusic: boolean;
+  examDates: ExamDates;
   usage: { month: string; requests: number; inputTokens: number; outputTokens: number };
 }
 
@@ -30,7 +35,7 @@ export const useSettingsStore = defineStore("settings", () => {
     }
   }
 
-  async function update(patch: Partial<SettingsView>) {
+  async function update(patch: SettingsPatch) {
     settings.value = await api.put<SettingsView>("/settings", patch);
   }
 

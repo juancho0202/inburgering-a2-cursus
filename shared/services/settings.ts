@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { KV, defaultSettingsRecord, type SettingsRecord, type UsageRecord } from "../schemas/store.js";
+import { EXAM_SKILLS, isDay, type ExamDates } from "../logic/studyPlan.js";
 import { invalid, nowIso, type Env } from "./context.js";
 
 /** The API key is handled elsewhere (encrypted, per device). The router adds `apiKey` (masked) to this. */
@@ -27,14 +28,35 @@ const UpdateSchema = z
     soundEffects: z.boolean(),
     voiceAnnouncements: z.boolean(),
     lessonMusic: z.boolean(),
+    /** Only the skills named change; `null` removes that date. */
+    examDates: z.partialRecord(z.enum(EXAM_SKILLS), z.string().refine(isDay).nullable()),
   })
   .partial();
+
+// Each change reads, merges and writes the whole record. Two quick changes (two exam dates, a theme and a sound)
+// would overwrite each other, so they wait for each other per store.
+const pending = new WeakMap<object, Promise<unknown>>();
+function oneAtATime<T>(env: Env, job: () => Promise<T>): Promise<T> {
+  const next = (pending.get(env.store) ?? Promise.resolve()).then(job);
+  pending.set(env.store, next.catch(() => undefined));
+  return next;
+}
 
 export async function updateSettings(env: Env, patch: unknown): Promise<SettingsView> {
   const parsed = UpdateSchema.safeParse(patch);
   if (!parsed.success) throw invalid("De instellingen zijn niet geldig.");
+  return oneAtATime(env, () => applySettings(env, parsed.data));
+}
+
+async function applySettings(env: Env, patch: z.infer<typeof UpdateSchema>): Promise<SettingsView> {
   const { usage: _usage, ...current } = await getSettings(env);
-  await env.store.kv.set(KV.settings, { ...current, ...parsed.data, updatedAt: nowIso(env) });
+  const { examDates: datePatch, ...rest } = patch;
+  const examDates: ExamDates = { ...current.examDates };
+  for (const [skill, date] of Object.entries(datePatch ?? {}) as [keyof ExamDates, string | null][]) {
+    if (date) examDates[skill] = date;
+    else delete examDates[skill];
+  }
+  await env.store.kv.set(KV.settings, { ...current, ...rest, examDates, updatedAt: nowIso(env) });
   return getSettings(env);
 }
 

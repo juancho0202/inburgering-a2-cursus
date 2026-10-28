@@ -4,6 +4,7 @@ import { completeUnit, getProgress, recordAttempt, resetProgress, setUnitStep } 
 import { dueCards, introduce, reviewSrsCard, vocabList, verbList } from "../../shared/services/srs";
 import { getSettings, recordUsage, updateSettings } from "../../shared/services/settings";
 import { courseTree, getUnit } from "../../shared/services/course";
+import { startExam, submitExam } from "../../shared/services/exams";
 import { ServiceError } from "../../shared/services/context";
 import { makeClock, makeEnv } from "../helpers/fixtures";
 
@@ -167,6 +168,27 @@ describe("dashboard and practice", () => {
     expect(d.newCount).toBe(5);
   });
 
+  it("has no study plan until an exam date is set", async () => {
+    const { env } = makeEnv();
+    expect((await dashboard(env)).studyPlan).toBeNull();
+  });
+
+  it("plans only what is left: finished lessons and handed-in mock exams are not planned again", async () => {
+    const { env } = makeEnv(); // today is 2026-10-05
+    await updateSettings(env, { examDates: { knm: "2026-11-02" } });
+    await completeUnit(env, "basis-a", { score: 1 });
+    const { result: started } = await startExam(env, "exam-schrijven-t"); // another skill: not part of the KNM plan anyway
+    await submitExam(env, started.id, { answers: {} });
+    let plan = (await dashboard(env)).studyPlan!;
+    expect(plan.exams).toEqual([{ skill: "knm", date: "2026-11-02", daysLeft: 28, lessonsLeft: 1, mockExamsLeft: 1 }]);
+    expect(plan.weeks.flatMap((w) => w.tasks.map((t) => t.id))).toEqual(["knm-wonen", "exam-knm-t"]);
+
+    const { result: knm } = await startExam(env, "exam-knm-t");
+    await submitExam(env, knm.id, { answers: {} });
+    plan = (await dashboard(env)).studyPlan!;
+    expect(plan.weeks.flatMap((w) => w.tasks.map((t) => t.id))).toEqual(["knm-wonen"]);
+  });
+
   describe("where 'Begin met leren' goes (nextUnitId)", () => {
     it("a new learner starts at the first lesson in course order", async () => {
       const { env } = makeEnv();
@@ -253,5 +275,25 @@ describe("settings", () => {
     expect((await getSettings(env)).usage).toEqual({ month: "2026-10", requests: 2, inputTokens: 110, outputTokens: 45 });
     clock.advanceDays(1); // November
     expect((await getSettings(env)).usage).toEqual({ month: "2026-11", requests: 0, inputTokens: 0, outputTokens: 0 });
+  });
+
+  it("two changes made at the same time are both kept (each one reads what the other wrote)", async () => {
+    const { env } = makeEnv();
+    await Promise.all([updateSettings(env, { examDates: { knm: "2026-11-26" } }), updateSettings(env, { examDates: { lezen: "2027-01-14" } }), updateSettings(env, { theme: "dark" })]);
+    const s = await getSettings(env);
+    expect(s.examDates).toEqual({ knm: "2026-11-26", lezen: "2027-01-14" });
+    expect(s.theme).toBe("dark");
+  });
+
+  it("exam dates change one skill at a time, null removes one, and only real dates are accepted", async () => {
+    const { env } = makeEnv();
+    expect((await getSettings(env)).examDates).toEqual({});
+    await updateSettings(env, { examDates: { knm: "2026-11-12", lezen: "2026-12-01" } });
+    await updateSettings(env, { examDates: { knm: null, schrijven: "2027-01-15" } });
+    expect((await getSettings(env)).examDates).toEqual({ lezen: "2026-12-01", schrijven: "2027-01-15" });
+    for (const bad of [{ knm: "2026-02-30" }, { knm: "12-11-2026" }, { spreken: "2026-11-12" }]) {
+      await expect(updateSettings(env, { examDates: bad })).rejects.toMatchObject({ message: "De instellingen zijn niet geldig." });
+    }
+    expect((await getSettings(env)).examDates).toEqual({ lezen: "2026-12-01", schrijven: "2027-01-15" });
   });
 });

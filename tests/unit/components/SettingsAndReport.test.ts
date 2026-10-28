@@ -21,7 +21,7 @@ beforeEach(() => {
 describe("SettingsView", () => {
   let settings: Record<string, unknown>;
   beforeEach(() => {
-    settings = { apiKey: null, model: "m1", dailyGoalMinutes: 20, newCardsPerDay: 10, speechRate: 0.95, spellcheckWriting: false, theme: "system", usage: { month: "2026-03", requests: 1, inputTokens: 1500, outputTokens: 200 } };
+    settings = { apiKey: null, model: "m1", dailyGoalMinutes: 20, newCardsPerDay: 10, speechRate: 0.95, spellcheckWriting: false, theme: "system", examDates: {}, usage: { month: "2026-03", requests: 1, inputTokens: 1500, outputTokens: 200 } };
     fakeApi.on("GET", "/settings", () => settings);
     fakeApi.on("GET", "/flags", []);
     fakeApi.on("GET", "/import/last", null);
@@ -100,6 +100,70 @@ describe("SettingsView", () => {
     await flushPromises();
     expect(fakeApi.to("PUT", "/settings").map((c) => c.body)).toEqual([{ theme: "dark" }, { dailyGoalMinutes: 45 }]);
     expect(wrapper.find("[role=status]").text()).toContain("Opgeslagen");
+  });
+
+  describe("exam dates", () => {
+    // The server's merge: only the skills sent change, null removes one.
+    const acceptDates = () =>
+      fakeApi.on("PUT", "/settings", (body: any) => {
+        const examDates = { ...(settings.examDates as Record<string, string>) };
+        for (const [k, v] of Object.entries(body.examDates ?? {})) v ? (examDates[k] = v as string) : delete examDates[k];
+        return (settings = { ...settings, examDates });
+      });
+    const setDate = async (wrapper: any, skill: string, value: string) => {
+      const input = wrapper.find(`#exam-${skill}`);
+      (input.element as HTMLInputElement).value = value;
+      await input.trigger("change");
+      await flushPromises();
+    };
+    beforeEach(() => {
+      vi.useFakeTimers({ now: new Date("2026-10-28T10:00:00"), toFake: ["Date"] });
+      return () => vi.useRealTimers();
+    });
+
+    it("a date is saved for that exam only, and 'Wis' removes it again", async () => {
+      settings.examDates = { lezen: "2026-12-03" };
+      acceptDates();
+      const { wrapper } = await open();
+      expect((wrapper.find("#exam-lezen").element as HTMLInputElement).value).toBe("2026-12-03");
+      await setDate(wrapper, "knm", "2026-11-12");
+      expect(fakeApi.to("PUT", "/settings")[0].body).toEqual({ examDates: { knm: "2026-11-12" } });
+      expect(wrapper.find("[role=status]").text()).toContain("Opgeslagen");
+
+      await wrapper.find("button[aria-label='Wis datum KNM']").trigger("click");
+      await flushPromises();
+      expect(fakeApi.to("PUT", "/settings")[1].body).toEqual({ examDates: { knm: null } });
+      expect((wrapper.find("#exam-knm").element as HTMLInputElement).value).toBe("");
+      expect(wrapper.find("button[aria-label='Wis datum KNM']").exists()).toBe(false);
+      expect((wrapper.find("#exam-lezen").element as HTMLInputElement).value).toBe("2026-12-03");
+    });
+
+    it("emptying the date box removes the date", async () => {
+      settings.examDates = { schrijven: "2026-11-20" };
+      acceptDates();
+      const { wrapper } = await open();
+      await setDate(wrapper, "schrijven", "");
+      expect(fakeApi.to("PUT", "/settings")[0].body).toEqual({ examDates: { schrijven: null } });
+    });
+
+    it("a date that cannot be saved shows a message, and the next try clears it", async () => {
+      fakeApi.fail("PUT", "/settings", "De instellingen zijn niet geldig.");
+      const { wrapper } = await open();
+      await setDate(wrapper, "knm", "2026-11-12");
+      expect(wrapper.find("[role=alert]").text()).toContain("Deze datum kon niet worden opgeslagen.");
+      acceptDates();
+      await setDate(wrapper, "knm", "2026-11-12");
+      expect(wrapper.find("[role=alert]").exists()).toBe(false);
+    });
+
+    it("an exam date in the past is marked as over; today's is not", async () => {
+      settings.examDates = { knm: "2026-10-27", lezen: "2026-10-28" };
+      const { wrapper } = await open();
+      const note = (skill: string) => wrapper.find(`#exam-${skill}`).element.closest("div")!.parentElement!.textContent;
+      expect(note("knm")).toContain("Dit examen is al geweest.");
+      expect(note("lezen")).not.toContain("al geweest");
+      expect(wrapper.find("#exam-knm").attributes("min")).toBe("2026-10-28");
+    });
   });
 
   it("reported mistakes can be removed one by one", async () => {

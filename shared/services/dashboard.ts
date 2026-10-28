@@ -1,6 +1,7 @@
 import { buildExerciseIndex, examTagIndex } from "../content/exerciseIndex.js";
 import { practiceTagFor } from "../logic/corrections.js";
 import { hardItemIds, weakestTags } from "../logic/weakspots.js";
+import { buildStudyPlan } from "../logic/studyPlan.js";
 import { getLastLocation, derivedStats } from "./progress.js";
 import { getSettings } from "./settings.js";
 import { today, type Env } from "./context.js";
@@ -35,7 +36,23 @@ export async function dashboard(env: Env) {
     [...env.content.modules.values()].flatMap((m) => m.units)[0] ??
     null;
   const lastUnit = lastLoc ? env.content.units.get(lastLoc.unitId) : undefined;
-  const nextExam = [...env.content.exams.values()].find((e) => !exams.some((r) => r.examId === e.id && r.finishedAt));
+  const examDone = (id: string) => exams.some((r) => r.examId === id && r.finishedAt);
+  const nextExam = [...env.content.exams.values()].find((e) => !examDone(e.id));
+  const studyPlan = buildStudyPlan({
+    today: day,
+    examDates: settings.examDates,
+    lessons: [...env.content.modules.values()].flatMap((m) =>
+      m.units
+        .filter((id) => !completed.has(id))
+        .flatMap((id) => {
+          const unit = env.content.units.get(id);
+          return unit ? [{ kind: "lesson" as const, id, title: unit.title, moduleId: m.id, minutes: unit.estimatedMinutes }] : [];
+        }),
+    ),
+    mockExams: [...env.content.exams.values()]
+      .filter((e) => !examDone(e.id))
+      .map((e) => ({ kind: "exam" as const, id: e.id, title: e.title, moduleId: e.skill, minutes: e.durationMinutes })),
+  });
 
   return {
     lastLocation:
@@ -53,6 +70,7 @@ export async function dashboard(env: Env) {
     weakTags: weakestTags(stats.items, (id) => (id.startsWith("writing:") ? [id] : (index.resolve(id)?.tags ?? examTags.get(id) ?? []))),
     backupReminder: await backupReminder(env),
     nextExam: nextExam ? { id: nextExam.id, title: nextExam.title, skill: nextExam.skill, durationMinutes: nextExam.durationMinutes } : null,
+    studyPlan,
   };
 }
 

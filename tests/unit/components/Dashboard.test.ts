@@ -29,7 +29,7 @@ const course = {
 const dashboard = (extra: Record<string, unknown> = {}) => ({
   nextUnitId: "basis-a", lastLocation: null, dailyGoalMinutes: 20, minutesToday: 5, streak: { current: 1, best: 4 }, dueCount: 3, newCount: 2,
   modules: [{ id: "basis", title: "Basis", total: 3, completed: 1 }, { id: "exams", title: "Proefexamens", total: 0, completed: 0 }],
-  hardCount: 0, weakTags: [], backupReminder: { show: false, daysAgo: null, unsavedAnswers: 0 }, nextExam: null, ...extra,
+  hardCount: 0, weakTags: [], backupReminder: { show: false, daysAgo: null, unsavedAnswers: 0 }, nextExam: null, studyPlan: null, ...extra,
 });
 
 beforeEach(() => {
@@ -150,6 +150,88 @@ describe("DashboardView", () => {
     fakeApi.fail("GET", "/dashboard", "Database niet beschikbaar.");
     const { wrapper } = await mountApp(DashboardView, { routePath: "/", url: "/" });
     expect(wrapper.text()).toContain("Database niet beschikbaar.");
+  });
+});
+
+describe("study plan on the dashboard", () => {
+  const open = (d: unknown) => {
+    fakeApi.on("GET", "/dashboard", d);
+    return mountApp(DashboardView, { routePath: "/", url: "/" });
+  };
+  const lesson = (id: string, title: string, minutes = 15) => ({ kind: "lesson", id, title, moduleId: id.split("-")[0], minutes, day: "2026-10-29" });
+  const studyPlan = (extra: Record<string, unknown> = {}) => ({
+    today: "2026-10-28",
+    exams: [
+      { skill: "knm", date: "2026-11-12", daysLeft: 15, lessonsLeft: 3, mockExamsLeft: 1 },
+      { skill: "lezen", date: "2026-12-03", daysLeft: 36, lessonsLeft: 1, mockExamsLeft: 2 },
+    ],
+    minutesPerDay: 20,
+    weeks: [
+      { start: "2026-10-28", end: "2026-11-03", tasks: [lesson("basis-a", "Les A"), { kind: "exam", id: "exam-knm-1", title: "Proefexamen KNM 1", moduleId: "knm", minutes: 45, day: "2026-11-01" }], exams: [] },
+      { start: "2026-11-04", end: "2026-11-10", tasks: [lesson("knm-wonen", "Wonen")], exams: [] },
+      { start: "2026-11-11", end: "2026-11-17", tasks: [lesson("lezen-brief", "Brieven lezen")], exams: ["knm"] },
+    ],
+    ...extra,
+  });
+  const card = (w: any) => w.find("section[aria-label='Studieplan']");
+
+  it("without an exam date the learner is invited to fill one in at Instellingen", async () => {
+    const { wrapper } = await open(dashboard());
+    expect(card(wrapper).text()).toContain("Wanneer is je examen?");
+    expect(card(wrapper).find("a").attributes("href")).toBe("/instellingen");
+  });
+
+  it("shows each exam with its date, the days left and what is still to do, in words that fit the number", async () => {
+    const { wrapper } = await open(dashboard({ studyPlan: studyPlan() }));
+    const exams = card(wrapper).findAll("ul")[0].findAll("li").map((li: any) => li.text());
+    expect(exams[0]).toContain("KNM · donderdag 12 november");
+    expect(exams[0]).toContain("Nog 15 dagen · Nog te doen: 3 lessen en 1 proefexamen");
+    expect(exams[1]).toContain("Lezen A2 · donderdag 3 december");
+    expect(exams[1]).toContain("Nog te doen: 1 les en 2 proefexamens");
+    expect(wrapper.text()).not.toContain("Wanneer is je examen?");
+  });
+
+  it("this week's lessons lead to the lesson and a mock exam leads to the exams page; later weeks are folded away", async () => {
+    const { wrapper } = await open(dashboard({ studyPlan: studyPlan() }));
+    expect(card(wrapper).text()).toContain("Deze week (28 okt – 3 nov)");
+    expect(card(wrapper).find("a[href='/unit/basis-a']").text()).toContain("Les A");
+    expect(card(wrapper).find("a[href='/examens']").text()).toContain("Proefexamen KNM 1");
+    const later = card(wrapper).find("details");
+    expect(later.text()).toContain("Volgende week (4 nov – 10 nov)");
+    expect(later.text()).toContain("Wonen");
+    expect(later.text()).toContain("11 nov – 17 nov");
+    expect(later.text()).toContain("Examen KNM");
+    expect(card(wrapper).find("a[href='/unit/knm-wonen']").exists()).toBe(false);
+  });
+
+  it("when this week has nothing planned, the first week shown is not called 'Deze week'", async () => {
+    const plan = studyPlan();
+    const { wrapper } = await open(dashboard({ studyPlan: { ...plan, weeks: plan.weeks.slice(2) } }));
+    expect(card(wrapper).find("h3").text()).toBe("11 nov – 17 nov");
+    expect(card(wrapper).find("details").exists()).toBe(false);
+  });
+
+  it("warns when the plan needs more minutes a day than the learner's goal, and not when it is exactly the goal", async () => {
+    const over = await open(dashboard({ dailyGoalMinutes: 19, studyPlan: studyPlan() }));
+    expect(card(over.wrapper).text()).toContain("Leer ongeveer 20 minuten per dag");
+    expect(card(over.wrapper).text()).toContain("Dat is meer dan je doel van 19 minuten.");
+    const exact = await open(dashboard({ dailyGoalMinutes: 20, studyPlan: studyPlan() }));
+    expect(card(exact.wrapper).text()).not.toContain("meer dan je doel");
+  });
+
+  it("an exam today or tomorrow is called that, and with nothing left to do the learner hears they are ready", async () => {
+    const { wrapper } = await open(dashboard({ studyPlan: studyPlan({
+      minutesPerDay: 0,
+      exams: [
+        { skill: "knm", date: "2026-10-28", daysLeft: 0, lessonsLeft: 0, mockExamsLeft: 0 },
+        { skill: "schrijven", date: "2026-10-29", daysLeft: 1, lessonsLeft: 2, mockExamsLeft: 0 },
+      ],
+      weeks: [{ start: "2026-10-28", end: "2026-11-03", tasks: [], exams: ["knm", "schrijven"] }],
+    }) }));
+    const exams = card(wrapper).findAll("ul")[0].findAll("li").map((li: any) => li.text());
+    expect(exams[0]).toContain("Vandaag! Succes! · ✓ Alles gedaan.");
+    expect(exams[1]).toContain("Morgen! · Nog te doen: 2 lessen");
+    expect(card(wrapper).text()).not.toContain("minuten per dag");
   });
 });
 

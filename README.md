@@ -13,6 +13,8 @@ Niet van DUO. Alle teksten en vragen zijn zelf gemaakt.
   Anthropic API-sleutel bij *Instellingen*. De sleutel wordt versleuteld op dit apparaat bewaard en gaat alleen naar Anthropic.
 - Op twee apparaten leren? Druk op **Klaar voor vandaag**, bewaar het bestand (op een iPhone: deel het met AirDrop) en kies op het andere apparaat
   **Ga verder met een bestand**. De voortgang wordt samengevoegd; er gaat niets verloren.
+- Weet je wanneer je examens zijn? Vul de datums in bij *Instellingen*. Op de startpagina zie je dan een **studieplan**:
+  welke lessen en proefexamens je per week doet, zodat je op tijd klaar bent.
 - Installeer de app op je beginscherm (zie Instellingen). Dan werkt hij ook zonder internet (behalve de Claude-hulp).
 
 ## Ontwikkelen

@@ -12,6 +12,8 @@ import { isBackgroundReady, pickBackground } from "../lib/backgrounds";
 import { warmScenes } from "../lib/illustrations";
 import { useSessionStore } from "../stores/session";
 import { useReviewStore } from "../stores/review";
+import { skillEmoji, skillLabel } from "../lib/examLabels";
+import { daysBetween, type PlanExam, type PlanWeek, type StudyPlan } from "@shared/logic/studyPlan";
 
 interface Dashboard {
   nextUnitId: string | null;
@@ -26,6 +28,7 @@ interface Dashboard {
   weakTags: { tag: string; accuracy: number; seen: number }[];
   backupReminder: { show: boolean; daysAgo: number | null; unsavedAnswers: number };
   nextExam: { id: string; title: string; skill: string; durationMinutes: number } | null;
+  studyPlan: StudyPlan | null;
 }
 
 const content = useContentStore();
@@ -56,6 +59,24 @@ onMounted(async () => {
 
 /** Download the lesson pictures of a module (when it is about to be opened), so its list shows them at once. */
 const warmModule = (id: string) => warmScenes(content.course?.modules.find((m) => m.id === id)?.units.map((u) => u.scene) ?? []);
+
+// Study plan texts. Dates are calendar days (YYYY-MM-DD); noon keeps them on that day in every time zone.
+const date = (d: string, opts: Intl.DateTimeFormatOptions) => new Date(`${d}T12:00:00`).toLocaleDateString("nl-NL", opts);
+const examDay = (d: string) => date(d, { weekday: "long", day: "numeric", month: "long" });
+const shortDay = (d: string) => date(d, { day: "numeric", month: "short" });
+const countdown = (e: PlanExam) => (e.daysLeft === 0 ? "Vandaag! Succes!" : e.daysLeft === 1 ? "Morgen!" : `Nog ${e.daysLeft} dagen`);
+function todo(e: PlanExam) {
+  const parts = [
+    e.lessonsLeft ? `${e.lessonsLeft} ${e.lessonsLeft === 1 ? "les" : "lessen"}` : "",
+    e.mockExamsLeft ? `${e.mockExamsLeft} ${e.mockExamsLeft === 1 ? "proefexamen" : "proefexamens"}` : "",
+  ].filter(Boolean);
+  return parts.length ? `Nog te doen: ${parts.join(" en ")}` : "✓ Alles gedaan. Herhaal je woorden en doe een proefexamen opnieuw.";
+}
+function weekTitle(plan: StudyPlan, w: PlanWeek) {
+  const n = daysBetween(plan.today, w.start) / 7;
+  const range = `${shortDay(w.start)} – ${shortDay(w.end)}`;
+  return n === 0 ? `Deze week (${range})` : n === 1 ? `Volgende week (${range})` : range;
+}
 
 const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.slice(8)}` : t.replace(":", " · "));
 </script>
@@ -141,6 +162,51 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
           <div v-if="m.total" class="mt-4"><ProgressBar :value="m.total ? m.completed / m.total : 0" :label="`Voortgang ${m.title}`" /></div>
         </RouterLink>
       </div>
+    </section>
+
+    <section v-if="data.studyPlan" class="card p-6" aria-label="Studieplan">
+      <h2 class="text-2xl font-bold"><span aria-hidden="true">📅</span> Mijn studieplan</h2>
+      <ul class="mt-3 grid gap-2">
+        <li v-for="e in data.studyPlan.exams" :key="e.skill" class="rounded-2xl bg-surface-2 px-4 py-3">
+          <p class="font-bold"><span aria-hidden="true">{{ skillEmoji[e.skill] }}</span> {{ skillLabel[e.skill] }} · {{ examDay(e.date) }}</p>
+          <p class="text-sm text-muted">{{ countdown(e) }} · {{ todo(e) }}</p>
+        </li>
+      </ul>
+      <p v-if="data.studyPlan.minutesPerDay" class="mt-3">
+        Leer ongeveer <strong>{{ data.studyPlan.minutesPerDay }} minuten per dag</strong>, dan ben je op tijd klaar.
+        <span v-if="data.studyPlan.minutesPerDay > data.dailyGoalMinutes" class="font-semibold text-bad">Dat is meer dan je doel van {{ data.dailyGoalMinutes }} minuten.</span>
+      </p>
+      <template v-if="data.studyPlan.weeks[0]">
+        <h3 class="mt-4 font-bold">{{ weekTitle(data.studyPlan, data.studyPlan.weeks[0]) }}</h3>
+        <ul class="mt-2 grid gap-1">
+          <li v-for="t in data.studyPlan.weeks[0].tasks" :key="t.id">
+            <RouterLink :to="t.kind === 'lesson' ? `/unit/${t.id}` : '/examens'" class="font-semibold underline hover:text-brand-strong">
+              <span aria-hidden="true">{{ t.kind === "lesson" ? moduleStyle(t.moduleId).emoji : "⏱️" }}</span> {{ t.title }}</RouterLink>
+            <span class="text-sm text-muted"> · {{ t.minutes }} min</span>
+          </li>
+          <li v-for="s in data.studyPlan.weeks[0].exams" :key="s" class="font-bold"><span aria-hidden="true">📅</span> Examen {{ skillLabel[s] }}</li>
+        </ul>
+      </template>
+      <details v-if="data.studyPlan.weeks.length > 1" class="mt-4">
+        <summary class="cursor-pointer font-semibold">Bekijk de weken daarna</summary>
+        <div v-for="w in data.studyPlan.weeks.slice(1)" :key="w.start" class="mt-3">
+          <h3 class="font-bold">{{ weekTitle(data.studyPlan, w) }}</h3>
+          <ul class="mt-1 grid gap-1 text-sm">
+            <li v-for="t in w.tasks" :key="t.id">{{ t.title }} <span class="text-muted">· {{ t.minutes }} min</span></li>
+            <li v-for="s in w.exams" :key="s" class="font-bold"><span aria-hidden="true">📅</span> Examen {{ skillLabel[s] }}</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+    <section v-else class="card flex flex-col gap-4 p-5 sm:flex-row sm:items-center" aria-label="Studieplan">
+      <div class="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
+        <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand-bg text-3xl" aria-hidden="true">📅</span>
+        <div class="min-w-0 flex-1">
+          <h2 class="text-lg font-bold">Wanneer is je examen?</h2>
+          <p class="text-muted">Vul de datum in. Dan maakt de app een studieplan voor je.</p>
+        </div>
+      </div>
+      <RouterLink to="/instellingen" class="block sm:inline-block"><AppButton variant="secondary" class="w-full sm:w-auto">Datum invullen</AppButton></RouterLink>
     </section>
 
     <section v-if="data.backupReminder.show" class="card flex flex-col gap-4 p-5 sm:flex-row sm:items-center" aria-label="Voortgang bewaren">

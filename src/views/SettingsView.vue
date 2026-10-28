@@ -10,6 +10,9 @@ import { MODELS } from "@shared/claude/models";
 import AppButton from "../components/ui/AppButton.vue";
 import { useSpeech } from "../composables/useSpeech";
 import { playComplete, playCorrect, playLessonMelody, playWrong } from "../lib/sound";
+import { skillEmoji, skillLabel } from "../lib/examLabels";
+import { dayString } from "@shared/logic/srs";
+import { EXAM_SKILLS, type ExamSkill } from "@shared/logic/studyPlan";
 
 const store = useSettingsStore();
 const session = useSessionStore();
@@ -65,6 +68,17 @@ async function removeKey() {
   confirmRemove.value = false;
 }
 const num = (e: Event) => Number((e.target as HTMLInputElement).value);
+const today = dayString(new Date());
+const dateError = ref<string | null>(null);
+/** An empty date box (or "Wis") removes the date. */
+async function setExamDate(skill: ExamSkill, date: string) {
+  dateError.value = null;
+  try {
+    await patch({ examDates: { [skill]: date || null } });
+  } catch {
+    dateError.value = "Deze datum kon niet worden opgeslagen. Probeer het nog een keer.";
+  }
+}
 async function patch(p: Parameters<typeof store.update>[0]) {
   await store.update(p);
   saved.value = true;
@@ -97,6 +111,29 @@ const themes = [
     </div>
 
     <div v-if="store.settings" class="grid gap-6">
+      <section class="card p-6">
+        <h2 class="text-xl font-bold">Mijn examens</h2>
+        <p class="mt-1 text-muted">Weet je wanneer je examen is? Vul de datum in. Dan maakt de app een studieplan voor je. Je ziet het plan op de startpagina.</p>
+        <div class="mt-3 grid gap-4 sm:grid-cols-2">
+          <div v-for="skill in EXAM_SKILLS" :key="skill">
+            <label :for="`exam-${skill}`" class="font-semibold"><span aria-hidden="true">{{ skillEmoji[skill] }}</span> {{ skillLabel[skill] }}</label>
+            <div class="mt-1 flex items-center gap-2">
+              <input
+                :id="`exam-${skill}`"
+                class="input"
+                type="date"
+                :min="today"
+                :value="store.settings.examDates?.[skill] ?? ''"
+                @change="setExamDate(skill, ($event.target as HTMLInputElement).value)"
+              />
+              <button v-if="store.settings.examDates?.[skill]" type="button" class="shrink-0 text-sm font-semibold underline hover:text-ink" :aria-label="`Wis datum ${skillLabel[skill]}`" @click="setExamDate(skill, '')">Wis</button>
+            </div>
+            <p v-if="(store.settings.examDates?.[skill] ?? today) < today" class="mt-1 text-sm text-muted">Dit examen is al geweest.</p>
+          </div>
+        </div>
+        <p v-if="dateError" role="alert" class="mt-3 font-semibold text-bad">✗ {{ dateError }}</p>
+      </section>
+
       <section class="card p-6">
         <h2 class="text-xl font-bold">Uiterlijk</h2>
         <div class="mt-3 grid grid-cols-3 gap-2" role="radiogroup" aria-label="Thema">

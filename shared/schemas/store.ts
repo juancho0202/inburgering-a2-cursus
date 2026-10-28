@@ -76,6 +76,8 @@ export const SettingsRecordSchema = z.object({
   voiceAnnouncements: z.boolean().default(true),
   /** A short melody at the start of a lesson: one per lesson number, a little different per module. */
   lessonMusic: z.boolean().default(true),
+  /** The learner's real exam dates (YYYY-MM-DD) per skill, for the study plan on the dashboard. */
+  examDates: z.partialRecord(z.enum(["lezen", "luisteren", "knm", "schrijven"]), z.string()).default({}),
   updatedAt: z.string().optional(),
 });
 export type SettingsRecord = z.infer<typeof SettingsRecordSchema>;
@@ -89,6 +91,7 @@ export const defaultSettingsRecord = (): SettingsRecord => ({
   soundEffects: true,
   voiceAnnouncements: true,
   lessonMusic: true,
+  examDates: {},
 });
 
 export const UsageRecordSchema = z.object({ month: z.string(), requests: z.number().int(), inputTokens: z.number().int(), outputTokens: z.number().int() });
