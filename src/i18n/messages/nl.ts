@@ -250,6 +250,8 @@ const nl = {
     voicesTitle: "Stemmen en geluid",
     voices1: "De stemmen die de lessen voorlezen en de mensen in de luisterfragmenten zijn gemaakt met",
     voices2: "(open source). De stemmen ronnie, alex en nathalie zijn gemaakt met opnames uit het publieke domein (CC0). De muziek en de geluidjes worden in de app zelf gemaakt.",
+    creditTitle: "Wie heeft dit gemaakt?",
+    credit: "Gemaakt door",
   },
   feedback: {
     inMyLanguage: "In mijn taal",
