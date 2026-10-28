@@ -5,7 +5,8 @@ import GoalGauge from "../../../src/components/ui/GoalGauge.vue";
 import ProgressBar from "../../../src/components/ui/ProgressBar.vue";
 import ProgressRing from "../../../src/components/ui/ProgressRing.vue";
 import SamenvattingView from "../../../src/views/SamenvattingView.vue";
-import { fakeApi, mountApp } from "../../helpers/component";
+import { flushPromises } from "@vue/test-utils";
+import { clickButton, fakeApi, mountApp } from "../../helpers/component";
 
 vi.mock("../../../src/api/client", async () => {
   const h = await import("../../helpers/component");
@@ -98,6 +99,35 @@ describe("SamenvattingView", () => {
     const ids = wrapper.findAll("article h2").map((h) => h.attributes("id"));
     expect(links.map((a) => a.attributes("href"))).toEqual(ids.map((id) => `#${id}`));
     expect(ids).toEqual(["wonen-en-huur", "gezondheid-zorg"]);
+  });
+
+  it("choosing a section folds the contents and scrolls to that heading, without leaving the page", async () => {
+    fakeApi.on("GET", "/samenvatting", { md: "# Titel\n\n## Wonen en huur\n\ntekst\n\n## Gezondheid & zorg\n\nmeer tekst" });
+    const scrolled: { id: string; folded: boolean }[] = [];
+    const toggle = () => document.querySelector("nav button")!;
+    // jsdom has no scrolling: record which element is asked to scroll into view, and whether the list was folded then
+    Element.prototype.scrollIntoView = function (this: Element) {
+      scrolled.push({ id: this.id, folded: toggle().getAttribute("aria-expanded") === "false" });
+    };
+    try {
+      const { wrapper, router } = await mountApp(SamenvattingView, { routePath: "/samenvatting", url: "/samenvatting" });
+      expect(toggle().getAttribute("aria-expanded")).toBe("true");
+      // The browser's own "#id" jump must not happen: it goes through the router, which scrolls every navigation to the top
+      const click = new MouseEvent("click", { bubbles: true, cancelable: true });
+      wrapper.findAll("nav a").find((a) => a.text() === "Gezondheid & zorg")!.element.dispatchEvent(click);
+      expect(click.defaultPrevented).toBe(true);
+      await flushPromises();
+      // folded before scrolling, so the heading ends up where it stays
+      expect(scrolled).toEqual([{ id: "gezondheid-zorg", folded: true }]);
+      expect(wrapper.find("#inhoud-lijst").classes()).toContain("hidden");
+      expect(router.currentRoute.value.fullPath).toBe("/samenvatting");
+      // the folded bar opens again to pick another section
+      await clickButton(wrapper, "Inhoud");
+      expect(toggle().getAttribute("aria-expanded")).toBe("true");
+      expect(wrapper.find("#inhoud-lijst").classes()).not.toContain("hidden");
+    } finally {
+      delete (Element.prototype as Partial<Element>).scrollIntoView;
+    }
   });
 
   it("shows HTML typed into the text as text", async () => {

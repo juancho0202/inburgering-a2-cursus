@@ -130,6 +130,13 @@
     margin: 2rem 0 0.75rem;
     scroll-margin-top: 5rem;
   }
+  /* The summary also has its table of contents sticking under the header on a phone */
+  .samenvatting .prose-nl h2 {
+    scroll-margin-top: 9rem;
+    @media (min-width: 64rem) {
+      scroll-margin-top: 6rem;
+    }
+  }
   .prose-nl h3 {
     font-size: 1.15rem;
     font-weight: 700;
