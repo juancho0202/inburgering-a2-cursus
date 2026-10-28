@@ -131,6 +131,7 @@ These are the kinds of bugs that have actually been found here. For each compone
 | Settings, report a mistake, import | `components/SettingsAndReport.test.ts` |
 | Lesson blocks, documents, exams list, writing history, welcome | `components/LessonContent.test.ts` |
 | Install hint / storage protection | `components/InstallHint.test.ts` |
+| "Er is een nieuwe versie" banner and looking for updates (`src/lib/appUpdate.ts`) | `components/UpdateBanner.test.ts` |
 | Progress bar/ring, summary page | `components/Progress.test.ts` |
 
 Known gaps (not component tests, but worth a look when you are nearby): `src/lib/*` (`storage.ts`, `progressFile.ts`) and `src/stores/*` have no direct tests (`backgrounds.ts` is covered by `tests/unit/backgrounds.test.ts`); the SpeakButton/voice choice is untested because jsdom has no speech synthesis.
