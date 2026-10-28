@@ -13,6 +13,7 @@ import FeedbackLanguageToggle from "../components/FeedbackLanguageToggle.vue";
 import UiLabel from "../components/ui/UiLabel.vue";
 import UiText from "../components/ui/UiText.vue";
 import { useLanguageStore } from "../stores/language";
+import { useSounds } from "../composables/useSounds";
 
 interface Item {
   card: SrsCard;
@@ -23,6 +24,7 @@ interface Item {
 
 const route = useRoute();
 const lang = useLanguageStore();
+const sounds = useSounds();
 const queue = ref<Item[]>([]);
 const total = ref(0);
 const reviewed = ref(0);
@@ -76,6 +78,8 @@ const selfCheck = computed(() => type.value === "recognise" && options.value.len
 function reveal(correct: boolean) {
   wasCorrect.value = correct;
   answered.value = true;
+  // "Toon antwoord" is not an answer, so it gets no right/wrong sound.
+  if (!selfCheck.value) (correct ? sounds.correct : sounds.wrong)();
 }
 
 function check() {
