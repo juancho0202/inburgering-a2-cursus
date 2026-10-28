@@ -9,6 +9,7 @@ import AppButton from "../components/ui/AppButton.vue";
 import ProgressBar from "../components/ui/ProgressBar.vue";
 import SpeakButton from "../components/ui/SpeakButton.vue";
 import { shuffled } from "../components/exercises/types";
+import { useSounds } from "../composables/useSounds";
 
 interface Item {
   card: SrsCard;
@@ -18,6 +19,7 @@ interface Item {
 }
 
 const route = useRoute();
+const sounds = useSounds();
 const queue = ref<Item[]>([]);
 const total = ref(0);
 const reviewed = ref(0);
@@ -71,6 +73,8 @@ const selfCheck = computed(() => type.value === "recognise" && options.value.len
 function reveal(correct: boolean) {
   wasCorrect.value = correct;
   answered.value = true;
+  // "Toon antwoord" is not an answer, so it gets no right/wrong sound.
+  if (!selfCheck.value) (correct ? sounds.correct : sounds.wrong)();
 }
 
 function check() {

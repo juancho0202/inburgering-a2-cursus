@@ -4,6 +4,8 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { VueWrapper } from "@vue/test-utils";
 import ReviewView from "../../../src/views/ReviewView.vue";
 import { buttonWith, clickButton, deferred, fakeApi, flushPromises, mountApp, pressKey } from "../../helpers/component";
+import { playCorrect, playWrong } from "../../../src/lib/sound";
+import { useSettingsStore } from "../../../src/stores/settings";
 
 vi.mock("../../../src/api/client", async () => {
   const h = await import("../../helpers/component");
@@ -27,7 +29,12 @@ const open = (queue: unknown[], url = "/woorden/herhalen") => {
 const reviews = () => fakeApi.to("POST", "/srs/review").map((c) => c.body);
 const type = (w: VueWrapper, value: string) => w.find("input").setValue(value);
 
+vi.mock("../../../src/lib/sound", () => ({ playCorrect: vi.fn(), playWrong: vi.fn(), playComplete: vi.fn(), playLessonMelody: vi.fn(() => 0), stopMusic: vi.fn() }));
+const sounds = () => ({ correct: vi.mocked(playCorrect).mock.calls.length, wrong: vi.mocked(playWrong).mock.calls.length });
+
 beforeEach(() => {
+  vi.mocked(playCorrect).mockClear();
+  vi.mocked(playWrong).mockClear();
   fakeApi.reset();
   fakeApi.on("POST", "/srs/review", {});
 });
@@ -280,5 +287,40 @@ describe("'verb-forms' cards (participle + hebben/zijn)", () => {
     const { wrapper } = await open1({ infinitive: "gaan", participle: "gegaan", auxiliary: "zijn" });
     await answer(wrapper, "x", "hebben");
     expect(wrapper.text()).toContain("is gegaan");
+  });
+});
+
+describe("sounds", () => {
+  it("a right answer plays the 'correct' sound once, a wrong one the 'wrong' sound, on every card type", async () => {
+    const recognise = item("c-r", "recognise", { vocab: vocab("uur", { nl: "het uur", definitionNl: "Zestig minuten." }), distractors: ["Wit poeder."] });
+    const { wrapper } = await open([recognise, meaning("fiets"), item("c-a", "article", { vocab: vocab("het huis", { article: "het" }) })]);
+    await wrapper.findAll("button").find((b) => b.text() === "Zestig minuten.")!.trigger("click");
+    await clickButton(wrapper, "Controleer");
+    expect(sounds()).toEqual({ correct: 1, wrong: 0 });
+    await pressKey("Enter"); // grades and shows the next card: no new sound
+    await flushPromises();
+    expect(sounds()).toEqual({ correct: 1, wrong: 0 });
+    await type(wrapper, "auto");
+    await clickButton(wrapper, "Controleer");
+    expect(sounds()).toEqual({ correct: 1, wrong: 1 });
+    await clickButton(wrapper, "Goed");
+    await flushPromises();
+    await wrapper.findAll("button").find((b) => b.text() === "de")!.trigger("click");
+    expect(sounds()).toEqual({ correct: 1, wrong: 2 });
+  });
+
+  it("'Toon antwoord' (no choices to pick from) plays no sound", async () => {
+    const { wrapper } = await open([item("c-r", "recognise", { vocab: vocab("fiets"), distractors: [] })]);
+    await clickButton(wrapper, "Toon antwoord");
+    expect(sounds()).toEqual({ correct: 0, wrong: 0 });
+  });
+
+  it("stays silent when sound effects are off in the settings", async () => {
+    const { wrapper } = await open([meaning("fiets")]);
+    useSettingsStore().settings = { soundEffects: false } as never;
+    await type(wrapper, "fiets");
+    await clickButton(wrapper, "Controleer");
+    expect(wrapper.text()).toContain("✓ Goed zo!");
+    expect(sounds()).toEqual({ correct: 0, wrong: 0 });
   });
 });
