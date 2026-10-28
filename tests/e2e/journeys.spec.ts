@@ -138,3 +138,18 @@ test.describe("languages", () => {
     await expect(page.locator("html")).toHaveAttribute("lang", "nl");
   });
 });
+
+test.describe("a small phone", () => {
+  test.use({ viewport: { width: 320, height: 640 } });
+
+  // A grid row is as wide as its longest word or picture unless told otherwise; then the whole page scrolls sideways.
+  test("no screen is wider than the phone", async ({ page }) => {
+    await startFresh(page);
+    for (const path of ["/", "/module/basis", "/module/luisteren", "/module/knm", "/woorden", "/werkwoorden", "/examens", "/samenvatting", "/instellingen", "/over", "/unit/basis-tijd"]) {
+      await page.goto(path);
+      await expect(page.locator("main h1").first()).toBeVisible();
+      const [scroll, width] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
+      expect(scroll, `${path} scrolls sideways`).toBeLessThanOrEqual(width);
+    }
+  });
+});

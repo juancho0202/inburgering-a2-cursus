@@ -43,7 +43,8 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
       <span class="ml-auto text-muted">→</span>
     </RouterLink>
     <p v-if="!mod.units.length" class="card p-6 text-muted">{{ lang.t("module.empty") }}</p>
-    <ol v-else class="relative grid gap-4 before:absolute before:bottom-6 before:left-[1.65rem] before:top-6 before:w-1 before:rounded-full before:bg-line">
+    <!-- minmax(0, 1fr): a card can shrink to the screen; by default a grid row is as wide as its longest word or picture -->
+    <ol v-else class="relative grid grid-cols-[minmax(0,1fr)] gap-4 before:absolute before:bottom-6 before:left-[1.65rem] before:top-6 before:w-1 before:rounded-full before:bg-line">
       <li v-for="(u, i) in mod.units" :key="u.id" class="relative">
         <RouterLink :to="`/unit/${u.id}`" class="card group relative flex items-center gap-4 p-4 transition hover:-translate-y-0.5 hover:shadow-lg" :class="{ 'ring-2 ring-brand': u.id === recommended }">
           <span
@@ -57,7 +58,7 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
               <UiLabel variant="inline" k="settings.lessonN" :params="{ n: i + 1 }" />
               <span v-if="u.id === recommended" class="rounded-full bg-brand-bg px-2 py-0.5 text-brand-strong normal-case tracking-normal"><UiLabel variant="inline" k="common.next" /></span>
             </p>
-            <h2 class="text-lg font-bold group-hover:text-brand-strong" lang="nl" translate="no">{{ u.title }}</h2>
+            <h2 class="text-lg font-bold break-words group-hover:text-brand-strong" lang="nl" translate="no">{{ u.title }}</h2>
             <p class="text-sm text-muted">
               {{ lang.t("module.meta", { min: u.estimatedMinutes, steps: u.stepCount }) }}
               <template v-if="statusOf(u.id)?.status === 'completed'"> · {{ lang.t("module.best", { pct: Math.round((statusOf(u.id)?.bestScore ?? 0) * 100) }) }}</template>

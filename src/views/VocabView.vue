@@ -75,10 +75,11 @@ const stateLabel = { new: "vocab.new", learning: "vocab.learning", learned: "voc
         <h2 class="text-2xl font-bold"><span lang="nl" translate="no">{{ t.title }}</span> <span class="text-base font-semibold text-muted">({{ t.entries.length }})</span></h2>
         <AppButton variant="secondary" @click="learnTheme(t.theme)"><UiLabel k="vocab.learnTheme" /></AppButton>
       </div>
-      <div class="grid gap-3 sm:grid-cols-2">
-        <article v-for="e in t.entries" :key="e.id" class="card p-4" lang="nl">
-          <div class="flex items-center gap-2">
-            <h3 class="text-xl font-bold">{{ e.nl }}</h3>
+      <!-- minmax(0, 1fr): a card can shrink to the screen instead of growing to its longest word -->
+      <div class="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-[repeat(2,minmax(0,1fr))]">
+        <article v-for="e in t.entries" :key="e.id" class="card break-words p-4" lang="nl">
+          <div class="flex flex-wrap items-center gap-2">
+            <h3 class="min-w-0 text-xl font-bold">{{ e.nl }}</h3>
             <SpeakButton :text="e.nl" />
             <span
               class="ml-auto rounded-full px-2.5 py-0.5 text-xs font-bold"
