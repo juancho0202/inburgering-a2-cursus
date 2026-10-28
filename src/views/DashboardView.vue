@@ -5,6 +5,7 @@ import { api } from "../api/client";
 import { moduleStyle } from "../lib/moduleStyle";
 import AppButton from "../components/ui/AppButton.vue";
 import ProgressBar from "../components/ui/ProgressBar.vue";
+import GoalGauge from "../components/ui/GoalGauge.vue";
 import ProgressRing from "../components/ui/ProgressRing.vue";
 import { useContentStore } from "../stores/content";
 import { isBackgroundReady, pickBackground } from "../lib/backgrounds";
@@ -95,14 +96,15 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
     <!-- Two small tiles side by side, also on a phone, so the modules come into view sooner -->
     <section class="grid grid-cols-2 gap-4" aria-label="Vandaag">
       <div class="card flex flex-col items-center justify-center gap-2 p-4 text-center sm:flex-row sm:justify-start sm:gap-5 sm:p-5 sm:text-left">
-        <ProgressRing :value="data.minutesToday / data.dailyGoalMinutes" :size="80">
-          <span class="font-extrabold leading-none">{{ Math.round(data.minutesToday) }}/{{ data.dailyGoalMinutes }}<span class="block text-xs font-semibold text-muted">min</span></span>
-        </ProgressRing>
-        <!-- Phone: the ring says it all; the label stays for screen readers -->
+        <div class="flex flex-col items-center">
+          <GoalGauge :minutes="data.minutesToday" :goal="data.dailyGoalMinutes" />
+          <span class="text-xs font-semibold text-muted" aria-hidden="true">minuten</span>
+        </div>
+        <!-- Phone: the gauge says it all; the label stays for screen readers -->
         <h2 class="sr-only text-lg font-bold sm:not-sr-only">Doel van vandaag</h2>
       </div>
       <div class="card flex flex-col items-center justify-center gap-2 p-4 text-center sm:flex-row sm:justify-start sm:gap-5 sm:p-5 sm:text-left">
-        <!-- Same circle as the goal, without progress: a streak has no target -->
+        <!-- A plain circle, without progress: a streak has no target -->
         <ProgressRing :value="0" :size="80">
           <span class="text-lg font-extrabold leading-none">{{ data.streak.current }}<span class="block text-xs font-semibold text-muted">{{ data.streak.current === 1 ? "dag" : "dagen" }}</span></span>
         </ProgressRing>

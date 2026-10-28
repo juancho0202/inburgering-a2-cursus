@@ -98,9 +98,9 @@ describe("DashboardView", () => {
     expect(wrapper.find("a[href='/module/exams']").text()).toContain("Oefen onder examentijd");
   });
 
-  it("the goal ring shows the minutes done today against the daily goal, rounded", async () => {
-    const { wrapper } = await open(dashboard({ minutesToday: 7.6, dailyGoalMinutes: 30 }));
-    expect(wrapper.find("section[aria-label='Vandaag']").text()).toMatch(/8\/30\s*min/);
+  it("the goal gauge shows today's minutes against the learner's own daily goal", async () => {
+    const { wrapper } = await open(dashboard({ minutesToday: 7.6, dailyGoalMinutes: 45 }));
+    expect(wrapper.find("section[aria-label='Vandaag'] [role=img]").attributes("aria-label")).toBe("8 van 45 minuten");
   });
 
   it("one day is 'dag', several are 'dagen'", async () => {

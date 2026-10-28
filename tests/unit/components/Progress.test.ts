@@ -1,6 +1,7 @@
 // @vitest-environment jsdom
 // Progress indicators and the summary page: values outside 0–100% must not break the picture.
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import GoalGauge from "../../../src/components/ui/GoalGauge.vue";
 import ProgressBar from "../../../src/components/ui/ProgressBar.vue";
 import ProgressRing from "../../../src/components/ui/ProgressRing.vue";
 import SamenvattingView from "../../../src/views/SamenvattingView.vue";
@@ -52,6 +53,39 @@ describe("ProgressRing (daily goal)", () => {
   it("no progress yet is an empty ring", async () => {
     const { offset, full } = await offsetOf(0);
     expect(offset).toBeCloseTo(full);
+  });
+});
+
+describe("GoalGauge (daily goal)", () => {
+  const gauge = (minutes: number, goal = 30) => mountApp(GoalGauge, { props: { minutes, goal } }).then((m) => m.wrapper);
+  const needle = (w: Awaited<ReturnType<typeof gauge>>) => {
+    const l = w.find("line");
+    return { x: Number(l.attributes("x2")), y: Number(l.attributes("y2")) };
+  };
+
+  it("shows the minutes done, with 0 and the goal at the ends of the scale", async () => {
+    const w = await gauge(7.6);
+    expect(w.findAll("text").map((t) => t.text())).toEqual(["8", "0", "30"]);
+    expect(w.find("svg").attributes("aria-label")).toBe("8 van 30 minuten");
+  });
+
+  it("halfway to the goal the needle points straight up", async () => {
+    const { x, y } = needle(await gauge(15));
+    expect(x).toBeCloseTo(50);
+    expect(y).toBeCloseTo(20);
+  });
+
+  it("past the goal the number keeps counting but the needle stays at the end of the scale", async () => {
+    const over = await gauge(45);
+    expect(over.findAll("text")[0].text()).toBe("45");
+    expect(needle(over)).toEqual(needle(await gauge(30)));
+    expect(needle(await gauge(30)).y).toBeGreaterThan(needle(await gauge(29)).y); // still moving just before the goal
+  });
+
+  it("no minutes yet: the needle rests at 0, not below it", async () => {
+    expect(needle(await gauge(0))).toEqual(needle(await gauge(-3)));
+    expect(needle(await gauge(0)).x).toBeLessThan(50);
+    expect((await gauge(0)).findAll("path")).toHaveLength(1); // only the grey scale, no orange dot
   });
 });
 
