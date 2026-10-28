@@ -251,6 +251,8 @@ const en: Messages = {
     voicesTitle: "Voices and sound",
     voices1: "The voices that read the lessons and the people in the listening fragments were made with",
     voices2: "(open source). The voices ronnie, alex and nathalie were made from public-domain recordings (CC0). The music and sound effects are made in the app itself.",
+    creditTitle: "Who made this?",
+    credit: "Made by",
   },
   feedback: {
     inMyLanguage: "In my language",
