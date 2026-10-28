@@ -98,6 +98,11 @@ describe("DashboardView", () => {
     expect(wrapper.find("a[href='/module/exams']").text()).toContain("Oefen onder examentijd");
   });
 
+  it("the goal ring shows the minutes done today against the daily goal, rounded", async () => {
+    const { wrapper } = await open(dashboard({ minutesToday: 7.6, dailyGoalMinutes: 30 }));
+    expect(wrapper.find("section[aria-label='Vandaag']").text()).toMatch(/8\/30\s*min/);
+  });
+
   it("one day is 'dag', several are 'dagen'", async () => {
     const one = await open(dashboard({ streak: { current: 1, best: 1 } }));
     expect(one.wrapper.text()).toMatch(/1\s*dag(?!en)/);

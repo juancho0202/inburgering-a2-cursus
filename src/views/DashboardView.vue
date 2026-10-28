@@ -94,21 +94,20 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
 
     <!-- Two small tiles side by side, also on a phone, so the modules come into view sooner -->
     <section class="grid grid-cols-2 gap-4" aria-label="Vandaag">
-      <div class="card flex flex-col items-center gap-3 p-4 text-center sm:flex-row sm:gap-5 sm:p-5 sm:text-left">
+      <div class="card flex flex-col items-center justify-center gap-2 p-4 text-center sm:flex-row sm:justify-start sm:gap-5 sm:p-5 sm:text-left">
         <ProgressRing :value="data.minutesToday / data.dailyGoalMinutes" :size="80">
-          <span class="text-lg font-extrabold leading-none">{{ Math.round(data.minutesToday) }}<span class="block text-xs font-semibold text-muted">min</span></span>
+          <span class="font-extrabold leading-none">{{ Math.round(data.minutesToday) }}/{{ data.dailyGoalMinutes }}<span class="block text-xs font-semibold text-muted">min</span></span>
+        </ProgressRing>
+        <!-- Phone: the ring says it all; the label stays for screen readers -->
+        <h2 class="sr-only text-lg font-bold sm:not-sr-only">Doel van vandaag</h2>
+      </div>
+      <div class="card flex flex-col items-center justify-center gap-2 p-4 text-center sm:flex-row sm:justify-start sm:gap-5 sm:p-5 sm:text-left">
+        <!-- Same circle as the goal, without progress: a streak has no target -->
+        <ProgressRing :value="0" :size="80">
+          <span class="text-lg font-extrabold leading-none">{{ data.streak.current }}<span class="block text-xs font-semibold text-muted">{{ data.streak.current === 1 ? "dag" : "dagen" }}</span></span>
         </ProgressRing>
         <div>
-          <h2 class="font-bold sm:text-lg">Doel van vandaag</h2>
-          <!-- Phone: the ring already shows the minutes; the tiles stay short -->
-          <p class="hidden text-muted sm:block">{{ Math.round(data.minutesToday) }} van {{ data.dailyGoalMinutes }} minuten</p>
-        </div>
-      </div>
-      <div class="card flex flex-col items-center gap-3 p-4 text-center sm:flex-row sm:gap-5 sm:p-5 sm:text-left">
-        <div class="grid h-20 w-20 shrink-0 place-items-center rounded-full bg-brand-bg text-3xl" aria-hidden="true">🔥</div>
-        <div>
-          <h2 class="font-bold sm:text-lg">Reeks</h2>
-          <p class="text-2xl font-extrabold sm:text-3xl">{{ data.streak.current }} <span class="text-sm font-semibold text-muted sm:text-base">{{ data.streak.current === 1 ? "dag" : "dagen" }}</span></p>
+          <h2 class="font-bold sm:text-lg"><span aria-hidden="true">🔥</span> Reeks</h2>
           <p class="hidden text-sm text-muted sm:block">Beste: {{ data.streak.best }}</p>
         </div>
       </div>
