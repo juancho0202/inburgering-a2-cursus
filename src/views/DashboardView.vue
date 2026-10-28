@@ -90,7 +90,7 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
           </RouterLink>
           <!-- Hidden when there is nothing to review: a "(0)" button only pushes the modules further down on a phone. -->
           <RouterLink v-if="data.dueCount + data.newCount" to="/woorden/herhalen">
-            <AppButton size="lg" variant="secondary">🔤 Woorden herhalen ({{ data.dueCount + data.newCount }})</AppButton>
+            <AppButton size="lg" variant="secondary">📕 Woorden herhalen ({{ data.dueCount + data.newCount }})</AppButton>
           </RouterLink>
         </div>
       </div>
@@ -102,7 +102,7 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
         <GoalGauge :minutes="data.minutesToday" :goal="data.dailyGoalMinutes" />
         <span class="text-xs font-semibold text-muted" aria-hidden="true">minuten</span>
         <!-- The titles are small tabs on the bottom edge, so they cost no height -->
-        <h2 class="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-t-xl bg-brand-bg px-3 py-1 text-xs font-bold text-brand-strong">Vandaag</h2>
+        <h2 class="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-t-xl bg-brand-bg px-3 py-1 text-xs font-bold text-brand-strong"><span aria-hidden="true">⏱️</span> Vandaag</h2>
       </div>
       <div class="card relative flex flex-col items-center justify-center p-4 pb-8 md:w-36">
         <!-- A plain circle, without progress: a streak has no target. As tall as the goal gauge with its label. -->

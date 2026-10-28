@@ -43,7 +43,7 @@ const stateLabel = { new: "Nieuw", learning: "Aan het leren", learned: "Geleerd"
   <div>
     <div class="mb-6 flex flex-wrap items-end justify-between gap-3">
       <h1 class="text-3xl font-extrabold tracking-tight">Woorden</h1>
-      <RouterLink to="/woorden/herhalen"><AppButton>🔤 Woorden herhalen</AppButton></RouterLink>
+      <RouterLink to="/woorden/herhalen"><AppButton>📕 Woorden herhalen</AppButton></RouterLink>
     </div>
     <p v-if="ready && !available" class="mb-4 rounded-2xl bg-surface-2 px-4 py-2 text-sm text-muted">Je browser heeft geen Nederlandse stem. De 🔊-knoppen staan daarom uit.</p>
 
