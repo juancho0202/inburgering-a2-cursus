@@ -36,6 +36,6 @@ export function netlifyHeadersFile(): string {
     // Hashed files never change, so they can be cached for a year.
     block("/assets/*", { "Cache-Control": "public, max-age=31536000, immutable" }),
     // These must be re-checked every time, or a new version of the app would not reach installed copies.
-    ...["/index.html", "/sw.js", "/registerSW.js", "/manifest.webmanifest"].map((p) => block(p, { "Cache-Control": "no-cache" })),
+    ...["/index.html", "/sw.js", "/manifest.webmanifest"].map((p) => block(p, { "Cache-Control": "no-cache" })),
   ].join("\n");
 }
