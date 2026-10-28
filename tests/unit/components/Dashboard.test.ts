@@ -1,9 +1,10 @@
 // @vitest-environment jsdom
 // The start page and the module page: where "continue" leads and what is recommended next.
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import App from "../../../src/App.vue";
 import DashboardView from "../../../src/views/DashboardView.vue";
 import ModuleView from "../../../src/views/ModuleView.vue";
-import { clickButton, fakeApi, mountApp } from "../../helpers/component";
+import { clickButton, fakeApi, flushPromises, mountApp } from "../../helpers/component";
 import { useSessionStore } from "../../../src/stores/session";
 
 const background = vi.hoisted(() => ({ ready: false }));
@@ -149,6 +150,36 @@ describe("DashboardView", () => {
     fakeApi.fail("GET", "/dashboard", "Database niet beschikbaar.");
     const { wrapper } = await mountApp(DashboardView, { routePath: "/", url: "/" });
     expect(wrapper.text()).toContain("Database niet beschikbaar.");
+  });
+});
+
+describe("review badge in the phone top bar", () => {
+  // The real app shell around the real dashboard: the count travels from one to the other.
+  const openApp = (d: unknown) => {
+    fakeApi.on("GET", "/dashboard", d);
+    fakeApi.on("GET", "/settings", { apiKey: null, theme: "system" });
+    window.matchMedia = (() => ({ matches: false, addEventListener() {}, removeEventListener() {} })) as any;
+    const routes = [
+      { path: "/", component: DashboardView },
+      { path: "/woorden/herhalen", component: { template: "<p>herhalen</p>" } },
+    ];
+    return mountApp(App, { routes, url: "/", stubs: { FinishSessionDialog: true } });
+  };
+  const badge = (w: any) => w.find("header a[href='/woorden/herhalen']");
+
+  it("shows the number of words to review and leads to the review; the page itself has no badge", async () => {
+    const { wrapper, router } = await openApp(dashboard({ dueCount: 3, newCount: 2 }));
+    expect(badge(wrapper).text()).toBe("📕5");
+    expect(badge(wrapper).attributes("aria-label")).toBe("Woorden herhalen (5)");
+    await badge(wrapper).trigger("click");
+    await flushPromises();
+    expect(router.currentRoute.value.path).toBe("/woorden/herhalen");
+    expect(badge(wrapper).exists()).toBe(false);
+  });
+
+  it("with nothing to review there is no badge", async () => {
+    const { wrapper } = await openApp(dashboard({ dueCount: 0, newCount: 0 }));
+    expect(badge(wrapper).exists()).toBe(false);
   });
 });
 
