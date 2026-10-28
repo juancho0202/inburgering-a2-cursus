@@ -39,8 +39,11 @@ describe("landing page in index.html", () => {
     expect(body).toContain("<h1>Free inburgering practice exam (A2)</h1>");
     expect(body.match(/<a class="site-start" href="\/welkom">Start practising, it's free<\/a>/g)).toHaveLength(2);
     expect(body).toContain("<h2>Frequently asked questions</h2>");
-    // each guide as a card: its title as the link, its description under it
-    for (const g of loadGuides()) expect(body).toContain(`<li class="site-card site-card-link"><h3><a href="/guides/${g.slug}/">${g.heading}</a></h3><p>${g.description}</p></li>`);
+    // each guide as a card: its picture, its title as the link, its description under it
+    for (const g of loadGuides()) {
+      expect(body).toMatch(new RegExp(`<li class="site-card site-card-link site-card-guide"><svg class="site-guide-icon" aria-hidden="true"[^]*?</svg><h3><a href="/guides/${g.slug}/">`));
+      expect(body).toContain(`${g.heading}</a></h3><p>${g.description}</p></li>`);
+    }
     // the landing page comes before the app's mount point, and the app is still there
     expect(body.indexOf('id="landing"')).toBeLessThan(body.indexOf('<div id="app">'));
   });
@@ -75,7 +78,8 @@ describe("landing page in index.html", () => {
   });
 
   it("FAQ answers can hold a link, but never raw HTML", () => {
-    expect(body).toContain('<a href="https://www.inburgeren.nl/en/taking-the-integration-exam/practicing.jsp">official practice exams</a>');
+    // another site, so it opens in a new tab
+    expect(body).toContain('<a href="https://www.inburgeren.nl/en/taking-the-integration-exam/practicing.jsp" target="_blank" rel="noopener noreferrer">official practice exams</a>');
     const evil = structuredClone(en) as SiteStrings;
     evil.landing.faq = [{ q: "<b>q</b>", a: 'x <img src=x onerror=alert(1)> [y](javascript:alert(1))' }];
     const html = fillIndexHtml(indexHtml, evil);

@@ -1,6 +1,7 @@
 ---
 slug: book-inburgering-exam
 order: 2
+icon: calendar
 title: How to book your inburgering exam at DUO | Train for Inburgering
 description: Book your A2 or KNM inburgering exam in Mijn Inburgering: the steps, how early to book, changing or cancelling, costs and adapted exams.
 heading: How to book your inburgering exam at DUO

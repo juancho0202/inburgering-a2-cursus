@@ -1,6 +1,7 @@
 ---
 slug: inburgering-a2-exam
 order: 4
+icon: letters
 title: Inburgering A2 exam: parts and practice exams | Train for Inburgering
 description: What is in the A2 inburgering exam (Reading, Listening, Writing, Speaking, KNM), how long each part takes, and where to find free practice exams.
 heading: The A2 inburgering exam: the parts and how to practise

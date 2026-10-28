@@ -215,9 +215,6 @@ body:has(> .site) {
 }
 
 /* Guides */
-.site-article {
-  max-width: 44rem;
-}
 .site-article > .site-note {
   margin-bottom: 1.5rem;
   font-size: 0.9rem;
@@ -234,7 +231,6 @@ body:has(> .site) {
   margin-bottom: 0.35rem;
 }
 .site-cta {
-  max-width: 44rem;
   margin-top: 2.5rem;
   padding: 1.25rem;
   border: 1px solid var(--l-line);
@@ -258,4 +254,73 @@ body:has(> .site) {
 /* Guide cards hold more text: two columns on a wide screen, one on a phone */
 .site-cards-wide {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
+}
+
+/* Guide cards: a tall picture on the left, the text next to it */
+.site-card-guide {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  grid-template-rows: auto 1fr;
+  column-gap: 1rem;
+  align-items: start;
+}
+.site-guide-icon {
+  grid-row: span 2;
+  display: block;
+  width: 4.5rem;
+  height: 6rem;
+  transition: transform 0.2s;
+  --i-tile: #fdf0e1;
+  --i-main: #e8710a;
+  --i-deep: #a84f00;
+  --i-soft: #f6c596;
+  --i-cut: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  .site-guide-icon {
+    --i-tile: #3a2512;
+    --i-main: #ff9438;
+    --i-deep: #c45e05;
+    --i-soft: #7a4518;
+    --i-cut: #fff4e8;
+  }
+}
+.site-guide-icon .i-tile {
+  fill: var(--i-tile);
+}
+.site-guide-icon .i-main {
+  fill: var(--i-main);
+}
+.site-guide-icon .i-deep {
+  fill: var(--i-deep);
+}
+.site-guide-icon .i-soft {
+  fill: var(--i-soft);
+}
+.site-guide-icon .i-cut {
+  fill: var(--i-cut);
+}
+.site-guide-icon .i-ink,
+.site-guide-icon .i-ink-deep {
+  fill: none;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.site-guide-icon .i-ink {
+  stroke: var(--i-main);
+}
+.site-guide-icon .i-ink-deep {
+  stroke: var(--i-deep);
+}
+.site-card-guide:hover .site-guide-icon {
+  transform: translateY(-2px) rotate(-3deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-guide-icon {
+    transition: none;
+  }
+  .site-card-guide:hover .site-guide-icon {
+    transform: none;
+  }
 }

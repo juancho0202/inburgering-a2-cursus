@@ -1,6 +1,7 @@
 ---
 slug: mijn-inburgering-login
 order: 1
+icon: laptop
 title: How to log in to Mijn Inburgering (DigiD) | Train for Inburgering
 description: Log in to Mijn Inburgering with DigiD: what you need, the steps, what you find there and what to do when logging in does not work.
 heading: How to log in to Mijn Inburgering

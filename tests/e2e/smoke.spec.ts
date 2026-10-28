@@ -240,11 +240,23 @@ test("the guides open from the landing page, also once the app is installed for 
   await page.addInitScript(() => document.addEventListener("securitypolicyviolation", (e) => console.error(`CSP ${e.violatedDirective}`)));
   page.on("console", (m) => m.type() === "error" && violations.push(m.text()));
   await page.goto("/");
-  // the whole card opens the guide, not only its title
-  await page.locator(".site-card-link", { hasText: "How to book your inburgering exam at DUO" }).click();
+  // the whole card opens the guide, the picture too (a tap where a person would tap, not on the link element)
+  const icon = page.locator(".site-card-link", { hasText: "How to book your inburgering exam at DUO" }).locator(".site-guide-icon");
+  await icon.scrollIntoViewIfNeeded();
+  const picture = await icon.boundingBox();
+  await page.mouse.click(picture!.x + picture!.width / 2, picture!.y + picture!.height / 2);
   await expect(page).toHaveURL(/\/guides\/book-inburgering-exam\/$/);
   await expect(page.getByRole("heading", { level: 1, name: "How to book your inburgering exam at DUO" })).toBeVisible();
   await expect(page.getByText(/Last checked: .*This is an unofficial guide/)).toBeVisible();
+  // DUO's own pages open in a new tab, so the guide stays open
+  await page.context().route("https://www.inburgeren.nl/**", (route) => route.fulfill({ body: "DUO" })); // no real network in tests
+  const popup = page.waitForEvent("popup");
+  await page.getByRole("link", { name: "registration page" }).first().click();
+  const duo = await popup;
+  await duo.waitForLoadState();
+  expect(new URL(duo.url()).host).toBe("www.inburgeren.nl");
+  await duo.close();
+  await expect(page).toHaveURL(/\/guides\/book-inburgering-exam\/$/);
 
   // a learner with the offline copy installed must still get the guide, not the app
   await startFresh(page);

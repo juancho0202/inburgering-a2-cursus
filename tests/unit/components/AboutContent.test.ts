@@ -36,3 +36,15 @@ describe("AboutContent credit", () => {
     expect(link?.attributes("translate")).toBe("no");
   });
 });
+
+describe("AboutContent links", () => {
+  it("links to other sites (GitHub, Piper) open in a new tab, so the app stays open", async () => {
+    const { wrapper } = await mountApp(AboutContent, { language: "en", stubs: { KeyGuide: true } });
+    const external = wrapper.findAll("a").filter((a) => /^https?:/.test(a.attributes("href") ?? ""));
+    expect(external.map((a) => a.text())).toEqual(expect.arrayContaining(["Piper", "github.com/juancho0202"]));
+    for (const a of external) {
+      expect(a.attributes("target"), a.text()).toBe("_blank");
+      expect(a.attributes("rel"), a.text()).toBe("noopener noreferrer");
+    }
+  });
+});

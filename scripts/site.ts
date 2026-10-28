@@ -7,14 +7,16 @@
  * Short copy lives in site/strings/<lang>.json and each guide in site/guides/<lang>/<slug>.md, so both can be
  * translated later.
  */
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import MarkdownIt from "markdown-it";
 import type { Plugin } from "vite";
 import en from "../site/strings/en.json";
+import { externalLinksInNewTab } from "../src/lib/externalLinks";
 
 export const SITE_URL = "https://trainforinburgering.com";
 const GUIDES_DIR = path.resolve(__dirname, "../site/guides/en");
+const ICONS_DIR = path.resolve(__dirname, "../site/icons");
 
 export type SiteStrings = typeof en;
 type Item = { title: string; text: string };
@@ -30,12 +32,14 @@ export interface Guide {
   lastChecked: string;
   /** Position in lists. */
   order: number;
+  /** Picture on the guide's card: site/icons/<icon>.svg */
+  icon: string;
   /** Markdown */
   body: string;
 }
 
-// html off: a guide or a translation can never put raw markup in the page.
-const md = new MarkdownIt({ html: false });
+// html off: a guide or a translation can never put raw markup in the page. Links to other sites open in a new tab.
+const md = new MarkdownIt({ html: false }).use(externalLinksInNewTab);
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 // Inside <script type="application/ld+json">, "<" could end the block early.
@@ -43,7 +47,7 @@ const jsonLd = (data: unknown) => `<script type="application/ld+json">${JSON.str
 
 export const guidePath = (g: Guide) => `/guides/${g.slug}/`;
 
-const REQUIRED = ["slug", "title", "description", "heading", "lastChecked", "order"] as const;
+const REQUIRED = ["slug", "title", "description", "heading", "lastChecked", "order", "icon"] as const;
 
 /** A guide file: front matter (`key: value` lines between `---`), then Markdown. */
 export function parseGuide(file: string, src: string): Guide {
@@ -57,7 +61,8 @@ export function parseGuide(file: string, src: string): Guide {
   for (const key of REQUIRED) if (!meta[key]) throw new Error(`${file}: missing "${key}"`);
   if (!/^[a-z0-9-]+$/.test(meta.slug)) throw new Error(`${file}: slug must be lowercase words with dashes`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(meta.lastChecked)) throw new Error(`${file}: lastChecked must be YYYY-MM-DD`);
-  return { slug: meta.slug, title: meta.title, description: meta.description, heading: meta.heading, lastChecked: meta.lastChecked, order: Number(meta.order), body: m[2] };
+  if (!/^[a-z0-9-]+$/.test(meta.icon)) throw new Error(`${file}: icon must be the name of a file in site/icons`);
+  return { slug: meta.slug, title: meta.title, description: meta.description, heading: meta.heading, lastChecked: meta.lastChecked, order: Number(meta.order), icon: meta.icon, body: m[2] };
 }
 
 export function loadGuides(dir = GUIDES_DIR): Guide[] {
@@ -128,10 +133,25 @@ export function renderHead(s: SiteStrings): string {
 const cards = (items: Item[]) =>
   items.map((i) => `<li class="site-card"><h3>${esc(i.title)}</h3><p>${esc(i.text)}</p></li>`).join("\n          ");
 
-/** Guides as cards. The link is the title; a stretched ::after makes the whole card clickable. */
+/**
+ * A card picture, inlined so its colours follow the page theme (site.css). Decorative: the title says it all.
+ * No ids (a page shows several) and no style attributes (the security policy blocks inline styles).
+ */
+export function guideIcon(name: string, dir = ICONS_DIR): string {
+  const file = path.join(dir, `${name}.svg`);
+  if (!existsSync(file)) throw new Error(`site/icons/${name}.svg does not exist`);
+  return readFileSync(file, "utf8")
+    .replace(/<!--[\s\S]*?-->\s*/g, "")
+    .replace(/\s*\n\s*/g, "")
+    .replace("<svg ", '<svg class="site-guide-icon" aria-hidden="true" focusable="false" ');
+}
+
+/** Guides as cards: picture on the left, text on the right. The link is the title; a stretched ::after makes the whole card clickable. */
 const guideCards = (guides: Guide[]) =>
   `<ul class="site-cards site-cards-wide">
-          ${guides.map((g) => `<li class="site-card site-card-link"><h3><a href="${guidePath(g)}">${esc(g.heading)}</a></h3><p>${esc(g.description)}</p></li>`).join("\n          ")}
+          ${guides
+            .map((g) => `<li class="site-card site-card-link site-card-guide">${guideIcon(g.icon)}<h3><a href="${guidePath(g)}">${esc(g.heading)}</a></h3><p>${esc(g.description)}</p></li>`)
+            .join("\n          ")}
           </ul>`;
 
 const brandBar = (s: SiteStrings) =>

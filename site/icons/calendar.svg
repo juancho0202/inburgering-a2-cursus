@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 128">
+  <rect class="i-tile" width="96" height="128" rx="20"/>
+  <ellipse class="i-soft" cx="48" cy="106" rx="32" ry="4.5"/>
+  <!-- calendar with a page whose corner curls up -->
+  <rect class="i-main" x="18" y="32" width="60" height="66" rx="9"/>
+  <path class="i-cut" d="M28 47h40a5 5 0 0 1 5 5v29L63 92H28a5 5 0 0 1-5-5V52a5 5 0 0 1 5-5z"/>
+  <path class="i-soft" d="M73 81h-7a3 3 0 0 0-3 3v8z"/>
+  <!-- rings -->
+  <rect class="i-deep" x="31" y="24" width="7" height="17" rx="3.5"/>
+  <rect class="i-deep" x="58" y="24" width="7" height="17" rx="3.5"/>
+  <!-- days, one of them booked -->
+  <rect class="i-soft" x="28" y="53" width="10" height="8" rx="2"/>
+  <rect class="i-soft" x="43" y="53" width="10" height="8" rx="2"/>
+  <rect class="i-soft" x="58" y="53" width="10" height="8" rx="2"/>
+  <rect class="i-soft" x="28" y="65" width="10" height="8" rx="2"/>
+  <rect class="i-soft" x="43" y="65" width="10" height="8" rx="2"/>
+  <rect class="i-main" x="58" y="65" width="10" height="8" rx="2"/>
+  <rect class="i-soft" x="28" y="77" width="10" height="8" rx="2"/>
+  <rect class="i-soft" x="43" y="77" width="10" height="8" rx="2"/>
+  <path class="i-deep" d="M82 14l2.2 5.8 5.8 2.2-5.8 2.2-2.2 5.8-2.2-5.8-5.8-2.2 5.8-2.2z"/>
+  <circle class="i-soft" cx="13" cy="24" r="3"/>
+</svg>

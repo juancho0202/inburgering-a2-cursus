@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 128">
+  <rect class="i-tile" width="96" height="128" rx="20"/>
+  <ellipse class="i-soft" cx="46" cy="114" rx="24" ry="4"/>
+  <!-- A leans left, B leans right, C leans left; the dark copy behind gives them depth -->
+  <g transform="translate(44 26) rotate(-12) translate(-13 -14)">
+    <path class="i-ink-deep" transform="translate(2 3)" d="M2 27L13 1l11 26M6.5 18h13"/>
+    <path class="i-ink" d="M2 27L13 1l11 26M6.5 18h13"/>
+  </g>
+  <g transform="translate(52 59) rotate(12) translate(-13 -14)">
+    <path class="i-ink-deep" transform="translate(2 3)" d="M4 1v26h11a6.75 6.75 0 0 0 0-13.5H4m0 0h10a6.25 6.25 0 0 0 0-12.5H4"/>
+    <path class="i-ink" d="M4 1v26h11a6.75 6.75 0 0 0 0-13.5H4m0 0h10a6.25 6.25 0 0 0 0-12.5H4"/>
+  </g>
+  <g transform="translate(44 92) rotate(-12) translate(-13 -14)">
+    <path class="i-ink-deep" transform="translate(2 3)" d="M22.1 5.9A11.5 11.5 0 1 0 22.1 22.1"/>
+    <path class="i-ink" d="M22.1 5.9A11.5 11.5 0 1 0 22.1 22.1"/>
+  </g>
+  <path class="i-deep" d="M80 14l2.2 5.8 5.8 2.2-5.8 2.2-2.2 5.8-2.2-5.8-5.8-2.2 5.8-2.2z"/>
+  <circle class="i-soft" cx="15" cy="62" r="3"/>
+</svg>

@@ -1,6 +1,7 @@
 ---
 slug: inburgering-exam-results
 order: 3
+icon: magnifier
 title: How to check your inburgering exam results | Train for Inburgering
 description: When and where you get your inburgering exam results (A2, KNM), how to see them in Mijn Inburgering, what to do if you failed, and your diploma.
 heading: How to check your inburgering exam results
