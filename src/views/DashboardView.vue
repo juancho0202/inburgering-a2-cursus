@@ -71,7 +71,10 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
   </div>
   <p v-if="error" class="rounded-2xl bg-bad-bg p-4 text-bad">{{ error }}</p>
   <div v-else-if="data" class="glass-cards grid gap-6">
-    <section class="card relative overflow-hidden p-6 sm:p-8">
+    <!-- From tablet width the two small tiles sit inside the welcome card, on its right: the card spans both columns
+         (one big card, as on a phone) and its text stays in the left one, so the tiles never cover it. -->
+    <div class="grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:gap-0">
+    <section class="card relative overflow-hidden p-6 sm:p-8 md:col-span-2 md:col-start-1 md:row-start-1 md:grid md:grid-cols-subgrid">
       <div class="absolute -right-10 -top-10 h-44 w-44 rounded-full bg-brand-bg" aria-hidden="true" />
       <div class="relative">
         <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Welkom terug! 👋</h1>
@@ -93,26 +96,24 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
       </div>
     </section>
 
-    <!-- Two small tiles side by side, also on a phone, so the modules come into view sooner -->
-    <section class="grid grid-cols-2 gap-4" aria-label="Vandaag">
-      <div class="card flex flex-col items-center justify-center gap-2 p-4 text-center sm:flex-row sm:justify-start sm:gap-5 sm:p-5 sm:text-left">
-        <div class="flex flex-col items-center">
-          <GoalGauge :minutes="data.minutesToday" :goal="data.dailyGoalMinutes" />
-          <span class="text-xs font-semibold text-muted" aria-hidden="true">minuten</span>
-        </div>
-        <!-- Phone: the gauge says it all; the label stays for screen readers -->
-        <h2 class="sr-only text-lg font-bold sm:not-sr-only">Doel van vandaag</h2>
+    <!-- Two small tiles side by side, phone-sized on every screen, so the modules come into view sooner -->
+    <section class="relative grid grid-cols-2 gap-4 md:col-start-2 md:row-start-1 md:self-center md:py-8 md:pr-8" aria-label="Vandaag">
+      <div class="card flex flex-col items-center justify-center p-4 md:w-36">
+        <GoalGauge :minutes="data.minutesToday" :goal="data.dailyGoalMinutes" />
+        <span class="text-xs font-semibold text-muted" aria-hidden="true">minuten</span>
+        <!-- The gauge says it all; the label stays for screen readers -->
+        <h2 class="sr-only">Doel van vandaag</h2>
       </div>
-      <div class="card relative flex flex-col items-center justify-center gap-2 p-4 pb-8 text-center sm:flex-row sm:justify-start sm:gap-5 sm:p-5 sm:pb-8 sm:text-left">
+      <div class="card relative flex flex-col items-center justify-center p-4 pb-8 md:w-36">
         <!-- A plain circle, without progress: a streak has no target. As tall as the goal gauge with its label. -->
         <ProgressRing :value="0" :size="104">
           <span class="text-2xl font-extrabold leading-none">{{ data.streak.current }}<span class="block text-xs font-semibold text-muted">{{ data.streak.current === 1 ? "dag" : "dagen" }}</span></span>
         </ProgressRing>
-        <p class="hidden text-muted sm:block">Beste: {{ data.streak.best }}</p>
         <!-- The title is a small tab on the bottom edge, so it costs no height -->
         <h2 class="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-t-xl bg-brand-bg px-3 py-1 text-xs font-bold text-brand-strong"><span aria-hidden="true">🔥</span> Reeks</h2>
       </div>
     </section>
+    </div>
 
     <section>
       <h2 class="glass mb-3 inline-block rounded-2xl px-4 py-1 text-2xl font-bold">Modules</h2>
