@@ -17,6 +17,9 @@ import ExerciseShell from "../components/exercises/ExerciseShell.vue";
 import ReadAlongButton from "../components/ui/ReadAlongButton.vue";
 import ScenePicture from "../components/ScenePicture.vue";
 import { warmUnit } from "../lib/illustrations";
+import UiLabel from "../components/ui/UiLabel.vue";
+import UiText from "../components/ui/UiText.vue";
+import { useLanguageStore } from "../stores/language";
 
 const route = useRoute();
 const router = useRouter();
@@ -24,6 +27,7 @@ const content = useContentStore();
 const session = useSessionStore();
 const speech = useSpeech();
 const sounds = useSounds();
+const lang = useLanguageStore();
 
 const unit = ref<Unit | null>(null);
 const error = ref<string | null>(null);
@@ -165,34 +169,34 @@ const restart = async () => {
 
   <div v-else-if="unit && finished && summary" class="card slide-up mx-auto max-w-xl p-8 text-center">
     <div class="text-6xl" aria-hidden="true">{{ summary.score >= unit.passScore ? "🎉" : "💪" }}</div>
-    <h1 class="mt-3 text-3xl font-extrabold">Les klaar!</h1>
-    <p class="mt-1 text-xl">Je score: <strong>{{ summary.good }} van {{ summary.total }}</strong> ({{ Math.round(summary.score * 100) }}%)</p>
-    <p class="mt-1 text-muted">{{ summary.score >= unit.passScore ? "Goed gedaan! Je hebt deze les gehaald." : "Bijna! Probeer de les nog een keer." }}</p>
-    <p v-if="summary.words" class="mt-2 rounded-2xl bg-brand-bg px-4 py-2 font-semibold">📕 {{ summary.words }} nieuwe woordkaartjes om te herhalen</p>
+    <h1 class="mt-3 text-3xl font-extrabold"><UiLabel variant="heading" k="unit.done" /></h1>
+    <p class="mt-1 text-xl"><UiText k="common.score" md :params="{ good: summary.good, total: summary.total }" /> ({{ Math.round(summary.score * 100) }}%)</p>
+    <p class="mt-1 text-muted">{{ lang.feedback(summary.score >= unit.passScore ? "unit.passed" : "unit.notPassed") }}</p>
+    <p v-if="summary.words" class="mt-2 rounded-2xl bg-brand-bg px-4 py-2 font-semibold">📕 {{ lang.t("unit.newCards", { n: summary.words }, summary.words) }}</p>
     <div class="mt-6 grid gap-3">
-      <RouterLink v-if="nextUnit" :to="`/unit/${nextUnit.id}`"><AppButton size="lg" class="w-full">Volgende les: {{ nextUnit.title }} →</AppButton></RouterLink>
-      <RouterLink v-if="summary.hard" :to="{ path: '/oefenen', query: { mode: 'hard', unit: unit.id } }"><AppButton variant="secondary" class="w-full">Moeilijke vragen ({{ summary.hard }})</AppButton></RouterLink>
-      <RouterLink :to="{ path: '/oefenen', query: { gen: 'unit', unit: unit.id } }"><AppButton variant="secondary" class="w-full">🤖 Meer oefenen met Claude</AppButton></RouterLink>
-      <AppButton variant="secondary" @click="restart">Opnieuw</AppButton>
-      <AppButton variant="secondary" @click="session.openFinish()">🌙 Klaar voor vandaag</AppButton>
-      <AppButton variant="ghost" @click="exit">Terug naar de module</AppButton>
+      <RouterLink v-if="nextUnit" :to="`/unit/${nextUnit.id}`"><AppButton size="lg" class="w-full"><UiLabel k="unit.nextLesson" />: <span lang="nl" translate="no">{{ nextUnit.title }}</span> →</AppButton></RouterLink>
+      <RouterLink v-if="summary.hard" :to="{ path: '/oefenen', query: { mode: 'hard', unit: unit.id } }"><AppButton variant="secondary" class="w-full"><UiLabel k="dashboard.hardQuestions" /> ({{ summary.hard }})</AppButton></RouterLink>
+      <RouterLink :to="{ path: '/oefenen', query: { gen: 'unit', unit: unit.id } }"><AppButton variant="secondary" class="w-full">🤖 <UiLabel k="practice.moreClaude" /></AppButton></RouterLink>
+      <AppButton variant="secondary" @click="restart"><UiLabel k="common.again" /></AppButton>
+      <AppButton variant="secondary" @click="session.openFinish()">🌙 <UiLabel k="app.finish" /></AppButton>
+      <AppButton variant="ghost" @click="exit"><UiLabel k="unit.backToModule" /></AppButton>
     </div>
   </div>
 
   <div v-else-if="unit && step">
     <div class="mb-6">
       <div class="mb-2 flex items-center justify-between gap-3">
-        <h1 class="truncate text-lg font-bold text-muted"><template v-if="lessonNumber">Les {{ lessonNumber }} · </template>{{ unit.title }}</h1>
+        <h1 class="truncate text-lg font-bold text-muted"><template v-if="lessonNumber"><UiLabel variant="inline" k="settings.lessonN" :params="{ n: lessonNumber }" /> · </template><span lang="nl" translate="no">{{ unit.title }}</span></h1>
         <span class="text-sm font-semibold text-muted">{{ stepIndex + 1 }} / {{ total }}</span>
       </div>
-      <ProgressBar :value="stepIndex / total" :label="`Stap ${stepIndex + 1} van ${total}`" />
-      <p v-if="resumed" class="mt-2 text-sm text-brand-strong">Je gaat verder bij stap {{ stepIndex + 1 }}.</p>
+      <ProgressBar :value="stepIndex / total" :label="lang.t('unit.stepOf', { n: stepIndex + 1, total })" />
+      <p v-if="resumed" class="mt-2 text-sm text-brand-strong">{{ lang.t("unit.resumed", { n: stepIndex + 1 }) }}</p>
     </div>
 
     <template v-if="step.type === 'lesson'">
-      <div :key="stepIndex" class="slide-up pb-28">
+      <div :key="stepIndex" class="slide-up pb-28" lang="nl" translate="no">
         <h2 class="read-along mb-2 text-3xl font-extrabold tracking-tight" :class="{ 'is-reading': isRead('heading') }">{{ step.title }}</h2>
-        <ReadAlongButton class="mb-3" :reading="reading" label="Lees voor" @toggle="toggleRead" />
+        <ReadAlongButton class="mb-3" :reading="reading" :label="lang.t('common.readAloud')" :stop-label="lang.t('common.stopReading')" @toggle="toggleRead" />
         <p v-if="stepIndex === 0" class="read-along mb-5 text-muted" :class="{ 'is-reading': isRead('goal') }">{{ unit.goal }}</p>
         <div v-else class="mb-3" />
         <!-- The lesson opens with its picture, like a chapter in a language book -->
@@ -202,17 +206,17 @@ const restart = async () => {
       </div>
       <div class="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface/95 backdrop-blur">
         <div class="mx-auto flex max-w-4xl items-center justify-between gap-3 px-4 py-3">
-          <AppButton variant="ghost" @click="stepIndex === 0 ? exit() : goTo(stepIndex - 1)">{{ stepIndex === 0 ? "Stoppen" : "← Vorige" }}</AppButton>
-          <AppButton size="lg" @click="advance">{{ isLast ? "Afronden" : "Volgende →" }}</AppButton>
+          <AppButton variant="ghost" @click="stepIndex === 0 ? exit() : goTo(stepIndex - 1)"><template v-if="stepIndex === 0"><UiLabel k="common.stop" /></template><template v-else>← <UiLabel k="common.previous" /></template></AppButton>
+          <AppButton size="lg" @click="advance"><UiLabel v-if="isLast" k="common.finish" /><template v-else><UiLabel k="common.next" /> →</template></AppButton>
         </div>
       </div>
     </template>
 
     <template v-else>
       <ScenePicture v-if="stepIndex === 0 && unit.scene" :id="unit.scene" class="mb-6 max-w-xl" />
-      <ReadAlongButton class="mb-4" :reading="reading" label="Lees de vraag voor" @toggle="toggleRead" />
+      <ReadAlongButton class="mb-4" :reading="reading" :label="lang.t('unit.readQuestion')" :stop-label="lang.t('common.stopReading')" @toggle="toggleRead" />
       <ExerciseShell :key="stepIndex" :exercise="step.exercise" :is-last="isLast" @done="advance" @exit="exit" />
     </template>
   </div>
-  <p v-else class="text-muted">Even laden…</p>
+  <p v-else class="text-muted">{{ lang.t("common.loading") }}</p>
 </template>

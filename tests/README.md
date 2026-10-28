@@ -73,6 +73,7 @@ Helpers in `tests/helpers/component.ts`:
 - `fakeApi.on(method, pathOrRegExp, reply | (body, path) => reply)` registers an endpoint. **Calls to anything unregistered reject with "Unexpected API call"**, so a screen cannot quietly start talking to a new endpoint. The newest registration wins.
 - `fakeApi.fail(method, path, message)` makes an endpoint fail like the real client does. `fakeApi.to(method, path)` lists the calls made (with bodies). `deferred()` holds a call open so you can test what happens meanwhile.
 - `mountApp(Component, { props })` for a widget; `mountApp(View, { routePath: "/unit/:id", url: "/unit/a" })` to render it through `<RouterView/>` exactly as the app does (needed whenever the route matters). It returns `{ wrapper, router, pinia }`. `routes` replaces the route table (app shell tests, `meta`). `stubs` stubs children.
+- `mountApp` starts the app in **Dutch** (option `language` to change that), so tests find buttons by their Dutch text. A `language` and `immersion` in a faked `GET /settings` win once the settings are loaded. Test other languages and levels on purpose (see `components/Language.test.ts`).
 - `clickButton(wrapper, "text")` clicks a button by visible text and fails with the list of buttons if it isn't there. `pressKey("Enter")` presses a key on `window`.
 - Components are attached to `document.body` and unmounted after every test.
 
@@ -106,6 +107,8 @@ These are the kinds of bugs that have actually been found here. For each compone
 - jsdom has no `matchMedia`, `speechSynthesis` or real layout. Stub what you need; don't assert on sizes or visibility from CSS.
 - jsdom cannot play audio. For listening fragments stub `Audio` with a small fake whose `at(seconds)` fires `timeupdate`, stub `fetch` for `/audio/fragments/manifest.json`, and call `forgetFragmentTimings()` between tests (the list is loaded once). See `components/Listening.test.ts`.
 - jsdom never loads images and has no `HTMLImageElement.decode` (the app falls back to the load event, see `src/lib/images.ts`), so a picture never becomes "ready" by itself. To test "already downloaded", stub the `complete` and `naturalWidth` getters (see `Pictures.test.ts`).
+- Never import a store (or anything that imports `src/api/client`) into `tests/helpers/component.ts`: the `vi.mock` factory imports the helper while it replaces the client, and the test file hangs without an error. The helper sets the start language through `localStorage` for that reason.
+- The e2e journeys run in a Dutch browser (`locale: "nl-NL"` in `playwright.config.ts`); the language journeys set their own locale.
 - Mock modules by their path as the component imports them: `../../../src/lib/progressFile`, `../../../src/lib/storage`.
 - Random order (`shuffled`): find options by their text, never by position; mock `Math.random` only to test a rule about the shuffle itself.
 
@@ -133,6 +136,7 @@ These are the kinds of bugs that have actually been found here. For each compone
 | Install hint / storage protection | `components/InstallHint.test.ts` |
 | "Er is een nieuwe versie" banner and looking for updates (`src/lib/appUpdate.ts`) | `components/UpdateBanner.test.ts` |
 | Progress bar/ring, summary page | `components/Progress.test.ts` |
+| Languages: picker and `?lang=`, immersion levels (the small line under buttons and headings), Dutch first in the picker, labels that graduate, Dutch-only exam, "In mijn taal" feedback, Unit 0 glosses | `components/Language.test.ts` |
 
 Known gaps (not component tests, but worth a look when you are nearby): `src/lib/*` (`storage.ts`, `progressFile.ts`) and `src/stores/*` have no direct tests (`backgrounds.ts` is covered by `tests/unit/backgrounds.test.ts`); the SpeakButton/voice choice is untested because jsdom has no speech synthesis.
 

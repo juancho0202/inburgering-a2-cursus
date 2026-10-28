@@ -4,8 +4,11 @@ import type { Exercise } from "@shared/types";
 import { checkWordOrder } from "@shared/logic/answers";
 import ExerciseStem from "./ExerciseStem.vue";
 import { shuffled, type EvalResult } from "./types";
+import UiLabel from "../ui/UiLabel.vue";
+import { useLanguageStore } from "../../stores/language";
 
 const props = defineProps<{ exercise: Extract<Exercise, { type: "word-order" }>; checked: boolean }>();
+const lang = useLanguageStore();
 
 interface Tile {
   id: number;
@@ -47,7 +50,7 @@ defineExpose({ ready, evaluate });
     <div
       class="mb-4 flex min-h-20 flex-wrap items-center gap-2 rounded-2xl border-2 border-dashed p-3"
       :class="checked ? (isCorrect ? 'border-good bg-good-bg' : 'border-bad bg-bad-bg') : 'border-line bg-surface'"
-      aria-label="Jouw zin"
+      :aria-label="lang.t('exercise.yourSentence')"
     >
       <button
         v-for="t in placed"
@@ -59,7 +62,7 @@ defineExpose({ ready, evaluate });
       >
         {{ t.text }}
       </button>
-      <span v-if="placed.length === 0" class="text-muted">Tik op de woorden om de zin te maken.</span>
+      <span v-if="placed.length === 0" class="text-muted"><UiLabel variant="inline" k="exercise.orderHint" /></span>
     </div>
     <div class="flex flex-wrap gap-2" aria-label="Woorden">
       <button

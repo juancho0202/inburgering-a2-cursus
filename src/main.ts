@@ -10,6 +10,11 @@ import { primeBackground } from "./lib/backgrounds";
 import { watchForUpdates } from "./lib/appUpdate";
 import { startApp } from "./lib/landing";
 import { api } from "./api/client";
+import { takeLanguageParam } from "./i18n";
+
+// Before the router starts: the language landing pages link to /?lang=xx (see takeLanguageParam).
+// public/boot.js has already seen the query, so these visits skip the landing page.
+takeLanguageParam();
 
 const app = createApp(App);
 app.use(createPinia());

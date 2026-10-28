@@ -6,6 +6,7 @@ import SpeakButton from "../ui/SpeakButton.vue";
 import McExercise from "./McExercise.vue";
 import { listenKey, type EvalResult, type ExerciseHandle } from "./types";
 import { spotKey } from "../../lib/illustrations";
+import UiLabel from "../ui/UiLabel.vue";
 
 const props = defineProps<{ exercise: Extract<Exercise, { type: "listening" }>; checked: boolean }>();
 
@@ -61,7 +62,7 @@ provide(listenKey, null);
           class="mt-3 inline-flex items-center gap-2 rounded-full border-2 border-good/50 bg-good-bg px-3 py-1 text-sm font-bold text-good hover:border-good"
           @click="player?.playFrom(q.answerLine)"
         >
-          ▶ Luister naar het antwoord
+          ▶ <UiLabel k="exercise.listenAnswer" />
         </button>
       </section>
     </div>

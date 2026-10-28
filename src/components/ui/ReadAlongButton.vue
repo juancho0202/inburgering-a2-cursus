@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /** Play/stop for reading the current step aloud. Same brand colour as the highlight on the part being read. */
-defineProps<{ reading: boolean; label: string }>();
+withDefaults(defineProps<{ reading: boolean; label: string; stopLabel?: string }>(), { stopLabel: "Stop" });
 defineEmits<{ toggle: [] }>();
 </script>
 
@@ -14,6 +14,6 @@ defineEmits<{ toggle: [] }>();
   >
     <span v-if="reading" class="sound-bars" aria-hidden="true"><i /><i /><i /></span>
     <span v-else aria-hidden="true">▶</span>
-    {{ reading ? "Stop" : label }}
+    {{ reading ? stopLabel : label }}
   </button>
 </template>

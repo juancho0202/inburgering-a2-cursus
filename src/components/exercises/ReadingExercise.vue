@@ -7,6 +7,7 @@ import TrueFalseExercise from "./TrueFalseExercise.vue";
 import GapFillExercise from "./GapFillExercise.vue";
 import { listenKey, type EvalResult, type ExerciseHandle } from "./types";
 import { spotKey } from "../../lib/illustrations";
+import UiLabel from "../ui/UiLabel.vue";
 
 const props = defineProps<{ exercise: Extract<Exercise, { type: "reading" }>; checked: boolean }>();
 
@@ -44,7 +45,7 @@ provide(listenKey, null);
     </div>
     <div class="grid gap-6">
       <section v-for="(q, i) in exercise.questions" :key="q.id" class="card p-5">
-        <p class="mb-2 text-sm font-bold uppercase tracking-wide text-muted">Vraag {{ i + 1 }}</p>
+        <p class="mb-2 text-sm font-bold uppercase tracking-wide text-muted"><UiLabel variant="inline" k="exercise.question" :params="{ n: i + 1 }" /></p>
         <component
           :is="questionComponent(q)"
           :ref="(el: any) => (children[i] = el)"

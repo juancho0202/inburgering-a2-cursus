@@ -7,11 +7,15 @@ import { useSessionStore } from "./stores/session";
 import { useReviewStore } from "./stores/review";
 import FinishSessionDialog from "./components/FinishSessionDialog.vue";
 import UpdateBanner from "./components/UpdateBanner.vue";
+import UiLabel from "./components/ui/UiLabel.vue";
+import { useLanguageStore } from "./stores/language";
+import { dirOf } from "./i18n";
 
 const settings = useSettingsStore();
 const route = useRoute();
 const session = useSessionStore();
 const review = useReviewStore();
+const lang = useLanguageStore();
 function finishFromMenu() {
   closeMenu(false);
   session.openFinish();
@@ -35,8 +39,9 @@ function closeMenu(returnFocus = true) {
 }
 const onKey = (e: KeyboardEvent) => e.key === "Escape" && closeMenu();
 
-onMounted(() => {
-  settings.load();
+onMounted(async () => {
+  await settings.load().catch(() => {});
+  void lang.loadLearned();
   mq.addEventListener("change", refresh);
   window.addEventListener("keydown", onKey);
 });
@@ -46,17 +51,28 @@ onBeforeUnmount(() => {
   document.body.style.overflow = "";
 });
 watch(() => settings.settings?.theme, refresh, { immediate: true });
+// The page language follows what is shown most: the learner's language, or Dutch from level 2 on.
+watch(
+  () => lang.proseLocale,
+  (l) => {
+    document.documentElement.lang = l;
+    document.documentElement.dir = dirOf(l);
+  },
+  { immediate: true },
+);
+// The mock exam is Dutch only, like the real exam.
+watch(() => !!route.meta.dutchOnly, (on) => (lang.dutchOnly = on), { immediate: true });
 // Close the menu after choosing a page; keep the page from scrolling behind it.
 watch(() => route.fullPath, () => closeMenu(false));
 watch(menuOpen, (open) => (document.body.style.overflow = open ? "hidden" : ""));
 
 const links = [
-  { to: "/", label: "Leren", icon: "🏠" },
-  { to: "/woorden", label: "Woorden", icon: "📕" },
-  { to: "/werkwoorden", label: "Werkwoorden", icon: "🔁" },
-  { to: "/examens", label: "Examens", icon: "⏱️" },
-  { to: "/samenvatting", label: "Samenvatting", icon: "📝" },
-  { to: "/instellingen", label: "Instellingen", icon: "⚙️" },
+  { to: "/", label: "nav.learn", icon: "🏠" },
+  { to: "/woorden", label: "nav.words", icon: "📕" },
+  { to: "/werkwoorden", label: "nav.verbs", icon: "🔁" },
+  { to: "/examens", label: "nav.exams", icon: "⏱️" },
+  { to: "/samenvatting", label: "nav.summary", icon: "📝" },
+  { to: "/instellingen", label: "nav.settings", icon: "⚙️" },
 ];
 // "/" must only be active on the home page (and not on every page).
 const isActive = (to: string) => (to === "/" ? route.path === "/" : route.path === to || route.path.startsWith(to + "/"));
@@ -65,7 +81,7 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
 
 <template>
   <div class="flex min-h-screen flex-col">
-    <a href="#main" class="sr-only z-50 rounded-xl bg-surface px-4 py-2 font-bold focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Naar de inhoud</a>
+    <a href="#main" class="sr-only z-50 rounded-xl bg-surface px-4 py-2 font-bold focus:not-sr-only focus:fixed focus:left-4 focus:top-4">{{ lang.t("app.skip") }}</a>
 
     <header v-if="!route.meta.focus" class="sticky top-0 z-30 border-b border-line bg-surface/90 backdrop-blur">
       <div class="mx-auto flex max-w-5xl items-center gap-2 px-4 py-2.5">
@@ -75,7 +91,7 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
         </RouterLink>
 
         <!-- Desktop: links in the top bar -->
-        <nav class="hidden items-center gap-1 md:flex" aria-label="Hoofdmenu">
+        <nav class="hidden items-center gap-1 md:flex" :aria-label="lang.t('app.mainMenu')">
           <RouterLink
             v-for="l in links"
             :key="l.to"
@@ -84,12 +100,12 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
             :class="linkClass(l.to)"
             :aria-current="isActive(l.to) ? 'page' : undefined"
           >
-            <span aria-hidden="true">{{ l.icon }}</span>{{ l.label }}
+            <span aria-hidden="true">{{ l.icon }}</span><UiLabel :k="l.label" />
           </RouterLink>
         </nav>
 
-        <button type="button" class="ml-auto hidden items-center gap-1.5 rounded-xl border-2 border-line px-3 py-1.5 font-semibold text-muted transition hover:bg-surface-2 hover:text-ink md:flex" title="Klaar voor vandaag" aria-label="Klaar voor vandaag" @click="session.openFinish()">
-          <span aria-hidden="true">🌙</span><span class="hidden whitespace-nowrap xl:inline">Klaar voor vandaag</span>
+        <button type="button" class="ml-auto hidden items-center gap-1.5 rounded-xl border-2 border-line px-3 py-1.5 font-semibold text-muted transition hover:bg-surface-2 hover:text-ink md:flex" :title="lang.t('app.finish')" :aria-label="lang.t('app.finish')" @click="session.openFinish()">
+          <span aria-hidden="true">🌙</span><span class="hidden whitespace-nowrap xl:inline"><UiLabel k="app.finish" /></span>
         </button>
 
         <div class="ml-auto flex items-center gap-2 md:hidden">
@@ -98,7 +114,7 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
             v-if="route.path === '/' && review.count"
             to="/woorden/herhalen"
             class="flex h-11 items-center gap-1 rounded-xl border-2 border-line px-3 font-bold text-ink transition hover:bg-surface-2"
-            :aria-label="`Woorden herhalen (${review.count})`"
+            :aria-label="lang.t('app.reviewWords', { count: review.count })"
           >
             <span aria-hidden="true">📕</span><span aria-hidden="true">{{ review.count }}</span>
           </RouterLink>
@@ -108,7 +124,7 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
             ref="menuButton"
             type="button"
             class="grid h-11 w-11 place-items-center rounded-xl border-2 border-line text-ink transition hover:bg-surface-2 md:hidden"
-            aria-label="Menu openen"
+            :aria-label="lang.t('app.openMenu')"
             aria-controls="mobile-menu"
             :aria-expanded="menuOpen"
             @click="openMenu"
@@ -125,13 +141,13 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
     <Transition name="drawer">
       <div v-if="menuOpen && !route.meta.focus" class="fixed inset-0 z-50 md:hidden">
         <div class="drawer-overlay absolute inset-0 bg-black/50" @click="closeMenu()" />
-        <nav id="mobile-menu" class="drawer-panel absolute inset-y-0 left-0 flex w-72 max-w-[85vw] flex-col border-r border-line bg-surface p-4 shadow-2xl" aria-label="Hoofdmenu">
+        <nav id="mobile-menu" class="drawer-panel absolute inset-y-0 left-0 flex w-72 max-w-[85vw] flex-col border-r border-line bg-surface p-4 shadow-2xl" :aria-label="lang.t('app.mainMenu')">
           <div class="mb-4 flex items-center justify-between">
             <span class="flex items-center gap-2 text-lg font-extrabold">
               <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand text-white" aria-hidden="true">NL</span>
               Inburgering A2
             </span>
-            <button ref="closeButton" type="button" class="grid h-11 w-11 place-items-center rounded-xl text-ink transition hover:bg-surface-2" aria-label="Menu sluiten" @click="closeMenu()">
+            <button ref="closeButton" type="button" class="grid h-11 w-11 place-items-center rounded-xl text-ink transition hover:bg-surface-2" :aria-label="lang.t('app.closeMenu')" @click="closeMenu()">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
                 <path d="M6 6l12 12M18 6L6 18" />
               </svg>
@@ -141,16 +157,16 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
             <li v-for="l in links" :key="l.to">
               <RouterLink
                 :to="l.to"
-                class="flex items-center gap-3 rounded-2xl px-4 py-3 text-lg font-bold transition"
+                class="flex items-center gap-3 rounded-2xl px-4 py-3 text-lg font-bold transition [&_.ui-stack]:items-start"
                 :class="linkClass(l.to)"
                 :aria-current="isActive(l.to) ? 'page' : undefined"
               >
-                <span class="w-7 text-center text-2xl" aria-hidden="true">{{ l.icon }}</span>{{ l.label }}
+                <span class="w-7 text-center text-2xl" aria-hidden="true">{{ l.icon }}</span><UiLabel :k="l.label" />
               </RouterLink>
             </li>
           </ul>
           <button type="button" class="mt-auto flex items-center justify-center gap-2 rounded-2xl border-2 border-line px-4 py-3 text-lg font-bold transition hover:bg-surface-2" @click="finishFromMenu">
-            <span aria-hidden="true">🌙</span>Klaar voor vandaag
+            <span aria-hidden="true">🌙</span><UiLabel k="app.finish" />
           </button>
         </nav>
       </div>
@@ -158,11 +174,12 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
     <FinishSessionDialog />
     <UpdateBanner />
 
+
     <main id="main" tabindex="-1" class="mx-auto w-full flex-1 px-4 py-6 sm:py-8" :class="route.meta.focus ? 'max-w-6xl' : 'max-w-5xl'">
       <RouterView />
     </main>
     <footer v-if="!route.meta.focus" class="border-t border-line px-4 py-4 text-center text-sm text-muted">
-      Niet van DUO · Een oefenapp voor Inburgering A2 · <RouterLink to="/over" class="font-semibold underline hover:text-ink">Over deze app</RouterLink>
+      {{ lang.t("app.footer") }} · <RouterLink to="/over" class="font-semibold underline hover:text-ink"><UiLabel variant="inline" k="app.about" /></RouterLink>
     </footer>
   </div>
 </template>
