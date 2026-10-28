@@ -22,7 +22,7 @@ describe("AboutContent credit", () => {
       const { wrapper } = await mountApp(AboutContent, { language, stubs: { KeyGuide: true } });
       const section = wrapper.findAll("section").find((s) => s.find("h2").text().includes(heading));
       expect(section, wrapper.findAll("h2").map((h) => h.text()).join(" | ")).toBeDefined();
-      expect(section!.text()).toContain(`${madeBy} Juan Muñoz`);
+      expect(section!.text()).toContain(`${madeBy} Juan David Muñoz`);
       const link = section!.findAll("a").find((a) => a.text() === "github.com/juancho0202");
       expect(link?.attributes("href")).toBe("https://github.com/juancho0202");
     });
@@ -30,7 +30,7 @@ describe("AboutContent credit", () => {
 
   it("keeps browser translators off the name and the username", async () => {
     const { wrapper } = await mountApp(AboutContent, { language: "en", stubs: { KeyGuide: true } });
-    const name = wrapper.findAll("strong").find((s) => s.text() === "Juan Muñoz");
+    const name = wrapper.findAll("strong").find((s) => s.text() === "Juan David Muñoz");
     const link = wrapper.findAll("a").find((a) => a.text() === "github.com/juancho0202");
     expect(name?.attributes("translate")).toBe("no");
     expect(link?.attributes("translate")).toBe("no");
