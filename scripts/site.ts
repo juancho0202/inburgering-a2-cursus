@@ -128,9 +128,10 @@ export function renderHead(s: SiteStrings): string {
 const cards = (items: Item[]) =>
   items.map((i) => `<li class="site-card"><h3>${esc(i.title)}</h3><p>${esc(i.text)}</p></li>`).join("\n          ");
 
-const guideLinks = (guides: Guide[]) =>
-  `<ul class="site-links">
-          ${guides.map((g) => `<li><a href="${guidePath(g)}">${esc(g.heading)}</a></li>`).join("\n          ")}
+/** Guides as cards. The link is the title; a stretched ::after makes the whole card clickable. */
+const guideCards = (guides: Guide[]) =>
+  `<ul class="site-cards site-cards-wide">
+          ${guides.map((g) => `<li class="site-card site-card-link"><h3><a href="${guidePath(g)}">${esc(g.heading)}</a></h3><p>${esc(g.description)}</p></li>`).join("\n          ")}
           </ul>`;
 
 const brandBar = (s: SiteStrings) =>
@@ -163,7 +164,7 @@ export function renderLanding(s: SiteStrings, guides: Guide[] = loadGuides()): s
         </section>
         <section>
           <h2>${esc(l.guidesHeading)}</h2>
-          ${guideLinks(guides)}
+          ${guideCards(guides)}
         </section>
         <section class="site-faq">
           <h2>${esc(l.faqHeading)}</h2>
@@ -242,7 +243,7 @@ export function renderGuide(s: SiteStrings, guide: Guide, guides: Guide[]): stri
         ${callToAction(s)}
         <nav aria-label="${esc(s.guide.more)}">
           <h2>${esc(s.guide.more)}</h2>
-          ${guideLinks(others)}
+          ${guideCards(others)}
           <p><a href="/guides/">${esc(s.guide.allGuides)}</a></p>
         </nav>`,
   );
@@ -262,9 +263,7 @@ export function renderGuideIndex(s: SiteStrings, guides: Guide[]): string {
     head,
     `<h1>${esc(s.guide.indexHeading)}</h1>
         <p class="site-tagline">${esc(s.guide.indexIntro)}</p>
-        <ul class="site-cards">
-          ${guides.map((g) => `<li class="site-card"><h3><a href="${guidePath(g)}">${esc(g.heading)}</a></h3><p>${esc(g.description)}</p></li>`).join("\n          ")}
-        </ul>
+        ${guideCards(guides)}
         ${callToAction(s)}`,
   );
 }

@@ -39,7 +39,8 @@ describe("landing page in index.html", () => {
     expect(body).toContain("<h1>Free inburgering practice exam (A2)</h1>");
     expect(body.match(/<a class="site-start" href="\/welkom">Start practising, it's free<\/a>/g)).toHaveLength(2);
     expect(body).toContain("<h2>Frequently asked questions</h2>");
-    for (const g of loadGuides()) expect(body).toContain(`<a href="/guides/${g.slug}/">`);
+    // each guide as a card: its title as the link, its description under it
+    for (const g of loadGuides()) expect(body).toContain(`<li class="site-card site-card-link"><h3><a href="/guides/${g.slug}/">${g.heading}</a></h3><p>${g.description}</p></li>`);
     // the landing page comes before the app's mount point, and the app is still there
     expect(body.indexOf('id="landing"')).toBeLessThan(body.indexOf('<div id="app">'));
   });

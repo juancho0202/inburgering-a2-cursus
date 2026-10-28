@@ -240,7 +240,8 @@ test("the guides open from the landing page, also once the app is installed for 
   await page.addInitScript(() => document.addEventListener("securitypolicyviolation", (e) => console.error(`CSP ${e.violatedDirective}`)));
   page.on("console", (m) => m.type() === "error" && violations.push(m.text()));
   await page.goto("/");
-  await page.getByRole("link", { name: "How to book your inburgering exam at DUO" }).click();
+  // the whole card opens the guide, not only its title
+  await page.locator(".site-card-link", { hasText: "How to book your inburgering exam at DUO" }).click();
   await expect(page).toHaveURL(/\/guides\/book-inburgering-exam\/$/);
   await expect(page.getByRole("heading", { level: 1, name: "How to book your inburgering exam at DUO" })).toBeVisible();
   await expect(page.getByText(/Last checked: .*This is an unofficial guide/)).toBeVisible();

@@ -35,6 +35,12 @@ describe("guides", () => {
         expect(ldJson(head)[0]).toMatchObject({ "@type": "Article", headline: g.heading, dateModified: g.lastChecked });
       });
 
+      it("ends with the other guides as cards, not itself", () => {
+        const more = html.slice(html.indexOf("<h2>More guides</h2>"));
+        expect(more.match(/class="site-card site-card-link"/g)).toHaveLength(guides.length - 1);
+        expect(more).not.toContain(`href="/guides/${g.slug}/"`);
+      });
+
       it("links to the official DUO pages and to the app", () => {
         expect(html).toMatch(/href="https:\/\/www\.inburgeren\.nl\//);
         expect(html).toContain('<a class="site-start" href="/welkom">');
