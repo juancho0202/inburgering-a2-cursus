@@ -101,13 +101,13 @@ describe("SamenvattingView", () => {
     expect(ids).toEqual(["wonen-en-huur", "gezondheid-zorg"]);
   });
 
-  it("choosing a section folds the contents and scrolls to that heading, without leaving the page", async () => {
+  it("choosing a section folds the contents and scrolls smoothly to that heading, without leaving the page", async () => {
     fakeApi.on("GET", "/samenvatting", { md: "# Titel\n\n## Wonen en huur\n\ntekst\n\n## Gezondheid & zorg\n\nmeer tekst" });
-    const scrolled: { id: string; folded: boolean }[] = [];
+    const scrolled: { id: string; folded: boolean; how?: ScrollIntoViewOptions }[] = [];
     const toggle = () => document.querySelector("nav button")!;
     // jsdom has no scrolling: record which element is asked to scroll into view, and whether the list was folded then
-    Element.prototype.scrollIntoView = function (this: Element) {
-      scrolled.push({ id: this.id, folded: toggle().getAttribute("aria-expanded") === "false" });
+    Element.prototype.scrollIntoView = function (this: Element, how?: boolean | ScrollIntoViewOptions) {
+      scrolled.push({ id: this.id, folded: toggle().getAttribute("aria-expanded") === "false", how: how as ScrollIntoViewOptions });
     };
     try {
       const { wrapper, router } = await mountApp(SamenvattingView, { routePath: "/samenvatting", url: "/samenvatting" });
@@ -118,7 +118,7 @@ describe("SamenvattingView", () => {
       expect(click.defaultPrevented).toBe(true);
       await flushPromises();
       // folded before scrolling, so the heading ends up where it stays
-      expect(scrolled).toEqual([{ id: "gezondheid-zorg", folded: true }]);
+      expect(scrolled).toEqual([{ id: "gezondheid-zorg", folded: true, how: { behavior: "smooth", block: "start" } }]);
       expect(wrapper.find("#inhoud-lijst").classes()).toContain("hidden");
       expect(router.currentRoute.value.fullPath).toBe("/samenvatting");
       // the folded bar opens again to pick another section

@@ -30,10 +30,15 @@ async function goTo(id: string) {
   <p v-if="error" class="rounded-2xl bg-bad-bg p-4 text-bad">{{ error }}</p>
   <!-- minmax(0, 1fr): a wide table scrolls inside the card instead of stretching the page past the screen -->
   <div v-else-if="md" class="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-[14rem_minmax(0,1fr)]">
-    <nav class="card sticky top-[72px] z-20 h-fit p-2 lg:top-24 lg:p-4" aria-label="Inhoud">
+    <!-- Phone and tablet: a full-width bar right under the header (the negative margins undo the page padding).
+         Wide screen: a card in the sidebar. -->
+    <nav
+      class="card sticky top-[72px] z-20 -mx-4 -mt-6 h-fit rounded-none border-x-0 border-t-0 px-4 py-2 sm:-mt-8 lg:top-24 lg:mx-0 lg:mt-0 lg:rounded-card lg:border-x lg:border-t lg:p-4"
+      aria-label="Inhoud"
+    >
       <button
         type="button"
-        class="flex w-full items-center justify-between rounded-lg px-2 py-1 text-sm font-bold uppercase tracking-wide text-muted lg:hidden"
+        class="flex w-full items-center justify-between rounded-lg px-2 py-2 text-sm font-bold uppercase tracking-wide text-muted lg:hidden"
         :aria-expanded="tocOpen"
         aria-controls="inhoud-lijst"
         @click="tocOpen = !tocOpen"
