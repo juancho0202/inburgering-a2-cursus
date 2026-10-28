@@ -9,10 +9,13 @@ import { useSettingsStore } from "../../stores/settings";
 import WritingFeedbackPanel from "../WritingFeedbackPanel.vue";
 import AppButton from "../ui/AppButton.vue";
 import ExerciseStem from "./ExerciseStem.vue";
+import UiLabel from "../ui/UiLabel.vue";
+import { useLanguageStore } from "../../stores/language";
 import type { EvalResult } from "./types";
 
 const props = defineProps<{ exercise: Extract<Exercise, { type: "writing" }>; checked: boolean; prefill?: string }>();
 const settings = useSettingsStore();
+const lang = useLanguageStore();
 const text = ref(props.prefill ?? "");
 const ticked = ref<boolean[]>(props.exercise.checklist.map(() => false));
 
@@ -78,7 +81,7 @@ defineExpose({ ready, evaluate });
         <li v-for="p in exercise.task.requiredPoints" :key="p" class="flex gap-2"><span class="text-brand" aria-hidden="true">●</span>{{ p }}</li>
       </ul>
     </div>
-    <label for="writing-text" class="sr-only">Jouw tekst</label>
+    <label for="writing-text" class="sr-only">{{ lang.t("exercise.yourText") }}</label>
     <textarea
       id="writing-text"
       v-model="text"
@@ -86,43 +89,44 @@ defineExpose({ ready, evaluate });
       :spellcheck="settings.settings?.spellcheckWriting ?? false"
       rows="9"
       class="input text-lg leading-relaxed"
-      placeholder="Schrijf hier je tekst…"
+      :placeholder="lang.t('exercise.writeHere')"
     />
-    <p class="mt-1 text-sm font-semibold" :class="wordClass" aria-live="polite">{{ words }} woorden (tussen {{ exercise.minWords }} en {{ exercise.maxWords }})</p>
+    <p class="mt-1 text-sm font-semibold" :class="wordClass" aria-live="polite">{{ lang.t("exercise.wordCount", { n: words, min: exercise.minWords, max: exercise.maxWords }) }}</p>
 
     <div v-if="checked" class="slide-up mt-5 grid gap-4">
       <!-- Claude feedback -->
       <div v-if="settings.hasKey" aria-live="polite">
         <div v-if="status === 'loading'" class="card flex items-center gap-3 p-5">
           <span class="h-5 w-5 animate-spin rounded-full border-4 border-line border-t-brand" aria-hidden="true" />
-          <p class="font-semibold">Claude leest je tekst…</p>
+          <p class="font-semibold">{{ lang.feedback("exercise.claudeReading") }}</p>
         </div>
         <div v-else-if="status === 'error'" class="card border-bad p-5">
           <p class="font-bold text-bad">✗ {{ error }}</p>
-          <p class="mt-1 text-muted">Je tekst is opgeslagen. Hieronder kun je jezelf controleren.</p>
-          <AppButton class="mt-3" variant="secondary" @click="askClaude">Probeer feedback opnieuw</AppButton>
+          <p class="mt-1 text-muted">{{ lang.feedback("exercise.savedCheckBelow") }}</p>
+          <AppButton class="mt-3" variant="secondary" @click="askClaude"><UiLabel k="exercise.retryFeedback" /></AppButton>
         </div>
         <WritingFeedbackPanel v-else-if="feedback" :text="text" :feedback="feedback" />
       </div>
       <div v-else class="card p-5">
-        <p class="font-bold">Geen feedback van Claude</p>
+        <p class="font-bold">{{ lang.feedback("exercise.noFeedback") }}</p>
         <p class="text-muted">
-          Voeg een API-sleutel toe bij <RouterLink to="/instellingen" class="font-semibold text-brand-strong underline">Instellingen</RouterLink> voor feedback. Je tekst is opgeslagen. Controleer jezelf hieronder.
+          {{ lang.feedback("exercise.addKeyFor") }} <RouterLink to="/instellingen" class="font-semibold text-brand-strong underline"><UiLabel k="nav.settings" /></RouterLink>. {{ lang.feedback("exercise.savedCheckYourself") }}
         </p>
       </div>
 
       <!-- Self-check (always available) -->
       <div class="card p-5">
-        <h3 class="mb-2 font-bold">Voorbeeld</h3>
+        <h3 class="mb-2 font-bold"><UiLabel k="exercise.example" /></h3>
         <p class="whitespace-pre-line text-lg">{{ exercise.modelAnswer }}</p>
       </div>
       <div class="card p-5">
-        <h3 class="mb-2 font-bold">Controleer jezelf</h3>
+        <h3 class="mb-2 font-bold"><UiLabel k="exercise.checkYourself" /></h3>
         <label v-for="(item, i) in exercise.checklist" :key="i" class="flex cursor-pointer items-center gap-3 py-1">
           <input v-model="ticked[i]" type="checkbox" class="h-5 w-5 accent-[var(--brand)]" />
           <span :class="{ 'line-through opacity-60': ticked[i] }">{{ item }}</span>
         </label>
-        <p class="mt-4 border-t border-line pt-3 text-sm text-muted">
+        <!-- Part of the course (the exam's own checklist), so Dutch -->
+        <p class="mt-4 border-t border-line pt-3 text-sm text-muted" lang="nl" translate="no">
           <strong>Examenchecklist:</strong> 1. Alle punten beantwoord? 2. Aanhef en afsluiting goed? 3. u of je? 4. Werkwoord op plek 2; in een bijzin aan het eind? 5. Hoofdletter en punt? 6. Genoeg woorden? 7. Duidelijk geschreven?
         </p>
       </div>

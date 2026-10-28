@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 import { api } from "../api/client";
+import type { UiLanguage } from "@shared/schemas/store";
 
 interface SettingsView {
   apiKey: string | null;
@@ -14,6 +15,9 @@ interface SettingsView {
   voiceAnnouncements: boolean;
   lessonMusic: boolean;
   moduleOrder: string[];
+  language?: UiLanguage;
+  immersion: number;
+  feedbackInMyLanguage: boolean;
   usage: { month: string; requests: number; inputTokens: number; outputTokens: number };
 }
 

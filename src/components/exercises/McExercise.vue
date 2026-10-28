@@ -2,6 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import type { Exercise } from "@shared/types";
 import ExerciseStem from "./ExerciseStem.vue";
+import UiLabel from "../ui/UiLabel.vue";
 import OptionButton from "./OptionButton.vue";
 import { shuffled, type EvalResult } from "./types";
 
@@ -60,7 +61,7 @@ defineExpose({ ready, evaluate });
 <template>
   <div>
     <ExerciseStem v-if="!hideStem" :prompt="exercise.prompt" :context="exercise.context" />
-    <p v-if="multi" class="-mt-3 mb-3 text-muted">Kies alle goede antwoorden.</p>
+    <p v-if="multi" class="-mt-3 mb-3 text-muted"><UiLabel k="exercise.chooseAll" /></p>
     <div class="grid gap-3" role="group" :aria-label="exercise.prompt">
       <OptionButton
         v-for="(orig, pos) in order"

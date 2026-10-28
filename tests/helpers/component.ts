@@ -4,6 +4,7 @@ import { enableAutoUnmount, flushPromises, mount, type VueWrapper } from "@vue/t
 import { createPinia, setActivePinia } from "pinia";
 import { createMemoryHistory, createRouter, type RouteRecordRaw } from "vue-router";
 import type { Component } from "vue";
+import type { UiLanguage } from "../../shared/schemas/store";
 
 // Unmount after every test, so window key listeners of earlier tests never leak into later ones.
 enableAutoUnmount(afterEach);
@@ -86,6 +87,11 @@ interface MountOptions {
   stubs?: Record<string, Component | boolean>;
   /** Replaces the routes (for tests of the app shell, which needs route meta and several pages). */
   routes?: RouteRecordRaw[];
+  /**
+   * The app's language before the settings say otherwise (default Dutch, so tests find buttons by their Dutch text).
+   * A `language` in a faked GET /settings wins once the settings are loaded.
+   */
+  language?: UiLanguage;
 }
 
 /**
@@ -97,6 +103,9 @@ interface MountOptions {
 export async function mountApp(component: Component, opts: MountOptions = {}) {
   const pinia = createPinia();
   setActivePinia(pinia);
+  // Through the device's remembered language: importing the language store here would import the API client
+  // inside the vi.mock factory that is replacing it, and the test would hang.
+  localStorage.setItem("uiLanguage", opts.language ?? "nl");
   const empty = { template: "<i />" };
   const router = createRouter({
     history: createMemoryHistory(),

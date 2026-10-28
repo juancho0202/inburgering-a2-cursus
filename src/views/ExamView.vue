@@ -169,7 +169,8 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
   <p v-if="error" class="rounded-2xl bg-bad-bg p-4 text-bad">{{ error }}</p>
   <p v-else-if="!exam || !state" class="text-muted">Even laden…</p>
 
-  <div v-else class="pb-28">
+  <!-- Dutch only, like the real exam (route meta dutchOnly): its text is written here in Dutch, not in the message files -->
+  <div v-else class="pb-28" lang="nl" translate="no">
     <!-- top bar -->
     <header class="sticky top-0 z-30 -mx-4 mb-4 border-b border-line bg-surface/95 px-4 py-3 backdrop-blur">
       <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-3">

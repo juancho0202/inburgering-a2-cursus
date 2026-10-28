@@ -7,9 +7,12 @@ import { scene } from "../lib/illustrations";
 import FadeImage from "../components/ui/FadeImage.vue";
 import { useContentStore } from "../stores/content";
 import type { Progress } from "@shared/types";
+import UiLabel from "../components/ui/UiLabel.vue";
+import { useLanguageStore } from "../stores/language";
 
 const route = useRoute();
 const content = useContentStore();
+const lang = useLanguageStore();
 const progress = ref<Progress | null>(null);
 
 onMounted(async () => {
@@ -25,10 +28,10 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
 
 <template>
   <div v-if="mod">
-    <RouterLink to="/" class="text-muted hover:text-ink">← Terug</RouterLink>
+    <RouterLink to="/" class="text-muted hover:text-ink">← <UiLabel k="common.back" /></RouterLink>
     <header class="mb-8 mt-3 flex items-center gap-4">
       <span class="grid h-16 w-16 place-items-center rounded-2xl text-4xl" :class="style.tile" aria-hidden="true">{{ style.emoji }}</span>
-      <div>
+      <div lang="nl" translate="no">
         <h1 class="text-3xl font-extrabold tracking-tight">{{ mod.title }}</h1>
         <p class="text-muted">{{ mod.description }}</p>
       </div>
@@ -36,10 +39,10 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
 
     <RouterLink v-if="mod.id === 'schrijven'" to="/schrijven/geschiedenis" class="card mb-6 flex items-center gap-3 p-4 transition hover:-translate-y-0.5 hover:shadow-lg">
       <span class="text-2xl" aria-hidden="true">🗂️</span>
-      <span class="font-bold">Mijn teksten en feedback</span>
+      <span class="font-bold"><UiLabel k="module.myTexts" /></span>
       <span class="ml-auto text-muted">→</span>
     </RouterLink>
-    <p v-if="!mod.units.length" class="card p-6 text-muted">Hier komen later lessen. Kom snel terug!</p>
+    <p v-if="!mod.units.length" class="card p-6 text-muted">{{ lang.t("module.empty") }}</p>
     <ol v-else class="relative grid gap-4 before:absolute before:bottom-6 before:left-[1.65rem] before:top-6 before:w-1 before:rounded-full before:bg-line">
       <li v-for="(u, i) in mod.units" :key="u.id" class="relative">
         <RouterLink :to="`/unit/${u.id}`" class="card group relative flex items-center gap-4 p-4 transition hover:-translate-y-0.5 hover:shadow-lg" :class="{ 'ring-2 ring-brand': u.id === recommended }">
@@ -51,14 +54,14 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
           </span>
           <div class="min-w-0 flex-1">
             <p class="flex flex-wrap items-center gap-x-2 text-xs font-bold uppercase tracking-wide text-muted">
-              Les {{ i + 1 }}
-              <span v-if="u.id === recommended" class="rounded-full bg-brand-bg px-2 py-0.5 text-brand-strong normal-case tracking-normal">Volgende</span>
+              <UiLabel k="settings.lessonN" :params="{ n: i + 1 }" />
+              <span v-if="u.id === recommended" class="rounded-full bg-brand-bg px-2 py-0.5 text-brand-strong normal-case tracking-normal"><UiLabel k="common.next" /></span>
             </p>
-            <h2 class="text-lg font-bold group-hover:text-brand-strong">{{ u.title }}</h2>
+            <h2 class="text-lg font-bold group-hover:text-brand-strong" lang="nl" translate="no">{{ u.title }}</h2>
             <p class="text-sm text-muted">
-              {{ u.estimatedMinutes }} min · {{ u.stepCount }} stappen
-              <template v-if="statusOf(u.id)?.status === 'completed'"> · beste score {{ Math.round((statusOf(u.id)?.bestScore ?? 0) * 100) }}%</template>
-              <template v-else-if="statusOf(u.id)"> · bezig (stap {{ statusOf(u.id)!.stepIndex + 1 }})</template>
+              {{ lang.t("module.meta", { min: u.estimatedMinutes, steps: u.stepCount }) }}
+              <template v-if="statusOf(u.id)?.status === 'completed'"> · {{ lang.t("module.best", { pct: Math.round((statusOf(u.id)?.bestScore ?? 0) * 100) }) }}</template>
+              <template v-else-if="statusOf(u.id)"> · {{ lang.t("module.busy", { n: statusOf(u.id)!.stepIndex + 1 }) }}</template>
             </p>
           </div>
           <span v-if="scene(u.scene)" class="aspect-[3/2] w-20 shrink-0 overflow-hidden rounded-xl border border-line bg-[#fff8ee] sm:w-32" aria-hidden="true">
@@ -68,5 +71,5 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
       </li>
     </ol>
   </div>
-  <p v-else class="text-muted">Even laden…</p>
+  <p v-else class="text-muted">{{ lang.t("common.loading") }}</p>
 </template>

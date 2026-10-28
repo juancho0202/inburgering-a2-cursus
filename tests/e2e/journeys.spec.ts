@@ -1,9 +1,12 @@
 import { expect, test, type Page } from "@playwright/test";
 import { answerOne, startFresh } from "./helpers";
 
-/** Matching exercise (the ones in basis-tijd): pair each phrase with its clock time. */
+/** Matching exercise (the ones in basis-app-woorden and basis-tijd): pair each word with its partner. */
 async function matchPairs(page: Page) {
-  const pairs: Record<string, string> = { "half twee": "1.30", "kwart over negen": "9.15", "tien voor vijf": "4.50", "vijf over half zes": "5.35", dertien: "13", dertig: "30", zeventien: "17", zeventig: "70", "8.00 uur": "'s ochtends", "15.00 uur": "'s middags", "20.00 uur": "'s avonds", "2.00 uur": "'s nachts" };
+  const pairs: Record<string, string> = {
+    volgende: "vorige", beginnen: "stoppen", moeilijk: "makkelijk", goed: "fout", sluiten: "dichtdoen", verwijderen: "weghalen", herhalen: "nog een keer doen", kiezen: "één ding nemen",
+    "half twee": "1.30", "kwart over negen": "9.15", "tien voor vijf": "4.50", "vijf over half zes": "5.35", dertien: "13", dertig: "30", zeventien: "17", zeventig: "70", "8.00 uur": "'s ochtends", "15.00 uur": "'s middags", "20.00 uur": "'s avonds", "2.00 uur": "'s nachts",
+  };
   for (const [word, time] of Object.entries(pairs)) {
     if (!(await page.getByRole("button", { name: word, exact: true }).isVisible())) continue;
     await page.getByRole("button", { name: word, exact: true }).click();
@@ -109,4 +112,29 @@ test("holding a module card on a phone lets the same finger drag it to the top, 
   await expect.poll(titles).toEqual(moved);
   await page.reload();
   await expect.poll(titles).toEqual(moved);
+});
+
+test.describe("languages", () => {
+  test.use({ locale: "en-US" });
+
+  test("a landing page's /?lang=es opens the app in Spanish, the address loses the parameter, and Spanish stays after a reload", async ({ page }) => {
+    await page.goto("/?lang=es");
+    await expect(page.getByRole("radio", { name: "Español" })).toHaveAttribute("aria-checked", "true");
+    expect(page.url()).not.toContain("lang=");
+    await page.getByRole("button", { name: /Begin met leren/ }).first().click();
+    await expect(page.getByRole("heading", { name: /Welkom terug/ })).toBeVisible();
+    await expect(page.locator("html")).toHaveAttribute("lang", "es");
+    await page.reload();
+    await expect(page.getByRole("heading", { name: /¡Bienvenido de nuevo!/ })).toBeVisible();
+  });
+
+  test("an English browser starts in English with the Dutch words in front, and the mock exam is Dutch only", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.getByRole("radio", { name: "English" })).toHaveAttribute("aria-checked", "true");
+    await page.getByRole("button", { name: /Begin met leren/ }).first().click();
+    await expect(page.getByRole("heading", { name: "Welkom terug! Welcome back! 👋" })).toBeVisible();
+    await expect(page.locator("html")).toHaveAttribute("lang", "en");
+    await page.goto("/examen/exam-knm-1");
+    await expect(page.locator("html")).toHaveAttribute("lang", "nl");
+  });
 });

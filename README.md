@@ -14,6 +14,9 @@ Niet van DUO. Alle teksten en vragen zijn zelf gemaakt.
 - Op twee apparaten leren? Druk op **Klaar voor vandaag**, bewaar het bestand (op een iPhone: deel het met AirDrop) en kies op het andere apparaat
   **Ga verder met een bestand**. De voortgang wordt samengevoegd; er gaat niets verloren.
 - Installeer de app op je beginscherm (zie Instellingen). Dan werkt hij ook zonder internet (behalve de Claude-hulp).
+- **Talen.** De knoppen, menu's en uitleg van de app zijn er in het Engels, Nederlands en Spaans. De lessen, oefeningen en examens zijn altijd in het Nederlands.
+  Bij *Instellingen* kies je hoeveel Nederlands je ziet: van "Mijn taal" tot "Alleen Nederlands". Een woord dat je hebt geleerd, krijgt geen vertaling meer.
+  Les 1 van Basis leert je de woorden van de app zelf. Het proefexamen is altijd helemaal Nederlands, net als het echte examen.
 
 ## Ontwikkelen
 

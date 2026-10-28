@@ -12,7 +12,10 @@ import ProgressBar from "../components/ui/ProgressBar.vue";
 import WritingFeedbackPanel from "../components/WritingFeedbackPanel.vue";
 import ReportIssue from "../components/ReportIssue.vue";
 import FragmentPlayer from "../components/FragmentPlayer.vue";
-import { DISCLAIMER, themeLabel } from "../lib/examLabels";
+import { themeLabel } from "../lib/examLabels";
+import FeedbackLanguageToggle from "../components/FeedbackLanguageToggle.vue";
+import UiLabel from "../components/ui/UiLabel.vue";
+import { useLanguageStore } from "../stores/language";
 
 type Result = Progress["exams"][number];
 interface Submission {
@@ -23,6 +26,9 @@ interface Submission {
 
 const route = useRoute();
 const settings = useSettingsStore();
+// The result is feedback on the exam: Dutch first, like the exam itself, with "In mijn taal" to switch.
+const lang = useLanguageStore();
+const f = (key: string, params?: Record<string, unknown>) => lang.feedback(key, params);
 const exam = ref<Exam | null>(null);
 const result = ref<Result | null>(null);
 const submissions = ref<Record<string, Submission>>({});
@@ -69,7 +75,7 @@ function yourAnswer(q: (typeof questions.value)[number]): string {
   const ex = q.exercise;
   if (ex.type !== "mc") return "";
   const sel = selectedIndexes(result.value?.answers[q.id]);
-  return sel.length ? ex.options[sel[0]] : "Niet beantwoord";
+  return sel.length ? ex.options[sel[0]] : f("result.notAnswered");
 }
 const correctText = (ex: Exercise) => (ex.type === "mc" ? ex.options[ex.answer] : "");
 /** The listening fragment a question is about (Luisteren), to hear the answer again. */
@@ -110,33 +116,36 @@ const retryable = computed(() => tasks.value.some((t) => taskState.value[t.id]?.
 
 <template>
   <p v-if="error" class="rounded-2xl bg-bad-bg p-4 text-bad">{{ error }}</p>
-  <p v-else-if="!exam || !result" class="text-muted">Even laden…</p>
+  <p v-else-if="!exam || !result" class="text-muted">{{ lang.t("common.loading") }}</p>
 
-  <div v-else class="mx-auto grid max-w-3xl gap-6">
-    <RouterLink to="/examens" class="text-muted hover:text-ink">← Alle proefexamens</RouterLink>
+  <div v-else class="mx-auto grid max-w-3xl gap-6" :lang="lang.feedbackOwn ? lang.locale : 'nl'">
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <RouterLink to="/examens" class="text-muted hover:text-ink">← <UiLabel k="result.allExams" /></RouterLink>
+      <FeedbackLanguageToggle />
+    </div>
 
     <section class="card slide-up p-6 text-center sm:p-8">
-      <h1 class="text-2xl font-extrabold">{{ exam.title }}</h1>
+      <h1 class="text-2xl font-extrabold" lang="nl" translate="no">{{ exam.title }}</h1>
       <template v-if="pct !== null && incomplete">
-        <p class="mt-3 text-4xl font-extrabold">{{ result.score }} <span class="text-xl font-bold text-muted">van {{ result.max }} punten</span></p>
-        <p class="mt-1 font-semibold text-muted">Voorlopige score: nog niet alle teksten zijn beoordeeld. Gebruik het voorbeeld en de checklist, of vraag feedback van Claude.</p>
+        <p class="mt-3 text-4xl font-extrabold">{{ result.score }} <span class="text-xl font-bold text-muted">{{ f("result.ofPoints", { max: result.max }) }}</span></p>
+        <p class="mt-1 font-semibold text-muted">{{ f("result.provisional") }}</p>
       </template>
       <template v-else-if="pct !== null">
         <div class="mt-3 text-6xl" aria-hidden="true">{{ passed ? "🎉" : "💪" }}</div>
-        <p class="mt-2 text-4xl font-extrabold">{{ result.score }} <span class="text-xl font-bold text-muted">van {{ result.max }}</span></p>
-        <p class="mt-1 text-xl font-bold" :class="passed ? 'text-good' : 'text-brand-strong'">{{ pct }}% · {{ passed ? "boven onze oefengrens" : "onder onze oefengrens" }} ({{ Math.round(exam.passScore * 100) }}%)</p>
+        <p class="mt-2 text-4xl font-extrabold">{{ result.score }} <span class="text-xl font-bold text-muted">{{ f("result.of", { max: result.max }) }}</span></p>
+        <p class="mt-1 text-xl font-bold" :class="passed ? 'text-good' : 'text-brand-strong'">{{ pct }}% · {{ f(passed ? "result.above" : "result.below") }} ({{ Math.round(exam.passScore * 100) }}%)</p>
       </template>
-      <p v-else class="mt-3 text-lg text-muted">Er is nog geen score. Hieronder zie je je opdrachten.</p>
-      <p class="mt-3 rounded-2xl bg-surface-2 px-4 py-2 text-sm font-semibold text-muted">{{ DISCLAIMER }} DUO publiceert geen vaste grens.</p>
+      <p v-else class="mt-3 text-lg text-muted">{{ f("result.noScore") }}</p>
+      <p class="mt-3 rounded-2xl bg-surface-2 px-4 py-2 text-sm font-semibold text-muted">{{ f("exams.disclaimer") }} {{ f("result.noFixedMark") }}</p>
     </section>
 
     <!-- KNM / Lezen -->
     <template v-if="exam.skill !== 'schrijven'">
       <section v-if="themes.length" class="card p-6">
-        <h2 class="mb-3 text-xl font-bold">{{ exam.skill === "knm" ? "Score per thema" : exam.skill === "luisteren" ? "Score per soort fragment" : "Score per soort tekst" }}</h2>
+        <h2 class="mb-3 text-xl font-bold">{{ f(exam.skill === "knm" ? "result.perTheme" : exam.skill === "luisteren" ? "result.perFragment" : "result.perText") }}</h2>
         <div class="grid gap-3">
           <div v-for="t in themes" :key="t.tag">
-            <div class="flex justify-between text-sm font-bold"><span>{{ t.label }}</span><span>{{ t.good }} / {{ t.total }}</span></div>
+            <div class="flex justify-between text-sm font-bold"><span lang="nl" translate="no">{{ t.label }}</span><span>{{ t.good }} / {{ t.total }}</span></div>
             <ProgressBar :value="t.good / t.total" :label="t.label" />
           </div>
         </div>
@@ -144,23 +153,23 @@ const retryable = computed(() => tasks.value.some((t) => taskState.value[t.id]?.
 
       <section class="card p-6">
         <div class="mb-3 flex flex-wrap items-center justify-between gap-3">
-          <h2 class="text-xl font-bold">{{ wrong.length ? `Fout of niet beantwoord (${wrong.length})` : "Alles goed!" }}</h2>
-          <RouterLink v-if="wrong.length" :to="{ path: '/oefenen', query: { exam: result.id } }"><AppButton>Oefen je fouten</AppButton></RouterLink>
+          <h2 class="text-xl font-bold">{{ wrong.length ? f("result.wrong", { n: wrong.length }) : f("result.allRight") }}</h2>
+          <RouterLink v-if="wrong.length" :to="{ path: '/oefenen', query: { exam: result.id } }"><AppButton><UiLabel k="practice.mistakes" /></AppButton></RouterLink>
         </div>
-        <p v-if="!wrong.length" class="font-semibold text-good">✓ Je hebt alle vragen goed beantwoord.</p>
+        <p v-if="!wrong.length" class="font-semibold text-good">✓ {{ f("result.allRightLong") }}</p>
         <ol class="grid gap-4">
           <li v-for="q in wrong" :key="q.id" class="rounded-2xl bg-surface-2 p-4">
-            <p class="font-bold">{{ q.exercise.prompt }}</p>
-            <p class="mt-1 text-bad">✗ Jouw antwoord: {{ yourAnswer(q) }}</p>
-            <p class="text-good">✓ Goed antwoord: {{ correctText(q.exercise) }}</p>
-            <p class="mt-1 text-muted">{{ q.exercise.explanation }}</p>
+            <p class="font-bold" lang="nl" translate="no">{{ q.exercise.prompt }}</p>
+            <p class="mt-1 text-bad">✗ {{ f("result.yourAnswer") }} <span lang="nl" translate="no">{{ yourAnswer(q) }}</span></p>
+            <p class="text-good">✓ {{ f("result.rightAnswer") }} <span lang="nl" translate="no">{{ correctText(q.exercise) }}</span></p>
+            <p class="mt-1 text-muted" lang="nl" translate="no">{{ q.exercise.explanation }}</p>
             <details v-if="fragmentOf(q)" class="mt-2">
-              <summary class="cursor-pointer font-bold text-brand-strong">Luister nog een keer en lees de tekst</summary>
+              <summary class="cursor-pointer font-bold text-brand-strong">{{ f("result.listenAgain") }}</summary>
               <FragmentPlayer
                 class="mt-2"
                 :fragment="fragmentOf(q)!"
                 show-text
-                :marks="q.exercise.answerLine !== undefined ? { [q.exercise.answerLine]: 'Het antwoord' } : undefined"
+                :marks="q.exercise.answerLine !== undefined ? { [q.exercise.answerLine]: f('result.theAnswer') } : undefined"
               />
             </details>
             <div class="mt-1 -ml-3"><ReportIssue :item-id="q.id" /></div>
@@ -172,27 +181,27 @@ const retryable = computed(() => tasks.value.some((t) => taskState.value[t.id]?.
     <!-- Schrijven -->
     <template v-else>
       <p v-if="running || retryable" class="card p-4 font-semibold" aria-live="polite">
-        <template v-if="running">Claude beoordeelt je teksten, een voor een…</template>
-        <template v-else>Een beoordeling is niet gelukt. Je teksten zijn opgeslagen.</template>
-        <AppButton v-if="retryable && !running" class="ml-3" variant="secondary" @click="runPending">Probeer opnieuw</AppButton>
+        <template v-if="running">{{ f("result.grading") }}</template>
+        <template v-else>{{ f("result.gradingFailed") }}</template>
+        <AppButton v-if="retryable && !running" class="ml-3" variant="secondary" @click="runPending"><UiLabel k="common.tryAgain" /></AppButton>
       </p>
       <p v-if="!settings.hasKey" class="card p-4 text-muted">
-        Geen API-sleutel: beoordeel je teksten zelf met het voorbeeld en de checklist. Voeg een sleutel toe bij <RouterLink to="/instellingen" class="font-semibold underline">Instellingen</RouterLink> voor feedback van Claude.
+        {{ f("result.noKey") }} <RouterLink to="/instellingen" class="font-semibold underline"><UiLabel k="nav.settings" /></RouterLink>.
       </p>
 
       <section v-for="(t, i) in tasks" :key="t.id" class="card p-6">
         <div class="mb-3 flex flex-wrap items-center justify-between gap-2">
-          <h2 class="text-xl font-bold">Opdracht {{ i + 1 }}: {{ t.prompt }}</h2>
+          <h2 class="text-xl font-bold">{{ f("result.task", { n: i + 1 }) }}: <span lang="nl" translate="no">{{ t.prompt }}</span></h2>
           <span v-if="typeof details[t.id]?.points === 'number'" class="rounded-full bg-brand-bg px-3 py-1 font-bold text-brand-strong">{{ details[t.id].points }} / {{ details[t.id].max }}</span>
-          <span v-else-if="taskState[t.id]?.status === 'busy'" class="flex items-center gap-2 text-sm font-semibold"><span class="h-4 w-4 animate-spin rounded-full border-4 border-line border-t-brand" aria-hidden="true" />Claude leest…</span>
-          <span v-else-if="taskState[t.id]?.status === 'wait'" class="text-sm text-muted">Wacht…</span>
+          <span v-else-if="taskState[t.id]?.status === 'busy'" class="flex items-center gap-2 text-sm font-semibold"><span class="h-4 w-4 animate-spin rounded-full border-4 border-line border-t-brand" aria-hidden="true" />{{ f("result.claudeReading") }}</span>
+          <span v-else-if="taskState[t.id]?.status === 'wait'" class="text-sm text-muted">{{ f("result.waiting") }}</span>
         </div>
 
         <template v-if="t.type === 'form-fill'">
           <ul class="grid gap-1">
             <li v-for="r in fieldRows(t)" :key="r.label" class="flex flex-wrap gap-x-2 rounded-xl px-3 py-1.5" :class="r.ok === true ? 'bg-good-bg' : r.ok === false ? 'bg-bad-bg' : 'bg-surface-2'">
-              <span class="font-bold">{{ r.ok === true ? "✓" : r.ok === false ? "✗" : "•" }} {{ r.label }}:</span>
-              <span>{{ r.value || "(leeg)" }}</span>
+              <span class="font-bold">{{ r.ok === true ? "✓" : r.ok === false ? "✗" : "•" }} <span lang="nl" translate="no">{{ r.label }}</span>:</span>
+              <span>{{ r.value || f("result.empty") }}</span>
               <span v-if="r.ok === false" class="text-good">→ {{ r.expected }}</span>
             </li>
           </ul>
@@ -203,13 +212,13 @@ const retryable = computed(() => tasks.value.some((t) => taskState.value[t.id]?.
           <WritingFeedbackPanel v-if="submissionOf(t.id)?.feedback" :text="submissionOf(t.id)!.text" :feedback="submissionOf(t.id)!.feedback!" />
           <template v-else>
             <div class="rounded-2xl bg-surface-2 p-4">
-              <p class="mb-1 font-bold">Jouw tekst</p>
-              <p class="whitespace-pre-line text-lg">{{ (result.answers[t.id] as string) || "(niet geschreven)" }}</p>
+              <p class="mb-1 font-bold">{{ f("exercise.yourText") }}</p>
+              <p class="whitespace-pre-line text-lg">{{ (result.answers[t.id] as string) || f("result.notWritten") }}</p>
             </div>
             <details class="mt-3 rounded-2xl border border-line p-4" open>
-              <summary class="cursor-pointer font-bold">Voorbeeld en checklist</summary>
-              <p class="mt-2 whitespace-pre-line text-lg">{{ t.modelAnswer }}</p>
-              <ul class="mt-3 grid gap-1"><li v-for="c in t.checklist" :key="c" class="flex gap-2"><span aria-hidden="true">☐</span>{{ c }}</li></ul>
+              <summary class="cursor-pointer font-bold">{{ f("result.exampleChecklist") }}</summary>
+              <p class="mt-2 whitespace-pre-line text-lg" lang="nl" translate="no">{{ t.modelAnswer }}</p>
+              <ul class="mt-3 grid gap-1" lang="nl" translate="no"><li v-for="c in t.checklist" :key="c" class="flex gap-2"><span aria-hidden="true">☐</span>{{ c }}</li></ul>
             </details>
           </template>
         </template>
@@ -217,8 +226,8 @@ const retryable = computed(() => tasks.value.some((t) => taskState.value[t.id]?.
     </template>
 
     <div class="flex flex-wrap justify-center gap-3">
-      <RouterLink to="/examens"><AppButton variant="secondary">Alle proefexamens</AppButton></RouterLink>
-      <RouterLink :to="`/examen/${exam.id}`"><AppButton>Opnieuw maken</AppButton></RouterLink>
+      <RouterLink to="/examens"><AppButton variant="secondary"><UiLabel k="result.allExams" /></AppButton></RouterLink>
+      <RouterLink :to="`/examen/${exam.id}`"><AppButton><UiLabel k="exams.again" /></AppButton></RouterLink>
     </div>
   </div>
 </template>

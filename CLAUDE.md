@@ -1,6 +1,6 @@
 # Inburgering A2 trainer
 
-A Vue 3 + Vite + Pinia app for practising the Dutch civic-integration exam (A2). No server: the "API" in `src/api/client.ts` runs in the browser on `shared/` services and IndexedDB. The UI text is Dutch; code, comments and docs are English. `SPEC.md` is the product spec, `README.md` (Dutch) has the user-facing overview.
+A Vue 3 + Vite + Pinia app for practising the Dutch civic-integration exam (A2). No server: the "API" in `src/api/client.ts` runs in the browser on `shared/` services and IndexedDB. The course content is Dutch; the app's own text is in `src/i18n/messages/` (Dutch, English, Spanish; see `SPEC.md` §11.4); code, comments and docs are English. `SPEC.md` is the product spec, `README.md` (Dutch) has the user-facing overview.
 
 ## Commands
 
@@ -27,6 +27,6 @@ Run `npm install` first in a fresh checkout: `node_modules` is not committed, so
 
 ## Conventions
 
-- Match the surrounding code: comments explain *why*, short, English. UI strings are Dutch, simple (A2) language.
+- Match the surrounding code: comments explain *why*, short, English. UI strings go in all three message files, never in a component: `<UiLabel k>` for buttons, menus and headings, `lang.t()` / `<UiText k>` for longer text, `lang.feedback()` for feedback. Dutch in simple (A2) language. Course content is never translated.
 - Content ids are permanent: `npm run check-ids` fails when an id from an earlier version disappears.
 - Keep changes minimal and in scope; open a PR only when asked.

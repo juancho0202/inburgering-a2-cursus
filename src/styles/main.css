@@ -112,6 +112,12 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
   }
+  /* The learner's own language next to a Dutch label (bilingual mode) */
+  .ui-gloss {
+    font-size: 0.78em;
+    font-weight: 500;
+    opacity: 0.75;
+  }
   .input {
     @apply w-full rounded-xl border-2 border-line bg-surface px-3 py-2 text-ink placeholder:text-muted focus:border-brand;
   }

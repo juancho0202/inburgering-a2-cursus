@@ -4,6 +4,8 @@ import type { Exercise } from "@shared/types";
 import { matchesAny } from "@shared/logic/answers";
 import { useVerbsStore } from "../../stores/verbs";
 import ExerciseStem from "./ExerciseStem.vue";
+import UiLabel from "../ui/UiLabel.vue";
+import { useLanguageStore } from "../../stores/language";
 import type { EvalResult } from "./types";
 
 const props = defineProps<{ exercise: Extract<Exercise, { type: "conjugate" }>; checked: boolean }>();
@@ -14,7 +16,8 @@ const verb = computed(() => verbs.byId(props.exercise.verbId));
 const form = ref("");
 const aux = ref<"" | "hebben" | "zijn">("");
 const isPerfect = computed(() => props.exercise.tense === "perfect");
-const tenseLabel = { present: "tegenwoordige tijd", perfect: "voltooid deelwoord", past: "verleden tijd" } as const;
+const lang = useLanguageStore();
+const tenseLabel = { present: "exercise.present", perfect: "exercise.perfect", past: "exercise.past" } as const;
 
 const formOk = computed(() => matchesAny(form.value, props.exercise.answers));
 const auxOk = computed(() => !isPerfect.value || !verb.value || verb.value.auxiliary === "both" || aux.value === verb.value.auxiliary);
@@ -37,7 +40,7 @@ defineExpose({ ready, evaluate });
   <div>
     <ExerciseStem :prompt="exercise.prompt" :context="exercise.context" />
     <div v-if="verb" class="card p-5">
-      <p class="text-muted">Werkwoord: <strong class="text-lg text-ink">{{ verb.infinitive }}</strong> — {{ tenseLabel[exercise.tense] }}</p>
+      <p class="text-muted"><UiLabel k="exercise.verb" />: <strong class="text-lg text-ink" lang="nl" translate="no">{{ verb.infinitive }}</strong> — <UiLabel :k="tenseLabel[exercise.tense]" /></p>
       <div class="mt-3 flex flex-wrap items-center gap-2 text-xl">
         <span class="font-semibold">{{ exercise.person }}</span>
         <select
@@ -64,6 +67,6 @@ defineExpose({ ready, evaluate });
         />
       </div>
     </div>
-    <p v-else class="text-muted">Even laden…</p>
+    <p v-else class="text-muted">{{ lang.t("common.loading") }}</p>
   </div>
 </template>

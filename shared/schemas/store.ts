@@ -63,6 +63,10 @@ export const FlagRecordSchema = z.object({ id: z.string(), itemId: z.string(), n
 export type FlagRecord = z.infer<typeof FlagRecordSchema>;
 
 // ----- key-value records -----
+/** Languages the app's own text (menus, buttons, help) can be shown in. The learning material is always Dutch. */
+export const UI_LANGUAGES = ["en", "nl", "es"] as const;
+export type UiLanguage = (typeof UI_LANGUAGES)[number];
+
 export const SettingsRecordSchema = z.object({
   model: z.string(),
   dailyGoalMinutes: z.number().int(),
@@ -78,6 +82,15 @@ export const SettingsRecordSchema = z.object({
   lessonMusic: z.boolean().default(true),
   /** Module ids in the order the learner put them on the start page; modules not listed follow in course order. */
   moduleOrder: z.array(z.string()).default([]),
+  /** The learner's own language for the app's text. Not set until they choose one (the first-visit picker). */
+  language: z.enum(UI_LANGUAGES).optional(),
+  /**
+   * How much of the app's own text is Dutch: 0 = my language, 1 = Dutch with my language next to it,
+   * 2 = Dutch (translation on request), 3 = Dutch only. Ignored when the language is Dutch.
+   */
+  immersion: z.number().int().min(0).max(3).default(1),
+  /** Feedback after an answer is Dutch first; this shows it in the learner's language instead. */
+  feedbackInMyLanguage: z.boolean().default(false),
   updatedAt: z.string().optional(),
 });
 export type SettingsRecord = z.infer<typeof SettingsRecordSchema>;
@@ -92,6 +105,8 @@ export const defaultSettingsRecord = (): SettingsRecord => ({
   voiceAnnouncements: true,
   lessonMusic: true,
   moduleOrder: [],
+  immersion: 1,
+  feedbackInMyLanguage: false,
 });
 
 export const UsageRecordSchema = z.object({ month: z.string(), requests: z.number().int(), inputTokens: z.number().int(), outputTokens: z.number().int() });

@@ -7,6 +7,9 @@ import DocumentCard from "./DocumentCard.vue";
 import FragmentPlayer from "./FragmentPlayer.vue";
 import ScenePicture from "./ScenePicture.vue";
 import SpeakButton from "./ui/SpeakButton.vue";
+import UiLabel from "./ui/UiLabel.vue";
+import { useLanguageStore } from "../stores/language";
+import { APP_WORDS } from "../i18n/glossary";
 
 /** `active`: the block being read aloud (highlighted). */
 const props = defineProps<{ blocks: LessonBlock[]; active?: number | null }>();
@@ -14,6 +17,10 @@ const vocab = useVocabStore();
 const needsVocab = computed(() => props.blocks.some((b) => b.kind === "vocab"));
 onMounted(() => needsVocab.value && vocab.load());
 const word = (id: string): VocabEntry | undefined => vocab.byId(id);
+// Words of the app itself (Unit 0) get their translation from the app's own messages, while the page shows the
+// learner's language. The course content stays Dutch only.
+const lang = useLanguageStore();
+const gloss = (id: string) => (APP_WORDS[id] && lang.proseLocale !== "nl" ? lang.own(APP_WORDS[id]) : null);
 </script>
 
 <template>
@@ -40,7 +47,7 @@ const word = (id: string): VocabEntry | undefined => vocab.byId(id);
       <!-- "Leertip": a card with a tab on top, like the tips in the margin of a language book -->
       <aside v-else-if="block.kind === 'tip'" class="mt-3">
         <p class="relative z-10 ml-4 inline-flex items-center gap-1.5 rounded-t-xl border border-b-0 border-brand/40 bg-brand-bg px-3 pt-1 text-sm font-extrabold uppercase tracking-wide text-brand-strong">
-          <span aria-hidden="true">💡</span> Leertip
+          <span aria-hidden="true">💡</span> <UiLabel k="lesson.tip" />
         </p>
         <div class="prose-nl -mt-px rounded-2xl border border-brand/40 bg-brand-bg px-4 py-3" v-html="renderMd(block.md)" />
       </aside>
@@ -60,6 +67,7 @@ const word = (id: string): VocabEntry | undefined => vocab.byId(id);
               <p class="text-xl font-bold">{{ word(id)!.nl }}</p>
               <SpeakButton :text="word(id)!.nl" />
             </div>
+            <p v-if="gloss(id)" class="font-semibold text-brand-strong" :lang="lang.locale">{{ gloss(id) }}</p>
             <p class="text-muted">{{ word(id)!.definitionNl }}</p>
             <p class="mt-1 italic">{{ word(id)!.example }}</p>
           </template>

@@ -6,12 +6,15 @@ import { FRAGMENT_LABEL } from "../lib/fragments";
 import { formatTime } from "../lib/examLabels";
 import ScenePicture from "./ScenePicture.vue";
 import ProgressBar from "./ui/ProgressBar.vue";
+import UiLabel from "./ui/UiLabel.vue";
+import { useLanguageStore } from "../stores/language";
 
 /**
  * A listening fragment with its play controls. The text is hidden while the learner answers (`showText` false),
  * unless they cannot listen now (`allowPeek`). Shown, each line can be tapped to hear it again, the line being said
  * is highlighted, and `marks` labels lines (e.g. "Vraag 2" where the answer to question 2 is said).
  */
+const lang = useLanguageStore();
 const props = withDefaults(defineProps<{ fragment: Fragment; showText?: boolean; marks?: Record<number, string>; allowPeek?: boolean }>(), {
   showText: false,
   allowPeek: true,
@@ -49,25 +52,25 @@ defineExpose({ playFrom: player.playFrom });
         >
           <span v-if="playing" class="sound-bars" aria-hidden="true"><i /><i /><i /></span>
           <span v-else aria-hidden="true">▶</span>
-          {{ playing ? "Pauze" : progress > 0 && progress < 1 ? "Verder" : "Luister" }}
+          <UiLabel :k="playing ? 'player.pause' : progress > 0 && progress < 1 ? 'player.resume' : 'exercise.listen'" />
         </button>
         <button
           type="button"
           class="rounded-full border-2 border-line px-3 py-2 font-bold hover:border-brand disabled:opacity-50"
-          aria-label="Een zin terug"
+          :aria-label="lang.t('player.backLabel')"
           :disabled="mode === 'none'"
           @click="player.back"
         >
-          ⟲ Zin terug
+          ⟲ <UiLabel k="player.back" />
         </button>
         <button
           type="button"
           class="rounded-full border-2 border-line px-3 py-2 font-bold hover:border-brand disabled:opacity-50"
-          aria-label="Opnieuw vanaf het begin"
+          :aria-label="lang.t('player.restartLabel')"
           :disabled="mode === 'none'"
           @click="player.restart"
         >
-          ⏮ Opnieuw
+          ⏮ <UiLabel k="common.again" />
         </button>
       </div>
 
@@ -79,22 +82,22 @@ defineExpose({ playFrom: player.playFrom });
           step="0.1"
           :value="time"
           class="h-2 flex-1 cursor-pointer accent-brand"
-          aria-label="Plek in het fragment"
+          :aria-label="lang.t('player.position')"
           @input="player.seek(Number(($event.target as HTMLInputElement).value))"
         />
         <span class="shrink-0 text-sm font-semibold tabular-nums text-muted">{{ clock(time) }} / {{ clock(duration) }}</span>
       </div>
       <div v-else-if="mode === 'device'" class="mt-4 flex items-center gap-3">
-        <ProgressBar :value="progress" label="Hoe ver het fragment is" />
-        <span class="shrink-0 text-sm font-semibold text-muted">{{ line === null ? "" : `Zin ${line + 1} van ${fragment.lines.length}` }}</span>
+        <ProgressBar :value="progress" :label="lang.t('player.howFar')" />
+        <span class="shrink-0 text-sm font-semibold text-muted">{{ line === null ? "" : lang.t("player.lineOf", { n: line + 1, total: fragment.lines.length }) }}</span>
       </div>
-      <p v-else-if="mode === 'none'" class="mt-3 font-semibold text-muted">Dit apparaat kan het fragment niet afspelen. Lees de tekst.</p>
+      <p v-else-if="mode === 'none'" class="mt-3 font-semibold text-muted">{{ lang.t("player.cannotPlay") }}</p>
 
-      <button v-if="allowPeek && !textVisible" type="button" class="mt-3 text-sm text-muted underline" @click="peek = true">Ik kan nu niet luisteren</button>
+      <button v-if="allowPeek && !textVisible" type="button" class="mt-3 text-sm text-muted underline" @click="peek = true"><UiLabel k="exercise.cantListen" /></button>
     </div>
 
     <div v-if="textVisible" class="border-t border-line bg-surface-2/50 p-4">
-      <h3 class="mb-2 text-sm font-bold uppercase tracking-wide text-muted">De tekst</h3>
+      <h3 class="mb-2 text-sm font-bold uppercase tracking-wide text-muted"><UiLabel k="player.text" /></h3>
       <ol class="grid gap-2">
         <li v-for="(l, i) in fragment.lines" :key="i" class="flex" :class="conversation && sideOf(l.speaker) > 0 ? 'justify-end' : ''">
           <button
@@ -106,7 +109,7 @@ defineExpose({ playFrom: player.playFrom });
               marks?.[i] ? 'ring-2 ring-good' : '',
             ]"
             :aria-current="line === i && playing ? 'true' : undefined"
-            :aria-label="`Luister vanaf hier: ${l.speaker}: ${l.nl}`"
+            :aria-label="lang.t('player.listenFrom', { line: `${l.speaker}: ${l.nl}` })"
             @click="player.playFrom(i)"
           >
             <span class="flex flex-wrap items-center gap-2 text-sm font-bold text-muted">
@@ -117,7 +120,7 @@ defineExpose({ playFrom: player.playFrom });
           </button>
         </li>
       </ol>
-      <p class="mt-2 text-sm text-muted">Tik op een zin om die nog een keer te horen.</p>
+      <p class="mt-2 text-sm text-muted">{{ lang.t("player.tapLine") }}</p>
     </div>
   </div>
 </template>

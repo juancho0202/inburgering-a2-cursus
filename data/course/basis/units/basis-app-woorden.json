@@ -1,0 +1,320 @@
+{
+  "id": "basis-app-woorden",
+  "moduleId": "basis",
+  "title": "De woorden van de app",
+  "goal": "Je kent de woorden op de knoppen en in het menu van deze app.",
+  "scene": "oefenen",
+  "estimatedMinutes": 10,
+  "tags": [
+    "basis:app-woorden"
+  ],
+  "vocabRefs": [
+    "basis-vocab-app-001",
+    "basis-vocab-app-002",
+    "basis-vocab-app-003",
+    "basis-vocab-app-004",
+    "basis-vocab-app-005",
+    "basis-vocab-app-006",
+    "basis-vocab-app-007",
+    "basis-vocab-app-008",
+    "basis-vocab-app-009",
+    "basis-vocab-app-010",
+    "basis-vocab-app-011",
+    "basis-vocab-app-012",
+    "basis-vocab-app-013",
+    "basis-vocab-app-014",
+    "basis-vocab-app-015",
+    "basis-vocab-app-016",
+    "basis-vocab-app-017",
+    "basis-vocab-app-018",
+    "basis-vocab-app-019",
+    "basis-vocab-app-020",
+    "basis-vocab-app-021",
+    "basis-vocab-app-022",
+    "basis-vocab-app-023",
+    "basis-vocab-app-024",
+    "basis-vocab-app-025",
+    "basis-vocab-app-026",
+    "basis-vocab-cursus-opleiding-015",
+    "basis-vocab-cursus-opleiding-008",
+    "basis-vocab-cursus-opleiding-004",
+    "basis-vocab-luisteren-002",
+    "basis-vocab-tijd-004",
+    "basis-vocab-cursus-opleiding-014",
+    "basis-vocab-cursus-opleiding-028",
+    "basis-vocab-cursus-opleiding-029"
+  ],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "basis-app-woorden-l-01",
+      "title": "De knoppen",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In deze app zie je elke dag dezelfde woorden: op de **knoppen** en in het **menu**. Leer ze. Dan kun je de app in het Nederlands gebruiken."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-app-001",
+            "basis-vocab-app-002",
+            "basis-vocab-app-003",
+            "basis-vocab-app-004",
+            "basis-vocab-app-005",
+            "basis-vocab-app-006",
+            "basis-vocab-app-007",
+            "basis-vocab-app-010"
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Op een knop staat het Nederlandse woord **groot**. Je eigen taal staat er klein naast. Heb je een woord geleerd bij **Woorden herhalen**? Dan staat er alleen nog Nederlands."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-app-woorden-q-001",
+        "tags": [
+          "basis:app-woorden"
+        ],
+        "type": "mc",
+        "prompt": "Je antwoord is klaar. Op welke knop druk je?",
+        "options": [
+          "Controleer",
+          "Stoppen",
+          "Vorige"
+        ],
+        "answer": 0,
+        "explanation": "Met Controleer kijk je of je antwoord goed is.",
+        "difficulty": 1,
+        "spot": "computer"
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-app-woorden-q-002",
+        "tags": [
+          "basis:app-woorden"
+        ],
+        "type": "mc",
+        "prompt": "Je wilt naar de volgende vraag. Op welke knop druk je?",
+        "options": [
+          "Vorige",
+          "Volgende",
+          "Opnieuw"
+        ],
+        "answer": 1,
+        "explanation": "Volgende is wat na dit komt. Vorige is wat voor dit kwam.",
+        "difficulty": 1,
+        "spot": "computer"
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-app-woorden-q-003",
+        "tags": [
+          "basis:app-woorden"
+        ],
+        "type": "match",
+        "prompt": "Zoek het tegenovergestelde.",
+        "pairs": [
+          [
+            "volgende",
+            "vorige"
+          ],
+          [
+            "beginnen",
+            "stoppen"
+          ],
+          [
+            "moeilijk",
+            "makkelijk"
+          ],
+          [
+            "goed",
+            "fout"
+          ]
+        ],
+        "explanation": "Volgende ↔ vorige, beginnen ↔ stoppen, moeilijk ↔ makkelijk, goed ↔ fout.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-app-woorden-l-02",
+      "title": "Het menu",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Bovenaan staat het **menu**. Op een telefoon open je het met de knop ☰. In het menu vind je deze woorden:"
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-cursus-opleiding-015",
+            "basis-vocab-app-019",
+            "basis-vocab-app-020",
+            "basis-vocab-cursus-opleiding-008",
+            "basis-vocab-app-021",
+            "basis-vocab-app-022",
+            "basis-vocab-app-023",
+            "basis-vocab-cursus-opleiding-004"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-app-woorden-q-004",
+        "tags": [
+          "basis:app-woorden"
+        ],
+        "type": "mc",
+        "prompt": "Waar kies je je taal?",
+        "options": [
+          "Bij Woorden",
+          "Bij Instellingen",
+          "Bij Examens"
+        ],
+        "answer": 1,
+        "explanation": "Bij Instellingen kies je hoe de app werkt, ook je taal.",
+        "difficulty": 1,
+        "spot": "computer"
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-app-woorden-q-005",
+        "tags": [
+          "basis:app-woorden"
+        ],
+        "type": "mc",
+        "prompt": "Je wilt de woorden van gisteren nog een keer leren. Wat kies je?",
+        "options": [
+          "Woorden herhalen",
+          "Annuleren",
+          "Sluiten"
+        ],
+        "answer": 0,
+        "explanation": "Herhalen is nog een keer doen. Bij Woorden herhalen leer je de woorden nog een keer.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-app-woorden-l-03",
+      "title": "Oefenen en herhalen",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Deze woorden zie je bij de **oefeningen** en bij **Woorden herhalen**:"
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-cursus-opleiding-014",
+            "basis-vocab-luisteren-002",
+            "basis-vocab-cursus-opleiding-028",
+            "basis-vocab-cursus-opleiding-029",
+            "basis-vocab-app-024",
+            "basis-vocab-app-025",
+            "basis-vocab-app-015",
+            "basis-vocab-app-016",
+            "basis-vocab-app-017",
+            "basis-vocab-app-018"
+          ]
+        },
+        {
+          "kind": "text",
+          "md": "En deze woorden zie je als je **klaar** bent:"
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-tijd-004",
+            "basis-vocab-app-011",
+            "basis-vocab-app-008",
+            "basis-vocab-app-009",
+            "basis-vocab-app-026",
+            "basis-vocab-app-012",
+            "basis-vocab-app-013",
+            "basis-vocab-app-014"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-app-woorden-q-006",
+        "tags": [
+          "basis:app-woorden"
+        ],
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Met de knop Opnieuw doe je iets nog een keer.",
+        "answer": true,
+        "explanation": "Opnieuw betekent: nog een keer.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-app-woorden-q-007",
+        "tags": [
+          "basis:app-woorden"
+        ],
+        "type": "mc",
+        "prompt": "Je bent klaar voor vandaag. Wat doe je met je voortgang?",
+        "options": [
+          "Ik bewaar mijn voortgang.",
+          "Ik verwijder mijn voortgang.",
+          "Ik annuleer mijn voortgang."
+        ],
+        "answer": 0,
+        "explanation": "Bewaren is houden, zodat het niet weg is. Verwijderen is weghalen.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-app-woorden-q-008",
+        "tags": [
+          "basis:app-woorden"
+        ],
+        "type": "match",
+        "prompt": "Welke woorden horen bij elkaar?",
+        "pairs": [
+          [
+            "sluiten",
+            "dichtdoen"
+          ],
+          [
+            "verwijderen",
+            "weghalen"
+          ],
+          [
+            "herhalen",
+            "nog een keer doen"
+          ],
+          [
+            "kiezen",
+            "één ding nemen"
+          ]
+        ],
+        "explanation": "Sluiten is dichtdoen, verwijderen is weghalen, herhalen is nog een keer doen en kiezen is één ding nemen.",
+        "difficulty": 2
+      }
+    }
+  ]
+}

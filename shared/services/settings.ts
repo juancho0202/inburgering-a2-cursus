@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { KV, defaultSettingsRecord, type SettingsRecord, type UsageRecord } from "../schemas/store.js";
+import { KV, UI_LANGUAGES, defaultSettingsRecord, type SettingsRecord, type UsageRecord } from "../schemas/store.js";
 import { invalid, nowIso, type Env } from "./context.js";
 
 /** The API key is handled elsewhere (encrypted, per device). The router adds `apiKey` (masked) to this. */
@@ -28,6 +28,9 @@ const UpdateSchema = z
     voiceAnnouncements: z.boolean(),
     lessonMusic: z.boolean(),
     moduleOrder: z.array(z.string().max(100)).max(100),
+    language: z.enum(UI_LANGUAGES),
+    immersion: z.number().int().min(0).max(3),
+    feedbackInMyLanguage: z.boolean(),
   })
   .partial();
 

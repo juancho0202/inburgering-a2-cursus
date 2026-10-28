@@ -3,6 +3,7 @@ import { computed, ref } from "vue";
 import type { Exercise } from "@shared/types";
 import ExerciseStem from "./ExerciseStem.vue";
 import { shuffled, type EvalResult } from "./types";
+import UiLabel from "../ui/UiLabel.vue";
 
 const props = defineProps<{ exercise: Extract<Exercise, { type: "match" }>; checked: boolean }>();
 
@@ -50,7 +51,7 @@ defineExpose({ ready, evaluate });
 <template>
   <div>
     <ExerciseStem :prompt="exercise.prompt" :context="exercise.context" />
-    <p class="-mt-3 mb-3 text-muted">Kies links een woord en dan rechts het passende woord.</p>
+    <p class="-mt-3 mb-3 text-muted"><UiLabel k="exercise.matchHint" /></p>
     <div class="grid grid-cols-2 gap-x-6 gap-y-3">
       <div class="grid content-start gap-3">
         <button
