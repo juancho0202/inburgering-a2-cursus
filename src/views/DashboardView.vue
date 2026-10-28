@@ -11,6 +11,7 @@ import { useContentStore } from "../stores/content";
 import { isBackgroundReady, pickBackground } from "../lib/backgrounds";
 import { warmScenes } from "../lib/illustrations";
 import { useSessionStore } from "../stores/session";
+import { useReviewStore } from "../stores/review";
 
 interface Dashboard {
   nextUnitId: string | null;
@@ -29,6 +30,7 @@ interface Dashboard {
 
 const content = useContentStore();
 const session = useSessionStore();
+const review = useReviewStore();
 // A different background each time the dashboard opens. One that is ready at once (it was downloaded ahead of time)
 // just appears; only one that takes longer fades in, so there is no blank moment and no needless fade.
 const background = pickBackground();
@@ -42,6 +44,7 @@ onMounted(async () => {
   try {
     const [d] = await Promise.all([api.get<Dashboard>("/dashboard"), content.course ? null : content.load()]);
     data.value = d;
+    review.count = d.dueCount + d.newCount;
     // The module the learner will most likely open next: get its lesson pictures ready while they look around.
     const unitId = d.lastLocation?.unitId ?? d.nextUnitId;
     const next = content.course?.modules.find((m) => m.units.some((u) => u.id === unitId));
@@ -88,8 +91,9 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
           <RouterLink v-else-if="data.nextUnitId" :to="`/unit/${data.nextUnitId}`">
             <AppButton size="lg">▶ Begin met leren</AppButton>
           </RouterLink>
-          <!-- Hidden when there is nothing to review: a "(0)" button only pushes the modules further down on a phone. -->
-          <RouterLink v-if="data.dueCount + data.newCount" to="/woorden/herhalen">
+          <!-- Hidden when there is nothing to review: a "(0)" button only pushes the modules further down on a phone.
+               On a phone it is a small badge in the top bar instead (App.vue), so the modules come into view sooner. -->
+          <RouterLink v-if="data.dueCount + data.newCount" to="/woorden/herhalen" class="hidden md:inline-block">
             <AppButton size="lg" variant="secondary">📕 Woorden herhalen ({{ data.dueCount + data.newCount }})</AppButton>
           </RouterLink>
         </div>
