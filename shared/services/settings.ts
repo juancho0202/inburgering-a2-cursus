@@ -42,22 +42,27 @@ function oneAtATime<T>(env: Env, job: () => Promise<T>): Promise<T> {
   return next;
 }
 
+/** Read, change and write the settings record, one change at a time. */
+export function changeSettings(env: Env, change: (current: SettingsRecord) => SettingsRecord): Promise<SettingsView> {
+  return oneAtATime(env, async () => {
+    const { usage: _usage, ...current } = await getSettings(env);
+    await env.store.kv.set(KV.settings, { ...change(current), updatedAt: nowIso(env) });
+    return getSettings(env);
+  });
+}
+
 export async function updateSettings(env: Env, patch: unknown): Promise<SettingsView> {
   const parsed = UpdateSchema.safeParse(patch);
   if (!parsed.success) throw invalid("De instellingen zijn niet geldig.");
-  return oneAtATime(env, () => applySettings(env, parsed.data));
-}
-
-async function applySettings(env: Env, patch: z.infer<typeof UpdateSchema>): Promise<SettingsView> {
-  const { usage: _usage, ...current } = await getSettings(env);
-  const { examDates: datePatch, ...rest } = patch;
-  const examDates: ExamDates = { ...current.examDates };
-  for (const [skill, date] of Object.entries(datePatch ?? {}) as [keyof ExamDates, string | null][]) {
-    if (date) examDates[skill] = date;
-    else delete examDates[skill];
-  }
-  await env.store.kv.set(KV.settings, { ...current, ...rest, examDates, updatedAt: nowIso(env) });
-  return getSettings(env);
+  const { examDates: datePatch, ...rest } = parsed.data;
+  return changeSettings(env, (current) => {
+    const examDates: ExamDates = { ...current.examDates };
+    for (const [skill, date] of Object.entries(datePatch ?? {}) as [keyof ExamDates, string | null][]) {
+      if (date) examDates[skill] = date;
+      else delete examDates[skill];
+    }
+    return { ...current, ...rest, examDates };
+  });
 }
 
 /** Count one Claude request in the monthly usage shown in Settings. */

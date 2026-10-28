@@ -46,6 +46,12 @@ describe("KNM and Lezen results", () => {
     expect(fail.wrapper.text()).toContain("33% · onder onze oefengrens (60%)");
   });
 
+  it("the exam date card may appear under the result, passed or not", async () => {
+    fakeApi.on("POST", "/exam-prompt", { show: true });
+    const { wrapper } = await open(examOf("knm", items), resultOf({ score: 1, max: 3 }));
+    expect(wrapper.text()).toContain("Wanneer is je examen?");
+  });
+
   it("exactly the pass mark counts as passed", async () => {
     const { wrapper } = await open(examOf("knm", items, 0.5), resultOf({ score: 1, max: 2 }));
     expect(wrapper.text()).toContain("boven onze oefengrens");

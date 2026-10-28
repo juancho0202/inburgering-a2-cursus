@@ -71,6 +71,8 @@ export async function dashboard(env: Env) {
     backupReminder: await backupReminder(env),
     nextExam: nextExam ? { id: nextExam.id, title: nextExam.title, skill: nextExam.skill, durationMinutes: nextExam.durationMinutes } : null,
     studyPlan,
+    // Without a plan the dashboard asks for the exam dates, unless the learner said "Niet meer vragen".
+    askExamDate: !studyPlan && !settings.examPrompt.never,
   };
 }
 

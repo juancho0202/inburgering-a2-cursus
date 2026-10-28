@@ -128,6 +128,7 @@ These are the kinds of bugs that have actually been found here. For each compone
 | "Klaar voor vandaag" dialog | `components/FinishSessionDialog.test.ts` |
 | Dashboard and module page | `components/Dashboard.test.ts` (where "Begin met leren" goes is decided in `shared/services/dashboard.ts`, tested in `services-progress.test.ts`; how the study plan spreads lessons over the weeks is in `study-plan.test.ts`) |
 | Words and verbs lists | `components/WordLists.test.ts` |
+| "Wanneer is je examen?" card on the lesson/exam end screen | `components/ExamDateCard.test.ts` (when it is due: `exam-prompt.test.ts`) |
 | Settings (incl. exam dates), report a mistake, import | `components/SettingsAndReport.test.ts` |
 | Lesson blocks, documents, exams list, writing history, welcome | `components/LessonContent.test.ts` |
 | Install hint / storage protection | `components/InstallHint.test.ts` |

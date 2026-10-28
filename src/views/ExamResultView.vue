@@ -12,6 +12,7 @@ import ProgressBar from "../components/ui/ProgressBar.vue";
 import WritingFeedbackPanel from "../components/WritingFeedbackPanel.vue";
 import ReportIssue from "../components/ReportIssue.vue";
 import FragmentPlayer from "../components/FragmentPlayer.vue";
+import ExamDateCard from "../components/ExamDateCard.vue";
 import { DISCLAIMER, themeLabel } from "../lib/examLabels";
 
 type Result = Progress["exams"][number];
@@ -129,6 +130,8 @@ const retryable = computed(() => tasks.value.some((t) => taskState.value[t.id]?.
       <p v-else class="mt-3 text-lg text-muted">Er is nog geen score. Hieronder zie je je opdrachten.</p>
       <p class="mt-3 rounded-2xl bg-surface-2 px-4 py-2 text-sm font-semibold text-muted">{{ DISCLAIMER }} DUO publiceert geen vaste grens.</p>
     </section>
+
+    <ExamDateCard />
 
     <!-- KNM / Lezen -->
     <template v-if="exam.skill !== 'schrijven'">

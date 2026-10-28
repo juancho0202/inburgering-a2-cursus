@@ -29,7 +29,7 @@ const course = {
 const dashboard = (extra: Record<string, unknown> = {}) => ({
   nextUnitId: "basis-a", lastLocation: null, dailyGoalMinutes: 20, minutesToday: 5, streak: { current: 1, best: 4 }, dueCount: 3, newCount: 2,
   modules: [{ id: "basis", title: "Basis", total: 3, completed: 1 }, { id: "exams", title: "Proefexamens", total: 0, completed: 0 }],
-  hardCount: 0, weakTags: [], backupReminder: { show: false, daysAgo: null, unsavedAnswers: 0 }, nextExam: null, studyPlan: null, ...extra,
+  hardCount: 0, weakTags: [], backupReminder: { show: false, daysAgo: null, unsavedAnswers: 0 }, nextExam: null, studyPlan: null, askExamDate: true, ...extra,
 });
 
 beforeEach(() => {
@@ -179,6 +179,12 @@ describe("study plan on the dashboard", () => {
     const { wrapper } = await open(dashboard());
     expect(card(wrapper).text()).toContain("Wanneer is je examen?");
     expect(card(wrapper).find("a").attributes("href")).toBe("/instellingen");
+  });
+
+  it("after 'Niet meer vragen' the dashboard does not ask for the date either", async () => {
+    const { wrapper } = await open(dashboard({ askExamDate: false }));
+    expect(wrapper.text()).not.toContain("Wanneer is je examen?");
+    expect(card(wrapper).exists()).toBe(false);
   });
 
   it("shows each exam with its date, the days left and what is still to do, in words that fit the number", async () => {

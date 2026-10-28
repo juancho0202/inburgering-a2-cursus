@@ -6,6 +6,7 @@ import { examMistakes, getExam, getExamResult, listExams, saveExamState, startEx
 import { applyImport, buildProgressFile, getDevice, lastImport, markExported, previewImport, sessionSummary, setDeviceName, undoLastImport } from "./transfer.js";
 import { completeUnit, getProgress, recordAttempt, resetProgress, setUnitStep } from "./progress.js";
 import { getSettings, updateSettings } from "./settings.js";
+import { claimExamPrompt, stopExamPrompt } from "./examPrompt.js";
 import { dueCards, introduce, reviewSrsCard, verbList, vocabList } from "./srs.js";
 import { listWriting, saveWriting } from "./writing.js";
 import { getWelcome, markWelcomeSeen } from "./welcome.js";
@@ -105,6 +106,8 @@ const routes: [Method, string, Handler][] = [
       return settingsView(c);
     },
   ],
+  ["POST", "/exam-prompt", (c) => claimExamPrompt(c.env)],
+  ["POST", "/exam-prompt/stop", (c) => stopExamPrompt(c.env)],
   ["POST", "/settings/test-key", async (c) => (await c.options.testKey?.()) ?? { ok: false, message: "Voeg eerst een API-sleutel toe." }],
   ["GET", "/export", (c) => buildProgressFile(c.env)],
   ["POST", "/import/preview", (c) => previewImport(c.env, c.body)],

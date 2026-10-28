@@ -29,6 +29,7 @@ interface Dashboard {
   backupReminder: { show: boolean; daysAgo: number | null; unsavedAnswers: number };
   nextExam: { id: string; title: string; skill: string; durationMinutes: number } | null;
   studyPlan: StudyPlan | null;
+  askExamDate: boolean;
 }
 
 const content = useContentStore();
@@ -198,7 +199,7 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
         </div>
       </details>
     </section>
-    <section v-else class="card flex flex-col gap-4 p-5 sm:flex-row sm:items-center" aria-label="Studieplan">
+    <section v-else-if="data.askExamDate" class="card flex flex-col gap-4 p-5 sm:flex-row sm:items-center" aria-label="Studieplan">
       <div class="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
         <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand-bg text-3xl" aria-hidden="true">📅</span>
         <div class="min-w-0 flex-1">

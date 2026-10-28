@@ -131,6 +131,16 @@ describe("finishing a lesson", () => {
     expect(wrapper.text()).toContain("🎉");
   });
 
+  it("after a passed lesson the exam date card may appear; after a failed one it is not even asked for", async () => {
+    fakeApi.on("POST", "/exam-prompt", { show: true });
+    const passed = await finish("c", { "c-q1": true, "c-q2": true });
+    expect(passed.wrapper.text()).toContain("Wanneer is je examen?");
+    expect(fakeApi.to("POST", "/exam-prompt")).toHaveLength(1);
+    const failed = await finish("c", { "c-q1": true, "c-q2": false });
+    expect(failed.wrapper.text()).not.toContain("Wanneer is je examen?");
+    expect(fakeApi.to("POST", "/exam-prompt")).toHaveLength(1);
+  });
+
   it("exactly the pass mark is a pass", async () => {
     progress.items["d-q1"] = { lastCorrect: true };
     progress.items["d-q2"] = { lastCorrect: false };

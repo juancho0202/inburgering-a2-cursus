@@ -16,6 +16,7 @@ import ReportIssue from "../components/ReportIssue.vue";
 import ExerciseShell from "../components/exercises/ExerciseShell.vue";
 import ReadAlongButton from "../components/ui/ReadAlongButton.vue";
 import ScenePicture from "../components/ScenePicture.vue";
+import ExamDateCard from "../components/ExamDateCard.vue";
 import { warmUnit } from "../lib/illustrations";
 
 const route = useRoute();
@@ -169,6 +170,8 @@ const restart = async () => {
     <p class="mt-1 text-xl">Je score: <strong>{{ summary.good }} van {{ summary.total }}</strong> ({{ Math.round(summary.score * 100) }}%)</p>
     <p class="mt-1 text-muted">{{ summary.score >= unit.passScore ? "Goed gedaan! Je hebt deze les gehaald." : "Bijna! Probeer de les nog een keer." }}</p>
     <p v-if="summary.words" class="mt-2 rounded-2xl bg-brand-bg px-4 py-2 font-semibold">📕 {{ summary.words }} nieuwe woordkaartjes om te herhalen</p>
+    <!-- Not after a failed lesson: that moment is discouraging enough already -->
+    <ExamDateCard v-if="summary.score >= unit.passScore" class="mt-6" />
     <div class="mt-6 grid gap-3">
       <RouterLink v-if="nextUnit" :to="`/unit/${nextUnit.id}`"><AppButton size="lg" class="w-full">Volgende les: {{ nextUnit.title }} →</AppButton></RouterLink>
       <RouterLink v-if="summary.hard" :to="{ path: '/oefenen', query: { mode: 'hard', unit: unit.id } }"><AppButton variant="secondary" class="w-full">Moeilijke vragen ({{ summary.hard }})</AppButton></RouterLink>

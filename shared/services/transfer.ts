@@ -192,6 +192,7 @@ export function convertLegacyExport(legacy: LegacyExport): ProgressFile {
       voiceAnnouncements: true,
       lessonMusic: true,
       examDates: {},
+      examPrompt: { shown: 0, never: false },
       updatedAt: progress.lastActivityAt ?? startedAt,
     };
   }

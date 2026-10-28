@@ -78,6 +78,8 @@ export const SettingsRecordSchema = z.object({
   lessonMusic: z.boolean().default(true),
   /** The learner's real exam dates (YYYY-MM-DD) per skill, for the study plan on the dashboard. */
   examDates: z.partialRecord(z.enum(["lezen", "luisteren", "knm", "schrijven"]), z.string()).default({}),
+  /** How often "Wanneer is je examen?" was shown after a lesson or mock exam, and whether the learner said "Niet meer vragen". */
+  examPrompt: z.object({ shown: z.number().int(), lastShown: z.string().optional(), never: z.boolean() }).default({ shown: 0, never: false }),
   updatedAt: z.string().optional(),
 });
 export type SettingsRecord = z.infer<typeof SettingsRecordSchema>;
@@ -92,6 +94,7 @@ export const defaultSettingsRecord = (): SettingsRecord => ({
   voiceAnnouncements: true,
   lessonMusic: true,
   examDates: {},
+  examPrompt: { shown: 0, never: false },
 });
 
 export const UsageRecordSchema = z.object({ month: z.string(), requests: z.number().int(), inputTokens: z.number().int(), outputTokens: z.number().int() });
