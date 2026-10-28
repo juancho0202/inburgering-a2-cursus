@@ -2,9 +2,8 @@
 import { onMounted, ref } from "vue";
 import { RouterLink } from "vue-router";
 import { api } from "../api/client";
-import { moduleStyle } from "../lib/moduleStyle";
 import AppButton from "../components/ui/AppButton.vue";
-import ProgressBar from "../components/ui/ProgressBar.vue";
+import ModuleCards from "../components/ModuleCards.vue";
 import GoalGauge from "../components/ui/GoalGauge.vue";
 import ProgressRing from "../components/ui/ProgressRing.vue";
 import { useContentStore } from "../stores/content";
@@ -118,76 +117,54 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
     </section>
     </div>
 
-    <section>
-      <h2 class="glass mb-3 inline-block rounded-2xl px-4 py-1 text-2xl font-bold">Modules</h2>
-      <div class="grid gap-4 sm:grid-cols-2">
-        <RouterLink
-          v-for="m in data.modules"
-          :key="m.id"
-          :to="`/module/${m.id}`"
-          class="card group block p-5 transition hover:-translate-y-0.5 hover:shadow-lg"
-          @pointerenter="warmModule(m.id)"
-          @focus="warmModule(m.id)"
-          @touchstart.passive="warmModule(m.id)"
-        >
-          <div class="flex items-center gap-4">
-            <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl text-3xl" :class="moduleStyle(m.id).tile" aria-hidden="true">{{ moduleStyle(m.id).emoji }}</span>
-            <div class="min-w-0 flex-1">
-              <h3 class="text-xl font-bold group-hover:text-brand-strong">{{ m.title }}</h3>
-              <p v-if="m.total" class="text-sm text-muted">{{ m.completed }} van {{ m.total }} lessen klaar</p>
-              <p v-else class="text-sm text-muted">Oefen onder examentijd</p>
+    <!-- The rest of the page goes inside, so the sticky "Klaar" of edit mode stays in reach down to the end -->
+    <ModuleCards :modules="data.modules" @warm="warmModule">
+      <section v-if="data.backupReminder.show" class="card flex flex-col gap-4 p-5 sm:flex-row sm:items-center" aria-label="Voortgang bewaren">
+        <div class="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
+          <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand-bg text-3xl" aria-hidden="true">💾</span>
+          <div class="min-w-0 flex-1">
+            <h2 class="text-lg font-bold">Bewaar je voortgang</h2>
+            <p class="text-muted">
+              {{ data.backupReminder.daysAgo === null ? "Je hebt je voortgang nog niet bewaard." : `Laatst bewaard: ${data.backupReminder.daysAgo} dagen geleden.` }}
+              Je voortgang staat alleen in deze browser.
+            </p>
+          </div>
+        </div>
+        <AppButton variant="secondary" class="w-full sm:w-auto" @click="session.openFinish()">Bewaar nu</AppButton>
+      </section>
+
+      <section v-if="data.nextExam" class="card flex flex-col gap-4 p-5 sm:flex-row sm:items-center">
+        <div class="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
+          <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-amber-100 text-3xl dark:bg-amber-950" aria-hidden="true">⏱️</span>
+          <div class="min-w-0 flex-1">
+            <h2 class="text-lg font-bold">Probeer een proefexamen</h2>
+            <p class="text-muted">{{ data.nextExam.title }} · {{ data.nextExam.durationMinutes }} minuten</p>
+          </div>
+        </div>
+        <RouterLink to="/examens" class="block sm:inline-block"><AppButton variant="secondary" class="w-full sm:w-auto">Naar de examens</AppButton></RouterLink>
+      </section>
+
+      <section class="card p-6">
+        <h2 class="text-2xl font-bold">Dit moet je meer oefenen</h2>
+        <p v-if="!data.weakTags.length && !data.hardCount" class="mt-2 text-muted">Doe een paar lessen, dan zie je hier wat beter kan.</p>
+        <ul v-else class="mt-3 grid gap-2">
+          <li v-for="t in data.weakTags" :key="t.tag" class="flex flex-col gap-3 rounded-2xl bg-surface-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p class="font-bold">{{ tagLabel(t.tag) }}</p>
+              <p class="text-sm text-muted">{{ Math.round(t.accuracy * 100) }}% goed ({{ t.seen }} antwoorden)</p>
             </div>
-          </div>
-          <div v-if="m.total" class="mt-4"><ProgressBar :value="m.total ? m.completed / m.total : 0" :label="`Voortgang ${m.title}`" /></div>
-        </RouterLink>
-      </div>
-    </section>
-
-    <section v-if="data.backupReminder.show" class="card flex flex-col gap-4 p-5 sm:flex-row sm:items-center" aria-label="Voortgang bewaren">
-      <div class="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
-        <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand-bg text-3xl" aria-hidden="true">💾</span>
-        <div class="min-w-0 flex-1">
-          <h2 class="text-lg font-bold">Bewaar je voortgang</h2>
-          <p class="text-muted">
-            {{ data.backupReminder.daysAgo === null ? "Je hebt je voortgang nog niet bewaard." : `Laatst bewaard: ${data.backupReminder.daysAgo} dagen geleden.` }}
-            Je voortgang staat alleen in deze browser.
-          </p>
-        </div>
-      </div>
-      <AppButton variant="secondary" class="w-full sm:w-auto" @click="session.openFinish()">Bewaar nu</AppButton>
-    </section>
-
-    <section v-if="data.nextExam" class="card flex flex-col gap-4 p-5 sm:flex-row sm:items-center">
-      <div class="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
-        <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-amber-100 text-3xl dark:bg-amber-950" aria-hidden="true">⏱️</span>
-        <div class="min-w-0 flex-1">
-          <h2 class="text-lg font-bold">Probeer een proefexamen</h2>
-          <p class="text-muted">{{ data.nextExam.title }} · {{ data.nextExam.durationMinutes }} minuten</p>
-        </div>
-      </div>
-      <RouterLink to="/examens" class="block sm:inline-block"><AppButton variant="secondary" class="w-full sm:w-auto">Naar de examens</AppButton></RouterLink>
-    </section>
-
-    <section class="card p-6">
-      <h2 class="text-2xl font-bold">Dit moet je meer oefenen</h2>
-      <p v-if="!data.weakTags.length && !data.hardCount" class="mt-2 text-muted">Doe een paar lessen, dan zie je hier wat beter kan.</p>
-      <ul v-else class="mt-3 grid gap-2">
-        <li v-for="t in data.weakTags" :key="t.tag" class="flex flex-col gap-3 rounded-2xl bg-surface-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p class="font-bold">{{ tagLabel(t.tag) }}</p>
-            <p class="text-sm text-muted">{{ Math.round(t.accuracy * 100) }}% goed ({{ t.seen }} antwoorden)</p>
-          </div>
-          <div class="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:justify-end">
-            <RouterLink :to="{ path: '/oefenen', query: { tag: t.tag } }" class="block"><AppButton variant="secondary" class="w-full sm:w-auto">Oefen dit</AppButton></RouterLink>
-            <RouterLink v-if="!t.tag.startsWith('writing:')" class="block" :to="{ path: '/oefenen', query: { gen: 'tag', tag: t.tag } }"><AppButton variant="ghost" class="w-full sm:w-auto">🤖 Meer met Claude</AppButton></RouterLink>
-          </div>
-        </li>
-        <li v-if="data.hardCount" class="flex flex-col gap-3 rounded-2xl bg-bad-bg px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
-          <p class="font-bold">{{ data.hardCount }} moeilijke {{ data.hardCount === 1 ? "vraag" : "vragen" }}</p>
-          <RouterLink :to="{ path: '/oefenen', query: { mode: 'hard' } }" class="block"><AppButton variant="secondary" class="w-full sm:w-auto">Moeilijke vragen</AppButton></RouterLink>
-        </li>
-      </ul>
-    </section>
+            <div class="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:justify-end">
+              <RouterLink :to="{ path: '/oefenen', query: { tag: t.tag } }" class="block"><AppButton variant="secondary" class="w-full sm:w-auto">Oefen dit</AppButton></RouterLink>
+              <RouterLink v-if="!t.tag.startsWith('writing:')" class="block" :to="{ path: '/oefenen', query: { gen: 'tag', tag: t.tag } }"><AppButton variant="ghost" class="w-full sm:w-auto">🤖 Meer met Claude</AppButton></RouterLink>
+            </div>
+          </li>
+          <li v-if="data.hardCount" class="flex flex-col gap-3 rounded-2xl bg-bad-bg px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+            <p class="font-bold">{{ data.hardCount }} moeilijke {{ data.hardCount === 1 ? "vraag" : "vragen" }}</p>
+            <RouterLink :to="{ path: '/oefenen', query: { mode: 'hard' } }" class="block"><AppButton variant="secondary" class="w-full sm:w-auto">Moeilijke vragen</AppButton></RouterLink>
+          </li>
+        </ul>
+      </section>
+    </ModuleCards>
   </div>
   <p v-else class="text-muted">Even laden…</p>
 </template>
