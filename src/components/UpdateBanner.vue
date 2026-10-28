@@ -14,7 +14,7 @@ const lang = useLanguageStore();
     <!-- Text on top, buttons under it: side by side the text was squeezed into a narrow column on a phone -->
     <div class="grid gap-3 rounded-2xl border border-line bg-surface p-4 shadow-2xl">
       <p class="font-semibold"><span aria-hidden="true">✨ </span>{{ lang.t("update.ready") }}</p>
-      <div class="flex justify-end gap-2">
+      <div class="flex justify-center gap-2">
         <button type="button" class="rounded-xl px-3 py-2 font-semibold text-muted transition hover:bg-surface-2 hover:text-ink" @click="dismissUpdate"><UiLabel k="update.later" /></button>
         <button type="button" class="rounded-xl bg-brand px-4 py-2 font-bold text-white transition hover:opacity-90" @click="installUpdate"><UiLabel k="update.now" /></button>
       </div>
