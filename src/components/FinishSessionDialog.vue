@@ -5,6 +5,9 @@ import type { ProgressFile } from "@shared/schemas/transfer";
 import { useSessionStore } from "../stores/session";
 import { canShareFile, makeProgressFile, progressFileName, saveProgressFile } from "../lib/progressFile";
 import AppButton from "./ui/AppButton.vue";
+import UiLabel from "./ui/UiLabel.vue";
+import UiText from "./ui/UiText.vue";
+import { useLanguageStore } from "../stores/language";
 
 interface Summary {
   minutesToday: number;
@@ -17,6 +20,7 @@ interface Summary {
 }
 
 const session = useSessionStore();
+const lang = useLanguageStore();
 const summary = ref<Summary | null>(null);
 const deviceName = ref("");
 const file = ref<File | null>(null);
@@ -62,7 +66,7 @@ async function save() {
     summary.value = await api.get<Summary>("/session/summary");
     message.value = {
       ok: true,
-      text: result === "shared" ? "Bewaard! Open het bestand op je andere apparaat bij “Ga verder met een bestand”." : "Bewaard in je downloads. Zet het bestand op je andere apparaat (bijvoorbeeld met AirDrop) en kies daar “Ga verder met een bestand”.",
+      text: lang.t(result === "shared" ? "finish.shared" : "finish.downloaded"),
     };
   } catch (e) {
     message.value = { ok: false, text: (e as Error).message };
@@ -78,34 +82,32 @@ const accuracy = computed(() => (summary.value && summary.value.answersToday ? M
 <template>
   <div v-if="session.finishOpen" class="fixed inset-0 z-[60] grid place-items-center bg-black/50 p-4" role="dialog" aria-modal="true" aria-labelledby="finish-title" @keydown.esc="session.closeFinish()">
     <div ref="dialog" tabindex="-1" class="card max-h-[90vh] w-full max-w-lg overflow-y-auto p-6 outline-none">
-      <h2 id="finish-title" class="text-2xl font-extrabold">Klaar voor vandaag 🌙</h2>
-      <p v-if="!summary" class="mt-3 text-muted">Even laden…</p>
+      <h2 id="finish-title" class="text-2xl font-extrabold"><span aria-hidden="true">🌙 </span><UiLabel variant="heading" k="app.finish" /></h2>
+      <p v-if="!summary" class="mt-3 text-muted">{{ lang.t("common.loading") }}</p>
 
       <template v-else>
         <p v-if="summary.answersToday" class="mt-1 text-lg">
-          Goed gedaan! Vandaag: <strong>{{ summary.minutesToday }} minuten</strong>, <strong>{{ summary.answersToday }} antwoorden</strong><template v-if="accuracy !== null"> ({{ accuracy }}% goed)</template><template v-if="summary.unitsCompletedToday">, {{ summary.unitsCompletedToday }} {{ summary.unitsCompletedToday === 1 ? "les" : "lessen" }} klaar</template>.
+          <UiText k="finish.today" md :params="{ minutes: summary.minutesToday, answers: summary.answersToday }" /><template v-if="accuracy !== null"> {{ lang.t("finish.accuracy", { pct: accuracy }) }}</template><template v-if="summary.unitsCompletedToday">, {{ lang.t("finish.lessonsDone", { n: summary.unitsCompletedToday }, summary.unitsCompletedToday) }}</template>.
         </p>
-        <p v-else class="mt-1 text-muted">Je hebt vandaag nog niets gedaan, maar je kunt je voortgang wel bewaren.</p>
+        <p v-else class="mt-1 text-muted"><UiText k="finish.nothingYet" /></p>
 
         <div class="mt-4 rounded-2xl bg-surface-2 p-4">
-          <p class="font-bold">Verder op een ander apparaat?</p>
-          <p class="mt-1 text-sm text-muted">
-            Bewaar je voortgang als bestand en zet dat op je andere apparaat{{ sharing ? " (kies bijvoorbeeld AirDrop)" : "" }}. Daar kies je “Ga verder met een bestand”. Je antwoorden worden samengevoegd; er gaat niets kwijt.
-          </p>
-          <label for="device" class="mt-3 block text-sm font-semibold">Naam van dit apparaat</label>
-          <input id="device" v-model="deviceName" class="input mt-1" maxlength="40" placeholder="Bijvoorbeeld: Laptop" autocomplete="off" />
+          <p class="font-bold"><UiLabel variant="heading" k="finish.otherDevice" /></p>
+          <p class="mt-1 text-sm text-muted"><UiText :k="sharing ? 'finish.otherDeviceShareHint' : 'finish.otherDeviceHint'" /></p>
+          <label for="device" class="mt-3 block text-sm font-semibold">{{ lang.t("finish.deviceName") }}</label>
+          <input id="device" v-model="deviceName" class="input mt-1" maxlength="40" :placeholder="lang.t('finish.devicePlaceholder')" autocomplete="off" />
           <p class="mt-2 text-sm text-muted">
-            <template v-if="summary.lastExportAt">Laatst bewaard: {{ new Date(summary.lastExportAt).toLocaleString("nl-NL", { dateStyle: "medium", timeStyle: "short" }) }}.</template>
-            <template v-else>Je hebt je voortgang nog niet bewaard.</template>
-            <template v-if="summary.unsavedAnswers">{{ " " }}{{ summary.unsavedAnswers }} nieuwe antwoorden zijn nog niet bewaard.</template>
+            <template v-if="summary.lastExportAt">{{ lang.t("finish.lastSaved", { at: new Date(summary.lastExportAt).toLocaleString(lang.proseLocale, { dateStyle: "medium", timeStyle: "short" }) }) }}</template>
+            <template v-else>{{ lang.t("dashboard.neverSaved") }}</template>
+            <template v-if="summary.unsavedAnswers">{{ " " }}{{ lang.t("finish.unsaved", { n: summary.unsavedAnswers }, summary.unsavedAnswers) }}</template>
           </p>
         </div>
 
         <p v-if="message" role="status" class="mt-3 rounded-2xl p-3 font-semibold" :class="message.ok ? 'bg-good-bg text-good' : 'bg-bad-bg text-bad'">{{ message.ok ? "✓" : "✗" }} {{ message.text }}</p>
 
         <div class="mt-5 flex flex-wrap justify-end gap-3">
-          <AppButton variant="secondary" @click="session.closeFinish()">Sluiten</AppButton>
-          <AppButton :disabled="!file || busy" @click="save">{{ sharing ? "📤 Bewaar en deel" : "⬇ Bewaar voortgang" }}</AppButton>
+          <AppButton variant="secondary" @click="session.closeFinish()"><UiLabel k="common.close" /></AppButton>
+          <AppButton :disabled="!file || busy" @click="save">{{ sharing ? "📤" : "⬇" }} <UiLabel :k="sharing ? 'finish.saveShare' : 'finish.save'" /></AppButton>
         </div>
       </template>
     </div>

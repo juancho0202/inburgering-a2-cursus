@@ -8,6 +8,10 @@ import { loadCourseContent } from "./content";
 import { requestPersistentStorage } from "./lib/storage";
 import { primeBackground } from "./lib/backgrounds";
 import { watchForUpdates } from "./lib/appUpdate";
+import { takeLanguageParam } from "./i18n";
+
+// Before the router starts: the language landing pages link to /?lang=xx (see takeLanguageParam).
+takeLanguageParam();
 
 const app = createApp(App);
 app.use(createPinia());

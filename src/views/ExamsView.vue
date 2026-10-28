@@ -3,7 +3,10 @@ import { computed, onMounted, ref } from "vue";
 import { RouterLink } from "vue-router";
 import { api } from "../api/client";
 import AppButton from "../components/ui/AppButton.vue";
-import { DISCLAIMER, skillEmoji, skillLabel } from "../lib/examLabels";
+import { skillEmoji, skillLabel } from "../lib/examLabels";
+import UiLabel from "../components/ui/UiLabel.vue";
+import UiText from "../components/ui/UiText.vue";
+import { useLanguageStore } from "../stores/language";
 
 interface ExamRow {
   id: string;
@@ -16,6 +19,7 @@ interface ExamRow {
   attempts: { id: string; finishedAt: string; score: number; max: number }[];
 }
 
+const lang = useLanguageStore();
 const exams = ref<ExamRow[] | null>(null);
 const error = ref<string | null>(null);
 onMounted(async () => {
@@ -29,26 +33,28 @@ onMounted(async () => {
 const groups = computed(() =>
   (["lezen", "luisteren", "knm", "schrijven"] as const).map((skill) => ({ skill, rows: (exams.value ?? []).filter((e) => e.skill === skill) })).filter((g) => g.rows.length),
 );
-const fmt = (iso: string) => new Date(iso).toLocaleDateString("nl-NL", { day: "numeric", month: "short" });
+const fmt = (iso: string) => new Date(iso).toLocaleDateString(lang.proseLocale, { day: "numeric", month: "short" });
 const pct = (a: { score: number; max: number }) => (a.max ? Math.round((a.score / a.max) * 100) : 0);
-const unitFor = (skill: string) => (skill === "schrijven" ? "opdrachten" : "vragen");
+const countLabel = (e: ExamRow) => lang.t(e.skill === "schrijven" ? "exams.tasks" : "exams.questions", { n: e.questionCount });
 </script>
 
 <template>
   <div>
-    <h1 class="text-3xl font-extrabold tracking-tight">Proefexamens</h1>
-    <p class="mt-1 text-muted">Oefen onder examentijd. Je ziet pas na het inleveren of je antwoorden goed zijn.</p>
-    <p class="mt-3 rounded-2xl bg-brand-bg px-4 py-3 font-semibold text-brand-strong">{{ DISCLAIMER }} DUO publiceert geen vaste slaaggrens; onze eigen oefengrens is 70%.</p>
+    <h1 class="text-3xl font-extrabold tracking-tight"><UiLabel variant="heading" k="exams.title" /></h1>
+    <p class="mt-1 text-muted"><UiText k="exams.intro" /></p>
+    <!-- Idea 5 of the language plan: the exam is Dutch only, like the real one. Said here, before it starts. -->
+    <p v-if="!lang.isDutch" class="mt-3 rounded-2xl bg-surface-2 px-4 py-3 font-semibold">🇳🇱 {{ lang.own("exams.dutchOnly") }}</p>
+    <p class="mt-3 rounded-2xl bg-brand-bg px-4 py-3 font-semibold text-brand-strong"><UiText k="exams.disclaimer" /> <UiText k="exams.passMark" /></p>
 
     <p v-if="error" class="mt-4 rounded-2xl bg-bad-bg p-4 text-bad">{{ error }}</p>
-    <p v-else-if="!exams" class="mt-4 text-muted">Even laden…</p>
+    <p v-else-if="!exams" class="mt-4 text-muted">{{ lang.t("common.loading") }}</p>
 
     <section v-for="g in groups" :key="g.skill" class="mt-8">
-      <h2 class="mb-3 flex items-center gap-2 text-2xl font-bold"><span aria-hidden="true">{{ skillEmoji[g.skill] }}</span> {{ skillLabel[g.skill] }}</h2>
+      <h2 class="mb-3 flex items-center gap-2 text-2xl font-bold"><span aria-hidden="true">{{ skillEmoji[g.skill] }}</span> <span lang="nl" translate="no">{{ skillLabel[g.skill] }}</span></h2>
       <div class="grid gap-4 sm:grid-cols-2">
         <article v-for="e in g.rows" :key="e.id" class="card p-5">
-          <h3 class="text-xl font-bold">{{ e.title }}</h3>
-          <p class="text-sm text-muted">{{ e.durationMinutes }} minuten · {{ e.questionCount }} {{ unitFor(e.skill) }}</p>
+          <h3 class="text-xl font-bold" lang="nl" translate="no">{{ e.title }}</h3>
+          <p class="text-sm text-muted">{{ lang.t("common.minutes", { n: e.durationMinutes }) }} · {{ countLabel(e) }}</p>
 
           <ul v-if="e.attempts.length" class="mt-3 grid gap-1 text-sm">
             <li v-for="a in e.attempts.slice(-3).reverse()" :key="a.id" class="flex items-center justify-between rounded-xl bg-surface-2 px-3 py-1.5">
@@ -58,11 +64,11 @@ const unitFor = (skill: string) => (skill === "schrijven" ? "opdrachten" : "vrag
               </RouterLink>
             </li>
           </ul>
-          <p v-else class="mt-3 text-sm text-muted">Nog niet gemaakt.</p>
+          <p v-else class="mt-3 text-sm text-muted">{{ lang.t("exams.notDone") }}</p>
 
-          <p v-if="e.inProgress" class="mt-3 text-sm font-semibold text-brand-strong">Je bent bezig. De tijd loopt door.</p>
+          <p v-if="e.inProgress" class="mt-3 text-sm font-semibold text-brand-strong">{{ lang.t("exams.busy") }}</p>
           <RouterLink :to="`/examen/${e.id}`" class="mt-4 block">
-            <AppButton class="w-full" :variant="e.inProgress ? 'primary' : 'secondary'">{{ e.inProgress ? "Verder met het examen" : e.attempts.length ? "Opnieuw maken" : "Start het examen" }}</AppButton>
+            <AppButton class="w-full" :variant="e.inProgress ? 'primary' : 'secondary'"><UiLabel :k="e.inProgress ? 'exams.continue' : e.attempts.length ? 'exams.again' : 'exams.start'" /></AppButton>
           </RouterLink>
         </article>
       </div>

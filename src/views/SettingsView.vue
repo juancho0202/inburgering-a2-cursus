@@ -10,9 +10,14 @@ import { MODELS } from "@shared/claude/models";
 import AppButton from "../components/ui/AppButton.vue";
 import { useSpeech } from "../composables/useSpeech";
 import { playComplete, playCorrect, playLessonMelody, playWrong } from "../lib/sound";
+import LanguagePicker from "../components/LanguagePicker.vue";
+import UiLabel from "../components/ui/UiLabel.vue";
+import UiText from "../components/ui/UiText.vue";
+import { useLanguageStore } from "../stores/language";
 
 const store = useSettingsStore();
 const session = useSessionStore();
+const lang = useLanguageStore();
 const newKey = ref("");
 const saved = ref(false);
 const resetText = ref("");
@@ -22,7 +27,7 @@ async function resetProgress() {
   try {
     await api.post("/progress/reset", { confirm: resetText.value });
     resetText.value = "";
-    resetMessage.value = { ok: true, text: "Je voortgang is gewist. Je gegevens zijn gewist." };
+    resetMessage.value = { ok: true, text: lang.t("settings.resetDone") };
   } catch (e) {
     resetMessage.value = { ok: false, text: (e as Error).message };
   }
@@ -71,35 +76,65 @@ async function patch(p: Parameters<typeof store.update>[0]) {
   setTimeout(() => (saved.value = false), 1500);
 }
 const speech = useSpeech();
+// Module names: course content, so Dutch.
 const tryModules = ["Basis", "Lezen", "KNM", "Schrijven", "Examens"];
 const tryModule = ref(0);
 const tryLesson = ref(1);
 const soundOptions = [
-  { key: "voiceAnnouncements", label: "Voorlezen", hint: "Een stem leest de titel van de les en elke vraag voor." },
-  { key: "soundEffects", label: "Geluidjes", hint: "Een kort geluid bij een goed of fout antwoord en aan het eind van een les." },
-  { key: "lessonMusic", label: "Melodie bij de start", hint: "Elke les begint met een korte melodie. Les 1, 2, 3… hebben elk hun eigen melodie." },
+  { key: "voiceAnnouncements", label: "settings.voice", hint: "settings.voiceHint" },
+  { key: "soundEffects", label: "settings.effects", hint: "settings.effectsHint" },
+  { key: "lessonMusic", label: "settings.melody", hint: "settings.melodyHint" },
 ] as const;
 /** "Geen geluid": on when all three are off; switching it sets all three at once. */
 const silent = computed(() => soundOptions.every((o) => store.settings?.[o.key] === false));
 const setSilent = (off: boolean) => patch({ voiceAnnouncements: !off, soundEffects: !off, lessonMusic: !off });
 const themes = [
-  { value: "system", label: "Auto" },
-  { value: "light", label: "Licht" },
-  { value: "dark", label: "Donker" },
+  { value: "system", label: "settings.themeAuto" },
+  { value: "light", label: "settings.themeLight" },
+  { value: "dark", label: "settings.themeDark" },
 ] as const;
+// How much of the app's own text is Dutch (see the language store).
+const levels = [0, 1, 2] as const;
 </script>
 
 <template>
   <div class="mx-auto max-w-2xl">
     <div class="mb-6 flex items-center justify-between">
-      <h1 class="text-3xl font-extrabold tracking-tight">Instellingen</h1>
-      <span v-if="saved" role="status" class="rounded-full bg-good-bg px-3 py-1 text-sm font-bold text-good">✓ Opgeslagen</span>
+      <h1 class="text-3xl font-extrabold tracking-tight"><UiLabel variant="heading" k="nav.settings" /></h1>
+      <span v-if="saved" role="status" class="rounded-full bg-good-bg px-3 py-1 text-sm font-bold text-good">✓ {{ lang.t("settings.saved") }}</span>
     </div>
 
     <div v-if="store.settings" class="grid gap-6">
       <section class="card p-6">
-        <h2 class="text-xl font-bold">Uiterlijk</h2>
-        <div class="mt-3 grid grid-cols-3 gap-2" role="radiogroup" aria-label="Thema">
+        <LanguagePicker />
+        <template v-if="!lang.isDutch">
+          <h2 id="immersion-title" class="mt-6 text-xl font-bold"><UiLabel variant="heading" k="settings.immersion" /></h2>
+          <p class="mt-1 text-sm text-muted"><UiText k="settings.immersionHint" /></p>
+          <div class="mt-3 grid gap-2" role="radiogroup" aria-labelledby="immersion-title">
+            <button
+              v-for="l in levels"
+              :key="l"
+              type="button"
+              role="radio"
+              :aria-checked="lang.immersion === l"
+              class="rounded-2xl border-2 px-4 py-2.5 text-left transition"
+              :class="lang.immersion === l ? 'border-brand bg-brand-bg' : 'border-line hover:border-brand'"
+              @click="patch({ immersion: l })"
+            >
+              <span class="font-bold">{{ lang.t(`settings.level${l}`) }}</span>
+              <span class="block text-sm text-muted">{{ lang.t(`settings.level${l}Hint`) }}</span>
+            </button>
+          </div>
+          <label class="mt-4 flex items-start gap-3">
+            <input type="checkbox" class="mt-1 h-5 w-5 shrink-0 accent-[var(--brand)]" :checked="store.settings.feedbackInMyLanguage" @change="patch({ feedbackInMyLanguage: ($event.target as HTMLInputElement).checked })" />
+            <span><span class="font-semibold">{{ lang.t("settings.feedbackOwn") }}</span><span class="block text-sm text-muted">{{ lang.t("settings.feedbackOwnHint") }}</span></span>
+          </label>
+        </template>
+      </section>
+
+      <section class="card p-6">
+        <h2 class="text-xl font-bold"><UiLabel variant="heading" k="settings.appearance" /></h2>
+        <div class="mt-3 grid grid-cols-3 gap-2" role="radiogroup" :aria-label="lang.t('settings.theme')">
           <button
             v-for="t in themes"
             :key="t.value"
@@ -110,71 +145,71 @@ const themes = [
             :class="store.settings.theme === t.value ? 'border-brand bg-brand-bg text-brand-strong' : 'border-line hover:border-brand'"
             @click="patch({ theme: t.value })"
           >
-            {{ t.label }}
+            <UiLabel :k="t.label" />
           </button>
         </div>
       </section>
 
       <section class="card p-6">
-        <h2 class="text-xl font-bold">Geluid</h2>
+        <h2 class="text-xl font-bold"><UiLabel variant="heading" k="settings.sound" /></h2>
         <div class="mt-3 grid gap-3">
           <label class="flex items-start gap-3 border-b border-line pb-3">
             <input type="checkbox" class="mt-1 h-5 w-5 shrink-0 accent-[var(--brand)]" :checked="silent" @change="setSilent(($event.target as HTMLInputElement).checked)" />
-            <span><span class="font-semibold">🔇 Geen geluid</span><span class="block text-sm text-muted">Geen stem, geen geluidjes en geen melodie. De knoppen 🔊 en ▶ Lees voor werken nog wel.</span></span>
+            <span><span class="font-semibold">🔇 {{ lang.t("settings.silent") }}</span><span class="block text-sm text-muted">{{ lang.t("settings.silentHint") }}</span></span>
           </label>
           <label v-for="o in soundOptions" :key="o.key" class="flex items-start gap-3">
             <input type="checkbox" class="mt-1 h-5 w-5 shrink-0 accent-[var(--brand)]" :checked="store.settings[o.key]" @change="patch({ [o.key]: ($event.target as HTMLInputElement).checked })" />
-            <span><span class="font-semibold">{{ o.label }}</span><span class="block text-sm text-muted">{{ o.hint }}</span></span>
+            <span><span class="font-semibold">{{ lang.t(o.label) }}</span><span class="block text-sm text-muted">{{ lang.t(o.hint) }}</span></span>
           </label>
-          <div class="mt-1 flex flex-wrap items-center gap-2" aria-label="Probeer de geluiden">
-            <AppButton variant="secondary" @click="playCorrect()">▶ Goed</AppButton>
-            <AppButton variant="secondary" @click="playWrong()">▶ Fout</AppButton>
-            <AppButton variant="secondary" @click="playComplete(true)">▶ Les klaar</AppButton>
-            <select v-model.number="tryModule" class="input w-auto py-2" aria-label="Module">
+          <div class="mt-1 flex flex-wrap items-center gap-2" :aria-label="lang.t('settings.trySounds')">
+            <AppButton variant="secondary" @click="playCorrect()">▶ <UiLabel k="settings.soundGood" /></AppButton>
+            <AppButton variant="secondary" @click="playWrong()">▶ <UiLabel k="settings.soundWrong" /></AppButton>
+            <AppButton variant="secondary" @click="playComplete(true)">▶ <UiLabel k="settings.soundDone" /></AppButton>
+            <select v-model.number="tryModule" class="input w-auto py-2" :aria-label="lang.t('settings.module')">
               <option v-for="(m, i) in tryModules" :key="m" :value="i">{{ m }}</option>
             </select>
-            <select v-model.number="tryLesson" class="input w-auto py-2" aria-label="Les">
-              <option v-for="n in 16" :key="n" :value="n">Les {{ n }}</option>
+            <select v-model.number="tryLesson" class="input w-auto py-2" :aria-label="lang.t('settings.lesson')">
+              <option v-for="n in 16" :key="n" :value="n">{{ lang.t("settings.lessonN", { n }) }}</option>
             </select>
-            <AppButton variant="secondary" @click="playLessonMelody(tryLesson, tryModule)">▶ Melodie</AppButton>
+            <AppButton variant="secondary" @click="playLessonMelody(tryLesson, tryModule)">▶ <UiLabel k="settings.melodyButton" /></AppButton>
           </div>
-          <p v-if="speech.ready.value && !speech.available.value" class="text-sm text-muted">Je apparaat heeft geen Nederlandse stem. Voeg er een toe in de instellingen van je systeem.</p>
+          <p v-if="speech.ready.value && !speech.available.value" class="text-sm text-muted">{{ lang.t("settings.noVoice") }}</p>
         </div>
       </section>
 
       <section class="card p-6">
-        <h2 class="text-xl font-bold">Leren</h2>
+        <h2 class="text-xl font-bold"><UiLabel variant="heading" k="nav.learn" /></h2>
         <div class="mt-3 grid gap-4 sm:grid-cols-2">
-          <label class="block"><span class="font-semibold">Minuten per dag</span>
+          <label class="block"><span class="font-semibold">{{ lang.t("settings.minutesPerDay") }}</span>
             <input class="input mt-1" type="number" min="5" max="240" :value="store.settings.dailyGoalMinutes" @change="patch({ dailyGoalMinutes: num($event) })" /></label>
-          <label class="block"><span class="font-semibold">Nieuwe woorden per dag</span>
+          <label class="block"><span class="font-semibold">{{ lang.t("settings.newPerDay") }}</span>
             <input class="input mt-1" type="number" min="1" max="100" :value="store.settings.newCardsPerDay" @change="patch({ newCardsPerDay: num($event) })" /></label>
-          <label class="block"><span class="font-semibold">Spreeksnelheid ({{ store.settings.speechRate }})</span>
+          <label class="block"><span class="font-semibold">{{ lang.t("settings.speechRate", { rate: store.settings.speechRate }) }}</span>
             <input class="mt-3 w-full accent-[var(--brand)]" type="range" min="0.6" max="1.2" step="0.05" :value="store.settings.speechRate" @change="patch({ speechRate: num($event) })" /></label>
           <label class="flex items-center gap-3 self-end pb-2 font-semibold">
             <input type="checkbox" class="h-5 w-5 accent-[var(--brand)]" :checked="store.settings.spellcheckWriting" @change="patch({ spellcheckWriting: ($event.target as HTMLInputElement).checked })" />
-            Spellingcontrole bij schrijven
+            {{ lang.t("settings.spellcheck") }}
           </label>
         </div>
       </section>
 
       <section class="card p-6">
-        <h2 class="text-xl font-bold">Mijn gegevens</h2>
-        <p class="mt-1 text-muted">Al je voortgang staat in de browser op dit apparaat. Bewaar je voortgang als bestand om een backup te maken of om op een ander apparaat verder te gaan.</p>
+        <h2 class="text-xl font-bold"><UiLabel variant="heading" k="settings.myData" /></h2>
+        <p class="mt-1 text-muted"><UiText k="settings.myDataHint" /></p>
         <div class="mt-4 grid gap-5">
           <div>
-            <AppButton variant="secondary" @click="session.openFinish()">🌙 Klaar voor vandaag: bewaar mijn voortgang</AppButton>
-            <p class="mt-1 text-sm text-muted">Maakt een bestand om te delen met je andere apparaat of als backup. De API-sleutel zit niet in dit bestand.</p>
+            <AppButton variant="secondary" @click="session.openFinish()">🌙 <UiLabel k="settings.finishSave" /></AppButton>
+            <p class="mt-1 text-sm text-muted"><UiText k="settings.finishSaveHint" /></p>
           </div>
           <ImportSection @imported="store.load()" />
         </div>
 
         <div class="mt-6 rounded-2xl border border-bad/40 bg-bad-bg p-4">
-          <h3 class="font-bold text-bad">Voortgang wissen</h3>
-          <p class="mt-1">Dit wist je voortgang en woordkaartjes. Je schrijfteksten blijven staan. Dit kun je niet ongedaan maken: bewaar eerst je voortgang als je die wilt houden.</p>
-          <label for="reset" class="mt-3 block font-semibold">Typ <strong>RESET</strong> om te bevestigen</label>
+          <h3 class="font-bold text-bad"><UiLabel variant="heading" k="settings.reset" /></h3>
+          <p class="mt-1"><UiText k="settings.resetHint" /></p>
+          <label for="reset" class="mt-3 block font-semibold"><UiText k="settings.resetConfirm" md /></label>
           <input id="reset" v-model="resetText" class="input mt-1" autocomplete="off" />
-          <AppButton class="mt-3" variant="bad" :disabled="resetText !== 'RESET'" @click="resetProgress">Wis mijn voortgang</AppButton>
+          <AppButton class="mt-3" variant="bad" :disabled="resetText !== 'RESET'" @click="resetProgress"><UiLabel k="settings.resetButton" /></AppButton>
           <p v-if="resetMessage" role="status" class="mt-3 font-semibold" :class="resetMessage.ok ? 'text-good' : 'text-bad'">{{ resetMessage.ok ? "✓" : "✗" }} {{ resetMessage.text }}</p>
         </div>
       </section>
@@ -182,56 +217,58 @@ const themes = [
       <InstallHint />
 
       <section v-if="flags.length" class="card p-6">
-        <h2 class="text-xl font-bold">Mijn meldingen ({{ flags.length }})</h2>
-        <p class="mt-1 text-sm text-muted">Fouten die je hebt gemeld. Ze zitten in je voortgangsbestand.</p>
+        <h2 class="text-xl font-bold"><UiLabel variant="heading" k="settings.flags" :params="{ n: flags.length }" /></h2>
+        <p class="mt-1 text-sm text-muted"><UiText k="settings.flagsHint" /></p>
         <ul class="mt-3 grid gap-2">
           <li v-for="f in flags" :key="f.id" class="flex items-start justify-between gap-3 rounded-2xl bg-surface-2 p-3">
             <div class="min-w-0">
               <p class="truncate font-semibold">{{ f.title }}</p>
-              <p class="text-muted">{{ f.note || "(geen toelichting)" }}</p>
+              <p class="text-muted">{{ f.note || lang.t("settings.noNote") }}</p>
             </div>
-            <button type="button" class="shrink-0 text-sm font-semibold underline hover:text-ink" @click="removeFlag(f.id)">Verwijder</button>
+            <button type="button" class="shrink-0 text-sm font-semibold underline hover:text-ink" @click="removeFlag(f.id)"><UiLabel k="settings.remove" /></button>
           </li>
         </ul>
       </section>
 
       <section class="card p-6">
-        <h2 class="text-xl font-bold">Claude (optioneel)</h2>
-        <p class="mt-1 text-muted">
-          Met je eigen API-sleutel krijg je feedback op je teksten, uitleg bij fouten en extra oefeningen. De app werkt ook zonder sleutel.
-          De sleutel wordt versleuteld op dit apparaat bewaard en gaat alleen naar Anthropic. Hij zit nooit in je gegevensbestand.
-        </p>
-        <p class="mt-3">Huidige sleutel: <strong>{{ store.settings.apiKey ?? "geen sleutel ingesteld" }}</strong></p>
+        <h2 class="text-xl font-bold"><UiLabel variant="heading" k="settings.claude" /></h2>
+        <p class="mt-1 text-muted"><UiText k="settings.claudeHint" /></p>
+        <p class="mt-3">{{ lang.t("settings.currentKey") }} <strong>{{ store.settings.apiKey ?? lang.t("settings.noKey") }}</strong></p>
 
-        <label for="apiKey" class="mt-4 block font-semibold">{{ store.settings.apiKey ? "Nieuwe sleutel" : "Plak je sleutel" }}</label>
+        <label for="apiKey" class="mt-4 block font-semibold">{{ lang.t(store.settings.apiKey ? "settings.newKey" : "settings.pasteKey") }}</label>
         <input id="apiKey" v-model="newKey" class="input mt-1" type="password" placeholder="sk-ant-..." autocomplete="off" spellcheck="false" @keydown.enter="saveKey" />
         <p v-if="keyError" role="alert" class="mt-2 font-semibold text-bad">✗ {{ keyError }}</p>
         <div class="mt-3 flex flex-wrap gap-3">
-          <AppButton :disabled="!newKey.trim()" @click="saveKey">Opslaan en testen</AppButton>
-          <AppButton v-if="store.settings.apiKey" variant="secondary" @click="store.testKey">Test sleutel</AppButton>
-          <AppButton v-if="store.settings.apiKey && !confirmRemove" variant="ghost" @click="confirmRemove = true">Sleutel verwijderen</AppButton>
+          <AppButton :disabled="!newKey.trim()" @click="saveKey"><UiLabel k="settings.saveAndTest" /></AppButton>
+          <AppButton v-if="store.settings.apiKey" variant="secondary" @click="store.testKey"><UiLabel k="settings.testKey" /></AppButton>
+          <AppButton v-if="store.settings.apiKey && !confirmRemove" variant="ghost" @click="confirmRemove = true"><UiLabel k="settings.removeKey" /></AppButton>
         </div>
         <div v-if="confirmRemove" class="mt-3 flex flex-wrap items-center gap-3 rounded-2xl bg-bad-bg p-3">
-          <span class="font-semibold">Sleutel van dit apparaat verwijderen?</span>
-          <AppButton variant="bad" @click="removeKey">Ja, verwijderen</AppButton>
-          <AppButton variant="secondary" @click="confirmRemove = false">Nee</AppButton>
+          <span class="font-semibold">{{ lang.t("settings.removeKeyQuestion") }}</span>
+          <AppButton variant="bad" @click="removeKey"><UiLabel k="settings.removeKeyYes" /></AppButton>
+          <AppButton variant="secondary" @click="confirmRemove = false"><UiLabel k="settings.no" /></AppButton>
         </div>
         <p v-if="store.testResult" role="status" class="mt-3 font-semibold" :class="store.testResult.ok ? 'text-good' : 'text-bad'">
           {{ store.testResult.ok ? "✓" : "✗" }} {{ store.testResult.message }}
         </p>
 
-        <label for="model" class="mt-5 block font-semibold">Model</label>
+        <label for="model" class="mt-5 block font-semibold">{{ lang.t("settings.model") }}</label>
         <select id="model" class="input mt-1" :value="store.settings.model" @change="patch({ model: ($event.target as HTMLSelectElement).value })">
           <option v-for="m in MODELS" :key="m.id" :value="m.id">{{ m.label }}</option>
         </select>
 
         <p v-if="store.settings.usage" class="mt-4 text-sm text-muted">
-          Gebruik deze maand: ~{{ store.settings.usage.requests }} {{ store.settings.usage.requests === 1 ? "verzoek" : "verzoeken" }}
-          ({{ store.settings.usage.inputTokens.toLocaleString("nl-NL") }} tokens erin, {{ store.settings.usage.outputTokens.toLocaleString("nl-NL") }} eruit)
+          {{
+            lang.t(
+              "settings.usage",
+              { n: store.settings.usage.requests, tokensIn: store.settings.usage.inputTokens.toLocaleString(lang.proseLocale), tokensOut: store.settings.usage.outputTokens.toLocaleString(lang.proseLocale) },
+              store.settings.usage.requests,
+            )
+          }}
         </p>
         <KeyGuide class="mt-4" />
       </section>
     </div>
-    <p v-else class="text-muted">Even laden…</p>
+    <p v-else class="text-muted">{{ lang.t("common.loading") }}</p>
   </div>
 </template>

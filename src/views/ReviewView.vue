@@ -9,6 +9,10 @@ import AppButton from "../components/ui/AppButton.vue";
 import ProgressBar from "../components/ui/ProgressBar.vue";
 import SpeakButton from "../components/ui/SpeakButton.vue";
 import { shuffled } from "../components/exercises/types";
+import FeedbackLanguageToggle from "../components/FeedbackLanguageToggle.vue";
+import UiLabel from "../components/ui/UiLabel.vue";
+import UiText from "../components/ui/UiText.vue";
+import { useLanguageStore } from "../stores/language";
 import { useSounds } from "../composables/useSounds";
 
 interface Item {
@@ -19,6 +23,7 @@ interface Item {
 }
 
 const route = useRoute();
+const lang = useLanguageStore();
 const sounds = useSounds();
 const queue = ref<Item[]>([]);
 const total = ref(0);
@@ -95,10 +100,10 @@ const canCheck = computed(() =>
 );
 
 const grades: { grade: Grade; label: string; style: "bad" | "secondary" | "good" | "primary" }[] = [
-  { grade: "opnieuw", label: "Opnieuw", style: "bad" },
-  { grade: "moeilijk", label: "Moeilijk", style: "secondary" },
-  { grade: "goed", label: "Goed", style: "good" },
-  { grade: "makkelijk", label: "Makkelijk", style: "primary" },
+  { grade: "opnieuw", label: "common.again", style: "bad" },
+  { grade: "moeilijk", label: "review.hard", style: "secondary" },
+  { grade: "goed", label: "review.good", style: "good" },
+  { grade: "makkelijk", label: "review.easy", style: "primary" },
 ];
 
 // Saving a grade takes a moment. The graded card stays on screen until it is saved (taking it off the queue first
@@ -138,35 +143,35 @@ function onKey(e: KeyboardEvent) {
 
 <template>
   <p v-if="error" class="mb-4 rounded-2xl bg-bad-bg p-4 text-bad">{{ error }}</p>
-  <p v-if="!loaded" class="text-muted">Even laden…</p>
+  <p v-if="!loaded" class="text-muted">{{ lang.t("common.loading") }}</p>
 
   <div v-else-if="!current" class="card slide-up mx-auto max-w-xl p-8 text-center">
     <div class="text-6xl" aria-hidden="true">🌟</div>
-    <p class="mt-3 text-2xl font-extrabold">Je hebt vandaag alle woorden herhaald. Goed bezig!</p>
-    <p v-if="reviewed" class="mt-1 text-muted">{{ reviewed }} kaartjes herhaald.</p>
-    <RouterLink to="/"><AppButton size="lg" class="mt-6">Terug</AppButton></RouterLink>
+    <p class="mt-3 text-2xl font-extrabold">{{ lang.feedback("review.allDone") }}</p>
+    <p v-if="reviewed" class="mt-1 text-muted">{{ lang.feedback("review.reviewed", { n: reviewed }, reviewed) }}</p>
+    <RouterLink to="/"><AppButton size="lg" class="mt-6"><UiLabel k="common.back" /></AppButton></RouterLink>
   </div>
 
   <div v-else class="mx-auto max-w-2xl">
     <div class="mb-6">
-      <div class="mb-2 flex justify-between text-sm font-semibold text-muted"><span>Woorden herhalen</span><span>{{ reviewed }} / {{ total }}</span></div>
+      <div class="mb-2 flex justify-between text-sm font-semibold text-muted"><span><UiLabel variant="inline" k="review.title" /></span><span>{{ reviewed }} / {{ total }}</span></div>
       <ProgressBar :value="total ? reviewed / total : 0" />
     </div>
 
-    <div class="card p-6 sm:p-8">
+    <div class="card p-6 sm:p-8" lang="nl">
       <!-- meaning -->
       <template v-if="type === 'meaning' && current.vocab">
-        <p class="text-sm font-bold uppercase tracking-wide text-muted">Welk woord is dit?</p>
+        <p class="text-sm font-bold uppercase tracking-wide text-muted"><UiLabel variant="heading" k="review.whichWord" /></p>
         <p class="mt-2 text-2xl font-bold">{{ current.vocab.definitionNl }}</p>
         <p class="mt-2 italic text-muted">{{ gapExample }}</p>
-        <label class="mt-5 block"><span class="sr-only">Jouw antwoord</span>
-          <input v-model="typed" :disabled="answered" autocomplete="off" autocapitalize="off" spellcheck="false" class="input text-xl" placeholder="Typ het woord…" autofocus />
+        <label class="mt-5 block"><span class="sr-only">{{ lang.t("review.yourAnswer") }}</span>
+          <input v-model="typed" :disabled="answered" autocomplete="off" autocapitalize="off" spellcheck="false" class="input text-xl" :placeholder="lang.t('review.typeWord')" autofocus />
         </label>
       </template>
 
       <!-- recognise -->
       <template v-else-if="type === 'recognise' && current.vocab">
-        <p class="text-sm font-bold uppercase tracking-wide text-muted">Wat betekent dit woord?</p>
+        <p class="text-sm font-bold uppercase tracking-wide text-muted"><UiLabel variant="heading" k="review.meaning" /></p>
         <p class="mt-2 flex items-center gap-3 text-4xl font-extrabold">{{ current.vocab.nl }} <SpeakButton :text="current.vocab.nl" /></p>
         <div v-if="!selfCheck" class="mt-5 grid gap-3">
           <button
@@ -195,7 +200,7 @@ function onKey(e: KeyboardEvent) {
 
       <!-- article -->
       <template v-else-if="type === 'article' && current.vocab">
-        <p class="text-sm font-bold uppercase tracking-wide text-muted">de of het?</p>
+        <p class="text-sm font-bold uppercase tracking-wide text-muted"><UiLabel variant="heading" k="review.article" /></p>
         <p class="mt-2 text-4xl font-extrabold">{{ stripArticle(current.vocab.nl) }}</p>
         <div class="mt-5 grid grid-cols-2 gap-3">
           <button
@@ -214,18 +219,21 @@ function onKey(e: KeyboardEvent) {
 
       <!-- verb-forms -->
       <template v-else-if="type === 'verb-forms' && current.verb">
-        <p class="text-sm font-bold uppercase tracking-wide text-muted">Voltooid deelwoord</p>
+        <p class="text-sm font-bold uppercase tracking-wide text-muted"><UiLabel variant="heading" k="review.participle" /></p>
         <p class="mt-2 flex items-center gap-3 text-4xl font-extrabold">{{ current.verb.infinitive }} <SpeakButton :text="current.verb.infinitive" /></p>
         <p class="mt-1 text-muted">{{ current.verb.definitionNl }}</p>
         <div class="mt-5 flex flex-wrap items-center gap-3 text-xl">
           <select v-model="aux" :disabled="answered" aria-label="hebben of zijn" class="input !w-auto"><option value="" disabled>hebben / zijn</option><option value="hebben">hebben</option><option value="zijn">zijn</option></select>
-          <input v-model="typed" :disabled="answered" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Voltooid deelwoord" class="input !w-56 text-xl" placeholder="gewerkt" />
+          <input v-model="typed" :disabled="answered" autocomplete="off" autocapitalize="off" spellcheck="false" :aria-label="lang.t('review.participle')" class="input !w-56 text-xl" placeholder="gewerkt" />
         </div>
       </template>
 
       <!-- feedback + answer -->
       <div v-if="answered" class="slide-up mt-6 rounded-2xl p-4" :class="wasCorrect ? 'bg-good-bg' : 'bg-bad-bg'" role="status" aria-live="polite">
-        <p class="font-bold" :class="wasCorrect ? 'text-good' : 'text-bad'">{{ wasCorrect ? "✓ Goed zo!" : "✗ Niet goed." }}</p>
+        <div class="flex flex-wrap items-start justify-between gap-2">
+          <p class="font-bold" :class="wasCorrect ? 'text-good' : 'text-bad'" :lang="lang.feedbackOwn ? lang.locale : 'nl'">{{ wasCorrect ? "✓" : "✗" }} {{ lang.feedback(wasCorrect ? "feedback.good" : "feedback.wrong") }}</p>
+          <FeedbackLanguageToggle />
+        </div>
         <template v-if="current.vocab">
           <p class="mt-1 text-xl font-bold">{{ current.vocab.nl }} <SpeakButton :text="current.vocab.nl" class="ml-1 align-middle" /></p>
           <p>{{ current.vocab.definitionNl }}</p>
@@ -240,12 +248,12 @@ function onKey(e: KeyboardEvent) {
 
     <div class="mt-5 flex flex-wrap justify-end gap-3">
       <template v-if="!answered">
-        <AppButton v-if="selfCheck" size="lg" @click="reveal(true)">Toon antwoord</AppButton>
-        <AppButton v-else-if="type !== 'article'" size="lg" :disabled="!canCheck" @click="check">Controleer</AppButton>
+        <AppButton v-if="selfCheck" size="lg" @click="reveal(true)"><UiLabel k="review.show" /></AppButton>
+        <AppButton v-else-if="type !== 'article'" size="lg" :disabled="!canCheck" @click="check"><UiLabel k="common.check" /></AppButton>
       </template>
       <template v-else>
         <AppButton v-for="(g, i) in grades" :key="g.grade" :variant="g.style" @click="grade(g.grade)">
-          <span class="rounded bg-black/10 px-1.5 text-sm">{{ i + 1 }}</span> {{ g.label }}
+          <span class="rounded bg-black/10 px-1.5 text-sm">{{ i + 1 }}</span> <UiLabel :k="g.label" />
         </AppButton>
       </template>
     </div>

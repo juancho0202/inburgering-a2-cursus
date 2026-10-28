@@ -3,6 +3,8 @@ import { nextTick, onBeforeUnmount, ref, watch } from "vue";
 import { RouterLink } from "vue-router";
 import { moduleStyle } from "../lib/moduleStyle";
 import ProgressBar from "./ui/ProgressBar.vue";
+import UiLabel from "./ui/UiLabel.vue";
+import { useLanguageStore } from "../stores/language";
 import { useSettingsStore } from "../stores/settings";
 
 interface ModuleSummary {
@@ -13,6 +15,7 @@ interface ModuleSummary {
 }
 
 const props = defineProps<{ modules: ModuleSummary[] }>();
+const lang = useLanguageStore();
 const emit = defineEmits<{ warm: [id: string] }>();
 
 /** About the long press of the phone's own home screen: long enough not to fire while scrolling, short enough to find. */
@@ -176,7 +179,7 @@ function moveTo(id: string, to: number) {
   const next = [...list.value];
   next.splice(to, 0, ...next.splice(from, 1));
   list.value = next;
-  status.value = `${next[to].title} staat nu op plek ${to + 1} van ${next.length}.`;
+  status.value = lang.t("modules.moved", { title: next[to].title, n: to + 1, total: next.length });
   return true;
 }
 
@@ -199,7 +202,7 @@ function save() {
   // One after the other, so a quick second move can never be overwritten by the first one.
   saving = saving
     .then(() => settings.update({ moduleOrder }))
-    .catch(() => (saveError.value = "De volgorde is niet bewaard. Probeer het nog een keer."));
+    .catch(() => (saveError.value = lang.t("modules.saveError")));
 }
 
 onBeforeUnmount(() => {
@@ -215,7 +218,7 @@ onBeforeUnmount(() => {
   <!-- In edit mode "Klaar" sticks below the top bar. CSS sticky (no scroll handler) so it never lags or jumps; the button
        spans every row of this section, and the rest of the page comes in through the slot, so it stays up to the end. -->
   <section class="grid grid-cols-[minmax(0,1fr)_auto] grid-rows-[auto_1fr] gap-3">
-    <h2 class="glass col-start-1 row-start-1 justify-self-start rounded-2xl px-4 py-1 text-2xl font-bold">Modules</h2>
+    <h2 class="glass col-start-1 row-start-1 justify-self-start rounded-2xl px-4 py-1 text-2xl font-bold"><UiLabel variant="heading" k="modules.title" /></h2>
     <button
       type="button"
       class="glass col-start-2 row-span-2 row-start-1 inline-flex items-center gap-2 self-start rounded-2xl px-4 py-2 font-bold transition hover:text-brand-strong"
@@ -228,11 +231,11 @@ onBeforeUnmount(() => {
         <path v-if="editing" d="M5 12.5l4.5 4.5L19 7" />
         <path v-else d="M7 20V4M3 8l4-4 4 4M17 4v16M13 16l4 4 4-4" />
       </svg>
-      {{ editing ? "Klaar" : "Sorteren" }}
+      <UiLabel :k="editing ? 'modules.done' : 'modules.sort'" />
     </button>
     <div class="col-span-2 col-start-1 row-start-2 min-w-0">
       <p v-if="editing" id="module-order-hint" class="glass mb-3 rounded-2xl px-4 py-2 text-sm">
-        Sleep een module aan <span aria-hidden="true">⠿</span> naar de plek die je wilt. Met het toetsenbord: pijltjes omhoog en omlaag.
+        {{ lang.t("modules.dragHint1") }} <span aria-hidden="true">⠿</span> {{ lang.t("modules.dragHint2") }}
       </p>
       <p v-if="saveError" role="alert" class="mb-3 rounded-2xl bg-bad-bg px-4 py-2 font-semibold text-bad">{{ saveError }}</p>
       <p class="sr-only" role="status">{{ status }}</p>
@@ -256,16 +259,16 @@ onBeforeUnmount(() => {
             <div class="flex items-center gap-4">
               <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl text-3xl" :class="moduleStyle(m.id).tile" aria-hidden="true">{{ moduleStyle(m.id).emoji }}</span>
               <div class="min-w-0 flex-1">
-                <h3 class="text-xl font-bold" :class="!editing && 'group-hover:text-brand-strong'">{{ m.title }}</h3>
-                <p v-if="m.total" class="text-sm text-muted">{{ m.completed }} van {{ m.total }} lessen klaar</p>
-                <p v-else class="text-sm text-muted">Oefen onder examentijd</p>
+                <h3 class="text-xl font-bold" :class="!editing && 'group-hover:text-brand-strong'" lang="nl" translate="no">{{ m.title }}</h3>
+                <p v-if="m.total" class="text-sm text-muted">{{ lang.t("modules.progress", { done: m.completed, total: m.total }) }}</p>
+                <p v-else class="text-sm text-muted">{{ lang.t("modules.examTime") }}</p>
               </div>
               <button
                 v-if="editing"
                 type="button"
                 data-handle
                 class="grid h-12 w-12 shrink-0 cursor-grab touch-none place-items-center rounded-2xl bg-surface-2 text-2xl text-muted active:cursor-grabbing"
-                :aria-label="`Verplaats ${m.title}`"
+                :aria-label="lang.t('modules.move', { title: m.title })"
                 aria-describedby="module-order-hint"
                 @pointerdown.stop.prevent="startDrag(m.id)"
                 @keydown="onHandleKey($event, m.id)"
@@ -273,7 +276,7 @@ onBeforeUnmount(() => {
                 ⠿
               </button>
             </div>
-            <div v-if="m.total" class="mt-4"><ProgressBar :value="m.completed / m.total" :label="`Voortgang ${m.title}`" /></div>
+            <div v-if="m.total" class="mt-4"><ProgressBar :value="m.completed / m.total" :label="lang.t('modules.progressOf', { title: m.title })" /></div>
           </a>
         </RouterLink>
       </div>

@@ -1,0 +1,370 @@
+{
+  "theme": "app",
+  "title": "De woorden van de app",
+  "entries": [
+    {
+      "id": "basis-vocab-app-001",
+      "nl": "volgende",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Wat na dit komt.",
+      "example": "Klik op Volgende voor de volgende vraag.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-002",
+      "nl": "vorige",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Wat voor dit kwam.",
+      "example": "Met Vorige ga je terug naar de vorige stap.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-003",
+      "nl": "controleren",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Kijken of iets goed is.",
+      "example": "Ik controleer mijn antwoord.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-004",
+      "nl": "opnieuw",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Nog een keer.",
+      "example": "Het is fout. Ik probeer het opnieuw.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-005",
+      "nl": "stoppen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Niet meer doorgaan.",
+      "example": "Ik ben moe. Ik stop voor vandaag.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-006",
+      "nl": "afronden",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets helemaal klaar maken.",
+      "example": "Ik rond de les af.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-007",
+      "nl": "terug",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Naar de plek waar je eerst was.",
+      "example": "Ik ga terug naar het begin.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-008",
+      "nl": "sluiten",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Dichtdoen. Het tegenovergestelde van openen.",
+      "example": "Sluit het venster.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-009",
+      "nl": "annuleren",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Zeggen dat iets toch niet doorgaat.",
+      "example": "Ik annuleer mijn afspraak.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-010",
+      "nl": "klaar",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Af. Je hoeft niets meer te doen.",
+      "example": "Ik ben klaar met mijn huiswerk.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-011",
+      "nl": "bewaren",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets houden zodat het niet weg is.",
+      "example": "Ik bewaar de brief in een map.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-012",
+      "nl": "moeilijk",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Niet makkelijk. Je moet er veel voor doen.",
+      "example": "Deze vraag is moeilijk.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-013",
+      "nl": "makkelijk",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Niet moeilijk.",
+      "example": "Deze les is makkelijk.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-014",
+      "nl": "goed",
+      "article": null,
+      "pos": "adj",
+      "plural": null,
+      "definitionNl": "Zonder fout. Het tegenovergestelde van fout.",
+      "example": "Je antwoord is goed!",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-015",
+      "nl": "luisteren",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Goed horen wat iemand zegt.",
+      "example": "Ik luister naar de radio.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-016",
+      "nl": "kiezen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Eén ding nemen uit een paar dingen.",
+      "example": "Kies het goede antwoord.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-017",
+      "nl": "beginnen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Iets gaan doen. Het tegenovergestelde van stoppen.",
+      "example": "De les begint om negen uur.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-018",
+      "nl": "verder",
+      "article": null,
+      "pos": "adv",
+      "plural": null,
+      "definitionNl": "Door met iets, na een pauze.",
+      "example": "Morgen ga ik verder met de les.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-019",
+      "nl": "het woord",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de woorden",
+      "definitionNl": "Een paar letters samen. Zinnen bestaan uit woorden.",
+      "example": "Ik leer elke dag tien nieuwe woorden.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-020",
+      "nl": "het werkwoord",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de werkwoorden",
+      "definitionNl": "Een woord voor iets wat je doet, zoals lopen of eten.",
+      "example": "Lopen is een werkwoord.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-021",
+      "nl": "de samenvatting",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de samenvattingen",
+      "definitionNl": "Een korte tekst met het belangrijkste.",
+      "example": "Lees de samenvatting voor het examen.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-022",
+      "nl": "de instelling",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de instellingen",
+      "definitionNl": "Een keuze voor hoe iets werkt.",
+      "example": "Bij de instellingen kies je je taal.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-023",
+      "nl": "de taal",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de talen",
+      "definitionNl": "Wat mensen spreken, zoals Nederlands of Engels.",
+      "example": "Nederlands is een moeilijke taal.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-024",
+      "nl": "het voorbeeld",
+      "article": "het",
+      "pos": "noun",
+      "plural": "de voorbeelden",
+      "definitionNl": "Iets wat laat zien hoe het moet.",
+      "example": "Kijk naar het voorbeeld.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-025",
+      "nl": "de tekst",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de teksten",
+      "definitionNl": "Woorden en zinnen op papier of op een scherm.",
+      "example": "Ik schrijf een korte tekst.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-app-026",
+      "nl": "verwijderen",
+      "article": null,
+      "pos": "verb",
+      "plural": null,
+      "definitionNl": "Weghalen.",
+      "example": "Ik verwijder het oude bericht.",
+      "tags": [
+        "thema:app"
+      ],
+      "level": "A1",
+      "source": "course"
+    }
+  ]
+}

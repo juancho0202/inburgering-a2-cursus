@@ -54,8 +54,9 @@ See §2 and `scripts/tts/README.md`.)*
 - Weak spots seen so far: directions (rechtsaf / rechtdoor), word order in subordinate clauses
   (wrote *"Denk ik dat we zullen een samenvatting doen"* instead of *"Ik denk dat we een samenvatting gaan maken"*),
   some work/government vocabulary (see Appendix B).
-- **All UI and lesson text in simple Dutch (A2 level).** No English in the UI. The learner
-  uses a browser translation extension to translate anything they don't understand, so:
+- **All learning material in simple Dutch (A2 level); the app's own text in the learner's language with Dutch kept
+  in view** (see §11.4, "Languages"). Newcomers may not read Dutch yet, so menus, buttons and help come in English
+  (default), Dutch or Spanish — but the app keeps showing them Dutch words. So:
   - Use real, selectable text everywhere (never put Dutch text inside images or canvas).
   - Keep sentences short (max ~15 words) and use common words in instructions.
 - Wants to **stop and continue at any time**: every answer is saved immediately to disk.
@@ -367,8 +368,9 @@ Render Markdown with a tiny safe renderer (e.g. `markdown-it` with `html: false`
 }
 ```
 
-**No English translations** in content (the learner uses a browser translator). Instead every
-entry has a simple Dutch definition (`definitionNl`) and an example sentence.
+**No translations** in content: the course is Dutch only (§11.4). Instead every entry has a simple Dutch definition
+(`definitionNl`) and an example sentence. The one exception is shown by the app, not stored here: the words of the
+app itself (theme `app`, Unit 0) get their translation from the app's own messages (`src/i18n/glossary.ts`).
 
 ### 7.5 Verb entry (`basis/verbs.json`)
 
@@ -661,7 +663,7 @@ as context. Stream the answer (SDK `messages.stream`). Keep the last 10 messages
 | `/examens` | Mock exam list with past scores. |
 | `/examen/:id` | Exam mode (§13). |
 | `/samenvatting` | The learner's samenvatting (Appendix A) rendered as a reference page with anchor links. |
-| `/instellingen` | API key, model, daily goal, new cards/day, speech rate, export/backup, reset. |
+| `/instellingen` | Language, how much Dutch (§11.4), API key, model, daily goal, new cards/day, speech rate, export/backup, reset. |
 
 ### 11.2 Visual design
 
@@ -685,7 +687,7 @@ as context. Stream the answer (SDK `messages.stream`). Keep the last 10 messages
 - Reading exercises: document cards look like the real thing (a letter with sender/date,
   an advertisement box, a timetable table) — use CSS, not images.
 - Accessibility: all buttons are real `<button>`s, visible focus ring, labels on inputs,
-  `lang="nl"` on `<html>`, ARIA live region for feedback messages.
+  `lang` on `<html>` follows the language shown most (§11.4), Dutch parts carry `lang="nl"`, ARIA live region for feedback messages.
 - Writing textarea: `spellcheck="false"` by default (the real exam is pen and paper, no spell check),
   with a settings toggle.
 
@@ -695,6 +697,48 @@ as context. Stream the answer (SDK `messages.stream`). Keep the last 10 messages
 - Wrong: "Bijna. Het goede antwoord is: …", "Niet goed. Kijk naar de uitleg."
 - Empty state: "Je hebt vandaag alle woorden herhaald. Goed bezig!"
 - Unit done: "Les klaar! Je score: 8 van 10."
+
+### 11.4 Languages
+
+The app's own text (menus, buttons, help, feedback) is in `src/i18n/messages/{nl,en,es}.ts`, with the same keys in
+every file (the type checks it). The course itself (`data/course`) is never translated. Supported: English (the
+default), Dutch, Spanish. Arabic (right-to-left), Tigrinya and Ukrainian are planned; `LANGUAGES` in `src/i18n` already
+carries a `dir` for right-to-left.
+
+**Layers.**
+
+| Layer | Examples | Language |
+| --- | --- | --- |
+| Labels | menu, buttons, headings, small chips | per immersion level (below) |
+| Longer app text | help, hints, empty states | the learner's language at levels 0–1, Dutch from level 2 |
+| Feedback | after an answer, word review, exam result, writing feedback headings | **Dutch first**, with an "In mijn taal" button that switches it (remembered: setting `feedbackInMyLanguage`) |
+| Learning material | lessons, exercises, options, explanations, words, audio, the mock exam | always Dutch, `lang="nl" translate="no"` |
+
+**Immersion level** (setting `immersion`, default 1; not shown when the language is Dutch):
+
+| Level | Buttons, menu items | Headings | Small labels (chips, table headers, in a sentence) | Longer text |
+| --- | --- | --- | --- | --- |
+| 0 My language | learner's language | learner's language | learner's language | learner's language |
+| 1 Dutch with my language | **Volgende**, with *Next* small under it | Dutch, with the learner's language small under it | learner's language | learner's language |
+| 2 Dutch only | Dutch | Dutch | Dutch | Dutch |
+
+A translation is never put next to the Dutch on the same line (it looked cluttered), and there are no per-heading
+flags (tried, dropped): the small line under the Dutch is the one way a label is shown in two languages.
+
+**Words that graduate.** At levels 0 and 1 a label is Dutch only once all its words are learned (Leitner box 4+)
+in "Woorden herhalen". The mapping label → words is `GLOSSARY` in `src/i18n/glossary.ts`; the words are course
+vocabulary (theme `app` plus a few existing words), taught in **Unit 0, "De woorden van de app"** (first unit of
+basis). In Unit 0's word cards the app shows each word's translation from its own messages (`APP_WORDS`).
+
+**The mock exam is Dutch only** (route meta `dutchOnly`), whatever the level, like the real exam. The exams page says
+so in the learner's language before the exam starts; the result page is feedback (Dutch first, with "In mijn taal").
+
+**Choosing.** The welcome page has a language picker (each language named in its own language), with Nederlands
+first and marked "recommended" (the most practice). Before the learner
+chooses, the app uses: the language last used on this device (`localStorage`), else `?lang=xx` from the language
+landing pages (read once at start, then removed from the address), else the browser's language, else English.
+Starting the course saves the language shown. Learners from before languages existed get the picker on the start
+page until they choose. Settings has the picker, the immersion level and "Feedback in mijn taal".
 
 ---
 
