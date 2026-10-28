@@ -143,7 +143,7 @@ describe("DashboardView", () => {
 
   it("without weak points a friendly note says how to get them, in one sentence", async () => {
     const { wrapper } = await open(dashboard());
-    const note = wrapper.findAll("section").find((s) => s.text().includes("Dit moet je meer oefenen"))!;
+    const note = wrapper.findAll("section").filter((s) => s.text().includes("Dit moet je meer oefenen")).at(-1)!; // innermost
     expect(note.find("p").text()).toBe("Doe een paar lessen, dan zie je hier wat beter kan.");
   });
 
@@ -362,40 +362,21 @@ describe("putting the modules in your own order", () => {
     expect(saved()).toEqual([]);
   });
 
-  it("in edit mode 'Klaar' floats under the top bar once its row scrolls away, and comes back when the row does", async () => {
-    // jsdom has no IntersectionObserver: a fake that the test tells when the row is in view.
-    const observers: { callback: (e: { isIntersecting: boolean }[]) => void; observed: Element[]; disconnected: boolean }[] = [];
-    vi.stubGlobal("IntersectionObserver", class {
-      o: (typeof observers)[number];
-      constructor(callback: (typeof observers)[number]["callback"]) {
-        this.o = { callback, observed: [], disconnected: false };
-        observers.push(this.o);
-      }
-      observe(el: Element) { this.o.observed.push(el); }
-      disconnect() { this.o.disconnected = true; }
-    });
+  it("in edit mode 'Klaar' sticks just below the app's top bar, over the whole rest of the page", async () => {
+    // jsdom has no layout: give the app's top bar its phone height.
+    const header = document.body.appendChild(document.createElement("header"));
+    Object.defineProperty(header, "offsetHeight", { value: 62 });
     const { wrapper } = await open();
-    expect(observers).toEqual([]); // nothing to keep in reach outside edit mode
+    const button = () => wrapper.findAll("button").find((b) => /^(Sorteren|Klaar)$/.test(b.text()))!;
+    expect(button().classes()).not.toContain("sticky");
     await clickButton(wrapper, "Sorteren");
-    const [row] = observers;
-    expect(row.observed[0].textContent).toContain("Modules");
-    const klaar = () => buttonWith(wrapper, "Klaar")!;
-    row.callback([{ isIntersecting: false }]);
-    await flushPromises();
-    expect(klaar().classes()).toContain("fixed");
-    row.callback([{ isIntersecting: true }]);
-    await flushPromises();
-    expect(klaar().classes()).not.toContain("fixed");
-    row.callback([{ isIntersecting: false }]);
-    await flushPromises();
-    await clickButton(wrapper, "Klaar"); // works from anywhere on the page
-    expect(wrapper.find("[data-handle]").exists()).toBe(false);
-    expect(buttonWith(wrapper, "Sorteren")!.classes()).not.toContain("fixed");
-    expect(row.disconnected).toBe(true);
-    await clickButton(wrapper, "Sorteren");
-    wrapper.unmount();
-    expect(observers[1].disconnected).toBe(true);
-    vi.unstubAllGlobals();
+    expect(button().classes()).toContain("sticky");
+    expect(button().attributes("style")).toContain("top: 70px");
+    // Sticky only works inside its parent: that must hold everything below the modules, to the end of the page.
+    expect(button().element.parentElement!.textContent).toContain("Dit moet je meer oefenen");
+    await clickButton(wrapper, "Klaar");
+    expect(button().classes()).not.toContain("sticky");
+    header.remove();
   });
 
   it("shows the modules in the order the app gives them", async () => {

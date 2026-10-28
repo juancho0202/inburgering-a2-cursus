@@ -30,10 +30,8 @@ const editing = ref(false);
 const dragId = ref<string | null>(null);
 const saveError = ref<string | null>(null);
 const status = ref("");
-/** The row with the heading and the button; once it scrolls away in edit mode, "Klaar" floats under the top bar. */
-const toolbar = ref<HTMLElement | null>(null);
-const floating = ref(false);
-let observer: IntersectionObserver | null = null;
+/** Where "Klaar" sticks in edit mode: just below the app's top bar (which is sticky itself). */
+const stickyTop = ref(8);
 
 let hold: { id: string; x: number; y: number; timer: ReturnType<typeof setTimeout> } | null = null;
 let orderAtDragStart = "";
@@ -47,13 +45,7 @@ function toggleEditing() {
 }
 
 watch(editing, (on) => {
-  observer?.disconnect();
-  observer = null;
-  floating.value = false;
-  if (!on || !toolbar.value || typeof IntersectionObserver === "undefined") return;
-  // The top bar (sticky, about 4.5rem) covers the top of the page: a row behind it counts as gone.
-  observer = new IntersectionObserver(([entry]) => (floating.value = !entry.isIntersecting), { rootMargin: "-80px 0px 0px 0px" });
-  observer.observe(toolbar.value);
+  if (on) stickyTop.value = (document.querySelector("header")?.offsetHeight ?? 0) + 8;
 });
 
 // ----- holding a card (phone): edit mode, and the same finger can drag the card right away -----
@@ -216,73 +208,76 @@ onBeforeUnmount(() => {
   dragId.value = null;
   stopAutoScroll();
   unlisten();
-  observer?.disconnect();
 });
 </script>
 
 <template>
-  <section>
-    <div ref="toolbar" class="mb-3 flex items-center justify-between gap-3">
-      <h2 class="glass inline-block rounded-2xl px-4 py-1 text-2xl font-bold">Modules</h2>
-      <button
-        type="button"
-        class="glass inline-flex items-center gap-2 rounded-2xl px-4 py-2 font-bold transition hover:text-brand-strong"
-        :class="floating && 'fixed right-[max(1rem,calc((100vw-64rem)/2+1rem))] top-20 z-20 shadow-lg'"
-        :aria-pressed="editing"
-        @click="toggleEditing"
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path v-if="editing" d="M5 12.5l4.5 4.5L19 7" />
-          <path v-else d="M7 20V4M3 8l4-4 4 4M17 4v16M13 16l4 4 4-4" />
-        </svg>
-        {{ editing ? "Klaar" : "Sorteren" }}
-      </button>
-    </div>
-    <p v-if="editing" id="module-order-hint" class="glass mb-3 rounded-2xl px-4 py-2 text-sm">
-      Sleep een module aan <span aria-hidden="true">⠿</span> naar de plek die je wilt. Met het toetsenbord: pijltjes omhoog en omlaag.
-    </p>
-    <p v-if="saveError" role="alert" class="mb-3 rounded-2xl bg-bad-bg px-4 py-2 font-semibold text-bad">{{ saveError }}</p>
-    <p class="sr-only" role="status">{{ status }}</p>
-    <!-- No scroll anchoring: the browser would scroll the page each time the dragged card moves, away from the finger. -->
-    <div class="grid gap-4 [overflow-anchor:none] sm:grid-cols-2">
-      <!-- Always the same <a>: swapping the element under a holding finger would end the touch and its drag. -->
-      <RouterLink v-for="m in list" :key="m.id" v-slot="{ href, navigate }" :to="`/module/${m.id}`" custom>
-        <a
-          :href="editing ? undefined : href"
-          :data-module-id="m.id"
-          class="card group block select-none p-5 transition [-webkit-touch-callout:none]"
-          :class="editing ? (dragId === m.id ? 'z-10 scale-[1.03] shadow-xl ring-4 ring-brand' : '') : 'hover:-translate-y-0.5 hover:shadow-lg'"
-          @click="open($event, navigate)"
-          @contextmenu="onContextMenu"
-          @pointerdown="pressStart($event, m.id)"
-          @pointerenter="emit('warm', m.id)"
-          @focus="emit('warm', m.id)"
-          @touchstart.passive="emit('warm', m.id)"
-          @touchmove="noScroll"
-        >
-          <div class="flex items-center gap-4">
-            <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl text-3xl" :class="moduleStyle(m.id).tile" aria-hidden="true">{{ moduleStyle(m.id).emoji }}</span>
-            <div class="min-w-0 flex-1">
-              <h3 class="text-xl font-bold" :class="!editing && 'group-hover:text-brand-strong'">{{ m.title }}</h3>
-              <p v-if="m.total" class="text-sm text-muted">{{ m.completed }} van {{ m.total }} lessen klaar</p>
-              <p v-else class="text-sm text-muted">Oefen onder examentijd</p>
+  <!-- In edit mode "Klaar" sticks below the top bar. CSS sticky (no scroll handler) so it never lags or jumps; the button
+       spans every row of this section, and the rest of the page comes in through the slot, so it stays up to the end. -->
+  <section class="grid grid-cols-[minmax(0,1fr)_auto] grid-rows-[auto_1fr] gap-3">
+    <h2 class="glass col-start-1 row-start-1 justify-self-start rounded-2xl px-4 py-1 text-2xl font-bold">Modules</h2>
+    <button
+      type="button"
+      class="glass col-start-2 row-span-2 row-start-1 inline-flex items-center gap-2 self-start rounded-2xl px-4 py-2 font-bold transition hover:text-brand-strong"
+      :class="editing && 'sticky z-20 shadow-lg'"
+      :style="editing ? { top: `${stickyTop}px` } : undefined"
+      :aria-pressed="editing"
+      @click="toggleEditing"
+    >
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path v-if="editing" d="M5 12.5l4.5 4.5L19 7" />
+        <path v-else d="M7 20V4M3 8l4-4 4 4M17 4v16M13 16l4 4 4-4" />
+      </svg>
+      {{ editing ? "Klaar" : "Sorteren" }}
+    </button>
+    <div class="col-span-2 col-start-1 row-start-2 min-w-0">
+      <p v-if="editing" id="module-order-hint" class="glass mb-3 rounded-2xl px-4 py-2 text-sm">
+        Sleep een module aan <span aria-hidden="true">⠿</span> naar de plek die je wilt. Met het toetsenbord: pijltjes omhoog en omlaag.
+      </p>
+      <p v-if="saveError" role="alert" class="mb-3 rounded-2xl bg-bad-bg px-4 py-2 font-semibold text-bad">{{ saveError }}</p>
+      <p class="sr-only" role="status">{{ status }}</p>
+      <!-- No scroll anchoring: the browser would scroll the page each time the dragged card moves, away from the finger. -->
+      <div class="grid gap-4 [overflow-anchor:none] sm:grid-cols-2">
+        <!-- Always the same <a>: swapping the element under a holding finger would end the touch and its drag. -->
+        <RouterLink v-for="m in list" :key="m.id" v-slot="{ href, navigate }" :to="`/module/${m.id}`" custom>
+          <a
+            :href="editing ? undefined : href"
+            :data-module-id="m.id"
+            class="card group block select-none p-5 transition [-webkit-touch-callout:none]"
+            :class="editing ? (dragId === m.id ? 'z-10 scale-[1.03] shadow-xl ring-4 ring-brand' : '') : 'hover:-translate-y-0.5 hover:shadow-lg'"
+            @click="open($event, navigate)"
+            @contextmenu="onContextMenu"
+            @pointerdown="pressStart($event, m.id)"
+            @pointerenter="emit('warm', m.id)"
+            @focus="emit('warm', m.id)"
+            @touchstart.passive="emit('warm', m.id)"
+            @touchmove="noScroll"
+          >
+            <div class="flex items-center gap-4">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl text-3xl" :class="moduleStyle(m.id).tile" aria-hidden="true">{{ moduleStyle(m.id).emoji }}</span>
+              <div class="min-w-0 flex-1">
+                <h3 class="text-xl font-bold" :class="!editing && 'group-hover:text-brand-strong'">{{ m.title }}</h3>
+                <p v-if="m.total" class="text-sm text-muted">{{ m.completed }} van {{ m.total }} lessen klaar</p>
+                <p v-else class="text-sm text-muted">Oefen onder examentijd</p>
+              </div>
+              <button
+                v-if="editing"
+                type="button"
+                data-handle
+                class="grid h-12 w-12 shrink-0 cursor-grab touch-none place-items-center rounded-2xl bg-surface-2 text-2xl text-muted active:cursor-grabbing"
+                :aria-label="`Verplaats ${m.title}`"
+                aria-describedby="module-order-hint"
+                @pointerdown.stop.prevent="startDrag(m.id)"
+                @keydown="onHandleKey($event, m.id)"
+              >
+                ⠿
+              </button>
             </div>
-            <button
-              v-if="editing"
-              type="button"
-              data-handle
-              class="grid h-12 w-12 shrink-0 cursor-grab touch-none place-items-center rounded-2xl bg-surface-2 text-2xl text-muted active:cursor-grabbing"
-              :aria-label="`Verplaats ${m.title}`"
-              aria-describedby="module-order-hint"
-              @pointerdown.stop.prevent="startDrag(m.id)"
-              @keydown="onHandleKey($event, m.id)"
-            >
-              ⠿
-            </button>
-          </div>
-          <div v-if="m.total" class="mt-4"><ProgressBar :value="m.completed / m.total" :label="`Voortgang ${m.title}`" /></div>
-        </a>
-      </RouterLink>
+            <div v-if="m.total" class="mt-4"><ProgressBar :value="m.completed / m.total" :label="`Voortgang ${m.title}`" /></div>
+          </a>
+        </RouterLink>
+      </div>
+      <div v-if="$slots.default" class="mt-6 grid gap-6"><slot /></div>
     </div>
   </section>
 </template>
