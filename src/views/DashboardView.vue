@@ -103,15 +103,14 @@ const tagLabel = (t: string) => (t.startsWith("writing:") ? `Schrijffout: ${t.sl
         <!-- Phone: the gauge says it all; the label stays for screen readers -->
         <h2 class="sr-only text-lg font-bold sm:not-sr-only">Doel van vandaag</h2>
       </div>
-      <div class="card flex flex-col items-center justify-center gap-2 p-4 text-center sm:flex-row sm:justify-start sm:gap-5 sm:p-5 sm:text-left">
-        <!-- A plain circle, without progress: a streak has no target -->
-        <ProgressRing :value="0" :size="80">
-          <span class="text-lg font-extrabold leading-none">{{ data.streak.current }}<span class="block text-xs font-semibold text-muted">{{ data.streak.current === 1 ? "dag" : "dagen" }}</span></span>
+      <div class="card relative flex flex-col items-center justify-center gap-2 p-4 pb-8 text-center sm:flex-row sm:justify-start sm:gap-5 sm:p-5 sm:pb-8 sm:text-left">
+        <!-- A plain circle, without progress: a streak has no target. As tall as the goal gauge with its label. -->
+        <ProgressRing :value="0" :size="104">
+          <span class="text-2xl font-extrabold leading-none">{{ data.streak.current }}<span class="block text-xs font-semibold text-muted">{{ data.streak.current === 1 ? "dag" : "dagen" }}</span></span>
         </ProgressRing>
-        <div>
-          <h2 class="font-bold sm:text-lg"><span aria-hidden="true">🔥</span> Reeks</h2>
-          <p class="hidden text-sm text-muted sm:block">Beste: {{ data.streak.best }}</p>
-        </div>
+        <p class="hidden text-muted sm:block">Beste: {{ data.streak.best }}</p>
+        <!-- The title is a small tab on the bottom edge, so it costs no height -->
+        <h2 class="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-t-xl bg-brand-bg px-3 py-1 text-xs font-bold text-brand-strong"><span aria-hidden="true">🔥</span> Reeks</h2>
       </div>
     </section>
 
