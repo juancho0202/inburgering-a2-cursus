@@ -5,8 +5,11 @@ import { api } from "../api/client";
 import { useVerbsStore } from "../stores/verbs";
 import AppButton from "../components/ui/AppButton.vue";
 import SpeakButton from "../components/ui/SpeakButton.vue";
+import UiLabel from "../components/ui/UiLabel.vue";
+import { useLanguageStore } from "../stores/language";
 
 const verbs = useVerbsStore();
+const lang = useLanguageStore();
 const router = useRouter();
 const search = ref("");
 const separable = ref(false);
@@ -32,31 +35,31 @@ async function practise() {
 <template>
   <div>
     <div class="mb-6 flex flex-wrap items-end justify-between gap-3">
-      <h1 class="text-3xl font-extrabold tracking-tight">Werkwoorden</h1>
-      <AppButton @click="practise">🔁 Oefen werkwoorden</AppButton>
+      <h1 class="text-3xl font-extrabold tracking-tight"><UiLabel variant="heading" k="nav.verbs" /></h1>
+      <AppButton @click="practise">🔁 <UiLabel k="verbs.practise" /></AppButton>
     </div>
 
     <div class="card mb-6 flex flex-wrap items-center gap-4 p-4">
       <label class="block min-w-48 flex-1">
-        <span class="sr-only">Zoek een werkwoord</span>
-        <input v-model="search" type="search" placeholder="Zoek een werkwoord…" class="input" />
+        <span class="sr-only">{{ lang.t("verbs.search") }}</span>
+        <input v-model="search" type="search" :placeholder="lang.t('verbs.searchPlaceholder')" class="input" />
       </label>
-      <label class="flex items-center gap-2 font-semibold"><input v-model="separable" type="checkbox" class="h-5 w-5 accent-[var(--brand)]" /> Scheidbaar</label>
-      <label class="flex items-center gap-2 font-semibold"><input v-model="irregular" type="checkbox" class="h-5 w-5 accent-[var(--brand)]" /> Onregelmatig</label>
+      <label class="flex items-center gap-2 font-semibold"><input v-model="separable" type="checkbox" class="h-5 w-5 accent-[var(--brand)]" /> <UiLabel variant="inline" k="verbs.separable" /></label>
+      <label class="flex items-center gap-2 font-semibold"><input v-model="irregular" type="checkbox" class="h-5 w-5 accent-[var(--brand)]" /> <UiLabel variant="inline" k="verbs.irregular" /></label>
     </div>
 
     <div class="card overflow-x-auto">
       <table class="w-full min-w-[40rem] border-collapse text-left">
         <thead class="bg-surface-2 text-sm uppercase tracking-wide text-muted">
           <tr>
-            <th class="px-4 py-3">Werkwoord</th>
+            <th class="px-4 py-3"><UiLabel variant="inline" k="exercise.verb" /></th>
             <th class="px-4 py-3">ik / jij / hij</th>
             <th class="px-4 py-3">wij</th>
-            <th class="px-4 py-3">Verleden</th>
-            <th class="px-4 py-3">Voltooid deelwoord</th>
+            <th class="px-4 py-3"><UiLabel variant="inline" k="verbs.past" /></th>
+            <th class="px-4 py-3"><UiLabel variant="inline" k="review.participle" /></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody lang="nl" translate="no">
           <tr v-for="v in rows" :key="v.id" class="border-t border-line align-top">
             <td class="px-4 py-3">
               <div class="flex items-center gap-2 font-bold">{{ v.infinitive }} <SpeakButton :text="v.infinitive" /></div>

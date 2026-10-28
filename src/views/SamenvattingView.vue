@@ -2,7 +2,10 @@
 import { computed, nextTick, onMounted, ref } from "vue";
 import { api } from "../api/client";
 import { h2Headings, renderMdAnchors } from "../composables/markdown";
+import UiLabel from "../components/ui/UiLabel.vue";
+import { useLanguageStore } from "../stores/language";
 
+const lang = useLanguageStore();
 const md = ref<string | null>(null);
 const error = ref<string | null>(null);
 onMounted(async () => {
@@ -34,7 +37,7 @@ async function goTo(id: string) {
          Wide screen: a card in the sidebar. -->
     <nav
       class="card sticky top-[72px] z-20 -mx-4 -mt-6 h-fit rounded-none border-x-0 border-t-0 px-4 py-2 sm:-mt-8 lg:top-24 lg:mx-0 lg:mt-0 lg:rounded-card lg:border-x lg:border-t lg:p-4"
-      aria-label="Inhoud"
+      :aria-label="lang.t('summary.contents')"
     >
       <button
         type="button"
@@ -43,18 +46,18 @@ async function goTo(id: string) {
         aria-controls="inhoud-lijst"
         @click="tocOpen = !tocOpen"
       >
-        Inhoud <span aria-hidden="true" class="transition-transform" :class="tocOpen && 'rotate-180'">▾</span>
+        <UiLabel k="summary.contents" /> <span aria-hidden="true" class="transition-transform" :class="tocOpen && 'rotate-180'">▾</span>
       </button>
-      <h2 class="mb-2 hidden text-sm font-bold uppercase tracking-wide text-muted lg:block">Inhoud</h2>
-      <ul id="inhoud-lijst" class="max-h-[60vh] gap-1 overflow-y-auto lg:grid lg:max-h-none" :class="tocOpen ? 'grid' : 'hidden'">
+      <h2 class="mb-2 hidden text-sm font-bold uppercase tracking-wide text-muted lg:block"><UiLabel variant="heading" k="summary.contents" /></h2>
+      <ul id="inhoud-lijst" lang="nl" translate="no" class="max-h-[60vh] gap-1 overflow-y-auto lg:grid lg:max-h-none" :class="tocOpen ? 'grid' : 'hidden'">
         <li v-for="h in toc" :key="h.id">
           <a :href="`#${h.id}`" class="block rounded-lg px-2 py-1 font-semibold hover:bg-surface-2 hover:text-brand-strong" @click.prevent="goTo(h.id)">{{ h.title }}</a>
         </li>
       </ul>
     </nav>
-    <article class="card samenvatting p-6 sm:p-8">
+    <article class="card samenvatting p-6 sm:p-8" lang="nl" translate="no">
       <div class="prose-nl" v-html="html" />
     </article>
   </div>
-  <p v-else class="text-muted">Even laden…</p>
+  <p v-else class="text-muted">{{ lang.t("common.loading") }}</p>
 </template>

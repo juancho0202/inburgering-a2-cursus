@@ -192,6 +192,8 @@ export function convertLegacyExport(legacy: LegacyExport): ProgressFile {
       voiceAnnouncements: true,
       lessonMusic: true,
       moduleOrder: [],
+      immersion: 1,
+      feedbackInMyLanguage: false,
       updatedAt: progress.lastActivityAt ?? startedAt,
     };
   }

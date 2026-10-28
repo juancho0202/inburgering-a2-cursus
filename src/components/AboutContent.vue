@@ -1,51 +1,43 @@
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
 import KeyGuide from "./KeyGuide.vue";
+import UiLabel from "./ui/UiLabel.vue";
+import UiText from "./ui/UiText.vue";
 </script>
 
 <template>
   <div class="grid gap-5">
     <section class="card p-6">
-      <h2 class="text-xl font-bold">Wat is dit?</h2>
-      <p class="mt-2">
-        Een app om te oefenen voor het inburgeringsexamen (niveau A2): <strong>Lezen</strong>, <strong>Luisteren</strong>, <strong>KNM</strong> en <strong>Schrijven</strong>. Met lessen, woorden herhalen, oefeningen en proefexamens. Alles is in eenvoudig Nederlands.
-      </p>
-      <p class="mt-3 rounded-2xl bg-brand-bg px-4 py-3 font-semibold text-brand-strong">
-        Deze app is <strong>niet van DUO</strong> en heeft er niets mee te maken. Alle teksten en vragen zijn zelf gemaakt. Een proefexamen hier zegt niets zeker over je echte score.
-      </p>
+      <h2 class="text-xl font-bold"><UiLabel variant="heading" k="about.whatTitle" /></h2>
+      <p class="mt-2"><UiText k="about.what" md /></p>
+      <p class="mt-3 rounded-2xl bg-brand-bg px-4 py-3 font-semibold text-brand-strong"><UiText k="about.notDuo" md /></p>
     </section>
 
     <section class="card p-6">
-      <h2 class="text-xl font-bold">Jouw gegevens blijven bij jou</h2>
+      <h2 class="text-xl font-bold"><UiLabel variant="heading" k="about.dataTitle" /></h2>
       <ul class="mt-2 grid list-disc gap-1 pl-5">
-        <li>Je voortgang staat <strong>alleen in deze browser</strong>, op dit apparaat. Er is geen account en er is geen server die je gegevens bewaart.</li>
-        <li>Wis je de gegevens van je browser, dan is je voortgang weg. <strong>Bewaar hem daarom regelmatig</strong> met “Klaar voor vandaag”.</li>
-        <li>Er is geen tracking en geen reclame.</li>
+        <li><UiText k="about.data1" md /></li>
+        <li><UiText k="about.data2" md /></li>
+        <li><UiText k="about.data3" /></li>
       </ul>
     </section>
 
     <section class="card p-6">
-      <h2 class="text-xl font-bold">Op twee apparaten leren</h2>
-      <p class="mt-2">
-        Druk op <strong>Klaar voor vandaag</strong> en bewaar je voortgang als bestand. Zet dat bestand op je andere apparaat (op een iPhone kan dat met AirDrop) en kies daar <strong>Ga verder met een bestand</strong>. Je antwoorden worden samengevoegd. Er gaat nooit iets kwijt.
-      </p>
+      <h2 class="text-xl font-bold"><UiLabel variant="heading" k="about.devicesTitle" /></h2>
+      <p class="mt-2"><UiText k="about.devices" md /></p>
     </section>
 
     <section class="card p-6">
-      <h2 class="text-xl font-bold">Claude (optioneel)</h2>
-      <p class="mt-2">
-        Met je eigen API-sleutel van Anthropic krijg je feedback op je schrijfteksten, uitleg bij fouten en extra oefeningen. De sleutel wordt versleuteld op dit apparaat bewaard en gaat alleen naar Anthropic. <strong>Zonder sleutel werkt alles gewoon</strong>, alleen niet de Claude-hulp.
-      </p>
+      <h2 class="text-xl font-bold"><UiLabel variant="heading" k="settings.claude" /></h2>
+      <p class="mt-2"><UiText k="about.claude" md /></p>
       <KeyGuide class="mt-3" />
-      <RouterLink to="/instellingen" class="mt-3 inline-block font-semibold text-brand-strong underline">Naar Instellingen</RouterLink>
+      <RouterLink to="/instellingen" class="mt-3 inline-block font-semibold text-brand-strong underline"><UiLabel k="common.toSettings" /></RouterLink>
     </section>
 
     <section class="card p-6">
-      <h2 class="text-xl font-bold">Stemmen en geluid</h2>
+      <h2 class="text-xl font-bold"><UiLabel variant="heading" k="about.voicesTitle" /></h2>
       <p class="mt-2">
-        De stemmen die de lessen voorlezen en de mensen in de luisterfragmenten zijn gemaakt met <a href="https://github.com/OHF-Voice/piper1-gpl" class="font-semibold underline">Piper</a> (open source).
-        De stemmen ronnie, alex en nathalie zijn gemaakt met opnames uit het publieke domein (CC0).
-        De muziek en de geluidjes worden in de app zelf gemaakt.
+        <UiText k="about.voices1" /> <a href="https://github.com/OHF-Voice/piper1-gpl" class="font-semibold underline">Piper</a> <UiText k="about.voices2" />
       </p>
     </section>
   </div>

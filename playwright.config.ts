@@ -7,7 +7,8 @@ export default defineConfig({
   workers: 1,
   retries: process.env.CI ? 1 : 0,
   reporter: [["list"], ["html", { open: "never" }]],
-  use: { ...devices["Pixel 7"], baseURL: "http://localhost:4173", trace: "retain-on-failure" },
+  // A Dutch browser, so the journeys read the app as it was written; the language journeys set their own locale.
+  use: { ...devices["Pixel 7"], locale: "nl-NL", baseURL: "http://localhost:4173", trace: "retain-on-failure" },
   webServer: {
     command: "npm run build && npx vite preview --port 4173 --strictPort",
     url: "http://localhost:4173",

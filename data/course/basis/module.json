@@ -4,6 +4,7 @@
   "description": "Woorden, werkwoorden en zinsbouw die je overal nodig hebt.",
   "icon": "book",
   "units": [
+    "basis-app-woorden",
     "basis-tijd",
     "basis-werkwoorden-nu",
     "basis-modaal",
