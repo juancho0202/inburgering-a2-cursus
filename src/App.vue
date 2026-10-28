@@ -6,6 +6,7 @@ import { applyTheme } from "./composables/theme";
 import { useSessionStore } from "./stores/session";
 import { useReviewStore } from "./stores/review";
 import FinishSessionDialog from "./components/FinishSessionDialog.vue";
+import UpdateBanner from "./components/UpdateBanner.vue";
 
 const settings = useSettingsStore();
 const route = useRoute();
@@ -155,6 +156,7 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
       </div>
     </Transition>
     <FinishSessionDialog />
+    <UpdateBanner />
 
     <main id="main" tabindex="-1" class="mx-auto w-full flex-1 px-4 py-6 sm:py-8" :class="route.meta.focus ? 'max-w-6xl' : 'max-w-5xl'">
       <RouterView />
