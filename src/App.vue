@@ -157,7 +157,7 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
             <li v-for="l in links" :key="l.to">
               <RouterLink
                 :to="l.to"
-                class="flex items-center gap-3 rounded-2xl px-4 py-3 text-lg font-bold transition"
+                class="flex items-center gap-3 rounded-2xl px-4 py-3 text-lg font-bold transition [&_.ui-stack]:items-start"
                 :class="linkClass(l.to)"
                 :aria-current="isActive(l.to) ? 'page' : undefined"
               >
