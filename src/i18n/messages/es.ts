@@ -314,6 +314,7 @@ const es: Messages = {
     whichWord: "¿Qué palabra es?",
     yourAnswer: "Tu respuesta",
     typeWord: "Escribe la palabra…",
+    withArticle: "Escribe la palabra con **de** o **het**.",
     meaning: "¿Qué significa esta palabra?",
     article: "¿de o het?",
     participle: "Participio",

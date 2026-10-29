@@ -65,6 +65,13 @@ describe("'meaning' cards (type the word)", () => {
     expect(wrapper.text()).toContain("Ik ga met de ___ naar school.");
   });
 
+  it("for a noun it says to type de or het; for other words it does not", async () => {
+    const noun = await open([item("c1", "meaning", { vocab: vocab("de minuut") })]);
+    expect(noun.wrapper.text()).toContain("Typ het woord met de of het.");
+    const phrase = await open([item("c2", "meaning", { vocab: vocab("de weg wijzen", { article: null }) })]);
+    expect(phrase.wrapper.text()).not.toContain("de of het");
+  });
+
   it("'Controleer' is disabled until something is typed", async () => {
     const { wrapper } = await open([meaning("fiets")]);
     expect(buttonWith(wrapper, "Controleer")!.attributes("disabled")).toBeDefined();

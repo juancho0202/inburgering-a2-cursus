@@ -164,6 +164,8 @@ function onKey(e: KeyboardEvent) {
         <p class="text-sm font-bold uppercase tracking-wide text-muted"><UiLabel variant="heading" k="review.whichWord" /></p>
         <p class="mt-2 text-2xl font-bold">{{ current.vocab.definitionNl }}</p>
         <p class="mt-2 italic text-muted">{{ gapExample }}</p>
+        <!-- Nouns are learnt with their article, and the answer shown afterwards has it, so ask for it out loud. -->
+        <p v-if="current.vocab.article" class="mt-4 font-semibold"><UiText k="review.withArticle" md /></p>
         <label class="mt-5 block"><span class="sr-only">{{ lang.t("review.yourAnswer") }}</span>
           <input v-model="typed" :disabled="answered" autocomplete="off" autocapitalize="off" spellcheck="false" class="input text-xl" :placeholder="lang.t('review.typeWord')" autofocus />
         </label>
