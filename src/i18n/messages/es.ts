@@ -19,6 +19,7 @@ const es: Messages = {
     exams: "Exámenes",
     summary: "Resumen",
     settings: "Ajustes",
+    landing: "Página de inicio",
   },
   language: {
     choose: "Elige tu idioma",

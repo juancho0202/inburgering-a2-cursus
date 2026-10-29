@@ -28,7 +28,6 @@
       { "title": "Gemaakt voor A2", "text": "Lessen, woorden en oefeningen op het niveau van het A2-examen." }
     ],
     "guidesHeading": "Uitleg over de stappen bij DUO",
-    "guidesNote": "Deze uitleg is nog in het Engels.",
     "faqHeading": "Veelgestelde vragen",
     "faq": [
       { "q": "Is dit het echte inburgeringsexamen?", "a": "Nee. Train for Inburgering is niet van DUO. Het echte examen doe je op een examenlocatie van DUO. DUO heeft ook gratis [officiële oefenexamens](https://www.inburgeren.nl/examen-doen/oefenen.jsp). Doe die ook, dan ken je de schermen van het echte examen." },
@@ -39,5 +38,17 @@
       { "q": "Werkt het op mijn telefoon?", "a": "Ja. Open de site in de browser van je telefoon en zet hem op je beginscherm. Na het eerste bezoek werkt hij ook zonder internet." }
     ],
     "disclaimer": "Train for Inburgering is niet van DUO en niet van de Nederlandse overheid. Alle teksten en vragen zijn zelf gemaakt. Een score bij het oefenen zegt niet zeker iets over je echte examen."
+  },
+  "guide": {
+    "lastChecked": "Laatst gecontroleerd: {date}",
+    "unofficial": "Dit is geen officiële uitleg. DUO kan de regels altijd veranderen. De officiële informatie staat op inburgeren.nl.",
+    "more": "Meer uitleg",
+    "allGuides": "Alle uitleg",
+    "indexTitle": "Uitleg inburgering: Mijn Inburgering, examen, uitslag | Train for Inburgering",
+    "indexDescription": "Uitleg in eenvoudig Nederlands over de stappen bij DUO: inloggen op Mijn Inburgering, je examen boeken, je uitslag zien en oefenen voor A2.",
+    "indexHeading": "Uitleg over de stappen bij DUO",
+    "indexIntro": "Korte uitleg in eenvoudig Nederlands over de stappen rond het inburgeringsexamen. Niet officieel: kijk ook altijd op inburgeren.nl.",
+    "ctaHeading": "Oefen voor het A2-examen",
+    "ctaText": "Gratis oefenen voor Lezen, Luisteren, KNM en Schrijven, met oefenexamens met een tijd."
   }
 }

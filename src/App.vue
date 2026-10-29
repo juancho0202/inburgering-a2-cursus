@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { RouterLink, RouterView, useRoute } from "vue-router";
 import { useSettingsStore } from "./stores/settings";
 import { applyTheme } from "./composables/theme";
@@ -10,6 +10,7 @@ import UpdateBanner from "./components/UpdateBanner.vue";
 import UiLabel from "./components/ui/UiLabel.vue";
 import { useLanguageStore } from "./stores/language";
 import { dirOf } from "./i18n";
+import { landingPageFor } from "./lib/landing";
 
 const settings = useSettingsStore();
 const route = useRoute();
@@ -75,6 +76,8 @@ const links = [
   { to: "/instellingen", label: "nav.settings", icon: "⚙️" },
 ];
 // "/" must only be active on the home page (and not on every page).
+// The landing page is a page of its own (not an app screen), so it is a normal link that leaves the app.
+const landingHref = computed(() => landingPageFor(lang.locale));
 const isActive = (to: string) => (to === "/" ? route.path === "/" : route.path === to || route.path.startsWith(to + "/"));
 const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong" : "text-muted hover:bg-surface-2 hover:text-ink");
 </script>
@@ -102,6 +105,9 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
           >
             <span aria-hidden="true">{{ l.icon }}</span><UiLabel :k="l.label" />
           </RouterLink>
+          <a :href="landingHref" class="flex items-center gap-1.5 rounded-xl px-3 py-1.5 font-semibold text-muted transition hover:bg-surface-2 hover:text-ink">
+            <span aria-hidden="true">🌐</span><UiLabel k="nav.landing" />
+          </a>
         </nav>
 
         <button type="button" class="ml-auto hidden items-center gap-1.5 rounded-xl border-2 border-line px-3 py-1.5 font-semibold text-muted transition hover:bg-surface-2 hover:text-ink md:flex" :title="lang.t('app.finish')" :aria-label="lang.t('app.finish')" @click="session.openFinish()">
@@ -163,6 +169,11 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
               >
                 <span class="w-7 text-center text-2xl" aria-hidden="true">{{ l.icon }}</span><UiLabel :k="l.label" />
               </RouterLink>
+            </li>
+            <li>
+              <a :href="landingHref" class="flex items-center gap-3 rounded-2xl px-4 py-3 text-lg font-bold text-muted transition hover:bg-surface-2 hover:text-ink [&_.ui-stack]:items-start">
+                <span class="w-7 text-center text-2xl" aria-hidden="true">🌐</span><UiLabel k="nav.landing" />
+              </a>
             </li>
           </ul>
           <button type="button" class="mt-auto flex items-center justify-center gap-2 rounded-2xl border-2 border-line px-4 py-3 text-lg font-bold transition hover:bg-surface-2" @click="finishFromMenu">

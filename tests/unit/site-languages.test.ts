@@ -2,7 +2,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { fillIndexHtml, SITE_LANGUAGES, SITE_URL, STATIC_DIRS, sitePages, type SiteLanguage } from "../../scripts/site";
+import { fillIndexHtml, guidePath, IN_APP_LANDING, loadGuides, SITE_LANGUAGES, SITE_URL, STATIC_DIRS, sitePages, type SiteLanguage } from "../../scripts/site";
 import { UI_LANGUAGES } from "../../shared/schemas/store";
 
 const indexHtml = readFileSync(path.resolve(__dirname, "../../index.html"), "utf8");
@@ -81,17 +81,46 @@ describe("a landing page for every app language", () => {
         expect(html).toContain(`<a href="${lang.path}" class="site-brand">`);
       });
 
-      it("marks the English guides as English when the page is not", () => {
-        const guides = html.slice(html.indexOf(`<h2>${s.landing.guidesHeading}</h2>`));
-        if (lang.code === "en") {
-          expect(guides).toMatch(/^<h2>[^<]+<\/h2>\s*<ul class="site-cards site-cards-wide">/);
-        } else {
-          expect(guides).toContain(`<p class="site-section-note">${s.landing.guidesNote}</p>`);
-          expect(guides).toContain('<ul class="site-cards site-cards-wide" lang="en">');
-        }
+      it("links to the guides in this language", () => {
+        const guides = html.slice(html.indexOf(`<h2>${s.landing.guidesHeading}</h2>`), html.indexOf('<section class="site-faq">'));
+        const own = loadGuides(lang.code);
+        expect(guides.match(/<a href="[^"]+">/g)).toEqual(own.map((g) => `<a href="${guidePath(g, lang)}">`));
+        for (const g of own) expect(guides).toContain(`>${g.heading}</a></h3><p>${encoded(g.description)}</p>`);
+        expect(guides).not.toContain('lang="en"');
       });
     });
   }
+
+  describe("/landing/, the English landing page for learners who have started", () => {
+    const html = pages["landing/index.html"];
+    const en = SITE_LANGUAGES[0];
+
+    it("is the English landing page, a page of its own that the app's offline copy leaves alone", () => {
+      expect(IN_APP_LANDING).toBe("/landing/");
+      expect(STATIC_DIRS).toContain("landing");
+      expect(html).toContain('<html lang="en">');
+      expect(html).toContain(`<h1>${en.strings.landing.heading}</h1>`);
+      expect(html).not.toMatch(/<script(?! type="application\/ld\+json")/);
+    });
+
+    it("its start link and logo go back into the app at /, not to the welcome screen", () => {
+      expect(html.match(/<a class="site-start" href="\/">/g)).toHaveLength(2);
+      expect(html).not.toContain('href="/welkom"');
+      expect(html).toContain('<a href="/" class="site-brand">');
+    });
+
+    it("its language menu keeps English on this page, and the other languages go to their own pages", () => {
+      const m = menu(html);
+      expect(m).toContain('<a href="/landing/" hreflang="en" lang="en" aria-current="page">English</a>');
+      expect(m).toContain('<a href="/nl/" hreflang="nl" lang="nl">Nederlands</a>');
+      expect(m).toContain('<a href="/es/" hreflang="es" lang="es">Español</a>');
+    });
+
+    it("is not a second English page for search engines: its canonical address is / and it is not in the sitemap", () => {
+      expect(head(html)).toContain(`<link rel="canonical" href="${SITE_URL}/" />`);
+      expect(pages["sitemap.xml"]).not.toContain("/landing/");
+    });
+  });
 
   it("a language page loads no app code", () => {
     for (const lang of SITE_LANGUAGES.filter((l) => l.path !== "/")) {

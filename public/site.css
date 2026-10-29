@@ -338,10 +338,6 @@ body:has(> .site) {
   clip-path: inset(50%);
   white-space: nowrap;
 }
-.site-section-note {
-  margin: -0.5rem 0 1rem !important;
-  color: var(--l-muted);
-}
 
 /* Language menu in the header (a native <details>) */
 .site-lang {
