@@ -118,11 +118,12 @@ describe("back to the landing page", () => {
   const landingLinks = (w: any) => w.findAll("a").filter((a: any) => LABEL.test(a.text()));
 
   it("the top bar and the menu link to the landing page in the learner's language, as a page outside the app", async () => {
-    for (const [language, href] of [["en", "/landing/"], ["nl", "/nl/"], ["es", "/es/"]] as const) {
+    const languages = [["en", "/landing/", "Open menu"], ["nl", "/nl/", "Menu openen"], ["es", "/es/", "Abrir menú"]] as const;
+    for (const [language, href, openMenu] of languages) {
       fakeApi.on("GET", "/settings", () => ({ apiKey: null, theme, language }));
       const { wrapper, router } = await mountApp(App, { routes, url: "/woorden", language, stubs: { FinishSessionDialog: true } });
       expect(landingLinks(wrapper).map((a: any) => a.attributes("href")), language).toEqual([href]);
-      await menuButton(wrapper).trigger("click");
+      await wrapper.find(`button[aria-label='${openMenu}']`).trigger("click");
       await flushPromises();
       expect(wrapper.find("#mobile-menu").findAll("a").filter((a: any) => LABEL.test(a.text())).map((a: any) => a.attributes("href")), language).toEqual([href]);
       // a plain link: the browser loads the page; the app's router does not try to show it
