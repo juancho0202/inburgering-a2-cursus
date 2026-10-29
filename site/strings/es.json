@@ -28,16 +28,27 @@
       { "title": "Hecha para A2", "text": "Lecciones, palabras y ejercicios al nivel del examen A2." }
     ],
     "guidesHeading": "Guías sobre el proceso de DUO",
-    "guidesNote": "Por ahora, las guías están en inglés.",
     "faqHeading": "Preguntas frecuentes",
     "faq": [
       { "q": "¿Es este el examen oficial de inburgering?", "a": "No. Train for Inburgering no es parte de DUO. El examen real se hace en un centro de examen de DUO. DUO también tiene [exámenes de práctica oficiales](https://www.inburgeren.nl/en/taking-the-integration-exam/practicing.jsp) y gratuitos: hazlos también, así conocerás las pantallas del examen real." },
       { "q": "¿Es realmente gratis?", "a": "Sí. No hay cuenta, ni pagos, ni publicidad. Solo los comentarios opcionales de Claude sobre tu escritura usan tu propia clave API de Anthropic, que Anthropic te cobra." },
       { "q": "¿Qué partes del examen puedo practicar?", "a": "Lectura, comprensión auditiva, escritura y KNM (conocimiento de la sociedad neerlandesa), además de exámenes de práctica con tiempo. La expresión oral aún no está en la app." },
       { "q": "¿La app está en español?", "a": "Los botones y las explicaciones están en español, inglés o neerlandés, como prefieras. Los ejercicios están en neerlandés, como en el examen real." },
-      { "q": "¿Necesito el examen A2 o el B1?", "a": "[Mijn Inburgering](/guides/mijn-inburgering-login/) muestra qué exámenes tienes que hacer y en qué nivel. Con la ley de 2021, también lo indica tu PIP (el plan de integración que hiciste con tu municipio). Este curso es para A2." },
+      { "q": "¿Necesito el examen A2 o el B1?", "a": "[Mijn Inburgering](/es/guides/mijn-inburgering-login/) muestra qué exámenes tienes que hacer y en qué nivel. Con la ley de 2021, también lo indica tu PIP (el plan de integración que hiciste con tu municipio). Este curso es para A2." },
       { "q": "¿Funciona en mi móvil?", "a": "Sí. Ábrela en el navegador de tu móvil y añádela a la pantalla de inicio. Después de la primera visita también funciona sin internet." }
     ],
     "disclaimer": "Train for Inburgering no es parte de DUO ni del gobierno neerlandés. Todos los textos y preguntas son nuestros. Una puntuación de práctica aquí no garantiza el resultado de tu examen real."
+  },
+  "guide": {
+    "lastChecked": "Última revisión: {date}",
+    "unofficial": "Esta guía no es oficial. DUO puede cambiar su proceso en cualquier momento; la información oficial está en inburgeren.nl.",
+    "more": "Más guías",
+    "allGuides": "Todas las guías",
+    "indexTitle": "Guías de inburgering: Mijn Inburgering, examen, resultados | Train for Inburgering",
+    "indexDescription": "Guías sencillas sobre el proceso de inburgering de DUO: entrar en Mijn Inburgering, reservar el examen, ver los resultados y practicar para el A2.",
+    "indexHeading": "Guías sobre el proceso de inburgering",
+    "indexIntro": "Guías cortas y sencillas sobre los pasos del examen de inburgering. No son oficiales: consulta siempre también inburgeren.nl.",
+    "ctaHeading": "Practica para el examen A2",
+    "ctaText": "Práctica gratis de lectura, comprensión auditiva, KNM y escritura, con exámenes de práctica cronometrados."
   }
 }

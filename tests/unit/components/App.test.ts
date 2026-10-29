@@ -113,6 +113,32 @@ describe("which link is highlighted", () => {
   });
 });
 
+describe("back to the landing page", () => {
+  const LABEL = /Startpagina|Home page|Página de inicio/;
+  const landingLinks = (w: any) => w.findAll("a").filter((a: any) => LABEL.test(a.text()));
+
+  it("the top bar and the menu link to the landing page in the learner's language, as a page outside the app", async () => {
+    for (const [language, href] of [["en", "/landing/"], ["nl", "/nl/"], ["es", "/es/"]] as const) {
+      fakeApi.on("GET", "/settings", () => ({ apiKey: null, theme, language }));
+      const { wrapper, router } = await mountApp(App, { routes, url: "/woorden", language, stubs: { FinishSessionDialog: true } });
+      expect(landingLinks(wrapper).map((a: any) => a.attributes("href")), language).toEqual([href]);
+      await menuButton(wrapper).trigger("click");
+      await flushPromises();
+      expect(wrapper.find("#mobile-menu").findAll("a").filter((a: any) => LABEL.test(a.text())).map((a: any) => a.attributes("href")), language).toEqual([href]);
+      // a plain link: the browser loads the page; the app's router does not try to show it
+      await landingLinks(wrapper)[0].trigger("click");
+      await flushPromises();
+      expect(router.currentRoute.value.path).toBe("/woorden");
+      wrapper.unmount();
+    }
+  });
+
+  it("is never highlighted as the current app page", async () => {
+    const { wrapper } = await open("/");
+    expect(landingLinks(wrapper)[0].attributes("aria-current")).toBeUndefined();
+  });
+});
+
 describe("during an exam", () => {
   it("the menu, the footer and the 'finish' button are out of the way", async () => {
     const { wrapper } = await open("/examen/ex1");

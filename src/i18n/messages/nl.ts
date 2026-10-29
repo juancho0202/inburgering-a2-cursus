@@ -18,6 +18,7 @@ const nl = {
     exams: "Examens",
     summary: "Samenvatting",
     settings: "Instellingen",
+    landing: "Startpagina",
   },
   language: {
     choose: "Kies je taal",

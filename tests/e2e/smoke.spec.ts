@@ -269,7 +269,32 @@ test("the guides open from the landing page, also once the app is installed for 
   await expect(page.getByRole("heading", { level: 1, name: "Guides to the inburgering process" })).toBeVisible();
   await page.goto("/nl/");
   await expect(page.getByRole("heading", { level: 1, name: "Gratis oefenexamen inburgering (A2)" })).toBeVisible();
+  // the app's "Home page" link: the landing page, also for a learner who has started; its start link goes back
+  await page.goto("/landing/");
+  await expect(page.getByRole("heading", { level: 1, name: "Free inburgering practice exam (A2)" })).toBeVisible();
+  await page.getByRole("link", { name: "Start practising, it's free" }).first().click();
+  await expect(page).toHaveURL(/\/$/);
+  await expect(page.locator("#landing")).toBeHidden();
   expect(violations).toEqual([]);
+});
+
+test("the guides are in the language of the landing page, and the language menu switches the same guide", async ({ page }) => {
+  await page.goto("/es/");
+  await page.getByRole("link", { name: "Cómo reservar tu examen de inburgering en DUO" }).click();
+  await expect(page).toHaveURL(/\/es\/guides\/book-inburgering-exam\/$/);
+  await expect(page.locator("html")).toHaveAttribute("lang", "es");
+  await expect(page.getByText(/Última revisión: .*Esta guía no es oficial/)).toBeVisible();
+  // a link inside the guide stays in Spanish
+  await page.getByRole("link", { name: "Entra en Mijn Inburgering" }).click();
+  await expect(page).toHaveURL(/\/es\/guides\/mijn-inburgering-login\/$/);
+
+  await page.locator(".site-lang summary").click();
+  await page.getByRole("link", { name: "Nederlands" }).click();
+  await expect(page).toHaveURL(/\/nl\/guides\/mijn-inburgering-login\/$/);
+  await expect(page.getByRole("heading", { level: 1, name: "Zo log je in op Mijn Inburgering" })).toBeVisible();
+  // the start link opens the app with Dutch chosen
+  await page.getByRole("link", { name: "Begin met oefenen, het is gratis" }).first().click();
+  await expect(page.getByRole("radio", { name: "Nederlands" })).toHaveAttribute("aria-checked", "true");
 });
 
 test("the language menu goes to the landing page in that language, and its start link opens the app in it", async ({ page }) => {

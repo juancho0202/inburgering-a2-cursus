@@ -2,9 +2,17 @@
  * The landing page in index.html (see scripts/site.ts) shows on "/" until this device has started.
  * public/boot.js reads the same key before the first paint and sets the `app` class when the landing page is skipped.
  */
+import type { UiLanguage } from "@shared/schemas/store";
+
 const STARTED_KEY = "appStarted";
 /** The app's database (src/db/dexieStore.ts). */
 const DB_NAME = "inburgering-a2";
+
+/**
+ * The landing page for a learner who has started, in their language. "/" is the app for them, so English has a copy
+ * at /landing/ (scripts/site.ts); the other languages' landing pages are pages of their own already.
+ */
+export const landingPageFor = (lang: UiLanguage) => (lang === "en" ? "/landing/" : `/${lang}/`);
 
 export const showsLanding = () => !document.documentElement.classList.contains("app");
 
