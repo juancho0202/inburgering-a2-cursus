@@ -240,7 +240,8 @@ onBeforeUnmount(() => {
       <p v-if="saveError" role="alert" class="mb-3 rounded-2xl bg-bad-bg px-4 py-2 font-semibold text-bad">{{ saveError }}</p>
       <p class="sr-only" role="status">{{ status }}</p>
       <!-- No scroll anchoring: the browser would scroll the page each time the dragged card moves, away from the finger. -->
-      <div class="grid gap-4 [overflow-anchor:none] sm:grid-cols-2">
+      <!-- minmax(0, 1fr): a card can shrink to the screen instead of growing to its longest word -->
+      <div class="grid grid-cols-[minmax(0,1fr)] gap-4 [overflow-anchor:none] sm:grid-cols-[repeat(2,minmax(0,1fr))]">
         <!-- Always the same <a>: swapping the element under a holding finger would end the touch and its drag. -->
         <RouterLink v-for="m in list" :key="m.id" v-slot="{ href, navigate }" :to="`/module/${m.id}`" custom>
           <a

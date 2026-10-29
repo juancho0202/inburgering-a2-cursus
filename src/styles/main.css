@@ -176,6 +176,10 @@
   .prose-nl strong {
     font-weight: 700;
   }
+  /* A long Dutch word in a heading breaks instead of pushing the page past a small screen */
+  .prose-nl {
+    overflow-wrap: break-word;
+  }
   .prose-nl table {
     display: block;
     overflow-x: auto;

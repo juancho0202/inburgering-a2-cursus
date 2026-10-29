@@ -6,7 +6,8 @@ import UiText from "./ui/UiText.vue";
 </script>
 
 <template>
-  <div class="grid gap-5">
+  <!-- minmax(0, 1fr): a card can shrink to the screen instead of growing to its longest word -->
+  <div class="grid grid-cols-[minmax(0,1fr)] gap-5">
     <section class="card p-6">
       <h2 class="text-xl font-bold"><UiLabel variant="heading" k="about.whatTitle" /></h2>
       <p class="mt-2"><UiText k="about.what" md /></p>
