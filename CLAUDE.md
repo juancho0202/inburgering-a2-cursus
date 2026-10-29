@@ -13,7 +13,7 @@ npm run validate    # check data/course
 npm run e2e         # Playwright journeys (needs: npx playwright install chromium)
 ```
 
-Run `npm install` first in a fresh checkout: `node_modules` is not committed, so the checks above cannot run without it.
+Run `npm install` first in a fresh checkout: `node_modules` is not committed, so the checks above cannot run without it. It needs a patched Node.js (24.22.1 or newer, see `engines` in `package.json`); npm refuses an older one.
 
 ## Testing rules (read `tests/README.md` before touching a component)
 
