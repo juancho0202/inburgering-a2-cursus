@@ -151,7 +151,14 @@ describe("finishing a lesson", () => {
   it("offers the next lesson of the module, but not after the last one", async () => {
     const mid = await open("a");
     await clickButton(mid.wrapper, "Afronden");
-    expect(mid.wrapper.find("a[href='/unit/b']").text()).toContain("Volgende les: Les B");
+    const link = mid.wrapper.find("a[href='/unit/b']");
+    // Label and title stack in one column beside the arrow, so a long title does not squeeze into a narrow column
+    const title = link.findAll("span").find((s) => s.text() === "Les B")!;
+    const column = title.element.parentElement!;
+    expect(column.tagName).toBe("SPAN");
+    expect(column.textContent).toBe("Volgende les:Les B");
+    expect(column.nextElementSibling!.textContent).toBe("→");
+    expect(column.nextElementSibling!.getAttribute("aria-hidden")).toBe("true");
 
     const last = await finish("c", { "c-q1": true, "c-q2": true });
     expect(last.wrapper.text()).not.toContain("Volgende les");

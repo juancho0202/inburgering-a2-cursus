@@ -174,7 +174,14 @@ const restart = async () => {
     <p class="mt-1 text-muted">{{ lang.feedback(summary.score >= unit.passScore ? "unit.passed" : "unit.notPassed") }}</p>
     <p v-if="summary.words" class="mt-2 rounded-2xl bg-brand-bg px-4 py-2 font-semibold">📕 {{ lang.t("unit.newCards", { n: summary.words }, summary.words) }}</p>
     <div class="mt-6 grid gap-3">
-      <RouterLink v-if="nextUnit" :to="`/unit/${nextUnit.id}`"><AppButton size="lg" class="w-full"><UiLabel k="unit.nextLesson" />: <span lang="nl" translate="no">{{ nextUnit.title }}</span> →</AppButton></RouterLink>
+      <RouterLink v-if="nextUnit" :to="`/unit/${nextUnit.id}`"><AppButton size="lg" class="w-full">
+        <!-- Label above the title, so a long title wraps on its own line instead of squeezing into a column -->
+        <span class="flex min-w-0 flex-1 flex-col text-left">
+          <span class="text-sm font-semibold opacity-75"><UiLabel k="unit.nextLesson" /><span class="sr-only">:</span></span>
+          <span lang="nl" translate="no">{{ nextUnit.title }}</span>
+        </span>
+        <span aria-hidden="true">→</span>
+      </AppButton></RouterLink>
       <RouterLink v-if="summary.hard" :to="{ path: '/oefenen', query: { mode: 'hard', unit: unit.id } }"><AppButton variant="secondary" class="w-full"><UiLabel k="dashboard.hardQuestions" /> ({{ summary.hard }})</AppButton></RouterLink>
       <RouterLink :to="{ path: '/oefenen', query: { gen: 'unit', unit: unit.id } }"><AppButton variant="secondary" class="w-full">🤖 <UiLabel k="practice.moreClaude" /></AppButton></RouterLink>
       <AppButton variant="secondary" @click="restart"><UiLabel k="common.again" /></AppButton>
