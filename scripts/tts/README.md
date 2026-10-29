@@ -7,6 +7,8 @@ lines or fragments without a recording fall back to the device's own voice.
 
 Lessons take turns between three voices by their number in the module (lesson 1 ronnie, 2 alex, 3 nathalie,
 4 ronnie, …). The list is `LESSON_VOICES` in `src/lib/announce.ts`; change it there and run `npm run voice`.
+Adding, removing or moving a lesson changes the voice (and the "Les N." line) of every lesson after it, so those
+need recording again too.
 All three are CC0. nathalie is Flemish (nl_BE) and the only female Dutch voice in Piper. Avoid the multi-speaker
 nl_NL-mls voice: it reads many lines as gibberish. The voice list itself is `VOICES` in `shared/content/voices.ts`.
 
@@ -30,7 +32,9 @@ npm run voice -- --pace 1.2       # slower speech
 ```
 
 `npm run voice` lists every spoken line (`scripts/tts/export-texts.ts`, using the same text as the app) and then
-runs Piper inside macOS's sandbox with **network access denied**. Run it after changing course content.
+runs Piper inside macOS's sandbox with **network access denied**. Run it after changing course content:
+`npm test` fails while a line or fragment has no recording (`tests/unit/voice-recordings.test.ts`), because a device
+without a Dutch voice of its own says nothing at all.
 
 ## Listening fragments
 
