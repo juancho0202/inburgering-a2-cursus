@@ -313,6 +313,7 @@ const nl = {
     whichWord: "Welk woord is dit?",
     yourAnswer: "Jouw antwoord",
     typeWord: "Typ het woord…",
+    withArticle: "Typ het woord met **de** of **het**.",
     meaning: "Wat betekent dit woord?",
     article: "de of het?",
     participle: "Voltooid deelwoord",
