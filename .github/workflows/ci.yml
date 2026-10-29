@@ -22,6 +22,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+          # The runner image's cached Node can lag a security release; always take the newest 24.x.
+          check-latest: true
           cache: npm
       - run: npm ci
       - name: Course content is valid
@@ -44,6 +46,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+          # The runner image's cached Node can lag a security release; always take the newest 24.x.
+          check-latest: true
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium

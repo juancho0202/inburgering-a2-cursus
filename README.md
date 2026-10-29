@@ -20,7 +20,7 @@ Niet van DUO. Alle teksten en vragen zijn zelf gemaakt.
 
 ## Ontwikkelen
 
-Vereist Node 24.
+Vereist Node 24.22.1 of nieuwer (of 26.12.1 of nieuwer); oudere versies hebben bekende beveiligingslekken en `npm install` weigert ze.
 
 ```bash
 npm install

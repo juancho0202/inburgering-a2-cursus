@@ -4,6 +4,7 @@
   publish = "dist"
 
 [build.environment]
+  # The newest 24.x; .npmrc stops the build if it is older than the patched minimum in package.json "engines".
   NODE_VERSION = "24"
 
 # One address for search engines: the .nl domain and www go to https://trainforinburgering.com (permanently).
