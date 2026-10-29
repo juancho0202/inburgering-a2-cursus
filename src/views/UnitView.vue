@@ -175,10 +175,10 @@ const restart = async () => {
     <p v-if="summary.words" class="mt-2 rounded-2xl bg-brand-bg px-4 py-2 font-semibold">📕 {{ lang.t("unit.newCards", { n: summary.words }, summary.words) }}</p>
     <div class="mt-6 grid gap-3">
       <RouterLink v-if="nextUnit" :to="`/unit/${nextUnit.id}`"><AppButton size="lg" class="w-full">
-        <!-- Label above the title, so a long title wraps on its own line instead of squeezing into a column -->
-        <span class="flex min-w-0 flex-1 flex-col text-left">
-          <span class="text-sm font-semibold opacity-75"><UiLabel k="unit.nextLesson" /><span class="sr-only">:</span></span>
-          <span lang="nl" translate="no">{{ nextUnit.title }}</span>
+        <!-- On a phone the title goes under the label, so a long title wraps on its own line instead of squeezing into a column -->
+        <span class="flex min-w-0 flex-1 flex-col text-left sm:flex-none sm:flex-row sm:items-baseline sm:gap-1.5">
+          <span><UiLabel k="unit.nextLesson" /><span class="sr-only sm:not-sr-only">:</span></span>
+          <span class="text-sm font-semibold opacity-75 sm:text-lg" lang="nl" translate="no">{{ nextUnit.title }}</span>
         </span>
         <span aria-hidden="true">→</span>
       </AppButton></RouterLink>

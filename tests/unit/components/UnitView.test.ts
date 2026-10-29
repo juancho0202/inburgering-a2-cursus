@@ -152,7 +152,7 @@ describe("finishing a lesson", () => {
     const mid = await open("a");
     await clickButton(mid.wrapper, "Afronden");
     const link = mid.wrapper.find("a[href='/unit/b']");
-    // Label and title stack in one column beside the arrow, so a long title does not squeeze into a narrow column
+    // Label and title are grouped beside the arrow; on a phone they stack, so a long title does not squeeze into a column
     const title = link.findAll("span").find((s) => s.text() === "Les B")!;
     const column = title.element.parentElement!;
     expect(column.tagName).toBe("SPAN");
