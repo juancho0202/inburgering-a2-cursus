@@ -31,7 +31,8 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
     <RouterLink to="/" class="text-muted hover:text-ink">← <UiLabel k="common.back" /></RouterLink>
     <header class="mb-8 mt-3 flex items-center gap-4">
       <span class="grid h-16 w-16 place-items-center rounded-2xl text-4xl" :class="style.tile" aria-hidden="true">{{ style.emoji }}</span>
-      <div lang="nl" translate="no">
+      <!-- min-w-0 and break-words: a long word ("Maatschappij") breaks instead of pushing the page past the screen -->
+      <div class="min-w-0 break-words" lang="nl" translate="no">
         <h1 class="text-3xl font-extrabold tracking-tight">{{ mod.title }}</h1>
         <p class="text-muted">{{ mod.description }}</p>
       </div>

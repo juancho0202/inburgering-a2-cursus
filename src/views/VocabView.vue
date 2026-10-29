@@ -71,7 +71,7 @@ const stateLabel = { new: "vocab.new", learning: "vocab.learning", learned: "voc
     <p v-if="vocab.loaded && !themes.length" class="text-muted">{{ lang.t("vocab.none") }}</p>
 
     <section v-for="t in themes" :key="t.theme" class="mb-8">
-      <div class="mb-3 flex items-center justify-between gap-3">
+      <div class="mb-3 flex flex-wrap items-center justify-between gap-3">
         <h2 class="text-2xl font-bold"><span lang="nl" translate="no">{{ t.title }}</span> <span class="text-base font-semibold text-muted">({{ t.entries.length }})</span></h2>
         <AppButton variant="secondary" @click="learnTheme(t.theme)"><UiLabel k="vocab.learnTheme" /></AppButton>
       </div>

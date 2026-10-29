@@ -428,9 +428,10 @@ body:has(> .site) {
   .site-lang-code {
     display: inline;
   }
+  /* The name wraps rather than push the menu off the screen when the phone's font is wider */
   .site .site-brand {
+    min-width: 0;
     font-size: 1.05rem;
-    white-space: nowrap;
   }
   .site-lang summary {
     padding: 0.4rem 0.6rem;
