@@ -85,7 +85,23 @@ body:has(> .site) {
   padding: 1rem 1rem 3rem;
 }
 .site-hero {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
   padding: 2rem 0 1rem;
+}
+/* The drawing has its own warm background, so it reads the same on a dark page */
+.site-hero-art {
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+}
+/* Side by side when there is room: the text first, the picture next to it */
+@media (min-width: 48rem) {
+  .site-hero {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
 }
 .site h1,
 .site h2 {

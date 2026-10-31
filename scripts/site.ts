@@ -260,9 +260,12 @@ export function renderLanding(lang: SiteLanguage = ENGLISH, guides: Guide[] = lo
       ${brandBar(lang.strings, lang.path, menu)}
       <main class="site-main">
         <section class="site-hero">
-          <h1>${esc(l.heading)}</h1>
-          <p class="site-tagline">${esc(l.tagline)}</p>
-          ${start}
+          <div>
+            <h1>${esc(l.heading)}</h1>
+            <p class="site-tagline">${esc(l.tagline)}</p>
+            ${start}
+          </div>
+          <img class="site-hero-art" src="/hero.svg" alt="${esc(l.heroAlt)}" width="480" height="360" fetchpriority="high" />
         </section>
         <section>
           <h2>${esc(l.partsHeading)}</h2>

@@ -1,12 +1,14 @@
 /**
  * Draws the illustrations: the scenes (src/assets/scenes/) and the spot illustrations next to exercises
- * (src/assets/spots/), one SVG each, plus an index.json per folder with the alt text of each picture.
+ * (src/assets/spots/), one SVG each, plus an index.json per folder with the alt text of each picture; and the landing
+ * page's picture (public/hero.svg) and the maker's portrait on the About page (src/assets/maker.svg).
  * Run: npm run illustrations (add --preview to also write a contact sheet).
  */
 import { mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { svg } from "./kit.js";
 import { scenes } from "./scenes.js";
+import { hero, maker } from "./site-art.js";
 import { SH, SW, spots } from "./spots.js";
 
 const ASSETS = path.resolve(import.meta.dirname, "../../src/assets");
@@ -35,6 +37,9 @@ async function writeSet(folder: string, items: Record<string, { alt: string; dra
 async function main() {
   const scenesDir = await writeSet("scenes", scenes, svg);
   const spotsDir = await writeSet("spots", spots, spotSvg);
+  // Decorative here: the page or the app gives the alt text.
+  await writeFile(path.resolve(ASSETS, "../../public/hero.svg"), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360">${hero()}</svg>\n`);
+  await writeFile(path.join(ASSETS, "maker.svg"), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">${maker()}</svg>\n`);
 
   if (process.argv.includes("--preview")) {
     const cells = (dir: string, ids: string[], w: number) => ids.map((id) => `<figure><img src="file://${dir}/${id}.svg" width="${w}"><figcaption>${id}</figcaption></figure>`).join("");
