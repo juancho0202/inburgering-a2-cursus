@@ -29,6 +29,7 @@ export function hero(): string {
     plant(54, H - 8, 1.25) +
     // what the lessons give back
     chip(108, 110, "de / het", C.white, INK, -8) +
+    chip(200, 40, "hebben / zijn", C.white, INK, 4) +
     chip(380, 84, "✓ Goed zo!", "#e3f4e8", "#1f7a3d", 6) +
     chip(410, 236, "A2", C.orange, C.white, -6) +
     g(circle(0, 0, 18, C.white, true) + stroke("M-6 -4V4M0 -8V8M6 -4V4", C.orange, 3), "translate(70 196)")
