@@ -254,6 +254,8 @@ const es: Messages = {
     voices2: "(código abierto). Las voces ronnie, alex y nathalie se hicieron con grabaciones de dominio público (CC0). La música y los efectos de sonido se generan en la propia app.",
     creditTitle: "¿Quién hizo esto?",
     credit: "Hecho por",
+    makerAlt: "Un dibujo de Juan David con una taza de café",
+    builtWith: "Hecha con mucha ayuda de Claude Opus 5.5, una IA de Anthropic. También se ve en el historial del código en GitHub.",
   },
   feedback: {
     inMyLanguage: "En mi idioma",

@@ -253,6 +253,8 @@ const nl = {
     voices2: "(open source). De stemmen ronnie, alex en nathalie zijn gemaakt met opnames uit het publieke domein (CC0). De muziek en de geluidjes worden in de app zelf gemaakt.",
     creditTitle: "Wie heeft dit gemaakt?",
     credit: "Gemaakt door",
+    makerAlt: "Een tekening van Juan David met een kop koffie",
+    builtWith: "Gebouwd met veel hulp van Claude Opus 5.5, een AI van Anthropic. Dat zie je ook in de geschiedenis van de code op GitHub.",
   },
   feedback: {
     inMyLanguage: "In mijn taal",

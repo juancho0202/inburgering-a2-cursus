@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
+import makerUrl from "../assets/maker.svg?url";
+import { useLanguageStore } from "../stores/language";
 import KeyGuide from "./KeyGuide.vue";
 import UiLabel from "./ui/UiLabel.vue";
 import UiText from "./ui/UiText.vue";
+
+const lang = useLanguageStore();
 </script>
 
 <template>
@@ -44,11 +48,15 @@ import UiText from "./ui/UiText.vue";
 
     <section class="card p-6">
       <h2 class="text-xl font-bold"><UiLabel variant="heading" k="about.creditTitle" /></h2>
-      <!-- A name and a username: browser translators must leave them alone -->
-      <p class="mt-2">
-        <UiText k="about.credit" /> <strong translate="no">Juan David Muñoz</strong> ·
-        <a href="https://github.com/juancho0202" target="_blank" rel="noopener noreferrer" class="font-semibold underline" translate="no">github.com/juancho0202</a>
-      </p>
+      <div class="mt-3 flex items-center gap-4">
+        <img :src="makerUrl" :alt="lang.t('about.makerAlt')" width="72" height="72" class="h-18 w-18 shrink-0 rounded-full" />
+        <!-- A name and a username: browser translators must leave them alone -->
+        <p>
+          <UiText k="about.credit" /> <strong translate="no">Juan David Muñoz</strong> ·
+          <a href="https://github.com/juancho0202" target="_blank" rel="noopener noreferrer" class="font-semibold underline" translate="no">github.com/juancho0202</a>
+        </p>
+      </div>
+      <p class="mt-3"><UiText k="about.builtWith" /></p>
     </section>
   </div>
 </template>

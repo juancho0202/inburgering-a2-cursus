@@ -2,7 +2,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { fillIndexHtml, loadGuides, SITE_LANGUAGES, SITE_URL, type SiteStrings } from "../../scripts/site";
+import { fillIndexHtml, loadGuides, renderLanding, SITE_LANGUAGES, SITE_URL, type SiteStrings } from "../../scripts/site";
 import en from "../../site/strings/en.json";
 
 const indexHtml = readFileSync(path.resolve(__dirname, "../../index.html"), "utf8");
@@ -47,6 +47,17 @@ describe("landing page in index.html", () => {
     }
     // the landing page comes before the app's mount point, and the app is still there
     expect(body.indexOf('id="landing"')).toBeLessThan(body.indexOf('<div id="app">'));
+  });
+
+  it("shows the drawing next to the heading, described in every language", () => {
+    // the text and the start link first, then the picture: on a phone the heading stays at the top
+    expect(body).toMatch(/<section class="site-hero">\s*<div>\s*<h1>Free inburgering practice exam \(A2\)<\/h1>[^]*?<\/div>\s*<img class="site-hero-art" src="\/hero\.svg" alt="([^"]+)" width="480" height="360"/);
+    for (const lang of SITE_LANGUAGES) {
+      expect(lang.strings.landing.heroAlt, lang.code).not.toBe("");
+      expect(renderLanding(lang), lang.code).toContain(`alt="${lang.strings.landing.heroAlt.replace(/"/g, "&quot;")}"`);
+    }
+    const svg = readFileSync(path.resolve(__dirname, "../../public/hero.svg"), "utf8");
+    expect(svg).toContain('viewBox="0 0 480 360"');
   });
 
   it("shows the FAQ as accordions: every answer in the HTML, only the first one open", () => {

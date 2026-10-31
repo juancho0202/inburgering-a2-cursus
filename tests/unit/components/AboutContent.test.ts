@@ -37,6 +37,27 @@ describe("AboutContent credit", () => {
   });
 });
 
+describe("AboutContent maker", () => {
+  for (const [language, heading, alt, claude] of [
+    ["en", "Who made this?", "A drawing of Juan David with a cup of coffee", "Built with a lot of help from Claude Opus 5.5"],
+    ["nl", "Wie heeft dit gemaakt?", "Een tekening van Juan David met een kop koffie", "Gebouwd met veel hulp van Claude Opus 5.5"],
+    ["es", "¿Quién hizo esto?", "Un dibujo de Juan David con una taza de café", "Hecha con mucha ayuda de Claude Opus 5.5"],
+  ] as const) {
+    it(`shows the maker's portrait next to the GitHub link and says Claude helped build it (${language})`, async () => {
+      const { wrapper } = await mountApp(AboutContent, { language, stubs: { KeyGuide: true } });
+      const section = wrapper.findAll("section").find((s) => s.find("h2").text().includes(heading))!;
+      const img = section.find("img");
+      expect(img.attributes("alt")).toBe(alt);
+      expect(img.attributes("src")).toMatch(/maker\.svg/);
+      // right before the name and the link, not somewhere else on the page
+      const next = img.element.nextElementSibling;
+      expect(next?.textContent).toContain("Juan David Muñoz");
+      expect(next?.querySelector('a[href="https://github.com/juancho0202"]')).not.toBeNull();
+      expect(section.text()).toContain(claude);
+    });
+  }
+});
+
 describe("AboutContent links", () => {
   it("links to other sites (GitHub, Piper) open in a new tab, so the app stays open", async () => {
     const { wrapper } = await mountApp(AboutContent, { language: "en", stubs: { KeyGuide: true } });
