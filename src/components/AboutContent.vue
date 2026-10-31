@@ -48,14 +48,14 @@ const lang = useLanguageStore();
 
     <section class="card p-6">
       <h2 class="text-xl font-bold"><UiLabel variant="heading" k="about.creditTitle" /></h2>
-      <div class="mt-3 flex items-center gap-4">
+      <!-- On the smallest screens the link gets a line of its own under the portrait and the name; from sm it follows the name -->
+      <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-3">
         <img :src="makerUrl" :alt="lang.t('about.makerAlt')" width="72" height="72" class="h-18 w-18 shrink-0 rounded-full" />
-        <!-- A name and a username: browser translators must leave them alone. Next to the portrait on a small phone,
-             the link may break: one long word would otherwise push the page sideways. -->
-        <p class="min-w-0">
-          <UiText k="about.credit" /> <strong translate="no">Juan David Muñoz</strong> ·
-          <a href="https://github.com/juancho0202" target="_blank" rel="noopener noreferrer" class="font-semibold underline wrap-anywhere" translate="no">github.com/<wbr />juancho0202</a>
+        <!-- A name and a username: browser translators must leave them alone -->
+        <p class="min-w-0 flex-1 sm:flex-none">
+          <UiText k="about.credit" /> <strong translate="no">Juan David Muñoz</strong><span class="hidden sm:inline"> ·</span>
         </p>
+        <a href="https://github.com/juancho0202" target="_blank" rel="noopener noreferrer" class="basis-full font-semibold underline wrap-anywhere sm:-ml-2.5 sm:basis-auto" translate="no">github.com/juancho0202</a>
       </div>
       <p class="mt-3"><UiText k="about.builtWith" /></p>
     </section>

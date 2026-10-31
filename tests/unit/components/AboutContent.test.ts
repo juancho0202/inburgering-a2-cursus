@@ -49,10 +49,10 @@ describe("AboutContent maker", () => {
       const img = section.find("img");
       expect(img.attributes("alt")).toBe(alt);
       expect(img.attributes("src")).toMatch(/maker\.svg/);
-      // right before the name and the link, not somewhere else on the page
-      const next = img.element.nextElementSibling;
-      expect(next?.textContent).toContain("Juan David Muñoz");
-      expect(next?.querySelector('a[href="https://github.com/juancho0202"]')).not.toBeNull();
+      // right before the name, and in one block with the link (which wraps under them on the smallest screens)
+      expect(img.element.nextElementSibling?.textContent).toContain("Juan David Muñoz");
+      const link = section.find('a[href="https://github.com/juancho0202"]');
+      expect(link.element.parentElement).toBe(img.element.parentElement);
       expect(section.text()).toContain(claude);
     });
   }
