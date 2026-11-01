@@ -192,11 +192,12 @@ const restart = async () => {
 
   <div v-else-if="unit && step">
     <div class="mb-6">
-      <div class="mb-2 flex items-center justify-between gap-3">
-        <h1 class="truncate text-lg font-bold text-muted"><template v-if="lessonNumber"><UiLabel variant="inline" k="settings.lessonN" :params="{ n: lessonNumber }" /> · </template><span lang="nl" translate="no">{{ unit.title }}</span></h1>
-        <span class="text-sm font-semibold text-muted">{{ stepIndex + 1 }} / {{ total }}</span>
+      <!-- The title gets the full width (two lines at most); the counter sits beside the bar so long titles cost one extra line, not a column -->
+      <h1 class="mb-2 line-clamp-2 text-base font-bold leading-snug text-muted sm:text-lg"><template v-if="lessonNumber"><UiLabel variant="inline" k="settings.lessonN" :params="{ n: lessonNumber }" /> · </template><span lang="nl" translate="no">{{ unit.title }}</span></h1>
+      <div class="flex items-center gap-3">
+        <ProgressBar class="flex-1" :value="stepIndex / total" :label="lang.t('unit.stepOf', { n: stepIndex + 1, total })" />
+        <span class="whitespace-nowrap text-sm font-semibold leading-none tabular-nums text-muted">{{ stepIndex + 1 }} / {{ total }}</span>
       </div>
-      <ProgressBar :value="stepIndex / total" :label="lang.t('unit.stepOf', { n: stepIndex + 1, total })" />
       <p v-if="resumed" class="mt-2 text-sm text-brand-strong">{{ lang.t("unit.resumed", { n: stepIndex + 1 }) }}</p>
     </div>
 

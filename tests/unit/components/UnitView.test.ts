@@ -76,6 +76,18 @@ describe("starting and resuming", () => {
     expect(stepCounter(wrapper)).toEqual([3, 3]);
   });
 
+  it("keeps the step counter beside the progress bar, so a long title gets the whole header width", async () => {
+    units.b = { ...units.b, title: "Geschiedenis en geografie van Nederland en het water" };
+    const { wrapper } = await open("b");
+    const title = wrapper.get("h1");
+    const barRow = wrapper.get('[role="progressbar"]').element.parentElement!;
+    expect(title.text()).toContain("Geschiedenis en geografie van Nederland en het water");
+    expect(barRow.textContent).toContain("1 / 3");
+    expect(barRow.contains(title.element)).toBe(false);
+    expect(title.text()).not.toContain("1 / 3");
+    units.b = unit("b", [lesson("b1"), lesson("b2"), lesson("b3")]);
+  });
+
   it("shows the error when the lesson cannot be loaded", async () => {
     fakeApi.fail("GET", "/units/zzz", "Les niet gevonden.");
     const { wrapper } = await open("zzz");
