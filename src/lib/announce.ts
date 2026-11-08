@@ -3,9 +3,30 @@ import { VOICES } from "@shared/content/voices";
 
 type Step = Unit["steps"][number];
 
+/** How Dutch says the letters, written the way a Dutch voice reads them. */
+const LETTER_NAMES: Record<string, string> = {
+  a: "aa", b: "bee", c: "see", d: "dee", e: "ee", f: "ef", g: "gee", h: "haa", i: "ie", j: "jee", k: "kaa", l: "el", m: "em",
+  n: "en", o: "oo", p: "pee", q: "kuu", r: "er", s: "es", t: "tee", u: "uu", v: "vee", w: "wee", x: "iks", y: "ei", z: "zet",
+};
+
+/**
+ * Abbreviations that are said letter by letter (vmbo = "vee em bee oo"); a voice would read them as a word.
+ * Ones said as a word (havo, DUO, NAVO, DigiD) are not here. The lower case ones match in any case; the others
+ * only as written, because "OR" (ondernemingsraad) is not "or".
+ */
+const SPELLED_ANY_CASE = /(?<![\p{L}])(?:vmbo|mbo|hbo|vwo|wo|cv|tv|ov|bso|gft|pmd)(?![\p{L}])-?/giu;
+const SPELLED_AS_WRITTEN = /(?<![\p{L}])(?:ID|OR|MR|AOW|BRP|GGD|VOC|BSN|WW|EU|EEG|IND|UWV|SVB|Wmo)(?![\p{L}])-?/gu;
+
+/** Spell out the abbreviations that are said letter by letter ("mbo-opleiding" becomes "em bee oo opleiding"). */
+export function spellAbbreviations(text: string): string {
+  const spell = (m: string) =>
+    [...m.replace(/-$/, "").toLowerCase()].map((c) => LETTER_NAMES[c]).join(" ") + (m.endsWith("-") ? " " : "");
+  return text.replace(SPELLED_ANY_CASE, spell).replace(SPELLED_AS_WRITTEN, spell);
+}
+
 /** Turn course text (markdown, gaps, lists) into something that reads well aloud. */
 export function speakable(text: string): string {
-  return text
+  return spellAbbreviations(text)
     .split(/\n+/)
     // A list item or line without its own full stop still needs a pause.
     .map((line) => line.replace(/^\s*(?:[-•]|\d+\.)\s+/, "").trim())
