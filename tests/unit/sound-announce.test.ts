@@ -86,4 +86,15 @@ describe("lesson tunes", () => {
     expect(() => playCorrect()).not.toThrow();
     expect(playLessonMelody(1, 0)).toBe(0);
   });
+
+  it("spells abbreviations letter by letter, but leaves words that are said as a word", () => {
+    expect(speakable("**vmbo** (4 jaar), havo (5 jaar), vwo (6 jaar)")).toBe("vee em bee oo (4 jaar), havo (5 jaar), vee wee oo (6 jaar)");
+    expect(speakable("Hij doet een mbo-opleiding. Na de HBO: wo.")).toBe("Hij doet een em bee oo opleiding. Na de haa bee oo: wee oo.");
+    expect(speakable("Het UWV, de GGD en je BSN. Bel DUO via DigiD.")).toBe("Het uu wee vee, de gee gee dee en je bee es en. Bel DUO via DigiD.");
+  });
+
+  it("does not spell ordinary words that look like an abbreviation", () => {
+    expect(speakable("Of or woord wolk ovaal tvx")).toBe("Of or woord wolk ovaal tvx");
+    expect(speakable("De OR praat namens de werknemers.")).toBe("De oo er praat namens de werknemers.");
+  });
 });
