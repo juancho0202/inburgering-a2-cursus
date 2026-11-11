@@ -126,6 +126,70 @@ describe("moving through the steps", () => {
   });
 });
 
+describe("restarting halfway", () => {
+  it("is not offered on the first step", async () => {
+    const { wrapper } = await open("b");
+    expect(buttonWith(wrapper, "Les opnieuw beginnen")).toBeUndefined();
+  });
+
+  it("asks first, then goes back to step 1 and saves that position", async () => {
+    progress.units.c = { status: "in_progress", stepIndex: 2 };
+    const { wrapper } = await open("c");
+    await clickButton(wrapper, "Les opnieuw beginnen");
+    expect(stepCounter(wrapper)).toEqual([3, 3]);
+    expect(stepPosts()).toEqual([]);
+    progress.units.c = { status: "in_progress", stepIndex: 0 };
+    await clickButton(wrapper, "Ja, opnieuw");
+    expect(stepCounter(wrapper)).toEqual([1, 3]);
+    expect(stepPosts()).toEqual([{ stepIndex: 0 }]);
+    expect(wrapper.text()).not.toContain("Je gaat verder");
+    expect(buttonWith(wrapper, "Les opnieuw beginnen")).toBeUndefined();
+  });
+
+  it("'Annuleren' keeps the learner where they are", async () => {
+    progress.units.b = { status: "in_progress", stepIndex: 1 };
+    const { wrapper } = await open("b");
+    await clickButton(wrapper, "Les opnieuw beginnen");
+    await clickButton(wrapper, "Annuleren");
+    expect(stepCounter(wrapper)).toEqual([2, 3]);
+    expect(stepPosts()).toEqual([]);
+    expect(buttonWith(wrapper, "Les opnieuw beginnen")).toBeDefined();
+  });
+
+  it("the question goes away when the learner moves on to another step", async () => {
+    progress.units.b = { status: "in_progress", stepIndex: 1 };
+    const { wrapper } = await open("b");
+    await clickButton(wrapper, "Les opnieuw beginnen");
+    await clickButton(wrapper, "Volgende");
+    expect(buttonWith(wrapper, "Ja, opnieuw")).toBeUndefined();
+  });
+
+  it("a double tap on 'Ja, opnieuw' restarts once", async () => {
+    progress.units.b = { status: "in_progress", stepIndex: 2 };
+    const { wrapper } = await open("b");
+    await clickButton(wrapper, "Les opnieuw beginnen");
+    const pending = deferred<unknown>();
+    fakeApi.on("POST", /^\/units\/b\/step$/, () => pending.promise);
+    const yes = buttonWith(wrapper, "Ja, opnieuw")!;
+    await yes.trigger("click");
+    await yes.trigger("click");
+    pending.resolve({});
+    await flushPromises();
+    expect(stepPosts()).toEqual([{ stepIndex: 0 }]);
+  });
+
+  it("also works on an exercise step", async () => {
+    progress.units.c = { status: "in_progress", stepIndex: 1 };
+    const { wrapper } = await open("c");
+    expect(wrapper.text()).toContain("stub-c-q1");
+    await clickButton(wrapper, "Les opnieuw beginnen");
+    progress.units.c = { status: "in_progress", stepIndex: 0 };
+    await clickButton(wrapper, "Ja, opnieuw");
+    expect(stepCounter(wrapper)).toEqual([1, 3]);
+    expect(wrapper.text()).not.toContain("stub-c-q1");
+  });
+});
+
 describe("finishing a lesson", () => {
   async function finish(id: string, scored: Record<string, boolean>) {
     for (const [k, v] of Object.entries(scored)) progress.items[k] = { lastCorrect: v };
