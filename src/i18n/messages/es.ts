@@ -286,6 +286,9 @@ const es: Messages = {
     backToModule: "Volver al módulo",
     stepOf: "Paso {n} de {total}",
     resumed: "Sigues en el paso {n}.",
+    restart: "Reiniciar la lección",
+    restartAsk: "¿Empezar de nuevo desde el paso 1?",
+    restartYes: "Sí, empezar de nuevo",
     readQuestion: "Leer la pregunta en voz alta",
   },
   practice: {

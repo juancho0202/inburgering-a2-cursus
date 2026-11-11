@@ -286,6 +286,9 @@ const nl = {
     stepOf: "Stap {n} van {total}",
     resumed: "Je gaat verder bij stap {n}.",
     readQuestion: "Lees de vraag voor",
+    restart: "Les opnieuw beginnen",
+    restartAsk: "Opnieuw beginnen bij stap 1?",
+    restartYes: "Ja, opnieuw",
   },
   practice: {
     typeMc: "Meerkeuze",

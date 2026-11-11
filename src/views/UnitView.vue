@@ -36,10 +36,14 @@ const resumed = ref(false);
 const finished = ref(false);
 const summary = ref<{ good: number; total: number; score: number; words: number; hard: number } | null>(null);
 
+// Restarting throws away the saved position, so mid-lesson it asks first (one tap more, no dialog).
+const confirmingRestart = ref(false);
+
 const unitId = computed(() => String(route.params.id));
 
 async function start(fromStart = false) {
   error.value = null;
+  confirmingRestart.value = false;
   finished.value = false;
   summary.value = null;
   try {
@@ -121,6 +125,7 @@ const nextUnit = computed(() => {
 
 async function goTo(index: number) {
   resumed.value = false;
+  confirmingRestart.value = false;
   stepIndex.value = index;
   sounds.stopMusic();
   announceStep();
@@ -157,10 +162,19 @@ async function advance() {
 }
 
 const exit = () => router.push(unit.value ? `/module/${unit.value.moduleId}` : "/");
+// Also used mid-lesson ("Les opnieuw beginnen"), where a double tap must not restart twice.
+let restarting = false;
 const restart = async () => {
-  await api.post(`/units/${unitId.value}/step`, { stepIndex: 0 }).catch(() => {});
-  summary.value = null;
-  await start(true);
+  if (restarting) return;
+  restarting = true;
+  confirmingRestart.value = false;
+  try {
+    await api.post(`/units/${unitId.value}/step`, { stepIndex: 0 }).catch(() => {});
+    summary.value = null;
+    await start(true);
+  } finally {
+    restarting = false;
+  }
 };
 </script>
 
@@ -199,6 +213,15 @@ const restart = async () => {
         <span class="whitespace-nowrap text-sm font-semibold leading-none tabular-nums text-muted">{{ stepIndex + 1 }} / {{ total }}</span>
       </div>
       <p v-if="resumed" class="mt-2 text-sm text-brand-strong">{{ lang.t("unit.resumed", { n: stepIndex + 1 }) }}</p>
+      <!-- Only after step 1: at the start there is nothing to start over -->
+      <div v-if="stepIndex > 0" class="mt-2 flex flex-wrap items-center gap-2">
+        <AppButton v-if="!confirmingRestart" variant="ghost" @click="confirmingRestart = true">↺ <UiLabel k="unit.restart" /></AppButton>
+        <template v-else>
+          <span class="text-sm font-semibold" role="status">{{ lang.t("unit.restartAsk") }}</span>
+          <AppButton variant="secondary" @click="restart"><UiLabel k="unit.restartYes" /></AppButton>
+          <AppButton variant="ghost" @click="confirmingRestart = false"><UiLabel k="common.cancel" /></AppButton>
+        </template>
+      </div>
     </div>
 
     <template v-if="step.type === 'lesson'">
