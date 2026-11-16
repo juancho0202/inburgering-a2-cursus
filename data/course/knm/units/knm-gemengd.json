@@ -3,7 +3,7 @@
   "moduleId": "knm",
   "title": "Gemengd",
   "goal": "Je oefent KNM-vragen van alle thema's door elkaar, zonder te weten welk thema het is.",
-  "scene": "verjaardag",
+  "scene": "themas",
   "estimatedMinutes": 30,
   "tags": [
     "knm:gemengd"
@@ -11,6 +11,62 @@
   "vocabRefs": [],
   "passScore": 0.7,
   "steps": [
+    {
+      "type": "lesson",
+      "id": "knm-gemengd-l-01",
+      "title": "Alle thema's door elkaar",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In deze les leer je niets nieuws. Je **oefent** met vragen over alle thema's van KNM. Je hebt ze in de lessen hiervoor geleerd.\n\nDe vragen staan **door elkaar**. Je weet niet van tevoren over welk thema een vraag gaat. Zo gaat het ook op het KNM-examen."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Thema",
+            "Een vraag kan gaan over …"
+          ],
+          "rows": [
+            [
+              "Werk",
+              "ziek zijn, een contract, solliciteren"
+            ],
+            [
+              "Omgang",
+              "feestdagen, 4 mei, op tijd komen"
+            ],
+            [
+              "Wonen",
+              "verhuizen, afval, de huisbaas"
+            ],
+            [
+              "Gezondheid",
+              "112, de huisarts, de zorgtoeslag"
+            ],
+            [
+              "Geschiedenis",
+              "water en land, de oorlog"
+            ],
+            [
+              "Instanties",
+              "de gemeente, het UWV, de SVB"
+            ],
+            [
+              "De staat",
+              "de regering, de koning, de Grondwet"
+            ],
+            [
+              "Onderwijs",
+              "de basisschool, de leerplicht"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Zo doe je het:** lees de vraag goed. Wie is de persoon? Wat is het probleem? Lees dan **alle** antwoorden en kies het beste antwoord.\n\nNa elke vraag zie je uitleg. Vind je een vraag moeilijk? Lees dan de les over dat thema nog een keer."
+        }
+      ]
+    },
     {
       "type": "exercise",
       "exercise": {
