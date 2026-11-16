@@ -312,7 +312,8 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
 
     <!-- bottom bar -->
     <div class="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface/95 backdrop-blur">
-      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
+      <!-- One line on every phone: never wrap, and keep the buttons compact on small screens -->
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-2 sm:gap-3 sm:py-3 [&_button]:whitespace-nowrap [&_button]:max-sm:px-3">
         <div class="flex gap-2">
           <AppButton variant="secondary" :disabled="position === 0" @click="go(position - 1)">← Vorige</AppButton>
           <AppButton variant="secondary" :disabled="position >= items.length - 1" @click="go(position + 1)">Volgende →</AppButton>
