@@ -126,6 +126,94 @@ describe("moving through the steps", () => {
   });
 });
 
+describe("restarting halfway", () => {
+  it("is not offered on the first step", async () => {
+    const { wrapper } = await open("b");
+    expect(buttonWith(wrapper, "Les opnieuw beginnen")).toBeUndefined();
+  });
+
+  it("sits in the same row as the read-aloud button, after it, on a question and on a lesson step", async () => {
+    progress.units.c = { status: "in_progress", stepIndex: 1 };
+    const question = await open("c");
+    const read = buttonWith(question.wrapper, "Lees de vraag voor")!.element;
+    const restartButton = buttonWith(question.wrapper, "Les opnieuw beginnen")!.element;
+    expect(read.parentElement!.contains(restartButton)).toBe(true);
+    expect(read.compareDocumentPosition(restartButton) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+
+    progress.units.b = { status: "in_progress", stepIndex: 1 };
+    const lessonStep = await open("b");
+    const readLesson = buttonWith(lessonStep.wrapper, "Lees voor")!.element;
+    expect(readLesson.parentElement!.contains(buttonWith(lessonStep.wrapper, "Les opnieuw beginnen")!.element)).toBe(true);
+  });
+
+  // jsdom has no CSS, so only the text can be checked: the phone texts are in the buttons next to the full ones.
+  it("has short texts for a phone: 'Lees voor' and 'Opnieuw beginnen'", async () => {
+    progress.units.c = { status: "in_progress", stepIndex: 1 };
+    const { wrapper } = await open("c");
+    const read = buttonWith(wrapper, "Lees de vraag voor")!;
+    expect(read.findAll("span").map((s) => s.text())).toContain("Lees voor");
+    const restartButton = buttonWith(wrapper, "Les opnieuw beginnen")!;
+    expect(restartButton.findAll("span").map((s) => s.text())).toContain("Opnieuw beginnen");
+  });
+
+  it("asks first, then goes back to step 1 and saves that position", async () => {
+    progress.units.c = { status: "in_progress", stepIndex: 2 };
+    const { wrapper } = await open("c");
+    await clickButton(wrapper, "Les opnieuw beginnen");
+    expect(stepCounter(wrapper)).toEqual([3, 3]);
+    expect(stepPosts()).toEqual([]);
+    progress.units.c = { status: "in_progress", stepIndex: 0 };
+    await clickButton(wrapper, "Ja, opnieuw");
+    expect(stepCounter(wrapper)).toEqual([1, 3]);
+    expect(stepPosts()).toEqual([{ stepIndex: 0 }]);
+    expect(wrapper.text()).not.toContain("Je gaat verder");
+    expect(buttonWith(wrapper, "Les opnieuw beginnen")).toBeUndefined();
+  });
+
+  it("'Annuleren' keeps the learner where they are", async () => {
+    progress.units.b = { status: "in_progress", stepIndex: 1 };
+    const { wrapper } = await open("b");
+    await clickButton(wrapper, "Les opnieuw beginnen");
+    await clickButton(wrapper, "Annuleren");
+    expect(stepCounter(wrapper)).toEqual([2, 3]);
+    expect(stepPosts()).toEqual([]);
+    expect(buttonWith(wrapper, "Les opnieuw beginnen")).toBeDefined();
+  });
+
+  it("the question goes away when the learner moves on to another step", async () => {
+    progress.units.b = { status: "in_progress", stepIndex: 1 };
+    const { wrapper } = await open("b");
+    await clickButton(wrapper, "Les opnieuw beginnen");
+    await clickButton(wrapper, "Volgende");
+    expect(buttonWith(wrapper, "Ja, opnieuw")).toBeUndefined();
+  });
+
+  it("a double tap on 'Ja, opnieuw' restarts once", async () => {
+    progress.units.b = { status: "in_progress", stepIndex: 2 };
+    const { wrapper } = await open("b");
+    await clickButton(wrapper, "Les opnieuw beginnen");
+    const pending = deferred<unknown>();
+    fakeApi.on("POST", /^\/units\/b\/step$/, () => pending.promise);
+    const yes = buttonWith(wrapper, "Ja, opnieuw")!;
+    await yes.trigger("click");
+    await yes.trigger("click");
+    pending.resolve({});
+    await flushPromises();
+    expect(stepPosts()).toEqual([{ stepIndex: 0 }]);
+  });
+
+  it("also works on an exercise step", async () => {
+    progress.units.c = { status: "in_progress", stepIndex: 1 };
+    const { wrapper } = await open("c");
+    expect(wrapper.text()).toContain("stub-c-q1");
+    await clickButton(wrapper, "Les opnieuw beginnen");
+    progress.units.c = { status: "in_progress", stepIndex: 0 };
+    await clickButton(wrapper, "Ja, opnieuw");
+    expect(stepCounter(wrapper)).toEqual([1, 3]);
+    expect(wrapper.text()).not.toContain("stub-c-q1");
+  });
+});
+
 describe("finishing a lesson", () => {
   async function finish(id: string, scored: Record<string, boolean>) {
     for (const [k, v] of Object.entries(scored)) progress.items[k] = { lastCorrect: v };
