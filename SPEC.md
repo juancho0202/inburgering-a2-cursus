@@ -1273,14 +1273,15 @@ common, verifiable knowledge; prefer leaving it out over guessing.
 - Naturalisatie: Nederlander worden — inburgering, aanvraag via gemeente (IND beslist).
 
 ### C.8 Onderwijs en opvoeding
-- Leerplicht: kinderen moeten naar school van 5 tot 16 jaar (vanaf de eerste schooldag van de maand na hun 5e verjaardag); daarna kwalificatieplicht tot 18 jaar (of tot een startkwalificatie: havo-, vwo- of mbo-2-diploma). Leerplichtambtenaar van de gemeente controleert; ouders kunnen een boete krijgen bij spijbelen.
-- Kinderen mogen vanaf 4 jaar naar de basisschool. Basisschool: groep 1–8 (4–12 jaar). Openbaar of bijzonder (bijv. religieus) onderwijs — beide gratis (vrijwillige ouderbijdrage).
+- Leerplicht: kinderen moeten naar school van 5 tot 16 jaar (vanaf de eerste schooldag van de maand na hun 5e verjaardag); daarna kwalificatieplicht tot 18 jaar (of tot een startkwalificatie: havo-, vwo- of mbo-2-diploma). De school meldt spijbelen bij de leerplichtambtenaar van de gemeente; die controleert, en ouders kunnen een boete krijgen bij spijbelen. Een vmbo-diploma is geen startkwalificatie.
+- Kinderen mogen vanaf 4 jaar naar de basisschool. Basisschool: groep 1–8 (4–12 jaar). Openbaar of bijzonder (bijv. religieus) onderwijs — beide gratis (vrijwillige ouderbijdrage; een kind dat niet betaalt mag toch meedoen, bijv. met het schoolreisje). Ouders kiezen zelf een school.
 - Eind groep 8: schooladvies + doorstroomtoets → voortgezet onderwijs: vmbo (4 jaar), havo (5 jaar), vwo (6 jaar).
 - Daarna: mbo (na vmbo), hbo (na havo/mbo-4), universiteit/wo (na vwo).
-- Vrij voor school: vakanties (o.a. zomervakantie ~6 weken); vrij nemen buiten de vakanties mag alleen met toestemming van de school.
-- Ouders: ouderavond, 10-minutengesprek met de leraar, rapport, medezeggenschapsraad, ouderraad.
-- Kinderopvang: kinderdagverblijf (0–4), buitenschoolse opvang (bso); kinderopvangtoeslag.
-- Peuterspeelzaal / voorschool: voorbereiding op school, taalontwikkeling.
+- Vrij voor school: vakanties (o.a. zomervakantie ~6 weken); vrij nemen buiten de vakanties (verlof) mag alleen met toestemming van de school: op tijd aanvragen bij de directeur, alleen met een goede reden (bijv. bruiloft of begrafenis in de familie; een goedkope vakantie is geen reden).
+- Kind ziek: ouders melden het 's ochtends bij school, voor de les begint.
+- Ouders: ouderavond, 10-minutengesprek met de leraar, rapport, medezeggenschapsraad (MR: ouders en leraren praten mee over de plannen), ouderraad (OR: ouders helpen bij feesten en uitjes).
+- Kinderopvang: kinderdagverblijf (0–4), buitenschoolse opvang (bso, 4–12, na school en in de vakanties); kinderopvangtoeslag.
+- Peuterspeelzaal / voorschool (ongeveer 2–4 jaar, een paar ochtenden): voorbereiding op school, taalontwikkeling.
 - Opvoeding: kinderen leren zelfstandig zijn en hun mening geven; slaan mag niet.
 - Studiefinanciering voor mbo/hbo/wo via DUO.
 - Volwassenen: inburgeringscursus, taalcursus, bibliotheek, mbo-opleidingen.

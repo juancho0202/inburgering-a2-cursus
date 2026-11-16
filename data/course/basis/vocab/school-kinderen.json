@@ -93,7 +93,7 @@
       "article": "de",
       "pos": "noun",
       "plural": null,
-      "definitionNl": "De regel dat kinderen naar school moeten.",
+      "definitionNl": "Leer + plicht: kinderen van 5 tot 16 jaar moeten naar school.",
       "example": "Door de leerplicht moet elk kind naar school.",
       "tags": [
         "thema:school-kinderen",
@@ -108,7 +108,7 @@
       "article": "de",
       "pos": "noun",
       "plural": "de leerplichtambtenaren",
-      "definitionNl": "Een ambtenaar die controleert of kinderen naar school gaan.",
+      "definitionNl": "De ambtenaar van de leerplicht. Hij werkt bij de gemeente en controleert of kinderen naar school gaan.",
       "example": "De leerplichtambtenaar belt als een kind vaak spijbelt.",
       "tags": [
         "thema:school-kinderen",
@@ -153,7 +153,7 @@
       "article": "het",
       "pos": "noun",
       "plural": null,
-      "definitionNl": "Voortgezet onderwijs van vier jaar.",
+      "definitionNl": "Voorbereidend middelbaar beroepsonderwijs: voortgezet onderwijs van 4 jaar. Daarna: het mbo.",
       "example": "Hij doet het vmbo en gaat daarna naar het mbo.",
       "tags": [
         "thema:school-kinderen",
@@ -168,7 +168,7 @@
       "article": "de",
       "pos": "noun",
       "plural": null,
-      "definitionNl": "Voortgezet onderwijs van vijf jaar.",
+      "definitionNl": "Hoger algemeen voortgezet onderwijs: voortgezet onderwijs van 5 jaar. Daarna: het hbo.",
       "example": "Na de havo kun je naar het hbo.",
       "tags": [
         "thema:school-kinderen",
@@ -183,7 +183,7 @@
       "article": "het",
       "pos": "noun",
       "plural": null,
-      "definitionNl": "Voortgezet onderwijs van zes jaar.",
+      "definitionNl": "Voorbereidend wetenschappelijk onderwijs: voortgezet onderwijs van 6 jaar. Daarna: de universiteit.",
       "example": "Na het vwo kun je naar de universiteit.",
       "tags": [
         "thema:school-kinderen",
@@ -198,7 +198,7 @@
       "article": "het",
       "pos": "noun",
       "plural": null,
-      "definitionNl": "Beroepsopleiding na het vmbo.",
+      "definitionNl": "Middelbaar beroepsonderwijs: je leert een vak. Na het vmbo.",
       "example": "Zij leert voor verpleegkundige op het mbo.",
       "tags": [
         "thema:school-kinderen",
@@ -213,7 +213,7 @@
       "article": "het",
       "pos": "noun",
       "plural": null,
-      "definitionNl": "Hogere beroepsopleiding.",
+      "definitionNl": "Hoger beroepsonderwijs: een hogere beroepsopleiding. Na de havo of mbo-4.",
       "example": "Na het hbo heb je een bachelor.",
       "tags": [
         "thema:school-kinderen",
@@ -228,7 +228,7 @@
       "article": "de",
       "pos": "noun",
       "plural": "de universiteiten",
-      "definitionNl": "De hoogste opleiding in Nederland.",
+      "definitionNl": "Wetenschappelijk onderwijs (wo): de hoogste opleiding in Nederland. Na het vwo.",
       "example": "Hij studeert medicijnen aan de universiteit.",
       "tags": [
         "thema:school-kinderen",
@@ -434,6 +434,141 @@
       "plural": null,
       "definitionNl": "Hoe ouders hun kinderen leren leven.",
       "example": "In de opvoeding is liefde belangrijk.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-031",
+      "nl": "de kwalificatieplicht",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Na de leerplicht: leren tot 18 jaar, of tot een startkwalificatie.",
+      "example": "Door de kwalificatieplicht gaat Sara met 17 jaar nog naar het mbo.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-032",
+      "nl": "de startkwalificatie",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de startkwalificaties",
+      "definitionNl": "Een diploma van havo, vwo of mbo niveau 2 of hoger.",
+      "example": "Met een mbo-2-diploma heb je een startkwalificatie.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-033",
+      "nl": "het openbaar onderwijs",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Scholen voor alle kinderen, niet op basis van een religie.",
+      "example": "Onze buurtschool is openbaar onderwijs.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-034",
+      "nl": "het bijzonder onderwijs",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Scholen op basis van een religie of een idee over leren. Ook gratis.",
+      "example": "Een katholieke school is bijzonder onderwijs.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-035",
+      "nl": "de ouderbijdrage",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de ouderbijdragen",
+      "definitionNl": "Geld dat ouders aan de school kunnen geven, voor extra dingen. Het is vrijwillig.",
+      "example": "De ouderbijdrage is voor feesten en het schoolreisje.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-036",
+      "nl": "de doorstroomtoets",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de doorstroomtoetsen",
+      "definitionNl": "Een toets in groep 8. Die laat zien wat een kind kan.",
+      "example": "Mijn dochter maakt in groep 8 de doorstroomtoets.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-037",
+      "nl": "het verlof",
+      "article": "het",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Vrij van school buiten de vakanties, met toestemming van de directeur.",
+      "example": "We vragen verlof aan voor de bruiloft van mijn broer.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-038",
+      "nl": "de medezeggenschapsraad",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de medezeggenschapsraden",
+      "definitionNl": "Ouders en leraren die meepraten over de plannen van de school (MR).",
+      "example": "Mijn man zit in de medezeggenschapsraad.",
+      "tags": [
+        "thema:school-kinderen",
+        "knm:onderwijs"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-school-kinderen-039",
+      "nl": "de directeur",
+      "article": "de",
+      "pos": "noun",
+      "plural": "de directeuren",
+      "definitionNl": "De baas van een school.",
+      "example": "De directeur geeft verlof voor de bruiloft.",
       "tags": [
         "thema:school-kinderen",
         "knm:onderwijs"

@@ -4,7 +4,7 @@
   "title": "Onderwijs en opvoeding",
   "goal": "Je weet hoe het Nederlandse onderwijs werkt en wat ouders moeten doen.",
   "scene": "schoolplein",
-  "estimatedMinutes": 25,
+  "estimatedMinutes": 40,
   "tags": [
     "knm:onderwijs"
   ],
@@ -21,32 +21,89 @@
     "basis-vocab-school-kinderen-015",
     "basis-vocab-school-kinderen-016",
     "basis-vocab-school-kinderen-017",
+    "basis-vocab-school-kinderen-018",
     "basis-vocab-school-kinderen-019",
     "basis-vocab-school-kinderen-023",
     "basis-vocab-school-kinderen-024",
     "basis-vocab-school-kinderen-025",
     "basis-vocab-school-kinderen-026",
     "basis-vocab-school-kinderen-027",
-    "basis-vocab-school-kinderen-030"
+    "basis-vocab-school-kinderen-030",
+    "basis-vocab-school-kinderen-031",
+    "basis-vocab-school-kinderen-032",
+    "basis-vocab-school-kinderen-033",
+    "basis-vocab-school-kinderen-034",
+    "basis-vocab-school-kinderen-035",
+    "basis-vocab-school-kinderen-036",
+    "basis-vocab-school-kinderen-037",
+    "basis-vocab-school-kinderen-038",
+    "basis-vocab-school-kinderen-039"
   ],
   "passScore": 0.7,
   "steps": [
     {
       "type": "lesson",
       "id": "knm-onderwijs-l-01",
-      "title": "Leerplicht en basisschool",
+      "title": "Wie moet naar school?",
       "blocks": [
         {
           "kind": "text",
-          "md": "**Leerplicht:** kinderen moeten naar school van **5 tot 16 jaar** (vanaf de eerste schooldag van de maand na hun 5e verjaardag). Daarna is er **kwalificatieplicht tot 18 jaar** (of tot een **startkwalificatie**: havo-, vwo- of mbo-2-diploma).\n\nDe **leerplichtambtenaar** van de gemeente controleert. Bij **spijbelen** kunnen ouders een **boete** krijgen.\n\nKinderen mogen vanaf **4 jaar** naar de **basisschool**: **groep 1–8** (4–12 jaar). Het onderwijs is **openbaar** of **bijzonder** (bijvoorbeeld religieus). Beide zijn gratis, met een **vrijwillige ouderbijdrage**."
+          "md": "In Nederland **moeten** alle kinderen naar school. Dat heet de **leerplicht**: leer + plicht, je moet leren.\n\nDe leerplicht geldt van **5 tot 16 jaar**. Daarna komt de **kwalificatieplicht**: een jongere moet leren tot **18 jaar**, of tot hij een goed diploma heeft. Over dat diploma leer je later meer."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Leeftijd",
+            "Wat?",
+            "Moet of mag?"
+          ],
+          "rows": [
+            [
+              "0–4 jaar",
+              "kinderopvang, peuterspeelzaal",
+              "mag"
+            ],
+            [
+              "4 jaar",
+              "basisschool, groep 1",
+              "mag"
+            ],
+            [
+              "5 jaar",
+              "de leerplicht begint",
+              "moet"
+            ],
+            [
+              "12 jaar",
+              "voortgezet onderwijs",
+              "moet"
+            ],
+            [
+              "16 jaar",
+              "de leerplicht stopt; nu leren tot 18 jaar of tot een diploma",
+              "moet"
+            ],
+            [
+              "18 jaar",
+              "de kwalificatieplicht stopt",
+              "klaar"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Met 4 jaar mag het, met 5 jaar moet het.** Met 4 jaar mag een kind naar de basisschool. Met 5 jaar moet het.\n\n**Met 16 jaar ben je nog niet vrij.** Een jongere moet nog leren: tot 18 jaar, of tot een goed diploma."
+        },
+        {
+          "kind": "example",
+          "nl": "Amira wordt in maart 5 jaar. Vanaf de eerste schooldag van april moet ze naar school.",
+          "note": "De leerplicht begint in de maand na de vijfde verjaardag."
         },
         {
           "kind": "vocab",
           "ids": [
             "basis-vocab-school-kinderen-007",
-            "basis-vocab-school-kinderen-008",
-            "basis-vocab-school-kinderen-009",
-            "basis-vocab-school-kinderen-006"
+            "basis-vocab-school-kinderen-031"
           ]
         }
       ]
@@ -58,7 +115,7 @@
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "De leerplicht begint op 5 jaar.",
+        "explanation": "Vanaf 5 jaar moet een kind naar school: dat is de leerplicht. Onthoud: met 4 jaar mag het, met 5 jaar moet het.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Vanaf welke leeftijd is een kind leerplichtig?",
@@ -74,71 +131,11 @@
     {
       "type": "exercise",
       "exercise": {
-        "id": "knm-onderwijs-q-002",
-        "tags": [
-          "knm:onderwijs"
-        ],
-        "explanation": "Na de leerplicht geldt de kwalificatieplicht tot 18 jaar.",
-        "difficulty": 1,
-        "type": "mc",
-        "prompt": "Tot welke leeftijd geldt de kwalificatieplicht?",
-        "options": [
-          "16 jaar",
-          "18 jaar",
-          "21 jaar",
-          "14 jaar"
-        ],
-        "answer": 1
-      }
-    },
-    {
-      "type": "exercise",
-      "exercise": {
-        "id": "knm-onderwijs-q-003",
-        "tags": [
-          "knm:onderwijs"
-        ],
-        "explanation": "De leerplichtambtenaar controleert of kinderen naar school gaan.",
-        "difficulty": 1,
-        "type": "mc",
-        "prompt": "Fatima's zoon spijbelt vaak. Wie controleert dit?",
-        "options": [
-          "De huisarts",
-          "De burgemeester",
-          "De leerplichtambtenaar",
-          "De rechter"
-        ],
-        "answer": 2
-      }
-    },
-    {
-      "type": "exercise",
-      "exercise": {
-        "id": "knm-onderwijs-q-004",
-        "tags": [
-          "knm:onderwijs"
-        ],
-        "explanation": "Spijbelen mag niet: er kan een boete komen.",
-        "difficulty": 1,
-        "type": "mc",
-        "prompt": "Wat kan er gebeuren als ouders hun kind laten spijbelen?",
-        "options": [
-          "Ze krijgen een prijs.",
-          "Ze krijgen vakantiegeld.",
-          "Niets, spijbelen mag.",
-          "Ze kunnen een boete krijgen."
-        ],
-        "answer": 3
-      }
-    },
-    {
-      "type": "exercise",
-      "exercise": {
         "id": "knm-onderwijs-q-005",
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Vanaf 4 jaar mag een kind naar de basisschool.",
+        "explanation": "Met 4 jaar mag een kind naar de basisschool (groep 1). Met 5 jaar moet het.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Vanaf welke leeftijd mogen kinderen naar de basisschool?",
@@ -154,11 +151,339 @@
     {
       "type": "exercise",
       "exercise": {
+        "id": "knm-onderwijs-q-027",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Met 4 jaar mag een kind naar school. Met 5 jaar moet het: dan begint de leerplicht.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul in: mag of moet?",
+        "text": "Met 4 jaar ___ een kind naar school. Met 5 jaar ___ het.",
+        "answers": [
+          [
+            "mag"
+          ],
+          [
+            "moet"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-002",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Na de leerplicht (tot 16 jaar) komt de kwalificatieplicht: leren tot 18 jaar, of tot een startkwalificatie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Tot welke leeftijd geldt de kwalificatieplicht?",
+        "options": [
+          "16 jaar",
+          "18 jaar",
+          "21 jaar",
+          "14 jaar"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-028",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Na 16 jaar geldt de kwalificatieplicht: leren tot 18 jaar, of tot een goed diploma.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Met 16 jaar mag een jongere altijd stoppen met school.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-029",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "De leerplicht begint op de eerste schooldag van de maand na de vijfde verjaardag. Dus: in november.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Daan wordt in oktober 5 jaar. Vanaf wanneer moet hij naar school?",
+        "options": [
+          "Vanaf de eerste schooldag van november",
+          "Vanaf zijn zesde verjaardag",
+          "Pas na de zomervakantie",
+          "Hij hoeft nog niet naar school"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-onderwijs-l-04",
+      "title": "De leerplichtambtenaar",
+      "blocks": [
+        {
+          "kind": "picture",
+          "scene": "gemeente"
+        },
+        {
+          "kind": "text",
+          "md": "Gaat een kind vaak niet naar school, zonder goede reden? Dat heet **spijbelen**. De school ziet dat en meldt het bij de **leerplichtambtenaar**.\n\nDe leerplichtambtenaar werkt bij de **gemeente**. Hij of zij praat met het kind en de ouders. Verandert er niets? Dan kunnen de ouders een **boete** krijgen."
+        },
+        {
+          "kind": "tip",
+          "md": "**Een lang woord in stukjes:** leer + plicht + ambtenaar. Een ambtenaar werkt voor de overheid. Dus: de ambtenaar van de leerplicht. Het is niet de leraar, niet de politie en niet de burgemeester."
+        },
+        {
+          "kind": "dialogue",
+          "lines": [
+            {
+              "speaker": "Leerplichtambtenaar",
+              "nl": "Goedemorgen, mevrouw. Ik ben de leerplichtambtenaar van de gemeente."
+            },
+            {
+              "speaker": "Fatima",
+              "nl": "Goedemorgen. Waarom wilt u met mij praten?"
+            },
+            {
+              "speaker": "Leerplichtambtenaar",
+              "nl": "De school zegt dat Yusuf vaak niet in de klas is. Hij spijbelt."
+            },
+            {
+              "speaker": "Fatima",
+              "nl": "Dat wist ik niet! Ik dacht dat hij elke dag naar school ging."
+            },
+            {
+              "speaker": "Leerplichtambtenaar",
+              "nl": "We zoeken samen een oplossing. Maar spijbelt hij nog vaker? Dan kunt u een boete krijgen."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "md": "**Is je kind ziek?** Bel of mail de school 's ochtends, voor de les begint.\n\n**Vrij van school:** kinderen zijn vrij in de **schoolvakanties**. De zomervakantie duurt ongeveer 6 weken. Vrij buiten de vakanties heet **verlof**. Je vraagt het op tijd aan de **directeur** van de school. Het mag alleen met een goede reden, bijvoorbeeld een bruiloft of een begrafenis in de familie. Een goedkope vakantie is geen goede reden."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-school-kinderen-008",
+            "basis-vocab-school-kinderen-009",
+            "basis-vocab-school-kinderen-037",
+            "basis-vocab-school-kinderen-039"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-003",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "De leerplichtambtenaar (leer + plicht + ambtenaar) werkt bij de gemeente. Hij controleert of kinderen naar school gaan.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Fatima's zoon spijbelt vaak. Wie controleert dit?",
+        "options": [
+          "De huisarts",
+          "De burgemeester",
+          "De leerplichtambtenaar",
+          "De rechter"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-030",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "De leerplichtambtenaar is een ambtenaar: hij werkt voor de gemeente, niet voor de school.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Voor wie werkt de leerplichtambtenaar?",
+        "options": [
+          "Voor de gemeente",
+          "Voor de school",
+          "Voor de politie",
+          "Voor de Belastingdienst"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-031",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Spijbelt een kind? Dan meldt de school dat bij de leerplichtambtenaar van de gemeente.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Yusuf is vaak niet in de klas, zonder reden. Wat doet de school?",
+        "options": [
+          "De school doet niets.",
+          "De school meldt het bij de leerplichtambtenaar.",
+          "De school belt de huisarts.",
+          "De school stuurt Yusuf naar een andere school."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-004",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Spijbelen mag niet. De leerplichtambtenaar praat eerst met de ouders. Daarna kunnen de ouders een boete krijgen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat kan er gebeuren als ouders hun kind laten spijbelen?",
+        "options": [
+          "Ze krijgen een prijs.",
+          "Ze krijgen vakantiegeld.",
+          "Niets, spijbelen mag.",
+          "Ze kunnen een boete krijgen."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-032",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Is je kind ziek? Bel of mail de school 's ochtends, voor de les begint.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "De zoon van Ahmed heeft koorts en blijft thuis. Wat moet Ahmed doen?",
+        "options": [
+          "Niets, de school ziet het wel.",
+          "De leerplichtambtenaar bellen.",
+          "De school 's ochtends bellen of mailen.",
+          "Een brief sturen naar de gemeente."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-017",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Vrij buiten de vakanties heet verlof. Vraag het op tijd aan de directeur van de school. Het mag alleen met een goede reden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Fatima wil met haar zoon een week eerder op vakantie, buiten de schoolvakantie. Wat moet ze doen?",
+        "options": [
+          "Toestemming vragen aan de school",
+          "Niets, dat mag altijd",
+          "De gemeente bellen",
+          "Naar de huisarts gaan"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-033",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Verlof mag alleen met een goede reden, zoals een bruiloft of een begrafenis. Goedkope tickets zijn geen goede reden.",
+        "difficulty": 2,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Fatima wil buiten de vakantie op reis, want de tickets zijn dan goedkoop. De directeur moet haar verlof geven.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-034",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "De leerplichtambtenaar controleert, de leraar geeft les, de directeur geeft verlof, de huisarts helpt bij ziekte.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Wie doet wat?",
+        "pairs": [
+          [
+            "de leerplichtambtenaar",
+            "controleert of kinderen naar school gaan"
+          ],
+          [
+            "de leraar",
+            "geeft les in de klas"
+          ],
+          [
+            "de directeur",
+            "geeft verlof buiten de vakanties"
+          ],
+          [
+            "de huisarts",
+            "helpt als je ziek bent"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-onderwijs-l-05",
+      "title": "De basisschool",
+      "blocks": [
+        {
+          "kind": "picture",
+          "scene": "klas"
+        },
+        {
+          "kind": "text",
+          "md": "Kinderen gaan van **4 tot 12 jaar** naar de **basisschool**. Er zijn 8 groepen. Een kind van 4 begint in **groep 1**. In **groep 8** is een kind ongeveer 12 jaar.\n\nEr zijn twee soorten scholen:\n- **Openbaar onderwijs:** voor alle kinderen, niet op basis van een religie.\n- **Bijzonder onderwijs:** op basis van een religie, bijvoorbeeld katholiek, protestants of islamitisch. Of op basis van een idee over leren.\n\nOuders kiezen zelf een school."
+        },
+        {
+          "kind": "tip",
+          "md": "**Bijzonder is niet duurder.** De overheid betaalt openbare en bijzondere scholen: beide zijn **gratis**. De **ouderbijdrage** is **vrijwillig**: je hoeft niet te betalen. Betaal je niet? Dan mag je kind toch mee op schoolreisje."
+        },
+        {
+          "kind": "vocab",
+          "ids": [
+            "basis-vocab-school-kinderen-006",
+            "basis-vocab-school-kinderen-033",
+            "basis-vocab-school-kinderen-034",
+            "basis-vocab-school-kinderen-035"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
         "id": "knm-onderwijs-q-006",
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Groep 1–8 is voor kinderen van 4 tot 12 jaar.",
+        "explanation": "Een kind begint met 4 jaar in groep 1. Groep 8 is het laatste jaar: het kind is dan ongeveer 12.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Hoe oud zijn kinderen in groep 8 meestal?",
@@ -178,7 +503,7 @@
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Openbaar en bijzonder onderwijs zijn beide gratis.",
+        "explanation": "Bijzonder onderwijs is op basis van bijvoorbeeld een religie. Het is niet duurder: ook bijzonder onderwijs is gratis.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is bijzonder onderwijs?",
@@ -198,7 +523,7 @@
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "De ouderbijdrage is vrijwillig.",
+        "explanation": "De ouderbijdrage is vrijwillig. Betaal je niet? Dan mag je kind toch overal aan meedoen.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is de ouderbijdrage op de basisschool?",
@@ -212,6 +537,36 @@
       }
     },
     {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-035",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "De ouderbijdrage is vrijwillig. Ook als ouders niet betalen, mag het kind meedoen.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Hassan betaalt de ouderbijdrage niet. Zijn dochter mag toch mee op schoolreisje.",
+        "answer": true
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-026",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Onderwijs is gratis. De ouderbijdrage is vrijwillig: de school mag niet zeggen dat je moet betalen.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Een school mag zelf bepalen dat ouders veel geld moeten betalen om hun kind te laten leren.",
+        "answer": false
+      }
+    },
+    {
       "type": "lesson",
       "id": "knm-onderwijs-l-02",
       "title": "Na de basisschool",
@@ -222,12 +577,12 @@
         },
         {
           "kind": "text",
-          "md": "Eind **groep 8**: **schooladvies** + **doorstroomtoets** → **voortgezet onderwijs**: **vmbo** (4 jaar), **havo** (5 jaar), **vwo** (6 jaar).\n\nDaarna: **mbo** (na vmbo), **hbo** (na havo of mbo-4), **universiteit / wo** (na vwo).\n\n**Studiefinanciering** voor mbo, hbo en wo komt van **DUO**."
+          "md": "Aan het eind van **groep 8** krijgt een kind een **schooladvies** van de basisschool. Het kind maakt ook de **doorstroomtoets**. Daarna gaat het naar het **voortgezet onderwijs**: **vmbo**, **havo** of **vwo**.\n\nDaarna kan een jongere verder leren: op het **mbo**, het **hbo** of de **universiteit**. Op het mbo leer je een vak, bijvoorbeeld kok. Op het hbo leer je een hoger beroep, bijvoorbeeld leraar. Naar het hbo ga je na de havo, of na mbo niveau 4."
         },
         {
           "kind": "table",
           "headers": [
-            "Voortgezet onderwijs",
+            "School",
             "Duur",
             "Daarna"
           ],
@@ -245,23 +600,87 @@
             [
               "vwo",
               "6 jaar",
-              "universiteit"
+              "universiteit (wo)"
             ]
           ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Zo onthoud je de namen:**\n- De letter **b** betekent beroeps: je leert voor een beroep, voor werk.\n- Haal de **v** vooraan weg, dan zie je de volgende school. Na het **v**mbo komt het mbo. Na het **v**wo komt het wo, de universiteit.\n- Na de **h**avo komt het **h**bo: allebei met een **h**, van hoger.\n- Hoe hoger de school, hoe langer: vmbo **4** jaar, havo **5** jaar, vwo **6** jaar."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "School",
+            "Wat betekenen de letters?"
+          ],
+          "rows": [
+            [
+              "vmbo",
+              "voorbereidend middelbaar beroepsonderwijs"
+            ],
+            [
+              "havo",
+              "hoger algemeen voortgezet onderwijs"
+            ],
+            [
+              "vwo",
+              "voorbereidend wetenschappelijk onderwijs"
+            ],
+            [
+              "mbo",
+              "middelbaar beroepsonderwijs"
+            ],
+            [
+              "hbo",
+              "hoger beroepsonderwijs"
+            ],
+            [
+              "wo",
+              "wetenschappelijk onderwijs (universiteit)"
+            ]
+          ]
+        },
+        {
+          "kind": "text",
+          "md": "**Startkwalificatie:** een diploma van de **havo**, het **vwo** of het **mbo niveau 2** (of hoger). Een vmbo-diploma is nog geen startkwalificatie. Heeft een jongere geen startkwalificatie? Dan moet hij leren tot **18 jaar**. Met een startkwalificatie vind je makkelijker werk.\n\n**Studiefinanciering** voor mbo, hbo en universiteit komt van **DUO**."
         },
         {
           "kind": "vocab",
           "ids": [
             "basis-vocab-school-kinderen-017",
+            "basis-vocab-school-kinderen-036",
             "basis-vocab-school-kinderen-011",
             "basis-vocab-school-kinderen-012",
             "basis-vocab-school-kinderen-013",
             "basis-vocab-school-kinderen-014",
             "basis-vocab-school-kinderen-015",
-            "basis-vocab-school-kinderen-016"
+            "basis-vocab-school-kinderen-016",
+            "basis-vocab-school-kinderen-032",
+            "basis-vocab-school-kinderen-027"
           ]
         }
       ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-013",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "In groep 8 krijgt een kind een schooladvies: welke school past daarna (vmbo, havo of vwo).",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Aan het eind van groep 8 krijgt Mehmets dochter een advies. Wat is dat?",
+        "options": [
+          "Het schooladvies",
+          "Een boete voor te laat komen",
+          "Een toeslag voor school",
+          "Een diploma van de basisschool"
+        ],
+        "answer": 0
+      }
     },
     {
       "type": "exercise",
@@ -270,7 +689,7 @@
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Vmbo 4 jaar, havo 5 jaar, vwo 6 jaar.",
+        "explanation": "Hoe hoger de school, hoe langer: vmbo 4 jaar, havo 5 jaar, vwo 6 jaar.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Hoe lang duurt het vwo?",
@@ -290,7 +709,7 @@
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "De havo duurt 5 jaar.",
+        "explanation": "Vmbo 4 jaar, havo 5 jaar, vwo 6 jaar. De havo zit in het midden: 5 jaar.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Hoe lang duurt de havo?",
@@ -306,11 +725,58 @@
     {
       "type": "exercise",
       "exercise": {
+        "id": "knm-onderwijs-q-036",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Hoe hoger de school, hoe langer: vmbo 4, havo 5, vwo 6 jaar.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Hoe lang duurt de school?",
+        "pairs": [
+          [
+            "vmbo",
+            "4 jaar"
+          ],
+          [
+            "havo",
+            "5 jaar"
+          ],
+          [
+            "vwo",
+            "6 jaar"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-016",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Haal de v van vmbo weg: na het vmbo komt het mbo.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke school volgt meestal na het vmbo?",
+        "options": [
+          "De universiteit",
+          "Het vwo",
+          "De basisschool",
+          "Het mbo"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
         "id": "knm-onderwijs-q-011",
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Na vwo kun je naar de universiteit.",
+        "explanation": "Haal de v van vwo weg: wo = wetenschappelijk onderwijs, de universiteit.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Na welke school ga je meestal naar de universiteit?",
@@ -326,11 +792,38 @@
     {
       "type": "exercise",
       "exercise": {
+        "id": "knm-onderwijs-q-037",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Haal de v weg: vmbo wordt mbo, vwo wordt wo (universiteit). Havo en hbo beginnen allebei met een h.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welke opleiding komt daarna?",
+        "pairs": [
+          [
+            "vmbo",
+            "mbo"
+          ],
+          [
+            "havo",
+            "hbo"
+          ],
+          [
+            "vwo",
+            "universiteit"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
         "id": "knm-onderwijs-q-012",
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Hbo = hoger beroepsonderwijs.",
+        "explanation": "Hbo = hoger beroepsonderwijs: h = hoger, b = beroeps. Je gaat erheen na de havo of na mbo-4.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is hbo?",
@@ -346,19 +839,19 @@
     {
       "type": "exercise",
       "exercise": {
-        "id": "knm-onderwijs-q-013",
+        "id": "knm-onderwijs-q-038",
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Het schooladvies hoort bij de overgang naar voortgezet onderwijs.",
+        "explanation": "De b betekent beroeps: op die scholen leer je voor een beroep.",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "Aan het eind van groep 8 krijgt Mehmets dochter een advies. Wat is dat?",
+        "prompt": "Wat betekent de b in vmbo, mbo en hbo?",
         "options": [
-          "Het schooladvies",
-          "Een boete voor te laat komen",
-          "Een toeslag voor school",
-          "Een diploma van de basisschool"
+          "Beroeps: je leert voor een beroep",
+          "Basis",
+          "Bijzonder",
+          "Betalen"
         ],
         "answer": 0
       }
@@ -366,21 +859,40 @@
     {
       "type": "exercise",
       "exercise": {
-        "id": "knm-onderwijs-q-014",
+        "id": "knm-onderwijs-q-039",
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Studiefinanciering regelt DUO.",
-        "difficulty": 1,
-        "type": "mc",
-        "prompt": "Hoe krijgt een student geld voor zijn mbo- of hbo-opleiding?",
+        "explanation": "Een startkwalificatie is een diploma van havo, vwo of mbo niveau 2. Een vmbo-diploma is nog geen startkwalificatie.",
+        "difficulty": 2,
+        "type": "mc-multi",
+        "prompt": "Welke diploma's zijn een startkwalificatie? Kies er drie.",
         "options": [
-          "Bijstand van de gemeente",
-          "Studiefinanciering van DUO",
-          "WW van het UWV",
-          "Zorgtoeslag"
+          "havo",
+          "vmbo",
+          "vwo",
+          "mbo niveau 2"
         ],
-        "answer": 1
+        "answers": [
+          0,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-040",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Een vmbo-diploma is geen startkwalificatie. Sem moet verder leren, bijvoorbeeld op het mbo, tot hij 18 is of een mbo-2-diploma heeft.",
+        "difficulty": 2,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Sem is 16 en heeft een vmbo-diploma. Nu mag hij stoppen met school.",
+        "answer": false
       }
     },
     {
@@ -390,7 +902,7 @@
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Kwalificatieplicht tot 18, of tot een startkwalificatie.",
+        "explanation": "Zonder startkwalificatie (havo, vwo of mbo-2) geldt de kwalificatieplicht: leren tot 18 jaar.",
         "difficulty": 2,
         "type": "mc",
         "prompt": "Een jongere van 17 heeft geen startkwalificatie en wil stoppen met school. Mag dat?",
@@ -406,21 +918,21 @@
     {
       "type": "exercise",
       "exercise": {
-        "id": "knm-onderwijs-q-016",
+        "id": "knm-onderwijs-q-014",
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Na vmbo ga je vaak naar het mbo.",
+        "explanation": "Studiefinanciering voor mbo, hbo en universiteit krijg je van DUO, niet van de gemeente of het UWV.",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "Welke school volgt meestal na het vmbo?",
+        "prompt": "Hoe krijgt een student geld voor zijn mbo- of hbo-opleiding?",
         "options": [
-          "De universiteit",
-          "Het vwo",
-          "De basisschool",
-          "Het mbo"
+          "Bijstand van de gemeente",
+          "Studiefinanciering van DUO",
+          "WW van het UWV",
+          "Zorgtoeslag"
         ],
-        "answer": 3
+        "answer": 1
       }
     },
     {
@@ -434,44 +946,55 @@
         },
         {
           "kind": "text",
-          "md": "**Vrij van school?** Alleen in de **vakanties** (de **zomervakantie** duurt ongeveer 6 weken). Buiten de vakantie vrij nemen mag alleen met **toestemming van de school**.\n\n**Ouders:** **ouderavond**, **10-minutengesprek** met de leraar, **rapport**, **medezeggenschapsraad (MR)**, **ouderraad (OR)**.\n\n**Kinderopvang:** **kinderdagverblijf** (0–4 jaar) en **buitenschoolse opvang (bso)**. Je kunt **kinderopvangtoeslag** aanvragen. **Peuterspeelzaal / voorschool:** voorbereiding op school en taalontwikkeling."
+          "md": "**Ouders en school:** er is een **ouderavond**, een **10-minutengesprek** met de leraar en een **rapport**. Ouders kunnen ook meedoen:\n- In de **medezeggenschapsraad (MR)** praten ouders en leraren mee over de plannen van de school.\n- In de **ouderraad (OR)** helpen ouders bij feesten en uitjes."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Opvang",
+            "Leeftijd",
+            "Wat?"
+          ],
+          "rows": [
+            [
+              "kinderdagverblijf",
+              "0–4 jaar",
+              "de hele dag, als ouders werken"
+            ],
+            [
+              "peuterspeelzaal / voorschool",
+              "ongeveer 2–4 jaar",
+              "een paar ochtenden spelen en Nederlands leren"
+            ],
+            [
+              "buitenschoolse opvang (bso)",
+              "4–12 jaar",
+              "na school en in de vakanties"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Bso** betekent buitenschoolse opvang: opvang buiten de schooltijd. Voor het kinderdagverblijf en de bso kun je **kinderopvangtoeslag** aanvragen."
         },
         {
           "kind": "text",
-          "md": "**Opvoeding:** kinderen leren **zelfstandig** zijn en hun **mening geven**. **Slaan mag niet.**\n\n**Volwassenen** kunnen een **inburgeringscursus**, **taalcursus**, de **bibliotheek** en **mbo-opleidingen** gebruiken."
+          "md": "**Opvoeding:** kinderen leren **zelfstandig** zijn en hun **mening geven**. **Slaan mag niet.**\n\n**Volwassenen** kunnen ook leren: een **inburgeringscursus**, een **taalcursus**, de **bibliotheek** of een **mbo-opleiding**."
         },
         {
           "kind": "vocab",
           "ids": [
             "basis-vocab-school-kinderen-018",
             "basis-vocab-school-kinderen-019",
+            "basis-vocab-school-kinderen-038",
             "basis-vocab-school-kinderen-023",
             "basis-vocab-school-kinderen-024",
             "basis-vocab-school-kinderen-025",
-            "basis-vocab-school-kinderen-026"
+            "basis-vocab-school-kinderen-026",
+            "basis-vocab-school-kinderen-030"
           ]
         }
       ]
-    },
-    {
-      "type": "exercise",
-      "exercise": {
-        "id": "knm-onderwijs-q-017",
-        "tags": [
-          "knm:onderwijs"
-        ],
-        "explanation": "Vrij nemen buiten de vakantie mag alleen met toestemming.",
-        "difficulty": 1,
-        "type": "mc",
-        "prompt": "Fatima wil met haar zoon een week eerder op vakantie, buiten de schoolvakantie. Wat moet ze doen?",
-        "options": [
-          "Toestemming vragen aan de school",
-          "Niets, dat mag altijd",
-          "De gemeente bellen",
-          "Naar de huisarts gaan"
-        ],
-        "answer": 0
-      }
     },
     {
       "type": "exercise",
@@ -480,7 +1003,7 @@
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Op school spreken ouders kort met de leraar.",
+        "explanation": "Bij het 10-minutengesprek praten ouders kort met de leraar over hun kind.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is een 10-minutengesprek?",
@@ -496,11 +1019,31 @@
     {
       "type": "exercise",
       "exercise": {
+        "id": "knm-onderwijs-q-041",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "In de MR praten ouders en leraren mee over de plannen van de school.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat doet de medezeggenschapsraad (MR)?",
+        "options": [
+          "Ouders en leraren praten mee over de plannen van de school.",
+          "De MR geeft boetes bij spijbelen.",
+          "De MR geeft les aan groep 8.",
+          "De MR betaalt de kinderopvang."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
         "id": "knm-onderwijs-q-019",
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Kinderdagverblijf = opvang voor 0–4 jaar.",
+        "explanation": "Het kinderdagverblijf is voor kinderen van 0 tot 4 jaar, als de ouders werken.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Waar kunnen kinderen van 0 tot 4 jaar naartoe terwijl hun ouders werken?",
@@ -520,7 +1063,7 @@
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Bso = opvang na school.",
+        "explanation": "Bso = buitenschoolse opvang: opvang na school, voor kinderen van 4 tot 12 jaar.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Waar gaat een kind van 8 heen na school als beide ouders werken?",
@@ -536,31 +1079,11 @@
     {
       "type": "exercise",
       "exercise": {
-        "id": "knm-onderwijs-q-021",
-        "tags": [
-          "knm:onderwijs"
-        ],
-        "explanation": "De kinderopvangtoeslag komt van de Belastingdienst.",
-        "difficulty": 1,
-        "type": "mc",
-        "prompt": "Priya betaalt veel voor kinderopvang. Wat kan ze aanvragen?",
-        "options": [
-          "Kinderopvangtoeslag",
-          "Huurtoeslag",
-          "Zorgtoeslag",
-          "Een WW-uitkering"
-        ],
-        "answer": 0
-      }
-    },
-    {
-      "type": "exercise",
-      "exercise": {
         "id": "knm-onderwijs-q-022",
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Peuters spelen en leren daar.",
+        "explanation": "Op de peuterspeelzaal of voorschool spelen peuters en leren ze Nederlands. Zo zijn ze klaar voor de basisschool.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Waarvoor is de peuterspeelzaal of voorschool?",
@@ -576,11 +1099,58 @@
     {
       "type": "exercise",
       "exercise": {
+        "id": "knm-onderwijs-q-042",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Kinderdagverblijf: 0 tot 4 jaar. Peuterspeelzaal: peuters spelen en leren Nederlands. Bso: na school.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welke opvang past?",
+        "pairs": [
+          [
+            "een baby van 1 jaar, de ouders werken",
+            "kinderdagverblijf"
+          ],
+          [
+            "een kind van 3, spelen en Nederlands leren",
+            "peuterspeelzaal"
+          ],
+          [
+            "een kind van 8, na school",
+            "buitenschoolse opvang"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-021",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Kinderopvangtoeslag vraag je aan bij de Belastingdienst. Huurtoeslag en zorgtoeslag zijn voor iets anders.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Priya betaalt veel voor kinderopvang. Wat kan ze aanvragen?",
+        "options": [
+          "Kinderopvangtoeslag",
+          "Huurtoeslag",
+          "Zorgtoeslag",
+          "Een WW-uitkering"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
         "id": "knm-onderwijs-q-023",
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Zelfstandigheid en mening geven zijn belangrijk.",
+        "explanation": "In Nederland leren kinderen zelfstandig zijn en hun mening geven.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat leren kinderen in de Nederlandse opvoeding vaak?",
@@ -600,7 +1170,7 @@
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Slaan is verboden.",
+        "explanation": "Slaan is verboden, ook voor ouders. Praten of een straf zonder slaan mag wel.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Een kind van 7 is stout. Wat mogen de ouders niet doen?",
@@ -620,7 +1190,7 @@
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Volwassenen kunnen taalcursussen volgen; de bibliotheek helpt ook.",
+        "explanation": "Volwassenen kunnen een taalcursus volgen. De bibliotheek helpt ook.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat kan een volwassene doen om Nederlands te leren?",
@@ -634,18 +1204,129 @@
       }
     },
     {
+      "type": "lesson",
+      "id": "knm-onderwijs-l-06",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Je kent nu de belangrijkste regels over school in Nederland. Oefen alles nog een keer, door elkaar. Net als in het examen."
+        }
+      ]
+    },
+    {
       "type": "exercise",
       "exercise": {
-        "id": "knm-onderwijs-q-026",
+        "id": "knm-onderwijs-q-043",
         "tags": [
           "knm:onderwijs"
         ],
-        "explanation": "Onderwijs is gratis; de ouderbijdrage is vrijwillig.",
+        "explanation": "Sofia heeft geen startkwalificatie. Dan moet ze leren tot 18 jaar (kwalificatieplicht).",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Sofia is 16 en heeft geen diploma. Ze wil stoppen met school en in een winkel werken. Mag dat?",
+        "options": [
+          "Ja, met 16 jaar mag het.",
+          "Nee, ze moet leren tot 18 jaar of tot een startkwalificatie.",
+          "Ja, als de winkel het goed vindt.",
+          "Nee, ze moet leren tot 21 jaar."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-044",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Met 4 jaar mag een kind naar school. Met 5 jaar moet het.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "De zoon van Karim is 4 jaar. Moet hij naar school?",
+        "options": [
+          "Ja, met 4 jaar moet het.",
+          "Nee, hij mag wel, maar het moet pas met 5 jaar.",
+          "Nee, het moet pas met 6 jaar.",
+          "Ja, maar alleen 's ochtends."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-045",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Verlof buiten de vakanties vraag je aan de directeur van de school.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Mevrouw Bakker wil een week vrij voor haar kind. Haar zus trouwt in Turkije. Aan wie vraagt ze dat?",
+        "options": [
+          "Aan de huisarts",
+          "Aan de directeur van de school",
+          "Aan DUO",
+          "Aan de buren"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-046",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Na de havo komt het hbo: allebei met een h.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Lisa heeft een havo-diploma. Welke opleiding kan ze daarna doen?",
+        "options": [
+          "Het vmbo",
+          "De basisschool",
+          "Het hbo",
+          "De peuterspeelzaal"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-047",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Een islamitische school is bijzonder onderwijs. Bijzonder onderwijs is ook gratis.",
         "difficulty": 1,
         "type": "true-false",
         "prompt": "Klopt dit?",
-        "statement": "Een school mag zelf bepalen dat ouders veel geld moeten betalen om hun kind te laten leren.",
+        "statement": "Een islamitische school is bijzonder onderwijs. Daar moeten ouders veel geld betalen.",
         "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-048",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Studiefinanciering voor mbo, hbo en universiteit komt van DUO.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Jamal is 19 en gaat naar het hbo. Waar vraagt hij studiefinanciering aan?",
+        "options": [
+          "Bij de school",
+          "Bij de leerplichtambtenaar",
+          "Bij de huisarts",
+          "Bij DUO"
+        ],
+        "answer": 3
       }
     }
   ]
