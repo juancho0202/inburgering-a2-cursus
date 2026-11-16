@@ -222,7 +222,7 @@ const restart = async () => {
           <ReadAlongButton :reading="reading" :label="lang.t('common.readAloud')" :stop-label="lang.t('common.stopReading')" @toggle="toggleRead" />
           <!-- Only after step 1: at the start there is nothing to start over -->
           <div v-if="stepIndex > 0" class="ml-auto flex flex-wrap items-center justify-end gap-2">
-            <AppButton v-if="!confirmingRestart" variant="ghost" @click="confirmingRestart = true">↺ <UiLabel k="unit.restart" /></AppButton>
+            <AppButton v-if="!confirmingRestart" variant="ghost" @click="confirmingRestart = true">↺ <UiLabel class="sm:hidden" k="unit.restartShort" /><UiLabel class="hidden sm:inline" k="unit.restart" /></AppButton>
             <template v-else>
               <span class="text-sm font-semibold" role="status" :lang="lang.proseLocale">{{ lang.t("unit.restartAsk") }}</span>
               <AppButton variant="secondary" @click="restart"><UiLabel k="unit.restartYes" /></AppButton>
@@ -248,9 +248,9 @@ const restart = async () => {
     <template v-else>
       <ScenePicture v-if="stepIndex === 0 && unit.scene" :id="unit.scene" class="mb-6 max-w-xl" />
       <div class="mb-4 flex flex-wrap items-center gap-2">
-        <ReadAlongButton :reading="reading" :label="lang.t('unit.readQuestion')" :stop-label="lang.t('common.stopReading')" @toggle="toggleRead" />
+        <ReadAlongButton :reading="reading" :label="lang.t('unit.readQuestion')" :short-label="lang.t('common.readAloud')" :stop-label="lang.t('common.stopReading')" @toggle="toggleRead" />
         <div v-if="stepIndex > 0" class="ml-auto flex flex-wrap items-center justify-end gap-2">
-          <AppButton v-if="!confirmingRestart" variant="ghost" @click="confirmingRestart = true">↺ <UiLabel k="unit.restart" /></AppButton>
+          <AppButton v-if="!confirmingRestart" variant="ghost" @click="confirmingRestart = true">↺ <UiLabel class="sm:hidden" k="unit.restartShort" /><UiLabel class="hidden sm:inline" k="unit.restart" /></AppButton>
           <template v-else>
             <span class="text-sm font-semibold" role="status" :lang="lang.proseLocale">{{ lang.t("unit.restartAsk") }}</span>
             <AppButton variant="secondary" @click="restart"><UiLabel k="unit.restartYes" /></AppButton>

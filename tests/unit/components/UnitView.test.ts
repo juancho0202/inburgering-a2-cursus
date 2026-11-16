@@ -146,6 +146,16 @@ describe("restarting halfway", () => {
     expect(readLesson.parentElement!.contains(buttonWith(lessonStep.wrapper, "Les opnieuw beginnen")!.element)).toBe(true);
   });
 
+  // jsdom has no CSS, so only the text can be checked: the phone texts are in the buttons next to the full ones.
+  it("has short texts for a phone: 'Lees voor' and 'Opnieuw beginnen'", async () => {
+    progress.units.c = { status: "in_progress", stepIndex: 1 };
+    const { wrapper } = await open("c");
+    const read = buttonWith(wrapper, "Lees de vraag voor")!;
+    expect(read.findAll("span").map((s) => s.text())).toContain("Lees voor");
+    const restartButton = buttonWith(wrapper, "Les opnieuw beginnen")!;
+    expect(restartButton.findAll("span").map((s) => s.text())).toContain("Opnieuw beginnen");
+  });
+
   it("asks first, then goes back to step 1 and saves that position", async () => {
     progress.units.c = { status: "in_progress", stepIndex: 2 };
     const { wrapper } = await open("c");

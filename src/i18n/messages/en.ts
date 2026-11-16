@@ -287,6 +287,7 @@ const en: Messages = {
     stepOf: "Step {n} of {total}",
     resumed: "You continue at step {n}.",
     restart: "Restart the lesson",
+    restartShort: "Start over",
     restartAsk: "Start again from step 1?",
     restartYes: "Yes, start again",
     readQuestion: "Read the question aloud",

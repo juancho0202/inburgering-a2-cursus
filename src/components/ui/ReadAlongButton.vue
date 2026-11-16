@@ -1,6 +1,9 @@
 <script setup lang="ts">
-/** Play/stop for reading the current step aloud. Same brand colour as the highlight on the part being read. */
-withDefaults(defineProps<{ reading: boolean; label: string; stopLabel?: string }>(), { stopLabel: "Stop" });
+/**
+ * Play/stop for reading the current step aloud. Same brand colour as the highlight on the part being read.
+ * `shortLabel` is what a phone shows (so the button fits beside another one); from `sm` up the full `label` is shown.
+ */
+withDefaults(defineProps<{ reading: boolean; label: string; shortLabel?: string; stopLabel?: string }>(), { stopLabel: "Stop", shortLabel: undefined });
 defineEmits<{ toggle: [] }>();
 </script>
 
@@ -14,6 +17,8 @@ defineEmits<{ toggle: [] }>();
   >
     <span v-if="reading" class="sound-bars" aria-hidden="true"><i /><i /><i /></span>
     <span v-else aria-hidden="true">▶</span>
-    {{ reading ? stopLabel : label }}
+    <template v-if="reading">{{ stopLabel }}</template>
+    <template v-else-if="shortLabel"><span class="sm:hidden">{{ shortLabel }}</span><span class="hidden sm:inline">{{ label }}</span></template>
+    <template v-else>{{ label }}</template>
   </button>
 </template>
