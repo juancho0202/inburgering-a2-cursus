@@ -213,21 +213,23 @@ const restart = async () => {
         <span class="whitespace-nowrap text-sm font-semibold leading-none tabular-nums text-muted">{{ stepIndex + 1 }} / {{ total }}</span>
       </div>
       <p v-if="resumed" class="mt-2 text-sm text-brand-strong">{{ lang.t("unit.resumed", { n: stepIndex + 1 }) }}</p>
-      <!-- Only after step 1: at the start there is nothing to start over -->
-      <div v-if="stepIndex > 0" class="mt-2 flex flex-wrap items-center gap-2">
-        <AppButton v-if="!confirmingRestart" variant="ghost" @click="confirmingRestart = true">↺ <UiLabel k="unit.restart" /></AppButton>
-        <template v-else>
-          <span class="text-sm font-semibold" role="status">{{ lang.t("unit.restartAsk") }}</span>
-          <AppButton variant="secondary" @click="restart"><UiLabel k="unit.restartYes" /></AppButton>
-          <AppButton variant="ghost" @click="confirmingRestart = false"><UiLabel k="common.cancel" /></AppButton>
-        </template>
-      </div>
     </div>
 
     <template v-if="step.type === 'lesson'">
       <div :key="stepIndex" class="slide-up pb-28" lang="nl" translate="no">
         <h2 class="read-along mb-2 text-3xl font-extrabold tracking-tight" :class="{ 'is-reading': isRead('heading') }">{{ step.title }}</h2>
-        <ReadAlongButton class="mb-3" :reading="reading" :label="lang.t('common.readAloud')" :stop-label="lang.t('common.stopReading')" @toggle="toggleRead" />
+        <div class="mb-3 flex flex-wrap items-center gap-2">
+          <ReadAlongButton :reading="reading" :label="lang.t('common.readAloud')" :stop-label="lang.t('common.stopReading')" @toggle="toggleRead" />
+          <!-- Only after step 1: at the start there is nothing to start over -->
+          <div v-if="stepIndex > 0" class="ml-auto flex flex-wrap items-center justify-end gap-2">
+            <AppButton v-if="!confirmingRestart" variant="ghost" @click="confirmingRestart = true">↺ <UiLabel k="unit.restart" /></AppButton>
+            <template v-else>
+              <span class="text-sm font-semibold" role="status" :lang="lang.proseLocale">{{ lang.t("unit.restartAsk") }}</span>
+              <AppButton variant="secondary" @click="restart"><UiLabel k="unit.restartYes" /></AppButton>
+              <AppButton variant="ghost" @click="confirmingRestart = false"><UiLabel k="common.cancel" /></AppButton>
+            </template>
+          </div>
+        </div>
         <p v-if="stepIndex === 0" class="read-along mb-5 text-muted" :class="{ 'is-reading': isRead('goal') }">{{ unit.goal }}</p>
         <div v-else class="mb-3" />
         <!-- The lesson opens with its picture, like a chapter in a language book -->
@@ -245,7 +247,17 @@ const restart = async () => {
 
     <template v-else>
       <ScenePicture v-if="stepIndex === 0 && unit.scene" :id="unit.scene" class="mb-6 max-w-xl" />
-      <ReadAlongButton class="mb-4" :reading="reading" :label="lang.t('unit.readQuestion')" :stop-label="lang.t('common.stopReading')" @toggle="toggleRead" />
+      <div class="mb-4 flex flex-wrap items-center gap-2">
+        <ReadAlongButton :reading="reading" :label="lang.t('unit.readQuestion')" :stop-label="lang.t('common.stopReading')" @toggle="toggleRead" />
+        <div v-if="stepIndex > 0" class="ml-auto flex flex-wrap items-center justify-end gap-2">
+          <AppButton v-if="!confirmingRestart" variant="ghost" @click="confirmingRestart = true">↺ <UiLabel k="unit.restart" /></AppButton>
+          <template v-else>
+            <span class="text-sm font-semibold" role="status" :lang="lang.proseLocale">{{ lang.t("unit.restartAsk") }}</span>
+            <AppButton variant="secondary" @click="restart"><UiLabel k="unit.restartYes" /></AppButton>
+            <AppButton variant="ghost" @click="confirmingRestart = false"><UiLabel k="common.cancel" /></AppButton>
+          </template>
+        </div>
+      </div>
       <ExerciseShell :key="stepIndex" :exercise="step.exercise" :is-last="isLast" @done="advance" @exit="exit" />
     </template>
   </div>

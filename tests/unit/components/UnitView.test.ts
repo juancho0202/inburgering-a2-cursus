@@ -132,6 +132,20 @@ describe("restarting halfway", () => {
     expect(buttonWith(wrapper, "Les opnieuw beginnen")).toBeUndefined();
   });
 
+  it("sits in the same row as the read-aloud button, after it, on a question and on a lesson step", async () => {
+    progress.units.c = { status: "in_progress", stepIndex: 1 };
+    const question = await open("c");
+    const read = buttonWith(question.wrapper, "Lees de vraag voor")!.element;
+    const restartButton = buttonWith(question.wrapper, "Les opnieuw beginnen")!.element;
+    expect(read.parentElement!.contains(restartButton)).toBe(true);
+    expect(read.compareDocumentPosition(restartButton) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+
+    progress.units.b = { status: "in_progress", stepIndex: 1 };
+    const lessonStep = await open("b");
+    const readLesson = buttonWith(lessonStep.wrapper, "Lees voor")!.element;
+    expect(readLesson.parentElement!.contains(buttonWith(lessonStep.wrapper, "Les opnieuw beginnen")!.element)).toBe(true);
+  });
+
   it("asks first, then goes back to step 1 and saves that position", async () => {
     progress.units.c = { status: "in_progress", stepIndex: 2 };
     const { wrapper } = await open("c");
