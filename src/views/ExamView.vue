@@ -172,21 +172,33 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
   <!-- Dutch only, like the real exam (route meta dutchOnly): its text is written here in Dutch, not in the message files -->
   <div v-else class="pb-28" lang="nl" translate="no">
     <!-- top bar -->
-    <header class="sticky top-0 z-30 -mx-4 mb-4 border-b border-line bg-surface/95 px-4 py-3 backdrop-blur">
-      <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-3">
+    <header class="sticky top-0 z-30 -mx-4 mb-4 border-b border-line bg-surface/95 px-4 py-2 backdrop-blur sm:py-3">
+      <div class="mx-auto flex max-w-6xl items-stretch gap-3 sm:items-center">
         <div class="min-w-0 flex-1">
           <p class="truncate font-extrabold">{{ exam.title }}</p>
-          <p class="text-xs text-muted">{{ skillLabel[exam.skill] }} · {{ DISCLAIMER }}</p>
+          <!-- On a phone only the skill: the disclaimer would take six lines -->
+          <p class="truncate text-xs text-muted">
+            {{ skillLabel[exam.skill] }}<span class="hidden sm:inline"> · {{ DISCLAIMER }}</span>
+          </p>
         </div>
-        <p
-          class="rounded-2xl px-4 py-1.5 text-2xl font-extrabold tabular-nums"
-          :class="remaining < 5 * 60_000 ? 'bg-bad-bg text-bad' : remaining < 10 * 60_000 ? 'bg-brand-bg text-brand-strong' : 'bg-surface-2'"
-          role="timer"
-          :aria-label="`Nog ${formatTime(remaining)} minuten`"
-        >
-          ⏱ {{ formatTime(remaining) }}
-        </p>
-        <AppButton variant="ghost" @click="router.push('/examens')">Stoppen</AppButton>
+        <!-- Phone: timer above "Stoppen", spread over the bar's height; from sm: side by side -->
+        <div class="flex shrink-0 flex-col items-end justify-between gap-1 sm:flex-row sm:items-center sm:gap-3">
+          <p
+            class="rounded-xl px-2.5 py-0.5 text-lg font-extrabold tabular-nums sm:rounded-2xl sm:px-4 sm:py-1.5 sm:text-2xl"
+            :class="remaining < 5 * 60_000 ? 'bg-bad-bg text-bad' : remaining < 10 * 60_000 ? 'bg-brand-bg text-brand-strong' : 'bg-surface-2'"
+            role="timer"
+            :aria-label="`Nog ${formatTime(remaining)} minuten`"
+          >
+            ⏱ {{ formatTime(remaining) }}
+          </p>
+          <button
+            type="button"
+            class="rounded-lg px-2 py-0.5 text-sm font-bold text-muted hover:bg-surface-2 hover:text-ink sm:px-4 sm:py-2 sm:text-base"
+            @click="router.push('/examens')"
+          >
+            Stoppen
+          </button>
+        </div>
       </div>
       <p v-if="notice" role="alert" class="mx-auto mt-2 max-w-6xl rounded-xl bg-brand-bg px-3 py-2 font-bold text-brand-strong">{{ notice }}</p>
       <p v-if="saveFailed" class="mx-auto mt-2 max-w-6xl text-sm font-semibold text-bad">Opslaan lukt niet. Je antwoorden staan nog op dit scherm.</p>

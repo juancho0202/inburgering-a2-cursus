@@ -264,6 +264,19 @@ describe("the clock", () => {
   });
 });
 
+describe("header", () => {
+  it("the timer and 'Stoppen' sit together in one right-hand column; 'Stoppen' leaves without handing in", async () => {
+    setup();
+    const { wrapper, router } = await open();
+    const stop = buttonWith(wrapper, "Stoppen")!;
+    expect(stop.element.parentElement).toBe(wrapper.find("[role=timer]").element.parentElement);
+    await stop.trigger("click");
+    await flushPromises();
+    expect(router.currentRoute.value.path).toBe("/examens");
+    expect(submits()).toHaveLength(0);
+  });
+});
+
 describe("writing and form exams", () => {
   it("shows the task, counts words while typing, and saves the text", async () => {
     setup({ items: [writingTask], examExtra: { skill: "schrijven" } });
