@@ -264,6 +264,28 @@ describe("the clock", () => {
   });
 });
 
+describe("header", () => {
+  it("marking lives in the header with 'Stoppen'; the bottom bar only has Vorige, Volgende and Inleveren", async () => {
+    setup();
+    const { wrapper } = await open();
+    const header = wrapper.find("header");
+    expect(header.text()).toContain("Markeer");
+    const bottom = wrapper.findAll("button").filter((b) => !header.element.contains(b.element) && !b.element.closest("nav"));
+    expect(bottom.map((b) => b.text())).toEqual(["← Vorige", "Volgende →", "Inleveren"]);
+  });
+
+  it("the timer and 'Stoppen' sit together in one right-hand column; 'Stoppen' leaves without handing in", async () => {
+    setup();
+    const { wrapper, router } = await open();
+    const stop = buttonWith(wrapper, "Stoppen")!;
+    expect(wrapper.find("[role=timer]").element.parentElement!.contains(stop.element)).toBe(true);
+    await stop.trigger("click");
+    await flushPromises();
+    expect(router.currentRoute.value.path).toBe("/examens");
+    expect(submits()).toHaveLength(0);
+  });
+});
+
 describe("writing and form exams", () => {
   it("shows the task, counts words while typing, and saves the text", async () => {
     setup({ items: [writingTask], examExtra: { skill: "schrijven" } });
