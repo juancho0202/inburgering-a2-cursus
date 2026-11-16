@@ -191,13 +191,24 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
           >
             ⏱ {{ formatTime(remaining) }}
           </p>
-          <button
-            type="button"
-            class="rounded-lg px-2 py-0.5 text-sm font-bold text-muted hover:bg-surface-2 hover:text-ink sm:px-4 sm:py-2 sm:text-base"
-            @click="router.push('/examens')"
-          >
-            Stoppen
-          </button>
+          <div class="flex items-center gap-1 sm:gap-3">
+            <button
+              v-if="page"
+              type="button"
+              class="rounded-lg px-2 py-0.5 text-sm font-bold hover:bg-surface-2 sm:px-4 sm:py-2 sm:text-base"
+              :class="isFlagged(page.id) ? 'bg-brand-bg text-brand-strong' : 'text-ink'"
+              @click="toggleFlag"
+            >
+              ⚑ {{ isFlagged(page.id) ? "Markering weg" : "Markeer" }}
+            </button>
+            <button
+              type="button"
+              class="rounded-lg px-2 py-0.5 text-sm font-bold text-muted hover:bg-surface-2 hover:text-ink sm:px-4 sm:py-2 sm:text-base"
+              @click="router.push('/examens')"
+            >
+              Stoppen
+            </button>
+          </div>
         </div>
       </div>
       <p v-if="notice" role="alert" class="mx-auto mt-2 max-w-6xl rounded-xl bg-brand-bg px-3 py-2 font-bold text-brand-strong">{{ notice }}</p>
@@ -306,10 +317,7 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
           <AppButton variant="secondary" :disabled="position === 0" @click="go(position - 1)">← Vorige</AppButton>
           <AppButton variant="secondary" :disabled="position >= items.length - 1" @click="go(position + 1)">Volgende →</AppButton>
         </div>
-        <div class="flex gap-2">
-          <AppButton v-if="page" :variant="isFlagged(page.id) ? 'primary' : 'secondary'" @click="toggleFlag">⚑ {{ isFlagged(page.id) ? "Markering weg" : "Markeer" }}</AppButton>
-          <AppButton variant="good" @click="confirming = true">Inleveren</AppButton>
-        </div>
+        <AppButton variant="good" @click="confirming = true">Inleveren</AppButton>
       </div>
     </div>
 
