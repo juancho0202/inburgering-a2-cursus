@@ -1,7 +1,7 @@
 /** Scenes for the KNM lessons (knowledge of Dutch society). */
 import {
   C, FLOOR, INK, SKIN, W, bike, bubble, circle, clock, cloud, counter, cup, door, ellipse, envelope, frame, g, gable, laptop, letter, outdoors, path,
-  plant, rect, room, shelf, sign, stroke, sun, table, text, tree, whiteboard, window,
+  heart, openBook, plant, rect, room, shelf, sign, stroke, sun, table, text, tree, whiteboard, window, windmill,
 } from "./kit.js";
 import { peep, reach, type Peep } from "./peeps.js";
 import type { Scene } from "./scenes.js";
@@ -353,6 +353,43 @@ const rechtbank: Scene = {
   },
 };
 
-export const knmScenes: Record<string, Scene> = { grachten, museum, zorgverzekering, belasting, alarm, afspraak, diversiteit, mbo, oudergesprek, parlement, rechtbank };
+/** A small card on the pin board with the picture and name of one KNM theme. */
+function themeCard(x: number, y: number, label: string, icon: string, a: number) {
+  return g(rect(-27, -34, 54, 66, C.white, 4, true) + circle(0, -30, 3, C.red, true) + g(icon, "translate(0 -6)") + text(0, 24, label, label.length > 10 ? 7.5 : 8.5, INK, 800), `translate(${x} ${y}) rotate(${a})`);
+}
+
+const THEME_ICONS: [string, string][] = [
+  ["werk", rect(-13, -14, 26, 18, C.brown, 3, true) + stroke("M-5-14v-5h10v5") + stroke("M-13-6H13", INK, 1.6)],
+  ["onderwijs", g(openBook(0, 0), "translate(0 4) scale(0.6)")],
+  ["wonen", path("M-14 4V-8L0-20L14-8V4Z", C.brick, true) + rect(-4, -6, 8, 10, C.navy, 1, true)],
+  ["de staat", rect(-15, -18, 30, 8, "#ae1c28") + rect(-15, -10, 30, 8, C.white) + rect(-15, -2, 30, 8, "#21468b") + rect(-15, -18, 30, 24, "none", 1, true)],
+  ["gezondheid", rect(-5, -20, 10, 26, C.red, 2) + rect(-13, -12, 26, 10, C.red, 2)],
+  ["omgang", heart(-6, -8, 1.1, C.rose) + heart(7, -10, 0.9, C.orange)],
+  ["instanties", path("M-16-10L0-20L16-10Z", C.grey, true) + rect(-14, -10, 28, 14, C.white, 0, true) + stroke("M-8-8V2M0-8V2M8-8V2", INK, 2)],
+  ["geschiedenis", windmill(0, 8, 0.25)],
+];
+
+const themas: Scene = {
+  alt: "Een vrouw oefent KNM-vragen op haar laptop. Op het prikbord hangen alle thema's door elkaar: werk, wonen, gezondheid, onderwijs en meer.",
+  draw: () => {
+    const top = 236;
+    const p: Peep = { x: 110, y: top + 8, h: 330, pose: "body/Macbook", head: "Hijab", face: "Driven", colors: { skin: SKIN[2], scarf: C.teal, top: C.yellow } };
+    const tilt = [-6, 4, -3, 7, 5, -5, 3, -4];
+    const cards = THEME_ICONS.map(([label, icon], i) => themeCard(238 + (i % 4) * 62, 78 + Math.floor(i / 4) * 82 + (i % 3) * 4, label, icon, tilt[i])).join("");
+    return (
+      room(C.wallGreen) +
+      rect(198, 22, 272, 200, C.wood, 6, true) +
+      rect(206, 30, 256, 184, "#d7b48a", 3) +
+      cards +
+      peep(p) +
+      table(20, top, 260) +
+      cup(240, top - 4, C.sky2) +
+      bubble(122, 60, "?", { size: 22, w: 44, think: [118, 108] }) +
+      plant(420, FLOOR + 40)
+    );
+  },
+};
+
+export const knmScenes: Record<string, Scene> = { grachten, museum, zorgverzekering, belasting, alarm, afspraak, diversiteit, mbo, oudergesprek, parlement, rechtbank, themas };
 
 void [counter, FLOOR, tree];

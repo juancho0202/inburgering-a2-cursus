@@ -118,6 +118,13 @@ describe("the real course", () => {
   it("lists exams as Lezen, Luisteren, KNM, Schrijven", () => {
     expect([...result.content.exams.values()].map((e) => e.skill)).toEqual(["lezen", "lezen", "luisteren", "luisteren", "knm", "knm", "schrijven", "schrijven"]);
   });
+  // A unit that opened straight on a question (KNM Gemengd) left learners without any idea what the lesson was about.
+  it("opens every lesson with an introduction slide and its picture", () => {
+    const units = [...result.content.modules.values()].flatMap((m) => m.units.map((id) => result.content.units.get(id)!));
+    expect(units.length).toBeGreaterThan(40);
+    expect(units.filter((u) => u.steps[0]?.type !== "lesson").map((u) => u.id)).toEqual([]);
+    expect(units.filter((u) => !u.scene).map((u) => u.id)).toEqual([]);
+  });
   it("keeps the demo unit out of the module list but available", () => {
     expect(result.content.modules.get("basis")!.units).not.toContain("basis-demo");
     expect(result.content.units.has("basis-demo")).toBe(true);
