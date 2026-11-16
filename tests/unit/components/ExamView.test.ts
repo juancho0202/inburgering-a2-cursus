@@ -275,7 +275,7 @@ describe("header", () => {
     const header = wrapper.find("header");
     expect(header.text()).toContain("Markeer");
     const bottom = wrapper.findAll("button").filter((b) => !header.element.contains(b.element) && !b.element.closest("nav"));
-    expect(bottom.map((b) => b.text())).toEqual(["← Vorige", "Volgende →", "🏁"]);
+    expect(bottom.map((b) => b.text())).toEqual(["🏁", "← Vorige", "Volgende →"]); // flag far left, Volgende right-most under the thumb
     // Volgende is the primary action, Vorige is secondary, the flag is the only way to the confirm screen
     expect(buttonWith(wrapper, "Volgende")!.classes()).toContain("bg-brand");
     expect(buttonWith(wrapper, "Vorige")!.classes()).not.toContain("bg-brand");
