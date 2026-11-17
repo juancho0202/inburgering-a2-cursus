@@ -24,10 +24,17 @@ export function spellAbbreviations(text: string): string {
   return text.replace(SPELLED_ANY_CASE, spell).replace(SPELLED_AS_WRITTEN, spell);
 }
 
+/**
+ * Lines that are layout, not words: markdown table rows (a voice reads the pipes) and rules.
+ * Tables are never read aloud; the page shows them and the words in them have their own 🔊 buttons.
+ */
+const SILENT_LINE = /^\s*(?:\|.*|(?:[-*]\s*){3,}|```.*)$/;
+
 /** Turn course text (markdown, gaps, lists) into something that reads well aloud. */
 export function speakable(text: string): string {
   return spellAbbreviations(text)
     .split(/\n+/)
+    .filter((line) => !SILENT_LINE.test(line))
     // A list item or line without its own full stop still needs a pause.
     .map((line) => line.replace(/^\s*(?:[-•]|\d+\.)\s+/, "").trim())
     .filter(Boolean)
@@ -35,7 +42,9 @@ export function speakable(text: string): string {
     .join(" ")
     .replace(/_{2,}/g, " … ")
     .replace(/[*_`#>]/g, "")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
     .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/\|/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 }

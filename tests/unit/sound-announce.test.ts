@@ -63,6 +63,29 @@ describe("voice announcements", () => {
     expect(speakable("Je ziet:\n- de bus\n- de trein")).toBe("Je ziet: de bus. de trein");
   });
 
+  it("never reads a markdown table, only the text around it", () => {
+    const md = "**Verbindingswoorden** maken je tekst beter:\n\n| Woord | Gebruik |\n| --- | --- |\n| en | twee dingen samen |\n\nGebruik ze vaak.";
+    expect(speakable(md)).toBe("Verbindingswoorden maken je tekst beter: Gebruik ze vaak.");
+    expect(speakable("| a | b |\n| --- | --- |\n| c | d |")).toBe("");
+  });
+
+  it("skips rules, code fences and images, and never says a stray pipe", () => {
+    expect(speakable("Eerst.\n\n---\n\nDaarna.")).toBe("Eerst. Daarna.");
+    expect(speakable("Kijk ![de kaart](kaart.png) goed.")).toBe("Kijk goed.");
+    expect(speakable("een | twee")).toBe("een twee");
+    expect(speakable("___")).toBe("…");
+  });
+
+  it("leaves a lesson block that is only a table out of the read-along", () => {
+    const step = {
+      type: "lesson" as const,
+      id: "l",
+      title: "Tijd",
+      blocks: [{ kind: "text" as const, md: "| a | b |\n| --- | --- |\n| c | d |" }, { kind: "tip" as const, md: "Oefen." }],
+    };
+    expect(stepSegments(step, { first: false, unitTitle: "Tijd" }).map((s) => s.id)).toEqual(["heading", "block-1"]);
+  });
+
   it("turns gaps and markdown into speakable text", () => {
     expect(speakable("Vaak **het**: *het gesprek*, ___ blikje")).toBe("Vaak het: het gesprek, … blikje");
   });
