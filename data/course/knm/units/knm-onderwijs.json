@@ -1205,6 +1205,176 @@
     },
     {
       "type": "lesson",
+      "id": "knm-onderwijs-l-07",
+      "title": "Van vmbo naar de universiteit?",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Welke weg kun je kiezen? Je gaat niet zomaar naar elke school."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Je hebt …",
+            "Je kunt daarna naar …"
+          ],
+          "rows": [
+            [
+              "vmbo",
+              "mbo"
+            ],
+            [
+              "mbo niveau 4",
+              "hbo (of werken)"
+            ],
+            [
+              "havo",
+              "hbo (of mbo)"
+            ],
+            [
+              "vwo",
+              "universiteit (wo)"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Meteen naar de universiteit?** Met een **vmbo-diploma** kan dat **niet**. Je gaat meestal na het **vwo** naar de universiteit. Met vmbo ga je eerst naar het mbo."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-049",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Na het vmbo ga je naar het mbo. Naar de universiteit ga je meestal na het vwo.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Kan je in Nederland met een vmbo-diploma meteen naar de universiteit?",
+        "options": [
+          "Ja, dat kan.",
+          "Nee, dat kan niet.",
+          "Alleen met toestemming van een docent.",
+          "Alleen als je 18 jaar bent."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-050",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Vwo = voorbereidend wetenschappelijk onderwijs. Daarna kun je naar de universiteit.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke school leidt tot de universiteit?",
+        "options": [
+          "Het vmbo",
+          "Het mbo niveau 2",
+          "Het vwo",
+          "De basisschool"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-051",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Havo leidt naar het hbo.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Na het havo kun je naar het hbo.",
+        "answer": true
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-onderwijs-l-08",
+      "title": "Een diploma uit het buitenland",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Heb je een diploma uit een ander land? Een Nederlandse school of werkgever weet niet altijd wat dat diploma waard is. Daarom kun je je diploma laten **waarderen**: iemand **vergelijkt** je diploma met het Nederlandse onderwijs. Dan zie je welk **niveau** het is, bijvoorbeeld hbo of mbo.\n\nDit doe je bij de **IDW**: het landelijke loket voor **internationale diplomawaardering**."
+        },
+        {
+          "kind": "tip",
+          "md": "**IDW** = **I**nternationale **D**iploma**w**aardering. Een universiteit of een bibliotheek waardeert jouw diploma niet. Je krijgt van de IDW een papier met het niveau van je diploma."
+        },
+        {
+          "kind": "example",
+          "nl": "Carlos heeft een diploma uit Amerika. Hij laat zijn diploma waarderen bij de IDW.",
+          "note": "Het diploma wordt vergeleken met het Nederlandse niveau."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-052",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Een buitenlands diploma laat je waarderen bij de IDW (internationale diplomawaardering).",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Carlos heeft een diploma uit Amerika. Hij wil zijn Amerikaanse diploma laten waarderen in Nederland. Waar kan dit?",
+        "options": [
+          "Bij de IDW.",
+          "Bij de bibliotheek.",
+          "Bij een universiteit.",
+          "Bij het UWV."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-053",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Waarderen = vergelijken met het Nederlandse onderwijs.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat betekent: een diploma laten waarderen?",
+        "options": [
+          "Je krijgt geld voor je diploma.",
+          "Het diploma wordt vergeleken met het Nederlandse niveau.",
+          "Je haalt het diploma opnieuw.",
+          "Je vertaalt het diploma zelf."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-onderwijs-q-054",
+        "tags": [
+          "knm:onderwijs"
+        ],
+        "explanation": "Daarom laat je het waarderen: dan weet iedereen welk niveau het is.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Een buitenlands diploma is in Nederland altijd meteen bekend.",
+        "answer": false
+      }
+    },
+    {
+      "type": "lesson",
       "id": "knm-onderwijs-l-06",
       "title": "Herhaling",
       "blocks": [

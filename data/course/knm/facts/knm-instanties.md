@@ -17,3 +17,4 @@
 | Vluchtelingenwerk / maatschappelijk werk | begeleiding en hulp |
 - DigiD: inloggen bij de overheid (gemeente, Belastingdienst, DUO, UWV). Geef je DigiD nooit aan een ander.
 - BSN (burgerservicenummer): persoonlijk nummer, op paspoort/ID-kaart.
+- IDW: waardering van buitenlandse diploma's. Gemeente: bijstand en de MAP bij inburgering. UWV: WW. Huisarts: kan een tolk regelen.

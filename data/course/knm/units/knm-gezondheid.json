@@ -593,6 +593,137 @@
         ],
         "answer": 0
       }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-gezondheid-l-04",
+      "title": "Geen Nederlands? Vraag om een tolk",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Spreek je nog niet goed Nederlands? Dan kun je een **tolk** vragen. Een tolk **vertaalt** wat jij zegt en wat de dokter zegt. Dat kan ook **per telefoon**.\n\nZeg het als je een **afspraak maakt**: \"Ik spreek weinig Nederlands. Kunt u een tolk regelen?\" De **huisarts** kan dan een tolk regelen."
+        },
+        {
+          "kind": "dialogue",
+          "lines": [
+            {
+              "speaker": "Assistente",
+              "nl": "Huisartsenpraktijk, goedemorgen."
+            },
+            {
+              "speaker": "Nadia",
+              "nl": "Goedemorgen. Ik ben ziek. Maar ik spreek weinig Nederlands."
+            },
+            {
+              "speaker": "Assistente",
+              "nl": "Geen probleem. Wij regelen een tolk voor u. Kunt u om tien uur komen?"
+            },
+            {
+              "speaker": "Nadia",
+              "nl": "Ja, dank u wel."
+            }
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Een tolk is beter dan je kind of een familielid.** Een tolk kent de medische woorden. Een tolk moet ook geheim houden wat hij hoort.\n\n**Eerst de huisarts.** Naar het ziekenhuis ga je meestal pas als de huisarts je doorverwijst."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-026",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "De huisarts kan een tolk regelen, ook per telefoon. Een ziekenhuis is niet nodig voor het gesprek: een tolk helpt bij het probleem.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Nadia gaat naar een Nederlandse huisarts. Ze spreekt geen Nederlands. Ze heeft niemand die kan vertalen voor haar. Wat kan de huisarts het beste doen?",
+        "options": [
+          "Nadia naar een ziekenhuis sturen.",
+          "Nederlands praten met Nadia.",
+          "Een tolk regelen voor Nadia.",
+          "Nadia naar huis sturen."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-027",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Een tolk vertaalt tussen twee talen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat doet een tolk?",
+        "options": [
+          "Hij geeft medicijnen.",
+          "Hij doet aangifte bij de politie.",
+          "Hij maakt een afspraak voor je.",
+          "Hij vertaalt wat twee mensen zeggen."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-028",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Vraag het bij het maken van de afspraak om een tolk. Dat is beter dan een kind laten vertalen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je spreekt weinig Nederlands en je hebt een afspraak bij de huisarts. Wat doe je het beste?",
+        "options": [
+          "Vragen of de huisarts een tolk kan regelen.",
+          "Je kind meenemen om te vertalen.",
+          "De afspraak afzeggen.",
+          "Niets zeggen."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-029",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Een tolk moet geheim houden wat hij hoort, net als de dokter.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Een tolk mag aan andere mensen vertellen wat jij met de huisarts bespreekt.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-030",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Eerst ga je naar de huisarts. De huisarts verwijst je door naar het ziekenhuis als dat nodig is. Bij levensgevaar bel je 112.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Wanneer ga je meestal naar het ziekenhuis?",
+        "options": [
+          "Altijd als eerste, bij elke klacht.",
+          "Als je geen Nederlands spreekt.",
+          "Als de huisarts je doorverwijst.",
+          "Als je een tolk nodig hebt."
+        ],
+        "answer": 2
+      }
     }
   ]
 }

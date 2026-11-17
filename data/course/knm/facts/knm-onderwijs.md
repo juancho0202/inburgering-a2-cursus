@@ -11,3 +11,5 @@
 - Opvoeding: kinderen leren zelfstandig zijn en hun mening geven; slaan mag niet.
 - Studiefinanciering voor mbo/hbo/wo via DUO.
 - Volwassenen: inburgeringscursus, taalcursus, bibliotheek, mbo-opleidingen.
+- Naar de universiteit ga je meestal na het vwo. Met een vmbo-diploma ga je niet meteen naar de universiteit (eerst mbo).
+- Buitenlands diploma laten waarderen: bij de IDW (internationale diplomawaardering, landelijk loket). Het diploma wordt vergeleken met het Nederlandse niveau.

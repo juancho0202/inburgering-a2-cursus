@@ -11,3 +11,7 @@
 - Gelijke behandeling: discriminatie op werk mag niet; mannen en vrouwen hebben dezelfde rechten.
 - Vakbond: organisatie die opkomt voor werknemers. Ondernemingsraad (OR) in grotere bedrijven.
 - Eigen bedrijf beginnen: inschrijven bij de Kamer van Koophandel (KVK).
+- WW aanvragen (bij het UWV, met DigiD, niet automatisch): vanaf ongeveer 1 week voordat je werkloos wordt (bijv. contract eindigt 31 mei → vanaf 24 mei). Meld je ook als werkzoekende.
+- Langdurig ziek/arbeidsongeschikt: UWV. Eigen bedrijf: AOV (arbeidsongeschiktheidsverzekering) betaalt bij langere tijd ziek of arbeidsongeschikt, niet bij vrije dagen of kapotte spullen.
+- Personeelsvereniging: organiseert activiteiten voor werknemers (uitje, borrel). Werkgever neemt aan; OR praat mee met de directie; vakbond komt op voor werknemers.
+- MAP (Module Arbeidsmarkt en Participatie): onderdeel van inburgering, via de gemeente; voor veel inburgeraars verplicht (gemeente zegt of het voor jou geldt).

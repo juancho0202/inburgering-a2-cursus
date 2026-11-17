@@ -390,6 +390,46 @@ const themas: Scene = {
   },
 };
 
-export const knmScenes: Record<string, Scene> = { grachten, museum, zorgverzekering, belasting, alarm, afspraak, diversiteit, mbo, oudergesprek, parlement, rechtbank, themas };
+
+// A schematic map (not to scale): every province is a tile at roughly the right place, coloured by region.
+const PROVINCE_TILES: [string, number, number, string][] = [
+  ["Friesland", 1, 0, "#bfe3dc"],
+  ["Groningen", 2, 0, "#bfe3dc"],
+  ["Noord-Holland", 0, 1, "#f9d9a8"],
+  ["Flevoland", 1, 1, "#cfe0f5"],
+  ["Drenthe", 2, 1, "#bfe3dc"],
+  ["Zuid-Holland", 0, 2, "#f9d9a8"],
+  ["Utrecht", 1, 2, "#f9d9a8"],
+  ["Overijssel", 2, 2, "#cfe0f5"],
+  ["Zeeland", 0, 3, "#f9d9a8"],
+  ["Noord-Brabant", 1, 3, "#f6c3c9"],
+  ["Gelderland", 2, 3, "#cfe0f5"],
+  ["Limburg", 2, 4, "#f6c3c9"],
+];
+
+const provincies: Scene = {
+  alt: "Een schematische kaart van Nederland met de 12 provincies. In het noorden: Friesland, Groningen en Drenthe. In het westen: Noord-Holland, Zuid-Holland, Utrecht en Zeeland. In het oosten: Flevoland, Overijssel en Gelderland. In het zuiden: Noord-Brabant en Limburg.",
+  draw: () => {
+    const x0 = 100, y0 = 14, w = 96, h = 52, gap = 6;
+    const tiles = PROVINCE_TILES.map(([name, c, r, fill]) => {
+      const x = x0 + c * (w + gap), y = y0 + r * (h + gap);
+      const small = name.length > 10;
+      return rect(x, y, w, h, fill, 8, true) + text(x + w / 2, y + h / 2 + 5, name, small ? 12 : 15, INK, 800);
+    }).join("");
+    return (
+      rect(0, 0, W, 320, C.paper) +
+      rect(0, 0, 90, 320, C.water) +
+      text(45, 150, "Noordzee", 15, INK, 800) +
+      text(45, 170, "(west)", 12, INK, 700) +
+      text(200, 300, "België", 14, INK, 800) +
+      text(448, 150, "Duitsland", 14, INK, 800) +
+      text(448, 170, "(oost)", 12, INK, 700) +
+      tiles +
+      text(45, 34, "N ↑", 16, INK, 800)
+    );
+  },
+};
+
+export const knmScenes: Record<string, Scene> = { provincies, grachten, museum, zorgverzekering, belasting, alarm, afspraak, diversiteit, mbo, oudergesprek, parlement, rechtbank, themas };
 
 void [counter, FLOOR, tree];
