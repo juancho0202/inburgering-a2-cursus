@@ -638,6 +638,514 @@
         "statement": "Als je lid bent van een vakbond, krijg je automatisch geen belasting meer.",
         "answer": false
       }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-werk-l-05",
+      "title": "Geen werk meer: de WW",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Eindigt je contract en heb je geen ander werk? Dan ben je **werkloos**. Misschien kun je een **WW-uitkering** krijgen. WW betekent **werkloosheidswet**: een deel van je loon, voor een tijd. Je moet daarvoor genoeg hebben gewerkt.\n\nDe WW komt van het **UWV**. Je vraagt de uitkering **zelf aan**, op internet, met je **DigiD**. Het gaat **niet automatisch**."
+        },
+        {
+          "kind": "tip",
+          "md": "**Vraag op tijd aan!** Je kunt de WW aanvragen **vanaf ongeveer 1 week voordat je werkloos wordt**. Wacht je te lang? Dan kun je minder geld krijgen.\n\nMeld je ook meteen aan als **werkzoekende** bij het UWV."
+        },
+        {
+          "kind": "example",
+          "nl": "Marks contract eindigt op 31 mei. Een week eerder is 24 mei. Vanaf 24 mei kan hij de WW aanvragen.",
+          "note": "Tel 7 dagen terug vanaf de laatste werkdag."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Wat?",
+            "Wie?"
+          ],
+          "rows": [
+            [
+              "WW-uitkering na ontslag of einde contract",
+              "UWV"
+            ],
+            [
+              "Bijstand, als je geen ander inkomen hebt",
+              "de gemeente"
+            ],
+            [
+              "AOW, pensioen voor ouderen",
+              "SVB"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-026",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Je vraagt de WW zelf aan, vanaf ongeveer een week voordat je werkloos wordt. 24 mei is een week voor 31 mei. De WW gaat niet automatisch.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Mark werkt in een supermarkt. Zijn contract eindigt op 31 mei. Hij heeft nog geen ander werk. Wanneer kan Mark een uitkering aanvragen?",
+        "options": [
+          "Vanaf 30 juni.",
+          "Pas een maand na 31 mei.",
+          "Vanaf 24 mei.",
+          "Hij hoeft niets te doen: het gaat automatisch."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-027",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Je moet de WW zelf aanvragen bij het UWV, met je DigiD.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Een WW-uitkering krijg je automatisch, je hoeft niets te doen.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-028",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "De WW komt van het UWV. De gemeente geeft bijstand.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waar vraag je een WW-uitkering aan?",
+        "options": [
+          "Bij het UWV",
+          "Bij de gemeente",
+          "Bij de SVB",
+          "Bij DUO"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-029",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Ongeveer een week voor het einde: 23 juni.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Een contract eindigt op 30 juni. Vanaf wanneer kun je ongeveer de WW aanvragen?",
+        "options": [
+          "Vanaf 30 juli",
+          "Vanaf 23 juni",
+          "Vanaf 1 januari",
+          "Vanaf 31 juli"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-030",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Werkloos = zonder werk (werk + loos).",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat betekent 'werkloos'?",
+        "options": [
+          "Je bent ziek.",
+          "Je werkt zwart.",
+          "Je hebt geen werk.",
+          "Je hebt vakantie."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-031",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "WW: UWV. Bijstand: gemeente. AOW: SVB. Kinderopvangtoeslag: Belastingdienst.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Wie geeft wat?",
+        "pairs": [
+          [
+            "WW-uitkering",
+            "het UWV"
+          ],
+          [
+            "bijstand",
+            "de gemeente"
+          ],
+          [
+            "AOW",
+            "de SVB"
+          ],
+          [
+            "kinderopvangtoeslag",
+            "de Belastingdienst"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-werk-l-06",
+      "title": "Ziek en arbeidsongeschikt",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "**Ziek?** Meld je meteen ziek bij je werkgever. Meestal krijg je een deel van je loon door, een tijd lang.\n\nIs iemand **heel lang ziek** en kan hij niet meer (volledig) werken? Dan heet dat **arbeidsongeschikt**: arbeid (werk) + on-geschikt (niet in staat). Het **UWV** kijkt dan of hij een uitkering krijgt."
+        },
+        {
+          "kind": "text",
+          "md": "**Een eigen bedrijf?** Dan heb je geen werkgever die je loon doorbetaalt. Wie ziek wordt, verdient dan niets. Daarom kun je een **AOV** nemen: een **arbeidsongeschiktheidsverzekering**. Deze verzekering geeft geld als je **langere tijd ziek** bent en niet kunt werken."
+        },
+        {
+          "kind": "tip",
+          "md": "**AOV = geld bij langdurig ziek zijn.** Niet voor vrije dagen en niet als er iets kapotgaat in je bedrijf. Een kapotte machine is een ander soort verzekering."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Situatie",
+            "Wat helpt?"
+          ],
+          "rows": [
+            [
+              "Je bent een paar dagen ziek",
+              "ziekmelden bij je werkgever"
+            ],
+            [
+              "Je bent heel lang ziek en kunt niet werken",
+              "UWV (uitkering bij arbeidsongeschiktheid)"
+            ],
+            [
+              "Je hebt een eigen bedrijf en wordt lang ziek",
+              "je AOV"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-032",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Een AOV betaalt als je langere tijd niet kunt werken door ziekte of een ongeluk. Het is geen verzekering voor kapotte spullen of vrije dagen.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Tami heeft een eigen bedrijf. Ze heeft een arbeidsongeschiktheidsverzekering (AOV). Wanneer krijgt Tami geld van deze verzekering?",
+        "options": [
+          "Als ze langere tijd ziek is.",
+          "Als er iets kapotgaat in haar bedrijf.",
+          "Als ze vrije dagen wil.",
+          "Als ze minder klanten heeft."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-033",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Arbeid = werk. Ongeschikt = niet in staat. Arbeidsongeschikt: niet in staat om te werken.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat betekent 'arbeidsongeschikt'?",
+        "options": [
+          "Je hebt geen werk gevonden.",
+          "Je kunt door ziekte of een ongeluk (bijna) niet werken.",
+          "Je hebt een tijdelijk contract.",
+          "Je werkt zonder belasting te betalen."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-034",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Mensen met een eigen bedrijf hebben geen werkgever die loon doorbetaalt. Daarom nemen ze vaak een AOV.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Wie kan het beste een AOV nemen?",
+        "options": [
+          "Iemand met een vast contract bij een grote werkgever",
+          "Iemand die met pensioen is",
+          "Iemand met een eigen bedrijf",
+          "Een kind van 10 jaar"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-035",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Een AOV is voor langdurig ziek zijn, niet voor vrije dagen.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Een AOV betaalt geld als je vrije dagen wilt.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-036",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Bij ziekte bel je meteen je werkgever (ziekmelden).",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Iemand is een paar dagen ziek. Wat doet hij als eerste?",
+        "options": [
+          "Zich ziekmelden bij zijn werkgever.",
+          "Een WW-uitkering aanvragen.",
+          "Een AOV afsluiten.",
+          "Naar de gemeente gaan voor bijstand."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-werk-l-07",
+      "title": "Samen op het werk: personeelsvereniging, OR en vakbond",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Op het werk zijn er verschillende groepen. Ze doen allemaal iets anders."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Wie?",
+            "Wat doen ze?"
+          ],
+          "rows": [
+            [
+              "de werkgever",
+              "neemt werknemers aan en betaalt het loon"
+            ],
+            [
+              "de personeelsvereniging",
+              "organiseert **activiteiten voor werknemers**, bijvoorbeeld een uitje of een kerstborrel"
+            ],
+            [
+              "de ondernemingsraad (OR)",
+              "praat namens de werknemers met de directie over plannen en regels in het bedrijf"
+            ],
+            [
+              "de vakbond",
+              "komt op voor werknemers, bijvoorbeeld over loon en regels. Je wordt lid en betaalt contributie"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Personeel** = de mensen die er werken. **Vereniging** = een groep die samen iets doet. Een personeelsvereniging is dus een club voor de mensen van één bedrijf. Gezelligheid staat voorop."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-037",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "De personeelsvereniging organiseert activiteiten voor werknemers. Nieuwe mensen aannemen doet de werkgever.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat doet de personeelsvereniging van een bedrijf?",
+        "options": [
+          "Nieuwe werknemers aannemen.",
+          "Activiteiten organiseren voor werknemers.",
+          "Regels maken over werk en werktijden.",
+          "Het loon betalen."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-038",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Dat is de ondernemingsraad (OR).",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie praat namens de werknemers met de directie over plannen in het bedrijf?",
+        "options": [
+          "De personeelsvereniging",
+          "De Belastingdienst",
+          "De ondernemingsraad (OR)",
+          "De huisarts"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-039",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Een vakbond komt op voor werknemers. Je wordt lid en betaalt contributie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke organisatie komt op voor werknemers, buiten het bedrijf?",
+        "options": [
+          "Het UWV",
+          "De personeelsvereniging",
+          "De KVK",
+          "De vakbond"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-040",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Personeelsvereniging: uitjes. Werkgever: aannemen. OR: meepraten. Vakbond: opkomen voor werknemers.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Wie doet wat?",
+        "pairs": [
+          [
+            "de personeelsvereniging",
+            "een uitje organiseren"
+          ],
+          [
+            "de werkgever",
+            "mensen aannemen"
+          ],
+          [
+            "de OR",
+            "meepraten over plannen van het bedrijf"
+          ],
+          [
+            "de vakbond",
+            "opkomen voor werknemers"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-werk-l-08",
+      "title": "Inburgering en werk: de MAP",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Als je inburgert, leer je ook over **werk** in Nederland. Dat doe je in de **MAP**: de **Module Arbeidsmarkt en Participatie**.\n\nIn de MAP leer je hoe werk zoeken in Nederland gaat. Je doet ook praktijkopdrachten. De MAP regel je via je **gemeente**. Voor veel mensen die inburgeren is de MAP **verplicht**. Je gemeente zegt of dat voor jou geldt."
+        },
+        {
+          "kind": "tip",
+          "md": "**Zo onthoud je de MAP:** Module = een deel van de inburgering. Arbeidsmarkt = werk. Participatie = meedoen in de samenleving. Een uitzendbureau of een cursus solliciteren is **niet** hetzelfde."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-041",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "Bij het inburgeren is de MAP verplicht voor veel mensen. Een uitzendbureau of een cursus solliciteren hoeft niet.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Said is aan het inburgeren. Hij bereidt zich voor op werk. Wat is verplicht?",
+        "options": [
+          "Een cursus solliciteren.",
+          "De Module Arbeidsmarkt en Participatie (MAP).",
+          "Inschrijven bij een uitzendbureau.",
+          "Een eigen bedrijf beginnen."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-042",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "De MAP is de module over arbeidsmarkt en participatie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Waar leer je over werk in Nederland tijdens je inburgering?",
+        "options": [
+          "Bij het UWV",
+          "Bij de KVK",
+          "In de MAP",
+          "Bij de Belastingdienst"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-043",
+        "tags": [
+          "knm:werk"
+        ],
+        "explanation": "De gemeente regelt de MAP.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie regelt de MAP voor je?",
+        "options": [
+          "De politie",
+          "De Belastingdienst",
+          "De huisarts",
+          "De gemeente"
+        ],
+        "answer": 3
+      }
     }
   ]
 }

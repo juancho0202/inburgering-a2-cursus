@@ -113,7 +113,7 @@ describe("the real course", () => {
     expect(result.problems).toEqual([]);
     expect(result.data.version).toMatch(/^[0-9a-f]{8}$/);
     expect(result.data.samenvatting.length).toBeGreaterThan(1000);
-    expect(Object.keys(result.data.facts)).toHaveLength(8);
+    expect(Object.keys(result.data.facts)).toHaveLength(9);
   });
   it("lists exams as Lezen, Luisteren, KNM, Schrijven", () => {
     expect([...result.content.exams.values()].map((e) => e.skill)).toEqual(["lezen", "lezen", "luisteren", "luisteren", "knm", "knm", "schrijven", "schrijven"]);

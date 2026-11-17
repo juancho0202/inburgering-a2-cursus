@@ -623,6 +623,187 @@
         ],
         "answer": 0
       }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-omgang-l-04",
+      "title": "Feesten en eten",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Bij veel feesten hoort **eten** of een **gewoonte**. Dit kom je tegen op het examen."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Feest",
+            "Wanneer?",
+            "Wat hoort erbij?"
+          ],
+          "rows": [
+            [
+              "Oud en Nieuw",
+              "31 december, 's avonds",
+              "**oliebollen** en appelflappen, en vuurwerk om twaalf uur"
+            ],
+            [
+              "Sinterklaas",
+              "5 december (en de weken daarvoor)",
+              "**pepernoten**, schoen zetten, cadeautjes en gedichten"
+            ],
+            [
+              "Kerst",
+              "25 en 26 december",
+              "kerstboom en een kerstdiner met familie"
+            ],
+            [
+              "Pasen",
+              "in het voorjaar",
+              "paaseieren"
+            ],
+            [
+              "Koningsdag",
+              "27 april",
+              "oranje kleren en een vrijmarkt: mensen verkopen hun oude spullen op straat"
+            ],
+            [
+              "Geboorte van een baby",
+              "als er een kindje is",
+              "**beschuit met muisjes**: je trakteert familie en collega's"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Eén eten, één feest:**\n- **Oliebollen** = **Oud en Nieuw**.\n- **Pepernoten** = **Sinterklaas**.\n- **Beschuit met muisjes** = een **baby** is geboren. Het is dus geen eten voor Oud en Nieuw.\n- **Oranje** = Koningsdag."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-026",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Bij Oud en Nieuw eet je oliebollen. Beschuit met muisjes is voor een geboorte. Pepernoten zijn voor Sinterklaas.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welk eten hoort bij Oud en Nieuw in Nederland?",
+        "options": [
+          "Beschuit met muisjes.",
+          "Pepernoten.",
+          "Oliebollen.",
+          "Paaseieren."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-027",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Beschuit met muisjes hoort bij de geboorte van een kindje.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wanneer eet je in Nederland beschuit met muisjes?",
+        "options": [
+          "Op Koningsdag.",
+          "Met Oud en Nieuw.",
+          "Met Pasen.",
+          "Als er een baby is geboren."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-028",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Pepernoten horen bij Sinterklaas (5 december).",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welk eten hoort bij het Sinterklaasfeest?",
+        "options": [
+          "Pepernoten.",
+          "Oliebollen.",
+          "Beschuit met muisjes.",
+          "Paaseieren."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-029",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Oud en Nieuw: oliebollen. Sinterklaas: pepernoten. Geboorte: beschuit met muisjes. Koningsdag: vrijmarkt.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk eten of welke gewoonte hoort bij welk feest?",
+        "pairs": [
+          [
+            "Oud en Nieuw",
+            "oliebollen"
+          ],
+          [
+            "Sinterklaas",
+            "pepernoten"
+          ],
+          [
+            "een geboorte",
+            "beschuit met muisjes"
+          ],
+          [
+            "Koningsdag",
+            "vrijmarkt"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-030",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Met Oud en Nieuw eet je oliebollen. Beschuit met muisjes eet je bij een geboorte.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Met Oud en Nieuw eet je beschuit met muisjes.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-031",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Oud en Nieuw is op 31 december. Dan is het jaar 'oud' en begint om twaalf uur het nieuwe jaar.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Op welke dag vier je Oud en Nieuw?",
+        "options": [
+          "1 januari",
+          "5 mei",
+          "27 april",
+          "31 december"
+        ],
+        "answer": 3
+      }
     }
   ]
 }

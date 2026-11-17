@@ -1,0 +1,1155 @@
+{
+  "id": "knm-kaart",
+  "moduleId": "knm",
+  "title": "Nederland op de kaart",
+  "goal": "Je weet waar de 12 provincies liggen, wat hun hoofdsteden zijn en welke grote steden en rivieren erbij horen.",
+  "scene": "polder",
+  "estimatedMinutes": 35,
+  "tags": [
+    "knm:geschiedenis"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "knm-kaart-l-01",
+      "title": "Het noorden: Groningen, Friesland en Drenthe",
+      "blocks": [
+        {
+          "kind": "picture",
+          "scene": "provincies"
+        },
+        {
+          "kind": "text",
+          "md": "Nederland heeft **12 provincies**. Je ziet ze op de kaart. Het is een **schematische kaart**: de plaatsen kloppen ongeveer, maar de vormen niet. Boven is het **noorden**, links is het **westen** (de Noordzee), rechts is het **oosten** (Duitsland) en onder is het **zuiden** (België).\n\nEerst het **noorden**. Hier liggen drie provincies: **Groningen**, **Friesland** en **Drenthe**."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Provincie",
+            "Hoofdstad",
+            "Wat moet je weten?"
+          ],
+          "rows": [
+            [
+              "Groningen",
+              "Groningen",
+              "in het noordoosten, aan de Waddenzee en naast Duitsland"
+            ],
+            [
+              "Friesland",
+              "Leeuwarden",
+              "in het noorden, met een eigen taal: het Fries. Hier liggen veel Waddeneilanden"
+            ],
+            [
+              "Drenthe",
+              "Assen",
+              "in het noordoosten, naast Duitsland. Veel bos en rust. Hier staan hunebedden: grote stenen graven, heel oud"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Zo onthoud je het:** Friesland is het **noordwesten** van het noorden (links). Groningen en Drenthe liggen naast elkaar, rechts. Groningen ligt **boven** Drenthe. Allebei grenzen ze aan **Duitsland**."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-001",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "In Friesland spreken veel mensen ook Fries. De hoofdstad is Leeuwarden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke provincie heeft een eigen taal, het Fries?",
+        "options": [
+          "Groningen",
+          "Friesland",
+          "Drenthe",
+          "Zeeland"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-002",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Friesland: Leeuwarden. Assen is de hoofdstad van Drenthe.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is de hoofdstad van de provincie Friesland?",
+        "options": [
+          "Assen",
+          "Zwolle",
+          "Leeuwarden",
+          "Groningen"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-003",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Drenthe: Assen. Let op: Assen en Arnhem beginnen allebei met een A, maar Arnhem ligt in Gelderland.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is de hoofdstad van de provincie Drenthe?",
+        "options": [
+          "Leeuwarden",
+          "Arnhem",
+          "Lelystad",
+          "Assen"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-004",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Groningen is de provincie in het uiterste noordoosten. De provincie en de hoofdstad heten allebei Groningen.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke provincie ligt in het noordoosten, boven Drenthe, aan de Waddenzee en naast Duitsland?",
+        "options": [
+          "Groningen",
+          "Friesland",
+          "Overijssel",
+          "Gelderland"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-005",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Drenthe ligt in het noordoosten, naast Duitsland. Het ligt niet aan de Noordzee.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Drenthe ligt aan de Noordzee, in het westen van Nederland.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-006",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Het noorden: Groningen, Friesland en Drenthe.",
+        "difficulty": 2,
+        "type": "mc-multi",
+        "prompt": "Welke drie provincies liggen in het noorden? Kies er drie.",
+        "options": [
+          "Limburg",
+          "Zeeland",
+          "Groningen",
+          "Friesland",
+          "Drenthe",
+          "Utrecht"
+        ],
+        "answers": [
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-kaart-l-02",
+      "title": "Het oosten en het midden: Overijssel, Gelderland, Flevoland en Utrecht",
+      "blocks": [
+        {
+          "kind": "picture",
+          "scene": "provincies"
+        },
+        {
+          "kind": "text",
+          "md": "Onder het noorden ligt het **oosten**. Daar liggen **Overijssel** en **Gelderland**. In het **midden** van het land liggen **Flevoland** en **Utrecht**."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Provincie",
+            "Hoofdstad",
+            "Wat moet je weten?"
+          ],
+          "rows": [
+            [
+              "Overijssel",
+              "Zwolle",
+              "in het oosten, **onder Drenthe**, naast Duitsland. Steden: Enschede, Deventer"
+            ],
+            [
+              "Gelderland",
+              "Arnhem",
+              "in het oosten en het midden, **onder Overijssel**, naast Duitsland. De Veluwe is een groot bos. Steden: Nijmegen, Apeldoorn"
+            ],
+            [
+              "Flevoland",
+              "Lelystad",
+              "in het midden. Het land is **nieuw**: het was water en is droog gemaakt (een polder). Steden: Lelystad, Almere"
+            ],
+            [
+              "Utrecht",
+              "Utrecht",
+              "precies in het midden van Nederland, de kleinste provincie"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Gelderland is niet in het noorden.** Het ligt **onder Overijssel** en **boven Noord-Brabant en Limburg**. Het grenst aan Duitsland. Denk aan de **rivieren**: de Rijn, de Waal en de IJssel stromen door Gelderland.\n\n**Flevoland** is de **jongste** provincie: het land was eerst water. **Utrecht** ligt in het midden, dus niet aan de zee."
+        },
+        {
+          "kind": "example",
+          "nl": "Gelderland ligt in het oosten, tussen Overijssel en Noord-Brabant.",
+          "note": "Als je Gelderland zoekt: ga naar het oosten en dan een stukje naar beneden. Niet helemaal naar het noorden."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-007",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Gelderland ligt in het oosten en het midden: onder Overijssel, boven Noord-Brabant en Limburg, en naast Duitsland.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Waar ligt de provincie Gelderland?",
+        "options": [
+          "In het noordoosten, boven Drenthe.",
+          "In het zuidwesten, naast België en de zee.",
+          "In het noorden, met de Waddeneilanden.",
+          "In het oosten en het midden, onder Overijssel en naast Duitsland."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-008",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Onder Overijssel ligt Gelderland. Groningen ligt in het noorden, Flevoland in het midden en Zeeland in het zuidwesten.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke provincie ligt onder Overijssel en grenst aan Duitsland?",
+        "options": [
+          "Gelderland",
+          "Groningen",
+          "Flevoland",
+          "Zeeland"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-009",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Flevoland is een polder: het land is droog gemaakt. Het is de jongste provincie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke provincie is nieuw land? Het was eerst water.",
+        "options": [
+          "Gelderland",
+          "Flevoland",
+          "Utrecht",
+          "Overijssel"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-010",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Gelderland: Arnhem. Zwolle is de hoofdstad van Overijssel.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is de hoofdstad van de provincie Gelderland?",
+        "options": [
+          "Zwolle",
+          "Lelystad",
+          "Arnhem",
+          "Assen"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-011",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Overijssel: Zwolle. Enschede en Deventer zijn wel grote steden in Overijssel, maar niet de hoofdstad.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Wat is de hoofdstad van de provincie Overijssel?",
+        "options": [
+          "Arnhem",
+          "Enschede",
+          "Deventer",
+          "Zwolle"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-012",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Utrecht ligt in het midden. Het is ook de kleinste provincie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke provincie ligt precies in het midden van Nederland?",
+        "options": [
+          "Utrecht",
+          "Groningen",
+          "Zeeland",
+          "Limburg"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-013",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Dat is Groningen. Gelderland ligt in het oosten en het midden, onder Overijssel.",
+        "difficulty": 2,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Gelderland ligt in het noordoosten, naast de Waddenzee.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-014",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Overijssel – Zwolle, Gelderland – Arnhem, Flevoland – Lelystad, Drenthe – Assen.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welke provincie hoort bij welke hoofdstad?",
+        "pairs": [
+          [
+            "Overijssel",
+            "Zwolle"
+          ],
+          [
+            "Gelderland",
+            "Arnhem"
+          ],
+          [
+            "Flevoland",
+            "Lelystad"
+          ],
+          [
+            "Drenthe",
+            "Assen"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-kaart-l-03",
+      "title": "Het westen: Noord-Holland, Zuid-Holland en Zeeland",
+      "blocks": [
+        {
+          "kind": "picture",
+          "scene": "provincies"
+        },
+        {
+          "kind": "text",
+          "md": "In het **westen** liggen de provincies aan de **Noordzee**: **Noord-Holland**, **Zuid-Holland** en **Zeeland**. Dit is het drukste deel van Nederland. Hier wonen de meeste mensen."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Provincie",
+            "Hoofdstad",
+            "Wat moet je weten?"
+          ],
+          "rows": [
+            [
+              "Noord-Holland",
+              "Haarlem",
+              "in het noordwesten. **Amsterdam** ligt hier, en vliegveld **Schiphol**. Ook het Waddeneiland Texel hoort bij Noord-Holland"
+            ],
+            [
+              "Zuid-Holland",
+              "Den Haag",
+              "in het westen, onder Noord-Holland. Steden: **Den Haag**, **Rotterdam** (grote haven) en Leiden"
+            ],
+            [
+              "Zeeland",
+              "Middelburg",
+              "in het **zuidwesten**, met veel water en eilanden. Naast België. Hier was de **watersnoodramp** in 1953"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Amsterdam is de hoofdstad van Nederland**, maar niet de hoofdstad van een provincie met regering. De **regering** zit in **Den Haag**. En Den Haag is ook de hoofdstad van **Zuid-Holland**.\n\n**Noord** ligt boven, **Zuid** ligt onder: Noord-Holland ligt **boven** Zuid-Holland."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-015",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Amsterdam ligt in Noord-Holland. Den Haag en Rotterdam liggen in Zuid-Holland.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "In welke provincie ligt Amsterdam?",
+        "options": [
+          "Zuid-Holland",
+          "Utrecht",
+          "Flevoland",
+          "Noord-Holland"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-016",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Den Haag en Rotterdam liggen in Zuid-Holland.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "In welke provincie liggen Den Haag en Rotterdam?",
+        "options": [
+          "Zuid-Holland",
+          "Noord-Holland",
+          "Zeeland",
+          "Utrecht"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-017",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Zeeland ligt in het zuidwesten. In 1953 was hier de watersnoodramp.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke provincie ligt in het zuidwesten, met veel water en eilanden, naast België?",
+        "options": [
+          "Limburg",
+          "Zeeland",
+          "Friesland",
+          "Noord-Brabant"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-018",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Noord-Holland: Haarlem. Amsterdam is de hoofdstad van het land, niet van de provincie.",
+        "difficulty": 3,
+        "type": "mc",
+        "prompt": "Wat is de hoofdstad van de provincie Noord-Holland?",
+        "options": [
+          "Amsterdam",
+          "Den Haag",
+          "Haarlem",
+          "Utrecht"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-019",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Zuid-Holland: Den Haag. Rotterdam is wel de grootste stad van de provincie.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Wat is de hoofdstad van de provincie Zuid-Holland?",
+        "options": [
+          "Rotterdam",
+          "Amsterdam",
+          "Leiden",
+          "Den Haag"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-020",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "De regering en het parlement zitten in Den Haag. Amsterdam is de hoofdstad van het land.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "De regering van Nederland zit in Amsterdam.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-021",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Amsterdam en Schiphol: Noord-Holland. Rotterdam: Zuid-Holland. Middelburg: Zeeland.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welke plaats ligt in welke provincie?",
+        "pairs": [
+          [
+            "Amsterdam",
+            "Noord-Holland"
+          ],
+          [
+            "Rotterdam",
+            "Zuid-Holland"
+          ],
+          [
+            "Middelburg",
+            "Zeeland"
+          ],
+          [
+            "Schiphol",
+            "Noord-Holland"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-kaart-l-04",
+      "title": "Het zuiden: Noord-Brabant en Limburg",
+      "blocks": [
+        {
+          "kind": "picture",
+          "scene": "provincies"
+        },
+        {
+          "kind": "text",
+          "md": "In het **zuiden** liggen twee provincies: **Noord-Brabant** en **Limburg**. Allebei grenzen ze aan **België**."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Provincie",
+            "Hoofdstad",
+            "Wat moet je weten?"
+          ],
+          "rows": [
+            [
+              "Noord-Brabant",
+              "'s-Hertogenbosch (Den Bosch)",
+              "in het zuiden, onder de grote rivieren, naast België. Steden: **Eindhoven**, Tilburg en Breda"
+            ],
+            [
+              "Limburg",
+              "Maastricht",
+              "in het **zuidoosten**, naast België **en** Duitsland. Hier is een heuvelachtig landschap. De Maas stroomt door Limburg"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Limburg** is de enige provincie met een **grens met zowel België als Duitsland** en met heuvels. De hoogste plek van Nederland ligt hier, op de Vaalserberg.\n\n**Zeeland, Noord-Brabant en Limburg** grenzen allemaal aan België. Dat zijn de drie provincies in het zuiden."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-022",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Limburg ligt in het zuidoosten. Het grenst aan België én Duitsland.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke provincie ligt in het zuidoosten, naast België en Duitsland?",
+        "options": [
+          "Noord-Brabant",
+          "Gelderland",
+          "Limburg",
+          "Zeeland"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-023",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Eindhoven ligt in Noord-Brabant, in het zuiden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "In welke provincie ligt Eindhoven?",
+        "options": [
+          "Limburg",
+          "Utrecht",
+          "Gelderland",
+          "Noord-Brabant"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-024",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Limburg: Maastricht.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is de hoofdstad van de provincie Limburg?",
+        "options": [
+          "Maastricht",
+          "Eindhoven",
+          "Breda",
+          "Arnhem"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-025",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Noord-Brabant: 's-Hertogenbosch, in het dagelijks leven Den Bosch. Eindhoven is wel de grootste stad.",
+        "difficulty": 3,
+        "type": "mc",
+        "prompt": "Wat is de hoofdstad van de provincie Noord-Brabant?",
+        "options": [
+          "Eindhoven",
+          "'s-Hertogenbosch (Den Bosch)",
+          "Tilburg",
+          "Maastricht"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-026",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "België ligt onder Nederland. Aan België grenzen Zeeland, Noord-Brabant en Limburg.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke drie provincies grenzen aan België?",
+        "options": [
+          "Groningen, Drenthe en Overijssel",
+          "Utrecht, Flevoland en Gelderland",
+          "Zeeland, Noord-Brabant en Limburg",
+          "Friesland, Noord-Holland en Zuid-Holland"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-027",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Limburg ligt in het zuidoosten, onderaan de kaart.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "De provincie Limburg ligt in het noorden van Nederland.",
+        "answer": false
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-kaart-l-05",
+      "title": "Grenzen, steden en water",
+      "blocks": [
+        {
+          "kind": "picture",
+          "scene": "provincies"
+        },
+        {
+          "kind": "text",
+          "md": "**Buurlanden:** Nederland grenst aan **Duitsland** (oosten) en **België** (zuiden). In het westen en het noorden is de **Noordzee**.\n\n**Grenzen met Duitsland:** Groningen, Drenthe, Overijssel, Gelderland en Limburg.\n\n**Grenzen met België:** Zeeland, Noord-Brabant en Limburg."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Stad",
+            "Provincie",
+            "Wat is het?"
+          ],
+          "rows": [
+            [
+              "Amsterdam",
+              "Noord-Holland",
+              "de hoofdstad van Nederland"
+            ],
+            [
+              "Den Haag",
+              "Zuid-Holland",
+              "de regering en het parlement"
+            ],
+            [
+              "Rotterdam",
+              "Zuid-Holland",
+              "een grote haven"
+            ],
+            [
+              "Utrecht",
+              "Utrecht",
+              "in het midden van het land"
+            ],
+            [
+              "Eindhoven",
+              "Noord-Brabant",
+              "grootste stad van het zuiden"
+            ],
+            [
+              "Groningen",
+              "Groningen",
+              "grote stad in het noorden"
+            ]
+          ]
+        },
+        {
+          "kind": "text",
+          "md": "De vier grote steden **Amsterdam, Rotterdam, Den Haag en Utrecht** liggen dicht bij elkaar in het westen. Dat gebied heet de **Randstad**.\n\n**Water:** Het **IJsselmeer** is een groot meer in het midden van het noorden. Het **Waddengebied** is de zee en de eilanden in het noorden: **Texel, Vlieland, Terschelling, Ameland en Schiermonnikoog**. De grote **rivieren** zijn de **Rijn**, de **Waal**, de **Maas** en de **IJssel**."
+        },
+        {
+          "kind": "tip",
+          "md": "**Randstad** = rand + stad: een rand van steden. Ze liggen in een boog, in het westen van het land."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-028",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Nederland grenst aan Duitsland (oosten) en België (zuiden). Daarnaast ligt de Noordzee.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Aan welke twee landen grenst Nederland?",
+        "options": [
+          "Duitsland en België",
+          "Frankrijk en Duitsland",
+          "België en Engeland",
+          "Denemarken en Duitsland"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-029",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Aan Duitsland grenzen Groningen, Drenthe, Overijssel, Gelderland en Limburg.",
+        "difficulty": 2,
+        "type": "mc-multi",
+        "prompt": "Welke provincies grenzen aan Duitsland? Kies er drie.",
+        "options": [
+          "Zeeland",
+          "Gelderland",
+          "Overijssel",
+          "Groningen",
+          "Utrecht",
+          "Noord-Holland"
+        ],
+        "answers": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-030",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Dat gebied heet de Randstad. Het ligt in het westen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Hoe heet het gebied met de grote steden Amsterdam, Rotterdam, Den Haag en Utrecht?",
+        "options": [
+          "De Veluwe",
+          "De Waddenzee",
+          "De Randstad",
+          "De Maas"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-031",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Rotterdam ligt in Zuid-Holland.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "In welke provincie ligt de haven van Rotterdam?",
+        "options": [
+          "Zeeland",
+          "Noord-Holland",
+          "Noord-Brabant",
+          "Zuid-Holland"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-032",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "De Maas stroomt door het zuiden. De IJssel stroomt door het oosten.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke rivier stroomt door Limburg en Noord-Brabant?",
+        "options": [
+          "De Maas",
+          "De IJssel",
+          "De Amstel",
+          "De Vecht"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-033",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Dat zijn de Waddeneilanden: Texel, Vlieland, Terschelling, Ameland en Schiermonnikoog.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke eilanden liggen in het noorden, bij Friesland en Groningen?",
+        "options": [
+          "De Zeeuwse eilanden",
+          "De Waddeneilanden",
+          "De Antillen",
+          "De Faeröer"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-034",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Eindhoven: Noord-Brabant. Enschede: Overijssel. Nijmegen: Gelderland. Almere: Flevoland. Leiden: Zuid-Holland.",
+        "difficulty": 2,
+        "type": "match",
+        "prompt": "Welke stad ligt in welke provincie?",
+        "pairs": [
+          [
+            "Eindhoven",
+            "Noord-Brabant"
+          ],
+          [
+            "Enschede",
+            "Overijssel"
+          ],
+          [
+            "Nijmegen",
+            "Gelderland"
+          ],
+          [
+            "Almere",
+            "Flevoland"
+          ],
+          [
+            "Leiden",
+            "Zuid-Holland"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-kaart-l-06",
+      "title": "Herhaling: alle provincies",
+      "blocks": [
+        {
+          "kind": "picture",
+          "scene": "provincies"
+        },
+        {
+          "kind": "text",
+          "md": "Kijk nog één keer naar de kaart. Zeg de provincies hardop: eerst **het noorden**, dan **het oosten**, dan **het westen** en dan **het zuiden**. Oefen daarna alles door elkaar, net als in het examen.\n\nNoord: Groningen, Friesland, Drenthe.\nOost en midden: Overijssel, Gelderland, Flevoland, Utrecht.\nWest: Noord-Holland, Zuid-Holland, Zeeland.\nZuid: Noord-Brabant, Limburg."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-035",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Amsterdam ligt in Noord-Holland, Eindhoven in Noord-Brabant.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de provincie in.",
+        "text": "Amsterdam ligt in ___. Eindhoven ligt in ___.",
+        "answers": [
+          [
+            "Noord-Holland"
+          ],
+          [
+            "Noord-Brabant"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-036",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Arnhem is de hoofdstad van Gelderland.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "In welke provincie ligt de stad Arnhem?",
+        "options": [
+          "Gelderland",
+          "Overijssel",
+          "Utrecht",
+          "Drenthe"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-037",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Zuid-Holland ligt onder Noord-Holland, aan de Noordzee.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke provincie ligt aan de Noordzee, onder Noord-Holland?",
+        "options": [
+          "Zeeland",
+          "Zuid-Holland",
+          "Utrecht",
+          "Flevoland"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-038",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Utrecht ligt in het midden van het land.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke provincie ligt tussen Noord-Holland, Zuid-Holland en Gelderland, in het midden?",
+        "options": [
+          "Flevoland",
+          "Overijssel",
+          "Utrecht",
+          "Noord-Brabant"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-039",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Leeuwarden is de hoofdstad van Friesland.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke provincie ligt in het noorden en heeft Leeuwarden als hoofdstad?",
+        "options": [
+          "Groningen",
+          "Drenthe",
+          "Overijssel",
+          "Friesland"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-040",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Limburg ligt onderaan rechts, in het zuidoosten.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke provincie ligt in het zuidoosten?",
+        "options": [
+          "Limburg",
+          "Zeeland",
+          "Gelderland",
+          "Noord-Brabant"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-041",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Er zijn twaalf provincies: Groningen, Friesland, Drenthe, Overijssel, Flevoland, Gelderland, Utrecht, Noord-Holland, Zuid-Holland, Zeeland, Noord-Brabant en Limburg.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Nederland heeft 12 provincies.",
+        "answer": true
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-kaart-q-042",
+        "tags": [
+          "knm:geschiedenis"
+        ],
+        "explanation": "Leeuwarden – Friesland, Zwolle – Overijssel, Maastricht – Limburg, Middelburg – Zeeland, Haarlem – Noord-Holland.",
+        "difficulty": 2,
+        "type": "match",
+        "prompt": "Welke hoofdstad hoort bij welke provincie?",
+        "pairs": [
+          [
+            "Leeuwarden",
+            "Friesland"
+          ],
+          [
+            "Zwolle",
+            "Overijssel"
+          ],
+          [
+            "Maastricht",
+            "Limburg"
+          ],
+          [
+            "Middelburg",
+            "Zeeland"
+          ],
+          [
+            "Haarlem",
+            "Noord-Holland"
+          ]
+        ]
+      }
+    }
+  ]
+}

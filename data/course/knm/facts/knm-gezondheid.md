@@ -12,3 +12,4 @@
 - GGD: gezondheid in de regio, vaccinaties.
 - Medisch beroepsgeheim: de dokter vertelt niets aan anderen zonder toestemming.
 - Afspraak afzeggen: op tijd (vaak minstens 24 uur van tevoren), anders soms betalen.
+- Spreek je weinig Nederlands: vraag om een tolk (ook per telefoon); de huisarts kan een tolk regelen. Een tolk is beter dan familie of een kind, en moet geheim houden wat hij hoort. Naar het ziekenhuis ga je meestal na doorverwijzing door de huisarts.

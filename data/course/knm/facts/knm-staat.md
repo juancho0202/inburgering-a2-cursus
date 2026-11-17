@@ -12,3 +12,7 @@
 - Grondrechten: vrijheid van meningsuiting, godsdienst, onderwijs, vereniging; recht op privacy; kiesrecht.
 - Kinderen slaan / huiselijk geweld is verboden; hulp: Veilig Thuis.
 - Naturalisatie: Nederlander worden — inburgering, aanvraag via gemeente (IND beslist).
+- De koning heeft geen politieke macht. Hij bezoekt officieel andere landen (staatsbezoek), ondertekent wetten, leest de troonrede voor en geeft toespraken (kersttoespraak). Belastingregels maken regering en parlement; verkiezingen worden georganiseerd door gemeenten (en de Kiesraad).
+- Kiesrecht: actief = mogen stemmen; passief = gekozen mogen worden. Vanaf 18 jaar.
+- Identificatieplicht: vanaf 14 jaar moet je je kunnen identificeren (paspoort, ID-kaart, rijbewijs) als de politie dat vraagt.
+- Aansprakelijkheid voor schade: onder 14 jaar de ouders; 14–15 jaar kind en ouders; vanaf 16 jaar de jongere zelf. Een aansprakelijkheidsverzekering betaalt vaak schade aan anderen.

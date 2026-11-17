@@ -627,6 +627,141 @@
         ],
         "answer": 0
       }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-instanties-l-04",
+      "title": "Lastige gevallen: naar wie ga je?",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Soms is het moeilijk om te weten **naar wie** je moet gaan. Dit is een lijst van lastige gevallen."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Je wilt …",
+            "Naar wie?"
+          ],
+          "rows": [
+            [
+              "een WW-uitkering na het einde van je contract",
+              "UWV"
+            ],
+            [
+              "bijstand, omdat je geen inkomen hebt",
+              "de gemeente"
+            ],
+            [
+              "je buitenlandse diploma laten waarderen",
+              "IDW"
+            ],
+            [
+              "meer weten over de MAP bij inburgering",
+              "je gemeente"
+            ],
+            [
+              "een tolk bij de huisarts",
+              "vraag het aan de huisarts"
+            ],
+            [
+              "leren over geld en toeslagen, bijvoorbeeld de kinderopvangtoeslag",
+              "Belastingdienst"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-026",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "WW: UWV. Bijstand: gemeente. Diplomawaardering: IDW. Kinderopvangtoeslag: Belastingdienst.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Bij wie moet je zijn?",
+        "pairs": [
+          [
+            "WW-uitkering",
+            "UWV"
+          ],
+          [
+            "bijstand",
+            "de gemeente"
+          ],
+          [
+            "diplomawaardering",
+            "IDW"
+          ],
+          [
+            "kinderopvangtoeslag",
+            "de Belastingdienst"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-027",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "Bijstand komt van de gemeente. De WW komt van het UWV.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je hebt geen werk en geen inkomen. Waar vraag je bijstand aan?",
+        "options": [
+          "Bij het UWV",
+          "Bij de SVB",
+          "Bij DUO",
+          "Bij de gemeente"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-028",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "De gemeente regelt de MAP.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Je wilt weten of de MAP voor jou verplicht is. Naar wie ga je?",
+        "options": [
+          "Naar je gemeente",
+          "Naar de Belastingdienst",
+          "Naar de bibliotheek",
+          "Naar de politie"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-instanties-q-029",
+        "tags": [
+          "knm:instanties"
+        ],
+        "explanation": "De huisarts kan een tolk regelen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je spreekt weinig Nederlands en moet naar de huisarts. Wie kan een tolk regelen?",
+        "options": [
+          "De Belastingdienst",
+          "De huisarts",
+          "De leerplichtambtenaar",
+          "De KVK"
+        ],
+        "answer": 1
+      }
     }
   ]
 }

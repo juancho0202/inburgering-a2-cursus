@@ -11,3 +11,4 @@
 - Buren: kennismaken bij verhuizing, rekening houden met geluid (vooral 's avonds/'s nachts).
 - Feestdagen: Koningsdag (27 april), Dodenherdenking (4 mei, 20.00 uur twee minuten stilte), Bevrijdingsdag (5 mei), Sinterklaas (5 december), Kerst (25 en 26 december), Oud en Nieuw, Keti Koti (1 juli, herdenking afschaffing slavernij).
 - Afval scheiden en zwerfafval: rommel niet op straat gooien.
+- Eten en feest: oliebollen (en appelflappen) = Oud en Nieuw (31 december, vuurwerk om 24.00 uur); pepernoten = Sinterklaas; beschuit met muisjes = geboorte van een baby (trakteren); paaseieren = Pasen; oranje en vrijmarkt = Koningsdag.

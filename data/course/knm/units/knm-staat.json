@@ -653,6 +653,422 @@
         "statement": "In Nederland moet je stemmen als je 18 bent.",
         "answer": false
       }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-staat-l-04",
+      "title": "De koning: wat doet hij wel en niet?",
+      "blocks": [
+        {
+          "kind": "picture",
+          "scene": "parlement"
+        },
+        {
+          "kind": "text",
+          "md": "Nederland heeft een **koning**: Willem-Alexander. De koning heeft **geen politieke macht**. Hij maakt geen wetten en hij bepaalt de regels niet. Dat doen de regering en het parlement.\n\nWat doet de koning wel?"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "De koning …",
+            "Voorbeeld"
+          ],
+          "rows": [
+            [
+              "bezoekt **officieel andere landen**",
+              "een staatsbezoek"
+            ],
+            [
+              "ondertekent wetten, samen met een minister",
+              "een wet is pas klaar als de koning tekent"
+            ],
+            [
+              "leest de troonrede voor",
+              "op Prinsjesdag, de derde dinsdag van september"
+            ],
+            [
+              "geeft toespraken",
+              "bijvoorbeeld de kersttoespraak"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Wat doet de koning niet?** Hij maakt **geen belastingregels** (dat doet de regering met de Tweede Kamer) en hij **organiseert geen verkiezingen** (dat doen de gemeenten en de Kiesraad). Hij is niet gekozen: hij is koning omdat zijn ouder koning of koningin was."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-028",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "De koning gaat op staatsbezoek naar andere landen. Belastingregels en wetten maken de regering en het parlement. De gemeenten organiseren de verkiezingen.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Wat is een taak van de koning van Nederland?",
+        "options": [
+          "Officieel andere landen bezoeken.",
+          "Belastingregels maken.",
+          "Verkiezingen organiseren.",
+          "Wetten bedenken."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-029",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "De koning heeft geen politieke macht. Hij ondertekent de wetten wel.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wie maakt de wetten in Nederland?",
+        "options": [
+          "De koning alleen",
+          "De regering en het parlement",
+          "De politie",
+          "De burgemeester alleen"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-030",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "De koning heeft geen politieke macht. De regering en het parlement bepalen de regels.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "De koning bepaalt in Nederland alle regels.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-031",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Op Prinsjesdag (derde dinsdag van september) leest de koning de troonrede voor.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat gebeurt er op Prinsjesdag?",
+        "options": [
+          "De koning viert zijn verjaardag.",
+          "Er zijn verkiezingen.",
+          "De koning kiest een nieuwe regering.",
+          "De koning leest de troonrede voor: de plannen van de regering."
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-staat-l-05",
+      "title": "Stemmen: actief en passief kiesrecht",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "**Kiesrecht** is het recht om te kiezen bij verkiezingen. Er zijn twee soorten:"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Soort",
+            "Wat betekent het?",
+            "Voorbeeld"
+          ],
+          "rows": [
+            [
+              "**actief** kiesrecht",
+              "je **mag stemmen**",
+              "Sam mag stemmen op een partij"
+            ],
+            [
+              "**passief** kiesrecht",
+              "je **mag gekozen worden**",
+              "Sam mag zelf op een lijst staan en gekozen worden"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Actief = jij doet iets**: je stemt. **Passief = er gebeurt iets met jou**: je wordt gekozen.\n\nVanaf **18 jaar** mag je stemmen. Stemmen is **geheim** en **niet verplicht**."
+        },
+        {
+          "kind": "example",
+          "nl": "Sam mag stemmen. Hij heeft kiesrecht. Hoe heet dit kiesrecht? Actief kiesrecht.",
+          "note": "Stemmen = actief kiesrecht."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-032",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Mogen stemmen = actief kiesrecht. Gekozen mogen worden = passief kiesrecht.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Sam mag stemmen. Hij heeft kiesrecht. Hoe heet dit kiesrecht?",
+        "options": [
+          "Actief kiesrecht.",
+          "Passief kiesrecht.",
+          "Verplicht kiesrecht.",
+          "Geheim kiesrecht."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-033",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Passief = je kunt gekozen worden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is passief kiesrecht?",
+        "options": [
+          "Het recht om te stemmen.",
+          "Het recht om gekozen te worden.",
+          "Het recht om niet te stemmen.",
+          "Het recht om geheim te stemmen."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-034",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Stemmen: actief. Gekozen worden: passief.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk kiesrecht is dit?",
+        "pairs": [
+          [
+            "Ik mag stemmen.",
+            "actief kiesrecht"
+          ],
+          [
+            "Ik mag gekozen worden.",
+            "passief kiesrecht"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-035",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Stemmen is niet verplicht. Het is wel geheim.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "In Nederland moet je verplicht stemmen.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-036",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Vanaf 18 jaar mag je stemmen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Vanaf welke leeftijd mag je in Nederland stemmen?",
+        "options": [
+          "18 jaar",
+          "16 jaar",
+          "14 jaar",
+          "21 jaar"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-staat-l-06",
+      "title": "Jongeren en de wet: identiteitsbewijs en schade",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "**Identiteitsbewijs:** vanaf **14 jaar** moet je je kunnen **identificeren** als een politieagent dat vraagt. Je laat dan een **identiteitsbewijs** zien: een paspoort, een ID-kaart of een rijbewijs. Dat geldt dus ook voor jongeren onder de 18, en ook als iemand iets heeft gestolen of niets verkeerds heeft gedaan."
+        },
+        {
+          "kind": "tip",
+          "md": "**Moet het?** Ja, vanaf **14 jaar**. Het gaat niet om 18 jaar en het gaat niet om duur of goedkoop."
+        },
+        {
+          "kind": "text",
+          "md": "**Schade:** laat iemand per ongeluk iets kapotgaan in een winkel? Dan is er **schade**. Wie moet dat betalen? Wie **aansprakelijk** is: de persoon die verantwoordelijk is. Is een kind **jonger dan 14 jaar**, dan zijn de **ouders** aansprakelijk. Met **14 of 15 jaar** zijn het kind en de ouders samen aansprakelijk. Vanaf **16 jaar** is de jongere zelf aansprakelijk.\n\nEen **aansprakelijkheidsverzekering** betaalt vaak de schade aan een ander."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Leeftijd",
+            "Wie is aansprakelijk voor schade?"
+          ],
+          "rows": [
+            [
+              "jonger dan 14 jaar",
+              "de ouders"
+            ],
+            [
+              "14 en 15 jaar",
+              "het kind en de ouders"
+            ],
+            [
+              "16 jaar en ouder",
+              "de jongere zelf"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Een lang woord in stukjes:** aansprakelijk = je moet er **antwoord op geven** (aan-spreken). Wie is aansprakelijk? Wie moet betalen."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-037",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Vanaf 14 jaar moet je je kunnen identificeren als de politie dat vraagt. Je hoeft er geen 18 voor te zijn.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Luuk is 15 jaar en heeft iets gestolen. De politie vraagt om Luuks identiteitsbewijs. Moet hij zijn identiteitsbewijs laten zien?",
+        "options": [
+          "Alleen als hij iets duurs gestolen heeft.",
+          "Ja, dat moet hij.",
+          "Nee, want hij is nog geen 18 jaar.",
+          "Nee, alleen als zijn ouders erbij zijn."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-038",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Een kind jonger dan 14 jaar is niet zelf aansprakelijk. De ouders zijn aansprakelijk voor de schade.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Charlie is 12 jaar. Ze is in een telefoonwinkel en laat een telefoon vallen. De telefoon is kapot. Wie is aansprakelijk voor de kosten?",
+        "options": [
+          "Charlie.",
+          "De winkeleigenaar.",
+          "De ouders van Charlie.",
+          "De politie."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-039",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Vanaf 14 jaar.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Vanaf welke leeftijd moet je je kunnen identificeren als de politie dat vraagt?",
+        "options": [
+          "12 jaar",
+          "16 jaar",
+          "18 jaar",
+          "14 jaar"
+        ],
+        "answer": 3
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-040",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Vanaf 14 jaar moet het wel.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Een jongere van 17 jaar hoeft zijn identiteitsbewijs niet te laten zien aan de politie.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-041",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Aansprakelijk = verantwoordelijk voor de schade.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat betekent 'aansprakelijk'?",
+        "options": [
+          "Je mag stemmen.",
+          "Je moet de schade betalen of verantwoordelijk zijn.",
+          "Je hebt een identiteitsbewijs.",
+          "Je hebt een verzekering."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-042",
+        "tags": [
+          "knm:staat"
+        ],
+        "explanation": "Vanaf 16 jaar is een jongere zelf aansprakelijk voor schade.",
+        "difficulty": 3,
+        "type": "mc",
+        "prompt": "Een jongere van 16 jaar breekt per ongeluk een raam van een buurman. Wie is aansprakelijk?",
+        "options": [
+          "De ouders alleen",
+          "De politie",
+          "De jongere zelf",
+          "De buurman"
+        ],
+        "answer": 2
+      }
     }
   ]
 }
