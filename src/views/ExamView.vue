@@ -314,11 +314,12 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
     <div class="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface/95 backdrop-blur">
       <!-- One line on every phone: never wrap, and keep the buttons compact on small screens -->
       <div class="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-2 sm:gap-3 sm:py-3 [&_button]:whitespace-nowrap [&_button]:max-sm:px-3">
+        <!-- Finish sits far left, away from the thumb: "Volgende" is the right-most button -->
+        <AppButton variant="good" aria-label="Inleveren" title="Inleveren" @click="confirming = true"><span aria-hidden="true">🏁</span></AppButton>
         <div class="flex gap-2">
           <AppButton variant="secondary" :disabled="position === 0" @click="go(position - 1)">← Vorige</AppButton>
-          <AppButton variant="secondary" :disabled="position >= items.length - 1" @click="go(position + 1)">Volgende →</AppButton>
+          <AppButton :disabled="position >= items.length - 1" @click="go(position + 1)">Volgende →</AppButton>
         </div>
-        <AppButton variant="good" @click="confirming = true">Inleveren</AppButton>
       </div>
     </div>
 
@@ -333,7 +334,7 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
         </p>
         <div class="mt-5 flex flex-wrap justify-end gap-3">
           <AppButton variant="secondary" @click="confirming = false">Terug naar het examen</AppButton>
-          <AppButton variant="good" :disabled="submitting" @click="submit()">{{ submitting ? "Bezig…" : "Ja, inleveren" }}</AppButton>
+          <AppButton variant="good" :disabled="submitting" @click="submit()"><span aria-hidden="true">🏁</span> {{ submitting ? "Bezig…" : "Ja, inleveren" }}</AppButton>
         </div>
       </div>
     </div>

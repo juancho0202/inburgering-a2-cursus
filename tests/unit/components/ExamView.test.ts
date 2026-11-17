@@ -32,6 +32,10 @@ function setup(opts: { items?: unknown[]; examExtra?: Record<string, unknown>; m
 const open = () => mountApp(ExamView, { routePath: "/examen/:id", url: "/examen/ex1" });
 const choose = (w: VueWrapper, label: string) => w.findAll("button").find((b) => b.text().replace(/^\d/, "") === label)!.trigger("click");
 const nav = (w: VueWrapper, n: number) => w.find(`nav button[aria-label^='Vraag ${n}:'], nav button[aria-label^='Opdracht ${n}:']`);
+const finish = async (w: VueWrapper) => {
+  await w.find("button[aria-label='Inleveren']").trigger("click");
+  await flushPromises();
+};
 const timer = (w: VueWrapper) => w.find("[role=timer]").text();
 const saves = () => fakeApi.to("PUT", "/exams/results/res1/state").map((c) => c.body);
 const submits = () => fakeApi.to("POST", "/exams/results/res1/submit");
@@ -157,7 +161,7 @@ describe("moving around", () => {
     expect(wrapper.text()).toContain("Opdracht 2 van 2");
     await pressKey("ArrowLeft");
     expect(wrapper.text()).toContain("Opdracht 1 van 2");
-    await clickButton(wrapper, "Inleveren");
+    await finish(wrapper);
     await pressKey("ArrowRight");
     expect(wrapper.text()).toContain("Opdracht 1 van 2");
   });
@@ -168,7 +172,7 @@ describe("handing in", () => {
     setup();
     const { wrapper } = await open();
     await choose(wrapper, "a");
-    await clickButton(wrapper, "Inleveren");
+    await finish(wrapper);
     expect(wrapper.text()).toContain("2 onderdelen zijn nog niet (helemaal) beantwoord.");
   });
 
@@ -176,14 +180,14 @@ describe("handing in", () => {
     setup({ items: [mc("q1")] });
     const { wrapper } = await open();
     await choose(wrapper, "a");
-    await clickButton(wrapper, "Inleveren");
+    await finish(wrapper);
     expect(wrapper.text()).toContain("Je hebt alles beantwoord.");
   });
 
   it("'Terug naar het examen' closes the dialog without handing in", async () => {
     setup();
     const { wrapper } = await open();
-    await clickButton(wrapper, "Inleveren");
+    await finish(wrapper);
     await clickButton(wrapper, "Terug naar het examen");
     expect(wrapper.find("[role=dialog]").exists()).toBe(false);
     expect(submits()).toHaveLength(0);
@@ -193,7 +197,7 @@ describe("handing in", () => {
     setup();
     const { wrapper, router } = await open();
     await choose(wrapper, "c");
-    await clickButton(wrapper, "Inleveren");
+    await finish(wrapper);
     const confirm = buttonWith(wrapper, "Ja, inleveren")!;
     await confirm.trigger("click");
     await confirm.trigger("click");
@@ -206,7 +210,7 @@ describe("handing in", () => {
     setup();
     const { wrapper } = await open();
     await choose(wrapper, "a");
-    await clickButton(wrapper, "Inleveren");
+    await finish(wrapper);
     await clickButton(wrapper, "Ja, inleveren");
     await tick(2000);
     expect(saves()).toHaveLength(0);
@@ -265,13 +269,19 @@ describe("the clock", () => {
 });
 
 describe("header", () => {
-  it("marking lives in the header with 'Stoppen'; the bottom bar only has Vorige, Volgende and Inleveren", async () => {
+  it("marking lives in the header with 'Stoppen'; the bottom bar only has Vorige, Volgende and the finish flag", async () => {
     setup();
     const { wrapper } = await open();
     const header = wrapper.find("header");
     expect(header.text()).toContain("Markeer");
-    const bottom = wrapper.findAll("button").filter((b) => !header.element.contains(b.element) && !b.element.closest("nav"));
-    expect(bottom.map((b) => b.text())).toEqual(["← Vorige", "Volgende →", "Inleveren"]);
+    const bottom = wrapper.find(".fixed.bottom-0").findAll("button");
+    expect(bottom.map((b) => b.text())).toEqual(["🏁", "← Vorige", "Volgende →"]); // flag far left, Volgende right-most under the thumb
+    // Volgende is the primary action, Vorige is secondary, the flag is the only way to the confirm screen
+    expect(buttonWith(wrapper, "Volgende")!.classes()).toContain("bg-brand");
+    expect(buttonWith(wrapper, "Vorige")!.classes()).not.toContain("bg-brand");
+    await finish(wrapper);
+    expect(wrapper.find("[role=dialog]").text()).toContain("🏁");
+    expect(buttonWith(wrapper, "Ja, inleveren")).toBeTruthy();
   });
 
   it("the timer and 'Stoppen' sit together in one right-hand column; 'Stoppen' leaves without handing in", async () => {
