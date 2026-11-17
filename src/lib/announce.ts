@@ -1,10 +1,11 @@
 import type { Exercise, LessonBlock, Unit } from "@shared/types";
+import { PRONUNCIATIONS } from "@shared/content/pronunciations";
 import { VOICES } from "@shared/content/voices";
 
 type Step = Unit["steps"][number];
 
 /** How Dutch says the letters, written the way a Dutch voice reads them. */
-const LETTER_NAMES: Record<string, string> = {
+export const LETTER_NAMES: Record<string, string> = {
   a: "aa", b: "bee", c: "see", d: "dee", e: "ee", f: "ef", g: "gee", h: "haa", i: "ie", j: "jee", k: "kaa", l: "el", m: "em",
   n: "en", o: "oo", p: "pee", q: "kuu", r: "er", s: "es", t: "tee", u: "uu", v: "vee", w: "wee", x: "iks", y: "ei", z: "zet",
 };
@@ -30,23 +31,122 @@ export function spellAbbreviations(text: string): string {
  */
 const SILENT_LINE = /^\s*(?:\|.*|(?:[-*]\s*){3,}|```.*)$/;
 
-/** Turn course text (markdown, gaps, lists) into something that reads well aloud. */
+const UNITS = ["nul", "een", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen"];
+const TEENS = ["tien", "elf", "twaalf", "dertien", "veertien", "vijftien", "zestien", "zeventien", "achttien", "negentien"];
+const TENS = ["", "", "twintig", "dertig", "veertig", "vijftig", "zestig", "zeventig", "tachtig", "negentig"];
+
+/** A number (0 to 9999) in Dutch words: 21 is "eenentwintig", 1945 "duizend negenhonderdvijfenveertig". */
+export function dutchNumber(n: number): string {
+  if (n < 10) return UNITS[n];
+  if (n < 20) return TEENS[n - 10];
+  if (n < 100) {
+    const unit = UNITS[n % 10];
+    // tweeëntwintig: the trema keeps "ee" and "en" apart
+    return n % 10 ? `${unit}${unit.endsWith("e") ? "ën" : "en"}${TENS[Math.floor(n / 10)]}` : TENS[n / 10];
+  }
+  const [size, word] = n < 1000 ? [100, "honderd"] : [1000, "duizend "];
+  const count = Math.floor(n / size);
+  const rest = n % size;
+  return `${count === 1 ? "" : dutchNumber(count)}${word}${rest ? dutchNumber(rest) : ""}`.trim();
+}
+
+/** "16e" is "zestiende": espeak says "zestiende ee". */
+export function dutchOrdinal(n: number): string {
+  const rest = n % 100;
+  if (rest === 0 || rest >= 20) return `${dutchNumber(n)}ste`;
+  const head = n - rest ? dutchNumber(n - rest) : "";
+  const small = ({ 1: "eerste", 2: "tweede", 3: "derde", 8: "achtste" } as Record<number, string>)[rest] ?? `${dutchNumber(rest)}de`;
+  return `${head}${small}`;
+}
+
+/** "1) aanhef; 2) …" are numbered points, said "1: aanhef; 2: …"; a ")" that closes a "(" stays a bracket. */
+function numberedPoints(text: string): string {
+  let open = 0;
+  return text.replace(/\(|(?<!\d)(\d{1,2})\)|\)/g, (sign, n?: string) => {
+    if (sign === "(") open++;
+    else if (open > 0) open--;
+    else if (n) return `${n}:`;
+    return sign;
+  });
+}
+
+const euro = (_: string, euros: string, cents?: string) =>
+  euros === "0" && cents && cents !== "-" ? `${Number(cents)} cent` : `${euros} euro${cents && cents !== "-" && cents !== "00" ? ` ${Number(cents)}` : ""}`;
+
+/**
+ * Signs as the words a teacher says. Unhandled, the voice reads them by name ("pijl naar rechts", "slash",
+ * "gelijkteken") or runs on without a pause ("·", brackets). tests/unit/voice-text.test.ts fails when the course
+ * uses a sign that is not handled here.
+ */
+function saySigns(text: string): string {
+  return (
+    numberedPoints(text)
+      .replace(/€\s?(\d+)(?:,(\d{2}|-))?/g, euro)
+      .replace(/(\d)\s*–\s*(?=\d)/g, "$1 tot ")
+      .replace(/\s*[–—]\s*/g, ", ")
+      .replace(/(?<![\p{L}\p{N}])(\d{1,4})(?:e|de|ste)(?![\p{L}\p{N}])/gu, (_, n: string) => dutchOrdinal(Number(n)))
+      .replace(/\s*≠\s*/g, " is niet ")
+      .replace(/\s*=\s*/g, " is ")
+      .replace(/\s*\+\s*/g, " plus ")
+      .replace(/\s*→\s*/g, ", ")
+      .replace(/\s*·\s*/g, ". ")
+      .replace(/(?<=\p{L})\s*\/\s*(?=\p{L})/gu, " of ")
+      .replace(/\s*%/g, " procent")
+      .replace(/\s*&\s*/g, " en ")
+      // a picture (☰, an emoji) is shown, not read
+      .replace(/\p{Extended_Pictographic}|[\u2630-\u2637]\uFE0F?/gu, "")
+      // a bracket is a pause
+      .replace(/\s*[()]\s*/g, ", ")
+      // tidy the pauses: one sign at a time, none at the start or the end
+      .replace(/\s+([,.!?:;])/g, "$1")
+      .replace(/,+/g, ",")
+      .replace(/,\s*(?=[.!?:;])/g, "")
+      .replace(/([.!?:;…])\s*,/g, "$1")
+      .replace(/([!?…:;])\s*\./g, "$1")
+      .replace(/\.\s+\./g, ".")
+      .replace(/^\s*,\s*|\s*,\s*$/g, "")
+  );
+}
+
+/** Turn course text (markdown, gaps, lists, signs) into something that reads well aloud. */
 export function speakable(text: string): string {
-  return spellAbbreviations(text)
-    .split(/\n+/)
-    .filter((line) => !SILENT_LINE.test(line))
-    // A list item or line without its own full stop still needs a pause.
-    .map((line) => line.replace(/^\s*(?:[-•]|\d+\.)\s+/, "").trim())
-    .filter(Boolean)
-    .map((line, i, all) => (i < all.length - 1 && !/[.!?:;…]$/.test(line.replace(/[*_]+$/, "")) ? `${line}.` : line))
-    .join(" ")
-    .replace(/_{2,}/g, " … ")
-    .replace(/[*_`#>]/g, "")
-    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
-    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
-    .replace(/\|/g, " ")
+  return saySigns(
+    spellAbbreviations(text)
+      .split(/\n+/)
+      .filter((line) => !SILENT_LINE.test(line))
+      // A list item or line without its own full stop still needs a pause.
+      .map((line) => line.replace(/^\s*(?:[-•]|\d+\.)\s+/, "").trim())
+      .filter(Boolean)
+      .map((line, i, all) => (i < all.length - 1 && !/[.!?:;…]$/.test(line.replace(/[*_]+$/, "")) ? `${line}.` : line))
+      .join(" ")
+      .replace(/_{2,}/g, " … ")
+      .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+      .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+      .replace(/[*_`#>~]/g, "")
+      .replace(/\|/g, " ")
+      .replace(/\s+/g, " "),
+  )
     .replace(/\s+/g, " ")
     .trim();
+}
+
+/** Words in PRONUNCIATIONS, as whole words or word parts ("-tje", "ge-"), longest first so "-etje" wins over "-tje". */
+const PRONOUNCED = new RegExp(
+  `(?<![\\p{L}\\p{N}-])(?:${Object.keys(PRONUNCIATIONS)
+    .sort((a, b) => b.length - a.length)
+    .map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join("|")})(?![\\p{L}\\p{N}-])`,
+  "giu",
+);
+
+/**
+ * What the recorded voice (Piper) is given: the speakable text, with the words espeak says wrong as phonemes in
+ * Piper's [[ ]] (see shared/content/pronunciations.ts). The device's own voice gets speakable() instead.
+ */
+export function voiceInput(text: string): string {
+  const said = speakable(text);
+  // with no pronunciations the pattern would be empty and match between every two letters
+  return Object.keys(PRONUNCIATIONS).length ? said.replace(PRONOUNCED, (word) => `[[${PRONUNCIATIONS[word.toLowerCase()]}]]`) : said;
 }
 
 /**
@@ -56,10 +156,13 @@ export function speakable(text: string): string {
 export const LESSON_VOICES: { id: string; model: string; speaker?: number }[] = [...VOICES];
 export const lessonVoice = (lessonNumber = 1) => LESSON_VOICES[(lessonNumber - 1) % LESSON_VOICES.length].id;
 
-/** File name of the recorded clip for a text in a voice (FNV-1a of both): the same in the generator and the app. */
+/**
+ * File name of the recorded clip for a text in a voice (FNV-1a of both): the same in the generator and the app.
+ * It hashes what the voice is given, so a line is recorded again when its words or their pronunciation change.
+ */
 export function voiceKey(text: string, voice: string): string {
   let h = 0x811c9dc5;
-  for (const ch of `${voice}\n${speakable(text)}`) {
+  for (const ch of `${voice}\n${voiceInput(text)}`) {
     h ^= ch.codePointAt(0)!;
     h = Math.imul(h, 0x01000193) >>> 0;
   }
