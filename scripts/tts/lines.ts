@@ -4,19 +4,22 @@
  */
 import type { Exercise, Fragment } from "@shared/types";
 import type { Content } from "@shared/content/types";
-import { LESSON_DONE, LESSON_VOICES, lessonVoice, speakable, stepSegments, voiceKey } from "../../src/lib/announce.js";
+import { LESSON_DONE, LESSON_VOICES, lessonVoice, speakable, stepSegments, voiceInput, voiceKey } from "../../src/lib/announce.js";
 import { fragmentKey, fragmentRecording, type FragmentRecording } from "../../src/lib/fragments.js";
 
-/** The lines by clip name (see voiceKey), with the voice that says them, and the fragments by fragmentKey. */
+/**
+ * The lines by clip name (see voiceKey), with the voice that says them and what that voice is given (`input`, see
+ * voiceInput), and the fragments by fragmentKey.
+ */
 export function spokenLines(content: Content) {
-  const texts = new Map<string, { text: string; voice: string }>();
+  const texts = new Map<string, { text: string; input: string; voice: string }>();
   const add = (t: string, voice: string) => {
     const text = speakable(t);
     if (!text) return;
     const key = voiceKey(text, voice);
     const other = texts.get(key);
     if (other && (other.text !== text || other.voice !== voice)) throw new Error(`Two lines share the clip name ${key}: "${other.text}" / "${text}"`);
-    texts.set(key, { text, voice });
+    texts.set(key, { text, input: voiceInput(text), voice });
   };
 
   const fragments = new Map<string, FragmentRecording>();

@@ -11,6 +11,8 @@ npx vue-tsc -b      # type-check (also part of `npm run build`)
 npm run build       # type-check + production build; fails if the course content is invalid
 npm run validate    # check data/course
 npm run e2e         # Playwright journeys (needs: npx playwright install chromium)
+npm run voice       # record the lesson voices with Piper and check their pronunciation (scripts/tts/README.md)
+npm run voice:test  # tests of that check (Python, needs the .tts set-up)
 ```
 
 Run `npm install` first in a fresh checkout: `node_modules` is not committed, so the checks above cannot run without it. It needs a patched Node.js (24.22.1 or newer, see `engines` in `package.json`); npm refuses an older one.
