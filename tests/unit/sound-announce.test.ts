@@ -21,10 +21,20 @@ describe("voice announcements", () => {
   });
 
   it("names the lesson on the first step only", () => {
-    const step = { type: "lesson" as const, id: "l", title: "De of het?", blocks: [] };
-    expect(stepAnnouncement(step, { first: true, unitTitle: "De of het", lessonNumber: 11 })).toBe("Les 11. De of het. De of het?");
-    expect(stepAnnouncement(step, { first: false, unitTitle: "De of het", lessonNumber: 11 })).toBe("De of het?");
-    expect(stepAnnouncement({ ...step, title: "De of het" }, { first: true, unitTitle: "De of het", lessonNumber: 11 })).toBe("Les 11. De of het.");
+    const step = { type: "lesson" as const, id: "l", title: "Lidwoorden", blocks: [] };
+    expect(stepAnnouncement(step, { first: true, unitTitle: "De of het", lessonNumber: 11 })).toBe("Les 11. De of het. Lidwoorden");
+    expect(stepAnnouncement(step, { first: false, unitTitle: "De of het", lessonNumber: 11 })).toBe("Lidwoorden");
+  });
+
+  it("does not say the first step's title again when it is the lesson's name, whatever its punctuation or case", () => {
+    const step = { type: "lesson" as const, id: "l", title: "De of het", blocks: [] };
+    for (const title of ["De of het", "De of het?", "de of  het!"]) {
+      expect(stepAnnouncement({ ...step, title }, { first: true, unitTitle: "De of het", lessonNumber: 12 })).toBe("Les 12. De of het.");
+    }
+    // a later step with that title is still read: the lesson's name was said on step 1 only
+    expect(stepAnnouncement({ ...step, title: "De of het?" }, { first: false, unitTitle: "De of het", lessonNumber: 12 })).toBe("De of het?");
+    // more than the name is a title of its own
+    expect(stepAnnouncement({ ...step, title: "De of het: de regels" }, { first: true, unitTitle: "De of het" })).toBe("De of het. De of het: de regels");
   });
 
   it("reads the goal and the readable blocks of a lesson step, in order", () => {
