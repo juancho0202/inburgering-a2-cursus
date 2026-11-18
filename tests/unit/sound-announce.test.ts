@@ -172,6 +172,13 @@ describe("what the recorded voice is given", () => {
     expect(voiceInput("Meneer gebruikt de App.")).toBe(`[[${PRONUNCIATIONS.meneer}]] gebruikt de [[${PRONUNCIATIONS.app}]].`);
   });
 
+  it("says the articles apart when the lesson talks about them, not when they are used", () => {
+    expect(voiceInput("De of het?")).toBe("[[‖dˈə‖ˈɔf‖hˈɛt‖]]?");
+    expect(voiceInput("Je kiest **de of het** met regels.")).toBe("Je kiest [[‖dˈə‖ˈɔf‖hˈɛt‖]] met regels.");
+    expect(voiceInput("Bij het-woorden: ons huis.")).toBe(`Bij [[${PRONUNCIATIONS["het-woorden"]}]]: ons huis.`);
+    for (const t of ["De man of het kind.", "Is het de bus of het huis?"]) expect(voiceInput(t)).toBe(speakable(t));
+  });
+
   it("does not touch the same letters inside a word", () => {
     for (const t of ["vijf-en-twintig", "Groente- en fruitresten", "een appel en apps", "de gemeente", "beter"]) expect(voiceInput(t)).toBe(speakable(t));
   });

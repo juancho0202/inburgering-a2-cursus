@@ -78,11 +78,23 @@ espeak's Dutch rules get loanwords, stress and some vowels wrong (it said "wanni
 | `contains` (warning) | a compound with a word that is in `PRONUNCIATIONS` (*verzekeringspas*) | listen; add it if it is wrong too |
 | `unknown-phoneme` | a phoneme the voice has no sound for (Piper skips it silently) | fix the pronunciation |
 
-`PRONUNCIATIONS` is in `shared/content/pronunciations.ts`: a word, or a word part with its hyphen, and its phonemes the
-way espeak writes Dutch (the voices know no others; `DUTCH_PHONEMES` lists them and the tests check it). The app gives
-Piper those phonemes in `[[ ]]` (`voiceInput` in `src/lib/announce.ts`), and the clip name includes them, so every line
-with that word is recorded again on the next `npm run voice`. Signs (`→`, `=`, `/`, `·`, brackets, euro amounts,
-ordinals) are turned into words for every voice, the device's too, by `speakable`.
+`PRONUNCIATIONS` is in `shared/content/pronunciations.ts`: a word, a phrase, or a word part with its hyphen, and its
+phonemes the way espeak writes Dutch (the voices know no others; `DUTCH_PHONEMES` lists them and the tests check it).
+The app gives Piper those phonemes in `[[ ]]` (`voiceInput` in `src/lib/announce.ts`), and the clip name includes them,
+so every line with that word is recorded again on the next `npm run voice`. Signs (`→`, `=`, `/`, `·`, brackets, euro
+amounts, ordinals) are turned into words for every voice, the device's too, by `speakable`.
+
+**Saying a word apart.** When a lesson talks *about* a word or a word part ("woorden met ge-, be-, ver-", "de of het"),
+a teacher says it on its own: stressed, a little slower, with a pause before and after. espeak runs them together
+("dəɔfhət"), and the voices' comma pause is often under 0.1 s. In a pronunciation, `‖` (`PAUSE`) is a pause, and the
+sounds between pauses last 1.2 times as long: `"ge-": "‖ɣˈə‖"`, `"de of het": "‖dˈə‖ˈɔf‖hˈɛt‖"`. Every word part is
+written this way (a test checks it). The pause takes the text's own comma or colon where there is one, adds 0.3 s
+of silence to the voice's own short pause, and is left out at the start and end of a sentence (`pronunciation/phonemes.py`).
+
+Piper has no such control, so `pronunciation/seeded.py` adds it to the model in memory: two inputs, `pace` and `pause`,
+set each phoneme's length (`w_ceil = Ceil(w × pace) + pause`) before the sound is made, so the voice's melody and timing
+around the pause stay its own. The added frames are then made silent (with 20 ms fades): left to the model, they
+continue the sound before the pause, and after *of* that was a hiss held through the whole pause.
 
 **The sound is wrong.** The voice draws random noise, and now and then it mumbles a word, swallows the end of a line or
 holds a sound. A *listener* hears every take: a phoneme recogniser (wav2vec 2.0 XLSR-53 fine-tuned on Common Voice to
