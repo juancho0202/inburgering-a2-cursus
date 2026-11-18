@@ -97,7 +97,8 @@ class PlanChecker:
         self._letters = {c: without_stress(word_phonemes(self.voice, c)).replace(" ", "") for c in "abcdefghijklmnopqrstuvwxyz"}
         # Whole words of 7 letters or more: a word part ("-tje") or a short word ("appen" in "boodschappen") inside a
         # longer word is often just the same letters.
-        self._listed = sorted((w for w in lists.pronunciations if "-" not in w and len(w) >= 7), key=len, reverse=True)
+        # whole words only: not word parts or phrases ("de of het"), and long enough not to be inside every other word
+        self._listed = sorted((w for w in lists.pronunciations if "-" not in w and " " not in w and len(w) >= 7), key=len, reverse=True)
 
     def check(self, sentences: list[Sentence], missing: set[str]) -> list[Finding]:
         out: list[Finding] = []

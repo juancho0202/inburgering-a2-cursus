@@ -61,8 +61,9 @@ class Recorded:
 
 
 def plan_id(sentences: list[Sentence]) -> str:
-    """Names the phonemes a take was said from: the same take of the same plan is the same audio."""
-    return hashlib.sha256("\n".join("".join(s.phonemes) for s in sentences).encode()).hexdigest()[:16]
+    """Names the phonemes a take was said from (with their pauses and pace): the same take of the same plan is the same audio."""
+    said = ["".join(s.phonemes) + (f" {sorted(s.pauses.items())} {sorted(s.slower.items())}" if s.pauses or s.slower else "") for s in sentences]
+    return hashlib.sha256("\n".join(said).encode()).hexdigest()[:16]
 
 
 class Voices:

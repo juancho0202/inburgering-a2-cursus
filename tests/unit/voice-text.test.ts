@@ -4,7 +4,7 @@
 import { describe, expect, it } from "vitest";
 import { spokenLines } from "../../scripts/tts/lines";
 import { speakable, voiceInput } from "../../src/lib/announce";
-import { DUTCH_PHONEMES, ESPEAK_IS_RIGHT, PRONUNCIATIONS } from "../../shared/content/pronunciations";
+import { DUTCH_PHONEMES, ESPEAK_IS_RIGHT, PAUSE, PRONUNCIATIONS } from "../../shared/content/pronunciations";
 import { realContent } from "../helpers/realContent";
 
 /** Everything the course reads aloud: lesson lines and the lines of listening fragments. */
@@ -48,13 +48,25 @@ describe("what the recorded voice is given", () => {
 });
 
 describe("the pronunciations", () => {
-  it("are written in lower case, with only the phonemes the voices know", () => {
+  it("are written in lower case, with only the phonemes the voices know and pauses", () => {
     for (const [word, ipa] of Object.entries(PRONUNCIATIONS)) {
       expect(word, word).toBe(word.toLowerCase());
-      expect([...ipa].filter((c) => !DUTCH_PHONEMES.includes(c)), `${word}: ${ipa}`).toEqual([]);
+      expect([...ipa].filter((c) => !DUTCH_PHONEMES.includes(c) && c !== PAUSE), `${word}: ${ipa}`).toEqual([]);
+      expect(ipa, `${word}: a pause between two pauses says nothing`).not.toContain(PAUSE + PAUSE);
       // one main stress per word; a stress mark goes before a syllable, never at the end
-      for (const w of ipa.split(" ")) expect((w.match(/ˈ/g) ?? []).length, `${word}: ${ipa}`).toBeLessThanOrEqual(1);
-      expect(ipa, word).not.toMatch(/[ˈˌ]$|^ː/);
+      for (const w of ipa.split(/[ ‖]/).filter(Boolean)) {
+        expect((w.match(/ˈ/g) ?? []).length, `${word}: ${ipa}`).toBeLessThanOrEqual(1);
+        expect(w, word).not.toMatch(/[ˈˌ]$|^ː/);
+      }
+    }
+  });
+
+  it("say every word part apart and stressed, the way a teacher names it", () => {
+    const parts = Object.entries(PRONUNCIATIONS).filter(([word]) => /^-|-$/.test(word));
+    expect(parts.length).toBeGreaterThan(20);
+    for (const [word, ipa] of parts) {
+      expect(ipa, `${word}: between pauses (‖)`).toMatch(/^‖[^‖]+‖$/);
+      expect(ipa, `${word}: stressed`).toContain("ˈ");
     }
   });
 

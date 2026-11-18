@@ -7,7 +7,10 @@ the ones Piper would use), but also keeps
   - whether espeak switched to another language for a word (Piper drops that silently);
   - [[phonemes]] blocks (words from PRONUNCIATIONS) with the punctuation and spaces around them. Piper 1.8 has
     [[ ]] too, but drops the comma or full stop after a block and glues the next word to it ("vər hət" becomes
-    "vərhət"), so the voice runs on where it should pause.
+    "vərhət"), so the voice runs on where it should pause;
+  - pauses: a ‖ in a block ("‖ɣˈə‖" for "ge-", "‖dˈə‖ˈɔf‖hˈɛt‖" for "de of het") is a pause, and the sounds between
+    pauses are said a little slower. That is how a teacher says a word part or a word they talk about, so the
+    learner hears each one. espeak and the voice know no such pause: a comma alone is often under 0.1 s.
 """
 
 from __future__ import annotations
@@ -26,6 +29,11 @@ _TOKEN = re.compile(r"[\w'’]+(?:[.,:\-][\w'’]+)*", re.UNICODE)
 _PAUSES = ",:;"
 _ENDS = ".!?"
 STRESS = "ˈˌ"
+PAUSE = "‖"
+PAUSE_SECONDS = 0.3
+"""Silence added at a pause, after the voice's own (short) comma pause."""
+APART = 1.2
+"""How much slower the sounds of a block with pauses are said (Piper's length scale, on top of the line's pace)."""
 
 _ready = False
 
@@ -69,6 +77,10 @@ class Sentence:
     phonemes: list[str] = field(default_factory=list)
     """What Piper's model is given: one entry per code point, as Piper's own phonemiser makes them."""
     words: list[Word] = field(default_factory=list)
+    pauses: dict[int, float] = field(default_factory=dict)
+    """Seconds of silence added at a phoneme (always a comma, colon or semicolon), by its index in `phonemes`."""
+    slower: dict[int, float] = field(default_factory=dict)
+    """A length scale for the phonemes said slower than the rest, by index."""
 
 
 class Planner:
@@ -97,19 +109,16 @@ class Planner:
                 # a [[ ]] block: a space before it when the text has one there
                 if parts[i - 1][-1:].isspace():
                     out.space()
-                start = len(out.sentence.phonemes)
-                out.add(part.strip())
-                out.sentence.words.append(Word(names[i // 2], start, len(out.sentence.phonemes), part.strip(), "lexicon"))
+                self._block(part, names[i // 2], out)
                 continue
             if i > 0:
                 # punctuation right after a block belongs to its sentence (espeak gets no word to hang it on)
                 lead = re.match(r"\s*([,:;.!?…]*)", part)
                 assert lead
                 for sign in lead.group(1):
-                    if sign in _PAUSES:
-                        out.add(sign + " ")
-                    elif sign in _ENDS:
-                        out.add(sign)
+                    if sign in _PAUSES + _ENDS:
+                        out.sign(sign)
+                    if sign in _ENDS:
                         out.close()
                 rest = part[lead.end() :]
                 # a space or a sign between the block and the next word: they are two words
@@ -120,6 +129,29 @@ class Planner:
                 self._espeak_part(part, out, i)
         out.close()
         return out.sentences
+
+    @staticmethod
+    def _block(block: str, name: str, out: "_Builder") -> None:
+        """A [[ ]] block: its phonemes as they are, with a pause at each ‖ and the sounds between pauses slower."""
+        pieces = block.split(PAUSE)
+        apart = len(pieces) > 1
+        said = [p.strip() for p in pieces if p.strip()]
+        # "de of het" with three pieces: each its own word, so a finding names the word
+        names = name.split() if apart and len(name.split()) == len(said) else [name] * len(said)
+        k = 0
+        for j, piece in enumerate(pieces):
+            if j > 0:
+                out.pause()
+            piece = piece.strip()
+            if not piece:
+                continue
+            sentence = out.sentence
+            start = len(sentence.phonemes)
+            out.add(piece)
+            if apart:
+                sentence.slower.update((n, APART) for n in range(start, len(sentence.phonemes)))
+            sentence.words.append(Word(names[k], start, len(sentence.phonemes), piece, "lexicon"))
+            k += 1
 
     def _espeak_part(self, part: str, out: "_Builder", index: int) -> None:
         """Phonemes for plain text, word by word, the way Piper's EspeakPhonemizer puts them together."""
@@ -164,8 +196,12 @@ class _Builder:
     def __init__(self) -> None:
         self.sentences: list[Sentence] = []
         self.sentence = Sentence()
+        self._added: int | None = None
+        """Index of the comma put in for a pause, while it is the sentence's last sign (the text's own sign replaces it)."""
 
     def add(self, s: str) -> None:
+        if s.strip():
+            self._added = None
         self.sentence.phonemes.extend(unicodedata.normalize("NFD", s))
 
     def space(self) -> None:
@@ -173,12 +209,49 @@ class _Builder:
         if self.sentence.phonemes and self.sentence.phonemes[-1] != " ":
             self.sentence.phonemes.append(" ")
 
+    def _trim(self) -> list[str]:
+        p = self.sentence.phonemes
+        while p and p[-1] == " ":
+            p.pop()
+        return p
+
+    def pause(self) -> None:
+        """A pause, on the comma, colon or semicolon just said, or else on a comma put in. None at a sentence's start."""
+        p = self._trim()
+        if not p:
+            return
+        if p[-1] not in _PAUSES:
+            p.append(",")
+            self._added = len(p) - 1
+        self.sentence.pauses[len(p) - 1] = PAUSE_SECONDS
+        p.append(" ")
+
+    def sign(self, sign: str) -> None:
+        """Punctuation from the text. Right after a pause it takes the place of the pause's comma ("ver-:" is one pause)."""
+        p = self._trim()
+        last = len(p) - 1
+        if p and last == self._added:
+            p[last] = sign
+            self._added = None
+            if sign in _ENDS:
+                # the sentence ends there: its own silence follows
+                self.sentence.pauses.pop(last, None)
+        else:
+            p.append(sign)
+        if sign in _PAUSES:
+            p.append(" ")
+
     def close(self) -> None:
-        if self.sentence.phonemes:
-            while self.sentence.phonemes and self.sentence.phonemes[-1] == " ":
-                self.sentence.phonemes.pop()
+        p = self._trim()
+        if p and len(p) - 1 == self._added:
+            # a pause at the very end of the text: nothing follows to pause for
+            p.pop()
+            self.sentence.pauses.pop(len(p), None)
+        if p:
+            self.sentence.pauses.pop(len(p) - 1, None)
             self.sentences.append(self.sentence)
         self.sentence = Sentence()
+        self._added = None
 
 
 def _flagged_words(phonemes: str) -> list[tuple[str, str | None]]:

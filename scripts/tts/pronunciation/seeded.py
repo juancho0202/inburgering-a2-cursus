@@ -6,7 +6,10 @@ lengths, one for the sound), so every run sounds a little different and a bad ta
 seed on those nodes does not help: onnxruntime keeps one random stream per session, so a line would depend on every
 line said before it. Instead the model is changed in memory, without touching the file:
   - each RandomNormalLike becomes a Slice of a new input (noise_0, noise_1) that is filled from numpy with a seed;
-  - the phoneme lengths (the w_ceil tensor) become an output, with Piper's own patch_voice_with_alignment.
+  - the phoneme lengths (the w_ceil tensor) become an output, with Piper's own patch_voice_with_alignment;
+  - two new inputs set those lengths per phoneme: `pace` multiplies a phoneme's length (1: as the model says it),
+    `pause` adds frames to it. Piper itself has one length scale for the whole sentence and no pause but the
+    silence between sentences.
 The noise for frame t is the same however large the buffer is, so the result depends only on the phonemes, the
 scales and the seed.
 """
@@ -33,6 +36,7 @@ from .phonemes import Planner, Sentence
 # takes the channels the model needs.
 _CHANNELS = 256
 _FRAMES_PER_ID = 32  # a first guess of the buffer; grown when a line is slower
+_FADE = 0.02  # seconds, at each end of a pause's silence
 
 
 class UnsupportedVoice(Exception):
@@ -98,7 +102,7 @@ class SeededVoice:
         self.hop = self.config.hop_length
         self.planner = Planner(self.config.espeak_voice)
         model = onnx.load(str(model_path))
-        add_alignment_output(model)
+        add_alignment_output(model, _control_the_lengths(model))
         self.noise_inputs = _seed_the_noise(model)
         options = onnxruntime.SessionOptions()
         options.intra_op_num_threads = threads
@@ -119,8 +123,10 @@ class SeededVoice:
             ids = phonemes_to_ids(sentence.phonemes, self.config.phoneme_id_map)
             if len(ids) != 2 * len(sentence.phonemes) + 3:
                 raise ValueError(f"phonemes without an id: {self.missing_phonemes([sentence])}")
-            audio, frames = self._run(ids, np.random.SeedSequence([seed, i]), scales, speaker)
+            pace, pause = self._lengths(sentence, len(ids))
+            audio, frames = self._run(ids, np.random.SeedSequence([seed, i]), scales, speaker, pace, pause)
             samples = frames.astype(np.int64) * self.hop
+            self._silence_the_pauses(audio, samples, pause)
             # Piper's layout: BOS, PAD, then each phoneme followed by PAD, then EOS
             per_phoneme = samples[2:-1:2] + samples[3:-1:2]
             peak = float(np.max(np.abs(audio))) or 1.0
@@ -130,9 +136,35 @@ class SeededVoice:
         audio = np.concatenate(parts) if parts else np.zeros(0, dtype=np.float32)
         return Take(audio, self.sample_rate, spoken, seed, scales)
 
-    def _run(self, ids: list[int], seeds: np.random.SeedSequence, scales: Scales, speaker: int | None):
+    def _lengths(self, sentence: Sentence, n: int) -> tuple[np.ndarray, np.ndarray]:
+        """The `pace` and `pause` inputs: per phoneme id, its length scale and the frames added to it."""
+        pace = np.ones((1, 1, n), dtype=np.float32)
+        pause = np.zeros((1, 1, n), dtype=np.float32)
+        for i, scale in sentence.slower.items():
+            # the phoneme and the PAD after it (see the layout in say)
+            pace[0, 0, 2 + 2 * i : 4 + 2 * i] = scale
+        for i, seconds in sentence.pauses.items():
+            pause[0, 0, 2 + 2 * i] = round(seconds * self.sample_rate / self.hop)
+        return pace, pause
+
+    def _silence_the_pauses(self, audio: np.ndarray, samples: np.ndarray, pause: np.ndarray) -> None:
+        """
+        The frames added at a pause become silence. The model fills them with whatever it says at that comma, which
+        after a vowel is near silence but after f or s a hiss held for the whole pause. Its own frames stay, so the
+        sound before the pause ends as it would without it.
+        """
+        for k in np.flatnonzero(pause[0, 0]):
+            end = int(samples[: k + 1].sum())
+            start = end - int(pause[0, 0, k]) * self.hop
+            fade = min(int(_FADE * self.sample_rate), (end - start) // 2)
+            ramp = np.linspace(1.0, 0.0, fade, dtype=np.float32)
+            audio[start : start + fade] *= ramp
+            audio[start + fade : end - fade] = 0.0
+            audio[end - fade : end] *= ramp[::-1]
+
+    def _run(self, ids: list[int], seeds: np.random.SeedSequence, scales: Scales, speaker: int | None, pace: np.ndarray, pause: np.ndarray):
         # generous, so a second run for a slow line is rare (each phoneme id rarely gets more than ~30 frames)
-        frames_guess = max(64, int(len(ids) * _FRAMES_PER_ID * max(1.0, scales.length)))
+        frames_guess = max(64, int(len(ids) * _FRAMES_PER_ID * max(1.0, scales.length) * float(pace.max()) + pause.sum()))
         # spawn() gives new children on every call: make them once, so a second run draws the same numbers
         children = seeds.spawn(len(self.noise_inputs))
         while True:
@@ -141,6 +173,8 @@ class SeededVoice:
                 "input": np.array([ids], dtype=np.int64),
                 "input_lengths": np.array([len(ids)], dtype=np.int64),
                 "scales": np.array([scales.noise, scales.length, scales.noise_w], dtype=np.float32),
+                "pace": pace,
+                "pause": pause,
             }
             if self.speaker_input:
                 feed["sid"] = np.array([speaker or 0], dtype=np.int64)
@@ -156,6 +190,23 @@ class SeededVoice:
                 frames_guess *= 4
                 continue
             return audio.squeeze().astype(np.float32), frames.squeeze()
+
+
+def _control_the_lengths(model: onnx.ModelProto) -> str:
+    """w_ceil = Ceil(w * pace) + pause, with pace and pause new inputs per phoneme id; returns w_ceil's name."""
+    ceil = [n for n in model.graph.node if n.op_type == "Ceil"]
+    if len(ceil) != 1:
+        raise UnsupportedVoice(f"expected the one Ceil of a Piper VITS voice (the phoneme lengths), found {len(ceil)}")
+    node = ceil[0]
+    w, w_ceil = node.input[0], node.output[0]
+    for name in ("pace", "pause"):
+        model.graph.input.append(helper.make_tensor_value_info(name, TensorProto.FLOAT, [1, 1, None]))
+    # everything after the Ceil (the sentence's length, the alignment path) now reads the changed lengths
+    node.input[0], node.output[0] = "paced_w", "model_w_ceil"
+    at = list(model.graph.node).index(node)
+    model.graph.node.insert(at + 1, helper.make_node("Add", ["model_w_ceil", "pause"], [w_ceil], name="pause_add"))
+    model.graph.node.insert(at, helper.make_node("Mul", [w, "pace"], ["paced_w"], name="pace_mul"))
+    return w_ceil
 
 
 def _seed_the_noise(model: onnx.ModelProto) -> list[str]:
