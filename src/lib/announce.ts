@@ -184,8 +184,15 @@ export function exerciseAnnouncement(e: Exercise, withPrompt = true): string {
   return prompt;
 }
 
+/** The same title said aloud: case, punctuation and spacing are not heard ("De of het" and "De of het?"). */
+function sameTitle(a: string, b: string): boolean {
+  const said = (s: string) => s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+  return said(a) === said(b);
+}
+
 /**
- * What the voice says when a step appears. The first step also names the lesson ("Les 3. De of het.").
+ * What the voice says when a step appears. The first step also names the lesson ("Les 3. De of het."), and leaves
+ * out its own title when that is the lesson's name again.
  * An exercise with the same instruction as `previousPrompt` (the exercise just before) doesn't repeat it.
  */
 export function stepAnnouncement(step: Step, opts: { first: boolean; unitTitle: string; lessonNumber?: number; previousPrompt?: string }): string {
@@ -193,7 +200,7 @@ export function stepAnnouncement(step: Step, opts: { first: boolean; unitTitle: 
     step.type === "lesson" ? step.title : exerciseAnnouncement(step.exercise, step.exercise.prompt !== opts.previousPrompt);
   if (!opts.first) return body;
   const intro = opts.lessonNumber ? `Les ${opts.lessonNumber}. ${opts.unitTitle}.` : `${opts.unitTitle}.`;
-  return step.type === "lesson" && step.title === opts.unitTitle ? intro : `${intro} ${body}`;
+  return step.type === "lesson" && sameTitle(step.title, opts.unitTitle) ? intro : `${intro} ${body}`;
 }
 
 /** One piece the voice reads, with the id of the part of the page it belongs to (for highlighting). */
