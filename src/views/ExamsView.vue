@@ -53,7 +53,7 @@ const countLabel = (e: ExamRow) => lang.t(e.skill === "schrijven" ? "exams.tasks
       <h2 class="mb-3 flex items-center gap-2 text-2xl font-bold"><span aria-hidden="true">{{ skillEmoji[g.skill] }}</span> <span lang="nl" translate="no">{{ skillLabel[g.skill] }}</span></h2>
       <div class="grid gap-4 sm:grid-cols-2">
         <article v-for="e in g.rows" :key="e.id" class="card p-5">
-          <h3 class="text-xl font-bold" lang="nl" translate="no">{{ e.title }}</h3>
+          <h3 class="nl-wrap text-xl font-bold" lang="nl" translate="no">{{ e.title }}</h3>
           <p class="text-sm text-muted">{{ lang.t("common.minutes", { n: e.durationMinutes }) }} · {{ countLabel(e) }}</p>
 
           <ul v-if="e.attempts.length" class="mt-3 grid gap-1 text-sm">

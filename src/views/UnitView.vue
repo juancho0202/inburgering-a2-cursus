@@ -192,7 +192,7 @@ const restart = async () => {
         <!-- On a phone the title goes under the label, so a long title wraps on its own line instead of squeezing into a column -->
         <span class="flex min-w-0 flex-1 flex-col text-left sm:flex-none sm:flex-row sm:items-baseline sm:gap-1.5">
           <span><UiLabel k="unit.nextLesson" /><span class="sr-only sm:not-sr-only">:</span></span>
-          <span class="text-sm font-semibold opacity-75 sm:text-lg" lang="nl" translate="no">{{ nextUnit.title }}</span>
+          <span class="nl-wrap text-sm font-semibold opacity-75 sm:text-lg" lang="nl" translate="no">{{ nextUnit.title }}</span>
         </span>
         <span aria-hidden="true">→</span>
       </AppButton></RouterLink>
@@ -217,7 +217,7 @@ const restart = async () => {
 
     <template v-if="step.type === 'lesson'">
       <div :key="stepIndex" class="slide-up pb-28" lang="nl" translate="no">
-        <h2 class="read-along mb-2 text-3xl font-extrabold tracking-tight hyphens-auto [overflow-wrap:anywhere]" :class="{ 'is-reading': isRead('heading') }">{{ step.title }}</h2>
+        <h2 class="read-along mb-2 text-3xl font-extrabold tracking-tight nl-wrap" :class="{ 'is-reading': isRead('heading') }">{{ step.title }}</h2>
         <div class="mb-3 flex flex-wrap items-center gap-2">
           <ReadAlongButton :reading="reading" :label="lang.t('common.readAloud')" :stop-label="lang.t('common.stopReading')" @toggle="toggleRead" />
           <!-- Only after step 1: at the start there is nothing to start over -->

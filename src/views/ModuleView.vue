@@ -31,8 +31,8 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
     <RouterLink to="/" class="text-muted hover:text-ink">← <UiLabel k="common.back" /></RouterLink>
     <header class="mb-8 mt-3 flex items-center gap-4">
       <span class="grid h-16 w-16 place-items-center rounded-2xl text-4xl" :class="style.tile" aria-hidden="true">{{ style.emoji }}</span>
-      <!-- min-w-0 and break-words: a long word ("Maatschappij") breaks instead of pushing the page past the screen -->
-      <div class="min-w-0 break-words" lang="nl" translate="no">
+      <!-- min-w-0 and nl-wrap: a long word ("Maatschappij") hyphenates instead of pushing the page past the screen -->
+      <div class="min-w-0 nl-wrap" lang="nl" translate="no">
         <h1 class="text-3xl font-extrabold tracking-tight">{{ mod.title }}</h1>
         <p class="text-muted">{{ mod.description }}</p>
       </div>
@@ -59,7 +59,7 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
               <UiLabel variant="inline" k="settings.lessonN" :params="{ n: i + 1 }" />
               <span v-if="u.id === recommended" class="rounded-full bg-brand-bg px-2 py-0.5 text-brand-strong normal-case tracking-normal"><UiLabel variant="inline" k="common.next" /></span>
             </p>
-            <h2 class="text-lg font-bold break-words group-hover:text-brand-strong" lang="nl" translate="no">{{ u.title }}</h2>
+            <h2 class="text-lg font-bold nl-wrap group-hover:text-brand-strong" lang="nl" translate="no">{{ u.title }}</h2>
             <p class="text-sm text-muted">
               {{ lang.t("module.meta", { min: u.estimatedMinutes, steps: u.stepCount }) }}
               <template v-if="statusOf(u.id)?.status === 'completed'"> · {{ lang.t("module.best", { pct: Math.round((statusOf(u.id)?.bestScore ?? 0) * 100) }) }}</template>

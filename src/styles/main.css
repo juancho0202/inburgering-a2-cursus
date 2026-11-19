@@ -61,6 +61,13 @@
   --shadow-card: 0 1px 2px rgb(20 20 30 / 0.05), 0 6px 20px rgb(20 20 30 / 0.06);
 }
 
+/* Long Dutch words ("gezondheidszorg", "leerplichtambtenaar") break at a syllable with a hyphen (the element needs
+   lang="nl"), or anywhere when the browser has no dictionary, instead of overflowing or splitting without a hyphen. */
+@utility nl-wrap {
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
 @layer base {
   html {
     font-size: 18px;

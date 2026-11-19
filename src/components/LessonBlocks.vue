@@ -36,14 +36,14 @@ const gloss = (id: string) => (APP_WORDS[id] && lang.proseLocale !== "nl" ? lang
       <template v-else-if="block.kind === 'table'">
         <ul v-if="block.headers.length >= 3" class="grid gap-3 sm:hidden" data-table-cards>
           <li v-for="(row, ri) in block.rows" :key="ri" class="grid grid-cols-2 gap-x-4 gap-y-2 rounded-2xl border border-line bg-surface px-4 py-3">
-            <div v-for="(cell, ci) in row" :key="ci" class="min-w-0 hyphens-auto [overflow-wrap:anywhere]" :class="{ 'col-span-2': cell.length > LONG_CELL || (ci === 0 && block.headers.length >= 4) }" lang="nl">
+            <div v-for="(cell, ci) in row" :key="ci" class="min-w-0 nl-wrap" :class="{ 'col-span-2': cell.length > LONG_CELL || (ci === 0 && block.headers.length >= 4) }" lang="nl">
               <p v-if="block.headers[ci]" class="text-xs font-bold uppercase tracking-wide text-muted">{{ block.headers[ci] }}</p>
               <p :class="{ 'font-bold': ci === 0 }" v-html="renderMdInline(cell)" />
             </div>
           </li>
         </ul>
         <div class="overflow-x-auto" :class="{ 'hidden sm:block': block.headers.length >= 3 }">
-          <table class="w-full border-collapse overflow-hidden rounded-2xl text-left hyphens-auto [overflow-wrap:anywhere]" lang="nl">
+          <table class="w-full border-collapse overflow-hidden rounded-2xl text-left nl-wrap" lang="nl">
             <thead>
               <tr>
                 <th v-for="h in block.headers" :key="h" class="bg-surface-2 px-4 py-2 font-bold">{{ h }}</th>

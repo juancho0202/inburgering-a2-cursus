@@ -76,7 +76,7 @@ defineExpose({ ready, evaluate });
           @click="clickLeft(i)"
         >
           <span v-if="i in links" class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand text-sm font-bold text-white">{{ linkNumber(i) }}</span>
-          <span class="min-w-0 flex-1 hyphens-auto [overflow-wrap:anywhere]" lang="nl" translate="no">{{ pair[0] }}</span>
+          <span class="min-w-0 flex-1 nl-wrap" lang="nl" translate="no">{{ pair[0] }}</span>
           <span v-if="checked" :class="ok(i) ? 'text-good' : 'text-bad'" aria-hidden="true">{{ ok(i) ? "✓" : "✗" }}</span>
         </button>
       </div>
@@ -95,7 +95,7 @@ defineExpose({ ready, evaluate });
             class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand text-sm font-bold text-white"
             >{{ linkNumber(Number(rightLinkedTo(r))) }}</span
           >
-          <span class="min-w-0 flex-1 hyphens-auto [overflow-wrap:anywhere]" lang="nl" translate="no">{{ exercise.pairs[r][1] }}</span>
+          <span class="min-w-0 flex-1 nl-wrap" lang="nl" translate="no">{{ exercise.pairs[r][1] }}</span>
         </button>
       </div>
     </div>
