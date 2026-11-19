@@ -44,12 +44,13 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
       <span class="ml-auto text-muted">→</span>
     </RouterLink>
     <p v-if="!mod.units.length" class="card p-6 text-muted">{{ lang.t("module.empty") }}</p>
-    <!-- minmax(0, 1fr): a card can shrink to the screen; by default a grid row is as wide as its longest word or picture -->
-    <ol v-else class="relative grid grid-cols-[minmax(0,1fr)] gap-4 before:absolute before:bottom-6 before:left-[1.65rem] before:top-6 before:w-1 before:rounded-full before:bg-line">
+    <!-- minmax(0, 1fr): a card can shrink to the screen; by default a grid row is as wide as its longest word or picture.
+         The timeline and the big number circle only fit from sm up; on a phone the text gets the width and the status is a small badge. -->
+    <ol v-else class="relative grid grid-cols-[minmax(0,1fr)] gap-3 sm:gap-4 sm:before:absolute sm:before:bottom-6 sm:before:left-[1.65rem] sm:before:top-6 sm:before:w-1 sm:before:rounded-full sm:before:bg-line">
       <li v-for="(u, i) in mod.units" :key="u.id" class="relative">
-        <RouterLink :to="`/unit/${u.id}`" class="card group relative flex items-center gap-4 p-4 transition hover:-translate-y-0.5 hover:shadow-lg" :class="{ 'ring-2 ring-brand': u.id === recommended }">
+        <RouterLink :to="`/unit/${u.id}`" class="card group relative flex items-center gap-3 p-3 transition sm:gap-4 sm:p-4 hover:-translate-y-0.5 hover:shadow-lg" :class="{ 'ring-2 ring-brand': u.id === recommended }">
           <span
-            class="relative z-10 grid h-12 w-12 shrink-0 place-items-center rounded-full border-4 border-bg text-lg font-extrabold"
+            class="relative z-10 hidden h-12 w-12 shrink-0 place-items-center rounded-full border-4 border-bg text-lg font-extrabold sm:grid"
             :class="statusOf(u.id)?.status === 'completed' ? 'bg-good text-white dark:text-black' : statusOf(u.id) ? 'bg-brand text-white' : 'bg-surface-2 text-muted'"
           >
             {{ statusOf(u.id)?.status === "completed" ? "✓" : i + 1 }}
@@ -57,6 +58,13 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
           <div class="min-w-0 flex-1">
             <p class="flex flex-wrap items-center gap-x-2 text-xs font-bold uppercase tracking-wide text-muted">
               <UiLabel variant="inline" k="settings.lessonN" :params="{ n: i + 1 }" />
+              <span
+                v-if="statusOf(u.id)"
+                class="grid h-5 w-5 place-items-center rounded-full text-xs sm:hidden"
+                :class="statusOf(u.id)?.status === 'completed' ? 'bg-good text-white dark:text-black' : 'bg-brand text-white'"
+                aria-hidden="true"
+                >{{ statusOf(u.id)?.status === "completed" ? "✓" : "•" }}</span
+              >
               <span v-if="u.id === recommended" class="rounded-full bg-brand-bg px-2 py-0.5 text-brand-strong normal-case tracking-normal"><UiLabel variant="inline" k="common.next" /></span>
             </p>
             <h2 class="text-lg font-bold nl-wrap group-hover:text-brand-strong" lang="nl" translate="no">{{ u.title }}</h2>
@@ -66,7 +74,7 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
               <template v-else-if="statusOf(u.id)"> · {{ lang.t("module.busy", { n: statusOf(u.id)!.stepIndex + 1 }) }}</template>
             </p>
           </div>
-          <span v-if="scene(u.scene)" class="aspect-[3/2] w-20 shrink-0 overflow-hidden rounded-xl border border-line bg-[#fff8ee] sm:w-32" aria-hidden="true">
+          <span v-if="scene(u.scene)" class="aspect-[3/2] w-[4.5rem] shrink-0 overflow-hidden rounded-xl border border-line bg-[#fff8ee] sm:w-32" aria-hidden="true">
             <FadeImage :src="scene(u.scene)!.url" alt="" width="480" height="320" class="h-full w-full object-cover dark:brightness-90" />
           </span>
         </RouterLink>
