@@ -217,7 +217,7 @@ const restart = async () => {
 
     <template v-if="step.type === 'lesson'">
       <div :key="stepIndex" class="slide-up pb-28" lang="nl" translate="no">
-        <h2 class="read-along mb-2 text-3xl font-extrabold tracking-tight" :class="{ 'is-reading': isRead('heading') }">{{ step.title }}</h2>
+        <h2 class="read-along mb-2 text-3xl font-extrabold tracking-tight hyphens-auto [overflow-wrap:anywhere]" :class="{ 'is-reading': isRead('heading') }">{{ step.title }}</h2>
         <div class="mb-3 flex flex-wrap items-center gap-2">
           <ReadAlongButton :reading="reading" :label="lang.t('common.readAloud')" :stop-label="lang.t('common.stopReading')" @toggle="toggleRead" />
           <!-- Only after step 1: at the start there is nothing to start over -->

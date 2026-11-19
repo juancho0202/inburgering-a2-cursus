@@ -52,6 +52,39 @@ describe("LessonBlocks", () => {
     expect(wrapper.findAll("th").map((h) => h.text())).toEqual(["ik", "jij"]);
     expect(wrapper.findAll("tbody tr").map((r) => r.text())).toEqual(["werkwerkt", "looploopt"]);
   });
+
+  const kaart = { kind: "table", headers: ["Provincie", "Hoofdstad", "Wat moet je weten?"], rows: [["Drenthe", "Assen", "in het **noordoosten**, naast Duitsland."], ["Zeeland", "Middelburg", "in het zuidwesten"]] };
+
+  it("a table with 3+ columns also gives every row as a card, each cell labelled with its column header (for phones)", async () => {
+    const { wrapper } = await mountApp(LessonBlocks, { props: { blocks: [kaart] } });
+    const cards = wrapper.findAll("[data-table-cards] > li");
+    expect(cards).toHaveLength(2);
+    expect(cards[0].text()).toContain("Provincie");
+    expect(cards[0].text()).toContain("Hoofdstad");
+    expect(cards[0].text()).toContain("Wat moet je weten?");
+    expect(cards[1].text()).toContain("Middelburg");
+  });
+
+  it("a table with two columns always fits a phone and gets no cards", async () => {
+    const { wrapper } = await mountApp(LessonBlocks, { props: { blocks: [{ kind: "table", headers: ["Je hoort", "Betekenis"], rows: [["half elf", "10.30"]] }] } });
+    expect(wrapper.find("[data-table-cards]").exists()).toBe(false);
+    expect(wrapper.findAll("tbody tr")).toHaveLength(1);
+  });
+
+  it("**bold** in a cell is shown as bold, in the table and in the card, never as asterisks", async () => {
+    const { wrapper } = await mountApp(LessonBlocks, { props: { blocks: [kaart] } });
+    expect(wrapper.find("td strong").text()).toBe("noordoosten");
+    expect(wrapper.find("[data-table-cards] strong").text()).toBe("noordoosten");
+    expect(wrapper.text()).not.toContain("**");
+  });
+
+  it("a cell cannot inject HTML", async () => {
+    const evil = { kind: "table", headers: ["a", "b", "c"], rows: [["<img src=x onerror=alert(1)>", "<b>x</b>", "ok"]] };
+    const { wrapper } = await mountApp(LessonBlocks, { props: { blocks: [evil] } });
+    expect(wrapper.find("img").exists()).toBe(false);
+    expect(wrapper.find("td b").exists()).toBe(false);
+    expect(wrapper.find("td").text()).toContain("<img");
+  });
 });
 
 describe("DocumentCard", () => {

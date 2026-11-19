@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted } from "vue";
 import type { LessonBlock, VocabEntry } from "@shared/types";
-import { renderMd } from "../composables/markdown";
+import { renderMd, renderMdInline } from "../composables/markdown";
 import { useVocabStore } from "../stores/vocab";
 import DocumentCard from "./DocumentCard.vue";
 import FragmentPlayer from "./FragmentPlayer.vue";
@@ -16,6 +16,8 @@ const props = defineProps<{ blocks: LessonBlock[]; active?: number | null }>();
 const vocab = useVocabStore();
 const needsVocab = computed(() => props.blocks.some((b) => b.kind === "vocab"));
 onMounted(() => needsVocab.value && vocab.load());
+/** A cell longer than this takes the full width of its card on a phone; shorter cells share a line two by two. */
+const LONG_CELL = 24;
 const word = (id: string): VocabEntry | undefined => vocab.byId(id);
 // Words of the app itself (Unit 0) get their translation from the app's own messages, while the page shows the
 // learner's language. The course content stays Dutch only.
@@ -29,20 +31,32 @@ const gloss = (id: string) => (APP_WORDS[id] && lang.proseLocale !== "nl" ? lang
     <div v-for="(block, i) in blocks" :key="i" class="read-along min-w-0" :class="{ 'is-reading': active === i }">
       <div v-if="block.kind === 'text'" class="prose-nl text-lg" v-html="renderMd(block.md)" />
 
-      <div v-else-if="block.kind === 'table'" class="overflow-x-auto">
-        <table class="w-full border-collapse overflow-hidden rounded-2xl text-left">
-          <thead>
-            <tr>
-              <th v-for="h in block.headers" :key="h" class="bg-surface-2 px-4 py-2 font-bold">{{ h }}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(row, ri) in block.rows" :key="ri" class="border-t border-line">
-              <td v-for="(cell, ci) in row" :key="ci" class="px-4 py-2">{{ cell }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <!-- Tables with 3+ columns do not fit a phone: there each row becomes a card (header as small label above every
+           cell; short cells share a line two by two, long ones and, from 4 columns, the first cell take the full width). Two columns always fit. -->
+      <template v-else-if="block.kind === 'table'">
+        <ul v-if="block.headers.length >= 3" class="grid gap-3 sm:hidden" data-table-cards>
+          <li v-for="(row, ri) in block.rows" :key="ri" class="grid grid-cols-2 gap-x-4 gap-y-2 rounded-2xl border border-line bg-surface px-4 py-3">
+            <div v-for="(cell, ci) in row" :key="ci" class="min-w-0 hyphens-auto [overflow-wrap:anywhere]" :class="{ 'col-span-2': cell.length > LONG_CELL || (ci === 0 && block.headers.length >= 4) }" lang="nl">
+              <p v-if="block.headers[ci]" class="text-xs font-bold uppercase tracking-wide text-muted">{{ block.headers[ci] }}</p>
+              <p :class="{ 'font-bold': ci === 0 }" v-html="renderMdInline(cell)" />
+            </div>
+          </li>
+        </ul>
+        <div class="overflow-x-auto" :class="{ 'hidden sm:block': block.headers.length >= 3 }">
+          <table class="w-full border-collapse overflow-hidden rounded-2xl text-left hyphens-auto [overflow-wrap:anywhere]" lang="nl">
+            <thead>
+              <tr>
+                <th v-for="h in block.headers" :key="h" class="bg-surface-2 px-4 py-2 font-bold">{{ h }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(row, ri) in block.rows" :key="ri" class="border-t border-line">
+                <td v-for="(cell, ci) in row" :key="ci" class="px-4 py-2" v-html="renderMdInline(cell)" />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </template>
 
       <!-- "Leertip": a card with a tab on top, like the tips in the margin of a language book -->
       <aside v-else-if="block.kind === 'tip'" class="mt-3">
