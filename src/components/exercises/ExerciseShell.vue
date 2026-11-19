@@ -177,12 +177,14 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey, true));
           </template>
         </div>
       </div>
-      <div class="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-3 px-4 py-3">
-        <div class="flex gap-1">
+      <!-- Phone: the main action gets its own full-width row on top, the quiet buttons sit below it.
+           From sm up everything fits on one row: quiet buttons left, main action right. -->
+      <div class="mx-auto flex max-w-4xl flex-wrap items-center gap-x-3 gap-y-1 px-4 py-3">
+        <div class="order-2 flex gap-1 sm:order-1">
           <AppButton variant="ghost" @click="emit('exit')"><UiLabel k="common.stop" /></AppButton>
           <AppButton v-if="isGenerated && !flagged" variant="ghost" @click="flag"><UiLabel k="feedback.wrongExercise" /></AppButton>
         </div>
-        <div class="flex gap-2">
+        <div class="order-1 flex w-full gap-2 sm:order-2 sm:ml-auto sm:w-auto [&>button]:flex-1 sm:[&>button]:flex-none">
           <AppButton v-if="isWriting && checked" variant="secondary" size="lg" @click="retry"><UiLabel k="common.tryAgain" /></AppButton>
           <AppButton v-if="!checked" size="lg" :disabled="!ready" @click="check"><UiLabel k="common.check" /></AppButton>
           <AppButton v-else size="lg" :variant="result!.score === null || result!.correct ? 'good' : 'primary'" @click="next">
