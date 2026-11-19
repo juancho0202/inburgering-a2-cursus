@@ -438,6 +438,12 @@ describe("ModuleView", () => {
     expect(rows[2]).toContain("15 min · 11 stappen");
   });
 
+  it("every lesson card shows its status once: done lessons a check, started ones a dot, new ones nothing (the phone badge)", async () => {
+    const { wrapper } = await open({ "basis-a": { status: "completed", stepIndex: 7, bestScore: 0.9 }, "basis-b": { status: "in_progress", stepIndex: 2 } });
+    const badges = wrapper.findAll("ol > li").map((r) => r.find("p span.rounded-full.h-5").exists() ? r.find("p span.rounded-full.h-5").text() : "");
+    expect(badges).toEqual(["✓", "•", ""]);
+  });
+
   it("when everything is finished nothing is recommended", async () => {
     const done = { status: "completed", stepIndex: 1, bestScore: 1 };
     const { wrapper } = await open({ "basis-a": done, "basis-b": done, "basis-c": done });

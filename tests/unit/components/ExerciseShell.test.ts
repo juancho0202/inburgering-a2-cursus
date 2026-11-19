@@ -201,11 +201,11 @@ describe('"Leg uit" (Claude explains a mistake)', () => {
 });
 
 describe("exercises made by Claude", () => {
-  it("are labelled, and 'Klopt niet' reports the item and moves on without counting it as answered", async () => {
+  it("are labelled, and 'Foute oefening' reports the item and moves on without counting it as answered", async () => {
     fakeApi.on("POST", "/generated/gen-7/flag", {});
     const w = await mountShell(mc("gen-7"));
     expect(w.text()).toContain("Deze oefening is gemaakt door Claude.");
-    await clickButton(w, "Klopt niet");
+    await clickButton(w, "Foute oefening");
     expect(fakeApi.to("POST", "/generated/gen-7/flag")).toHaveLength(1);
     expect(fakeApi.to("POST", "/attempts")).toHaveLength(0);
     expect(w.emitted("done")![0][0]).toMatchObject({ score: null });
@@ -214,14 +214,14 @@ describe("exercises made by Claude", () => {
   it("still moves on when reporting fails", async () => {
     fakeApi.fail("POST", "/generated/gen-7/flag", "kapot");
     const w = await mountShell(mc("gen-7"));
-    await clickButton(w, "Klopt niet");
+    await clickButton(w, "Foute oefening");
     expect(w.emitted("done")).toHaveLength(1);
   });
 
   it("curriculum exercises have neither the label nor the button", async () => {
     const w = await mountShell(mc("basis-a-q-001"));
     expect(w.text()).not.toContain("gemaakt door Claude");
-    expect(buttonWith(w, "Klopt niet")).toBeUndefined();
+    expect(buttonWith(w, "Foute oefening")).toBeUndefined();
   });
 });
 

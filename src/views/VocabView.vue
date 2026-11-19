@@ -77,7 +77,7 @@ const stateLabel = { new: "vocab.new", learning: "vocab.learning", learned: "voc
       </div>
       <!-- minmax(0, 1fr): a card can shrink to the screen instead of growing to its longest word -->
       <div class="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-[repeat(2,minmax(0,1fr))]">
-        <article v-for="e in t.entries" :key="e.id" class="card break-words p-4" lang="nl">
+        <article v-for="e in t.entries" :key="e.id" class="card nl-wrap p-4" lang="nl">
           <div class="flex flex-wrap items-center gap-2">
             <h3 class="min-w-0 text-xl font-bold">{{ e.nl }}</h3>
             <SpeakButton :text="e.nl" />

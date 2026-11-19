@@ -125,7 +125,7 @@ const retryable = computed(() => tasks.value.some((t) => taskState.value[t.id]?.
     </div>
 
     <section class="card slide-up p-6 text-center sm:p-8">
-      <h1 class="text-2xl font-extrabold" lang="nl" translate="no">{{ exam.title }}</h1>
+      <h1 class="nl-wrap text-2xl font-extrabold" lang="nl" translate="no">{{ exam.title }}</h1>
       <template v-if="pct !== null && incomplete">
         <p class="mt-3 text-4xl font-extrabold">{{ result.score }} <span class="text-xl font-bold text-muted">{{ f("result.ofPoints", { max: result.max }) }}</span></p>
         <p class="mt-1 font-semibold text-muted">{{ f("result.provisional") }}</p>

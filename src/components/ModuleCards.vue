@@ -260,7 +260,7 @@ onBeforeUnmount(() => {
             <div class="flex items-center gap-4">
               <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl text-3xl" :class="moduleStyle(m.id).tile" aria-hidden="true">{{ moduleStyle(m.id).emoji }}</span>
               <div class="min-w-0 flex-1">
-                <h3 class="text-xl font-bold" :class="!editing && 'group-hover:text-brand-strong'" lang="nl" translate="no">{{ m.title }}</h3>
+                <h3 class="nl-wrap text-xl font-bold" :class="!editing && 'group-hover:text-brand-strong'" lang="nl" translate="no">{{ m.title }}</h3>
                 <p v-if="m.total" class="text-sm text-muted">{{ lang.t("modules.progress", { done: m.completed, total: m.total }) }}</p>
                 <p v-else class="text-sm text-muted">{{ lang.t("modules.examTime") }}</p>
               </div>
