@@ -634,7 +634,7 @@ schema as a JSON schema; for `mc` include `options`, `answer`, `explanation`).
 Validate with zod, give them ids `gen-<unitId>-<timestamp>-<n>`, save to
 `data/course/generated/<unitId>.json` with `"source": "generated"`, and show them in a
 practice session. Mark generated items with a small "Claude" badge. Allow the learner to
-flag a bad item ("Klopt niet") which hides it.
+flag a bad item ("Foute oefening") which hides it.
 
 For KNM generation, include the relevant section of Appendix C in the prompt and instruct:
 "Gebruik alleen feiten uit de gegeven tekst. Verzin geen feiten, bedragen of datums."
