@@ -56,8 +56,9 @@ const segments = computed<Segment[]>(() => {
     }"
   >
     <header class="flex items-center justify-between gap-3 border-b border-slate-200 bg-slate-100 px-5 py-2.5">
-      <span class="text-sm font-bold uppercase tracking-wide text-slate-500">{{ labels[doc.docType] }}</span>
-      <span class="truncate text-base font-bold">{{ doc.title }}</span>
+      <span class="shrink-0 text-sm font-bold uppercase tracking-wide text-slate-500">{{ labels[doc.docType] }}</span>
+      <!-- The title is part of the text to read: it wraps instead of being cut off (and a cut-off line is as wide as the whole title). -->
+      <span class="min-w-0 text-right text-base font-bold [overflow-wrap:anywhere]">{{ doc.title }}</span>
     </header>
     <div class="px-5 py-4">
       <dl v-if="parsed.head.length" class="mb-3 grid grid-cols-[auto_1fr] gap-x-4 border-b border-slate-200 pb-3 text-base">

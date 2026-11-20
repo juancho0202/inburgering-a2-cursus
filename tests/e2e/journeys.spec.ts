@@ -153,4 +153,22 @@ test.describe("a small phone", () => {
       expect(scroll, `${path} scrolls sideways`).toBeLessThanOrEqual(width);
     }
   });
+
+  // A reading text with a long title once made the whole exercise wider than the phone: the title stayed on one line.
+  test("a reading text, a listening fragment and an exam text fit the phone", async ({ page }) => {
+    await startFresh(page);
+    const fits = async (where: string) => {
+      const [scroll, width] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
+      expect(scroll, `${where} scrolls sideways`).toBeLessThanOrEqual(width);
+    };
+    for (const [unit, shown] of [["lezen-advertenties", "Medewerker magazijn gezocht"], ["luisteren-winkel", /Lees eerst de vragen/]] as const) {
+      await page.goto(`/unit/${unit}`);
+      await page.getByRole("button", { name: /^Volgende →/ }).click(); // lesson → first text or fragment
+      await expect(page.getByText(shown).first()).toBeVisible();
+      await fits(unit);
+    }
+    await page.goto("/examen/exam-lezen-1");
+    await expect(page.getByText(/vraag 1 van/i)).toBeVisible();
+    await fits("exam-lezen-1");
+  });
 });

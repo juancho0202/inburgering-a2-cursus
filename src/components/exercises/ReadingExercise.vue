@@ -38,7 +38,7 @@ provide(listenKey, null);
 </script>
 
 <template>
-  <div v-if="exercise.document.kind === 'document'" class="grid gap-6 lg:grid-cols-2 lg:items-start">
+  <div v-if="exercise.document.kind === 'document'" class="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-start">
     <div class="lg:sticky lg:top-20">
       <h2 class="mb-3 text-2xl font-bold">{{ exercise.prompt }}</h2>
       <DocumentCard :doc="exercise.document" />
