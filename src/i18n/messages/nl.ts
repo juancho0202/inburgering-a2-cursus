@@ -418,6 +418,8 @@ const nl = {
     past: "Verleden",
   },
   writingHistory: {
+    app: "Appje",
+    shortText: "Korte tekst",
     short: "Kort bericht",
     informal: "Informele e-mail",
     formal: "Formele e-mail",

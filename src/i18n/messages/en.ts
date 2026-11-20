@@ -419,6 +419,8 @@ const en: Messages = {
     past: "Past",
   },
   writingHistory: {
+    app: "Text message",
+    shortText: "Short text",
     short: "Short message",
     informal: "Informal email",
     formal: "Formal email",

@@ -846,9 +846,11 @@ Units:
 | --- | --- | --- |
 | `schrijven-basis` | Goede zinnen schrijven | Hoofdletters en punten, werkwoord op plek 2, bijzinnen, linking words (en, maar, want, omdat, dus, ook), word-order drills built from typical writing sentences |
 | `schrijven-formulier` | Een formulier invullen | Personal data vocabulary (voornaam, achternaam, geboortedatum, adres, postcode, woonplaats, telefoonnummer, handtekening, nationaliteit, burgerlijke staat), date format (dd-mm-jjjj), short answers on forms. `form-fill` exercises: library card, sports club, doctor registration, course sign-up, change of address |
+| `schrijven-appje` | Een appje sturen | Texting (WhatsApp): short but complete (wat, wanneer, vraag); recognise ff, z.s.m., i.p.v., a.u.b. but write whole words in the exam; saying no with a reason; 3 writing tasks, 10–40 words |
 | `schrijven-kort-bericht` | Een kort bericht | Notes to neighbour/colleague/teacher (absence, request, apology, invitation), 25–50 words |
 | `schrijven-informele-mail` | Een informele e-mail | To friend/colleague/neighbour: invite, thank, ask, cancel, tell news. 40–80 words |
 | `schrijven-formele-mail` | Een formele e-mail of brief | To gemeente, huisbaas, school, company, doctor: complaint, request info, make/cancel appointment, report a problem. 50–100 words |
+| `schrijven-korte-tekst` | Een korte tekst over jezelf | Extra practice in building a text: begin, midden, eind; eerst/daarna/ook/want/maar/dus; a mening with want; 3 writing tasks (mijn dag, mijn buurt, mijn hobby), 40–80 words |
 | `schrijven-examen-tips` | Tips voor het examen | Read task twice, tick off every point, plan 10 min per task, check verbs + capitals, write clearly (pen and paper) |
 
 Each type unit: lesson (structure + template from Appendix D + phrase bank), 1 annotated model

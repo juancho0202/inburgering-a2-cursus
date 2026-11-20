@@ -419,6 +419,8 @@ const es: Messages = {
     past: "Pasado",
   },
   writingHistory: {
+    app: "Mensaje de móvil",
+    shortText: "Texto corto",
     short: "Mensaje corto",
     informal: "Correo informal",
     formal: "Correo formal",

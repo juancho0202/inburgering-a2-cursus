@@ -32,8 +32,17 @@ onMounted(async () => {
 });
 
 // Kinds of writing task, as the course calls them (and the exam does): Dutch words with a gloss.
-const labels: Record<string, string> = { "kort-bericht": "writingHistory.short", informeel: "writingHistory.informal", formeel: "writingHistory.formal", overig: "writingHistory.other" };
-const shown = computed(() => (rows.value ?? []).filter((r) => !filter.value || (r.task?.type ?? "overig") === filter.value));
+const labels: Record<string, string> = {
+  appje: "writingHistory.app",
+  "kort-bericht": "writingHistory.short",
+  informeel: "writingHistory.informal",
+  formeel: "writingHistory.formal",
+  "korte-tekst": "writingHistory.shortText",
+  overig: "writingHistory.other",
+};
+// A kind without a label of its own (a new unit, an old exercise) counts as "overig", in the list and in the filter.
+const kindOf = (r: Row) => (r.task?.type && r.task.type in labels ? r.task.type : "overig");
+const shown = computed(() => (rows.value ?? []).filter((r) => !filter.value || kindOf(r) === filter.value));
 const fmt = (iso: string) => new Date(iso).toLocaleString(lang.proseLocale, { dateStyle: "medium", timeStyle: "short" });
 const verdict = { voldoende: "bg-good-bg text-good", bijna: "bg-brand-bg text-brand-strong", onvoldoende: "bg-bad-bg text-bad" } as const;
 </script>
@@ -61,7 +70,7 @@ const verdict = { voldoende: "bg-good-bg text-good", bijna: "bg-brand-bg text-br
         <button type="button" class="flex w-full flex-wrap items-center gap-3 text-left" :aria-expanded="open === r.id" @click="open = open === r.id ? null : r.id">
           <div class="min-w-0 flex-1">
             <p class="font-bold" lang="nl" translate="no">{{ r.task?.prompt ?? r.exerciseId }}</p>
-            <p class="text-sm text-muted">{{ fmt(r.submittedAt) }} · {{ lang.t(labels[r.task?.type ?? "overig"]) }} · {{ lang.t("writingHistory.words", { n: countWords(r.text) }) }}</p>
+            <p class="text-sm text-muted">{{ fmt(r.submittedAt) }} · {{ lang.t(labels[kindOf(r)]) }} · {{ lang.t("writingHistory.words", { n: countWords(r.text) }) }}</p>
           </div>
           <span v-if="r.feedback" class="rounded-full px-3 py-1 text-sm font-bold" :class="verdict[r.feedback.overall]">{{ r.feedback.overall }} · {{ Math.round(r.feedback.score) }}/10</span>
           <span v-else class="rounded-full bg-surface-2 px-3 py-1 text-sm font-semibold text-muted">{{ lang.t("writingHistory.noFeedback") }}</span>
