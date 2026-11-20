@@ -17,7 +17,8 @@
     "e2e": "playwright test",
     "check-ids": "tsx scripts/check-ids.ts",
     "illustrations": "tsx scripts/illustrations/build.ts",
-    "voice": "tsx scripts/tts/export-texts.ts && sandbox-exec -p '(version 1)(allow default)(deny network*)' .tts/piper-venv/bin/python -I scripts/tts/generate.py"
+    "voice": "tsx scripts/tts/export-texts.ts && sandbox-exec -p '(version 1)(allow default)(deny network*)' .tts/piper-venv/bin/python -I scripts/tts/generate.py",
+    "voice:test": "sandbox-exec -p '(version 1)(allow default)(deny network*)' .tts/piper-venv/bin/python -I -m unittest discover -s scripts/tts/tests -t scripts/tts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",
