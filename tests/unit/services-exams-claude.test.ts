@@ -6,7 +6,7 @@ import { dashboard, practice } from "../../shared/services/dashboard";
 import { getProgress } from "../../shared/services/progress";
 import { getSettings } from "../../shared/services/settings";
 import { listWriting } from "../../shared/services/writing";
-import { fakeGateway, makeClock, makeEnv } from "../helpers/fixtures";
+import { fakeGateway, makeClock, makeEnv, rawAnswer } from "../helpers/fixtures";
 
 describe("mock exams", () => {
   it("starts once, resumes the same attempt and keeps counting from the wall clock", async () => {
@@ -192,6 +192,64 @@ describe("taalcafé", () => {
     await expect(taalcafe(makeEnv().env, { topicId: "weer", history: [], message: "Hoi" })).rejects.toMatchObject({ status: 503, code: "no_api_key" });
     const bad = makeEnv({ gateway: () => fakeGateway(() => ({ corrections: [] })).gateway });
     await expect(taalcafe(bad.env, { topicId: "weer", history: [], message: "Hoi" })).rejects.toMatchObject({ status: 502, code: "bad_answer" });
+  });
+});
+
+describe("reliable answers from Claude", () => {
+  const good = { reply: "Leuk! Welke film?", corrections: [] };
+  const ask = (env: ReturnType<typeof makeEnv>["env"]) => taalcafe(env, { topicId: "weekend", history: [], message: "Ik ben naar de film gegaan." });
+
+  it("asks again, with twice the room, when the answer was cut off (long thinking)", async () => {
+    let n = 0;
+    const { gateway, calls } = fakeGateway(() => (++n === 1 ? rawAnswer('{"reply":"Leu', "max_tokens") : good));
+    const { env } = makeEnv({ gateway: () => gateway });
+    expect(await ask(env)).toMatchObject({ reply: "Leuk! Welke film?" });
+    expect(calls.map((c) => c.maxTokens)).toEqual([4000, 8000]);
+    // both tries count: what was spent is what was used
+    expect((await getSettings(env)).usage).toMatchObject({ requests: 1, inputTokens: 200, outputTokens: 100 });
+  });
+
+  it("asks once more when the answer cannot be read, then the learner gets Sanne's reply", async () => {
+    let n = 0;
+    const { gateway, calls } = fakeGateway(() => (++n === 1 ? rawAnswer("geen json", "end_turn") : good));
+    const { env } = makeEnv({ gateway: () => gateway });
+    expect(await ask(env)).toMatchObject({ reply: "Leuk! Welke film?" });
+    expect(calls.map((c) => c.maxTokens)).toEqual([4000, 4000]);
+  });
+
+  it("only after two failed tries says the answer was not right", async () => {
+    const { gateway, calls } = fakeGateway(() => rawAnswer("", "max_tokens"));
+    const { env } = makeEnv({ gateway: () => gateway });
+    await expect(ask(env)).rejects.toMatchObject({ status: 502, code: "bad_answer" });
+    expect(calls).toHaveLength(2);
+  });
+
+  it("does not ask again when Claude declines, and says so", async () => {
+    const { gateway, calls } = fakeGateway(() => rawAnswer("", "refusal"));
+    const { env } = makeEnv({ gateway: () => gateway });
+    await expect(ask(env)).rejects.toMatchObject({ status: 422, code: "refusal", message: "Claude wil hier niet op antwoorden. Probeer het anders te zeggen." });
+    expect(calls).toHaveLength(1);
+  });
+
+  it("in the taalcafé a malformed correction is left out instead of failing the turn", async () => {
+    const fix = { original: "naar de film", corrected: "naar de bioscoop", type: "woordkeuze", explanation: "Je gaat naar de bioscoop." };
+    const { gateway, calls } = fakeGateway(() => ({ reply: "Leuk!", corrections: [{ original: "ben" }, fix] }));
+    const { env } = makeEnv({ gateway: () => gateway });
+    expect(await ask(env)).toEqual({ reply: "Leuk!", corrections: [fix] });
+    expect(calls).toHaveLength(1);
+  });
+
+  it("gives every feature room to think, and asks for little thinking where little is needed", async () => {
+    const { gateway, calls } = fakeGateway(({ system }) =>
+      system.includes("taalcafé") ? good : system.includes("Leg in eenvoudig Nederlands uit") ? { explanation: "x", rule: null, extraExamples: [] } : goodFeedback,
+    );
+    const { env } = makeEnv({ gateway: () => gateway });
+    await ask(env);
+    await feedbackWriting(env, { exerciseId: "schrijven-kort-q-001", text: "Hoi buurman." });
+    expect(calls.map((c) => [c.maxTokens, c.effort])).toEqual([
+      [4000, "low"],
+      [8000, "medium"],
+    ]);
   });
 });
 

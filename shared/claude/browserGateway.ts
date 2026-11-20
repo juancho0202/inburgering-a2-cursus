@@ -1,5 +1,6 @@
 import { mapClaudeError } from "./errors.js";
 import { NoApiKeyError, type ClaudeGateway } from "./gateway.js";
+import { supportsEffort } from "./models.js";
 
 export interface BrowserGatewayOptions {
   /** Gives the plain key just in time (decrypted from the vault), or null when there is none. */
@@ -21,21 +22,24 @@ async function makeClient(apiKey: string, o: Pick<BrowserGatewayOptions, "fetch"
 /** Claude calls made straight from the browser with the learner's own key, using structured outputs. */
 export function createBrowserGateway(options: BrowserGatewayOptions): ClaudeGateway {
   return {
-    async complete({ system, user, schema, maxTokens }) {
+    async complete({ system, user, schema, maxTokens, effort }) {
       const apiKey = await options.getKey();
       if (!apiKey) throw new NoApiKeyError();
       const client = await makeClient(apiKey, options);
+      const model = await options.getModel();
       const res = await client.messages.create({
-        model: await options.getModel(),
+        model,
         max_tokens: maxTokens,
         system,
         messages: [{ role: "user", content: user }],
-        output_config: { format: { type: "json_schema", schema } },
+        output_config: { format: { type: "json_schema", schema }, ...(effort && supportsEffort(model) ? { effort } : {}) },
       });
+      // The current models think first: the answer is the text block (if the thinking left room for one).
       const block = res.content.find((b) => b.type === "text");
       return {
-        text: block && block.type === "text" ? block.text : "{}",
+        text: block && block.type === "text" ? block.text : "",
         usage: { inputTokens: res.usage.input_tokens, outputTokens: res.usage.output_tokens },
+        stopReason: res.stop_reason,
       };
     },
   };

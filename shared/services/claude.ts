@@ -2,7 +2,7 @@ import { z } from "zod";
 import { CORRECTION_TYPES, GenerateRequestSchema, type WritingFeedback } from "../schemas/claude.js";
 import { describeAnswer, describeCorrect, optionsOf } from "../claude/describe.js";
 import { mapClaudeError } from "../claude/errors.js";
-import { NoApiKeyError, type ClaudeGateway } from "../claude/gateway.js";
+import { ClaudeRefusalError, NoApiKeyError, type ClaudeGateway } from "../claude/gateway.js";
 import { explainMistake, generateExercises, taalcafeTurn, writingFeedback } from "../claude/services.js";
 import { TAALCAFE_HISTORY, TAALCAFE_MAX_LENGTH, TAALCAFE_MAX_TURNS, taalcafeTopic } from "../logic/taalcafe.js";
 import { normalizeAnswer } from "../logic/answers.js";
@@ -23,6 +23,7 @@ function gatewayOrThrow(env: Env): ClaudeGateway {
 function claudeFailure(err: unknown, extra: Record<string, unknown> = {}): ServiceError {
   if (err instanceof ServiceError) return err;
   if (err instanceof NoApiKeyError) return new ServiceError(503, "no_api_key", "Voeg een API-sleutel toe bij Instellingen om deze functie te gebruiken.", extra);
+  if (err instanceof ClaudeRefusalError) return new ServiceError(422, "refusal", "Claude wil hier niet op antwoorden. Probeer het anders te zeggen.", extra);
   if (err instanceof SyntaxError || err instanceof z.ZodError) return new ServiceError(502, "bad_answer", "Claude gaf een antwoord dat niet klopt. Probeer het opnieuw.", extra);
   return new ServiceError(502, "claude_error", mapClaudeError(err), extra);
 }

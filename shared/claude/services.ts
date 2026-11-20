@@ -1,3 +1,4 @@
+import { z } from "zod";
 import type { Exercise, Unit } from "../types.js";
 import {
   ExplanationSchema,
@@ -10,7 +11,7 @@ import {
 } from "../schemas/claude.js";
 import { ExerciseSchema } from "../schemas/content.js";
 import { countWords } from "../logic/answers.js";
-import type { ClaudeGateway } from "./gateway.js";
+import { ClaudeRefusalError, type ClaudeGateway, type CompleteArgs } from "./gateway.js";
 import { EXPLAIN_SYSTEM, GENERATE_SYSTEM, TAALCAFE_SYSTEM, WRITING_FEEDBACK_SYSTEM, explainUser, generateUser, taalcafeUser, writingFeedbackUser } from "./prompts.js";
 import { explanationJsonSchema, generateJsonSchemas, taalcafeJsonSchema, writingFeedbackJsonSchema } from "./schemas.js";
 
@@ -19,9 +20,28 @@ export interface Usage {
   outputTokens: number;
 }
 
-/** Parse JSON from the model and validate it. Throws if the shape is wrong. */
-function parseJson<T>(text: string, parse: (v: unknown) => T): T {
-  return parse(JSON.parse(text));
+/**
+ * Asks Claude for JSON and validates it. An answer that was cut off (stop_reason "max_tokens", e.g. after long
+ * thinking) or that does not parse is asked for once more, with twice the room after a cut-off: the learner should
+ * almost never see "Claude gaf een antwoord dat niet klopt". A refusal is not asked again.
+ */
+export async function completeJson<T>(gateway: ClaudeGateway, args: CompleteArgs, parse: (v: unknown) => T): Promise<{ value: T; usage: Usage }> {
+  const usage: Usage = { inputTokens: 0, outputTokens: 0 };
+  let maxTokens = args.maxTokens;
+  let lastError: unknown;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const res = await gateway.complete({ ...args, maxTokens });
+    usage.inputTokens += res.usage.inputTokens;
+    usage.outputTokens += res.usage.outputTokens;
+    if (res.stopReason === "refusal") throw new ClaudeRefusalError();
+    try {
+      return { value: parse(JSON.parse(res.text)), usage };
+    } catch (err) {
+      lastError = err;
+    }
+    if (res.stopReason === "max_tokens") maxTokens *= 2;
+  }
+  throw lastError;
 }
 
 export async function writingFeedback(
@@ -29,40 +49,59 @@ export async function writingFeedback(
   ex: Extract<Exercise, { type: "writing" }>,
   text: string,
 ): Promise<{ feedback: WritingFeedback; usage: Usage }> {
-  const res = await gateway.complete({
-    system: WRITING_FEEDBACK_SYSTEM,
-    user: writingFeedbackUser(ex, text, countWords(text)),
-    schema: writingFeedbackJsonSchema as unknown as Record<string, unknown>,
-    maxTokens: 2000,
+  const { value, usage } = await completeJson(
+    gateway,
+    {
+      system: WRITING_FEEDBACK_SYSTEM,
+      user: writingFeedbackUser(ex, text, countWords(text)),
+      schema: writingFeedbackJsonSchema as unknown as Record<string, unknown>,
+      maxTokens: 8000,
+      effort: "medium",
+    },
+    (v) => WritingFeedbackSchema.parse(v),
+  );
+  return { feedback: value, usage };
+}
+
+/** Sanne's reply is what the learner waits for: one malformed correction is left out instead of failing the turn. */
+function parseTaalcafeTurn(v: unknown): TaalcafeTurn {
+  const raw = TaalcafeTurnSchema.extend({ corrections: z.array(z.unknown()) }).parse(v);
+  const corrections = raw.corrections.flatMap((c) => {
+    const ok = TaalcafeTurnSchema.shape.corrections.element.safeParse(c);
+    return ok.success ? [ok.data] : [];
   });
-  const feedback = parseJson(res.text, (v) => WritingFeedbackSchema.parse(v));
-  return { feedback, usage: res.usage };
+  return { reply: raw.reply, corrections };
 }
 
 export async function taalcafeTurn(
   gateway: ClaudeGateway,
   args: { topic: string; history: { from: "partner" | "learner"; text: string }[]; message: string },
 ): Promise<{ turn: TaalcafeTurn; usage: Usage }> {
-  const res = await gateway.complete({
-    system: TAALCAFE_SYSTEM,
-    user: taalcafeUser(args.topic, args.history, args.message),
-    schema: taalcafeJsonSchema as unknown as Record<string, unknown>,
-    maxTokens: 1000,
-  });
-  return { turn: parseJson(res.text, (v) => TaalcafeTurnSchema.parse(v)), usage: res.usage };
+  const { value, usage } = await completeJson(
+    gateway,
+    {
+      system: TAALCAFE_SYSTEM,
+      user: taalcafeUser(args.topic, args.history, args.message),
+      schema: taalcafeJsonSchema as unknown as Record<string, unknown>,
+      maxTokens: 4000,
+      // Small talk needs little thinking: a quick, steady answer.
+      effort: "low",
+    },
+    parseTaalcafeTurn,
+  );
+  return { turn: value, usage };
 }
 
 export async function explainMistake(
   gateway: ClaudeGateway,
   args: Parameters<typeof explainUser>[0],
 ): Promise<{ explanation: Explanation; usage: Usage }> {
-  const res = await gateway.complete({
-    system: EXPLAIN_SYSTEM,
-    user: explainUser(args),
-    schema: explanationJsonSchema as unknown as Record<string, unknown>,
-    maxTokens: 800,
-  });
-  return { explanation: parseJson(res.text, (v) => ExplanationSchema.parse(v)), usage: res.usage };
+  const { value, usage } = await completeJson(
+    gateway,
+    { system: EXPLAIN_SYSTEM, user: explainUser(args), schema: explanationJsonSchema as unknown as Record<string, unknown>, maxTokens: 4000, effort: "low" },
+    (v) => ExplanationSchema.parse(v),
+  );
+  return { explanation: value, usage };
 }
 
 interface RawMc {
@@ -93,21 +132,25 @@ export async function generateExercises(
   ctx: { unit: Unit | null; topic: string; tags: string[]; words: string[]; examples: Exercise[]; facts?: string },
   makeId: (n: number) => string,
 ): Promise<{ exercises: Exercise[]; dropped: number; usage: Usage }> {
-  const res = await gateway.complete({
-    system: GENERATE_SYSTEM,
-    user: generateUser({
-      type: req.type,
-      count: req.count,
-      goal: ctx.unit?.goal ?? ctx.topic,
-      topic: ctx.topic,
-      words: ctx.words,
-      examples: ctx.examples,
-      facts: ctx.facts,
-    }),
-    schema: generateJsonSchemas[req.type] as unknown as Record<string, unknown>,
-    maxTokens: 4000,
-  });
-  const raw = (JSON.parse(res.text) as { exercises?: any[] }).exercises ?? [];
+  const { value: raw, usage } = await completeJson(
+    gateway,
+    {
+      system: GENERATE_SYSTEM,
+      user: generateUser({
+        type: req.type,
+        count: req.count,
+        goal: ctx.unit?.goal ?? ctx.topic,
+        topic: ctx.topic,
+        words: ctx.words,
+        examples: ctx.examples,
+        facts: ctx.facts,
+      }),
+      schema: generateJsonSchemas[req.type] as unknown as Record<string, unknown>,
+      maxTokens: 12000,
+      effort: "medium",
+    },
+    (v) => z.object({ exercises: z.array(z.any()) }).parse(v).exercises,
+  );
   const exercises: Exercise[] = [];
   let dropped = 0;
   raw.forEach((r, i) => {
@@ -133,7 +176,7 @@ export async function generateExercises(
     if (parsed.success && sensible(parsed.data)) exercises.push(parsed.data);
     else dropped++;
   });
-  return { exercises, dropped, usage: res.usage };
+  return { exercises, dropped, usage };
 }
 
 /** Extra checks on top of the schema, so a bad model answer never reaches the learner. */

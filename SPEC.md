@@ -512,16 +512,25 @@ All exercises share a base:
   ```ts
   const res = await client.messages.create({
     model,
-    max_tokens: 2000,
+    max_tokens: 8000,
     system: WRITING_FEEDBACK_SYSTEM,
     messages: [{ role: "user", content: userContent }],
     output_config: {
-      format: { type: "json_schema", schema: writingFeedbackJsonSchema }
+      format: { type: "json_schema", schema: writingFeedbackJsonSchema },
+      effort: "medium", // only for models that take it (not Haiku 4.5)
     }
   });
-  const text = res.content.find(b => b.type === "text")?.text ?? "{}";
+  const text = res.content.find(b => b.type === "text")?.text ?? "";
   const feedback = WritingFeedback.parse(JSON.parse(text)); // zod double-check
   ```
+- **Room to think, and one quiet retry.** The current models think before they answer, and that
+  thinking counts against `max_tokens`: a tight limit cuts the answer off before or inside the JSON.
+  So every call has room (taalcafé and explanations 4000 tokens at effort `low`, writing feedback
+  8000 and new exercises 12000 at `medium`; only used tokens are paid for), the gateway returns
+  `stop_reason`, and `completeJson` (`shared/claude/services.ts`) asks once more when an answer was
+  cut off (with twice the room) or cannot be read. Only two failed tries show "Claude gaf een antwoord
+  dat niet klopt". A refusal (`stop_reason: "refusal"`) is not retried: "Claude wil hier niet op
+  antwoorden. Probeer het anders te zeggen."
   Check https://platform.claude.com/docs/en/build-with-claude/structured-outputs for the current
   parameter shape and JSON-schema limitations (all objects need `additionalProperties: false`
   and every property listed in `required`). If the installed SDK version's types don't include
@@ -651,6 +660,7 @@ after that every learner message is one request:
   shows the same strikethrough and correct chunk. A missing full stop or capital in a chat message is not a mistake.
 - The service drops corrections whose `original` is not in the message (or that change nothing): only words the learner
   really wrote are marked as wrong.
+- A correction that does not match the schema is left out; the turn only fails when Sanne's reply itself is missing.
 - Cost: only the last 16 messages are sent, and a conversation stops after 20 learner messages.
 - The conversation lives in the page only (nothing is stored); "Nieuw gesprek" starts over, and a late answer to the old
   conversation is ignored. When Claude fails, the message goes back into the box to send again.
