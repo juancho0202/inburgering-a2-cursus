@@ -15,7 +15,7 @@ const LETTER_NAMES: Record<string, string> = {
  * only as written, because "OR" (ondernemingsraad) is not "or".
  */
 const SPELLED_ANY_CASE = /(?<![\p{L}])(?:vmbo|mbo|hbo|vwo|wo|cv|tv|ov|bso|gft|pmd)(?![\p{L}])-?/giu;
-const SPELLED_AS_WRITTEN = /(?<![\p{L}])(?:ID|OR|MR|AOW|BRP|GGD|VOC|BSN|WW|EU|EEG|IND|UWV|SVB|Wmo)(?![\p{L}])-?/gu;
+const SPELLED_AS_WRITTEN = /(?<![\p{L}])(?:ID|OR|MR|AOW|BRP|GGD|VOC|BSN|WW|EU|EEG|IND|UWV|SVB|KVK|CJG|IDW|Wmo)(?![\p{L}])-?/gu;
 
 /** Spell out the abbreviations that are said letter by letter ("mbo-opleiding" becomes "em bee oo opleiding"). */
 export function spellAbbreviations(text: string): string {

@@ -114,6 +114,7 @@ describe("lesson tunes", () => {
     expect(speakable("**vmbo** (4 jaar), havo (5 jaar), vwo (6 jaar)")).toBe("vee em bee oo (4 jaar), havo (5 jaar), vee wee oo (6 jaar)");
     expect(speakable("Hij doet een mbo-opleiding. Na de HBO: wo.")).toBe("Hij doet een em bee oo opleiding. Na de haa bee oo: wee oo.");
     expect(speakable("Het UWV, de GGD en je BSN. Bel DUO via DigiD.")).toBe("Het uu wee vee, de gee gee dee en je bee es en. Bel DUO via DigiD.");
+    expect(speakable("Een bedrijf bij de KVK, hulp van het CJG, je diploma bij IDW.")).toBe("Een bedrijf bij de kaa vee kaa, hulp van het see jee gee, je diploma bij ie dee wee.");
   });
 
   it("does not spell ordinary words that look like an abbreviation", () => {

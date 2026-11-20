@@ -773,7 +773,7 @@ Units (recommended order):
 | `basis-niet-geen` | Niet of geen | Regels + plek van niet | 15 |
 | `basis-de-het` | De of het | Regels als stappenplan (twijfel: de), deze/dit/die/dat, meervoud met spelling, verkleinwoord | 30 |
 | `basis-bijvoeglijk` | Bijvoeglijk naamwoord en vergelijken | -e regel (ook na is), spelling, groter dan / net zo … als / grootst, onregelmatig | 25 |
-| `basis-voornaamwoorden` | Ik, mij, mijn | Persoonlijk + bezittelijk | 12 |
+| `basis-voornaamwoorden` | Ik, mij, mijn | Onderwerp (je/u), na werkwoord (ze; nooit "hun hebben"), bezit (zijn/haar volgt de eigenaar; ons/onze) | 25 |
 | `basis-voorzetsels` | Voorzetsels en richting | in/op/bij/naast/tegenover…; rechtsaf/linksaf/rechtdoor | 15 |
 | `basis-signaalwoorden` | Signaalwoorden | maar, toch, want, omdat, dus, eerst/daarna, als | 15 |
 | `basis-mijn-woorden` | Mijn woorden | Appendix B words | 15 |
@@ -1228,11 +1228,11 @@ common, verifiable knowledge; prefer leaving it out over guessing.
 - Veel land ligt onder zeeniveau; dijken, gemalen, polders; strijd tegen het water.
 - Watersnoodramp 1953 (Zeeland) → Deltawerken.
 - Rivieren: Rijn, Maas, Waal. Zee: Noordzee. Buurlanden: Duitsland, België.
-- Koninkrijk der Nederlanden: Nederland + Aruba, Curaçao, Sint Maarten (landen); Bonaire, Sint Eustatius, Saba (bijzondere gemeenten).
+- Koninkrijk der Nederlanden: Nederland + Aruba, Curaçao, Sint Maarten (landen); Bonaire, Sint Eustatius, Saba (bijzondere gemeenten: de BES-eilanden).
 - Gouden Eeuw (17e eeuw): handel, VOC, schilders (Rembrandt). Ook: slavenhandel en slavernij in de koloniën.
 - Afschaffing slavernij in Suriname en de Antillen: 1863 (Keti Koti, 1 juli). Suriname onafhankelijk in 1975. Indonesië: voormalige kolonie (onafhankelijk na WO II).
-- Willem van Oranje: vader des vaderlands; 80-jarige oorlog tegen Spanje (16e–17e eeuw).
-- Tweede Wereldoorlog: Duitse bezetting 1940–1945; Jodenvervolging; Anne Frank (dagboek, Amsterdam). Bevrijding 5 mei 1945.
+- Willem van Oranje: vader des vaderlands; 80-jarige oorlog tegen Spanje (1568–1648). Het volkslied, het Wilhelmus, gaat over hem.
+- Tweede Wereldoorlog: Duitse bezetting 1940–1945; Jodenvervolging; Anne Frank (dagboek, Amsterdam). Bevrijding 5 mei 1945; 4 mei Dodenherdenking, 5 mei Bevrijdingsdag.
 - Na de oorlog: wederopbouw; gastarbeiders (o.a. uit Turkije, Marokko) in de jaren '60–'70; migratie uit Suriname en Indonesië.
 - Nederland was medeoprichter van de Europese Unie (EU/EEG) en lid van de NAVO.
 - Euro sinds 2002 (daarvoor gulden).
@@ -1254,7 +1254,8 @@ common, verifiable knowledge; prefer leaving it out over guessing.
 | KVK | eigen bedrijf inschrijven |
 | Bibliotheek | boeken lenen, hulp bij taal en computer |
 | Vluchtelingenwerk / maatschappelijk werk | begeleiding en hulp |
-- DigiD: inloggen bij de overheid (gemeente, Belastingdienst, DUO, UWV). Geef je DigiD nooit aan een ander.
+- DigiD: inloggen bij de overheid (gemeente, Belastingdienst, DUO, UWV). Geef je DigiD nooit aan een ander, ook niet aan iemand die zegt dat hij van de overheid is.
+- Namen: DUO = Dienst Uitvoering Onderwijs; IND = Immigratie- en Naturalisatiedienst; UWV = Uitvoeringsinstituut Werknemersverzekeringen; SVB = Sociale Verzekeringsbank; KVK = Kamer van Koophandel; BRP = Basisregistratie Personen; Wmo = hulp van de gemeente thuis (Wet maatschappelijke ondersteuning); IDW = Internationale Diplomawaardering.
 - BSN (burgerservicenummer): persoonlijk nummer, op paspoort/ID-kaart.
 
 ### C.7 Staatsinrichting en rechtsstaat

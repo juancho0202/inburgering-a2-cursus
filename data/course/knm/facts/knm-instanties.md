@@ -15,6 +15,7 @@
 | KVK | eigen bedrijf inschrijven |
 | Bibliotheek | boeken lenen, hulp bij taal en computer |
 | Vluchtelingenwerk / maatschappelijk werk | begeleiding en hulp |
-- DigiD: inloggen bij de overheid (gemeente, Belastingdienst, DUO, UWV). Geef je DigiD nooit aan een ander.
+- DigiD: inloggen bij de overheid (gemeente, Belastingdienst, DUO, UWV). Geef je DigiD nooit aan een ander, ook niet aan iemand die zegt dat hij van de overheid is.
+- Namen: DUO = Dienst Uitvoering Onderwijs; IND = Immigratie- en Naturalisatiedienst; UWV = Uitvoeringsinstituut Werknemersverzekeringen; SVB = Sociale Verzekeringsbank; KVK = Kamer van Koophandel; BRP = Basisregistratie Personen; Wmo = hulp van de gemeente thuis (Wet maatschappelijke ondersteuning); IDW = Internationale Diplomawaardering.
 - BSN (burgerservicenummer): persoonlijk nummer, op paspoort/ID-kaart.
 - IDW: waardering van buitenlandse diploma's. Gemeente: bijstand en de MAP bij inburgering. UWV: WW. Huisarts: kan een tolk regelen.
