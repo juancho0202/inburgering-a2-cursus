@@ -8,7 +8,7 @@
       "article": "het",
       "pos": "noun",
       "plural": "de loketten",
-      "definitionNl": "Daar help een medewerker je met je vraag.",
+      "definitionNl": "Daar helpt een medewerker je met je vraag.",
       "example": "Ik ga naar het loket voor een paspoort.",
       "tags": [
         "thema:gemeente-instanties"
@@ -168,7 +168,7 @@
       "article": "de",
       "pos": "noun",
       "plural": null,
-      "definitionNl": "Het register van de gemeente met alle inwoners.",
+      "definitionNl": "Basisregistratie Personen: de lijst van de gemeente met alle inwoners.",
       "example": "Je staat in de BRP als je woont in Nederland.",
       "tags": [
         "thema:gemeente-instanties",
@@ -213,7 +213,7 @@
       "article": "de",
       "pos": "noun",
       "plural": null,
-      "definitionNl": "Je persoonlijke code om bij de overheid in te loggen.",
+      "definitionNl": "Je persoonlijke inlogcode voor de overheid. Geef hem nooit aan een ander.",
       "example": "Met mijn DigiD kijk ik naar mijn belastingen.",
       "tags": [
         "thema:gemeente-instanties",
@@ -317,7 +317,7 @@
       "article": "de",
       "pos": "noun",
       "plural": null,
-      "definitionNl": "De organisatie voor verblijfsvergunning en naturalisatie.",
+      "definitionNl": "Immigratie- en Naturalisatiedienst: voor de verblijfsvergunning en Nederlander worden.",
       "example": "De IND beslist over mijn aanvraag.",
       "tags": [
         "thema:gemeente-instanties",
@@ -377,7 +377,7 @@
       "article": "het",
       "pos": "noun",
       "plural": null,
-      "definitionNl": "De organisatie voor werk en uitkering bij ziekte of ontslag.",
+      "definitionNl": "Uitvoeringsinstituut Werknemersverzekeringen: de W van werk. WW, werk zoeken, ziek en niet kunnen werken.",
       "example": "Het UWV helpt mensen zonder werk.",
       "tags": [
         "thema:gemeente-instanties",
@@ -392,7 +392,7 @@
       "article": "de",
       "pos": "noun",
       "plural": null,
-      "definitionNl": "De organisatie voor kinderbijslag en AOW.",
+      "definitionNl": "Sociale Verzekeringsbank: kinderbijslag en AOW.",
       "example": "De SVB betaalt de AOW.",
       "tags": [
         "thema:gemeente-instanties",
@@ -483,7 +483,7 @@
       "pos": "noun",
       "plural": "de bibliotheken",
       "definitionNl": "Hier leen je boeken.",
-      "example": "In de bibliotheek help je bij taal en computers.",
+      "example": "In de bibliotheek krijg je hulp bij taal en computers.",
       "tags": [
         "thema:gemeente-instanties",
         "knm:instanties"
@@ -515,6 +515,51 @@
       "example": "Zet hier je handtekening.",
       "tags": [
         "thema:gemeente-instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-036",
+      "nl": "DUO",
+      "article": null,
+      "pos": "phrase",
+      "plural": null,
+      "definitionNl": "Dienst Uitvoering Onderwijs: de O van onderwijs. Studiefinanciering en je inburgering.",
+      "example": "DUO stuurt mij een brief over mijn examen.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-037",
+      "nl": "de KVK",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Kamer van Koophandel: hier schrijf je een eigen bedrijf in.",
+      "example": "Ik schrijf mijn bedrijf in bij de KVK.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
+      ],
+      "level": "A2",
+      "source": "course"
+    },
+    {
+      "id": "basis-vocab-gemeente-instanties-038",
+      "nl": "de Wmo",
+      "article": "de",
+      "pos": "noun",
+      "plural": null,
+      "definitionNl": "Hulp van de gemeente thuis, bijvoorbeeld bij ziekte of een handicap.",
+      "example": "Mijn oma krijgt hulp in huis via de Wmo.",
+      "tags": [
+        "thema:gemeente-instanties",
+        "knm:instanties"
       ],
       "level": "A2",
       "source": "course"
