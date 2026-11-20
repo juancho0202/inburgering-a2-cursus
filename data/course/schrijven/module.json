@@ -1,14 +1,16 @@
 {
   "id": "schrijven",
   "title": "Schrijven A2",
-  "description": "Leer formulieren, berichten, e-mails en brieven schrijven.",
+  "description": "Leer formulieren, appjes, berichten, e-mails, brieven en korte teksten schrijven.",
   "icon": "pencil",
   "units": [
     "schrijven-basis",
     "schrijven-formulier",
+    "schrijven-appje",
     "schrijven-kort-bericht",
     "schrijven-informele-mail",
     "schrijven-formele-mail",
+    "schrijven-korte-tekst",
     "schrijven-examen-tips"
   ]
 }

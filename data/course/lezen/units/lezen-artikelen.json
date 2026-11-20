@@ -23,6 +23,99 @@
       ]
     },
     {
+      "type": "lesson",
+      "id": "lezen-artikelen-l-02",
+      "title": "Zo vind je het antwoord",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Kijk mee hoe je het antwoord vindt. **Eerst de vraag, dan de tekst.**"
+        },
+        {
+          "kind": "document",
+          "docType": "folder",
+          "title": "Nieuwe speeltuin in de Vogelbuurt",
+          "body": "In de Vogelbuurt is zaterdag een nieuwe speeltuin geopend. De speeltuin ligt naast basisschool De Merel. Er zijn schommels, een klimrek en een voetbalveldje.\n\nDe buurt heeft zelf meegedacht. Kinderen mochten tekeningen maken van hun droomspeeltuin. 'Het klimrek was mijn idee', zegt Sara (9).\n\nDe speeltuin is elke dag open van 8.00 tot 20.00 uur. Honden mogen er niet in."
+        },
+        {
+          "kind": "text",
+          "md": "**De vraag:** *Wat is het belangrijkste nieuws in dit artikel?*\n\n1. **Lees de titel en de eerste alinea:** daar staat het belangrijkste. Zoek *wie*, *wat*, *waar* en *wanneer*.\n2. **Wat?** Een nieuwe speeltuin is geopend. **Waar?** In de Vogelbuurt. **Wanneer?** Zaterdag.\n3. **De rest** geeft uitleg en details: wie meedacht, wanneer de speeltuin open is.\n4. **Pas op:** Sara en het klimrek zijn een leuk detail. Maar dat is niet het belangrijkste nieuws.\n\n**Antwoord:** in de Vogelbuurt is zaterdag een nieuwe speeltuin geopend."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-artikelen-q-005",
+        "tags": [
+          "lezen:artikel"
+        ],
+        "explanation": "Zoek eerst het kernwoord uit de vraag in de tekst. Lees dan de zin eromheen.",
+        "difficulty": 1,
+        "type": "reading",
+        "prompt": "Lees de tekst nog een keer en beantwoord de vragen.",
+        "document": {
+          "kind": "document",
+          "docType": "folder",
+          "title": "Nieuwe speeltuin in de Vogelbuurt",
+          "body": "In de Vogelbuurt is zaterdag een nieuwe speeltuin geopend. De speeltuin ligt naast basisschool De Merel. Er zijn schommels, een klimrek en een voetbalveldje.\n\nDe buurt heeft zelf meegedacht. Kinderen mochten tekeningen maken van hun droomspeeltuin. 'Het klimrek was mijn idee', zegt Sara (9).\n\nDe speeltuin is elke dag open van 8.00 tot 20.00 uur. Honden mogen er niet in."
+        },
+        "questions": [
+          {
+            "id": "lezen-artikelen-q-005-1",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Waar ligt de speeltuin?",
+            "options": [
+              "Naast basisschool De Merel",
+              "In het park",
+              "Bij het station",
+              "Naast de supermarkt"
+            ],
+            "answer": 0,
+            "explanation": "'De speeltuin ligt naast basisschool De Merel.'"
+          },
+          {
+            "id": "lezen-artikelen-q-005-2",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Hoe hielpen de kinderen?",
+            "options": [
+              "Ze maakten tekeningen van hun droomspeeltuin.",
+              "Ze bouwden het klimrek.",
+              "Ze gaven geld.",
+              "Ze ruimden afval op."
+            ],
+            "answer": 0,
+            "explanation": "'Kinderen mochten tekeningen maken van hun droomspeeltuin.'"
+          },
+          {
+            "id": "lezen-artikelen-q-005-3",
+            "tags": [
+              "lezen:artikel"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Wat mag niet in de speeltuin?",
+            "options": [
+              "Honden",
+              "Voetballen",
+              "Schommelen",
+              "Klimmen"
+            ],
+            "answer": 0,
+            "explanation": "'Honden mogen er niet in.'"
+          }
+        ]
+      }
+    },
+    {
       "type": "exercise",
       "exercise": {
         "id": "lezen-artikelen-q-001",

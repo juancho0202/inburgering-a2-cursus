@@ -27,6 +27,99 @@
       ]
     },
     {
+      "type": "lesson",
+      "id": "lezen-brieven-l-02",
+      "title": "Zo vind je het antwoord",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Kijk mee hoe je het antwoord vindt. **Eerst de vraag, dan de tekst.**"
+        },
+        {
+          "kind": "document",
+          "docType": "brief",
+          "title": "Uitnodiging voor een gesprek",
+          "body": "Van: Gemeente Utrecht\nAan: Mevrouw F. Haddad\nDatum: 3 april\n\nGeachte mevrouw Haddad,\n\nWij nodigen u uit voor een gesprek over uw inburgering. Het gesprek is op dinsdag 15 april om 10.30 uur, in het stadskantoor.\n\nNeem uw ID-kaart en deze brief mee. Spreekt u nog weinig Nederlands? Dan mag u iemand meenemen die voor u vertaalt.\n\nKunt u niet komen? Bel dan uiterlijk 11 april. Wij maken dan een nieuwe afspraak.\n\nMet vriendelijke groet,\nGemeente Utrecht"
+        },
+        {
+          "kind": "text",
+          "md": "**De vraag:** *Tot wanneer kan mevrouw Haddad de afspraak afzeggen?*\n\n1. **Kernwoorden in de vraag:** *tot wanneer* (een datum) en *afzeggen*.\n2. **Zoek in de tekst** naar een datum en naar *niet komen*: *Kunt u niet komen? Bel dan uiterlijk 11 april.*\n3. **Andere woorden:** *afzeggen* is *niet komen*. *Uiterlijk* betekent *niet later dan*.\n4. **Pas op:** 15 april staat ook in de brief. Maar dat is de dag van het gesprek. En 3 april is de datum van de brief.\n\n**Antwoord:** tot en met 11 april."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-brieven-q-006",
+        "tags": [
+          "lezen:brief"
+        ],
+        "explanation": "Zoek eerst het kernwoord uit de vraag in de tekst. Lees dan de zin eromheen.",
+        "difficulty": 1,
+        "type": "reading",
+        "prompt": "Lees de tekst nog een keer en beantwoord de vragen.",
+        "document": {
+          "kind": "document",
+          "docType": "brief",
+          "title": "Uitnodiging voor een gesprek",
+          "body": "Van: Gemeente Utrecht\nAan: Mevrouw F. Haddad\nDatum: 3 april\n\nGeachte mevrouw Haddad,\n\nWij nodigen u uit voor een gesprek over uw inburgering. Het gesprek is op dinsdag 15 april om 10.30 uur, in het stadskantoor.\n\nNeem uw ID-kaart en deze brief mee. Spreekt u nog weinig Nederlands? Dan mag u iemand meenemen die voor u vertaalt.\n\nKunt u niet komen? Bel dan uiterlijk 11 april. Wij maken dan een nieuwe afspraak.\n\nMet vriendelijke groet,\nGemeente Utrecht"
+        },
+        "questions": [
+          {
+            "id": "lezen-brieven-q-006-1",
+            "tags": [
+              "lezen:brief"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Wat is het doel van de brief?",
+            "options": [
+              "Een uitnodiging voor een gesprek",
+              "Een boete sturen",
+              "Een nieuwe ID-kaart geven",
+              "Iets vertellen over de huur"
+            ],
+            "answer": 0,
+            "explanation": "Het doel staat vaak in de eerste zin: 'Wij nodigen u uit voor een gesprek.'"
+          },
+          {
+            "id": "lezen-brieven-q-006-2",
+            "tags": [
+              "lezen:brief"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Wie mag mevrouw Haddad meenemen?",
+            "options": [
+              "Iemand die voor haar vertaalt",
+              "Niemand",
+              "Haar huisarts",
+              "Een medewerker van de gemeente"
+            ],
+            "answer": 0,
+            "explanation": "'Dan mag u iemand meenemen die voor u vertaalt.'"
+          },
+          {
+            "id": "lezen-brieven-q-006-3",
+            "tags": [
+              "lezen:brief"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Op welke dag is het gesprek?",
+            "options": [
+              "Op 3 april",
+              "Op 11 april",
+              "Op 15 april",
+              "Op 10 april"
+            ],
+            "answer": 2,
+            "explanation": "15 april is het gesprek. 3 april is de datum van de brief, 11 april de laatste dag om af te zeggen."
+          }
+        ]
+      }
+    },
+    {
       "type": "exercise",
       "exercise": {
         "id": "lezen-brieven-q-001",

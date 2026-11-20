@@ -18,8 +18,9 @@ const showText = ref(false);
 <template>
   <div class="mb-5 flex items-start gap-4">
     <div class="min-w-0 flex-1">
-      <p v-if="context" class="mb-3 rounded-2xl bg-surface-2 px-4 py-3 text-muted" v-html="renderMdInline(context)" />
-      <h2 class="text-2xl font-bold leading-snug" v-html="renderMdInline(prompt)" />
+      <!-- lang=nl + nl-wrap: a long Dutch word (arbeidsongeschiktheidsverzekering) hyphenates instead of pushing the page past a phone screen -->
+      <p v-if="context" class="nl-wrap mb-3 rounded-2xl bg-surface-2 px-4 py-3 text-muted" lang="nl" v-html="renderMdInline(context)" />
+      <h2 class="nl-wrap text-2xl font-bold leading-snug" lang="nl" v-html="renderMdInline(prompt)" />
       <div v-if="listen" class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
         <button
           type="button"

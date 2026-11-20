@@ -1,16 +1,18 @@
 import type { Exercise, Unit } from "../types.js";
 import {
   ExplanationSchema,
+  TaalcafeTurnSchema,
   WritingFeedbackSchema,
   type Explanation,
   type GenerateRequest,
+  type TaalcafeTurn,
   type WritingFeedback,
 } from "../schemas/claude.js";
 import { ExerciseSchema } from "../schemas/content.js";
 import { countWords } from "../logic/answers.js";
 import type { ClaudeGateway } from "./gateway.js";
-import { EXPLAIN_SYSTEM, GENERATE_SYSTEM, WRITING_FEEDBACK_SYSTEM, explainUser, generateUser, writingFeedbackUser } from "./prompts.js";
-import { explanationJsonSchema, generateJsonSchemas, writingFeedbackJsonSchema } from "./schemas.js";
+import { EXPLAIN_SYSTEM, GENERATE_SYSTEM, TAALCAFE_SYSTEM, WRITING_FEEDBACK_SYSTEM, explainUser, generateUser, taalcafeUser, writingFeedbackUser } from "./prompts.js";
+import { explanationJsonSchema, generateJsonSchemas, taalcafeJsonSchema, writingFeedbackJsonSchema } from "./schemas.js";
 
 export interface Usage {
   inputTokens: number;
@@ -35,6 +37,19 @@ export async function writingFeedback(
   });
   const feedback = parseJson(res.text, (v) => WritingFeedbackSchema.parse(v));
   return { feedback, usage: res.usage };
+}
+
+export async function taalcafeTurn(
+  gateway: ClaudeGateway,
+  args: { topic: string; history: { from: "partner" | "learner"; text: string }[]; message: string },
+): Promise<{ turn: TaalcafeTurn; usage: Usage }> {
+  const res = await gateway.complete({
+    system: TAALCAFE_SYSTEM,
+    user: taalcafeUser(args.topic, args.history, args.message),
+    schema: taalcafeJsonSchema as unknown as Record<string, unknown>,
+    maxTokens: 1000,
+  });
+  return { turn: parseJson(res.text, (v) => TaalcafeTurnSchema.parse(v)), usage: res.usage };
 }
 
 export async function explainMistake(

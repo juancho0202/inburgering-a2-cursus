@@ -70,7 +70,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "De koning heeft geen politieke macht.",
+        "explanation": "De koning heeft geen politieke macht. De ministers zijn verantwoordelijk, niet de koning.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Welke macht heeft de koning in de politiek?",
@@ -90,7 +90,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Koning Willem-Alexander regeert sinds 2013.",
+        "explanation": "Willem-Alexander is koning sinds 2013. Zijn vrouw is koningin Máxima.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Hoe heet de koning van Nederland (sinds 2013)?",
@@ -110,7 +110,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Op Prinsjesdag leest de koning de troonrede.",
+        "explanation": "Prinsjesdag is de derde dinsdag van september. Dan leest de koning de troonrede voor.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wanneer is Prinsjesdag?",
@@ -130,7 +130,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "De troonrede wordt uitgesproken op Prinsjesdag.",
+        "explanation": "In de troonrede leest de koning op Prinsjesdag de plannen van de regering voor.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is de troonrede?",
@@ -150,7 +150,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "De minister-president is de leider van het kabinet.",
+        "explanation": "De minister-president leidt het kabinet: de regering.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wie leidt het kabinet?",
@@ -170,7 +170,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "De Tweede Kamer heeft 150 leden.",
+        "explanation": "De Tweede Kamer heeft 150 leden. De Eerste Kamer heeft er 75: de helft.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Hoeveel leden heeft de Tweede Kamer?",
@@ -190,7 +190,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Een coalitie bestaat uit partijen die samenwerken.",
+        "explanation": "Meestal heeft geen partij alleen genoeg zetels. Daarom werken partijen samen: een coalitie.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is een coalitie?",
@@ -210,7 +210,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Eerste Kamer: 75 leden.",
+        "explanation": "Eerste Kamer: 75 leden. Tweede Kamer: 150, het dubbele.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Welk deel van het parlement heeft 75 leden?",
@@ -276,7 +276,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Stemmen is niet verplicht.",
+        "explanation": "Stemmen mag vanaf 18 jaar, maar het is niet verplicht.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Is stemmen in Nederland verplicht?",
@@ -296,7 +296,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Stemmen is geheim.",
+        "explanation": "Stemmen is geheim: je stemt alleen in het stemhokje, en niemand ziet wat je kiest.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Weet iemand wie jij hebt gekozen?",
@@ -356,7 +356,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Een provincie heeft Provinciale Staten.",
+        "explanation": "Een provincie heeft Provinciale Staten (gekozen) en Gedeputeerde Staten (het bestuur).",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Welke instantie bestuurt een provincie?",
@@ -376,7 +376,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "De burgemeester wordt benoemd.",
+        "explanation": "De burgemeester leidt de gemeente. Hij of zij wordt benoemd, niet gekozen.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wie is de leider van de gemeente en wordt benoemd?",
@@ -396,7 +396,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Je stemt ook voor het waterschap.",
+        "explanation": "Het waterschap zorgt voor dijken en schoon water. Daarvoor kun je ook stemmen.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Voor welke organisatie stem je ook, die zorgt voor dijken en water?",
@@ -446,7 +446,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Artikel 1 gaat over gelijke behandeling.",
+        "explanation": "Artikel 1: iedereen in Nederland wordt gelijk behandeld. Discriminatie mag niet.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat staat in artikel 1 van de Grondwet?",
@@ -466,7 +466,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "De rechterlijke macht is onafhankelijk.",
+        "explanation": "De rechter is onafhankelijk: de regering mag niet zeggen wat de rechter beslist.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wie spreekt recht en is onafhankelijk?",
@@ -506,7 +506,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Je hebt recht op een advocaat.",
+        "explanation": "Iedereen die verdacht wordt, heeft recht op een advocaat.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Een man wordt verdacht van diefstal. Waarop heeft hij recht?",
@@ -546,7 +546,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Kinderen slaan mag niet.",
+        "explanation": "Kinderen slaan is verboden, ook voor ouders.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Mag je je kind slaan als het stout is?",
@@ -566,7 +566,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Regering en parlement samen maken de wetten.",
+        "explanation": "Wetgevende macht betekent: wetten maken. Dat doen regering en parlement samen.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is de wetgevende macht?",
@@ -586,7 +586,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Naturalisatie = Nederlander worden.",
+        "explanation": "Naturalisatie betekent Nederlander worden. Je vraagt het aan via de gemeente, de IND beslist.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Ahmed wil Nederlander worden. Wat is de officiële naam hiervoor?",
@@ -626,7 +626,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Grondrechten staan in de Grondwet.",
+        "explanation": "Grondrechten staan in de Grondwet: bijvoorbeeld gelijke behandeling en vrijheid van meningsuiting.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is een grondrecht?",
@@ -898,7 +898,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Vanaf 18 jaar mag je stemmen.",
+        "explanation": "Vanaf 18 jaar mag je stemmen (actief kiesrecht). Het hoeft niet.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Vanaf welke leeftijd mag je in Nederland stemmen?",
@@ -1002,7 +1002,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Vanaf 14 jaar.",
+        "explanation": "Vanaf 14 jaar moet je een paspoort of ID-kaart kunnen laten zien als de politie erom vraagt.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Vanaf welke leeftijd moet je je kunnen identificeren als de politie dat vraagt?",
@@ -1022,7 +1022,7 @@
         "tags": [
           "knm:staat"
         ],
-        "explanation": "Vanaf 14 jaar moet het wel.",
+        "explanation": "Vanaf 14 jaar moet je een identiteitsbewijs kunnen laten zien.",
         "difficulty": 1,
         "type": "true-false",
         "prompt": "Klopt dit?",
@@ -1068,6 +1068,92 @@
           "De buurman"
         ],
         "answer": 2
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-staat-l-07",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Oefen alles nog een keer, door elkaar. Net als in het examen: denk eerst na over de situatie."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-043",
+        "tags": [
+          "knm:staat"
+        ],
+        "type": "mc",
+        "prompt": "Wie maakt in Nederland de wetten?",
+        "options": [
+          "Regering en parlement samen",
+          "De koning alleen",
+          "De rechter",
+          "De burgemeester"
+        ],
+        "answer": 0,
+        "explanation": "Wetten maken (de wetgevende macht) doen regering en parlement samen.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-044",
+        "tags": [
+          "knm:staat"
+        ],
+        "type": "mc",
+        "prompt": "Je bent 18 en het zijn verkiezingen. Moet je stemmen?",
+        "options": [
+          "Nee, het mag, maar het hoeft niet.",
+          "Ja, het is verplicht.",
+          "Alleen als je werkt.",
+          "Alleen bij de gemeenteraad."
+        ],
+        "answer": 0,
+        "explanation": "Vanaf 18 jaar mag je stemmen. Het is niet verplicht.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-045",
+        "tags": [
+          "knm:staat"
+        ],
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "De burgemeester wordt door de inwoners gekozen.",
+        "answer": false,
+        "explanation": "De burgemeester wordt benoemd. De gemeenteraad wordt wel gekozen.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-staat-q-046",
+        "tags": [
+          "knm:staat"
+        ],
+        "type": "mc",
+        "prompt": "Je zoon is 15. De politie vraagt wie hij is. Wat moet hij laten zien?",
+        "options": [
+          "Zijn ID-kaart of paspoort",
+          "Niets, hij is nog geen 18",
+          "Zijn schoolrapport",
+          "Zijn bankpas"
+        ],
+        "answer": 0,
+        "explanation": "Vanaf 14 jaar moet je een identiteitsbewijs kunnen laten zien.",
+        "difficulty": 1
       }
     }
   ]

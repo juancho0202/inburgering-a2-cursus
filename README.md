@@ -9,7 +9,7 @@ Niet van DUO. Alle teksten en vragen zijn zelf gemaakt.
 
 - De app is een **website zonder server**. Alles gebeurt in je eigen browser.
 - Je **voortgang staat alleen in de browser** (IndexedDB) op dit apparaat. Er is geen account en er worden geen gegevens verstuurd.
-- **Claude-hulp is optioneel** (feedback op teksten, uitleg, extra oefeningen). Je plakt je eigen
+- **Claude-hulp is optioneel** (feedback op teksten, uitleg, extra oefeningen, en het taalcafé: een gesprekje met verbeteringen). Je plakt je eigen
   Anthropic API-sleutel bij *Instellingen*. De sleutel wordt versleuteld op dit apparaat bewaard en gaat alleen naar Anthropic.
 - Op twee apparaten leren? Druk op **Klaar voor vandaag**, bewaar het bestand (op een iPhone: deel het met AirDrop) en kies op het andere apparaat
   **Ga verder met een bestand**. De voortgang wordt samengevoegd; er gaat niets verloren.

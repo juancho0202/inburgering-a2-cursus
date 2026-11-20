@@ -4,7 +4,7 @@
   "title": "Werkwoorden: nu",
   "goal": "Je gebruikt de goede vorm van het werkwoord in de tegenwoordige tijd.",
   "scene": "keuken",
-  "estimatedMinutes": 20,
+  "estimatedMinutes": 25,
   "tags": [
     "basis:werkwoorden",
     "grammar:tegenwoordig"
@@ -529,6 +529,128 @@
             "betaalt"
           ]
         ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-werkwoorden-nu-l-02",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "tip",
+          "md": "Ik: de stam (werk). Jij, u, hij, zij: stam + t (werkt). Wij, jullie, zij: de infinitief (werken). In een vraag met jij valt de -t weg: *Werk jij?*\n\nEindigt de stam op een **d**? Dan schrijf je bij hij **dt**: *hij antwoordt*."
+        },
+        {
+          "kind": "text",
+          "md": "Oefen nu met **nieuwe** zinnen. Denk bij elke vraag aan de regel."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-werkwoorden-nu-q-022",
+        "tags": [
+          "basis:werkwoorden",
+          "grammar:tegenwoordig"
+        ],
+        "type": "gap-fill",
+        "prompt": "Vul de werkwoordsvorm in (fietsen).",
+        "text": "Mijn dochter ___ elke dag naar school.",
+        "answers": [
+          [
+            "fietst"
+          ]
+        ],
+        "explanation": "Zij (één persoon): stam + t. Fiets + t: fietst.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-werkwoorden-nu-q-023",
+        "tags": [
+          "basis:werkwoorden",
+          "grammar:tegenwoordig"
+        ],
+        "type": "gap-fill",
+        "prompt": "Vul de werkwoordsvorm in (antwoorden).",
+        "text": "Hij ___ niet op mijn vraag.",
+        "answers": [
+          [
+            "antwoordt"
+          ]
+        ],
+        "explanation": "Stam antwoord + t: antwoordt. Je hoort het niet, maar je schrijft dt.",
+        "difficulty": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-werkwoorden-nu-q-024",
+        "tags": [
+          "basis:werkwoorden",
+          "grammar:tegenwoordig"
+        ],
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Woon jij in Utrecht?",
+          "Woont jij in Utrecht?",
+          "Wonen jij in Utrecht?",
+          "Jij woon in Utrecht?"
+        ],
+        "answer": 0,
+        "explanation": "In een vraag met jij valt de -t weg: Woon jij?",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-werkwoorden-nu-q-025",
+        "tags": [
+          "basis:werkwoorden",
+          "grammar:tegenwoordig"
+        ],
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "U ___ morgen om tien uur een afspraak. (hebben)",
+        "options": [
+          [
+            "heeft",
+            "heb",
+            "hebben"
+          ]
+        ],
+        "answers": [
+          0
+        ],
+        "explanation": "Bij u: u heeft (of u hebt).",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-werkwoorden-nu-q-026",
+        "tags": [
+          "basis:werkwoorden",
+          "grammar:tegenwoordig"
+        ],
+        "type": "mc",
+        "prompt": "Wat is de fout in deze zin? \"Mijn broer werk in een fabriek.\"",
+        "options": [
+          "Werk moet werkt zijn.",
+          "Broer moet broers zijn.",
+          "In moet op zijn.",
+          "Er is geen fout."
+        ],
+        "answer": 0,
+        "explanation": "Mijn broer = hij: stam + t. Mijn broer werkt.",
+        "difficulty": 2
       }
     }
   ]

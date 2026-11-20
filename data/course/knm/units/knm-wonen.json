@@ -63,7 +63,7 @@
         "tags": [
           "knm:wonen"
         ],
-        "explanation": "Woningcorporaties verhuren sociale huurwoningen.",
+        "explanation": "Een goedkope (sociale) huurwoning krijg je via een woningcorporatie. Schrijf je op tijd in: er is vaak een wachtlijst.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Fatima zoekt een goedkope huurwoning. Waar kan ze zich inschrijven?",
@@ -83,7 +83,7 @@
         "tags": [
           "knm:wonen"
         ],
-        "explanation": "De borg krijg je terug als er niets kapot is.",
+        "explanation": "De borg betaal je vooraf. Je krijgt hem terug als je weggaat en er niets kapot is.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is een borg?",
@@ -103,7 +103,7 @@
         "tags": [
           "knm:wonen"
         ],
-        "explanation": "Huurtoeslag regelt de Belastingdienst.",
+        "explanation": "Huurtoeslag is een toeslag. Alle toeslagen regelt de Belastingdienst.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Ahmed heeft weinig inkomen en betaalt huur. Waar vraagt hij hulp bij de huur aan?",
@@ -123,7 +123,7 @@
         "tags": [
           "knm:wonen"
         ],
-        "explanation": "Het contract bevat de afspraken over het huren.",
+        "explanation": "In het huurcontract staan de afspraken: de huur, de datum, en wat wel en niet mag.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat staat in een huurcontract?",
@@ -143,7 +143,7 @@
         "tags": [
           "knm:wonen"
         ],
-        "explanation": "Sociale huur = goedkope huur, vaak via een corporatie.",
+        "explanation": "Sociaal betekent: voor mensen met een lager inkomen. Sociale huur is goedkoper, vaak via een woningcorporatie.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is een sociale huurwoning?",
@@ -222,7 +222,7 @@
         "tags": [
           "knm:wonen"
         ],
-        "explanation": "Grote reparaties zijn voor de verhuurder.",
+        "explanation": "Verwarming is een grote reparatie: die is voor de verhuurder. Dus eerst de huisbaas bellen.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "De verwarming in het huis van Olga is kapot. Het is winter. Wat doet ze het eerst?",
@@ -263,7 +263,7 @@
         "tags": [
           "knm:wonen"
         ],
-        "explanation": "De huurder betaalt en zorgt goed voor het huis.",
+        "explanation": "De huurder betaalt op tijd de huur en zorgt goed voor het huis. Kleine reparaties doet hij zelf.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is de taak van de huurder?",
@@ -283,7 +283,7 @@
         "tags": [
           "knm:wonen"
         ],
-        "explanation": "Een kraan is een kleine reparatie.",
+        "explanation": "Kleine reparaties (een kraan, een lamp) doet de huurder. Grote reparaties (het dak, de verwarming) de verhuurder.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Een kraan lekt een beetje. Wie repareert dat meestal?",
@@ -346,7 +346,7 @@
         "tags": [
           "knm:wonen"
         ],
-        "explanation": "In de BRP staan inwoners ingeschreven.",
+        "explanation": "BRP betekent Basisregistratie Personen: de lijst van de gemeente met alle inwoners.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is de BRP?",
@@ -366,7 +366,7 @@
         "tags": [
           "knm:wonen"
         ],
-        "explanation": "Vaste lasten betaal je elke maand.",
+        "explanation": "Vaste lasten zijn kosten die elke maand terugkomen: huur, energie, verzekeringen.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Welke kosten zijn vaste lasten?",
@@ -450,7 +450,7 @@
         "tags": [
           "knm:wonen"
         ],
-        "explanation": "Grofvuil laat je ophalen via de gemeente.",
+        "explanation": "Grote spullen zoals een bank zijn grofvuil. De gemeente haalt ze op, of je brengt ze zelf weg.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Waar gooi je een oude kapotte bank weg?",
@@ -470,7 +470,7 @@
         "tags": [
           "knm:wonen"
         ],
-        "explanation": "gft = groente, fruit en tuinafval.",
+        "explanation": "Gft betekent groente, fruit en tuinafval. Resten van groente en fruit gaan in de gft-bak.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "In welke bak gooi je groente- en fruitresten?",
@@ -550,7 +550,7 @@
         "tags": [
           "knm:wonen"
         ],
-        "explanation": "Een rookmelder waarschuwt bij brand.",
+        "explanation": "Een rookmelder piept als er rook is. Zo word je ook 's nachts wakker bij brand.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Waarvoor is een rookmelder?",
@@ -585,7 +585,7 @@
         "tags": [
           "knm:wonen"
         ],
-        "explanation": "De huurder betaalt huur.",
+        "explanation": "De huurder betaalt elke maand huur aan de verhuurder.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat betaalt de huurder meestal aan de verhuurder?",
@@ -614,6 +614,92 @@
           "Ze gooit alles samen in één zak.",
           "Ze legt het buiten op straat.",
           "Ze verbrandt het afval in de tuin."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-wonen-l-05",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Oefen alles nog een keer, door elkaar. Net als in het examen: denk eerst na over de situatie."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-026",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Na een verhuizing geef je je nieuwe adres binnen 5 dagen door aan de gemeente (BRP).",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Mila verhuist volgende week naar een andere stad. Wat moet ze binnen 5 dagen na de verhuizing doen?",
+        "options": [
+          "Haar nieuwe adres doorgeven aan de gemeente",
+          "Een brief sturen naar de IND",
+          "Een nieuwe zorgverzekering nemen",
+          "Niets, dat gaat vanzelf"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-027",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Grote spullen zijn grofvuil. Je zet ze niet zomaar op straat.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "De koelkast van Wei is kapot. Hij wil hem weggooien. Wat doet hij?",
+        "options": [
+          "Hij laat hem ophalen als grofvuil, of brengt hem zelf weg.",
+          "Hij zet hem naast de container.",
+          "Hij gooit hem in de restafvalbak.",
+          "Hij laat hem op de stoep staan."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-028",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "De borg krijg je terug als je weggaat en er niets kapot is.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "De borg is geld dat je nooit terugkrijgt.",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-wonen-q-029",
+        "tags": [
+          "knm:wonen"
+        ],
+        "explanation": "Eerst praten. Helpt dat niet? Dan buurtbemiddeling. 112 is alleen voor nood.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Je buurman maakt elke nacht lawaai. Je hebt al met hem gepraat, maar het helpt niet. Wat doe je nu?",
+        "options": [
+          "Buurtbemiddeling vragen",
+          "Meteen 112 bellen",
+          "Zelf ook lawaai maken",
+          "De verhuurder vragen om de buurman weg te sturen"
         ],
         "answer": 0
       }

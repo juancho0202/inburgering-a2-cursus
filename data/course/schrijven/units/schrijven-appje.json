@@ -1,0 +1,376 @@
+{
+  "id": "schrijven-appje",
+  "moduleId": "schrijven",
+  "title": "Een appje sturen",
+  "goal": "Je schrijft een kort, compleet appje: wat, wanneer, en wat de ander moet doen.",
+  "scene": "bellen",
+  "estimatedMinutes": 25,
+  "tags": [
+    "schrijven:appje"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "schrijven-appje-l-01",
+      "title": "Wat is een appje?",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Een **appje** is een kort bericht op je telefoon, bijvoorbeeld met WhatsApp. Je stuurt het aan een collega, een vriend, de buren of de ouders van een klasgenoot.\n\nEen appje is **kort**: 1 tot 4 zinnen. Maar het moet wel **compleet** zijn:\n\n- **Wat** is er?\n- **Wanneer**?\n- **Wat moet de ander doen?** Stel een duidelijke vraag."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Je leest",
+            "Het betekent"
+          ],
+          "rows": [
+            [
+              "ff",
+              "even"
+            ],
+            [
+              "z.s.m.",
+              "zo snel mogelijk"
+            ],
+            [
+              "i.p.v.",
+              "in plaats van"
+            ],
+            [
+              "a.u.b.",
+              "alstublieft"
+            ],
+            [
+              "👍",
+              "oké, goed"
+            ],
+            [
+              "Tot zo!",
+              "Ik zie je straks."
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Deze afkortingen moet je **herkennen** als je leest. Op het examen schrijf je **hele woorden**: niet *ff*, maar *even*."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-appje-q-001",
+        "tags": [
+          "schrijven:appje"
+        ],
+        "explanation": "Ff betekent even: Kun je even bellen?",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat betekent dit appje: \"Kun je ff bellen?\"",
+        "options": [
+          "Kun je even bellen?",
+          "Kun je vijf keer bellen?",
+          "Kun je niet bellen?",
+          "Kun je morgen bellen?"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-appje-q-002",
+        "tags": [
+          "schrijven:appje"
+        ],
+        "explanation": "Ff: even. Z.s.m.: zo snel mogelijk. I.p.v.: in plaats van. A.u.b.: alstublieft.",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Wat betekent de afkorting?",
+        "pairs": [
+          [
+            "ff",
+            "even"
+          ],
+          [
+            "z.s.m.",
+            "zo snel mogelijk"
+          ],
+          [
+            "i.p.v.",
+            "in plaats van"
+          ],
+          [
+            "a.u.b.",
+            "alstublieft"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-appje-q-003",
+        "tags": [
+          "schrijven:appje"
+        ],
+        "explanation": "Op het examen schrijf je hele woorden. Afkortingen zoals ff of z.s.m. herken je alleen.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Op het examen schrijf je ook afkortingen zoals ff en z.s.m.",
+        "answer": false
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "schrijven-appje-l-02",
+      "title": "Voorbeeld met uitleg",
+      "blocks": [
+        {
+          "kind": "document",
+          "docType": "bericht",
+          "title": "Appje aan een collega",
+          "body": "Hoi Sanne! Ik ben ziek, ik kan vandaag niet werken. Kun jij mijn dienst overnemen? Dan werk ik zaterdag voor jou. Laat je het even weten? Dank je! Ahmed"
+        },
+        {
+          "kind": "text",
+          "md": "**Uitleg:** 1) **wat** is er: *ik ben ziek*; 2) **wanneer**: *vandaag*; 3) een **vraag**: *Kun jij mijn dienst overnemen?*; 4) iets terug: *Dan werk ik zaterdag voor jou*; 5) *Dank je!* Dat zijn **29 woorden**: kort, maar alles staat erin."
+        },
+        {
+          "kind": "tip",
+          "md": "**Nee zeggen in een appje?** Dat mag. Geef een **reden**, en als het kan een **ander voorstel**: *Sorry, zaterdag kan ik niet, want ik ga naar een bruiloft. Zondag kan ik wel!*"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-appje-q-004",
+        "tags": [
+          "schrijven:appje"
+        ],
+        "explanation": "Een goed appje zegt wat er is (vertraging), wanneer je er bent, en sorry.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je komt te laat voor de les. Welk appje aan je docent is het beste?",
+        "options": [
+          "Ik kom niet.",
+          "Goedemorgen, de bus heeft vertraging. Ik ben er tien minuten later. Sorry! Ali",
+          "sorry",
+          "Hoi, misschien kom ik, misschien niet."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-appje-q-005",
+        "tags": [
+          "schrijven:appje"
+        ],
+        "explanation": "Nee zeggen mag. Geef een reden, en als het kan een ander voorstel.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Je collega appt: \"Kun jij zaterdag werken?\" Je kunt niet. Wat antwoord je?",
+        "options": [
+          "Ja hoor!",
+          "Sorry, zaterdag kan ik niet. Ik ga naar een bruiloft. Zondag kan ik wel!",
+          "Nee.",
+          "Zaterdag is een dag."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-appje-q-006",
+        "tags": [
+          "schrijven:appje"
+        ],
+        "explanation": "Een vraag zonder vraagwoord: het werkwoord (kun) staat eerst. Overnemen staat aan het eind.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Kun",
+          "jij",
+          "mijn",
+          "dienst",
+          "overnemen?"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-appje-q-007",
+        "tags": [
+          "schrijven:appje"
+        ],
+        "explanation": "Het werkwoord (ben) staat op plek 2.",
+        "difficulty": 1,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "ben",
+          "tien",
+          "minuten",
+          "te",
+          "laat."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-appje-q-008",
+        "tags": [
+          "schrijven:appje"
+        ],
+        "explanation": "Eerst de reden (ik ben ziek), dan het gevolg (ik kan niet komen). Voor een gevolg gebruik je dus.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het goede woord in: want of dus.",
+        "text": "Ik ben ziek, ___ ik kan vandaag niet komen.",
+        "answers": [
+          [
+            "dus"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-appje-q-009",
+        "tags": [
+          "schrijven:appje"
+        ],
+        "explanation": "Laat je het even weten? is een vriendelijke vraag om antwoord.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het goede woord in.",
+        "text": "Laat je het even ___ ?",
+        "answers": [
+          [
+            "weten"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "schrijven-appje-l-03",
+      "title": "Zelf een appje schrijven",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Nu schrijf je zelf. Lees de opdracht goed en schrijf **alle punten** op. Kort is goed, maar niets mag ontbreken.\n\nLees je appje aan het eind nog één keer: staat erin **wat**, **wanneer**, en **wat de ander moet doen**?"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-appje-q-010",
+        "tags": [
+          "schrijven:appje",
+          "werk"
+        ],
+        "explanation": "Een goed appje: wat, waarom en een duidelijke vraag.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Stuur een appje aan je collega.",
+        "task": {
+          "instructions": "Stuur een appje aan je collega Mehmet. Een appje is kort. Een aanhef en een groet zijn niet nodig.",
+          "scenario": "Je moet donderdag werken, maar je zoon heeft die dag een afspraak bij de tandarts. Je wilt met Mehmet ruilen.",
+          "requiredPoints": [
+            "Zeg dat je donderdag niet kunt werken.",
+            "Vertel waarom.",
+            "Vraag of Mehmet wil ruilen."
+          ]
+        },
+        "minWords": 10,
+        "maxWords": 40,
+        "register": "informal",
+        "modelAnswer": "Hoi Mehmet! Ik kan donderdag niet werken, want mijn zoon moet naar de tandarts. Wil jij met mij ruilen? Ik werk dan vrijdag voor jou. Dank je!",
+        "checklist": [
+          "Donderdag genoemd",
+          "Reden gegeven (want …)",
+          "Vraag om te ruilen",
+          "Kort en duidelijk"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-appje-q-011",
+        "tags": [
+          "schrijven:appje"
+        ],
+        "explanation": "Bedanken, iets vragen en een tijd noemen: alles staat erin.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Stuur een appje aan een moeder van school.",
+        "task": {
+          "instructions": "Stuur een appje aan Linda, de moeder van Noor. Een appje is kort. Een aanhef en een groet zijn niet nodig.",
+          "scenario": "Jouw dochter speelt woensdagmiddag bij Noor thuis. Je weet het adres nog niet.",
+          "requiredPoints": [
+            "Bedank Linda.",
+            "Vraag het adres.",
+            "Zeg hoe laat je je dochter ophaalt."
+          ]
+        },
+        "minWords": 10,
+        "maxWords": 40,
+        "register": "informal",
+        "modelAnswer": "Hoi Linda, leuk dat mijn dochter woensdag bij Noor mag spelen. Dank je wel! Wat is jullie adres? Ik haal haar om vijf uur op.",
+        "checklist": [
+          "Bedankt",
+          "Vraag naar het adres",
+          "Tijd van ophalen genoemd",
+          "Kort en vriendelijk"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-appje-q-012",
+        "tags": [
+          "schrijven:appje"
+        ],
+        "explanation": "Te laat? Zeg hoe laat je er wel bent. Dan kan de ander wachten of iets anders doen.",
+        "difficulty": 1,
+        "type": "writing",
+        "prompt": "Stuur een appje aan een vriendin.",
+        "task": {
+          "instructions": "Stuur een appje aan je vriendin Priya. Een appje is kort. Een aanhef en een groet zijn niet nodig.",
+          "scenario": "Je hebt om 19.00 uur met Priya afgesproken bij het station. Je trein heeft vertraging.",
+          "requiredPoints": [
+            "Zeg dat je te laat bent.",
+            "Zeg hoe laat je er bent.",
+            "Zeg sorry."
+          ]
+        },
+        "minWords": 10,
+        "maxWords": 40,
+        "register": "informal",
+        "modelAnswer": "Hoi Priya! Mijn trein heeft vertraging. Ik ben er om kwart over zeven. Sorry! Tot zo!",
+        "checklist": [
+          "Te laat genoemd",
+          "Nieuwe tijd genoemd",
+          "Sorry gezegd"
+        ]
+      }
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "title": "De toekomst",
   "goal": "Je praat over de toekomst met gaan + infinitief en zullen.",
   "scene": "bellen",
-  "estimatedMinutes": 10,
+  "estimatedMinutes": 15,
   "tags": [
     "basis:toekomst",
     "grammar:toekomst"
@@ -265,6 +265,104 @@
         "prompt": "Klopt dit?",
         "statement": "Zullen kun je gebruiken voor de toekomst: \"Ik zal het doen.\"",
         "answer": true
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-toekomst-l-02",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "tip",
+          "md": "Voor de toekomst gebruik je **gaan + infinitief**: *Ik ga morgen bellen.* Gaan staat op plek 2, de infinitief aan het eind. Een tijdwoord (morgen, volgende week) helpt ook."
+        },
+        {
+          "kind": "text",
+          "md": "Oefen nu met **nieuwe** zinnen. Denk bij elke vraag aan de regel."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-toekomst-q-011",
+        "tags": [
+          "basis:toekomst",
+          "grammar:toekomst"
+        ],
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Ik ___ volgend jaar een cursus volgen.",
+        "options": [
+          [
+            "ga",
+            "gaat",
+            "gaan"
+          ]
+        ],
+        "answers": [
+          0
+        ],
+        "explanation": "Bij ik: ga. Volgen staat aan het eind.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-toekomst-q-012",
+        "tags": [
+          "basis:toekomst",
+          "grammar:toekomst"
+        ],
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Morgen",
+          "ga",
+          "ik",
+          "boodschappen",
+          "doen."
+        ],
+        "explanation": "Morgen op plek 1, ga op plek 2, doen aan het eind.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-toekomst-q-013",
+        "tags": [
+          "basis:toekomst",
+          "grammar:toekomst"
+        ],
+        "type": "mc",
+        "prompt": "Welke zin gaat over de toekomst?",
+        "options": [
+          "Volgende week gaan we verhuizen.",
+          "Vorige week zijn we verhuisd.",
+          "We wonen in Utrecht.",
+          "We waren in Utrecht."
+        ],
+        "answer": 0,
+        "explanation": "Gaan + infinitief en volgende week: toekomst.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-toekomst-q-014",
+        "tags": [
+          "basis:toekomst",
+          "grammar:toekomst"
+        ],
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "In de zin \"Ik ga morgen bellen\" staat bellen aan het eind.",
+        "answer": true,
+        "explanation": "Gaan op plek 2, de infinitief aan het eind.",
+        "difficulty": 1
       }
     }
   ]

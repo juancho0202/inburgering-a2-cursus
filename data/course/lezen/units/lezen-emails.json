@@ -27,6 +27,99 @@
       ]
     },
     {
+      "type": "lesson",
+      "id": "lezen-emails-l-02",
+      "title": "Zo vind je het antwoord",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Kijk mee hoe je het antwoord vindt. **Eerst de vraag, dan de tekst.**"
+        },
+        {
+          "kind": "document",
+          "docType": "email",
+          "title": "Les verplaatst",
+          "body": "Van: Taalcentrum De Brug\nAan: Cursisten groep B\nOnderwerp: Les verplaatst\n\nBeste cursisten,\n\nDe les van woensdag 7 mei gaat niet door, want de docent is ziek. Wij geven deze les op vrijdag 9 mei, van 13.00 tot 15.00 uur. Let op: de les is dan in lokaal 4, niet in lokaal 2.\n\nKunt u op vrijdag niet? Stuur dan een e-mail. Neem uw werkboek mee.\n\nMet vriendelijke groet,\nKarin Smit"
+        },
+        {
+          "kind": "text",
+          "md": "**De vraag:** *In welk lokaal is de les op vrijdag?*\n\n1. **Kernwoorden in de vraag:** *lokaal* en *vrijdag*.\n2. **Zoek in de tekst** naar *lokaal*: *Let op: de les is dan in lokaal 4, niet in lokaal 2.*\n3. **Signaalwoorden:** *let op* en *niet … maar*: hier verandert iets.\n4. **Pas op:** lokaal 2 staat ook in de e-mail. Maar daar is de les juist níét.\n\n**Antwoord:** lokaal 4."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-emails-q-006",
+        "tags": [
+          "lezen:email"
+        ],
+        "explanation": "Zoek eerst het kernwoord uit de vraag in de tekst. Lees dan de zin eromheen.",
+        "difficulty": 1,
+        "type": "reading",
+        "prompt": "Lees de tekst nog een keer en beantwoord de vragen.",
+        "document": {
+          "kind": "document",
+          "docType": "email",
+          "title": "Les verplaatst",
+          "body": "Van: Taalcentrum De Brug\nAan: Cursisten groep B\nOnderwerp: Les verplaatst\n\nBeste cursisten,\n\nDe les van woensdag 7 mei gaat niet door, want de docent is ziek. Wij geven deze les op vrijdag 9 mei, van 13.00 tot 15.00 uur. Let op: de les is dan in lokaal 4, niet in lokaal 2.\n\nKunt u op vrijdag niet? Stuur dan een e-mail. Neem uw werkboek mee.\n\nMet vriendelijke groet,\nKarin Smit"
+        },
+        "questions": [
+          {
+            "id": "lezen-emails-q-006-1",
+            "tags": [
+              "lezen:email"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Waarom gaat de les van woensdag niet door?",
+            "options": [
+              "De docent is ziek.",
+              "Het is vakantie.",
+              "Het lokaal is kapot.",
+              "Er zijn te weinig cursisten."
+            ],
+            "answer": 0,
+            "explanation": "Na 'want' staat de reden: de docent is ziek."
+          },
+          {
+            "id": "lezen-emails-q-006-2",
+            "tags": [
+              "lezen:email"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Wat doen cursisten als ze op vrijdag niet kunnen?",
+            "options": [
+              "Een e-mail sturen",
+              "Naar het taalcentrum bellen",
+              "Niets",
+              "Op woensdag komen"
+            ],
+            "answer": 0,
+            "explanation": "'Kunt u op vrijdag niet? Stuur dan een e-mail.'"
+          },
+          {
+            "id": "lezen-emails-q-006-3",
+            "tags": [
+              "lezen:email"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Wat moeten cursisten meenemen?",
+            "options": [
+              "Hun werkboek",
+              "Hun ID-kaart",
+              "Een laptop",
+              "Een woordenboek"
+            ],
+            "answer": 0,
+            "explanation": "'Neem uw werkboek mee.'"
+          }
+        ]
+      }
+    },
+    {
       "type": "exercise",
       "exercise": {
         "id": "lezen-emails-q-001",

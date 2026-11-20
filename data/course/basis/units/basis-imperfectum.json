@@ -4,7 +4,7 @@
   "title": "Was, had, ging",
   "goal": "Je herkent het imperfectum in teksten (belangrijk voor Lezen).",
   "scene": "fotoalbum",
-  "estimatedMinutes": 12,
+  "estimatedMinutes": 17,
   "tags": [
     "basis:imperfectum",
     "grammar:imperfectum"
@@ -337,6 +337,109 @@
             "had"
           ]
         ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-imperfectum-l-02",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "tip",
+          "md": "Zie je **was, had, ging, kwam**? Dan gaat het over vroeger.\n\nRegelmatige werkwoorden herken je aan **-te** of **-de** na de stam: *werkte, woonde* (meer mensen: *werkten, woonden*)."
+        },
+        {
+          "kind": "text",
+          "md": "Oefen nu met **nieuwe** zinnen. Denk bij elke vraag aan de regel."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-012",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "type": "mc",
+        "prompt": "Je leest: \"De winkel was gisteren dicht.\" Wanneer was de winkel dicht?",
+        "options": [
+          "Gisteren",
+          "Nu",
+          "Morgen",
+          "Elke dag"
+        ],
+        "answer": 0,
+        "explanation": "Was = verleden tijd van zijn, en gisteren.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-013",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "type": "mc",
+        "prompt": "Welk woord is verleden tijd?",
+        "options": [
+          "kwam",
+          "komt",
+          "komen",
+          "kom"
+        ],
+        "answer": 0,
+        "explanation": "Kwam is de verleden tijd van komen.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-014",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "type": "mc",
+        "prompt": "Je leest: \"Ik werkte vroeger in een hotel.\" Werkt deze persoon nu nog in een hotel?",
+        "options": [
+          "Waarschijnlijk niet: werkte is verleden tijd.",
+          "Ja, elke dag.",
+          "Ja, morgen weer.",
+          "Dat kun je niet weten: werkte is toekomst."
+        ],
+        "answer": 0,
+        "explanation": "Werk + te = werkte: verleden tijd. En vroeger zegt het ook.",
+        "difficulty": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-imperfectum-q-015",
+        "tags": [
+          "basis:imperfectum",
+          "grammar:imperfectum"
+        ],
+        "type": "gap-choice",
+        "prompt": "Kies het goede werkwoord.",
+        "text": "Vorig jaar ___ wij in Rotterdam. (wonen)",
+        "options": [
+          [
+            "woonden",
+            "wonen",
+            "woont"
+          ]
+        ],
+        "answers": [
+          0
+        ],
+        "explanation": "Vorig jaar: verleden. Stam woon + de, en bij wij -den: woonden.",
+        "difficulty": 1
       }
     }
   ]

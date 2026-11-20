@@ -72,7 +72,7 @@ test("every screen opens without errors", async ({ page }) => {
   page.on("pageerror", (e) => errors.push(`${page.url()}: ${e.message}`));
   page.on("console", (m) => m.type() === "error" && errors.push(`${page.url()}: ${m.text()}`));
   await startFresh(page);
-  for (const path of ["/", "/module/basis", "/module/exams", "/oefenen", "/woorden", "/woorden/herhalen", "/werkwoorden", "/schrijven/geschiedenis", "/samenvatting", "/examens", "/over", "/instellingen", "/welkom"]) {
+  for (const path of ["/", "/module/basis", "/module/exams", "/oefenen", "/woorden", "/woorden/herhalen", "/werkwoorden", "/schrijven/geschiedenis", "/samenvatting", "/examens", "/over", "/instellingen", "/welkom", "/taalcafe"]) {
     await page.goto(path);
     await expect(page.locator("#app")).not.toBeEmpty();
     await expect(page.getByText(/Er ging iets mis|Not found|404/i)).toHaveCount(0);
@@ -146,7 +146,7 @@ test.describe("a small phone", () => {
   // A grid row is as wide as its longest word or picture unless told otherwise; then the whole page scrolls sideways.
   test("no screen is wider than the phone", async ({ page }) => {
     await startFresh(page);
-    for (const path of ["/", "/module/basis", "/module/luisteren", "/module/knm", "/woorden", "/werkwoorden", "/examens", "/samenvatting", "/instellingen", "/over", "/unit/basis-tijd"]) {
+    for (const path of ["/", "/module/basis", "/module/luisteren", "/module/knm", "/woorden", "/werkwoorden", "/examens", "/samenvatting", "/instellingen", "/over", "/unit/basis-tijd", "/taalcafe"]) {
       await page.goto(path);
       await expect(page.locator("#app main h1").first()).toBeVisible();
       const [scroll, width] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
@@ -161,9 +161,10 @@ test.describe("a small phone", () => {
       const [scroll, width] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
       expect(scroll, `${where} scrolls sideways`).toBeLessThanOrEqual(width);
     };
-    for (const [unit, shown] of [["lezen-advertenties", "Medewerker magazijn gezocht"], ["luisteren-winkel", /Lees eerst de vragen/]] as const) {
+    // Lezen Brieven: two lessons (the second is a worked example), then a reading text with a long title.
+    for (const [unit, lessons, shown] of [["lezen-brieven", 2, "Lees de tekst nog een keer"], ["luisteren-winkel", 1, /Lees eerst de vragen/]] as const) {
       await page.goto(`/unit/${unit}`);
-      await page.getByRole("button", { name: /^Volgende →/ }).click(); // lesson → first text or fragment
+      for (let i = 0; i < lessons; i++) await page.getByRole("button", { name: /^Volgende →/ }).click();
       await expect(page.getByText(shown).first()).toBeVisible();
       await fits(unit);
     }

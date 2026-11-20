@@ -23,6 +23,99 @@
       ]
     },
     {
+      "type": "lesson",
+      "id": "lezen-mededelingen-l-02",
+      "title": "Zo vind je het antwoord",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Kijk mee hoe je het antwoord vindt. **Eerst de vraag, dan de tekst.**"
+        },
+        {
+          "kind": "document",
+          "docType": "bericht",
+          "title": "Lift buiten gebruik",
+          "body": "Beste bewoners,\n\nVan maandag 3 juni tot en met woensdag 5 juni is de lift buiten gebruik. De lift krijgt groot onderhoud.\n\nHeeft u hulp nodig met uw boodschappen? Bel dan de huismeester: 06-1122 3344. Hij helpt u graag, maar alleen tussen 9.00 en 17.00 uur.\n\nOp donderdag werkt de lift weer.\n\nDe huismeester"
+        },
+        {
+          "kind": "text",
+          "md": "**De vraag:** *Wanneer kunt u de lift weer gebruiken?*\n\n1. **Kernwoorden in de vraag:** *wanneer* en *weer gebruiken*.\n2. **Zoek in de tekst** naar *weer*: *Op donderdag werkt de lift weer.*\n3. **Andere woorden:** *de lift weer gebruiken* is *de lift werkt weer*.\n4. **Pas op:** woensdag staat ook in de tekst. Maar er staat *tot en met woensdag*: op woensdag werkt de lift dus nog níét.\n\n**Antwoord:** op donderdag."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-mededelingen-q-006",
+        "tags": [
+          "lezen:mededeling"
+        ],
+        "explanation": "Zoek eerst het kernwoord uit de vraag in de tekst. Lees dan de zin eromheen.",
+        "difficulty": 1,
+        "type": "reading",
+        "prompt": "Lees de tekst nog een keer en beantwoord de vragen.",
+        "document": {
+          "kind": "document",
+          "docType": "bericht",
+          "title": "Lift buiten gebruik",
+          "body": "Beste bewoners,\n\nVan maandag 3 juni tot en met woensdag 5 juni is de lift buiten gebruik. De lift krijgt groot onderhoud.\n\nHeeft u hulp nodig met uw boodschappen? Bel dan de huismeester: 06-1122 3344. Hij helpt u graag, maar alleen tussen 9.00 en 17.00 uur.\n\nOp donderdag werkt de lift weer.\n\nDe huismeester"
+        },
+        "questions": [
+          {
+            "id": "lezen-mededelingen-q-006-1",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Waarom werkt de lift niet?",
+            "options": [
+              "Hij krijgt groot onderhoud.",
+              "Er was een ongeluk.",
+              "Er is geen stroom.",
+              "De huismeester is ziek."
+            ],
+            "answer": 0,
+            "explanation": "'De lift krijgt groot onderhoud.'"
+          },
+          {
+            "id": "lezen-mededelingen-q-006-2",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Wanneer kan de huismeester helpen?",
+            "options": [
+              "Tussen 9.00 en 17.00 uur",
+              "Altijd",
+              "Alleen in het weekend",
+              "'s Avonds"
+            ],
+            "answer": 0,
+            "explanation": "Na 'alleen' staat de grens: alleen tussen 9.00 en 17.00 uur."
+          },
+          {
+            "id": "lezen-mededelingen-q-006-3",
+            "tags": [
+              "lezen:mededeling"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Kunt u op woensdag 5 juni de lift gebruiken?",
+            "options": [
+              "Nee, tot en met woensdag is de lift buiten gebruik.",
+              "Ja, op woensdag werkt hij weer.",
+              "Alleen 's ochtends.",
+              "Alleen samen met de huismeester."
+            ],
+            "answer": 0,
+            "explanation": "Tot en met woensdag: woensdag hoort er ook bij."
+          }
+        ]
+      }
+    },
+    {
       "type": "exercise",
       "exercise": {
         "id": "lezen-mededelingen-q-001",

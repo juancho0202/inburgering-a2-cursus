@@ -37,6 +37,16 @@ describe("McExercise (mc, mc-multi)", () => {
   const mc = { ...base, id: "q1", type: "mc", options: ["Amsterdam", "Utrecht", "Rotterdam"], answer: 0 };
   const multi = { ...base, id: "q2", type: "mc-multi", options: ["a", "b", "c", "d"], answers: [1, 3] };
 
+  // jsdom has no layout. The class is the behaviour here: without it, one long Dutch word made the page wider than a phone.
+  it("lets a long Dutch word in the question and the situation break as Dutch, so it fits a phone", async () => {
+    const w = await mount(McExercise, { ...mc, prompt: "Wanneer betaalt een arbeidsongeschiktheidsverzekering?", context: "Tami heeft een arbeidsongeschiktheidsverzekering." });
+    for (const el of [w.find("h2"), w.find("p.text-muted")]) {
+      expect(el.text()).toContain("arbeidsongeschiktheidsverzekering");
+      expect(el.attributes("lang")).toBe("nl");
+      expect(el.classes()).toContain("nl-wrap");
+    }
+  });
+
   it("is ready after choosing, and choosing another option replaces the first", async () => {
     const w = await mount(McExercise, mc);
     expect(handle(w).ready).toBe(false);

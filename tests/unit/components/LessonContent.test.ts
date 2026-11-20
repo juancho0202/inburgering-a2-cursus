@@ -175,6 +175,18 @@ describe("WritingHistoryView", () => {
     expect(shown()[0]).toContain("Opdracht b");
   });
 
+  it("names the new kinds of task (appje, korte tekst), and a kind it does not know is 'Overig' instead of a broken label", async () => {
+    const { wrapper } = await open([row("a", "appje"), row("b", "korte-tekst"), row("c", "iets-nieuws")]);
+    const shown = () => wrapper.findAll("ul > li").map((li) => li.text());
+    expect(shown()[0]).toContain("Appje");
+    expect(shown()[1]).toContain("Korte tekst");
+    expect(shown()[2]).toContain("Overig");
+    await wrapper.find("select").setValue("overig");
+    expect(shown()).toEqual([expect.stringContaining("Opdracht c")]);
+    await wrapper.find("select").setValue("appje");
+    expect(shown()).toEqual([expect.stringContaining("Opdracht a")]);
+  });
+
   it("opens one text at a time, with feedback when there is some and the plain text when not", async () => {
     const { wrapper } = await open([row("a", "kort-bericht", fb), row("b", "kort-bericht")]);
     const toggles = wrapper.findAll("li > button");

@@ -3,7 +3,8 @@ import { CORRECTION_TYPES, GenerateRequestSchema, type WritingFeedback } from ".
 import { describeAnswer, describeCorrect, optionsOf } from "../claude/describe.js";
 import { mapClaudeError } from "../claude/errors.js";
 import { NoApiKeyError, type ClaudeGateway } from "../claude/gateway.js";
-import { explainMistake, generateExercises, writingFeedback } from "../claude/services.js";
+import { explainMistake, generateExercises, taalcafeTurn, writingFeedback } from "../claude/services.js";
+import { TAALCAFE_HISTORY, TAALCAFE_MAX_LENGTH, TAALCAFE_MAX_TURNS, taalcafeTopic } from "../logic/taalcafe.js";
 import { normalizeAnswer } from "../logic/answers.js";
 import { writingTag } from "../logic/corrections.js";
 import type { GeneratedRecord } from "../schemas/store.js";
@@ -72,6 +73,33 @@ export async function feedbackWriting(env: Env, body: unknown) {
     return { submission: saved, feedback };
   } catch (err) {
     throw claudeFailure(err, extra);
+  }
+}
+
+// ---------- taalcafé: small talk with corrections (§10.5) ----------
+
+const TaalcafeBody = z.object({
+  topicId: z.string(),
+  history: z.array(z.object({ from: z.enum(["partner", "learner"]), text: z.string().max(2000) })).max(2 * TAALCAFE_MAX_TURNS + 1),
+  message: z.string().trim().min(1).max(TAALCAFE_MAX_LENGTH),
+});
+
+export async function taalcafe(env: Env, body: unknown) {
+  const parsed = TaalcafeBody.safeParse(body);
+  if (!parsed.success) throw invalid(`Schrijf een bericht van maximaal ${TAALCAFE_MAX_LENGTH} tekens.`);
+  const topic = taalcafeTopic(parsed.data.topicId);
+  if (!topic) throw notFound("Dit onderwerp bestaat niet.");
+  const { history, message } = parsed.data;
+  if (history.filter((m) => m.from === "learner").length >= TAALCAFE_MAX_TURNS) throw invalid("Dit gesprek is klaar. Begin een nieuw gesprek.");
+
+  try {
+    const { turn, usage } = await taalcafeTurn(gatewayOrThrow(env), { topic: topic.title, history: history.slice(-TAALCAFE_HISTORY), message });
+    await recordUsage(env, usage);
+    // A correction must point at words the learner really wrote; anything else would be shown as their mistake.
+    const corrections = turn.corrections.filter((c) => c.original.trim() && message.includes(c.original) && c.original !== c.corrected);
+    return { reply: turn.reply, corrections };
+  } catch (err) {
+    throw claudeFailure(err);
   }
 }
 

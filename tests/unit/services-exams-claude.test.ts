@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { feedbackWriting, explain, generate, flagGenerated } from "../../shared/services/claude";
+import { feedbackWriting, explain, generate, flagGenerated, taalcafe } from "../../shared/services/claude";
+import { TAALCAFE_HISTORY, TAALCAFE_MAX_TURNS } from "../../shared/logic/taalcafe";
 import { examMistakes, getExamResult, listExams, saveExamState, startExam, submitExam } from "../../shared/services/exams";
 import { dashboard, practice } from "../../shared/services/dashboard";
 import { getProgress } from "../../shared/services/progress";
@@ -134,6 +135,63 @@ describe("writing feedback", () => {
 
     await expect(feedbackWriting(bad.env, { exerciseId: "nope", text: "t" })).rejects.toMatchObject({ status: 404 });
     await expect(feedbackWriting(bad.env, { exerciseId: "schrijven-kort-q-001", text: "  " })).rejects.toMatchObject({ status: 400, message: "Schrijf eerst een tekst." });
+  });
+});
+
+describe("taalcafé", () => {
+  const opener = { from: "partner" as const, text: "Hoi! Wat heb je afgelopen weekend gedaan?" };
+
+  it("sends the topic, the talk so far and the new message, and returns Sanne's reply with the corrections", async () => {
+    const { gateway, calls } = fakeGateway(() => ({
+      reply: "Leuk! Welke film was het?",
+      corrections: [{ original: "ik heb gaan", corrected: "ik ben gegaan", type: "werkwoord", explanation: "Gaan krijgt zijn." }],
+    }));
+    const { env } = makeEnv({ gateway: () => gateway });
+    const res = await taalcafe(env, { topicId: "weekend", history: [opener], message: "Zaterdag ik heb gaan naar de bioscoop" });
+
+    expect(res).toEqual({ reply: "Leuk! Welke film was het?", corrections: [{ original: "ik heb gaan", corrected: "ik ben gegaan", type: "werkwoord", explanation: "Gaan krijgt zijn." }] });
+    expect(calls).toHaveLength(1);
+    expect(calls[0].user).toContain("Onderwerp: Het weekend");
+    expect(calls[0].user).toContain("Sanne: Hoi! Wat heb je afgelopen weekend gedaan?");
+    expect(calls[0].user).toContain("Zaterdag ik heb gaan naar de bioscoop");
+    expect((await getSettings(env)).usage).toMatchObject({ requests: 1, inputTokens: 100, outputTokens: 50 });
+  });
+
+  it("drops corrections of words the learner did not write, or that change nothing", async () => {
+    const { gateway } = fakeGateway(() => ({
+      reply: "Goed zo!",
+      corrections: [
+        { original: "ik woon in Utrecht sinds", corrected: "ik woon sinds", type: "woordvolgorde", explanation: "x" },
+        { original: "de huis", corrected: "het huis", type: "lidwoord", explanation: "Huis is een het-woord." },
+        { original: "ik", corrected: "ik", type: "anders", explanation: "x" },
+      ],
+    }));
+    const { env } = makeEnv({ gateway: () => gateway });
+    const res = await taalcafe(env, { topicId: "buurt", history: [opener], message: "ik woon in de huis van mijn broer" });
+    expect(res.corrections.map((c) => c.original)).toEqual(["de huis"]);
+  });
+
+  it("only sends the last messages to Claude, so a long talk does not get more expensive every turn", async () => {
+    const { gateway, calls } = fakeGateway(() => ({ reply: "Ja!", corrections: [] }));
+    const { env } = makeEnv({ gateway: () => gateway });
+    const history = Array.from({ length: 30 }, (_, i) => ({ from: i % 2 ? ("learner" as const) : ("partner" as const), text: `bericht ${i}` }));
+    await taalcafe(env, { topicId: "weer", history, message: "Het regent." });
+    expect(calls[0].user).toContain("bericht 29");
+    expect(calls[0].user).toContain(`bericht ${30 - TAALCAFE_HISTORY}`);
+    expect(calls[0].user.split("\n").some((line) => line.endsWith(`: bericht ${29 - TAALCAFE_HISTORY}`))).toBe(false);
+  });
+
+  it("refuses an empty or unknown request, a finished talk, and explains a missing key or a bad answer in Dutch", async () => {
+    const ok = makeEnv({ gateway: () => fakeGateway(() => ({ reply: "Ja!", corrections: [] })).gateway });
+    await expect(taalcafe(ok.env, { topicId: "weer", history: [], message: "   " })).rejects.toMatchObject({ status: 400 });
+    await expect(taalcafe(ok.env, { topicId: "weer", history: [], message: "x".repeat(401) })).rejects.toMatchObject({ status: 400 });
+    await expect(taalcafe(ok.env, { topicId: "nope", history: [], message: "Hoi" })).rejects.toMatchObject({ status: 404 });
+    const full = Array.from({ length: TAALCAFE_MAX_TURNS }, () => ({ from: "learner" as const, text: "ja" }));
+    await expect(taalcafe(ok.env, { topicId: "weer", history: full, message: "Hoi" })).rejects.toMatchObject({ status: 400, message: "Dit gesprek is klaar. Begin een nieuw gesprek." });
+
+    await expect(taalcafe(makeEnv().env, { topicId: "weer", history: [], message: "Hoi" })).rejects.toMatchObject({ status: 503, code: "no_api_key" });
+    const bad = makeEnv({ gateway: () => fakeGateway(() => ({ corrections: [] })).gateway });
+    await expect(taalcafe(bad.env, { topicId: "weer", history: [], message: "Hoi" })).rejects.toMatchObject({ status: 502, code: "bad_answer" });
   });
 });
 

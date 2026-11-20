@@ -639,11 +639,21 @@ flag a bad item ("Foute oefening") which hides it.
 For KNM generation, include the relevant section of Appendix C in the prompt and instruct:
 "Gebruik alleen feiten uit de gegeven tekst. Verzin geen feiten, bedragen of datums."
 
-### 10.5 Optional: free chat tutor (Phase 7, only if time permits)
+### 10.5 Taalcafé (`POST /api/claude/taalcafe`)
 
-A side panel "Vraag het Claude" where the learner can ask a question about the current lesson.
-System prompt: A2 Dutch tutor, answers in simple Dutch, max ~120 words, uses the current unit
-as context. Stream the answer (SDK `messages.stream`). Keep the last 10 messages per unit in memory only.
+Small talk with Sanne, a volunteer in a language café, on one of the topics in `shared/logic/taalcafe.ts`
+(kennismaken, het weer, het weekend, werk, familie, eten, vrije tijd, de buurt, vakantie). Sanne opens with a fixed line;
+after that every learner message is one request:
+
+- Request: `{ topicId, history: [{ from: "partner" | "learner", text }], message }` (message 1–400 characters).
+- Claude returns `{ reply, corrections }` (structured output). `reply` is A2 Dutch, 1–3 sentences, usually ending in a question.
+  `corrections` correct only the learner's last message, in the same shape as the writing feedback (§10.2), so the screen
+  shows the same strikethrough and correct chunk. A missing full stop or capital in a chat message is not a mistake.
+- The service drops corrections whose `original` is not in the message (or that change nothing): only words the learner
+  really wrote are marked as wrong.
+- Cost: only the last 16 messages are sent, and a conversation stops after 20 learner messages.
+- The conversation lives in the page only (nothing is stored); "Nieuw gesprek" starts over, and a late answer to the old
+  conversation is ignored. When Claude fails, the message goes back into the box to send again.
 
 ---
 
@@ -660,6 +670,7 @@ as context. Stream the answer (SDK `messages.stream`). Keep the last 10 messages
 | `/woorden/herhalen` | SRS review session. |
 | `/werkwoorden` | Verb table (search, filter separable/irregular) + "Oefen werkwoorden" session. |
 | `/schrijven/geschiedenis` | All writing submissions with feedback, filter by task type. |
+| `/taalcafe` | Taalcafé (needs a Claude key): small talk with Sanne on a chosen topic; every learner message comes back corrected (§10.5). Linked from the Schrijven module. |
 | `/examens` | Mock exam list with past scores. |
 | `/examen/:id` | Exam mode (§13). |
 | `/samenvatting` | The learner's samenvatting (Appendix A) rendered as a reference page with anchor links. |
@@ -835,9 +846,11 @@ Units:
 | --- | --- | --- |
 | `schrijven-basis` | Goede zinnen schrijven | Hoofdletters en punten, werkwoord op plek 2, bijzinnen, linking words (en, maar, want, omdat, dus, ook), word-order drills built from typical writing sentences |
 | `schrijven-formulier` | Een formulier invullen | Personal data vocabulary (voornaam, achternaam, geboortedatum, adres, postcode, woonplaats, telefoonnummer, handtekening, nationaliteit, burgerlijke staat), date format (dd-mm-jjjj), short answers on forms. `form-fill` exercises: library card, sports club, doctor registration, course sign-up, change of address |
+| `schrijven-appje` | Een appje sturen | Texting (WhatsApp): short but complete (wat, wanneer, vraag); recognise ff, z.s.m., i.p.v., a.u.b. but write whole words in the exam; saying no with a reason; 3 writing tasks, 10–40 words |
 | `schrijven-kort-bericht` | Een kort bericht | Notes to neighbour/colleague/teacher (absence, request, apology, invitation), 25–50 words |
 | `schrijven-informele-mail` | Een informele e-mail | To friend/colleague/neighbour: invite, thank, ask, cancel, tell news. 40–80 words |
 | `schrijven-formele-mail` | Een formele e-mail of brief | To gemeente, huisbaas, school, company, doctor: complaint, request info, make/cancel appointment, report a problem. 50–100 words |
+| `schrijven-korte-tekst` | Een korte tekst over jezelf | Extra practice in building a text: begin, midden, eind; eerst/daarna/ook/want/maar/dus; a mening with want; 3 writing tasks (mijn dag, mijn buurt, mijn hobby), 40–80 words |
 | `schrijven-examen-tips` | Tips voor het examen | Read task twice, tick off every point, plan 10 min per task, check verbs + capitals, write clearly (pen and paper) |
 
 Each type unit: lesson (structure + template from Appendix D + phrase bank), 1 annotated model

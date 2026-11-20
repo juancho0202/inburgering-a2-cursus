@@ -78,7 +78,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "Eerst naar de huisarts.",
+        "explanation": "Pijn of ziekte zonder spoed: eerst naar de huisarts. De huisarts stuurt je door als dat nodig is.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Ahmed heeft pijn in zijn rug. Naar wie gaat hij eerst?",
@@ -98,7 +98,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "Bij levensgevaar: 112.",
+        "explanation": "Bewusteloos is levensgevaar. Bij levensgevaar bel je 112.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Een man valt van een ladder en kan niet meer bewegen. Hij is bewusteloos. Wat doet de buurvrouw?",
@@ -118,7 +118,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "Geen spoed maar politie nodig: 0900-8844.",
+        "explanation": "Er is geen gevaar meer, maar je hebt wel de politie nodig: 0900-8844. 112 is alleen voor spoed.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Er is een inbraak geweest, maar de dader is weg en niemand is gewond. Welk nummer bel je voor de politie?",
@@ -158,7 +158,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "De huisarts verwijst door.",
+        "explanation": "Naar een specialist ga je meestal pas met een verwijzing van de huisarts.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Je wilt naar een specialist in het ziekenhuis. Wat heb je meestal nodig?",
@@ -201,7 +201,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "Een basisverzekering is verplicht.",
+        "explanation": "Iedereen die in Nederland woont of werkt, moet een basisverzekering hebben. Dat is verplicht.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wie moet een zorgverzekering hebben?",
@@ -221,7 +221,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "Je betaalt zelf een deel per jaar.",
+        "explanation": "Eigen risico: dat deel van de zorgkosten betaal je elk jaar eerst zelf. Daarna betaalt de verzekering.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is eigen risico?",
@@ -241,7 +241,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "De huisarts valt niet onder het eigen risico.",
+        "explanation": "De huisarts valt niet onder het eigen risico. Naar de huisarts gaan kost je dus geen eigen risico.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Priya gaat naar de huisarts. Valt dit onder het eigen risico?",
@@ -261,7 +261,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "Zorgtoeslag komt van de Belastingdienst.",
+        "explanation": "Zorgtoeslag is een toeslag. Alle toeslagen regelt de Belastingdienst.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Fatima heeft weinig inkomen en wil hulp bij de kosten van haar zorgverzekering. Wat kan ze vragen?",
@@ -326,7 +326,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "Medicijnen met een recept haal je bij de apotheek.",
+        "explanation": "Met een recept haal je medicijnen bij de apotheek. Zonder recept, zoals paracetamol, kan ook bij de drogist.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "De huisarts geeft Sanne een recept voor antibiotica. Waar haalt ze het medicijn?",
@@ -346,7 +346,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "Bij de drogist koop je medicijnen zonder recept.",
+        "explanation": "Zonder recept, zoals paracetamol: bij de drogist. Met een recept: bij de apotheek.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Priya wil paracetamol kopen zonder recept. Waar kan dat?",
@@ -366,7 +366,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "Het consultatiebureau controleert baby's en jonge kinderen.",
+        "explanation": "Het consultatiebureau volgt baby's en jonge kinderen: de groei, de gezondheid en de vaccinaties.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Fatima heeft een baby van drie maanden. Waar kan ze de groei laten controleren?",
@@ -386,7 +386,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "Een verloskundige begeleidt zwangerschap en bevalling.",
+        "explanation": "Een verloskundige helpt bij de zwangerschap en de bevalling. Je kunt haar zelf bellen.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wie helpt bij een zwangerschap en bevalling?",
@@ -446,7 +446,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "De GGD werkt aan gezondheid in de regio.",
+        "explanation": "De GGD werkt aan de gezondheid van iedereen in de regio, bijvoorbeeld met vaccinaties.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is de taak van de GGD?",
@@ -466,7 +466,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "Een vaccinatie beschermt tegen een ziekte.",
+        "explanation": "Een prik tegen een ziekte heet een vaccinatie. Kinderen krijgen die via het consultatiebureau.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Een baby moet een prik tegen een ziekte krijgen. Hoe heet dat?",
@@ -561,7 +561,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "De verloskundige begeleidt zwangerschap en bevalling.",
+        "explanation": "Een verloskundige begeleidt de zwangerschap en de bevalling. Je kunt haar zelf bellen.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Olga is zwanger. Wie begeleidt haar tijdens de zwangerschap?",
@@ -657,7 +657,7 @@
         "tags": [
           "knm:gezondheid"
         ],
-        "explanation": "Een tolk vertaalt tussen twee talen.",
+        "explanation": "Een tolk vertaalt wat mensen zeggen, van de ene taal naar de andere.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat doet een tolk?",
@@ -723,6 +723,92 @@
           "Als je een tolk nodig hebt."
         ],
         "answer": 2
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-gezondheid-l-05",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Oefen alles nog een keer, door elkaar. Net als in het examen: denk eerst na over de situatie."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-031",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Op een werkdag en zonder levensgevaar: eerst de huisarts.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Het is dinsdagochtend. Je kind heeft sinds gisteren koorts. Wat doe je?",
+        "options": [
+          "Je belt de huisarts.",
+          "Je belt 112.",
+          "Je gaat naar de spoedeisende hulp.",
+          "Je belt de GGD."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-032",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Buiten kantoortijd, zonder levensgevaar: de huisartsenpost. 112 is voor levensgevaar.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je moeder is op zondag erg ziek, maar het is geen levensgevaar. Wie bel je?",
+        "options": [
+          "De huisartsenpost",
+          "112",
+          "De apotheek",
+          "De GGD"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-033",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Met een recept haal je medicijnen bij de apotheek.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je hebt van de huisarts een recept gekregen. Waar haal je het medicijn?",
+        "options": [
+          "Bij de apotheek",
+          "Bij de supermarkt",
+          "Bij de GGD",
+          "Bij het consultatiebureau"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-gezondheid-q-034",
+        "tags": [
+          "knm:gezondheid"
+        ],
+        "explanation": "Een basisverzekering is verplicht voor iedereen die hier woont of werkt.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Iedereen die in Nederland woont, moet een basisverzekering voor de zorg hebben.",
+        "answer": true
       }
     }
   ]

@@ -1,0 +1,406 @@
+{
+  "id": "schrijven-korte-tekst",
+  "moduleId": "schrijven",
+  "title": "Een korte tekst over jezelf",
+  "goal": "Je schrijft een korte tekst in drie delen (begin, midden, eind) met verbindingswoorden en een mening.",
+  "scene": "studeren",
+  "estimatedMinutes": 30,
+  "tags": [
+    "schrijven:korte-tekst"
+  ],
+  "vocabRefs": [],
+  "passScore": 0.7,
+  "steps": [
+    {
+      "type": "lesson",
+      "id": "schrijven-korte-tekst-l-01",
+      "title": "Een tekst in drie delen",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "In deze les schrijf je een **korte tekst** over jezelf: 5 tot 8 zinnen. Dat is extra oefening: zo leer je een tekst goed **opbouwen**. Dat helpt bij elke schrijfopdracht.\n\nEen korte tekst heeft **drie delen**:\n\n1. **Begin:** waar gaat je tekst over? Eén zin.\n2. **Midden:** vertel 2 of 3 dingen. Zeg ook **wanneer**, **waar** of **waarom**.\n3. **Eind:** wat vind je ervan? Of wat wil je nog doen?"
+        },
+        {
+          "kind": "document",
+          "docType": "bericht",
+          "title": "Mijn weekend",
+          "body": "Ik vertel over mijn weekend.\n\nOp zaterdag ging ik met mijn zus naar de markt. Eerst kochten we groente en fruit. Daarna dronken we koffie in een café, want het regende. Op zondag kookte ik voor mijn familie.\n\nHet was een fijn weekend. Volgend weekend wil ik naar het strand."
+        },
+        {
+          "kind": "text",
+          "md": "**Uitleg:** het **begin** zegt het onderwerp. In het **midden** staan drie dingen, met *wanneer* (zaterdag, zondag), *met wie* (mijn zus) en *waarom* (want het regende). Het **eind** geeft een mening (*fijn*) en een wens. Dat zijn **50 woorden**."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-korte-tekst-q-001",
+        "tags": [
+          "schrijven:korte-tekst"
+        ],
+        "explanation": "Eerst het onderwerp, dan wat er gebeurde (eerst, daarna), en aan het eind wat je ervan vindt.",
+        "difficulty": 2,
+        "type": "word-order",
+        "prompt": "Zet de zinnen in de goede volgorde.",
+        "tokens": [
+          "Ik vertel over mijn dag.",
+          "Eerst bracht ik mijn zoon naar school.",
+          "Daarna ging ik naar mijn les.",
+          "Het was een drukke, maar leuke dag."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-korte-tekst-q-002",
+        "tags": [
+          "schrijven:korte-tekst"
+        ],
+        "explanation": "De eerste zin zegt waar je tekst over gaat.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je schrijft een tekst over je buurt. Wat is een goede eerste zin?",
+        "options": [
+          "Ik vertel over mijn buurt.",
+          "Tot slot vind ik het leuk.",
+          "Daarna ging ik naar huis.",
+          "Want het regende."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-korte-tekst-q-003",
+        "tags": [
+          "schrijven:korte-tekst"
+        ],
+        "explanation": "Aan het eind zeg je wat je ervan vindt, of wat je nog wilt doen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin past aan het eind van een tekst?",
+        "options": [
+          "Eerst ging ik naar de winkel.",
+          "Ik vertel over mijn hobby.",
+          "Ik vind mijn buurt heel fijn.",
+          "Op maandag."
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "schrijven-korte-tekst-l-02",
+      "title": "Woorden die je zinnen verbinden",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Met kleine woorden wordt je tekst duidelijk. De lezer ziet de **volgorde**, de **reden** en wat **anders** is."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Woord",
+            "Waarvoor?"
+          ],
+          "rows": [
+            [
+              "eerst, daarna, tot slot",
+              "volgorde"
+            ],
+            [
+              "ook",
+              "nog iets erbij"
+            ],
+            [
+              "want",
+              "een reden (gewone volgorde)"
+            ],
+            [
+              "maar",
+              "iets anders, een tegenstelling"
+            ],
+            [
+              "dus",
+              "een gevolg"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Na **eerst**, **daarna** en **tot slot** komt het werkwoord direct: *Daarna **ging** ik naar huis.* Dat is het werkwoord op plek 2."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-korte-tekst-q-004",
+        "tags": [
+          "schrijven:korte-tekst"
+        ],
+        "explanation": "Eerst is het begin. Daarna is de volgende stap.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul het goede woord in: eerst of daarna.",
+        "text": "___ ontbijt ik. ___ ga ik naar mijn werk.",
+        "answers": [
+          [
+            "Eerst"
+          ],
+          [
+            "Daarna"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-korte-tekst-q-005",
+        "tags": [
+          "schrijven:korte-tekst"
+        ],
+        "explanation": "Want geeft de reden: het is mooi weer.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Ik fiets naar mijn werk, ___ het is mooi weer.",
+        "options": [
+          [
+            "want",
+            "maar",
+            "dus"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-korte-tekst-q-006",
+        "tags": [
+          "schrijven:korte-tekst"
+        ],
+        "explanation": "Maar: iets anders dan je verwacht.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Ik woon graag in Utrecht, ___ de huizen zijn duur.",
+        "options": [
+          [
+            "maar",
+            "want",
+            "eerst"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-korte-tekst-q-007",
+        "tags": [
+          "schrijven:korte-tekst"
+        ],
+        "explanation": "Na daarna komt het werkwoord direct (plek 2): Daarna ging ik.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Daarna ik ging naar huis.",
+          "Daarna ging ik naar huis.",
+          "Daarna naar huis ik ging.",
+          "Ik daarna ging naar huis."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "schrijven-korte-tekst-l-03",
+      "title": "Je mening geven",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Aan het eind zeg je vaak wat je **vindt**. Gebruik deze zinnen:\n\n- *Ik vind … leuk / mooi / moeilijk, want …*\n- *Ik denk dat …* (het werkwoord gaat naar het eind: *Ik denk dat Nederlands moeilijk **is**.*)\n- *Ik wil graag …*\n\nGeef bij een mening altijd een **reden** met *want*."
+        },
+        {
+          "kind": "example",
+          "nl": "Ik vind mijn buurt fijn, want er is een groot park.",
+          "note": "mening + want + reden"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-korte-tekst-q-008",
+        "tags": [
+          "schrijven:korte-tekst"
+        ],
+        "explanation": "Na dat staat het werkwoord aan het eind: is.",
+        "difficulty": 2,
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "denk",
+          "dat",
+          "Nederlands",
+          "moeilijk",
+          "is."
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-korte-tekst-q-009",
+        "tags": [
+          "schrijven:korte-tekst"
+        ],
+        "explanation": "Een mening (ik vind … mooi) met een reden (want …).",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin geeft een mening met een reden?",
+        "options": [
+          "Ik woon in Zwolle.",
+          "Ik vind Zwolle mooi, want er is veel water.",
+          "Zwolle ligt in Overijssel.",
+          "Gisteren was ik in Zwolle."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-korte-tekst-q-010",
+        "tags": [
+          "schrijven:korte-tekst"
+        ],
+        "explanation": "Aan het eind geef je vaak een mening of een wens.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Aan het eind van je tekst kun je zeggen wat je ervan vindt.",
+        "answer": true
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "schrijven-korte-tekst-l-04",
+      "title": "Zelf een korte tekst schrijven",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Nu schrijf je zelf. Maak eerst een klein plan:\n\n1. Wat is je onderwerp? (begin)\n2. Welke 2 of 3 dingen vertel je? (midden)\n3. Wat vind je ervan? (eind)\n\nSchrijf daarna korte zinnen. Lees je tekst aan het eind nog één keer."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-korte-tekst-q-011",
+        "tags": [
+          "schrijven:korte-tekst"
+        ],
+        "explanation": "Begin, midden en eind: dan is je tekst duidelijk.",
+        "difficulty": 2,
+        "type": "writing",
+        "prompt": "Schrijf een korte tekst: mijn dag.",
+        "task": {
+          "instructions": "Schrijf een korte tekst over je dag. Dit is geen brief: je schrijft geen aanhef en geen groet.",
+          "scenario": "Je vertelt over een gewone dag in je leven.",
+          "requiredPoints": [
+            "Zeg waar je tekst over gaat.",
+            "Vertel 2 of 3 dingen die je doet, met eerst en daarna.",
+            "Zeg wat je van je dag vindt."
+          ]
+        },
+        "minWords": 40,
+        "maxWords": 80,
+        "register": "informal",
+        "modelAnswer": "Ik vertel over mijn dag. Eerst sta ik om zeven uur op en ontbijt ik. Daarna breng ik mijn dochter naar school. Om tien uur heb ik les Nederlands. 's Middags kook ik en 's avonds kijk ik televisie. Ik vind mijn dag druk, maar ook leuk.",
+        "checklist": [
+          "Begin: onderwerp",
+          "Midden: eerst, daarna",
+          "Eind: mening",
+          "Werkwoord op plek 2"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-korte-tekst-q-012",
+        "tags": [
+          "schrijven:korte-tekst"
+        ],
+        "explanation": "Een mening met een reden (want …) maakt je tekst sterk.",
+        "difficulty": 2,
+        "type": "writing",
+        "prompt": "Schrijf een korte tekst: mijn buurt.",
+        "task": {
+          "instructions": "Schrijf een korte tekst over de buurt waar je woont. Dit is geen brief: je schrijft geen aanhef en geen groet.",
+          "scenario": "Je vertelt over je buurt.",
+          "requiredPoints": [
+            "Zeg waar je woont.",
+            "Vertel wat er in je buurt is (winkels, park, school …).",
+            "Zeg wat je van je buurt vindt, met want."
+          ]
+        },
+        "minWords": 40,
+        "maxWords": 80,
+        "register": "informal",
+        "modelAnswer": "Ik woon in een buurt in Amersfoort. In mijn buurt is een supermarkt en een basisschool. Er is ook een klein park. Daar wandel ik vaak met mijn hond. Ik vind mijn buurt fijn, want het is rustig en de buren zijn aardig.",
+        "checklist": [
+          "Waar je woont",
+          "Wat er in de buurt is",
+          "Mening met want"
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "schrijven-korte-tekst-q-013",
+        "tags": [
+          "schrijven:korte-tekst"
+        ],
+        "explanation": "Wanneer, waar en met wie: zo vertel je meer met korte zinnen.",
+        "difficulty": 2,
+        "type": "writing",
+        "prompt": "Schrijf een korte tekst: mijn hobby.",
+        "task": {
+          "instructions": "Schrijf een korte tekst over je hobby. Dit is geen brief: je schrijft geen aanhef en geen groet.",
+          "scenario": "Je vertelt over iets wat je graag doet in je vrije tijd.",
+          "requiredPoints": [
+            "Zeg wat je hobby is.",
+            "Vertel wanneer en waar je het doet, en met wie.",
+            "Zeg waarom je het leuk vindt."
+          ]
+        },
+        "minWords": 40,
+        "maxWords": 80,
+        "register": "informal",
+        "modelAnswer": "Mijn hobby is koken. Ik kook bijna elke dag, maar in het weekend kook ik met mijn man. Dan maken we eten uit ons land. Soms komen er vrienden eten. Ik vind koken leuk, want ik word er rustig van.",
+        "checklist": [
+          "Hobby genoemd",
+          "Wanneer, waar, met wie",
+          "Waarom leuk (want …)"
+        ]
+      }
+    }
+  ]
+}

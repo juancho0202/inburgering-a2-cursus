@@ -4,7 +4,7 @@
   "title": "Scheidbare werkwoorden",
   "goal": "Je gebruikt scheidbare werkwoorden goed in een zin.",
   "scene": "ochtend",
-  "estimatedMinutes": 15,
+  "estimatedMinutes": 20,
   "tags": [
     "basis:scheidbaar",
     "grammar:scheidbaar"
@@ -398,6 +398,103 @@
         "prompt": "Klopt dit?",
         "statement": "In de zin \"Ik stap in Utrecht over\" staat het voorvoegsel over aan het eind.",
         "answer": true
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-scheidbaar-l-02",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "tip",
+          "md": "In een gewone zin gaat het eerste deel (op, af, in, mee, over, terug) naar het **eind**: *Ik bel je morgen terug.* Na een modaal werkwoord blijft het werkwoord heel: *Ik moet overstappen.* In het perfectum: *aan + ge + komen = aangekomen*."
+        },
+        {
+          "kind": "text",
+          "md": "Oefen nu met **nieuwe** zinnen. Denk bij elke vraag aan de regel."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-015",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "bel",
+          "je",
+          "morgen",
+          "terug."
+        ],
+        "explanation": "Terugbellen: bel op plek 2, terug aan het eind.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-016",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "type": "gap-fill",
+        "prompt": "Vul het ontbrekende deel in (opruimen).",
+        "text": "Ruim jij je kamer ___ ?",
+        "answers": [
+          [
+            "op"
+          ]
+        ],
+        "explanation": "Opruimen: ruim … op. Het eerste deel gaat naar het eind.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-017",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Ik moet in Utrecht overstappen.",
+          "Ik moet in Utrecht stappen over.",
+          "Ik moet over in Utrecht stappen.",
+          "Ik overstap moet in Utrecht."
+        ],
+        "answer": 0,
+        "explanation": "Na moeten blijft het werkwoord heel, aan het eind: overstappen.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-scheidbaar-q-018",
+        "tags": [
+          "basis:scheidbaar",
+          "grammar:scheidbaar"
+        ],
+        "type": "gap-fill",
+        "prompt": "Vul het voltooid deelwoord in (aankomen).",
+        "text": "De trein is om acht uur ___ .",
+        "answers": [
+          [
+            "aangekomen"
+          ]
+        ],
+        "explanation": "Aan + ge + komen: aangekomen.",
+        "difficulty": 2
       }
     }
   ]
