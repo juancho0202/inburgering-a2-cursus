@@ -10,7 +10,7 @@ import { dueCards, introduce, reviewSrsCard, verbList, vocabList } from "./srs.j
 import { listWriting, saveWriting } from "./writing.js";
 import { getWelcome, markWelcomeSeen } from "./welcome.js";
 import { addFlag, flagTarget, listFlags, removeFlag } from "./flags.js";
-import { explain, feedbackWriting, flagGenerated, generate } from "./claude.js";
+import { explain, feedbackWriting, flagGenerated, generate, taalcafe } from "./claude.js";
 
 export type Method = "GET" | "POST" | "PUT";
 
@@ -72,6 +72,7 @@ const routes: [Method, string, Handler][] = [
   ["POST", "/writing", (c) => saveWriting(c.env, c.body)],
   ["POST", "/claude/feedback-writing", (c) => feedbackWriting(c.env, c.body)],
   ["POST", "/claude/explain", (c) => explain(c.env, c.body)],
+  ["POST", "/claude/taalcafe", (c) => taalcafe(c.env, c.body)],
   ["POST", "/claude/generate", (c) => generate(c.env, c.body)],
   ["POST", "/generated/:id/flag", (c) => flagGenerated(c.env, c.params.id)],
   ["GET", "/settings", settingsView],

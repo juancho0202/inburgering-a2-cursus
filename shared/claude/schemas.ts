@@ -42,6 +42,15 @@ export const writingFeedbackJsonSchema = {
   },
 } as const;
 
+const correctionItem = writingFeedbackJsonSchema.properties.corrections.items;
+
+export const taalcafeJsonSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["corrections", "reply"],
+  properties: { corrections: { type: "array", items: correctionItem }, reply: str },
+} as const;
+
 export const explanationJsonSchema = {
   type: "object",
   additionalProperties: false,

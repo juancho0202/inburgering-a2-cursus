@@ -31,6 +31,20 @@ export const WritingFeedbackSchema = z.object({
 });
 export type WritingFeedback = z.infer<typeof WritingFeedbackSchema>;
 
+/** One turn in the taalcafé: corrections of the learner's last message, and the partner's answer. */
+export const TaalcafeTurnSchema = z.object({
+  corrections: z.array(
+    z.object({
+      original: z.string(),
+      corrected: z.string(),
+      type: z.enum(CORRECTION_TYPES),
+      explanation: z.string(),
+    }),
+  ),
+  reply: z.string().min(1),
+});
+export type TaalcafeTurn = z.infer<typeof TaalcafeTurnSchema>;
+
 export const ExplanationSchema = z.object({
   explanation: z.string(),
   rule: z.string().nullable(),

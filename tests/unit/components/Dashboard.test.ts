@@ -455,11 +455,13 @@ describe("ModuleView", () => {
     expect(wrapper.text()).toContain("Hier komen later lessen.");
   });
 
-  it("only the writing module links to 'Mijn teksten en feedback'", async () => {
+  it("only the writing module links to 'Mijn teksten en feedback' and to the taalcafé", async () => {
     fakeApi.on("GET", "/course", { ...course, modules: [...course.modules, { id: "schrijven", title: "Schrijven", description: "", icon: "", units: [] }] });
     const writing = await open({}, "schrijven");
     expect(writing.wrapper.find("a[href='/schrijven/geschiedenis']").exists()).toBe(true);
+    expect(writing.wrapper.find("a[href='/taalcafe']").text()).toContain("Taalcafé: praat met Claude");
     const basis = await open({});
     expect(basis.wrapper.find("a[href='/schrijven/geschiedenis']").exists()).toBe(false);
+    expect(basis.wrapper.find("a[href='/taalcafe']").exists()).toBe(false);
   });
 });

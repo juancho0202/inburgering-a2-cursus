@@ -13,6 +13,7 @@ export const router = createRouter({
     { path: "/woorden/herhalen", name: "review", component: () => import("./views/ReviewView.vue") },
     { path: "/werkwoorden", name: "verbs", component: () => import("./views/VerbsView.vue") },
     { path: "/schrijven/geschiedenis", name: "writing-history", component: () => import("./views/WritingHistoryView.vue") },
+    { path: "/taalcafe", name: "taalcafe", component: () => import("./views/TaalcafeView.vue") },
     { path: "/samenvatting", name: "samenvatting", component: () => import("./views/SamenvattingView.vue") },
     { path: "/examens", name: "exams", component: () => import("./views/ExamsView.vue") },
     { path: "/examen/:id", name: "exam", component: () => import("./views/ExamView.vue"), meta: { focus: true, dutchOnly: true } },
