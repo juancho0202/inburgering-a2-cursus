@@ -177,17 +177,22 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey, true));
           </template>
         </div>
       </div>
-      <!-- Phone: the main action gets its own full-width row on top, the quiet buttons sit below it.
-           From sm up everything fits on one row: quiet buttons left, main action right. -->
-      <div class="mx-auto flex max-w-4xl flex-wrap items-center gap-x-3 gap-y-1 px-4 py-3">
-        <div class="order-2 flex gap-1 sm:order-1">
-          <AppButton variant="ghost" @click="emit('exit')"><UiLabel k="common.stop" /></AppButton>
-          <AppButton v-if="isGenerated && !flagged" variant="ghost" @click="flag"><UiLabel k="feedback.wrongExercise" /></AppButton>
+      <!-- One row on every screen, like the lesson and exam bars: quiet buttons left, the main action right.
+           On a phone the extra buttons (Foute oefening, Probeer opnieuw) are an icon; their label stays for screen readers. -->
+      <div class="mx-auto flex max-w-4xl items-center justify-between gap-2 px-4 py-3 sm:gap-3">
+        <div class="flex shrink-0 gap-1">
+          <AppButton variant="ghost" class="max-sm:px-1.5 max-sm:text-base" @click="emit('exit')"><UiLabel k="common.stop" /></AppButton>
+          <AppButton v-if="isGenerated && !flagged" variant="ghost" class="max-sm:px-2 max-sm:text-base" @click="flag"
+            ><span aria-hidden="true" class="sm:hidden">⚑</span><span class="max-sm:sr-only"><UiLabel k="feedback.wrongExercise" /></span
+          ></AppButton>
         </div>
-        <div class="order-1 flex w-full gap-2 sm:order-2 sm:ml-auto sm:w-auto [&>button]:flex-1 sm:[&>button]:flex-none">
-          <AppButton v-if="isWriting && checked" variant="secondary" size="lg" @click="retry"><UiLabel k="common.tryAgain" /></AppButton>
-          <AppButton v-if="!checked" size="lg" :disabled="!ready" @click="check"><UiLabel k="common.check" /></AppButton>
-          <AppButton v-else size="lg" :variant="result!.score === null || result!.correct ? 'good' : 'primary'" @click="next">
+        <!-- Compact on a phone: three buttons must fit next to each other on a 320 px screen -->
+        <div class="flex min-w-0 gap-2 [&>button]:whitespace-nowrap">
+          <AppButton v-if="isWriting && checked" variant="secondary" size="lg" class="shrink-0 max-sm:w-10 max-sm:px-0" @click="retry"
+            ><span aria-hidden="true" class="sm:hidden">↺</span><span class="max-sm:sr-only"><UiLabel k="common.tryAgain" /></span
+          ></AppButton>
+          <AppButton v-if="!checked" size="lg" class="max-sm:px-2.5 max-sm:text-base" :disabled="!ready" @click="check"><UiLabel k="common.check" /></AppButton>
+          <AppButton v-else size="lg" class="max-sm:px-2.5 max-sm:text-base" :variant="result!.score === null || result!.correct ? 'good' : 'primary'" @click="next">
             <UiLabel :k="isLast ? 'common.finish' : 'common.next'" /> →
           </AppButton>
         </div>

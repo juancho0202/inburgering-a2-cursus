@@ -172,4 +172,17 @@ test.describe("a small phone", () => {
     await expect(page.getByText(/vraag 1 van/i)).toBeVisible();
     await fits("exam-lezen-1");
   });
+
+  // The exercise bar once put "Controleer" on a row of its own, with "Stoppen" under it: two rows of the screen gone.
+  test("the bar under an exercise is one row, like the bars of lessons and exams", async ({ page }) => {
+    await startFresh(page);
+    await page.goto("/unit/schrijven-basis");
+    await page.getByRole("button", { name: /^Volgende →/ }).click(); // lesson → first exercise
+    const bar = page.getByRole("region", { name: "Controle" });
+    const stop = await bar.getByRole("button", { name: /Stoppen/ }).boundingBox();
+    const check = await bar.getByRole("button", { name: /Controleer/ }).boundingBox();
+    expect(Math.abs(stop!.y + stop!.height / 2 - (check!.y + check!.height / 2)), "Stoppen and Controleer on one row").toBeLessThan(4);
+    expect(stop!.x + stop!.width).toBeLessThanOrEqual(check!.x);
+    expect(check!.x + check!.width, "inside the page margin").toBeLessThanOrEqual(320 - 16);
+  });
 });
