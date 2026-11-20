@@ -28,41 +28,116 @@ const end = ref<HTMLElement | null>(null);
 let conversation = 0;
 
 // The explanation of one correction, shown as a tooltip: on hover with a mouse, on tap, or on keyboard focus.
-// A tap (or click) pins it until the next tap, Escape, or a tap anywhere else; only one is open at a time.
+// A tap (or click) pins it until the next tap, its ✕, Escape, or a tap anywhere else; only one is open at a time.
 const tip = ref<{ m: number; c: number; pinned: boolean } | null>(null);
 const isOpen = (m: number, c: number) => tip.value?.m === m && tip.value.c === c;
 const tipId = (m: number, c: number) => `taalcafe-tip-${m}-${c}`;
+const chatBox = ref<HTMLElement | null>(null);
+const tipBox = ref<HTMLElement | null>(null);
+/** Where the tooltip goes, in px inside the chat: above the corrected chunk, the triangle pointing at its middle. */
+const place = ref({ left: 0, top: 0, width: 0, arrow: 0 });
+const GAP = 12; // room for the triangle
+let leaveTimer: ReturnType<typeof setTimeout> | undefined;
+// Closing gives the focus back to the correction; that focus must not open the tooltip again.
+let refocusing = false;
+
+const chunkEl = (m: number, c: number) => chatBox.value?.querySelector<HTMLElement>(`[data-fix="${m}-${c}"]`) ?? null;
+
+/** Measures the chunk (its first line, when it wraps) and puts the tooltip above it, inside the chat column. */
+function positionTip() {
+  const box = chatBox.value;
+  const t = tip.value;
+  const chunk = t && chunkEl(t.m, t.c);
+  if (!box || !chunk) return;
+  const area = box.getBoundingClientRect();
+  const first = chunk.getClientRects()[0] ?? chunk.getBoundingClientRect();
+  // A phone gets (almost) the whole width: the page's own side margin is the padding. Wider screens: a card of 20rem.
+  const narrow = window.innerWidth < 640;
+  const width = narrow ? area.width : Math.min(320, area.width);
+  const centre = first.left + first.width / 2 - area.left;
+  const left = narrow ? 0 : Math.min(Math.max(centre - width / 2, 0), Math.max(area.width - width, 0));
+  place.value = { left, width, top: first.top - area.top - GAP, arrow: Math.min(Math.max(centre - left, 16), Math.max(width - 16, 16)) };
+}
+
+/** A tooltip opened on purpose (tap, keyboard) must be readable: scroll up a little when its top is under the header or off screen. */
+function revealTip() {
+  const el = tipBox.value;
+  if (!el) return;
+  // The app's bar stays at the top of the screen (sticky): the tooltip must end up below it.
+  const bars = Array.from(document.querySelectorAll("header")).filter((h) => ["sticky", "fixed"].includes(getComputedStyle(h).position));
+  const covered = Math.max(0, ...bars.map((h) => h.getBoundingClientRect().bottom));
+  const over = covered + 8 - el.getBoundingClientRect().top;
+  if (over > 0) window.scrollBy({ top: -over, behavior: "smooth" });
+}
+
+async function open(m: number, c: number, pinned: boolean, reveal = pinned) {
+  clearTimeout(leaveTimer);
+  tip.value = { m, c, pinned };
+  await nextTick();
+  positionTip();
+  if (reveal) {
+    await nextTick();
+    revealTip();
+  }
+}
+function close(returnFocus = false) {
+  const t = tip.value;
+  clearTimeout(leaveTimer);
+  tip.value = null;
+  if (returnFocus && t) {
+    refocusing = true;
+    chunkEl(t.m, t.c)?.focus();
+    refocusing = false;
+  }
+}
 
 function hoverIn(e: PointerEvent, m: number, c: number) {
   // A finger also sends pointerenter: only a mouse opens on hover, a tap goes through onTap.
   if (e.pointerType !== "mouse" || tip.value?.pinned) return;
-  tip.value = { m, c, pinned: false };
+  open(m, c, false);
 }
-function hoverOut(e: PointerEvent, m: number, c: number) {
-  if (e.pointerType === "mouse" && isOpen(m, c) && !tip.value!.pinned) tip.value = null;
+function hoverOut(e: PointerEvent) {
+  if (e.pointerType !== "mouse" || !tip.value || tip.value.pinned) return;
+  // A moment to move the mouse onto the tooltip (to its ✕) before it goes.
+  clearTimeout(leaveTimer);
+  leaveTimer = setTimeout(() => tip.value && !tip.value.pinned && close(), 200);
+}
+/** The mouse reached the tooltip: it stays, so its ✕ can be clicked. */
+function keepTip() {
+  clearTimeout(leaveTimer);
 }
 function onTap(m: number, c: number) {
-  tip.value = isOpen(m, c) && tip.value!.pinned ? null : { m, c, pinned: true };
+  if (isOpen(m, c) && tip.value!.pinned) close();
+  else open(m, c, true);
 }
+// Keyboard focus shows the tooltip (not pinned: it goes with the focus). A tap also focuses first, then its click pins it.
 function onFocus(m: number, c: number) {
-  if (!tip.value) tip.value = { m, c, pinned: false };
+  if (!tip.value && !refocusing) open(m, c, false, true);
 }
-function onBlur(m: number, c: number) {
-  if (isOpen(m, c) && !tip.value!.pinned) tip.value = null;
+function onBlur(e: FocusEvent, m: number, c: number) {
+  if (isOpen(m, c) && !tip.value!.pinned && !(e.relatedTarget as Element | null)?.closest?.("[data-tooltip]")) close();
 }
 function closeOnOutside(e: Event) {
-  if (tip.value && !(e.target as Element | null)?.closest?.("[data-fix]")) tip.value = null;
+  if (tip.value && !(e.target as Element | null)?.closest?.("[data-fix], [data-tooltip]")) close();
 }
 function closeOnEscape(e: KeyboardEvent) {
-  if (e.key === "Escape") tip.value = null;
+  if (e.key === "Escape" && tip.value) close(true);
 }
 onMounted(() => {
   document.addEventListener("click", closeOnOutside);
   document.addEventListener("keydown", closeOnEscape);
+  window.addEventListener("resize", positionTip);
 });
 onBeforeUnmount(() => {
+  clearTimeout(leaveTimer);
   document.removeEventListener("click", closeOnOutside);
   document.removeEventListener("keydown", closeOnEscape);
+  window.removeEventListener("resize", positionTip);
+});
+const openCorrection = computed(() => {
+  const t = tip.value;
+  const m = t ? messages.value[t.m] : undefined;
+  return t && m?.from === "learner" ? (m.corrections?.[t.c] ?? null) : null;
 });
 
 const learnerTurns = computed(() => messages.value.filter((m) => m.from === "learner").length);
@@ -73,7 +148,7 @@ function start(t: TaalcafeTopic) {
   conversation++;
   topic.value = t;
   messages.value = [{ from: "partner", text: t.opener }];
-  tip.value = null;
+  close();
   draft.value = "";
   error.value = null;
   sending.value = false;
@@ -83,7 +158,7 @@ function reset() {
   conversation++;
   topic.value = null;
   messages.value = [];
-  tip.value = null;
+  close();
   draft.value = "";
   error.value = null;
   sending.value = false;
@@ -167,6 +242,7 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
 
     <section v-else :aria-label="lang.t('taalcafe.title')">
       <p class="mb-3 text-sm font-semibold text-muted"><UiLabel variant="inline" k="taalcafe.topic" />: <span lang="nl" translate="no">{{ topic.title }}</span></p>
+      <div ref="chatBox" class="relative" data-chat>
       <ol class="grid gap-3" aria-live="polite" lang="nl" translate="no">
         <li v-for="(m, i) in messages" :key="i" class="flex" :class="m.from === 'learner' ? 'justify-end' : 'justify-start'">
           <div v-if="m.from === 'partner'" class="card max-w-[85%] p-3" data-from="partner">
@@ -181,14 +257,14 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
                 <button
                   v-else
                   type="button"
-                  data-fix
+                  :data-fix="`${i}-${s.index}`"
                   class="inline cursor-help rounded text-left focus-visible:outline-2 focus-visible:outline-brand"
                   :aria-expanded="isOpen(i, s.index)"
                   :aria-describedby="isOpen(i, s.index) ? tipId(i, s.index) : undefined"
                   @pointerenter="hoverIn($event, i, s.index)"
-                  @pointerleave="hoverOut($event, i, s.index)"
+                  @pointerleave="hoverOut"
                   @focus="onFocus(i, s.index)"
-                  @blur="onBlur(i, s.index)"
+                  @blur="onBlur($event, i, s.index)"
                   @click="onTap(i, s.index)"
                 >
                   <del class="rounded bg-bad-bg px-0.5 text-bad line-through">{{ s.original }}</del>
@@ -196,16 +272,6 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
                 </button>
               </template>
             </p>
-            <!-- Above the bubble and from its right edge leftwards: the learner's bubbles sit on the right, so it never runs off a phone screen -->
-            <div
-              v-if="tip && tip.m === i && m.corrections?.[tip.c]"
-              :id="tipId(i, tip.c)"
-              role="tooltip"
-              class="card absolute bottom-full right-0 z-20 mb-2 w-max max-w-[min(18rem,calc(100vw-2rem))] border-2 border-brand p-3 text-base shadow-lg"
-            >
-              <p><del class="text-bad">{{ m.corrections[tip.c].original }}</del> → <strong class="text-good">{{ m.corrections[tip.c].corrected }}</strong></p>
-              <p class="mt-1">{{ m.corrections[tip.c].explanation }}</p>
-            </div>
             <p v-if="m.corrections && !m.corrections.length" class="mt-1 text-sm font-semibold text-good">✓ {{ lang.feedback("taalcafe.good") }}</p>
             <ul v-else-if="m.corrections && unplaced(m).length" class="mt-2 grid gap-1 border-t border-line pt-2 text-sm">
               <li v-for="(c, ci) in unplaced(m)" :key="ci"><del class="text-bad">{{ c.original }}</del> → <strong class="text-good">{{ c.corrected }}</strong>: {{ c.explanation }}</li>
@@ -214,6 +280,38 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
         </li>
         <li v-if="sending" class="text-muted">{{ lang.t("taalcafe.typing") }}</li>
       </ol>
+      <!-- One tooltip for the whole chat, placed above the chunk it explains (positionTip); its triangle points at that chunk.
+           Not role=tooltip: it has a button (✕), so it is a small note the chunk refers to with aria-describedby. -->
+      <div
+        v-if="tip && openCorrection"
+        :id="tipId(tip.m, tip.c)"
+        ref="tipBox"
+        data-tooltip
+        class="card absolute z-20 -translate-y-full border-2 border-brand py-3 pl-4 pr-10 text-base shadow-lg"
+        :style="{ left: `${place.left}px`, top: `${place.top}px`, width: place.width ? `${place.width}px` : undefined }"
+        lang="nl"
+        translate="no"
+        @pointerenter="keepTip"
+        @pointerleave="hoverOut"
+      >
+        <button
+          type="button"
+          class="absolute right-1.5 top-1.5 grid h-8 w-8 place-items-center rounded-full text-lg text-muted hover:bg-surface-2 hover:text-ink"
+          :aria-label="lang.t('common.close')"
+          @click="close(true)"
+        >
+          ✕
+        </button>
+        <p><del class="text-bad">{{ openCorrection.original }}</del> → <strong class="text-good">{{ openCorrection.corrected }}</strong></p>
+        <p class="mt-1">{{ openCorrection.explanation }}</p>
+        <!-- The triangle: a turned square with the card's colour and the border on its two lower sides -->
+        <span
+          class="absolute -bottom-[9px] h-4 w-4 -translate-x-1/2 rotate-45 border-b-2 border-r-2 border-brand bg-surface"
+          :style="{ left: `${place.arrow}px` }"
+          aria-hidden="true"
+        />
+      </div>
+      </div>
       <div ref="end" />
 
       <p v-if="anyCorrections" class="mt-3 text-sm text-muted">ⓘ {{ lang.t("taalcafe.tapHint") }}</p>

@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 // Taalcafé: small talk with Sanne (Claude). Every message of the learner comes back corrected, with the wrong part
 // struck through and the right way next to it, the same as the writing feedback.
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import TaalcafeView from "../../../src/views/TaalcafeView.vue";
 import { TAALCAFE_MAX_TURNS } from "../../../shared/logic/taalcafe";
 import { buttonWith, clickButton, deferred, fakeApi, flushPromises, mountApp } from "../../helpers/component";
@@ -76,7 +76,28 @@ describe("a conversation", () => {
       return w;
     }
     const chunks = (w: Awaited<ReturnType<typeof open>>) => w.findAll("[data-fix]");
-    const tooltip = (w: Awaited<ReturnType<typeof open>>) => w.find("[role=tooltip]");
+    const tooltip = (w: Awaited<ReturnType<typeof open>>) => w.find("[data-tooltip]");
+    const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+    /** jsdom has no layout: give the chat, the chunks, the header and the tooltip a place on the screen. */
+    function layout({ viewport = 1024, chatLeft = 100, chatWidth = 600, chunkLeft = 500, chunkTop = 400, tipTop = 300, header = 60 } = {}) {
+      vi.spyOn(window, "innerWidth", "get").mockReturnValue(viewport);
+      // the app's sticky bar, after another (not sticky) header that must not count
+      document.body.insertAdjacentHTML("afterbegin", '<header data-test></header><header data-test data-bar style="position: sticky"></header>');
+      const rect = (left: number, top: number, width: number, height = 20) => ({ left, top, width, height, right: left + width, bottom: top + height, x: left, y: top, toJSON: () => ({}) }) as DOMRect;
+      const of = (el: Element) =>
+        el.matches("[data-chat]") ? rect(chatLeft, 100, chatWidth, 800)
+        : el.matches("[data-fix]") ? rect(chunkLeft, chunkTop, 80)
+        : el.matches("[data-tooltip]") ? rect(chatLeft, tipTop, 320, 90)
+        : el.matches("header[data-bar]") ? rect(0, 0, viewport, header)
+        : rect(0, 0, 0, 0);
+      vi.spyOn(Element.prototype, "getBoundingClientRect").mockImplementation(function (this: Element) { return of(this); });
+      vi.spyOn(Element.prototype, "getClientRects").mockImplementation(function (this: Element) { return [of(this)] as unknown as DOMRectList; });
+    }
+    afterEach(() => {
+      vi.restoreAllMocks();
+      document.querySelectorAll("header[data-test]").forEach((h) => h.remove());
+    });
 
     it("opens on a tap with the right and wrong chunk and the explanation, and closes on a second tap", async () => {
       const w = await corrected();
@@ -93,21 +114,61 @@ describe("a conversation", () => {
       expect(chunks(w)[0].attributes("aria-expanded")).toBe("false");
     });
 
+    it("with the keyboard it follows the focus: it opens on focus and closes when the focus moves on", async () => {
+      const w = await corrected();
+      await chunks(w)[0].trigger("focus");
+      expect(tooltip(w).text()).toContain("Gaan krijgt zijn.");
+      await chunks(w)[0].trigger("blur");
+      expect(tooltip(w).exists()).toBe(false);
+    });
+
+    it("a tap on a phone (focus, then click) leaves it open", async () => {
+      const w = await corrected();
+      await chunks(w)[0].trigger("focus");
+      await chunks(w)[0].trigger("click");
+      expect(tooltip(w).text()).toContain("Gaan krijgt zijn.");
+      await chunks(w)[0].trigger("blur");
+      expect(tooltip(w).exists()).toBe(true);
+    });
+
+    it("closes with its ✕, and the focus goes back to the correction", async () => {
+      const w = await corrected();
+      await chunks(w)[1].trigger("click");
+      const x = tooltip(w).find("button[aria-label=Sluiten]");
+      await x.trigger("click");
+      await flushPromises();
+      expect(tooltip(w).exists()).toBe(false);
+      expect(document.activeElement).toBe(chunks(w)[1].element);
+    });
+
     it("shows one at a time: tapping another correction switches to its explanation", async () => {
       const w = await corrected();
       await chunks(w)[0].trigger("click");
       await chunks(w)[1].trigger("click");
-      expect(w.findAll("[role=tooltip]")).toHaveLength(1);
+      expect(w.findAll("[data-tooltip]")).toHaveLength(1);
       expect(tooltip(w).text()).toContain("Gaan naar een plek: naar.");
     });
 
-    it("opens on hover with a mouse and closes when the mouse leaves, but a finger does not open it by passing over", async () => {
+    it("opens on hover with a mouse and closes a moment after the mouse leaves, but a finger does not open it by passing over", async () => {
       const w = await corrected();
       await chunks(w)[0].trigger("pointerenter", { pointerType: "touch" });
       expect(tooltip(w).exists()).toBe(false);
       await chunks(w)[0].trigger("pointerenter", { pointerType: "mouse" });
       expect(tooltip(w).text()).toContain("Gaan krijgt zijn.");
       await chunks(w)[0].trigger("pointerleave", { pointerType: "mouse" });
+      await wait(300);
+      expect(tooltip(w).exists()).toBe(false);
+    });
+
+    it("stays when the mouse moves from the correction onto the tooltip, so its ✕ can be reached", async () => {
+      const w = await corrected();
+      await chunks(w)[0].trigger("pointerenter", { pointerType: "mouse" });
+      await chunks(w)[0].trigger("pointerleave", { pointerType: "mouse" });
+      await tooltip(w).trigger("pointerenter", { pointerType: "mouse" });
+      await wait(300);
+      expect(tooltip(w).exists()).toBe(true);
+      await tooltip(w).trigger("pointerleave", { pointerType: "mouse" });
+      await wait(300);
       expect(tooltip(w).exists()).toBe(false);
     });
 
@@ -116,6 +177,7 @@ describe("a conversation", () => {
       await chunks(w)[0].trigger("pointerenter", { pointerType: "mouse" });
       await chunks(w)[0].trigger("click");
       await chunks(w)[0].trigger("pointerleave", { pointerType: "mouse" });
+      await wait(300);
       expect(tooltip(w).text()).toContain("Gaan krijgt zijn.");
     });
 
@@ -128,17 +190,76 @@ describe("a conversation", () => {
       expect(tooltip(w).exists()).toBe(false);
 
       await chunks(w)[0].trigger("click");
+      tooltip(w).element.dispatchEvent(new MouseEvent("click", { bubbles: true })); // a tap inside the tooltip keeps it
+      await flushPromises();
       expect(tooltip(w).exists()).toBe(true);
       document.body.click();
       await flushPromises();
       expect(tooltip(w).exists()).toBe(false);
     });
 
+    it("on a wide screen: a card above the chunk, kept inside the chat, its triangle on the middle of the chunk", async () => {
+      layout({ viewport: 1024, chatLeft: 100, chatWidth: 600, chunkLeft: 500, chunkTop: 400 });
+      const w = await corrected();
+      await chunks(w)[0].trigger("click");
+      await flushPromises();
+      const style = (tooltip(w).element as HTMLElement).style;
+      // chunk middle: 500 + 40 - 100 = 440 inside the chat; a 320 px card centred on it would end at 600: it fits from 280.
+      expect(style.width).toBe("320px");
+      expect(style.left).toBe("280px");
+      expect(style.top).toBe(`${400 - 100 - 12}px`);
+      expect((tooltip(w).find("span[aria-hidden]").element as HTMLElement).style.left).toBe("160px");
+    });
+
+    it("near the right edge, the card stops at the edge of the chat and only the triangle moves to the chunk", async () => {
+      layout({ viewport: 1024, chatLeft: 100, chatWidth: 600, chunkLeft: 640, chunkTop: 400 });
+      const w = await corrected();
+      await chunks(w)[0].trigger("click");
+      await flushPromises();
+      // chunk middle: 640 + 40 - 100 = 580; centred, the card would end at 740, past the chat (600): it starts at 280.
+      expect((tooltip(w).element as HTMLElement).style.left).toBe("280px");
+      expect((tooltip(w).find("span[aria-hidden]").element as HTMLElement).style.left).toBe("300px");
+    });
+
+    it("on a phone: the whole width of the chat (the page margin is the padding), the triangle still on the chunk", async () => {
+      layout({ viewport: 390, chatLeft: 16, chatWidth: 358, chunkLeft: 250, chunkTop: 400 });
+      const w = await corrected();
+      await chunks(w)[0].trigger("click");
+      await flushPromises();
+      const style = (tooltip(w).element as HTMLElement).style;
+      expect(style.width).toBe("358px");
+      expect(style.left).toBe("0px");
+      expect((tooltip(w).find("span[aria-hidden]").element as HTMLElement).style.left).toBe(`${250 + 40 - 16}px`);
+    });
+
+    it("scrolls up a little when a tapped tooltip would be hidden under the header, but not for a hover", async () => {
+      layout({ tipTop: 20, header: 60 });
+      const scroll = vi.spyOn(window, "scrollBy").mockImplementation(() => {});
+      const w = await corrected();
+      await chunks(w)[0].trigger("pointerenter", { pointerType: "mouse" });
+      await flushPromises();
+      expect(scroll).not.toHaveBeenCalled();
+      await chunks(w)[0].trigger("click");
+      await flushPromises();
+      expect(scroll).toHaveBeenCalledWith({ top: -(60 + 8 - 20), behavior: "smooth" });
+    });
+
+    it("does not scroll when the tapped tooltip is already readable", async () => {
+      layout({ tipTop: 200, header: 60 });
+      const scroll = vi.spyOn(window, "scrollBy").mockImplementation(() => {});
+      const w = await corrected();
+      await chunks(w)[0].trigger("click");
+      await flushPromises();
+      expect(scroll).not.toHaveBeenCalled();
+    });
+
     it("stops listening to the page when the learner leaves the taalcafé", async () => {
       const w = await corrected();
       const removed = vi.spyOn(document, "removeEventListener");
+      const removedWindow = vi.spyOn(window, "removeEventListener");
       w.unmount();
       expect(removed.mock.calls.map((c) => c[0])).toEqual(expect.arrayContaining(["click", "keydown"]));
+      expect(removedWindow.mock.calls.map((c) => c[0])).toContain("resize");
     });
 
     it("still lists a correction that could not be placed in the text, so no explanation is lost", async () => {
