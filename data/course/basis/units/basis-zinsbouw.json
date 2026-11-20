@@ -61,7 +61,7 @@
         },
         {
           "kind": "text",
-          "md": "Begint de zin met **tijd of plaats**? Dan komt het onderwerp **na** het werkwoord (inversie).\n\n**Ja/nee-vraag:** werkwoord eerst (*Komt u woensdag?*).\n\n**Vraagwoord eerst:** wie, wat, waar, wanneer, hoe laat, hoeveel, hoelang, waarom, welke."
+          "md": "Begint de zin **niet met het onderwerp**, maar bijvoorbeeld met een tijd, een plaats of *helaas*? Dan komt het onderwerp **na** het werkwoord (inversie): *Morgen ga ik. Helaas kan ik niet.*\n\n**Ja/nee-vraag:** werkwoord eerst (*Komt u woensdag?*).\n\n**Vraagwoord eerst:** wie, wat, waar, wanneer, hoe laat, hoeveel, hoelang, waarom, welke."
         }
       ]
     },

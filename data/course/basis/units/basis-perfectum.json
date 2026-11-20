@@ -258,7 +258,7 @@
           "basis:perfectum",
           "grammar:perfectum"
         ],
-        "explanation": "Vragen is een uitzondering: gevraagd.",
+        "explanation": "Stam vraag eindigt op een g. De g staat niet in 't kofschip, dus -d: gevraagd.",
         "difficulty": 2,
         "type": "mc",
         "prompt": "Het deelwoord van \"vragen\" is:",

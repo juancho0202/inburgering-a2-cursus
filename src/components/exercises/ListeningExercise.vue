@@ -43,7 +43,7 @@ provide(listenKey, null);
 </script>
 
 <template>
-  <div class="grid gap-6 lg:grid-cols-2 lg:items-start">
+  <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-start">
     <div class="lg:sticky lg:top-20">
       <h2 class="mb-3 text-2xl font-bold">{{ exercise.prompt }}</h2>
       <FragmentPlayer ref="player" :fragment="exercise.fragment" :show-text="checked" :marks="checked ? marks : undefined" />

@@ -222,7 +222,7 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
 
         <McExercise v-if="page.type === 'mc'" :exercise="page" :checked="false" :initial="initialMc(page.id)" :shuffle="false" @change="setMc(page.id, $event)" />
 
-        <div v-else-if="page.type === 'reading' && page.document.kind === 'document'" class="grid gap-6 lg:grid-cols-2 lg:items-start">
+        <div v-else-if="page.type === 'reading' && page.document.kind === 'document'" class="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-start">
           <div class="lg:sticky lg:top-28"><DocumentCard :doc="page.document" /></div>
           <div class="grid gap-5">
             <div v-for="(q, i) in page.questions" :key="q.id" class="card p-5">
@@ -233,7 +233,7 @@ onBeforeUnmount(() => window.removeEventListener("keydown", onKey));
         </div>
 
         <!-- Listening: the fragment on one side, its questions on the other, like the exam screen -->
-        <div v-else-if="page.type === 'listening'" class="grid gap-6 lg:grid-cols-2 lg:items-start">
+        <div v-else-if="page.type === 'listening'" class="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-start">
           <div class="lg:sticky lg:top-28">
             <p class="mb-3 text-lg font-semibold">Lees eerst de vragen. Luister daarna naar het fragment.</p>
             <FragmentPlayer :fragment="page.fragment" :allow-peek="false" />

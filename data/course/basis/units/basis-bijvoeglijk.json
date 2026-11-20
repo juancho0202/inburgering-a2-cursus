@@ -2,9 +2,9 @@
   "id": "basis-bijvoeglijk",
   "moduleId": "basis",
   "title": "Bijvoeglijk naamwoord en vergelijken",
-  "goal": "Je gebruikt de -e regel en vergelijkt met -er en -st.",
+  "goal": "Je kiest groot of grote, en je vergelijkt met -er, -st en net zo … als.",
   "scene": "kledingwinkel",
-  "estimatedMinutes": 15,
+  "estimatedMinutes": 25,
   "tags": [
     "basis:bijvoeglijk",
     "grammar:adjectief"
@@ -20,72 +20,57 @@
     {
       "type": "lesson",
       "id": "basis-bijvoeglijk-l-01",
-      "title": "De -e regel en vergelijken",
+      "title": "Groot of grote?",
       "blocks": [
         {
           "kind": "text",
-          "md": "Het bijvoeglijk naamwoord krijgt **-e**, behalve bij **een + het-woord**.\n\n*de grote jas · een grote jas · het grote huis · **een groot huis** · grote huizen*"
+          "md": "Een **bijvoeglijk naamwoord** zegt iets over een ding of een persoon: *groot, nieuw, duur, warm*.\n\n**Na het werkwoord** (is, wordt) krijgt het **nooit -e**: *De jas is warm. Het huis is groot.*\n\n**Voor een zelfstandig naamwoord** krijgt het **bijna altijd -e**: *de warme jas, mijn warme jas, warme jassen.*"
+        },
+        {
+          "kind": "tip",
+          "md": "**Alleen geen -e bij:** een **het-woord**, **enkelvoud**, met **een**, **geen** of **niets** ervoor. *Een groot huis. Geen groot probleem. Lekker brood.*\n\nDus eerst de vraag: is het een de-woord of een het-woord? Dat leer je bij **De of het**."
         },
         {
           "kind": "table",
           "headers": [
-            "Basis",
-            "Vergrotend",
-            "Overtreffend"
+            "",
+            "de jas",
+            "het huis"
           ],
           "rows": [
             [
-              "groot",
-              "groter",
-              "grootst"
+              "de, het",
+              "de warme jas",
+              "het warme huis"
             ],
             [
-              "goed",
-              "beter",
-              "best"
+              "mijn, deze, die",
+              "mijn warme jas",
+              "mijn warme huis"
             ],
             [
-              "veel",
-              "meer",
-              "meest"
+              "een, geen",
+              "een warme jas",
+              "een **warm** huis"
             ],
             [
-              "vaak",
-              "vaker",
-              "vaakst"
+              "meervoud",
+              "warme jassen",
+              "warme huizen"
             ],
             [
-              "graag",
-              "liever",
-              "liefst"
+              "na is",
+              "de jas is **warm**",
+              "het huis is **warm**"
             ]
           ]
+        },
+        {
+          "kind": "example",
+          "nl": "We hebben een groot huis met een grote tuin.",
+          "note": "het huis, met een: groot · de tuin: grote"
         }
       ]
-    },
-    {
-      "type": "exercise",
-      "exercise": {
-        "id": "basis-bijvoeglijk-q-001",
-        "tags": [
-          "basis:bijvoeglijk",
-          "grammar:adjectief"
-        ],
-        "explanation": "Een + het-woord (huis): geen -e.",
-        "difficulty": 1,
-        "type": "gap-choice",
-        "prompt": "Kies de goede vorm.",
-        "text": "Ik zie een ___ huis. (groot)",
-        "options": [
-          [
-            "groot",
-            "grote"
-          ]
-        ],
-        "answers": [
-          0
-        ]
-      }
     },
     {
       "type": "exercise",
@@ -95,7 +80,7 @@
           "basis:bijvoeglijk",
           "grammar:adjectief"
         ],
-        "explanation": "De + de-woord: -e.",
+        "explanation": "De + de-woord: -e. De grote jas.",
         "difficulty": 1,
         "type": "gap-choice",
         "prompt": "Kies de goede vorm.",
@@ -119,7 +104,7 @@
           "basis:bijvoeglijk",
           "grammar:adjectief"
         ],
-        "explanation": "Het + het-woord: -e.",
+        "explanation": "Het + het-woord: wel -e. Alleen na een, geen of niets valt de -e weg. Het grote huis.",
         "difficulty": 1,
         "type": "gap-choice",
         "prompt": "Kies de goede vorm.",
@@ -138,12 +123,60 @@
     {
       "type": "exercise",
       "exercise": {
+        "id": "basis-bijvoeglijk-q-001",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Huis is een het-woord, met een: geen -e. Een groot huis.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Ik zie een ___ huis. (groot)",
+        "options": [
+          [
+            "groot",
+            "grote"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-015",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Na is: nooit -e. De jas is warm.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "De jas is ___ . (warm)",
+        "options": [
+          [
+            "warm",
+            "warme"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
         "id": "basis-bijvoeglijk-q-004",
         "tags": [
           "basis:bijvoeglijk",
           "grammar:adjectief"
         ],
-        "explanation": "Een + de-woord (auto): -e.",
+        "explanation": "Auto is een de-woord: een nieuwe auto.",
         "difficulty": 1,
         "type": "gap-choice",
         "prompt": "Kies de goede vorm.",
@@ -167,7 +200,7 @@
           "basis:bijvoeglijk",
           "grammar:adjectief"
         ],
-        "explanation": "Meervoud: altijd -e.",
+        "explanation": "Meervoud: altijd -e. Oude huizen.",
         "difficulty": 1,
         "type": "gap-choice",
         "prompt": "Kies de goede vorm.",
@@ -186,12 +219,36 @@
     {
       "type": "exercise",
       "exercise": {
+        "id": "basis-bijvoeglijk-q-016",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Mijn + het-woord: wel -e. Alleen na een, geen of niets valt de -e weg.",
+        "difficulty": 2,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Dit is mijn ___ huis. (nieuw)",
+        "options": [
+          [
+            "nieuwe",
+            "nieuw"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
         "id": "basis-bijvoeglijk-q-006",
         "tags": [
           "basis:bijvoeglijk",
           "grammar:adjectief"
         ],
-        "explanation": "Een + de-woord: -e.",
+        "explanation": "Jas is een de-woord: een warme jas.",
         "difficulty": 1,
         "type": "gap-choice",
         "prompt": "Kies de goede vorm.",
@@ -210,12 +267,268 @@
     {
       "type": "exercise",
       "exercise": {
+        "id": "basis-bijvoeglijk-q-017",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Water is een het-woord, enkelvoud, met niets ervoor: geen -e. Koud water.",
+        "difficulty": 2,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Ik drink ___ water. (koud)",
+        "options": [
+          [
+            "koud",
+            "koude"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-018",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Appartement eindigt op -ment: een het-woord. Een + het-woord: geen -e. Een klein appartement.",
+        "difficulty": 2,
+        "type": "gap-fill",
+        "prompt": "Vul de goede vorm in (klein).",
+        "text": "Wij wonen in een ___ appartement.",
+        "answers": [
+          [
+            "klein"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-014",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Probleem is een het-woord. Een + het-woord: geen -e. Een groot probleem.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Dat is een grote probleem.",
+          "Dat is een groot probleem.",
+          "Dat is een groten probleem.",
+          "Dat is groote probleem."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-019",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Vraag is een de-woord: een moeilijke vraag. Na is: geen -e (de vraag is moeilijk).",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Het is een moeilijk vraag.",
+          "Het is een moeilijke vraag.",
+          "De vraag is moeilijke.",
+          "Het is een moeilijken vraag."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-bijvoeglijk-l-02",
+      "title": "Spelling: groot wordt grote",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Krijgt een woord **-e**? Let dan op de spelling. Het zijn dezelfde regels als bij het meervoud:\n\n- **Lange klank:** de dubbele letter wordt één letter. *groot, grote · duur, dure · laag, lage.*\n- **Korte klank:** de laatste letter wordt dubbel. *wit, witte · dik, dikke · snel, snelle.*\n- Een **f** wordt een **v**, en een **s** wordt een **z**: *lief, lieve · grijs, grijze.*"
+        },
+        {
+          "kind": "tip",
+          "md": "**Woorden op -en krijgen nooit -e:** *open, gesloten, gebroken.* *Een open deur. De gebroken fiets.*"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-020",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Trui is een de-woord: -e. Korte klank (i): de t wordt dubbel. Witte.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de goede vorm in (wit).",
+        "text": "Ik zoek een ___ trui.",
+        "answers": [
+          [
+            "witte"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-021",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Jas is een de-woord: -e. Lange klank (uu): één u. Dure.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul de goede vorm in (duur).",
+        "text": "Dat is een ___ jas.",
+        "answers": [
+          [
+            "dure"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-022",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Jas is een de-woord: -e. De s wordt een z: grijze.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Ik heb een grijse jas.",
+          "Ik heb een grijze jas.",
+          "Ik heb een grijsse jas.",
+          "Ik heb een grijs jas."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-023",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Woorden op -en krijgen nooit -e: een open deur.",
+        "difficulty": 2,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "De winkel heeft een ___ deur. (open)",
+        "options": [
+          [
+            "open",
+            "opene"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-bijvoeglijk-l-03",
+      "title": "Vergelijken in de winkel",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Je vergelijkt met **-er** en **dan**: *Deze jas is goedkoper dan die jas.*\n\nHet meeste? Dan **-st**: *Deze jas is het goedkoopst. Dit is de goedkoopste jas.*\n\nHetzelfde? Dan **net zo … als**: *Deze jas is net zo duur als die jas.*"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Basis",
+            "Vergrotend",
+            "Overtreffend"
+          ],
+          "rows": [
+            [
+              "goedkoop",
+              "goedkoper",
+              "goedkoopst"
+            ],
+            [
+              "groot",
+              "groter",
+              "grootst"
+            ],
+            [
+              "dik",
+              "dikker",
+              "dikst"
+            ],
+            [
+              "duur",
+              "duurder",
+              "duurst"
+            ],
+            [
+              "goed",
+              "beter",
+              "best"
+            ],
+            [
+              "veel",
+              "meer",
+              "meest"
+            ],
+            [
+              "weinig",
+              "minder",
+              "minst"
+            ],
+            [
+              "graag",
+              "liever",
+              "liefst"
+            ],
+            [
+              "vaak",
+              "vaker",
+              "vaakst"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Woorden op -r** krijgen **-der**: *duur, duurder · lekker, lekkerder · ver, verder.*\n\nZeg **groter dan**, niet *groter als*. **Als** hoort bij **net zo … als**."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
         "id": "basis-bijvoeglijk-q-007",
         "tags": [
           "basis:bijvoeglijk",
           "grammar:adjectief"
         ],
-        "explanation": "Groot → groter.",
+        "explanation": "Groot, groter: -er. Lange klank: één o.",
         "difficulty": 1,
         "type": "gap-fill",
         "prompt": "Maak de vergrotende trap (groot).",
@@ -235,7 +548,7 @@
           "basis:bijvoeglijk",
           "grammar:adjectief"
         ],
-        "explanation": "Goed → beter (onregelmatig).",
+        "explanation": "Goed is anders: goed, beter, best.",
         "difficulty": 1,
         "type": "gap-fill",
         "prompt": "Maak de vergrotende trap (goed).",
@@ -250,19 +563,19 @@
     {
       "type": "exercise",
       "exercise": {
-        "id": "basis-bijvoeglijk-q-009",
+        "id": "basis-bijvoeglijk-q-024",
         "tags": [
           "basis:bijvoeglijk",
           "grammar:adjectief"
         ],
-        "explanation": "Vaak → vaker → vaakst.",
-        "difficulty": 2,
+        "explanation": "Woorden op -r krijgen -der: duurder.",
+        "difficulty": 1,
         "type": "gap-fill",
-        "prompt": "Maak de overtreffende trap (vaak).",
-        "text": "Hij komt het ___ .",
+        "prompt": "Vul in (duur).",
+        "text": "Deze schoenen zijn ___ dan die schoenen.",
         "answers": [
           [
-            "vaakst"
+            "duurder"
           ]
         ]
       }
@@ -270,22 +583,69 @@
     {
       "type": "exercise",
       "exercise": {
-        "id": "basis-bijvoeglijk-q-010",
+        "id": "basis-bijvoeglijk-q-025",
         "tags": [
           "basis:bijvoeglijk",
           "grammar:adjectief"
         ],
-        "explanation": "Goed → beter → best (+e).",
-        "difficulty": 2,
-        "type": "mc",
-        "prompt": "Welke zin is goed?",
+        "explanation": "Bij -er gebruik je dan: groter dan. Als hoort bij net zo … als.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Mijn broer is groter ___ ik.",
         "options": [
-          "Dit is de goedste winkel.",
-          "Dit is de beste winkel.",
-          "Dit is de meest goede winkel.",
-          "Dit is de beter winkel."
+          [
+            "dan",
+            "als"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-026",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "De zwarte jas (€ 45) kost minder dan de blauwe jas (€ 60). Hij is dus goedkoper.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Kijk naar de prijzen. Welke zin klopt?",
+        "context": "In de winkel: de blauwe jas kost € 60. De zwarte jas kost € 45. De groene jas kost ook € 45.",
+        "options": [
+          "De blauwe jas is goedkoper dan de zwarte jas.",
+          "De zwarte jas is goedkoper dan de blauwe jas.",
+          "De zwarte jas is duurder dan de groene jas.",
+          "De groene jas is het duurst."
         ],
         "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-027",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "De zwarte en de groene jas kosten allebei € 45: net zo duur.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Kijk naar de prijzen. Welke zin klopt?",
+        "context": "In de winkel: de blauwe jas kost € 60. De zwarte jas kost € 45. De groene jas kost ook € 45.",
+        "options": [
+          "De zwarte jas is net zo duur als de groene jas.",
+          "De zwarte jas is duurder dan de groene jas.",
+          "De groene jas is het duurst.",
+          "De blauwe jas is het goedkoopst."
+        ],
+        "answer": 0
       }
     },
     {
@@ -296,7 +656,7 @@
           "basis:bijvoeglijk",
           "grammar:adjectief"
         ],
-        "explanation": "Veel → meer → meest.",
+        "explanation": "Veel is anders: veel, meer, meest.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is de vergrotende trap van \"veel\"?",
@@ -317,7 +677,7 @@
           "basis:bijvoeglijk",
           "grammar:adjectief"
         ],
-        "explanation": "Graag → liever → liefst.",
+        "explanation": "Graag is anders: graag, liever, liefst.",
         "difficulty": 2,
         "type": "mc",
         "prompt": "Wat is de vergrotende trap van \"graag\"?",
@@ -333,12 +693,73 @@
     {
       "type": "exercise",
       "exercise": {
+        "id": "basis-bijvoeglijk-q-009",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Het meeste: -st. Vaak, vaker, vaakst.",
+        "difficulty": 2,
+        "type": "gap-fill",
+        "prompt": "Maak de overtreffende trap (vaak).",
+        "text": "Van alle cursisten komt Ali het ___ te laat.",
+        "answers": [
+          [
+            "vaakst"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-028",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Het meeste: -st. Voor een zelfstandig naamwoord ook -e: de goedkoopste telefoon.",
+        "difficulty": 2,
+        "type": "gap-fill",
+        "prompt": "Maak de overtreffende trap (goedkoop).",
+        "text": "Dit is de ___ telefoon van de winkel.",
+        "answers": [
+          [
+            "goedkoopste"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-010",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Goed, beter, best. Voor een zelfstandig naamwoord ook -e: de beste winkel.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Dit is de goedste winkel.",
+          "Dit is de beste winkel.",
+          "Dit is de meest goede winkel.",
+          "Dit is de beter winkel."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
         "id": "basis-bijvoeglijk-q-013",
         "tags": [
           "basis:bijvoeglijk",
           "grammar:adjectief"
         ],
-        "explanation": "Let op de onregelmatige vormen.",
+        "explanation": "Goed, veel en graag zijn anders. Die leer je uit je hoofd.",
         "difficulty": 1,
         "type": "match",
         "prompt": "Welke trap hoort erbij?",
@@ -363,22 +784,114 @@
       }
     },
     {
+      "type": "lesson",
+      "id": "basis-bijvoeglijk-l-04",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Oefen alles nog een keer, door elkaar: groot of grote, en vergelijken."
+        }
+      ]
+    },
+    {
       "type": "exercise",
       "exercise": {
-        "id": "basis-bijvoeglijk-q-014",
+        "id": "basis-bijvoeglijk-q-029",
         "tags": [
           "basis:bijvoeglijk",
           "grammar:adjectief"
         ],
-        "explanation": "Probleem is een het-woord. Bij een + het-woord geen -e.",
+        "explanation": "Fiets is een de-woord: een nieuwe fiets.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Ik heb een nieuw fiets gekocht.",
+          "Ik heb een nieuwe fiets gekocht.",
+          "Mijn fiets is nieuwe.",
+          "Ik heb een nieuwer fiets dan jij."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-030",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Vergelijken met -er. Na een r: -der. Lekkerder.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Vul in (lekker).",
+        "text": "Deze soep is ___ dan gisteren.",
+        "answers": [
+          [
+            "lekkerder"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-031",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Huis is een het-woord, met een: geen -e. Een groot huis.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "Wij zoeken een ___ huis. (groot)",
+        "options": [
+          [
+            "groot",
+            "grote"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-032",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Net zo … als betekent: hetzelfde. De tassen zijn even groot.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "\"Deze tas is net zo groot als die tas\" betekent: de tassen zijn even groot.",
+        "answer": true
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijvoeglijk-q-033",
+        "tags": [
+          "basis:bijvoeglijk",
+          "grammar:adjectief"
+        ],
+        "explanation": "Aanbieding eindigt op -ing: een de-woord. Goed, beter, best: de beste aanbieding.",
         "difficulty": 2,
         "type": "mc",
         "prompt": "Welke zin is goed?",
         "options": [
-          "Dat is een grote probleem.",
-          "Dat is een groot probleem.",
-          "Dat is een groten probleem.",
-          "Dat is groote probleem."
+          "Dit is het beste aanbieding.",
+          "Dit is de beste aanbieding.",
+          "Dit is de goedste aanbieding.",
+          "Dit is de meest goed aanbieding."
         ],
         "answer": 1
       }

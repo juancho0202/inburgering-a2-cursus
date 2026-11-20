@@ -2,9 +2,9 @@
   "id": "basis-de-het",
   "moduleId": "basis",
   "title": "De of het",
-  "goal": "Je kiest de of het met regels, en je maakt meervoud en verkleinwoord.",
+  "goal": "Je kiest de of het, je gebruikt deze, dit, die en dat, en je maakt meervoud en verkleinwoord.",
   "scene": "woonkamer",
-  "estimatedMinutes": 20,
+  "estimatedMinutes": 30,
   "tags": [
     "basis:de-het",
     "grammar:lidwoord"
@@ -22,35 +22,94 @@
       "title": "De of het?",
       "blocks": [
         {
+          "kind": "text",
+          "md": "Elk zelfstandig naamwoord is een **de-woord** of een **het-woord**. Ongeveer **2 van de 3** woorden zijn de-woorden.\n\nLeer een nieuw woord daarom altijd **mét de of het**. Leer niet *huis*, maar *het huis*. Op de woordkaarten in deze app staat de of het er altijd bij."
+        },
+        {
+          "kind": "example",
+          "nl": "Ik woon in het huis naast de school.",
+          "note": "het huis · de school"
+        },
+        {
+          "kind": "tip",
+          "md": "**Twijfel je?** Kies dan **de**. Dan heb je meestal gelijk."
+        },
+        {
+          "kind": "text",
+          "md": "**Waarom is dat belangrijk?** De of het bepaalt ook andere woorden: *deze* of *dit* (verderop in deze les), *groot* of *grote* (bij Bijvoeglijk naamwoord) en *ons* of *onze*."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-020",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Ongeveer 2 van de 3 woorden zijn de-woorden. Twijfel je? Kies dan de.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je weet niet of een woord een de-woord of een het-woord is. Wat kies je?",
+        "options": [
+          "de: dat is meestal goed",
+          "het: dat is meestal goed",
+          "Ik laat de of het weg."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-de-het-l-02",
+      "title": "Regels die helpen",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Een paar regels helpen je. Kijk in deze volgorde:\n\n1. Is het **meervoud**? Dan altijd **de**: *de huizen, de kinderen*.\n2. Eindigt het woord op **-je**? Dan altijd **het**: *het blikje, het meisje*.\n3. Eindigt het op **-ing, -heid, -tie** of **-teit**? Dan **de**: *de woning, de gezondheid, de politie, de universiteit*.\n4. Is het een **werkwoord als woord**? Dan **het**: *het eten, het werken*.\n5. Eindigt het op **-ment** of **-um**? Meestal **het**: *het moment, het museum*.\n6. Begint het met **ge-, be-** of **ver-**? Vaak **het**: *het gesprek, het bericht, het verhaal*. Maar niet altijd: *de gemeente, de verjaardag*.\n7. Geen regel? Leer het woord mét de of het. Of kies **de**."
+        },
+        {
           "kind": "table",
           "headers": [
-            "Altijd het",
-            "Altijd de"
+            "Altijd de",
+            "Altijd het"
           ],
           "rows": [
             [
-              "verkleinwoorden (het blikje)",
-              "meervouden (de huizen)"
+              "meervoud: **de** huizen",
+              "-je: **het** blikje"
             ],
             [
-              "infinitief als woord (het eten)",
-              "personen (de juf)"
-            ],
-            [
-              "-ment, -isme (het moment)",
-              "-ing, -heid, -tie (de woning, de gezondheid, de politie)"
+              "-ing, -heid, -tie, -teit: **de** woning",
+              "werkwoord als woord: **het** eten"
             ]
           ]
         },
         {
-          "kind": "text",
-          "md": "Vaak **het**: woorden met **ge-, be-, ver-**: *het gesprek, het bericht, het verhaal*."
-        },
-        {
-          "kind": "text",
-          "md": "**Meervoud:** meestal **-en** (dozen, boeken). **-s** na -el, -er, -en, -je en leenwoorden (tafels, blikjes, auto's).\n\n**Verkleinwoord:** -je, -tje, -pje, -etje (blikje, boompje, balletje)."
+          "kind": "tip",
+          "md": "**Personen** zijn meestal **de**: *de juf, de buurman*. Maar let op: **het kind**, en **het meisje** (want: -je)."
         }
       ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-011",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Regel 1: meervoud is altijd de. De huizen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "de of het: ___ huizen",
+        "options": [
+          "de",
+          "het"
+        ],
+        "answer": 0
+      }
     },
     {
       "type": "exercise",
@@ -60,7 +119,7 @@
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Een verkleinwoord (-je) is altijd het.",
+        "explanation": "Regel 2: eindigt het woord op -je? Dan het. Het blikje.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "de of het: ___ blikje",
@@ -79,7 +138,7 @@
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Woorden op -ing zijn de.",
+        "explanation": "Regel 3: -ing is altijd de. De woning.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "de of het: ___ woning",
@@ -98,7 +157,7 @@
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Woorden op -heid zijn de.",
+        "explanation": "Regel 3: -heid is altijd de. De gezondheid.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "de of het: ___ gezondheid",
@@ -112,69 +171,12 @@
     {
       "type": "exercise",
       "exercise": {
-        "id": "basis-de-het-q-004",
-        "tags": [
-          "basis:de-het",
-          "grammar:lidwoord"
-        ],
-        "explanation": "Woorden met ge- zijn vaak het.",
-        "difficulty": 1,
-        "type": "mc",
-        "prompt": "de of het: ___ gesprek",
-        "options": [
-          "de",
-          "het"
-        ],
-        "answer": 1
-      }
-    },
-    {
-      "type": "exercise",
-      "exercise": {
-        "id": "basis-de-het-q-005",
-        "tags": [
-          "basis:de-het",
-          "grammar:lidwoord"
-        ],
-        "explanation": "Woorden op -tie zijn de.",
-        "difficulty": 1,
-        "type": "mc",
-        "prompt": "de of het: ___ politie",
-        "options": [
-          "de",
-          "het"
-        ],
-        "answer": 0
-      }
-    },
-    {
-      "type": "exercise",
-      "exercise": {
-        "id": "basis-de-het-q-006",
-        "tags": [
-          "basis:de-het",
-          "grammar:lidwoord"
-        ],
-        "explanation": "Woorden met be- zijn vaak het.",
-        "difficulty": 1,
-        "type": "mc",
-        "prompt": "de of het: ___ bericht",
-        "options": [
-          "de",
-          "het"
-        ],
-        "answer": 1
-      }
-    },
-    {
-      "type": "exercise",
-      "exercise": {
         "id": "basis-de-het-q-007",
         "tags": [
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Een infinitief als woord is het.",
+        "explanation": "Regel 4: een werkwoord als woord is het. Het eten.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "de of het: ___ eten",
@@ -188,15 +190,101 @@
     {
       "type": "exercise",
       "exercise": {
+        "id": "basis-de-het-q-021",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Regel 3: -ing is altijd de. De vergadering.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de of het.",
+        "text": "Ik heb ___ vergadering om tien uur.",
+        "options": [
+          [
+            "de",
+            "het"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-022",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Regel 5: -um is meestal het. Het museum.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de of het.",
+        "text": "Wanneer is ___ museum open?",
+        "options": [
+          [
+            "het",
+            "de"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-005",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Regel 3: -tie is altijd de. De politie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "de of het: ___ politie",
+        "options": [
+          "de",
+          "het"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
         "id": "basis-de-het-q-008",
         "tags": [
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Woorden op -ment zijn het.",
+        "explanation": "Regel 5: -ment is meestal het. Het moment.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "de of het: ___ moment",
+        "options": [
+          "de",
+          "het"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-004",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Regel 6: ge- is vaak het. Het gesprek. Maar niet altijd: de gemeente.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "de of het: ___ gesprek",
         "options": [
           "de",
           "het"
@@ -212,7 +300,7 @@
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Personen zijn de.",
+        "explanation": "Een persoon is meestal de: de juf. Let op: het kind en het meisje zijn anders.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "de of het: ___ juf",
@@ -226,15 +314,39 @@
     {
       "type": "exercise",
       "exercise": {
-        "id": "basis-de-het-q-010",
+        "id": "basis-de-het-q-023",
         "tags": [
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Woorden met ver- zijn vaak het.",
+        "explanation": "Kind is anders: het kind. Maar meervoud is altijd de: de kinderen.",
+        "difficulty": 2,
+        "type": "gap-choice",
+        "prompt": "Kies de of het.",
+        "text": "___ kind speelt buiten, en de andere kinderen ook.",
+        "options": [
+          [
+            "Het",
+            "De"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-006",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Regel 6: be- is vaak het. Het bericht.",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "de of het: ___ verhaal",
+        "prompt": "de of het: ___ bericht",
         "options": [
           "de",
           "het"
@@ -245,31 +357,12 @@
     {
       "type": "exercise",
       "exercise": {
-        "id": "basis-de-het-q-011",
-        "tags": [
-          "basis:de-het",
-          "grammar:lidwoord"
-        ],
-        "explanation": "Meervoud is altijd de.",
-        "difficulty": 1,
-        "type": "mc",
-        "prompt": "de of het: ___ huizen",
-        "options": [
-          "de",
-          "het"
-        ],
-        "answer": 0
-      }
-    },
-    {
-      "type": "exercise",
-      "exercise": {
         "id": "basis-de-het-q-012",
         "tags": [
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Verkleinwoord: het.",
+        "explanation": "Regel 2: -je is altijd het. Het kindje.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "de of het: ___ kindje",
@@ -283,22 +376,311 @@
     {
       "type": "exercise",
       "exercise": {
-        "id": "basis-de-het-q-013",
+        "id": "basis-de-het-q-010",
         "tags": [
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Meestal -en, en s wordt z: dozen.",
+        "explanation": "Regel 6: ver- is vaak het. Het verhaal. Maar niet altijd: de verjaardag.",
         "difficulty": 1,
         "type": "mc",
-        "prompt": "Wat is het meervoud van \"doos\"?",
+        "prompt": "de of het: ___ verhaal",
         "options": [
-          "dozen",
-          "doosen",
-          "doosjes",
-          "doos's"
+          "de",
+          "het"
         ],
-        "answer": 0
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-024",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Meisje (-je), museum (-um) en zwemmen (werkwoord als woord) zijn het-woorden. Vergadering (-ing) en informatie (-tie) zijn de-woorden.",
+        "difficulty": 2,
+        "type": "mc-multi",
+        "prompt": "Welke woorden zijn het-woorden? Kies alle goede woorden.",
+        "options": [
+          "meisje",
+          "vergadering",
+          "museum",
+          "informatie",
+          "zwemmen"
+        ],
+        "answers": [
+          0,
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-025",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Meisje eindigt op -je. Een woord op -je is altijd het: het meisje.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Het is \"het meisje\", want meisje eindigt op -je.",
+        "answer": true
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-de-het-l-03",
+      "title": "Deze, dit, die, dat",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Wil je iets aanwijzen? Dan zeg je **deze, dit, die** of **dat**. Welk woord je kiest, hangt af van twee dingen: is het een **de-woord** of een **het-woord**? En is het **hier** of **daar**?"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "",
+            "de-woord",
+            "het-woord"
+          ],
+          "rows": [
+            [
+              "hier, dichtbij",
+              "**deze** jas",
+              "**dit** huis"
+            ],
+            [
+              "daar, verder weg",
+              "**die** jas",
+              "**dat** huis"
+            ],
+            [
+              "meervoud",
+              "**deze / die** jassen",
+              "**deze / die** huizen"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "**Meervoud is altijd een de-woord.** Dus: *deze huizen, die boeken*. Nooit *dit huizen*."
+        },
+        {
+          "kind": "example",
+          "nl": "Wilt u deze jas of die jas daar?",
+          "note": "de jas · hier: deze · daar: die"
+        },
+        {
+          "kind": "example",
+          "nl": "Is dit formulier goed?",
+          "note": "het formulier · hier: dit"
+        },
+        {
+          "kind": "text",
+          "md": "**Dat** gebruik je ook voor iets wat iemand zegt of doet: *Dat is goed. Dat weet ik niet.*"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-026",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Brood is een het-woord, en het is hier: dit brood.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Ik wil graag ___ brood. (hier, het brood)",
+        "options": [
+          [
+            "dit",
+            "deze"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-027",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Jas is een de-woord, en hij is hier: deze jas.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Wilt u ___ jas passen? (hier, de jas)",
+        "options": [
+          [
+            "deze",
+            "dit"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-028",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Huis is een het-woord, en het is daar: dat huis.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Wie woont er in ___ huis? (daar, het huis)",
+        "options": [
+          [
+            "dat",
+            "die"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-029",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Schoenen is meervoud. Meervoud is altijd een de-woord: deze schoenen.",
+        "difficulty": 2,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "___ schoenen zijn te klein. (hier, de schoenen)",
+        "options": [
+          [
+            "Deze",
+            "Dit"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-030",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Man is een de-woord, en hij is daar: die man.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Ken je ___ man? (daar, de man)",
+        "options": [
+          [
+            "die",
+            "dat"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-031",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "De-woord: deze (hier) en die (daar). Het-woord: dit (hier) en dat (daar).",
+        "difficulty": 1,
+        "type": "match",
+        "prompt": "Welk woord hoort erbij?",
+        "pairs": [
+          [
+            "de jas, hier",
+            "deze jas"
+          ],
+          [
+            "het huis, hier",
+            "dit huis"
+          ],
+          [
+            "de jas, daar",
+            "die jas"
+          ],
+          [
+            "het huis, daar",
+            "dat huis"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-de-het-l-04",
+      "title": "Meervoud",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Meestal maak je het meervoud met **-en**: *boek, boeken*.\n\nMet **-s** na **-el, -er, -em, -en** en **-je**: *tafel, tafels · kamer, kamers · keuken, keukens · blikje, blikjes*.\n\nMet **'s** na een **a, i, o, u** of **y** aan het eind: *auto, auto's · menu, menu's · baby, baby's*."
+        },
+        {
+          "kind": "text",
+          "md": "**Let op de spelling bij -en.** Luister naar de klank:\n\n- **Lange klank** (aa, ee, oo, uu): de dubbele letter wordt één letter. *boom, bomen · school, scholen · straat, straten.*\n- **Korte klank** (a, e, i, o, u): de laatste letter wordt dubbel. *bus, bussen · bed, bedden · pen, pennen.*\n- Vaak wordt een **f** een **v**, en een **s** een **z**: *brief, brieven · huis, huizen · doos, dozen.*"
+        },
+        {
+          "kind": "tip",
+          "md": "**Een paar woorden zijn anders:** *kind, kinderen · ei, eieren · stad, steden.* Die leer je uit je hoofd."
+        },
+        {
+          "kind": "example",
+          "nl": "Ik heb twee kinderen en drie fietsen."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-018",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Meestal -en: boeken.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Maak het meervoud van \"boek\".",
+        "text": "Een boek, twee ___.",
+        "answers": [
+          [
+            "boeken"
+          ]
+        ]
       }
     },
     {
@@ -309,7 +691,7 @@
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Na -el gebruik je -s.",
+        "explanation": "Na -el: -s. Tafels.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is het meervoud van \"tafel\"?",
@@ -330,7 +712,7 @@
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Leenwoorden krijgen vaak 's: auto's.",
+        "explanation": "Na een a, i, o, u of y aan het eind: 's. Auto's.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is het meervoud van \"auto\"?",
@@ -346,12 +728,211 @@
     {
       "type": "exercise",
       "exercise": {
+        "id": "basis-de-het-q-032",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Na -er: -s. Kamers.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is het meervoud van \"kamer\"?",
+        "options": [
+          "kameren",
+          "kamers",
+          "kammers",
+          "kamer's"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-019",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Lange klank (oo): de dubbele o wordt één o. Scholen.",
+        "difficulty": 2,
+        "type": "gap-fill",
+        "prompt": "Maak het meervoud van \"school\".",
+        "text": "Een school, drie ___.",
+        "answers": [
+          [
+            "scholen"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-033",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Lange klank (aa): de dubbele a wordt één a. Straten.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Maak het meervoud van \"straat\".",
+        "text": "Een straat, twee ___.",
+        "answers": [
+          [
+            "straten"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-034",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Korte klank (u): de s wordt dubbel. Bussen.",
+        "difficulty": 1,
+        "type": "gap-fill",
+        "prompt": "Maak het meervoud van \"bus\".",
+        "text": "Een bus, twee ___.",
+        "answers": [
+          [
+            "bussen"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-035",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Bed heeft een korte klank (e). Dan wordt de d dubbel: bedden.",
+        "difficulty": 2,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Het meervoud van \"bed\" is \"beden\".",
+        "answer": false
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-013",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "De s wordt een z, en de dubbele o wordt één o. Dozen.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is het meervoud van \"doos\"?",
+        "options": [
+          "dozen",
+          "doosen",
+          "doosjes",
+          "doos's"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-036",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "De f wordt een v: brieven.",
+        "difficulty": 2,
+        "type": "gap-fill",
+        "prompt": "Maak het meervoud van \"brief\".",
+        "text": "Een brief, twee ___.",
+        "answers": [
+          [
+            "brieven"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-037",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Kind is anders: kinderen. Dit leer je uit je hoofd.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is het meervoud van \"kind\"?",
+        "options": [
+          "kinds",
+          "kinden",
+          "kinderen",
+          "kind's"
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-de-het-l-05",
+      "title": "Verkleinwoord",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Een **verkleinwoord** maakt iets klein, of vriendelijk: *een huisje, een momentje, een kopje koffie*.\n\nEen verkleinwoord is altijd **het**: *de tafel*, maar *het tafeltje*."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Wanneer?",
+            "Voorbeeld"
+          ],
+          "rows": [
+            [
+              "meestal: **-je**",
+              "boek, boekje · huis, huisje"
+            ],
+            [
+              "lange klank + l, n, r, en na -el: **-tje**",
+              "stoel, stoeltje · trein, treintje · tafel, tafeltje"
+            ],
+            [
+              "lange klank + m: **-pje**",
+              "boom, boompje · raam, raampje"
+            ],
+            [
+              "korte klank + l, n, r, ng: **-etje**",
+              "bal, balletje · pan, pannetje · ring, ringetje"
+            ]
+          ]
+        },
+        {
+          "kind": "tip",
+          "md": "Je hoeft niet alle regels te kennen. Je moet een verkleinwoord vooral **herkennen**: eindigt een woord op **-je**? Dan is het klein, en het is een **het-woord**."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
         "id": "basis-de-het-q-016",
         "tags": [
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Het verkleinwoord is -je: blikje.",
+        "explanation": "Meestal gewoon -je: blikje.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is het verkleinwoord van \"blik\"?",
@@ -367,16 +948,37 @@
     {
       "type": "exercise",
       "exercise": {
+        "id": "basis-de-het-q-038",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Lange klank (oe) met l: -tje. Stoeltje.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Wat is het verkleinwoord van \"stoel\"?",
+        "options": [
+          "stoelje",
+          "stoeltje",
+          "stoelletje",
+          "stoelpje"
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
         "id": "basis-de-het-q-017",
         "tags": [
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Na m gebruik je -pje: boompje.",
+        "explanation": "Lange klank met m: -pje. Boompje.",
         "difficulty": 2,
         "type": "gap-fill",
         "prompt": "Maak het verkleinwoord van \"boom\".",
-        "text": "Een boom → een ___",
+        "text": "Een boom, een klein ___.",
         "answers": [
           [
             "boompje"
@@ -387,19 +989,19 @@
     {
       "type": "exercise",
       "exercise": {
-        "id": "basis-de-het-q-018",
+        "id": "basis-de-het-q-039",
         "tags": [
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Meervoud meestal -en: boeken.",
-        "difficulty": 1,
+        "explanation": "Korte klank (a) met l: de l wordt dubbel, en dan -etje. Balletje.",
+        "difficulty": 2,
         "type": "gap-fill",
-        "prompt": "Maak het meervoud van \"boek\".",
-        "text": "Een boek → twee ___",
+        "prompt": "Maak het verkleinwoord van \"bal\".",
+        "text": "Een bal, een klein ___.",
         "answers": [
           [
-            "boeken"
+            "balletje"
           ]
         ]
       }
@@ -407,21 +1009,162 @@
     {
       "type": "exercise",
       "exercise": {
-        "id": "basis-de-het-q-019",
+        "id": "basis-de-het-q-040",
         "tags": [
           "basis:de-het",
           "grammar:lidwoord"
         ],
-        "explanation": "Lange klank: school → scholen (één o).",
+        "explanation": "De tafel, maar het tafeltje: een verkleinwoord is altijd het.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies de of het.",
+        "text": "___ tafeltje staat bij het raam.",
+        "options": [
+          [
+            "Het",
+            "De"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-de-het-l-06",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Oefen alles nog een keer, door elkaar: de of het, deze of dit, meervoud en verkleinwoord."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-041",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Informatie eindigt op -tie: de informatie.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Het informatie staat op de website.",
+          "De informatie staat op de website.",
+          "Dit informatie staat op de website.",
+          "Dat informatie staat op de website."
+        ],
+        "answer": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-042",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Het formulier is een het-woord. Daar is geen regel voor: dat leer je met het woord. Hier + het-woord: dit.",
         "difficulty": 2,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Ik heb ___ formulier al ingevuld. (hier, het formulier)",
+        "options": [
+          [
+            "dit",
+            "deze"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-043",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "De s wordt een z: huizen.",
+        "difficulty": 1,
         "type": "gap-fill",
-        "prompt": "Maak het meervoud van \"school\".",
-        "text": "Een school → drie ___",
+        "prompt": "Vul het meervoud in (huis).",
+        "text": "In onze straat staan oude ___.",
         "answers": [
           [
-            "scholen"
+            "huizen"
           ]
         ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-044",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Kinderen is meervoud: deze kinderen. Parkje is een verkleinwoord: het parkje.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Deze kinderen spelen in het parkje.",
+          "Dit kinderen spelen in de parkje.",
+          "Deze kinderen spelen in de parkje.",
+          "Dit kinderen spelen in het parkje."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-045",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "De fiets, en hij staat daar: die fiets.",
+        "difficulty": 1,
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Is ___ fiets daar van u? (daar, de fiets)",
+        "options": [
+          [
+            "die",
+            "dat"
+          ]
+        ],
+        "answers": [
+          0
+        ]
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-de-het-q-046",
+        "tags": [
+          "basis:de-het",
+          "grammar:lidwoord"
+        ],
+        "explanation": "Ongeveer 2 van de 3 woorden zijn de-woorden. Twijfel je? Dan is de meestal goed.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Ik twijfel tussen de en het. Dan kies ik de, want de meeste woorden zijn de-woorden.",
+        "answer": true
       }
     }
   ]

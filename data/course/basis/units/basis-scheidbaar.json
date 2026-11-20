@@ -339,7 +339,7 @@
           "basis:scheidbaar",
           "grammar:scheidbaar"
         ],
-        "explanation": "Bij scheidbare werkwoorden komt ge tussen in en leverd: ingeleverd.",
+        "explanation": "Bij scheidbare werkwoorden komt ge tussen het voorvoegsel en de rest: in + ge + leverd = ingeleverd.",
         "difficulty": 2,
         "type": "mc",
         "prompt": "Wat is het perfectum van \"inleveren\"?",

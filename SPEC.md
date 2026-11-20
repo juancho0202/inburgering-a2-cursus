@@ -771,8 +771,8 @@ Units (recommended order):
 | `basis-zinsbouw` | Werkwoord op plek 2 | Hoofdzin, inversie, vragen | 20 (word-order) |
 | `basis-bijzin` | Bijzinnen | dat, omdat, als, wanneer, of, terwijl, voordat, nadat vs want/maar/en/dus | 20 (word-order, gap-choice) |
 | `basis-niet-geen` | Niet of geen | Regels + plek van niet | 15 |
-| `basis-de-het` | De of het | Regels, meervoud, verkleinwoord | 20 |
-| `basis-bijvoeglijk` | Bijvoeglijk naamwoord en vergelijken | -e regel, groter/grootst, onregelmatig | 15 |
+| `basis-de-het` | De of het | Regels als stappenplan (twijfel: de), deze/dit/die/dat, meervoud met spelling, verkleinwoord | 30 |
+| `basis-bijvoeglijk` | Bijvoeglijk naamwoord en vergelijken | -e regel (ook na is), spelling, groter dan / net zo … als / grootst, onregelmatig | 25 |
 | `basis-voornaamwoorden` | Ik, mij, mijn | Persoonlijk + bezittelijk | 12 |
 | `basis-voorzetsels` | Voorzetsels en richting | in/op/bij/naast/tegenover…; rechtsaf/linksaf/rechtdoor | 15 |
 | `basis-signaalwoorden` | Signaalwoorden | maar, toch, want, omdat, dus, eerst/daarna, als | 15 |
