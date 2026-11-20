@@ -98,14 +98,19 @@ export function makeEnv(opts: { gateway?: () => ClaudeGateway; content?: Content
   return { env, clock };
 }
 
-/** Fake Claude: returns what `reply` gives for each call (JSON-stringified), and records the calls. */
+/** A raw answer from fake Claude: this exact text, ended for this reason (e.g. "max_tokens" when cut off). */
+export const rawAnswer = (text: string, stopReason: string) => ({ rawAnswer: text, stopReason });
+
+/** Fake Claude: returns what `reply` gives for each call (JSON-stringified, or a rawAnswer), and records the calls. */
 export function fakeGateway(reply: (call: { system: string; user: string; schema: Record<string, any> }) => unknown) {
-  const calls: { system: string; user: string }[] = [];
+  const calls: { system: string; user: string; maxTokens: number; effort?: string }[] = [];
   const gateway: ClaudeGateway = {
     async complete(args) {
-      calls.push({ system: args.system, user: args.user });
-      const out = reply({ system: args.system, user: args.user, schema: args.schema as Record<string, any> });
-      return { text: typeof out === "string" ? out : JSON.stringify(out), usage: { inputTokens: 100, outputTokens: 50 } };
+      calls.push({ system: args.system, user: args.user, maxTokens: args.maxTokens, effort: args.effort });
+      const out = reply({ system: args.system, user: args.user, schema: args.schema as Record<string, any> }) as any;
+      const usage = { inputTokens: 100, outputTokens: 50 };
+      if (out && typeof out === "object" && "rawAnswer" in out) return { text: out.rawAnswer, stopReason: out.stopReason, usage };
+      return { text: typeof out === "string" ? out : JSON.stringify(out), stopReason: "end_turn", usage };
     },
   };
   return { gateway, calls };

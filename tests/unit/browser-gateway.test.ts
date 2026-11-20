@@ -41,7 +41,7 @@ describe("browser gateway (the learner's own key, straight to Anthropic)", () =>
   it("sends the key, the model and the structured-output schema to api.anthropic.com only", async () => {
     const net = fakeNetwork(message('{"ok":true}'));
     const res = await gateway(net).complete({ system: "Systeem", user: "Vraag", schema: { type: "object" }, maxTokens: 123 });
-    expect(res).toEqual({ text: '{"ok":true}', usage: { inputTokens: 11, outputTokens: 22 } });
+    expect(res).toEqual({ text: '{"ok":true}', usage: { inputTokens: 11, outputTokens: 22 }, stopReason: "end_turn" });
 
     expect(net.seen).toHaveLength(1);
     const req = net.seen[0];
@@ -56,6 +56,30 @@ describe("browser gateway (the learner's own key, straight to Anthropic)", () =>
       output_config: { format: { type: "json_schema", schema: { type: "object" } } },
     });
     expect(JSON.stringify(req.body)).not.toContain(KEY); // the key goes in the header, never in the body
+  });
+
+  it("asks for the effort when the model takes it, and leaves it out for Haiku 4.5 (which answers it with an error)", async () => {
+    const net = fakeNetwork(message("{}"));
+    await gateway(net).complete({ system: "s", user: "u", schema: {}, maxTokens: 10, effort: "low" });
+    expect(net.seen[0].body.output_config).toEqual({ format: { type: "json_schema", schema: {} }, effort: "low" });
+
+    const haiku = fakeNetwork(message("{}"));
+    await createBrowserGateway({ getKey: async () => KEY, getModel: async () => "claude-haiku-4-5-20251001", fetch: haiku.fetch, maxRetries: 0 }).complete({ system: "s", user: "u", schema: {}, maxTokens: 10, effort: "low" });
+    expect(haiku.seen[0].body.output_config).toEqual({ format: { type: "json_schema", schema: {} } });
+
+    const none = fakeNetwork(message("{}"));
+    await gateway(none).complete({ system: "s", user: "u", schema: {}, maxTokens: 10 });
+    expect(none.seen[0].body.output_config).not.toHaveProperty("effort");
+  });
+
+  it("says why the answer ended; an answer that is only thinking (cut off) has no text, not a made-up {}", async () => {
+    const onlyThinking = () =>
+      new Response(
+        JSON.stringify({ id: "msg_2", type: "message", role: "assistant", model: "m", content: [{ type: "thinking", thinking: "", signature: "sig" }], stop_reason: "max_tokens", stop_sequence: null, usage: { input_tokens: 5, output_tokens: 1000 } }),
+        { status: 200, headers: { "content-type": "application/json" } },
+      );
+    const res = await gateway(fakeNetwork(onlyThinking)).complete({ system: "s", user: "u", schema: {}, maxTokens: 1000 });
+    expect(res).toEqual({ text: "", usage: { inputTokens: 5, outputTokens: 1000 }, stopReason: "max_tokens" });
   });
 
   it("without a key it throws NoApiKeyError and makes no request", async () => {
