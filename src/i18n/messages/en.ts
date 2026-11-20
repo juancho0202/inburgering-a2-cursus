@@ -480,6 +480,7 @@ const en: Messages = {
     exampleChecklist: "Example and checklist",
   },
   taalcafe: {
+    tapHint: "Tap a correction, or point at it, to see why.",
     title: "Language café",
     intro: "Talk with Sanne, like in a language café. After each message you see how to say it right: what is crossed out was wrong, the green part is correct.",
     choose: "Choose a topic",

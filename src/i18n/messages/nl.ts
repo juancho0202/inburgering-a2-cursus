@@ -479,6 +479,7 @@ const nl = {
     exampleChecklist: "Voorbeeld en checklist",
   },
   taalcafe: {
+    tapHint: "Tik op een verbetering, of wijs hem aan, voor de uitleg.",
     title: "Taalcafé",
     intro: "Praat met Sanne, zoals in een taalcafé. Na elk bericht zie je wat je goed kunt zeggen: wat doorgestreept is, was fout. Het groene stuk is goed.",
     choose: "Kies een onderwerp",

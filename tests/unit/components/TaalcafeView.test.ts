@@ -59,9 +59,100 @@ describe("a conversation", () => {
     const mine = learnerBubbles(w)[0];
     expect(mine.find("del").text()).toBe("ik heb gaan");
     expect(mine.find("ins").text()).toBe("ik ben gegaan");
-    expect(mine.text()).toContain("Gaan krijgt zijn.");
+    // The explanation waits in a tooltip until the learner asks for it.
+    expect(mine.text()).not.toContain("Gaan krijgt zijn.");
     expect(partnerBubbles(w).at(-1)!.text()).toContain("Leuk! Welke film?");
     expect((box(w).element as HTMLTextAreaElement).value).toBe("");
+  });
+
+  describe("the explanation of a correction, in a tooltip", () => {
+    const two = [fix, { original: "de bioscoop", corrected: "naar de bioscoop", type: "woordkeuze", explanation: "Gaan naar een plek: naar." }];
+    async function corrected() {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: two });
+      const w = await open();
+      await clickButton(w, "Het weekend");
+      await type(w, "Zaterdag ik heb gaan de bioscoop");
+      await clickButton(w, "Verstuur");
+      return w;
+    }
+    const chunks = (w: Awaited<ReturnType<typeof open>>) => w.findAll("[data-fix]");
+    const tooltip = (w: Awaited<ReturnType<typeof open>>) => w.find("[role=tooltip]");
+
+    it("opens on a tap with the right and wrong chunk and the explanation, and closes on a second tap", async () => {
+      const w = await corrected();
+      expect(w.text()).toContain("Tik op een verbetering, of wijs hem aan, voor de uitleg.");
+      expect(tooltip(w).exists()).toBe(false);
+      await chunks(w)[0].trigger("click");
+      expect(tooltip(w).text()).toContain("ik heb gaan");
+      expect(tooltip(w).text()).toContain("ik ben gegaan");
+      expect(tooltip(w).text()).toContain("Gaan krijgt zijn.");
+      expect(chunks(w)[0].attributes("aria-expanded")).toBe("true");
+      expect(chunks(w)[0].attributes("aria-describedby")).toBe(tooltip(w).attributes("id"));
+      await chunks(w)[0].trigger("click");
+      expect(tooltip(w).exists()).toBe(false);
+      expect(chunks(w)[0].attributes("aria-expanded")).toBe("false");
+    });
+
+    it("shows one at a time: tapping another correction switches to its explanation", async () => {
+      const w = await corrected();
+      await chunks(w)[0].trigger("click");
+      await chunks(w)[1].trigger("click");
+      expect(w.findAll("[role=tooltip]")).toHaveLength(1);
+      expect(tooltip(w).text()).toContain("Gaan naar een plek: naar.");
+    });
+
+    it("opens on hover with a mouse and closes when the mouse leaves, but a finger does not open it by passing over", async () => {
+      const w = await corrected();
+      await chunks(w)[0].trigger("pointerenter", { pointerType: "touch" });
+      expect(tooltip(w).exists()).toBe(false);
+      await chunks(w)[0].trigger("pointerenter", { pointerType: "mouse" });
+      expect(tooltip(w).text()).toContain("Gaan krijgt zijn.");
+      await chunks(w)[0].trigger("pointerleave", { pointerType: "mouse" });
+      expect(tooltip(w).exists()).toBe(false);
+    });
+
+    it("a clicked tooltip stays when the mouse leaves", async () => {
+      const w = await corrected();
+      await chunks(w)[0].trigger("pointerenter", { pointerType: "mouse" });
+      await chunks(w)[0].trigger("click");
+      await chunks(w)[0].trigger("pointerleave", { pointerType: "mouse" });
+      expect(tooltip(w).text()).toContain("Gaan krijgt zijn.");
+    });
+
+    it("opens with the keyboard (focus), and Escape or a tap anywhere else closes it", async () => {
+      const w = await corrected();
+      await chunks(w)[1].trigger("focus");
+      expect(tooltip(w).text()).toContain("Gaan naar een plek: naar.");
+      document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
+      await flushPromises();
+      expect(tooltip(w).exists()).toBe(false);
+
+      await chunks(w)[0].trigger("click");
+      expect(tooltip(w).exists()).toBe(true);
+      document.body.click();
+      await flushPromises();
+      expect(tooltip(w).exists()).toBe(false);
+    });
+
+    it("stops listening to the page when the learner leaves the taalcafé", async () => {
+      const w = await corrected();
+      const removed = vi.spyOn(document, "removeEventListener");
+      w.unmount();
+      expect(removed.mock.calls.map((c) => c[0])).toEqual(expect.arrayContaining(["click", "keydown"]));
+    });
+
+    it("still lists a correction that could not be placed in the text, so no explanation is lost", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", {
+        reply: "Leuk!",
+        corrections: [fix, { original: "heb gaan", corrected: "ben gegaan", type: "werkwoord", explanation: "Overlapt met de eerste." }],
+      });
+      const w = await open();
+      await clickButton(w, "Het weekend");
+      await type(w, "Zaterdag ik heb gaan");
+      await clickButton(w, "Verstuur");
+      expect(chunks(w)).toHaveLength(1);
+      expect(learnerBubbles(w)[0].find("ul").text()).toContain("Overlapt met de eerste.");
+    });
   });
 
   it("says a message without mistakes is well written, and the next turn sends the whole talk", async () => {

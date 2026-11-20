@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, ref } from "vue";
+import { computed, nextTick, onBeforeUnmount, onMounted, ref } from "vue";
 import { RouterLink } from "vue-router";
 import type { WritingFeedback } from "@shared/schemas/claude";
 import { buildSegments } from "@shared/logic/corrections";
@@ -27,6 +27,44 @@ const end = ref<HTMLElement | null>(null);
 // Every new conversation gets a new number: an answer to a request from an earlier conversation is ignored.
 let conversation = 0;
 
+// The explanation of one correction, shown as a tooltip: on hover with a mouse, on tap, or on keyboard focus.
+// A tap (or click) pins it until the next tap, Escape, or a tap anywhere else; only one is open at a time.
+const tip = ref<{ m: number; c: number; pinned: boolean } | null>(null);
+const isOpen = (m: number, c: number) => tip.value?.m === m && tip.value.c === c;
+const tipId = (m: number, c: number) => `taalcafe-tip-${m}-${c}`;
+
+function hoverIn(e: PointerEvent, m: number, c: number) {
+  // A finger also sends pointerenter: only a mouse opens on hover, a tap goes through onTap.
+  if (e.pointerType !== "mouse" || tip.value?.pinned) return;
+  tip.value = { m, c, pinned: false };
+}
+function hoverOut(e: PointerEvent, m: number, c: number) {
+  if (e.pointerType === "mouse" && isOpen(m, c) && !tip.value!.pinned) tip.value = null;
+}
+function onTap(m: number, c: number) {
+  tip.value = isOpen(m, c) && tip.value!.pinned ? null : { m, c, pinned: true };
+}
+function onFocus(m: number, c: number) {
+  if (!tip.value) tip.value = { m, c, pinned: false };
+}
+function onBlur(m: number, c: number) {
+  if (isOpen(m, c) && !tip.value!.pinned) tip.value = null;
+}
+function closeOnOutside(e: Event) {
+  if (tip.value && !(e.target as Element | null)?.closest?.("[data-fix]")) tip.value = null;
+}
+function closeOnEscape(e: KeyboardEvent) {
+  if (e.key === "Escape") tip.value = null;
+}
+onMounted(() => {
+  document.addEventListener("click", closeOnOutside);
+  document.addEventListener("keydown", closeOnEscape);
+});
+onBeforeUnmount(() => {
+  document.removeEventListener("click", closeOnOutside);
+  document.removeEventListener("keydown", closeOnEscape);
+});
+
 const learnerTurns = computed(() => messages.value.filter((m) => m.from === "learner").length);
 const turnsLeft = computed(() => TAALCAFE_MAX_TURNS - learnerTurns.value);
 const done = computed(() => turnsLeft.value <= 0);
@@ -35,6 +73,7 @@ function start(t: TaalcafeTopic) {
   conversation++;
   topic.value = t;
   messages.value = [{ from: "partner", text: t.opener }];
+  tip.value = null;
   draft.value = "";
   error.value = null;
   sending.value = false;
@@ -44,6 +83,7 @@ function reset() {
   conversation++;
   topic.value = null;
   messages.value = [];
+  tip.value = null;
   draft.value = "";
   error.value = null;
   sending.value = false;
@@ -90,6 +130,12 @@ function onKey(e: KeyboardEvent) {
 }
 
 const segmentsOf = (m: Extract<Message, { from: "learner" }>) => buildSegments(m.text, m.corrections ?? []);
+/** Corrections that could not be placed in the text (overlapping ones): listed under the message, so none is lost. */
+const unplaced = (m: Extract<Message, { from: "learner" }>) => {
+  const shown = new Set(segmentsOf(m).flatMap((s) => (s.kind === "fix" ? [s.index] : [])));
+  return (m.corrections ?? []).filter((_, i) => !shown.has(i));
+};
+const anyCorrections = computed(() => messages.value.some((m) => m.from === "learner" && m.corrections?.length));
 </script>
 
 <template>
@@ -127,19 +173,42 @@ const segmentsOf = (m: Extract<Message, { from: "learner" }>) => buildSegments(m
             <p class="mb-1 flex items-center gap-2 text-sm font-bold text-muted">{{ TAALCAFE_PARTNER }} <SpeakButton :text="m.text" /></p>
             <p class="whitespace-pre-line text-lg">{{ m.text }}</p>
           </div>
-          <div v-else class="max-w-[85%] rounded-2xl bg-brand-bg p-3" data-from="learner" :class="{ 'opacity-70': m.corrections === null }">
+          <div v-else class="relative max-w-[85%] rounded-2xl bg-brand-bg p-3" data-from="learner" :class="{ 'opacity-70': m.corrections === null }">
             <p class="whitespace-pre-line text-lg">
               <template v-for="(s, si) in segmentsOf(m)" :key="si">
                 <span v-if="s.kind === 'text'">{{ s.text }}</span>
-                <span v-else
-                  ><del class="rounded bg-bad-bg px-0.5 text-bad line-through">{{ s.original }}</del>
-                  <ins class="ml-1 rounded bg-good-bg px-0.5 font-semibold text-good no-underline">{{ s.corrected }}</ins></span
+                <!-- display: inline, so a correction wraps with the sentence like the rest of the text -->
+                <button
+                  v-else
+                  type="button"
+                  data-fix
+                  class="inline cursor-help rounded text-left focus-visible:outline-2 focus-visible:outline-brand"
+                  :aria-expanded="isOpen(i, s.index)"
+                  :aria-describedby="isOpen(i, s.index) ? tipId(i, s.index) : undefined"
+                  @pointerenter="hoverIn($event, i, s.index)"
+                  @pointerleave="hoverOut($event, i, s.index)"
+                  @focus="onFocus(i, s.index)"
+                  @blur="onBlur(i, s.index)"
+                  @click="onTap(i, s.index)"
                 >
+                  <del class="rounded bg-bad-bg px-0.5 text-bad line-through">{{ s.original }}</del>
+                  <ins class="ml-1 rounded bg-good-bg px-0.5 font-semibold text-good underline decoration-dotted underline-offset-4">{{ s.corrected }}</ins>
+                </button>
               </template>
             </p>
+            <!-- Above the bubble and from its right edge leftwards: the learner's bubbles sit on the right, so it never runs off a phone screen -->
+            <div
+              v-if="tip && tip.m === i && m.corrections?.[tip.c]"
+              :id="tipId(i, tip.c)"
+              role="tooltip"
+              class="card absolute bottom-full right-0 z-20 mb-2 w-max max-w-[min(18rem,calc(100vw-2rem))] border-2 border-brand p-3 text-base shadow-lg"
+            >
+              <p><del class="text-bad">{{ m.corrections[tip.c].original }}</del> → <strong class="text-good">{{ m.corrections[tip.c].corrected }}</strong></p>
+              <p class="mt-1">{{ m.corrections[tip.c].explanation }}</p>
+            </div>
             <p v-if="m.corrections && !m.corrections.length" class="mt-1 text-sm font-semibold text-good">✓ {{ lang.feedback("taalcafe.good") }}</p>
-            <ul v-else-if="m.corrections" class="mt-2 grid gap-1 border-t border-line pt-2 text-sm">
-              <li v-for="(c, ci) in m.corrections" :key="ci"><del class="text-bad">{{ c.original }}</del> → <strong class="text-good">{{ c.corrected }}</strong>: {{ c.explanation }}</li>
+            <ul v-else-if="m.corrections && unplaced(m).length" class="mt-2 grid gap-1 border-t border-line pt-2 text-sm">
+              <li v-for="(c, ci) in unplaced(m)" :key="ci"><del class="text-bad">{{ c.original }}</del> → <strong class="text-good">{{ c.corrected }}</strong>: {{ c.explanation }}</li>
             </ul>
           </div>
         </li>
@@ -147,6 +216,7 @@ const segmentsOf = (m: Extract<Message, { from: "learner" }>) => buildSegments(m
       </ol>
       <div ref="end" />
 
+      <p v-if="anyCorrections" class="mt-3 text-sm text-muted">ⓘ {{ lang.t("taalcafe.tapHint") }}</p>
       <p v-if="error" class="mt-4 rounded-2xl bg-bad-bg p-4 text-bad" role="alert">✗ {{ error }}</p>
       <p v-if="done" class="card mt-4 p-4 font-semibold">{{ lang.t("taalcafe.done") }}</p>
       <form v-else class="mt-4 grid gap-2" @submit.prevent="send">
