@@ -4,7 +4,7 @@
   "title": "Het perfectum",
   "goal": "Je maakt het perfectum met hebben of zijn en het voltooid deelwoord.",
   "scene": "weekend",
-  "estimatedMinutes": 25,
+  "estimatedMinutes": 30,
   "tags": [
     "basis:perfectum",
     "grammar:perfectum"
@@ -648,6 +648,127 @@
         "prompt": "Klopt dit?",
         "statement": "Bij regelmatige werkwoorden eindigt het deelwoord op -d als de stam op een l eindigt (bellen → gebeld).",
         "answer": true
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-perfectum-l-02",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "tip",
+          "md": "Perfectum: **hebben of zijn** op plek 2, het **deelwoord** aan het eind. Regelmatig: ge + stam + t of d ('t kofschip).\n\n**Let op:** werkwoorden die beginnen met **be-, ver-, ge-, her-** of **ont-** krijgen geen extra ge-: *betalen, betaald · vergeten, vergeten.*"
+        },
+        {
+          "kind": "text",
+          "md": "Oefen nu met **nieuwe** zinnen. Denk bij elke vraag aan de regel."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-028",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "type": "gap-fill",
+        "prompt": "Vul het voltooid deelwoord in (dansen).",
+        "text": "Wij hebben op het feest ___ .",
+        "answers": [
+          [
+            "gedanst"
+          ]
+        ],
+        "explanation": "Stam dans eindigt op een s ('t kofschip): -t. Gedanst.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-029",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "type": "gap-fill",
+        "prompt": "Vul het voltooid deelwoord in (betalen).",
+        "text": "Ik heb de huur al ___ .",
+        "answers": [
+          [
+            "betaald"
+          ]
+        ],
+        "explanation": "Be- krijgt geen extra ge-. Stam betaal eindigt op een l: -d. Betaald.",
+        "difficulty": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-030",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "type": "mc",
+        "prompt": "Wat is het deelwoord van \"vergeten\"?",
+        "options": [
+          "gevergeten",
+          "vergeten",
+          "vergeet",
+          "gevergeet"
+        ],
+        "answer": 1,
+        "explanation": "Ver- krijgt geen extra ge-: vergeten.",
+        "difficulty": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-031",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "type": "gap-choice",
+        "prompt": "Kies hebben of zijn.",
+        "text": "Mijn zus ___ gisteren naar Amsterdam gegaan.",
+        "options": [
+          [
+            "is",
+            "heeft"
+          ]
+        ],
+        "answers": [
+          0
+        ],
+        "explanation": "Gaan naar een plek: zijn.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-perfectum-q-032",
+        "tags": [
+          "basis:perfectum",
+          "grammar:perfectum"
+        ],
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Ik heb gisteren gewerkt.",
+          "Ik ben gisteren gewerkt.",
+          "Ik heb gisteren gewerkd.",
+          "Ik gisteren heb gewerkt."
+        ],
+        "answer": 0,
+        "explanation": "Werken: hebben. Stam werk eindigt op een k: gewerkt.",
+        "difficulty": 1
       }
     }
   ]

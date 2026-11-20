@@ -84,7 +84,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "Een uitzendbureau zoekt tijdelijk werk voor mensen.",
+        "explanation": "Een uitzendbureau zoekt tijdelijk werk voor je. Het stuurt je naar een bedrijf dat iemand nodig heeft.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is een uitzendbureau?",
@@ -124,7 +124,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "Netwerk = de mensen die je kent.",
+        "explanation": "Je netwerk zijn de mensen die je kent: familie, vrienden, buren. Veel mensen vinden zo werk.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Pieter hoort van een vriend dat er werk is bij een bakker. Hoe heeft hij de baan gevonden?",
@@ -144,7 +144,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "Je cv bevat je opleiding en werkervaring.",
+        "explanation": "Bij een sollicitatie stuur je je cv (je opleiding en werkervaring) en een korte brief.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat stuur je mee bij een sollicitatie?",
@@ -203,7 +203,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "Een vast contract heeft geen einddatum.",
+        "explanation": "Vast betekent: er is geen einddatum. Een tijdelijk contract stopt op een datum.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Mehmet heeft een vast contract. Wat betekent dat?",
@@ -243,7 +243,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "Vakantiegeld is extra geld, meestal in mei/juni.",
+        "explanation": "Vakantiegeld is extra geld van je werkgever. Je krijgt het meestal in mei of juni, voor de zomervakantie.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wanneer krijgen veel mensen vakantiegeld?",
@@ -263,7 +263,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "De loonstrook laat bruto, netto en belasting zien.",
+        "explanation": "Op je loonstrook zie je bruto (alles), de belasting, en netto (wat je echt krijgt).",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Waar zie je hoeveel belasting er van je salaris af gaat?",
@@ -283,7 +283,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "In Nederland bestaat een wettelijk minimumloon.",
+        "explanation": "Ja. Een werkgever mag niet minder betalen dan het minimumloon. Het bedrag verandert, de regel niet.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Een cursist vraagt: \"Is er een minimumloon in Nederland?\" Wat is het antwoord?",
@@ -327,7 +327,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "Ziekmelden: meteen je werkgever bellen.",
+        "explanation": "Ziek? Bel meteen je werkgever. Dat heet ziekmelden.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Priya is ziek en kan niet werken. Wat doet ze het eerst?",
@@ -367,7 +367,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "Discriminatie op werk is verboden.",
+        "explanation": "Gelijk werk, gelijk loon. Minder betalen omdat iemand een vrouw is, is discriminatie. Dat is verboden.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Een vrouw krijgt minder loon dan een man voor hetzelfde werk, alleen omdat ze een vrouw is. Mag dat?",
@@ -387,7 +387,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "Een vakbond helpt werknemers met hun rechten.",
+        "explanation": "Een vakbond komt op voor werknemers, bijvoorbeeld bij loon en ontslag. Je wordt zelf lid.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat doet een vakbond?",
@@ -407,7 +407,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "De OR praat namens de werknemers met de directie.",
+        "explanation": "De OR (ondernemingsraad) is een groep gekozen werknemers. Zij praten namens alle werknemers met de directie.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat is een ondernemingsraad (OR)?",
@@ -427,7 +427,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "Een eigen bedrijf schrijf je in bij de KVK.",
+        "explanation": "KVK betekent Kamer van Koophandel: daar schrijf je een eigen bedrijf in.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Jan wil een eigen bedrijf beginnen. Waar schrijft hij zich in?",
@@ -491,7 +491,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "Het UWV betaalt de WW-uitkering na ontslag.",
+        "explanation": "Ontslagen, en genoeg gewerkt: de WW van het UWV (de W van werk). Niet de gemeente.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wim is ontslagen. Hij heeft genoeg gewerkt. Naar welke instantie gaat hij voor een uitkering?",
@@ -531,7 +531,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "Bijstand komt van de gemeente.",
+        "explanation": "Geen werk en geen WW: bijstand van de gemeente.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Linda heeft geen werk en geen ander inkomen. Waar vraagt ze bijstand aan?",
@@ -551,7 +551,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "De SVB betaalt kinderbijslag.",
+        "explanation": "Kinderbijslag komt van de SVB: geld voor het begin en het eind van je leven (kinderbijslag en AOW).",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Bij welke instantie vraag je kinderbijslag aan?",
@@ -591,7 +591,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "Huurtoeslag komt van de Belastingdienst.",
+        "explanation": "Huurtoeslag is een toeslag. Alle toeslagen regelt de Belastingdienst.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Fatima heeft weinig inkomen en betaalt veel voor haar huur. Wat kan ze bij de Belastingdienst aanvragen?",
@@ -1008,7 +1008,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "Dat is de ondernemingsraad (OR).",
+        "explanation": "Dat is de OR: die zit in het bedrijf. Een vakbond helpt werknemers ook, maar van buiten het bedrijf.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wie praat namens de werknemers met de directie over plannen in het bedrijf?",
@@ -1134,7 +1134,7 @@
         "tags": [
           "knm:werk"
         ],
-        "explanation": "De gemeente regelt de MAP.",
+        "explanation": "De MAP hoort bij je inburgering. Je gemeente regelt hem.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wie regelt de MAP voor je?",
@@ -1145,6 +1145,92 @@
           "De gemeente"
         ],
         "answer": 3
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-werk-l-09",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Oefen alles nog een keer, door elkaar. Net als in het examen: denk eerst na over de situatie."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-044",
+        "tags": [
+          "knm:werk"
+        ],
+        "type": "mc",
+        "prompt": "Sara is maandagochtend ziek. Wat doet ze?",
+        "options": [
+          "Ze belt meteen haar werkgever.",
+          "Ze stuurt vrijdag een e-mail.",
+          "Ze belt het UWV.",
+          "Ze gaat toch werken."
+        ],
+        "answer": 0,
+        "explanation": "Ziek? Bel meteen je werkgever: dat heet ziekmelden.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-045",
+        "tags": [
+          "knm:werk"
+        ],
+        "type": "mc",
+        "prompt": "Op de loonstrook van Ali staat bruto € 2.000 en netto € 1.700. Hoeveel krijgt hij op zijn rekening?",
+        "options": [
+          "€ 1.700",
+          "€ 2.000",
+          "€ 300",
+          "€ 3.700"
+        ],
+        "answer": 0,
+        "explanation": "Netto is wat je echt krijgt, na de belasting. Bruto is het bedrag vóór de belasting.",
+        "difficulty": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-046",
+        "tags": [
+          "knm:werk"
+        ],
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Ben je werkloos? Dan krijg je de WW vanzelf, ook zonder aanvraag.",
+        "answer": false,
+        "explanation": "De WW vraag je zelf aan bij het UWV, met je DigiD.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-werk-q-047",
+        "tags": [
+          "knm:werk"
+        ],
+        "type": "mc",
+        "prompt": "Mehmet heeft een tijdelijk contract tot 1 maart. Wat betekent dat?",
+        "options": [
+          "Zijn contract stopt op 1 maart, als hij geen nieuw contract krijgt.",
+          "Hij werkt voor altijd bij het bedrijf.",
+          "Hij krijgt op 1 maart vakantiegeld.",
+          "Hij moet op 1 maart een cv sturen."
+        ],
+        "answer": 0,
+        "explanation": "Een tijdelijk contract heeft een einddatum. Een vast contract niet.",
+        "difficulty": 1
       }
     }
   ]

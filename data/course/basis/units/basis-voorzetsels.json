@@ -4,7 +4,7 @@
   "title": "Voorzetsels en richting",
   "goal": "Je gebruikt voorzetsels van plaats en richting, en je begrijpt een route.",
   "scene": "route",
-  "estimatedMinutes": 15,
+  "estimatedMinutes": 20,
   "tags": [
     "basis:voorzetsels",
     "grammar:voorzetsel"
@@ -377,6 +377,112 @@
           "van"
         ],
         "answer": 1
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-voorzetsels-l-02",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "tip",
+          "md": "**Plaats:** in, op, bij, naast, tegenover, tussen. **Richting:** naar. **Rechtsaf** en **linksaf**: afslaan. **Rechtdoor**: niet afslaan."
+        },
+        {
+          "kind": "text",
+          "md": "Oefen nu met **nieuwe** zinnen. Denk bij elke vraag aan de regel."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-015",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "De bushalte is ___ de supermarkt. (aan de andere kant van de straat)",
+        "options": [
+          [
+            "tegenover",
+            "naast",
+            "in"
+          ]
+        ],
+        "answers": [
+          0
+        ],
+        "explanation": "Aan de andere kant van de straat: tegenover.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-016",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Ik woon ___ de tweede verdieping.",
+        "options": [
+          [
+            "op",
+            "in",
+            "aan"
+          ]
+        ],
+        "answers": [
+          0
+        ],
+        "explanation": "Je woont op een verdieping.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-017",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "type": "mc",
+        "prompt": "Je hoort: \"Ga bij het stoplicht linksaf en dan de eerste straat rechts.\" Wat doe je bij het stoplicht?",
+        "options": [
+          "Naar links",
+          "Naar rechts",
+          "Rechtdoor",
+          "Terug"
+        ],
+        "answer": 0,
+        "explanation": "Linksaf: naar links afslaan.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-voorzetsels-q-018",
+        "tags": [
+          "basis:voorzetsels",
+          "grammar:voorzetsel"
+        ],
+        "type": "gap-fill",
+        "prompt": "Vul in: rechtdoor, rechtsaf of linksaf.",
+        "text": "U gaat niet naar links en niet naar rechts. U loopt ___ .",
+        "answers": [
+          [
+            "rechtdoor"
+          ]
+        ],
+        "explanation": "Niet afslaan: rechtdoor.",
+        "difficulty": 1
       }
     }
   ]

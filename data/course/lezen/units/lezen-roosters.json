@@ -23,6 +23,99 @@
       ]
     },
     {
+      "type": "lesson",
+      "id": "lezen-roosters-l-02",
+      "title": "Zo vind je het antwoord",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Kijk mee hoe je het antwoord vindt. **Eerst de vraag, dan de tekst.**"
+        },
+        {
+          "kind": "document",
+          "docType": "rooster",
+          "title": "Zwembad De Golf: openingstijden",
+          "body": "Dag | Banen zwemmen | Vrij zwemmen\nmaandag | 7.00 – 9.00 | 14.00 – 17.00\ndinsdag | 7.00 – 9.00 | gesloten\nwoensdag | 7.00 – 9.00 | 13.00 – 17.00\nzaterdag | 8.00 – 10.00 | 10.00 – 16.00\n\nIn de schoolvakanties: vrij zwemmen elke dag van 10.00 tot 17.00 uur.\nKinderen tot 8 jaar zwemmen alleen met een volwassene."
+        },
+        {
+          "kind": "text",
+          "md": "**De vraag:** *U wilt op een gewone dinsdagmiddag vrij zwemmen. Kan dat?*\n\n1. **Zoek eerst de rij:** de dag, *dinsdag*.\n2. **Zoek dan de kolom:** *vrij zwemmen*. Daar staat: *gesloten*.\n3. **Pas op:** op dinsdag staat ook *7.00 – 9.00*. Maar dat is een andere kolom: banen zwemmen, en 's ochtends.\n4. **Lees de kleine letters:** in de schoolvakanties is het anders. Maar de vraag gaat over een gewone dinsdag.\n\n**Antwoord:** nee, op dinsdag is vrij zwemmen gesloten."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-roosters-q-006",
+        "tags": [
+          "lezen:rooster"
+        ],
+        "explanation": "Zoek eerst het kernwoord uit de vraag in de tekst. Lees dan de zin eromheen.",
+        "difficulty": 1,
+        "type": "reading",
+        "prompt": "Lees de tekst nog een keer en beantwoord de vragen.",
+        "document": {
+          "kind": "document",
+          "docType": "rooster",
+          "title": "Zwembad De Golf: openingstijden",
+          "body": "Dag | Banen zwemmen | Vrij zwemmen\nmaandag | 7.00 – 9.00 | 14.00 – 17.00\ndinsdag | 7.00 – 9.00 | gesloten\nwoensdag | 7.00 – 9.00 | 13.00 – 17.00\nzaterdag | 8.00 – 10.00 | 10.00 – 16.00\n\nIn de schoolvakanties: vrij zwemmen elke dag van 10.00 tot 17.00 uur.\nKinderen tot 8 jaar zwemmen alleen met een volwassene."
+        },
+        "questions": [
+          {
+            "id": "lezen-roosters-q-006-1",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Wanneer kunt u op zaterdag vrij zwemmen?",
+            "options": [
+              "Van 10.00 tot 16.00 uur",
+              "Van 8.00 tot 10.00 uur",
+              "Van 14.00 tot 17.00 uur",
+              "Niet"
+            ],
+            "answer": 0,
+            "explanation": "Rij zaterdag, kolom vrij zwemmen: 10.00 – 16.00."
+          },
+          {
+            "id": "lezen-roosters-q-006-2",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Uw dochter is 6 jaar. Mag ze alleen zwemmen?",
+            "options": [
+              "Nee, alleen met een volwassene.",
+              "Ja, altijd.",
+              "Ja, maar alleen op zaterdag.",
+              "Ja, in de vakantie."
+            ],
+            "answer": 0,
+            "explanation": "De kleine letters onder de tabel: kinderen tot 8 jaar alleen met een volwassene."
+          },
+          {
+            "id": "lezen-roosters-q-006-3",
+            "tags": [
+              "lezen:rooster"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Het is schoolvakantie. Kunt u op dinsdag om 11.00 uur vrij zwemmen?",
+            "options": [
+              "Ja, in de vakantie elke dag van 10.00 tot 17.00 uur.",
+              "Nee, op dinsdag is het gesloten.",
+              "Nee, alleen banen zwemmen.",
+              "Nee, pas vanaf 14.00 uur."
+            ],
+            "answer": 0,
+            "explanation": "In de schoolvakanties geldt de regel onder de tabel: elke dag van 10.00 tot 17.00 uur."
+          }
+        ]
+      }
+    },
+    {
       "type": "exercise",
       "exercise": {
         "id": "lezen-roosters-q-001",

@@ -4,7 +4,7 @@
   "title": "Niet of geen",
   "goal": "Je kiest tussen niet en geen en zet niet op de goede plek.",
   "scene": "koelkast",
-  "estimatedMinutes": 15,
+  "estimatedMinutes": 20,
   "tags": [
     "basis:niet-geen",
     "grammar:ontkenning"
@@ -370,6 +370,137 @@
           "Hij gaat naar school niet."
         ],
         "answer": 2
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-niet-geen-l-02",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "tip",
+          "md": "**Geen** = niet + een: bij een woord met *een* of zonder lidwoord (*geen tijd*). **Niet** bij de rest: bij een werkwoord, een bijvoeglijk naamwoord, of *de/het/mijn* + woord."
+        },
+        {
+          "kind": "text",
+          "md": "Oefen nu met **nieuwe** zinnen. Denk bij elke vraag aan de regel."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-niet-geen-q-016",
+        "tags": [
+          "basis:niet-geen",
+          "grammar:ontkenning"
+        ],
+        "type": "gap-choice",
+        "prompt": "Kies niet of geen.",
+        "text": "Ik heb ___ fiets meer.",
+        "options": [
+          [
+            "geen",
+            "niet"
+          ]
+        ],
+        "answers": [
+          0
+        ],
+        "explanation": "Een fiets wordt geen fiets.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-niet-geen-q-017",
+        "tags": [
+          "basis:niet-geen",
+          "grammar:ontkenning"
+        ],
+        "type": "gap-choice",
+        "prompt": "Kies niet of geen.",
+        "text": "Ik vind de film ___ leuk.",
+        "options": [
+          [
+            "niet",
+            "geen"
+          ]
+        ],
+        "answers": [
+          0
+        ],
+        "explanation": "Bij een bijvoeglijk naamwoord (leuk): niet.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-niet-geen-q-018",
+        "tags": [
+          "basis:niet-geen",
+          "grammar:ontkenning"
+        ],
+        "type": "gap-choice",
+        "prompt": "Kies niet of geen.",
+        "text": "Hij spreekt ___ Nederlands.",
+        "options": [
+          [
+            "geen",
+            "niet"
+          ]
+        ],
+        "answers": [
+          0
+        ],
+        "explanation": "Nederlands (de taal) zonder lidwoord: geen.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-niet-geen-q-019",
+        "tags": [
+          "basis:niet-geen",
+          "grammar:ontkenning"
+        ],
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "ga",
+          "vandaag",
+          "niet",
+          "naar",
+          "mijn",
+          "werk."
+        ],
+        "explanation": "Niet staat vóór het voorzetsel naar.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-niet-geen-q-020",
+        "tags": [
+          "basis:niet-geen",
+          "grammar:ontkenning"
+        ],
+        "type": "mc",
+        "prompt": "Maak de zin negatief: \"Wij hebben een auto.\"",
+        "options": [
+          "Wij hebben geen auto.",
+          "Wij hebben niet een auto.",
+          "Wij niet hebben een auto.",
+          "Wij hebben auto niet."
+        ],
+        "answer": 0,
+        "explanation": "Een auto wordt geen auto.",
+        "difficulty": 1
       }
     }
   ]

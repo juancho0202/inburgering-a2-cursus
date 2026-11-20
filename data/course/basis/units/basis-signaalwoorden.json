@@ -4,7 +4,7 @@
   "title": "Signaalwoorden",
   "goal": "Je herkent signaalwoorden in teksten en weet wat ze betekenen.",
   "scene": "bibliotheek",
-  "estimatedMinutes": 15,
+  "estimatedMinutes": 20,
   "tags": [
     "basis:signaalwoorden",
     "lezen"
@@ -396,6 +396,113 @@
         "answers": [
           0
         ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-signaalwoorden-l-02",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "tip",
+          "md": "**Maar, helaas, toch:** het plan verandert: lees wat erna komt. **Alleen** en **behalve** maken een grens. **Want** geeft een reden, **dus** een gevolg. **Eerst, daarna** geven de volgorde."
+        },
+        {
+          "kind": "text",
+          "md": "Oefen nu met **nieuwe** zinnen. Denk bij elke vraag aan de regel."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-016",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "type": "mc",
+        "prompt": "\"Ik wil graag komen, maar ik moet werken.\" Komt de persoon?",
+        "options": [
+          "Nee",
+          "Ja",
+          "Ja, maar later",
+          "Dat staat er niet"
+        ],
+        "answer": 0,
+        "explanation": "Na maar staat het echte antwoord: ik moet werken.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-017",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "type": "mc",
+        "prompt": "\"U kunt alleen op dinsdag bellen.\" Wanneer kunt u bellen?",
+        "options": [
+          "Op dinsdag",
+          "Elke dag behalve dinsdag",
+          "Nooit",
+          "In het weekend"
+        ],
+        "answer": 0,
+        "explanation": "Alleen maakt een grens: alleen op dinsdag.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-018",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "type": "mc",
+        "prompt": "\"Het museum is elke dag open, behalve op maandag.\" Wanneer is het museum dicht?",
+        "options": [
+          "Op maandag",
+          "Op zondag",
+          "Elke dag",
+          "Nooit"
+        ],
+        "answer": 0,
+        "explanation": "Behalve = niet op. Op maandag is het museum dicht.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-signaalwoorden-q-019",
+        "tags": [
+          "basis:signaalwoorden",
+          "lezen"
+        ],
+        "type": "gap-choice",
+        "prompt": "Kies de goede signaalwoorden.",
+        "text": "___ doet u de deur open, ___ zet u uw tas neer.",
+        "options": [
+          [
+            "Eerst",
+            "Dus"
+          ],
+          [
+            "daarna",
+            "want"
+          ]
+        ],
+        "answers": [
+          0,
+          0
+        ],
+        "explanation": "Eerst en daarna geven de volgorde.",
+        "difficulty": 1
       }
     }
   ]

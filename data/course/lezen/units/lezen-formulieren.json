@@ -23,6 +23,99 @@
       ]
     },
     {
+      "type": "lesson",
+      "id": "lezen-formulieren-l-02",
+      "title": "Zo vind je het antwoord",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Kijk mee hoe je het antwoord vindt. **Eerst de vraag, dan de tekst.**"
+        },
+        {
+          "kind": "document",
+          "docType": "folder",
+          "title": "Hulp bij formulieren",
+          "body": "Moet u een formulier invullen en vindt u dat moeilijk? Kom naar het spreekuur in de bibliotheek.\n\nWanneer? Elke maandag van 10.00 tot 12.00 uur.\nVoor wie? Voor iedereen die in de gemeente woont.\nKosten: gratis.\n\nNeem mee: de brief of het formulier, en uw ID-kaart.\nLet op: wij vragen nooit naar uw DigiD-wachtwoord.\n\nU hoeft geen afspraak te maken. Het kan wel druk zijn, dus kom op tijd."
+        },
+        {
+          "kind": "text",
+          "md": "**De vraag:** *Moet u een afspraak maken voor het spreekuur?*\n\n1. **Kernwoord in de vraag:** *afspraak*.\n2. **Zoek in de tekst** naar *afspraak*: *U hoeft geen afspraak te maken.*\n3. **Andere woorden:** *hoeft geen* betekent *het is niet nodig*.\n4. **Pas op:** *kom op tijd* staat er ook. Dat betekent niet dat je een afspraak moet maken: het kan alleen druk zijn.\n\n**Antwoord:** nee, een afspraak is niet nodig."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-formulieren-q-004",
+        "tags": [
+          "lezen:formulier"
+        ],
+        "explanation": "Zoek eerst het kernwoord uit de vraag in de tekst. Lees dan de zin eromheen.",
+        "difficulty": 1,
+        "type": "reading",
+        "prompt": "Lees de tekst nog een keer en beantwoord de vragen.",
+        "document": {
+          "kind": "document",
+          "docType": "folder",
+          "title": "Hulp bij formulieren",
+          "body": "Moet u een formulier invullen en vindt u dat moeilijk? Kom naar het spreekuur in de bibliotheek.\n\nWanneer? Elke maandag van 10.00 tot 12.00 uur.\nVoor wie? Voor iedereen die in de gemeente woont.\nKosten: gratis.\n\nNeem mee: de brief of het formulier, en uw ID-kaart.\nLet op: wij vragen nooit naar uw DigiD-wachtwoord.\n\nU hoeft geen afspraak te maken. Het kan wel druk zijn, dus kom op tijd."
+        },
+        "questions": [
+          {
+            "id": "lezen-formulieren-q-004-1",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Wat kost het spreekuur?",
+            "options": [
+              "Niets",
+              "5 euro",
+              "Dat staat er niet",
+              "10 euro"
+            ],
+            "answer": 0,
+            "explanation": "Kosten: gratis. Gratis betekent: het kost niets."
+          },
+          {
+            "id": "lezen-formulieren-q-004-2",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Wat neemt u mee?",
+            "options": [
+              "De brief of het formulier, en uw ID-kaart",
+              "Uw DigiD-wachtwoord",
+              "Geld",
+              "Een pasfoto"
+            ],
+            "answer": 0,
+            "explanation": "'Neem mee: de brief of het formulier, en uw ID-kaart.' Uw DigiD-wachtwoord geeft u nooit."
+          },
+          {
+            "id": "lezen-formulieren-q-004-3",
+            "tags": [
+              "lezen:formulier"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Wie kan naar het spreekuur?",
+            "options": [
+              "Iedereen die in de gemeente woont",
+              "Alleen mensen met een uitkering",
+              "Alleen ouderen",
+              "Alleen cursisten"
+            ],
+            "answer": 0,
+            "explanation": "'Voor wie? Voor iedereen die in de gemeente woont.'"
+          }
+        ]
+      }
+    },
+    {
       "type": "exercise",
       "exercise": {
         "id": "lezen-formulieren-q-001",

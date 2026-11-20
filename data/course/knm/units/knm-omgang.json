@@ -76,7 +76,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Een afspraak maken voor bezoek is gewoon.",
+        "explanation": "In Nederland maak je vaak eerst een afspraak, ook bij buren en vrienden. Zomaar langskomen is minder gewoon.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Olga wil haar buurvrouw bezoeken. Wat is gebruikelijk?",
@@ -96,7 +96,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Bij kennismaken geef je een hand.",
+        "explanation": "Bij kennismaken geef je een hand, kijk je de ander aan en zeg je je naam.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Je ontmoet een nieuwe collega voor het eerst. Wat doe je?",
@@ -116,7 +116,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Zoenen is niet verplicht.",
+        "explanation": "Zoenen is niet verplicht. Een hand geven is ook goed en beleefd.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Fatima voelt zich niet prettig bij drie zoenen. Moet ze dat doen?",
@@ -136,7 +136,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Voor instanties en onbekenden gebruik je u.",
+        "explanation": "Tegen een leraar, een instantie of iemand die je niet kent, zeg je u.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Een cursist praat met de leraar van de school. Wat past?",
@@ -156,7 +156,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Directe communicatie is gewoon.",
+        "explanation": "Nederlanders zeggen vaak eerlijk wat ze denken. Dat is direct, en niet onbeleefd bedoeld.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Pieter zegt eerlijk dat hij een idee niet goed vindt. Wat is dat in Nederland?",
@@ -176,7 +176,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Je/jij is informeel: vrienden, collega's.",
+        "explanation": "Je of jij zeg je tegen vrienden, familie, kinderen en vaak tegen collega's. Tegen onbekenden zeg je u.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Met wie gebruik je meestal \"je/jij\"?",
@@ -240,7 +240,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Iedereen mag zelf kiezen.",
+        "explanation": "Vrijheid van godsdienst: je kiest zelf je geloof, of geen geloof. Niemand mag je dwingen.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat betekent vrijheid van godsdienst?",
@@ -260,7 +260,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Kerk en overheid zijn gescheiden.",
+        "explanation": "De overheid kiest geen godsdienst. Kerk en staat zijn gescheiden.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wat betekent scheiding van kerk en staat?",
@@ -280,7 +280,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Je mag je mening zeggen, binnen de wet.",
+        "explanation": "Vrijheid van meningsuiting: je mag kritiek geven, ook op politici. Maar bedreigen en discrimineren mag niet.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Mehmet zegt in een gesprek dat hij een politicus niet goed vindt. Mag dat?",
@@ -320,7 +320,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Gelijkheid van man en vrouw.",
+        "explanation": "Mannen en vrouwen zijn gelijk. Een vrouw beslist zelf of ze werkt.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Een vrouw wil werken. Haar man zegt dat het niet mag. Wat zegt de wet?",
@@ -340,7 +340,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Discriminatie is verboden in Nederland.",
+        "explanation": "Iemand anders behandelen om zijn afkomst is discriminatie. Dat is verboden (artikel 1 van de Grondwet).",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Een bedrijf geeft een baan niet aan Wei, alleen omdat hij uit China komt. Wat is dit?",
@@ -416,7 +416,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Op 27 april vieren we de verjaardag van de koning.",
+        "explanation": "27 april is Koningsdag: de verjaardag van koning Willem-Alexander. Veel mensen dragen oranje.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Welke feestdag is op 27 april?",
@@ -476,7 +476,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Sinterklaas is op 5 december.",
+        "explanation": "Sinterklaas is op 5 december. Kinderen krijgen dan cadeautjes.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Wanneer vieren kinderen Sinterklaas?",
@@ -516,7 +516,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Je feliciteert ook de familie.",
+        "explanation": "Bij een geboorte feliciteer je de ouders: Gefeliciteerd met je zoon (of dochter)!",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Je buurman wordt vader. Wat zeg je?",
@@ -536,7 +536,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Houd rekening met geluid, vooral 's avonds en 's nachts.",
+        "explanation": "'s Avonds en 's nachts houd je rekening met de buren: geen harde muziek.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Het is 23.30 uur. Je wilt luid muziek luisteren. Wat is het beste?",
@@ -591,7 +591,7 @@
         "tags": [
           "knm:omgang"
         ],
-        "explanation": "Maak kennis met je nieuwe buren.",
+        "explanation": "Nieuwe buren? Stel je voor en maak kennis. Dat is gewoon en vriendelijk.",
         "difficulty": 1,
         "type": "mc",
         "prompt": "Een nieuwe buurman verhuist naast je. Wat is een goede eerste stap?",
@@ -803,6 +803,92 @@
           "31 december"
         ],
         "answer": 3
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "knm-omgang-l-05",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Oefen alles nog een keer, door elkaar. Net als in het examen: denk eerst na over de situatie."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-032",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Te laat? Laat het van tevoren weten met een bericht of een telefoontje.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Je bent om 19.00 uur uitgenodigd. Je bent een half uur later. Wat doe je?",
+        "options": [
+          "Je stuurt van tevoren een bericht.",
+          "Je zegt niets.",
+          "Je komt niet.",
+          "Je komt de volgende dag."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-033",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Om 20.00 uur op 4 mei is het twee minuten stil: we herdenken de doden.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Het is 4 mei, 20.00 uur. Je staat op straat. Wat doe je?",
+        "options": [
+          "Je bent twee minuten stil.",
+          "Je belt een vriend.",
+          "Je zingt een lied.",
+          "Je gaat verder met boodschappen doen."
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-034",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Vrijheid van meningsuiting: je mag kritiek geven, zolang je niemand bedreigt of discrimineert.",
+        "difficulty": 1,
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Je mag in Nederland zeggen dat je het niet eens bent met de regering.",
+        "answer": true
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "knm-omgang-q-035",
+        "tags": [
+          "knm:omgang"
+        ],
+        "explanation": "Nederlanders zijn vaak direct. Kritiek op een plan is geen kritiek op jou.",
+        "difficulty": 2,
+        "type": "mc",
+        "prompt": "Je collega zegt: 'Ik vind je plan niet goed.' Wat betekent dat meestal?",
+        "options": [
+          "Hij is eerlijk over het plan, niet boos op jou.",
+          "Hij wil geen contact meer.",
+          "Hij wil dat je ontslag neemt.",
+          "Hij maakt een grap."
+        ],
+        "answer": 0
       }
     }
   ]

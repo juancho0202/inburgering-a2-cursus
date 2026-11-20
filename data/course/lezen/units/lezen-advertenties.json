@@ -23,6 +23,99 @@
       ]
     },
     {
+      "type": "lesson",
+      "id": "lezen-advertenties-l-02",
+      "title": "Zo vind je het antwoord",
+      "blocks": [
+        {
+          "kind": "text",
+          "md": "Kijk mee hoe je het antwoord vindt. **Eerst de vraag, dan de tekst.**"
+        },
+        {
+          "kind": "document",
+          "docType": "advertentie",
+          "title": "Oppas gezocht",
+          "body": "Wij zoeken een oppas voor onze twee kinderen (4 en 7 jaar).\n\n- Op dinsdag en donderdag, van 15.00 tot 18.30 uur\n- U haalt de kinderen op van school en speelt met ze\n- Vanaf 18 jaar\n- Ervaring met kinderen is fijn, maar niet nodig\n- 12 euro per uur\n\nInteresse? Stuur een berichtje naar 06-9876 5432. Bellen kan alleen 's avonds."
+        },
+        {
+          "kind": "text",
+          "md": "**De vraag:** *Wat is een voorwaarde voor deze baan?*\n\n1. **Kernwoord in de vraag:** *voorwaarde*: wat moet je hebben of zijn?\n2. **Zoek in de tekst** naar wat het gezin vraagt: *Vanaf 18 jaar.*\n3. **Andere woorden:** *vanaf 18 jaar* is *je bent 18 jaar of ouder*.\n4. **Pas op:** *ervaring* staat ook in de tekst. Maar daar staat *niet nodig*. Dat is dus geen voorwaarde.\n\n**Antwoord:** je bent 18 jaar of ouder."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "lezen-advertenties-q-006",
+        "tags": [
+          "lezen:advertentie"
+        ],
+        "explanation": "Zoek eerst het kernwoord uit de vraag in de tekst. Lees dan de zin eromheen.",
+        "difficulty": 1,
+        "type": "reading",
+        "prompt": "Lees de tekst nog een keer en beantwoord de vragen.",
+        "document": {
+          "kind": "document",
+          "docType": "advertentie",
+          "title": "Oppas gezocht",
+          "body": "Wij zoeken een oppas voor onze twee kinderen (4 en 7 jaar).\n\n- Op dinsdag en donderdag, van 15.00 tot 18.30 uur\n- U haalt de kinderen op van school en speelt met ze\n- Vanaf 18 jaar\n- Ervaring met kinderen is fijn, maar niet nodig\n- 12 euro per uur\n\nInteresse? Stuur een berichtje naar 06-9876 5432. Bellen kan alleen 's avonds."
+        },
+        "questions": [
+          {
+            "id": "lezen-advertenties-q-006-1",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Hoeveel dagen per week werkt de oppas?",
+            "options": [
+              "Twee dagen",
+              "Vijf dagen",
+              "Eén dag",
+              "Elke dag"
+            ],
+            "answer": 0,
+            "explanation": "Dinsdag en donderdag: twee dagen."
+          },
+          {
+            "id": "lezen-advertenties-q-006-2",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "U wilt overdag reageren. Wat doet u?",
+            "options": [
+              "Een berichtje sturen",
+              "Bellen",
+              "Langskomen",
+              "Een brief sturen"
+            ],
+            "answer": 0,
+            "explanation": "Bellen kan alleen 's avonds. Overdag stuurt u een berichtje."
+          },
+          {
+            "id": "lezen-advertenties-q-006-3",
+            "tags": [
+              "lezen:advertentie"
+            ],
+            "difficulty": 1,
+            "type": "mc",
+            "prompt": "Wat doet de oppas?",
+            "options": [
+              "De kinderen van school halen en met ze spelen",
+              "Koken en schoonmaken",
+              "Huiswerk nakijken",
+              "De hond uitlaten"
+            ],
+            "answer": 0,
+            "explanation": "'U haalt de kinderen op van school en speelt met ze.'"
+          }
+        ]
+      }
+    },
+    {
       "type": "exercise",
       "exercise": {
         "id": "lezen-advertenties-q-001",

@@ -4,7 +4,7 @@
   "title": "Bijzinnen",
   "goal": "Je maakt bijzinnen met de werkwoorden aan het eind.",
   "scene": "regen",
-  "estimatedMinutes": 20,
+  "estimatedMinutes": 25,
   "tags": [
     "basis:bijzin",
     "grammar:bijzin"
@@ -618,6 +618,106 @@
         "prompt": "Klopt dit?",
         "statement": "Na het woord \"omdat\" staat het werkwoord aan het eind.",
         "answer": true
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-bijzin-l-02",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "tip",
+          "md": "Na **dat, omdat, als, of, wanneer, terwijl, tot** staan de werkwoorden **aan het eind**. Na **want, maar, en, dus** is de volgorde gewoon."
+        },
+        {
+          "kind": "text",
+          "md": "Oefen nu met **nieuwe** zinnen. Denk bij elke vraag aan de regel."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-024",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Ik",
+          "weet",
+          "niet",
+          "of",
+          "hij",
+          "thuis",
+          "is."
+        ],
+        "explanation": "Na of: het werkwoord (is) aan het eind.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-025",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "type": "gap-choice",
+        "prompt": "Kies het goede woord.",
+        "text": "Ik bel je, ___ ik thuis ben.",
+        "options": [
+          [
+            "als",
+            "want",
+            "dus"
+          ]
+        ],
+        "answers": [
+          0
+        ],
+        "explanation": "Ben staat aan het eind: dat past bij als.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-026",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Ik ben moe, omdat ik heb hard gewerkt.",
+          "Ik ben moe, omdat ik hard heb gewerkt.",
+          "Ik ben moe, want ik hard heb gewerkt.",
+          "Ik ben moe, omdat hard ik heb gewerkt."
+        ],
+        "answer": 1,
+        "explanation": "Na omdat staan de werkwoorden aan het eind: heb gewerkt.",
+        "difficulty": 2
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-bijzin-q-027",
+        "tags": [
+          "basis:bijzin",
+          "grammar:bijzin"
+        ],
+        "type": "true-false",
+        "prompt": "Klopt dit?",
+        "statement": "Na \"dat\" staat het werkwoord aan het eind: \"Ik denk dat hij morgen komt.\"",
+        "answer": true,
+        "explanation": "Dat begint een bijzin: het werkwoord (komt) staat aan het eind.",
+        "difficulty": 1
       }
     }
   ]

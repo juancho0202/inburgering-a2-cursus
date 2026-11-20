@@ -4,7 +4,7 @@
   "title": "Werkwoord op plek 2",
   "goal": "Je maakt hoofdzinnen en vragen met de goede woordvolgorde.",
   "scene": "markt",
-  "estimatedMinutes": 20,
+  "estimatedMinutes": 25,
   "tags": [
     "basis:zinsbouw",
     "grammar:zinsbouw"
@@ -577,6 +577,107 @@
         "answers": [
           0
         ]
+      }
+    },
+    {
+      "type": "lesson",
+      "id": "basis-zinsbouw-l-02",
+      "title": "Herhaling",
+      "blocks": [
+        {
+          "kind": "tip",
+          "md": "Het werkwoord staat op **plek 2**. Begint de zin met iets anders dan het onderwerp (*morgen, in de zomer, helaas*)? Dan komt het onderwerp **na** het werkwoord. Een ja/nee-vraag begint met het werkwoord."
+        },
+        {
+          "kind": "text",
+          "md": "Oefen nu met **nieuwe** zinnen. Denk bij elke vraag aan de regel."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-021",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Volgende",
+          "week",
+          "begint",
+          "mijn",
+          "cursus."
+        ],
+        "explanation": "Volgende week is plek 1, begint staat op plek 2.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-022",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "type": "word-order",
+        "prompt": "Zet de woorden in de goede volgorde.",
+        "tokens": [
+          "Hoeveel",
+          "kost",
+          "dit",
+          "brood?"
+        ],
+        "explanation": "Vraagwoord eerst, dan het werkwoord.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-023",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "type": "mc",
+        "prompt": "Welke zin is goed?",
+        "options": [
+          "Helaas kan ik niet komen.",
+          "Helaas ik kan niet komen.",
+          "Helaas ik niet kan komen.",
+          "Helaas komen kan ik niet."
+        ],
+        "answer": 0,
+        "explanation": "Helaas staat op plek 1. Dan komt het werkwoord: kan ik.",
+        "difficulty": 1
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
+        "id": "basis-zinsbouw-q-024",
+        "tags": [
+          "basis:zinsbouw",
+          "grammar:zinsbouw"
+        ],
+        "type": "gap-choice",
+        "prompt": "Kies de goede vorm.",
+        "text": "In de zomer ___ wij vaak naar het strand.",
+        "options": [
+          [
+            "gaan",
+            "gaat"
+          ]
+        ],
+        "answers": [
+          0
+        ],
+        "explanation": "In de zomer is plek 1, het werkwoord op plek 2: gaan wij.",
+        "difficulty": 1
       }
     }
   ]
