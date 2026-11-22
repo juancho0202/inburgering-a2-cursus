@@ -311,6 +311,17 @@ describe("a conversation", () => {
       expect(shownWords(w)).toEqual(["vrienden", "markt", "film"]);
     });
 
+    it("a word of the level that is not on screen yet counts too, and then never comes up", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: [] });
+      const w = await weekend();
+      await say(w, "Zaterdag naar de markt."); // markt is the last word of level 1
+      expect(panel(w).text()).toContain("2 van 6");
+      expect(panel(w).find("[aria-live]").text()).toBe("Woord gebruikt: zaterdag, markt");
+      expect(shownWords(w)).toEqual(["vrienden", "zondag", "slapen"]);
+      await say(w, "Zondag en slapen.");
+      expect(shownWords(w)).toEqual(["vrienden", "film"]);
+    });
+
     it("a word inside a corrected chunk does not count: only a word written right does", async () => {
       fakeApi.on("POST", "/claude/taalcafe", { reply: "O ja?", corrections: [{ original: "ik heb slaap", corrected: "ik heb geslapen", type: "werkwoord", explanation: "Voltooid deelwoord." }] });
       const w = await weekend();
@@ -353,10 +364,7 @@ describe("a conversation", () => {
       fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: [] });
       const w = await weekend({ weekend: 2 });
       expect(panel(w).text()).toContain("Niveau 3 van 3");
-      await say(w, "Mijn plannen: een afspraak, maar rustig.");
-      // Only the words on screen count: these three come in once the first three are used.
-      expect(shownWords(w)).toEqual(["druk", "museum", "volgende"]);
-      await say(w, "Niet druk: het museum, volgende week.");
+      await say(w, "Mijn plannen: een afspraak, rustig, niet druk, het museum, volgende week.");
       expect(w.find("[data-level-won]").text()).toContain("Alle niveaus gehaald!");
       expect(buttonWith(w, "Volgend niveau")).toBeUndefined();
       await clickButton(w, "Nog een keer");
