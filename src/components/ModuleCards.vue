@@ -262,6 +262,7 @@ onBeforeUnmount(() => {
               <div class="min-w-0 flex-1">
                 <h3 class="nl-wrap text-xl font-bold" :class="!editing && 'group-hover:text-brand-strong'" lang="nl" translate="no">{{ m.title }}</h3>
                 <p v-if="m.total" class="text-sm text-muted">{{ lang.t("modules.progress", { done: m.completed, total: m.total }) }}</p>
+                <p v-else-if="m.id === 'taalcafe'" class="text-sm text-muted">{{ lang.t("modules.taalcafe") }}</p>
                 <p v-else class="text-sm text-muted">{{ lang.t("modules.examTime") }}</p>
               </div>
               <button

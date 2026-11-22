@@ -26,7 +26,10 @@ async function type(w: Awaited<ReturnType<typeof open>>, text: string) {
 const learnerBubbles = (w: Awaited<ReturnType<typeof open>>) => w.findAll("[data-from=learner]");
 const partnerBubbles = (w: Awaited<ReturnType<typeof open>>) => w.findAll("[data-from=partner]");
 
-beforeEach(() => fakeApi.reset());
+beforeEach(() => {
+  fakeApi.reset();
+  localStorage.removeItem("taalcafeTab"); // the picker remembers its tab; every test starts on the topics
+});
 
 describe("without a Claude key", () => {
   it("says the taalcafé needs a key and links to Settings, without topics or any call to Claude", async () => {
@@ -273,6 +276,71 @@ describe("a conversation", () => {
       await clickButton(w, "Verstuur");
       expect(chunks(w)).toHaveLength(1);
       expect(learnerBubbles(w)[0].find("ul").text()).toContain("Overlapt met de eerste.");
+    });
+  });
+
+  describe("a situation with a mission", () => {
+    async function apotheek() {
+      const w = await open();
+      await w.findAll("[role=tab]")[1].trigger("click");
+      await w.find("[data-situation=apotheek]").trigger("click");
+      await flushPromises();
+      return w;
+    }
+    const goal = (w: Awaited<ReturnType<typeof open>>, id: string) => w.find(`[data-goal=${id}]`);
+
+    it("shows where you are, who you talk to, and the mission with nothing reached yet", async () => {
+      const w = await apotheek();
+      expect(w.text()).toContain("De huisarts heeft een recept naar de apotheek gestuurd.");
+      expect(w.text()).toContain("Ilse, assistent bij de apotheek");
+      expect(partnerBubbles(w)[0].text()).toContain("Ilse");
+      expect(partnerBubbles(w)[0].text()).toContain("Goedemorgen, waar kan ik u mee helpen?");
+      expect(w.find("[data-mission]").text()).toContain("0 van 3");
+      expect(w.findAll("[data-goal]").map((g) => g.attributes("data-reached"))).toEqual(["false", "false", "false"]);
+    });
+
+    it("sends the situation and the goals reached so far, and ticks off the goals that come back", async () => {
+      let n = 0;
+      fakeApi.on("POST", "/claude/taalcafe", () => (++n === 1 ? { reply: "Wat is uw geboortedatum?", corrections: [], goalsReached: ["ophalen"] } : { reply: "Dank u.", corrections: [], goalsReached: ["ophalen", "gegevens"] }));
+      const w = await apotheek();
+      await type(w, "Ik kom mijn medicijnen ophalen.");
+      await clickButton(w, "Verstuur");
+      expect(fakeApi.to("POST", "/claude/taalcafe")[0].body).toEqual({
+        situationId: "apotheek",
+        reached: [],
+        history: [{ from: "partner", text: "Goedemorgen, waar kan ik u mee helpen?" }],
+        message: "Ik kom mijn medicijnen ophalen.",
+      });
+      expect(goal(w, "ophalen").attributes("data-reached")).toBe("true");
+      expect(goal(w, "ophalen").text()).toContain("gelukt");
+      expect(w.find("[data-mission]").text()).toContain("1 van 3");
+
+      await type(w, "Mijn naam is Juan, 3 mei 1990.");
+      await clickButton(w, "Verstuur");
+      expect(fakeApi.to("POST", "/claude/taalcafe")[1].body).toMatchObject({ reached: ["ophalen"] });
+      expect(w.find("[data-mission]").text()).toContain("2 van 3");
+      expect(w.find("textarea").exists()).toBe(true); // not done yet
+    });
+
+    it("all three goals: 'Missie gelukt!', no more typing; 'Nog een keer' starts over, 'Nieuwe situatie' goes back to the situations", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "Twee keer per dag. Fijne dag!", corrections: [], goalsReached: ["ophalen", "gegevens", "hoe-vaak"] });
+      const w = await apotheek();
+      await type(w, "Hoe vaak moet ik het nemen?");
+      await clickButton(w, "Verstuur");
+      expect(w.find("[role=status]").text()).toContain("Missie gelukt!");
+      expect(partnerBubbles(w).at(-1)!.text()).toContain("Fijne dag!");
+      expect(w.find("textarea").exists()).toBe(false);
+
+      await clickButton(w, "Nog een keer");
+      expect(w.find("[data-mission]").text()).toContain("0 van 3");
+      expect(learnerBubbles(w)).toHaveLength(0);
+      expect(partnerBubbles(w)).toHaveLength(1);
+      expect(w.find("textarea").exists()).toBe(true);
+
+      await type(w, "Hoe vaak?");
+      await clickButton(w, "Verstuur");
+      await clickButton(w, "Nieuwe situatie");
+      expect(w.find("[data-situation=apotheek]").exists()).toBe(true); // the situations tab, as left
     });
   });
 

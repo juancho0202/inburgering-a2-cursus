@@ -3,13 +3,14 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref } from "vue";
 import { RouterLink } from "vue-router";
 import type { WritingFeedback } from "@shared/schemas/claude";
 import { buildSegments } from "@shared/logic/corrections";
-import { TAALCAFE_MAX_LENGTH, TAALCAFE_MAX_TURNS, TAALCAFE_PARTNER, TAALCAFE_TOPICS, type TaalcafeTopic } from "@shared/logic/taalcafe";
+import { TAALCAFE_MAX_LENGTH, TAALCAFE_MAX_TURNS, TAALCAFE_PARTNER } from "@shared/logic/taalcafe";
 import { api } from "../api/client";
 import { useSettingsStore } from "../stores/settings";
 import { useLanguageStore } from "../stores/language";
 import AppButton from "../components/ui/AppButton.vue";
 import SpeakButton from "../components/ui/SpeakButton.vue";
 import UiLabel from "../components/ui/UiLabel.vue";
+import TaalcafePicker, { type TaalcafeTalk } from "../components/TaalcafePicker.vue";
 
 type Correction = WritingFeedback["corrections"][number];
 type Message = { from: "partner"; text: string } | { from: "learner"; text: string; corrections: Correction[] | null };
@@ -18,7 +19,10 @@ const settings = useSettingsStore();
 const lang = useLanguageStore();
 if (!settings.settings) settings.load().catch(() => {});
 
-const topic = ref<TaalcafeTopic | null>(null);
+/** The conversation: a topic with Sanne, or a situation with a partner and a mission. */
+const talk = ref<TaalcafeTalk | null>(null);
+/** Situation goals reached so far (the server keeps them reached). */
+const reached = ref<string[]>([]);
 const messages = ref<Message[]>([]);
 const draft = ref("");
 const sending = ref(false);
@@ -140,29 +144,27 @@ const openCorrection = computed(() => {
   return t && m?.from === "learner" ? (m.corrections?.[t.c] ?? null) : null;
 });
 
+const situation = computed(() => (talk.value?.kind === "situation" ? talk.value.situation : null));
+const partnerName = computed(() => situation.value?.partner.name ?? TAALCAFE_PARTNER);
 const learnerTurns = computed(() => messages.value.filter((m) => m.from === "learner").length);
 const turnsLeft = computed(() => TAALCAFE_MAX_TURNS - learnerTurns.value);
-const done = computed(() => turnsLeft.value <= 0);
+/** Every goal of the mission reached: the situation is over. */
+const missionDone = computed(() => !!situation.value && situation.value.goals.every((g) => reached.value.includes(g.id)));
+const done = computed(() => turnsLeft.value <= 0 || missionDone.value);
 
-function start(t: TaalcafeTopic) {
+function begin(t: TaalcafeTalk | null) {
   conversation++;
-  topic.value = t;
-  messages.value = [{ from: "partner", text: t.opener }];
+  talk.value = t;
+  const opener = t ? (t.kind === "topic" ? t.topic.opener : t.situation.opener) : null;
+  messages.value = opener ? [{ from: "partner", text: opener }] : [];
+  reached.value = [];
   close();
   draft.value = "";
   error.value = null;
   sending.value = false;
 }
-
-function reset() {
-  conversation++;
-  topic.value = null;
-  messages.value = [];
-  close();
-  draft.value = "";
-  error.value = null;
-  sending.value = false;
-}
+const reset = () => begin(null);
+const again = () => begin(talk.value);
 
 async function scrollDown() {
   await nextTick();
@@ -171,7 +173,8 @@ async function scrollDown() {
 
 async function send() {
   const text = draft.value.trim();
-  if (!topic.value || sending.value || done.value || !text) return;
+  const current = talk.value;
+  if (!current || sending.value || done.value || !text) return;
   const mine = conversation;
   const history = messages.value.map((m) => ({ from: m.from, text: m.text }));
   messages.value.push({ from: "learner", text, corrections: null });
@@ -182,10 +185,12 @@ async function send() {
   sending.value = true;
   scrollDown();
   try {
-    const res = await api.post<{ reply: string; corrections: Correction[] }>("/claude/taalcafe", { topicId: topic.value.id, history, message: text });
+    const which = current.kind === "topic" ? { topicId: current.topic.id } : { situationId: current.situation.id, reached: reached.value };
+    const res = await api.post<{ reply: string; corrections: Correction[]; goalsReached?: string[] }>("/claude/taalcafe", { ...which, history, message: text });
     if (mine !== conversation) return;
     mineMessage.corrections = res.corrections;
     messages.value.push({ from: "partner", text: res.reply });
+    if (res.goalsReached) reached.value = res.goalsReached;
   } catch (e) {
     if (mine !== conversation) return;
     // Nothing is lost: the message goes back into the box, to send again.
@@ -215,10 +220,10 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
 
 <template>
   <div class="mx-auto max-w-2xl">
-    <RouterLink to="/module/schrijven" class="text-muted hover:text-ink">← <UiLabel k="common.back" /></RouterLink>
+    <RouterLink to="/" class="text-muted hover:text-ink">← <UiLabel k="common.back" /></RouterLink>
     <div class="mb-4 mt-3 flex flex-wrap items-end justify-between gap-3">
       <h1 class="text-3xl font-extrabold tracking-tight">☕ <UiLabel variant="heading" k="taalcafe.title" /></h1>
-      <AppButton v-if="topic" variant="secondary" @click="reset"><UiLabel k="taalcafe.newChat" /></AppButton>
+      <AppButton v-if="talk" variant="secondary" @click="reset"><UiLabel k="taalcafe.newChat" /></AppButton>
     </div>
     <p class="mb-6 text-muted">{{ lang.t("taalcafe.intro") }}</p>
 
@@ -229,24 +234,44 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
       </p>
     </div>
 
-    <section v-else-if="!topic">
-      <h2 class="mb-3 text-xl font-bold"><UiLabel variant="heading" k="taalcafe.choose" /></h2>
-      <ul class="grid grid-cols-1 gap-3 sm:grid-cols-2" lang="nl" translate="no">
-        <li v-for="t in TAALCAFE_TOPICS" :key="t.id">
-          <button type="button" class="card flex w-full items-center gap-3 p-4 text-left font-bold transition hover:-translate-y-0.5 hover:shadow-lg" @click="start(t)">
-            <span class="text-2xl" aria-hidden="true">{{ t.emoji }}</span>{{ t.title }}
-          </button>
-        </li>
-      </ul>
-    </section>
+    <TaalcafePicker v-else-if="!talk" @choose="begin" />
 
     <section v-else :aria-label="lang.t('taalcafe.title')">
-      <p class="mb-3 text-sm font-semibold text-muted"><UiLabel variant="inline" k="taalcafe.topic" />: <span lang="nl" translate="no">{{ topic.title }}</span></p>
+      <p v-if="talk.kind === 'topic'" class="mb-3 text-sm font-semibold text-muted"><UiLabel variant="inline" k="taalcafe.topic" />: <span lang="nl" translate="no">{{ talk.topic.title }}</span></p>
+      <!-- A situation: where you are, who you talk to, and the mission. The goals tick off as you reach them. -->
+      <div v-else class="mb-4 grid gap-3" lang="nl" translate="no">
+        <div class="card p-4">
+          <p class="font-bold">{{ talk.situation.emoji }} {{ talk.situation.title }}</p>
+          <p class="mt-1">{{ talk.situation.setting }}</p>
+          <p class="mt-2 text-sm text-muted">
+            <span lang="nl">{{ talk.situation.partner.name }}, {{ talk.situation.partner.role }}</span>
+            <span v-if="talk.situation.phone" class="ml-2 rounded-full bg-brand-bg px-2 py-0.5 text-xs font-bold text-brand-strong" :lang="lang.locale">📞 {{ lang.t("taalcafe.phone") }}</span>
+          </p>
+        </div>
+        <section class="rounded-2xl border-2 border-brand/50 bg-brand-bg p-4" data-mission :aria-label="lang.t('taalcafe.mission')">
+          <div class="mb-2 flex items-center justify-between gap-2">
+            <h2 class="font-extrabold" :lang="lang.locale">🎯 {{ lang.t("taalcafe.mission") }}</h2>
+            <span class="text-sm font-bold" :lang="lang.locale" aria-live="polite">{{ lang.t("taalcafe.missionProgress", { n: reached.length, total: talk.situation.goals.length }) }}</span>
+          </div>
+          <ul class="grid gap-1.5">
+            <li v-for="g in talk.situation.goals" :key="g.id" class="flex items-start gap-2" :data-goal="g.id" :data-reached="reached.includes(g.id)">
+              <span
+                class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border-2 text-sm font-extrabold transition"
+                :class="reached.includes(g.id) ? 'animate-pop border-good bg-good text-white dark:text-black' : 'border-line bg-surface'"
+                aria-hidden="true"
+                >{{ reached.includes(g.id) ? "✓" : "" }}</span
+              >
+              <span :class="{ 'text-muted line-through decoration-good decoration-2': reached.includes(g.id) }">{{ g.text }}</span>
+              <span class="sr-only" :lang="lang.locale">{{ reached.includes(g.id) ? lang.t("taalcafe.goalReached") : lang.t("taalcafe.goalOpen") }}</span>
+            </li>
+          </ul>
+        </section>
+      </div>
       <div ref="chatBox" class="relative" data-chat>
       <ol class="grid gap-3" aria-live="polite" lang="nl" translate="no">
         <li v-for="(m, i) in messages" :key="i" class="flex" :class="m.from === 'learner' ? 'justify-end' : 'justify-start'">
           <div v-if="m.from === 'partner'" class="card max-w-[85%] p-3" data-from="partner">
-            <p class="mb-1 flex items-center gap-2 text-sm font-bold text-muted">{{ TAALCAFE_PARTNER }} <SpeakButton :text="m.text" /></p>
+            <p class="mb-1 flex items-center gap-2 text-sm font-bold text-muted">{{ partnerName }} <SpeakButton :text="m.text" /></p>
             <p class="whitespace-pre-line text-lg">{{ m.text }}</p>
           </div>
           <div v-else class="relative max-w-[85%] rounded-2xl bg-brand-bg p-3" data-from="learner" :class="{ 'opacity-70': m.corrections === null }">
@@ -316,7 +341,17 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
 
       <p v-if="anyCorrections" class="mt-3 text-sm text-muted">ⓘ {{ lang.t("taalcafe.tapHint") }}</p>
       <p v-if="error" class="mt-4 rounded-2xl bg-bad-bg p-4 text-bad" role="alert">✗ {{ error }}</p>
-      <p v-if="done" class="card mt-4 p-4 font-semibold">{{ lang.t("taalcafe.done") }}</p>
+      <!-- The mission is reached: a small celebration, then another round or another situation -->
+      <div v-if="missionDone" class="animate-pop mt-4 rounded-2xl border-2 border-good bg-good-bg p-5 text-center" role="status">
+        <p class="text-3xl" aria-hidden="true">🎉</p>
+        <p class="text-2xl font-extrabold text-good"><UiLabel variant="heading" k="taalcafe.missionDone" /></p>
+        <p class="mt-1">{{ lang.t("taalcafe.missionDoneText") }}</p>
+        <div class="mt-4 flex flex-wrap justify-center gap-2">
+          <AppButton @click="reset"><UiLabel k="taalcafe.another" /></AppButton>
+          <AppButton variant="secondary" @click="again"><UiLabel k="taalcafe.again" /></AppButton>
+        </div>
+      </div>
+      <p v-else-if="done" class="card mt-4 p-4 font-semibold">{{ lang.t("taalcafe.done") }}</p>
       <form v-else class="mt-4 grid gap-2" @submit.prevent="send">
         <label for="taalcafe-message" class="sr-only">{{ lang.t("taalcafe.message") }}</label>
         <textarea

@@ -195,6 +195,48 @@ describe("taalcafé", () => {
   });
 });
 
+describe("taalcafé situations", () => {
+  const apotheek = { situationId: "apotheek", history: [{ from: "partner" as const, text: "Goedemorgen, waar kan ik u mee helpen?" }] };
+
+  it("Claude plays the role with the learner's goals, the twist and the goals already reached; the turn says which goals are reached now", async () => {
+    const { gateway, calls } = fakeGateway(() => ({ reply: "Wat is uw geboortedatum?", corrections: [], goalsReached: ["ophalen"] }));
+    const { env } = makeEnv({ gateway: () => gateway });
+    const res = await taalcafe(env, { ...apotheek, message: "Ik kom mijn medicijnen ophalen." });
+    expect(res).toEqual({ reply: "Wat is uw geboortedatum?", corrections: [], goalsReached: ["ophalen"] });
+    const user = calls[0].user;
+    expect(user).toContain("Jouw rol: Ilse, assistent bij de apotheek.");
+    expect(user).toContain("Je zegt u tegen de cursist.");
+    expect(user).toContain("- hoe-vaak: Vraag hoe vaak je het medicijn moet nemen");
+    expect(user).toContain("De wending (alleen voor jou): Eén van de twee medicijnen is nog niet binnen.");
+    expect(user).toContain("Ilse: Goedemorgen, waar kan ik u mee helpen?");
+    expect(calls[0].system).toContain("Je speelt een rol in een oefengesprek");
+  });
+
+  it("a reached goal stays reached even when Claude forgets it; unknown goals are ignored; the order is the mission's", async () => {
+    const { gateway, calls } = fakeGateway(() => ({ reply: "Twee keer per dag.", corrections: [], goalsReached: ["hoe-vaak", "ook-verzonnen"] }));
+    const { env } = makeEnv({ gateway: () => gateway });
+    const res = await taalcafe(env, { ...apotheek, reached: ["gegevens", "ophalen", "verzonnen"], message: "Hoe vaak moet ik het nemen?" });
+    expect(res.goalsReached).toEqual(["ophalen", "gegevens", "hoe-vaak"]);
+    expect(calls[0].user).toContain("- ophalen: Zeg dat je medicijnen komt ophalen (al bereikt)");
+    expect(calls[0].user).not.toContain("verzonnen");
+  });
+
+  it("tells a phone call apart, and a partner who says je", async () => {
+    const { gateway, calls } = fakeGateway(() => ({ reply: "Oké.", corrections: [], goalsReached: [] }));
+    const { env } = makeEnv({ gateway: () => gateway });
+    await taalcafe(env, { situationId: "ziekmelden", history: [], message: "Hoi Marco, ik ben ziek." });
+    expect(calls[0].user).toContain("Dit is een telefoongesprek");
+    expect(calls[0].user).toContain("Je zegt je tegen de cursist.");
+  });
+
+  it("refuses a request with both a topic and a situation, or neither, and an unknown situation", async () => {
+    const { env } = makeEnv({ gateway: () => fakeGateway(() => ({ reply: "x", corrections: [], goalsReached: [] })).gateway });
+    await expect(taalcafe(env, { topicId: "weer", situationId: "apotheek", history: [], message: "Hoi" })).rejects.toMatchObject({ status: 400 });
+    await expect(taalcafe(env, { history: [], message: "Hoi" })).rejects.toMatchObject({ status: 400 });
+    await expect(taalcafe(env, { situationId: "nope", history: [], message: "Hoi" })).rejects.toMatchObject({ status: 404, message: "Deze situatie bestaat niet." });
+  });
+});
+
 describe("reliable answers from Claude", () => {
   const good = { reply: "Leuk! Welke film?", corrections: [] };
   const ask = (env: ReturnType<typeof makeEnv>["env"]) => taalcafe(env, { topicId: "weekend", history: [], message: "Ik ben naar de film gegaan." });

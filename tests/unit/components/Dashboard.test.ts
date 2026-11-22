@@ -94,10 +94,12 @@ describe("DashboardView", () => {
     expect(onlyNew.wrapper.find("a[href='/woorden/herhalen']").text()).toContain("(4)");
   });
 
-  it("modules show their progress; the exam module has no lesson count", async () => {
-    const { wrapper } = await open(dashboard());
+  it("modules show their progress; the exam module and the taalcafé have no lesson count but say what they are", async () => {
+    const { wrapper } = await open(dashboard({ modules: [...dashboard().modules, { id: "taalcafe", title: "Taalcafé", total: 0, completed: 0 }] }));
     expect(wrapper.find("a[href='/module/basis']").text()).toContain("1 van 3 lessen klaar");
     expect(wrapper.find("a[href='/module/exams']").text()).toContain("Oefen onder examentijd");
+    expect(wrapper.find("a[href='/module/taalcafe']").text()).toContain("Praat met Claude, in onderwerpen en situaties");
+    expect(wrapper.find("a[href='/module/taalcafe']").text()).not.toContain("examentijd");
   });
 
   it("the goal gauge shows today's minutes against the learner's own daily goal", async () => {
@@ -455,13 +457,12 @@ describe("ModuleView", () => {
     expect(wrapper.text()).toContain("Hier komen later lessen.");
   });
 
-  it("only the writing module links to 'Mijn teksten en feedback' and to the taalcafé", async () => {
+  it("only the writing module links to 'Mijn teksten en feedback'; the taalcafé is a module of its own now", async () => {
     fakeApi.on("GET", "/course", { ...course, modules: [...course.modules, { id: "schrijven", title: "Schrijven", description: "", icon: "", units: [] }] });
     const writing = await open({}, "schrijven");
     expect(writing.wrapper.find("a[href='/schrijven/geschiedenis']").exists()).toBe(true);
-    expect(writing.wrapper.find("a[href='/taalcafe']").text()).toContain("Taalcafé: praat met Claude");
+    expect(writing.wrapper.find("a[href='/taalcafe']").exists()).toBe(false);
     const basis = await open({});
     expect(basis.wrapper.find("a[href='/schrijven/geschiedenis']").exists()).toBe(false);
-    expect(basis.wrapper.find("a[href='/taalcafe']").exists()).toBe(false);
   });
 });

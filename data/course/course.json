@@ -3,6 +3,7 @@
   "title": "Inburgering A2",
   "modules": [
     "basis",
+    "taalcafe",
     "lezen",
     "luisteren",
     "knm",

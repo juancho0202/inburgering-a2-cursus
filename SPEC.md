@@ -292,7 +292,7 @@ this (add fields only if needed and document them here).
 {
   "id": "inburgering-a2",
   "title": "Inburgering A2",
-  "modules": ["basis", "lezen", "knm", "schrijven", "exams"]
+  "modules": ["basis", "taalcafe", "lezen", "knm", "schrijven", "exams"]
 }
 
 // data/course/knm/module.json
@@ -665,6 +665,24 @@ after that every learner message is one request:
 - The conversation lives in the page only (nothing is stored); "Nieuw gesprek" starts over, and a late answer to the old
   conversation is ignored. When Claude fails, the message goes back into the box to send again.
 
+**A module of its own.** The taalcafé is a module without lessons (`data/course/taalcafe/module.json`, like Proefexamens):
+its dashboard card opens `/taalcafe`. In the course order it comes right after Basis; a learner who already put the
+modules in their own order finds it last (modules missing from `moduleOrder` follow in course order).
+
+**Two kinds of practice, as tabs** (the last one opened is remembered on the device):
+
+- *Onderwerpen*: the small talk above.
+- *Situaties*: role-play with a mission (`shared/logic/taalcafeSituations.ts`, 23 situations in 7 groups: winkels en geld,
+  onderweg, gezondheid, wonen, vrije tijd, werk en school, feestjes). Claude plays the other person (the pharmacy assistant,
+  the hoofdconducteur, the cashier …), with `u` where a stranger would say it, and corrects `je`/`u` too. The learner sees
+  the setting and a mission of three goals; Claude alone knows the twist (the plan changes, as in the exam), which it uses
+  once. Some situations are phone calls (📞). Request: `{ situationId, reached, history, message }`; Claude also returns
+  `goalsReached` (structured output limited to that situation's goal ids). The service keeps reached goals reached and
+  returns them in the mission's order. All three reached: "Missie gelukt!", then "Nog een keer" or "Nieuwe situatie".
+
+Planned next: a limited "Help me", level control and an end report with stars; then speaking (taalcafé only), and the
+modes Mijn moeilijke woorden, Plaatje beschrijven, Mening geven and Leg het uit (KNM).
+
 ---
 
 ## 11. Screens and UX
@@ -680,7 +698,7 @@ after that every learner message is one request:
 | `/woorden/herhalen` | SRS review session. |
 | `/werkwoorden` | Verb table (search, filter separable/irregular) + "Oefen werkwoorden" session. |
 | `/schrijven/geschiedenis` | All writing submissions with feedback, filter by task type. |
-| `/taalcafe` | Taalcafé (needs a Claude key): small talk with Sanne on a chosen topic; every learner message comes back corrected (§10.5). Linked from the Schrijven module. |
+| `/taalcafe` | Taalcafé (needs a Claude key): tabs *Onderwerpen* (small talk with Sanne) and *Situaties* (role-play with a mission); every learner message comes back corrected (§10.5). Its own module card on the dashboard (`/module/taalcafe` redirects here). |
 | `/examens` | Mock exam list with past scores. |
 | `/examen/:id` | Exam mode (§13). |
 | `/samenvatting` | The learner's samenvatting (Appendix A) rendered as a reference page with anchor links. |
