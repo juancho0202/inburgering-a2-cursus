@@ -87,13 +87,13 @@ function parseTaalcafeTurn(v: unknown): TaalcafeTurn {
 
 export async function taalcafeTurn(
   gateway: ClaudeGateway,
-  args: { topic: string; history: { from: "partner" | "learner"; text: string }[]; message: string },
+  args: { topic: string; words?: string[]; history: { from: "partner" | "learner"; text: string }[]; message: string },
 ): Promise<{ turn: TaalcafeTurn; usage: Usage }> {
   const { value, usage } = await completeJson(
     gateway,
     {
       system: TAALCAFE_SYSTEM,
-      user: taalcafeUser(args.topic, args.history, args.message),
+      user: taalcafeUser(args.topic, args.history, args.message, args.words ?? []),
       schema: taalcafeJsonSchema as unknown as Record<string, unknown>,
       maxTokens: 4000,
       // Small talk needs little thinking: a quick, steady answer.

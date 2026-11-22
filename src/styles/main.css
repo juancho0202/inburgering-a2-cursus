@@ -289,3 +289,25 @@
     animation: none;
   }
 }
+
+/* Taalcafé word mission: a used word is struck through, fades and slides out to the left; the next word slides in
+   from the right into the same place (a <Transition name="word" mode="out-in"> per place). */
+@keyframes word-out {
+  0% { text-decoration-color: transparent; }
+  35% { text-decoration-color: currentColor; opacity: 0.6; transform: none; }
+  100% { text-decoration-color: currentColor; opacity: 0; transform: translateX(-2.5rem); }
+}
+@keyframes word-in {
+  from { opacity: 0; transform: translateX(2.5rem); }
+  to { opacity: 1; transform: none; }
+}
+.word-leave-active {
+  text-decoration: line-through 2px;
+  animation: word-out 0.8s ease-in both;
+}
+.word-enter-active {
+  animation: word-in 0.35s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .word-leave-active, .word-enter-active { animation-duration: 0.01s; }
+}

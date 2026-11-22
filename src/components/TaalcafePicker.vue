@@ -2,11 +2,15 @@
 import { nextTick, ref } from "vue";
 import { TAALCAFE_TOPICS, type TaalcafeTopic } from "@shared/logic/taalcafe";
 import { SITUATION_GROUPS, TAALCAFE_SITUATIONS, type TaalcafeSituation } from "@shared/logic/taalcafeSituations";
+import { topicLevels } from "@shared/logic/taalcafeWords";
 import { useLanguageStore } from "../stores/language";
 import UiLabel from "./ui/UiLabel.vue";
 
-export type TaalcafeTalk = { kind: "topic"; topic: TaalcafeTopic } | { kind: "situation"; situation: TaalcafeSituation };
+/** A topic is played at one of its word levels (0 = the first). */
+export type TaalcafeTalk = { kind: "topic"; topic: TaalcafeTopic; level: number } | { kind: "situation"; situation: TaalcafeSituation };
 
+/** Word levels won per topic id. */
+const props = defineProps<{ levels: Record<string, number> }>();
 const emit = defineEmits<{ choose: [talk: TaalcafeTalk] }>();
 const lang = useLanguageStore();
 
@@ -49,6 +53,10 @@ async function onTabKey(e: KeyboardEvent, i: number) {
 }
 
 const situationsIn = (group: string) => TAALCAFE_SITUATIONS.filter((s) => s.group === group);
+
+const won = (t: TaalcafeTopic) => Math.min(props.levels[t.id] ?? 0, topicLevels(t.id).length);
+// A topic goes on at the first level not won yet; with every level won, the last one is played again.
+const startLevel = (t: TaalcafeTopic) => Math.min(won(t), topicLevels(t.id).length - 1);
 </script>
 
 <template>
@@ -77,8 +85,19 @@ const situationsIn = (group: string) => TAALCAFE_SITUATIONS.filter((s) => s.grou
       <p class="mb-4 text-muted">{{ lang.t("taalcafe.topicsIntro") }}</p>
       <ul class="grid grid-cols-1 gap-3 sm:grid-cols-2" lang="nl" translate="no">
         <li v-for="t in TAALCAFE_TOPICS" :key="t.id">
-          <button type="button" class="card flex w-full items-center gap-3 p-4 text-left font-bold transition hover:-translate-y-0.5 hover:shadow-lg" @click="emit('choose', { kind: 'topic', topic: t })">
-            <span class="text-2xl" aria-hidden="true">{{ t.emoji }}</span>{{ t.title }}
+          <button
+            type="button"
+            class="card flex w-full items-center gap-3 p-4 text-left font-bold transition hover:-translate-y-0.5 hover:shadow-lg"
+            :data-topic="t.id"
+            @click="emit('choose', { kind: 'topic', topic: t, level: startLevel(t) })"
+          >
+            <span class="text-2xl" aria-hidden="true">{{ t.emoji }}</span>
+            <span class="min-w-0 flex-1">{{ t.title }}</span>
+            <!-- One star per level won -->
+            <span class="shrink-0 text-lg tracking-tight" aria-hidden="true" data-stars
+              ><span v-for="n in topicLevels(t.id).length" :key="n" :class="n <= won(t) ? 'text-amber-500' : 'text-line'">★</span></span
+            >
+            <span class="sr-only" :lang="lang.locale">{{ lang.t("taalcafe.levelsWon", { n: won(t), total: topicLevels(t.id).length }) }}</span>
           </button>
         </li>
       </ul>

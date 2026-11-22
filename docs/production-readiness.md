@@ -90,7 +90,7 @@ devices is then simply "union of events", with no double counting.
 | `explanations` | cache key | Claude explanation | Union |
 | `generated` | exercise id | Claude-made exercise, unitId, hidden, createdAt | Union; `hidden` = true if hidden on any device |
 | `flags` | `id` | "Meld een fout": itemId, note, at | Union |
-| `kv` | name | `settings` (never the key), `lastLocation`, `srsNewToday`, `meta` (deviceId, deviceName, lastExportAt, lastImportAt) | Settings / lastLocation: newest wins |
+| `kv` | name | `settings` (never the key), `lastLocation`, `srsNewToday`, `taalcafeLevels`, `meta` (deviceId, deviceName, lastExportAt, lastImportAt) | Settings / lastLocation: newest wins; taalcafeLevels: highest level per topic |
 | `secrets` | `apiKey` | encrypted key + its CryptoKey (§5) | **Never exported, never imported** |
 
 **Derived (not stored, or cached and rebuilt):** per-item stats (`seen`, `correct`, `lastCorrect`),

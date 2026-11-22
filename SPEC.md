@@ -654,7 +654,7 @@ Small talk with Sanne, a volunteer in a language café, on one of the topics in 
 (kennismaken, het weer, het weekend, werk, familie, eten, vrije tijd, de buurt, vakantie). Sanne opens with a fixed line;
 after that every learner message is one request:
 
-- Request: `{ topicId, history: [{ from: "partner" | "learner", text }], message }` (message 1–400 characters).
+- Request: `{ topicId, words?, history: [{ from: "partner" | "learner", text }], message }` (message 1–400 characters).
 - Claude returns `{ reply, corrections }` (structured output). `reply` is A2 Dutch, 1–3 sentences, usually ending in a question.
   `corrections` correct only the learner's last message, in the same shape as the writing feedback (§10.2), so the screen
   shows the same strikethrough and correct chunk. A missing full stop or capital in a chat message is not a mistake.
@@ -671,7 +671,16 @@ modules in their own order finds it last (modules missing from `moduleOrder` fol
 
 **Two kinds of practice, as tabs** (the last one opened is remembered on the device):
 
-- *Onderwerpen*: the small talk above.
+- *Onderwerpen*: the small talk above, with a **word mission in levels**. Per topic, `shared/logic/taalcafeWords.ts` holds
+  three levels of six words (from first words to richer ones), each level with its own opener; the lists are static, so
+  no Claude call decides what counts. Three words are on screen, right above the message box; a word counts when one of its
+  forms is in the learner's message outside a corrected chunk (written right). A used word is struck through and slides
+  away, and the next word of the level comes in its place. The words on screen go along as `words` in the request (the
+  service keeps only the topic's own words) so Sanne asks questions that make room for them. All six used: "Niveau n
+  gehaald!" with "Volgend niveau" (a new conversation) or "Stoppen". Levels won are saved per topic
+  (`GET`/`POST /api/taalcafe/levels`, kv `taalcafeLevels`; a lower level never overwrites a higher one), shown as stars on
+  the topic cards, travel in the progress file (merge: per topic the highest level) and are wiped by a reset. A topic goes
+  on at the first level not won yet.
 - *Situaties*: role-play with a mission (`shared/logic/taalcafeSituations.ts`, 23 situations in 7 groups: winkels en geld,
   onderweg, gezondheid, wonen, vrije tijd, werk en school, feestjes). Claude plays the other person (the pharmacy assistant,
   the hoofdconducteur, the cashier …), with `u` where a stranger would say it, and corrects `je`/`u` too. The learner sees

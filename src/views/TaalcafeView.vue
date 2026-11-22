@@ -4,6 +4,7 @@ import { RouterLink } from "vue-router";
 import type { WritingFeedback } from "@shared/schemas/claude";
 import { buildSegments } from "@shared/logic/corrections";
 import { TAALCAFE_MAX_LENGTH, TAALCAFE_MAX_TURNS, TAALCAFE_PARTNER } from "@shared/logic/taalcafe";
+import { WORDS_SHOWN, topicLevels, wordsUsed, type TopicWord } from "@shared/logic/taalcafeWords";
 import { api } from "../api/client";
 import { useSettingsStore } from "../stores/settings";
 import { useLanguageStore } from "../stores/language";
@@ -28,6 +29,20 @@ const draft = ref("");
 const sending = ref(false);
 const error = ref<string | null>(null);
 const end = ref<HTMLElement | null>(null);
+
+/** Word levels won per topic (saved). Without them (an error) every topic simply starts at level 1. */
+const levels = ref<Record<string, number>>({});
+api
+  .get<{ levels: Record<string, number> }>("/taalcafe/levels")
+  .then((r) => (levels.value = { ...r.levels, ...levels.value }))
+  .catch(() => {});
+// The word mission of a topic: a few places on screen, each with a word to use; a used word makes room for the next.
+const places = ref<(TopicWord | null)[]>([]);
+let waiting: TopicWord[] = [];
+const wordsDone = ref(0);
+/** For a screen reader: which word just counted. */
+const wordNews = ref("");
+const saveError = ref(false);
 // Every new conversation gets a new number: an answer to a request from an earlier conversation is ignored.
 let conversation = 0;
 
@@ -145,6 +160,12 @@ const openCorrection = computed(() => {
 });
 
 const situation = computed(() => (talk.value?.kind === "situation" ? talk.value.situation : null));
+const topicTalk = computed(() => (talk.value?.kind === "topic" ? talk.value : null));
+const topicLevel = computed(() => (topicTalk.value ? topicLevels(topicTalk.value.topic.id)[topicTalk.value.level] : null));
+const levelCount = computed(() => (topicTalk.value ? topicLevels(topicTalk.value.topic.id).length : 0));
+/** Every word of the level used: the level is won. */
+const levelWon = computed(() => !!topicLevel.value && wordsDone.value >= topicLevel.value.words.length);
+const hasNextLevel = computed(() => !!topicTalk.value && topicTalk.value.level + 1 < levelCount.value);
 const partnerName = computed(() => situation.value?.partner.name ?? TAALCAFE_PARTNER);
 const learnerTurns = computed(() => messages.value.filter((m) => m.from === "learner").length);
 const turnsLeft = computed(() => TAALCAFE_MAX_TURNS - learnerTurns.value);
@@ -155,9 +176,15 @@ const done = computed(() => turnsLeft.value <= 0 || missionDone.value);
 function begin(t: TaalcafeTalk | null) {
   conversation++;
   talk.value = t;
-  const opener = t ? (t.kind === "topic" ? t.topic.opener : t.situation.opener) : null;
+  const lv = t?.kind === "topic" ? topicLevels(t.topic.id)[t.level] : undefined;
+  const opener = t ? (t.kind === "topic" ? (lv?.opener ?? t.topic.opener) : t.situation.opener) : null;
   messages.value = opener ? [{ from: "partner", text: opener }] : [];
   reached.value = [];
+  places.value = lv ? lv.words.slice(0, WORDS_SHOWN) : [];
+  waiting = lv ? lv.words.slice(WORDS_SHOWN) : [];
+  wordsDone.value = 0;
+  wordNews.value = "";
+  saveError.value = false;
   close();
   draft.value = "";
   error.value = null;
@@ -165,6 +192,31 @@ function begin(t: TaalcafeTalk | null) {
 }
 const reset = () => begin(null);
 const again = () => begin(talk.value);
+const nextLevel = () => topicTalk.value && begin({ ...topicTalk.value, level: topicTalk.value.level + 1 });
+
+/** The words of this message that count: each makes room for the next word. The last one wins the level. */
+function useWords(text: string, corrections: Correction[]) {
+  const on = places.value.filter((w): w is TopicWord => !!w);
+  const used = wordsUsed(text, corrections, on);
+  if (!used.length) return;
+  places.value = places.value.map((w) => (w && used.includes(w) ? (waiting.shift() ?? null) : w));
+  wordsDone.value += used.length;
+  wordNews.value = lang.t("taalcafe.wordUsed", { words: used.map((w) => w.word).join(", ") });
+  if (levelWon.value) saveLevel();
+}
+
+async function saveLevel() {
+  const t = topicTalk.value!;
+  const mine = conversation;
+  const level = t.level + 1;
+  levels.value = { ...levels.value, [t.topic.id]: Math.max(levels.value[t.topic.id] ?? 0, level) };
+  try {
+    await api.post("/taalcafe/levels", { topicId: t.topic.id, level });
+  } catch {
+    // Won all the same; it is just not kept for next time.
+    if (mine === conversation) saveError.value = true;
+  }
+}
 
 async function scrollDown() {
   await nextTick();
@@ -185,12 +237,14 @@ async function send() {
   sending.value = true;
   scrollDown();
   try {
-    const which = current.kind === "topic" ? { topicId: current.topic.id } : { situationId: current.situation.id, reached: reached.value };
+    const words = places.value.flatMap((w) => (w ? [w.word] : []));
+    const which = current.kind === "topic" ? { topicId: current.topic.id, words } : { situationId: current.situation.id, reached: reached.value };
     const res = await api.post<{ reply: string; corrections: Correction[]; goalsReached?: string[] }>("/claude/taalcafe", { ...which, history, message: text });
     if (mine !== conversation) return;
     mineMessage.corrections = res.corrections;
     messages.value.push({ from: "partner", text: res.reply });
     if (res.goalsReached) reached.value = res.goalsReached;
+    if (current.kind === "topic") useWords(text, res.corrections);
   } catch (e) {
     if (mine !== conversation) return;
     // Nothing is lost: the message goes back into the box, to send again.
@@ -234,7 +288,7 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
       </p>
     </div>
 
-    <TaalcafePicker v-else-if="!talk" @choose="begin" />
+    <TaalcafePicker v-else-if="!talk" :levels="levels" @choose="begin" />
 
     <section v-else :aria-label="lang.t('taalcafe.title')">
       <p v-if="talk.kind === 'topic'" class="mb-3 text-sm font-semibold text-muted"><UiLabel variant="inline" k="taalcafe.topic" />: <span lang="nl" translate="no">{{ talk.topic.title }}</span></p>
@@ -337,9 +391,34 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
         />
       </div>
       </div>
-      <div ref="end" />
 
       <p v-if="anyCorrections" class="mt-3 text-sm text-muted">ⓘ {{ lang.t("taalcafe.tapHint") }}</p>
+      <!-- The word mission, right above the box where the learner types: use each word in a message. A used word is struck through and slides away; the next one comes in. -->
+      <section v-if="topicLevel && !levelWon" class="mt-4 rounded-2xl border-2 border-brand/50 bg-brand-bg p-4" data-words :aria-label="lang.t('taalcafe.wordsMission')">
+        <div class="mb-1 flex flex-wrap items-center justify-between gap-2">
+          <h2 class="font-extrabold">🎯 {{ lang.t("taalcafe.wordsMission") }} · {{ lang.t("taalcafe.level", { n: (topicTalk?.level ?? 0) + 1, total: levelCount }) }}</h2>
+          <span class="text-sm font-bold" data-words-progress>{{ lang.t("taalcafe.missionProgress", { n: wordsDone, total: topicLevel.words.length }) }}</span>
+        </div>
+        <p class="mb-3 text-sm">{{ lang.t("taalcafe.wordsHint") }}</p>
+        <ul class="grid grid-cols-[repeat(auto-fit,minmax(8rem,1fr))] gap-2 overflow-hidden" lang="nl" translate="no">
+          <li v-for="(w, i) in places" :key="i" class="min-h-11">
+            <Transition name="word" mode="out-in">
+              <span
+                v-if="w"
+                :key="w.word"
+                class="nl-wrap block rounded-xl border-2 border-brand bg-surface px-3 py-2 text-center text-lg font-bold"
+                data-word
+                >{{ w.word }}</span
+              >
+            </Transition>
+          </li>
+        </ul>
+        <!-- One dot per word of the level -->
+        <div class="mt-3 flex gap-1.5" aria-hidden="true">
+          <span v-for="n in topicLevel.words.length" :key="n" class="h-2 flex-1 rounded-full transition-colors" :class="n <= wordsDone ? 'bg-good' : 'bg-line'" />
+        </div>
+        <p class="sr-only" aria-live="polite">{{ wordNews }}</p>
+      </section>
       <p v-if="error" class="mt-4 rounded-2xl bg-bad-bg p-4 text-bad" role="alert">✗ {{ error }}</p>
       <!-- The mission is reached: a small celebration, then another round or another situation -->
       <div v-if="missionDone" class="animate-pop mt-4 rounded-2xl border-2 border-good bg-good-bg p-5 text-center" role="status">
@@ -349,6 +428,22 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
         <div class="mt-4 flex flex-wrap justify-center gap-2">
           <AppButton @click="reset"><UiLabel k="taalcafe.another" /></AppButton>
           <AppButton variant="secondary" @click="again"><UiLabel k="taalcafe.again" /></AppButton>
+        </div>
+      </div>
+      <!-- A level won: go up a level, or stop here -->
+      <div v-else-if="levelWon && topicTalk" class="animate-pop mt-4 rounded-2xl border-2 border-good bg-good-bg p-5 text-center" role="status" data-level-won>
+        <p class="text-3xl tracking-tight" aria-hidden="true">
+          <span v-for="n in levelCount" :key="n" :class="n <= topicTalk.level + 1 ? 'text-amber-500' : 'text-line'">★</span>
+        </p>
+        <p class="text-2xl font-extrabold text-good">
+          {{ hasNextLevel ? lang.t("taalcafe.levelWon", { n: topicTalk.level + 1 }) : lang.t("taalcafe.allLevelsWon") }}
+        </p>
+        <p class="mt-1">{{ hasNextLevel ? lang.t("taalcafe.levelWonText") : lang.t("taalcafe.allLevelsWonText") }}</p>
+        <p v-if="saveError" class="mt-2 text-sm text-bad">{{ lang.t("taalcafe.levelNotSaved") }}</p>
+        <div class="mt-4 flex flex-wrap justify-center gap-2">
+          <AppButton v-if="hasNextLevel" @click="nextLevel"><UiLabel k="taalcafe.nextLevel" /></AppButton>
+          <AppButton v-else @click="again"><UiLabel k="taalcafe.again" /></AppButton>
+          <AppButton variant="secondary" @click="reset"><UiLabel k="taalcafe.stop" /></AppButton>
         </div>
       </div>
       <p v-else-if="done" class="card mt-4 p-4 font-semibold">{{ lang.t("taalcafe.done") }}</p>
@@ -370,6 +465,8 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
           <AppButton :disabled="sending || !draft.trim()" @click="send"><UiLabel :k="error ? 'taalcafe.retry' : 'taalcafe.send'" /></AppButton>
         </div>
       </form>
+      <!-- Scrolled to after each message: the newest answer, the word mission and the box (or the end card) stay in view -->
+      <div ref="end" />
     </section>
   </div>
 </template>

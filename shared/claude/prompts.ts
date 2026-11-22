@@ -90,9 +90,13 @@ Antwoord alleen met JSON volgens het schema.`;
 type ChatLine = { from: "partner" | "learner"; text: string };
 const transcript = (history: ChatLine[], partner: string) => history.map((m) => `${m.from === "partner" ? partner : "Cursist"}: ${m.text}`).join("\n");
 
-export function taalcafeUser(topic: string, history: ChatLine[], message: string): string {
+export function taalcafeUser(topic: string, history: ChatLine[], message: string, words: string[] = []): string {
   const lines = transcript(history, "Sanne");
-  return `Onderwerp: ${topic}
+  // The learner's word mission: Sanne makes room for these words, the learner has to say them.
+  const practice = words.length
+    ? `\n\nDe cursist oefent deze woorden: ${words.join(", ")}. Stel vragen waarin de cursist deze woorden zelf kan gebruiken. Gebruik ze liever niet zelf: de cursist moet ze zeggen.`
+    : "";
+  return `Onderwerp: ${topic}${practice}
 
 Het gesprek tot nu toe:
 ${lines}

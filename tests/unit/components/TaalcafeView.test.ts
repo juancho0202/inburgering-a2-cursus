@@ -57,7 +57,7 @@ describe("a conversation", () => {
     await clickButton(w, "Verstuur");
 
     expect(fakeApi.to("POST", "/claude/taalcafe").map((c) => c.body)).toEqual([
-      { topicId: "weekend", history: [{ from: "partner", text: WEEKEND_OPENER }], message: "Zaterdag ik heb gaan naar de bioscoop" },
+      { topicId: "weekend", words: ["zaterdag", "zondag", "slapen"], history: [{ from: "partner", text: WEEKEND_OPENER }], message: "Zaterdag ik heb gaan naar de bioscoop" },
     ]);
     const mine = learnerBubbles(w)[0];
     expect(mine.find("del").text()).toBe("ik heb gaan");
@@ -276,6 +276,111 @@ describe("a conversation", () => {
       await clickButton(w, "Verstuur");
       expect(chunks(w)).toHaveLength(1);
       expect(learnerBubbles(w)[0].find("ul").text()).toContain("Overlapt met de eerste.");
+    });
+  });
+
+  describe("a topic with a word mission, in levels", () => {
+    const shownWords = (w: Awaited<ReturnType<typeof open>>) => w.findAll("[data-word]").map((x) => x.text());
+    const panel = (w: Awaited<ReturnType<typeof open>>) => w.find("[data-words]");
+    async function say(w: Awaited<ReturnType<typeof open>>, text: string) {
+      await type(w, text);
+      await clickButton(w, "Verstuur");
+    }
+    async function weekend(levels: Record<string, number> = {}) {
+      fakeApi.on("GET", "/taalcafe/levels", { levels });
+      fakeApi.on("POST", "/taalcafe/levels", (b) => ({ levels: { weekend: (b as { level: number }).level } }));
+      const w = await open();
+      await flushPromises();
+      await clickButton(w, "Het weekend");
+      return w;
+    }
+
+    it("shows three words of level 1; a word used correctly makes room for the next one, and Sanne gets the words on screen", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: [] });
+      const w = await weekend();
+      expect(panel(w).text()).toContain("Niveau 1 van 3");
+      expect(panel(w).text()).toContain("0 van 6");
+      expect(shownWords(w)).toEqual(["zaterdag", "zondag", "slapen"]);
+
+      await say(w, "Zaterdag heb ik lang geslapen.");
+      expect(shownWords(w)).toEqual(["vrienden", "zondag", "film"]); // each new word in the place of the used one
+      expect(panel(w).text()).toContain("2 van 6");
+      expect(panel(w).find("[aria-live]").text()).toBe("Woord gebruikt: zaterdag, slapen");
+      await say(w, "En zondag?");
+      expect(fakeApi.to("POST", "/claude/taalcafe")[1].body).toMatchObject({ words: ["vrienden", "zondag", "film"] });
+      expect(shownWords(w)).toEqual(["vrienden", "markt", "film"]);
+    });
+
+    it("a word inside a corrected chunk does not count: only a word written right does", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "O ja?", corrections: [{ original: "ik heb slaap", corrected: "ik heb geslapen", type: "werkwoord", explanation: "Voltooid deelwoord." }] });
+      const w = await weekend();
+      await say(w, "Zondag ik heb slaap.");
+      expect(shownWords(w)).toEqual(["zaterdag", "vrienden", "slapen"]);
+      expect(panel(w).text()).toContain("1 van 6");
+    });
+
+    it("all six words win the level: it is saved, the chat stops, and 'Volgend niveau' starts level 2 with its own opener and words", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: [] });
+      const w = await weekend();
+      await say(w, "Zaterdag en zondag heb ik veel geslapen.");
+      expect(w.find("[data-level-won]").exists()).toBe(false);
+      await say(w, "Met vrienden naar de markt en een film.");
+      expect(fakeApi.to("POST", "/taalcafe/levels").map((c) => c.body)).toEqual([{ topicId: "weekend", level: 1 }]);
+      expect(w.find("[data-level-won]").text()).toContain("Niveau 1 gehaald!");
+      expect(w.find("textarea").exists()).toBe(false);
+      expect(panel(w).exists()).toBe(false); // the end card takes the place of the (now empty) word panel
+
+      await clickButton(w, "Volgend niveau");
+      expect(panel(w).text()).toContain("Niveau 2 van 3");
+      expect(panel(w).text()).toContain("0 van 6");
+      expect(shownWords(w)).toEqual(["boodschappen", "bezoeken", "wandelen"]);
+      expect(partnerBubbles(w).map((b) => b.text())).toEqual([expect.stringContaining("Ik ben zaterdag naar het strand gefietst.")]);
+      expect(w.find("textarea").exists()).toBe(true);
+    });
+
+    it("'Stoppen' after a level goes back to the topics, where the topic has its star and goes on at the next level", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: [] });
+      const w = await weekend();
+      await say(w, "Zaterdag, zondag: slapen!");
+      await say(w, "Vrienden, film, markt.");
+      await clickButton(w, "Stoppen");
+      expect(w.find("[data-topic=weekend] [data-stars]").findAll(".text-amber-500")).toHaveLength(1);
+      await clickButton(w, "Het weekend");
+      expect(panel(w).text()).toContain("Niveau 2 van 3");
+    });
+
+    it("starts at the saved level; the last level won says so and offers to play it again, not a next level", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: [] });
+      const w = await weekend({ weekend: 2 });
+      expect(panel(w).text()).toContain("Niveau 3 van 3");
+      await say(w, "Mijn plannen: een afspraak, maar rustig.");
+      // Only the words on screen count: these three come in once the first three are used.
+      expect(shownWords(w)).toEqual(["druk", "museum", "volgende"]);
+      await say(w, "Niet druk: het museum, volgende week.");
+      expect(w.find("[data-level-won]").text()).toContain("Alle niveaus gehaald!");
+      expect(buttonWith(w, "Volgend niveau")).toBeUndefined();
+      await clickButton(w, "Nog een keer");
+      expect(panel(w).text()).toContain("Niveau 3 van 3");
+      expect(panel(w).text()).toContain("0 van 6");
+    });
+
+    it("when saving the level fails, the level is still won but the learner is told it was not kept", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: [] });
+      const w = await weekend();
+      fakeApi.fail("POST", "/taalcafe/levels", "Opslaan mislukt.");
+      await say(w, "Zaterdag, zondag: slapen!");
+      await say(w, "Vrienden, film, markt.");
+      await flushPromises();
+      expect(w.find("[data-level-won]").text()).toContain("Dit niveau is niet bewaard.");
+      expect(buttonWith(w, "Volgend niveau")).toBeDefined();
+    });
+
+    it("without saved levels (an error) every topic starts at level 1", async () => {
+      fakeApi.fail("GET", "/taalcafe/levels", "Kapot.");
+      const w = await open();
+      await flushPromises();
+      await clickButton(w, "Het weekend");
+      expect(panel(w).text()).toContain("Niveau 1 van 3");
     });
   });
 

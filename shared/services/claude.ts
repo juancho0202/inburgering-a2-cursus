@@ -6,6 +6,7 @@ import { ClaudeRefusalError, NoApiKeyError, type ClaudeGateway } from "../claude
 import { explainMistake, generateExercises, taalcafeSituationTurn, taalcafeTurn, writingFeedback } from "../claude/services.js";
 import { taalcafeSituation } from "../logic/taalcafeSituations.js";
 import { TAALCAFE_HISTORY, TAALCAFE_MAX_LENGTH, TAALCAFE_MAX_TURNS, taalcafeTopic } from "../logic/taalcafe.js";
+import { topicLevels } from "../logic/taalcafeWords.js";
 import { normalizeAnswer } from "../logic/answers.js";
 import { writingTag } from "../logic/corrections.js";
 import type { GeneratedRecord } from "../schemas/store.js";
@@ -86,6 +87,8 @@ const TaalcafeBody = z
     situationId: z.string().optional(),
     /** Situation goals reached in earlier turns: they stay reached. */
     reached: z.array(z.string().max(100)).max(20).default([]),
+    /** Topic words the learner is trying to use now (only words of the topic's levels are passed on). */
+    words: z.array(z.string().max(60)).max(10).default([]),
     history: z.array(z.object({ from: z.enum(["partner", "learner"]), text: z.string().max(2000) })).max(2 * TAALCAFE_MAX_TURNS + 1),
     message: z.string().trim().min(1).max(TAALCAFE_MAX_LENGTH),
   })
@@ -113,7 +116,10 @@ export async function taalcafe(env: Env, body: unknown) {
       const all = new Set([...reached, ...turn.goalsReached]);
       return { reply: turn.reply, corrections: own(turn.corrections), goalsReached: situation.goals.map((g) => g.id).filter((g) => all.has(g)) };
     }
-    const { turn, usage } = await taalcafeTurn(gateway, { topic: topic!.title, history: recent, message });
+    // Only the topic's own words reach the prompt: the list is course content, not free text from the browser.
+    const known = new Set(topicLevels(topic!.id).flatMap((l) => l.words.map((w) => w.word)));
+    const words = parsed.data.words.filter((w) => known.has(w));
+    const { turn, usage } = await taalcafeTurn(gateway, { topic: topic!.title, words, history: recent, message });
     await recordUsage(env, usage);
     return { reply: turn.reply, corrections: own(turn.corrections) };
   } catch (err) {

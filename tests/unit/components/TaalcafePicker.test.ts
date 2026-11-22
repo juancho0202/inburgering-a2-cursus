@@ -12,14 +12,23 @@ afterEach(() => vi.restoreAllMocks());
 
 describe("TaalcafePicker", () => {
   it("opens on the topics; a topic is chosen with one click", async () => {
-    const { wrapper } = await mountApp(TaalcafePicker);
+    const { wrapper } = await mountApp(TaalcafePicker, { props: { levels: {} } });
     expect(selected(wrapper)).toContain("Onderwerpen");
     await wrapper.findAll("button").find((b) => b.text().includes("Het weer"))!.trigger("click");
     expect(wrapper.emitted("choose")![0][0]).toMatchObject({ kind: "topic", topic: { id: "weer" } });
   });
 
+  it("shows a star per level won, and a topic goes on at the first level not won yet (the last one once all are won)", async () => {
+    const { wrapper } = await mountApp(TaalcafePicker, { props: { levels: { weer: 1, eten: 3, kennismaken: 9 } } });
+    const stars = (id: string) => wrapper.find(`[data-topic=${id}] [data-stars]`).findAll(".text-amber-500").length;
+    expect([stars("weekend"), stars("weer"), stars("eten"), stars("kennismaken")]).toEqual([0, 1, 3, 3]);
+    expect(wrapper.find("[data-topic=weer]").text()).toContain("1 van 3 niveaus gehaald");
+    for (const id of ["weekend", "weer", "eten", "kennismaken"]) await wrapper.find(`[data-topic=${id}]`).trigger("click");
+    expect(wrapper.emitted("choose")!.map(([t]) => (t as { level: number }).level)).toEqual([0, 1, 2, 2]);
+  });
+
   it("the situations tab shows the situations in groups, says which are phone calls, and chooses one", async () => {
-    const { wrapper } = await mountApp(TaalcafePicker);
+    const { wrapper } = await mountApp(TaalcafePicker, { props: { levels: {} } });
     await tabs(wrapper)[1].trigger("click");
     expect(selected(wrapper)).toContain("Situaties");
     expect(wrapper.find("[role=tabpanel]").attributes("aria-labelledby")).toBe(tabs(wrapper)[1].attributes("id"));
@@ -31,7 +40,7 @@ describe("TaalcafePicker", () => {
   });
 
   it("works with the keyboard: arrow keys, Home and End switch tabs and move the focus; only the chosen tab is in the tab order", async () => {
-    const { wrapper } = await mountApp(TaalcafePicker);
+    const { wrapper } = await mountApp(TaalcafePicker, { props: { levels: {} } });
     expect(tabs(wrapper).map((t) => t.attributes("tabindex"))).toEqual(["0", "-1"]);
     await tabs(wrapper)[0].trigger("keydown", { key: "ArrowRight" });
     await flushPromises();
@@ -49,10 +58,10 @@ describe("TaalcafePicker", () => {
   });
 
   it("remembers the last tab on this device, and still works when storage is blocked", async () => {
-    const first = await mountApp(TaalcafePicker);
+    const first = await mountApp(TaalcafePicker, { props: { levels: {} } });
     await tabs(first.wrapper)[1].trigger("click");
     first.wrapper.unmount();
-    const again = await mountApp(TaalcafePicker);
+    const again = await mountApp(TaalcafePicker, { props: { levels: {} } });
     expect(selected(again.wrapper)).toContain("Situaties");
     again.wrapper.unmount();
 
@@ -67,7 +76,7 @@ describe("TaalcafePicker", () => {
       if (k === "taalcafeTab") throw new Error("blocked");
       return realSet.call(this, k, v);
     });
-    const blocked = await mountApp(TaalcafePicker);
+    const blocked = await mountApp(TaalcafePicker, { props: { levels: {} } });
     expect(selected(blocked.wrapper)).toContain("Onderwerpen");
     await tabs(blocked.wrapper)[1].trigger("click");
     expect(selected(blocked.wrapper)).toContain("Situaties");

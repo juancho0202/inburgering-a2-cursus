@@ -118,6 +118,10 @@ export type LastLocation = z.infer<typeof LastLocationSchema>;
 export const NewTodaySchema = z.object({ day: z.string(), count: z.number().int() });
 export type NewToday = z.infer<typeof NewTodaySchema>;
 
+/** Taalcafé topics: how many word levels the learner has won, per topic id. A level once won stays won. */
+export const TaalcafeLevelsSchema = z.object({ levels: z.record(z.string(), z.number().int().min(0)), updatedAt: z.string() });
+export type TaalcafeLevels = z.infer<typeof TaalcafeLevelsSchema>;
+
 export const MetaRecordSchema = z.object({
   deviceId: z.string(),
   deviceName: z.string().optional(),
@@ -135,4 +139,5 @@ export const KV = {
   srsNewToday: "srsNewToday",
   meta: "meta",
   welcomeSeen: "welcomeSeen",
+  taalcafeLevels: "taalcafeLevels",
 } as const;
