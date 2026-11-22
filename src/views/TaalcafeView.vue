@@ -194,15 +194,11 @@ const reset = () => begin(null);
 const again = () => begin(talk.value);
 const nextLevel = () => topicTalk.value && begin({ ...topicTalk.value, level: topicTalk.value.level + 1 });
 
-/**
- * The words of this message that count: the ones on screen, and also words of the level still waiting (those are
- * done before they show up). A used word on screen makes room for the next one. The last one wins the level.
- */
+/** The words of this message that count: each makes room for the next word. The last one wins the level. */
 function useWords(text: string, corrections: Correction[]) {
   const on = places.value.filter((w): w is TopicWord => !!w);
-  const used = wordsUsed(text, corrections, [...on, ...waiting]);
+  const used = wordsUsed(text, corrections, on);
   if (!used.length) return;
-  waiting = waiting.filter((w) => !used.includes(w));
   places.value = places.value.map((w) => (w && used.includes(w) ? (waiting.shift() ?? null) : w));
   wordsDone.value += used.length;
   wordNews.value = lang.t("taalcafe.wordUsed", { words: used.map((w) => w.word).join(", ") });

@@ -674,9 +674,8 @@ modules in their own order finds it last (modules missing from `moduleOrder` fol
 - *Onderwerpen*: the small talk above, with a **word mission in levels**. Per topic, `shared/logic/taalcafeWords.ts` holds
   three levels of six words (from first words to richer ones), each level with its own opener; the lists are static, so
   no Claude call decides what counts. Three words are on screen, right above the message box; a word counts when one of its
-  forms is in the learner's message outside a corrected chunk (written right). A word of the level that is not on screen
-  yet counts too (it then never comes up). A used word is struck through and slides away, and the next word of the level
-  comes in its place. The words on screen go along as `words` in the request (the
+  forms is in the learner's message outside a corrected chunk (written right). A used word is struck through and slides
+  away, and the next word of the level comes in its place. The words on screen go along as `words` in the request (the
   service keeps only the topic's own words) so Sanne asks questions that make room for them. All six used: "Niveau n
   gehaald!" with "Volgend niveau" (a new conversation) or "Stoppen". Levels won are saved per topic
   (`GET`/`POST /api/taalcafe/levels`, kv `taalcafeLevels`; a lower level never overwrites a higher one), shown as stars on
