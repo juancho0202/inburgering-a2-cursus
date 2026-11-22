@@ -311,3 +311,12 @@
 @media (prefers-reduced-motion: reduce) {
   .word-leave-active, .word-enter-active { animation-duration: 0.01s; }
 }
+
+/* Taalcafé sentence deck: a finished card slides down and away, the next one comes up from the stack. */
+.deck-leave-active { transition: transform 0.35s ease-in, opacity 0.35s ease-in; }
+.deck-leave-to { transform: translateY(4rem) rotate(2deg); opacity: 0; }
+.deck-enter-active { transition: transform 0.25s ease-out, opacity 0.25s ease-out; }
+.deck-enter-from { transform: translateY(0.5rem) scale(0.96); opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .deck-leave-active, .deck-enter-active { transition-duration: 0.01s; }
+}

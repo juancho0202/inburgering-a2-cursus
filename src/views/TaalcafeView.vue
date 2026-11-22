@@ -12,6 +12,8 @@ import AppButton from "../components/ui/AppButton.vue";
 import SpeakButton from "../components/ui/SpeakButton.vue";
 import UiLabel from "../components/ui/UiLabel.vue";
 import TaalcafePicker, { type TaalcafeTalk } from "../components/TaalcafePicker.vue";
+import TaalcafeDeck from "../components/TaalcafeDeck.vue";
+import { buildDeck, type DeckCard } from "@shared/logic/taalcafeDeck";
 
 type Correction = WritingFeedback["corrections"][number];
 type Message = { from: "partner"; text: string } | { from: "learner"; text: string; corrections: Correction[] | null };
@@ -43,6 +45,9 @@ const wordsDone = ref(0);
 /** For a screen reader: which word just counted. */
 const wordNews = ref("");
 const saveError = ref(false);
+/** The sentence deck at the end of a level: the sentences that got a correction, to put in the right order. */
+const deck = ref<DeckCard[]>([]);
+const deckOpen = ref(false);
 // Every new conversation gets a new number: an answer to a request from an earlier conversation is ignored.
 let conversation = 0;
 
@@ -165,6 +170,8 @@ const topicLevel = computed(() => (topicTalk.value ? topicLevels(topicTalk.value
 const levelCount = computed(() => (topicTalk.value ? topicLevels(topicTalk.value.topic.id).length : 0));
 /** Every word of the level used: the level is won. */
 const levelWon = computed(() => !!topicLevel.value && wordsDone.value >= topicLevel.value.words.length);
+/** All words used and the deck done (or there was nothing to correct): the level is finished. */
+const levelFinished = computed(() => levelWon.value && !deck.value.length);
 const hasNextLevel = computed(() => !!topicTalk.value && topicTalk.value.level + 1 < levelCount.value);
 const partnerName = computed(() => situation.value?.partner.name ?? TAALCAFE_PARTNER);
 const learnerTurns = computed(() => messages.value.filter((m) => m.from === "learner").length);
@@ -185,6 +192,8 @@ function begin(t: TaalcafeTalk | null) {
   wordsDone.value = 0;
   wordNews.value = "";
   saveError.value = false;
+  deck.value = [];
+  deckOpen.value = false;
   close();
   draft.value = "";
   error.value = null;
@@ -202,7 +211,17 @@ function useWords(text: string, corrections: Correction[]) {
   places.value = places.value.map((w) => (w && used.includes(w) ? (waiting.shift() ?? null) : w));
   wordsDone.value += used.length;
   wordNews.value = lang.t("taalcafe.wordUsed", { words: used.map((w) => w.word).join(", ") });
-  if (levelWon.value) saveLevel();
+  if (!levelWon.value) return;
+  // Before the level is finished: the corrected sentences of this conversation, as a deck of cards.
+  deck.value = buildDeck(messages.value.flatMap((m) => (m.from === "learner" && m.corrections?.length ? [{ text: m.text, corrections: m.corrections }] : [])));
+  if (deck.value.length) deckOpen.value = true;
+  else saveLevel();
+}
+
+function deckDone() {
+  deck.value = [];
+  deckOpen.value = false;
+  saveLevel();
 }
 
 async function saveLevel() {
@@ -431,7 +450,14 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
         </div>
       </div>
       <!-- A level won: go up a level, or stop here -->
-      <div v-else-if="levelWon && topicTalk" class="animate-pop mt-4 rounded-2xl border-2 border-good bg-good-bg p-5 text-center" role="status" data-level-won>
+      <!-- The deck was closed before the last card: the level waits for it -->
+      <template v-else-if="levelWon && !levelFinished">
+        <div v-if="!deckOpen" class="card mt-4 p-5 text-center" data-deck-waiting>
+          <p class="font-semibold">{{ lang.t("taalcafe.deckWaiting") }}</p>
+          <AppButton class="mt-3" @click="deckOpen = true"><UiLabel k="taalcafe.deckOpen" /></AppButton>
+        </div>
+      </template>
+      <div v-else-if="levelFinished && topicTalk" class="animate-pop mt-4 rounded-2xl border-2 border-good bg-good-bg p-5 text-center" role="status" data-level-won>
         <p class="text-3xl tracking-tight" aria-hidden="true">
           <span v-for="n in levelCount" :key="n" :class="n <= topicTalk.level + 1 ? 'text-amber-500' : 'text-line'">★</span>
         </p>
@@ -465,6 +491,7 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
           <AppButton :disabled="sending || !draft.trim()" @click="send"><UiLabel :k="error ? 'taalcafe.retry' : 'taalcafe.send'" /></AppButton>
         </div>
       </form>
+      <TaalcafeDeck v-if="deckOpen" :cards="deck" @done="deckDone" @close="deckOpen = false" />
       <!-- Scrolled to after each message: the newest answer, the word mission and the box (or the end card) stay in view -->
       <div ref="end" />
     </section>

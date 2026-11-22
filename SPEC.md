@@ -677,7 +677,12 @@ modules in their own order finds it last (modules missing from `moduleOrder` fol
   forms is in the learner's message outside a corrected chunk (written right). A used word is struck through and slides
   away, and the next word of the level comes in its place. The words on screen go along as `words` in the request (the
   service keeps only the topic's own words) so Sanne asks questions that make room for them. All six used: "Niveau n
-  gehaald!" with "Volgend niveau" (a new conversation) or "Stoppen". Levels won are saved per topic
+  gehaald!" with "Volgend niveau" (a new conversation) or "Stoppen". Before that summary, when the conversation had
+  corrections, a **sentence deck** opens (a modal, `shared/logic/taalcafeDeck.ts`): one card per corrected sentence (at
+  most 6, longer ones cut to 12 words around the correction), showing the learner's sentence with the wrong part struck.
+  The learner taps the words of the corrected sentence into order; a wrong order keeps the right start and returns the
+  rest. Right: "Goed!" with Claude's explanation, then the card slides down and the next comes up. The level is only
+  finished (and saved) after the last card; closing the deck leaves the level waiting with a button back to the cards. Levels won are saved per topic
   (`GET`/`POST /api/taalcafe/levels`, kv `taalcafeLevels`; a lower level never overwrites a higher one), shown as stars on
   the topic cards, travel in the progress file (merge: per topic the highest level) and are wiped by a reset. A topic goes
   on at the first level not won yet.

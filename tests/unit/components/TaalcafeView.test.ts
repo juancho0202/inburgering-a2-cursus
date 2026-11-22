@@ -338,6 +338,55 @@ describe("a conversation", () => {
       expect(w.find("textarea").exists()).toBe(true);
     });
 
+    describe("the sentence deck before the level is finished", () => {
+      const wordOrder = { original: "ik heb", corrected: "heb ik", type: "woordvolgorde", explanation: "Na zondag: eerst het werkwoord." };
+      async function allWordsUsed() {
+        let n = 0;
+        fakeApi.on("POST", "/claude/taalcafe", () => (++n === 1 ? { reply: "Lekker!", corrections: [wordOrder] } : { reply: "Leuk!", corrections: [] }));
+        const w = await weekend();
+        await say(w, "Zaterdag en zondag ik heb geslapen.");
+        await say(w, "Met vrienden naar de markt en een film.");
+        return w;
+      }
+      const deckPool = (w: Awaited<ReturnType<typeof open>>) => w.find("[data-pool]").findAll("button");
+      async function solve(w: Awaited<ReturnType<typeof open>>, words: string[]) {
+        for (const word of words) await deckPool(w).find((b) => b.text() === word)!.trigger("click");
+        await clickButton(w, "Controleer");
+      }
+
+      it("all words used with corrections in the talk: the deck of corrected sentences opens; the level is not finished or saved yet", async () => {
+        const w = await allWordsUsed();
+        expect(w.find("[role=dialog]").text()).toContain("Zet je zinnen goed");
+        expect(w.find("[data-original]").text()).toBe("Zaterdag en zondag ik heb geslapen.");
+        expect(deckPool(w).map((b) => b.text()).sort()).toEqual(["Zaterdag", "en", "geslapen", "heb", "ik", "zondag"]);
+        expect(w.find("[data-level-won]").exists()).toBe(false);
+        expect(fakeApi.to("POST", "/taalcafe/levels")).toHaveLength(0);
+      });
+
+      it("the last card right: the deck closes, the level is saved and the summary shows", async () => {
+        const w = await allWordsUsed();
+        await solve(w, ["Zaterdag", "en", "zondag", "heb", "ik", "geslapen"]);
+        await clickButton(w, "Klaar");
+        expect(w.find("[role=dialog]").exists()).toBe(false);
+        expect(fakeApi.to("POST", "/taalcafe/levels").map((c) => c.body)).toEqual([{ topicId: "weekend", level: 1 }]);
+        expect(w.find("[data-level-won]").text()).toContain("Niveau 1 gehaald!");
+      });
+
+      it("closing the deck early leaves the level waiting for it, with a way back to the cards", async () => {
+        const w = await allWordsUsed();
+        await w.find("[role=dialog] button[aria-label=Sluiten]").trigger("click");
+        expect(w.find("[role=dialog]").exists()).toBe(false);
+        expect(w.find("[data-level-won]").exists()).toBe(false);
+        expect(w.find("textarea").exists()).toBe(false);
+        expect(w.find("[data-deck-waiting]").text()).toContain("Nog één stap");
+        expect(fakeApi.to("POST", "/taalcafe/levels")).toHaveLength(0);
+        await clickButton(w, "Naar de kaarten");
+        await solve(w, ["Zaterdag", "en", "zondag", "heb", "ik", "geslapen"]);
+        await clickButton(w, "Klaar");
+        expect(w.find("[data-level-won]").exists()).toBe(true);
+      });
+    });
+
     it("'Stoppen' after a level goes back to the topics, where the topic has its star and goes on at the next level", async () => {
       fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: [] });
       const w = await weekend();
