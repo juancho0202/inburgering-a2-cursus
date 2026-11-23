@@ -320,3 +320,8 @@
 @media (prefers-reduced-motion: reduce) {
   .deck-leave-active, .deck-enter-active { transition-duration: 0.01s; }
 }
+
+/* Taalcafé word pills on a phone: one row; a word that does not fit fades out at the end. */
+.words-fade {
+  mask-image: linear-gradient(to right, black calc(100% - 1.5rem), transparent);
+}

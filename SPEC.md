@@ -673,7 +673,10 @@ modules in their own order finds it last (modules missing from `moduleOrder` fol
 
 - *Onderwerpen*: the small talk above, with a **word mission in levels**. Per topic, `shared/logic/taalcafeWords.ts` holds
   three levels of six words (from first words to richer ones), each level with its own opener; the lists are static, so
-  no Claude call decides what counts. Three words are on screen, right above the message box; a word counts when one of its
+  no Claude call decides what counts. Three words are on screen, outside the chat so it stays a chat: on a phone as small pills in the
+  app bar's own row (the app's name makes room there; pills that do not fit fade out behind a ⌄ that opens a card
+  explaining the mission), from tablet width in a sidebar next to the chat (with a situation's mission). In a
+  conversation the taalcafé intro is gone; a word counts when one of its
   forms is in the learner's message outside a corrected chunk (written right). A used word is struck through and slides
   away, and the next word of the level comes in its place. The words on screen go along as `words` in the request (the
   service keeps only the topic's own words) so Sanne asks questions that make room for them. All six used: "Niveau n

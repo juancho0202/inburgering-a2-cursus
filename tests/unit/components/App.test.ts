@@ -16,6 +16,7 @@ const routes = [
   { path: "/woorden", component: page("woorden") },
   { path: "/woorden/herhalen", component: page("herhalen") },
   { path: "/werkwoorden", component: page("werkwoorden") },
+  { path: "/taalcafe", component: page("taalcafe") },
   { path: "/examen/:id", component: page("examen"), meta: { focus: true } },
 ];
 
@@ -137,6 +138,18 @@ describe("back to the landing page", () => {
   it("is never highlighted as the current app page", async () => {
     const { wrapper } = await open("/");
     expect(landingLinks(wrapper)[0].attributes("aria-current")).toBeUndefined();
+  });
+});
+
+describe("the taalcafé on a phone", () => {
+  it("makes room in the bar for the word mission: the app's name is only for screen readers there, the logo still goes home", async () => {
+    const name = (w: any) => w.find("header a[href='/'] span:not([aria-hidden])");
+    const { wrapper, router } = await open("/taalcafe");
+    expect(name(wrapper).classes()).toContain("max-md:sr-only");
+    expect(wrapper.find("header #app-bar-extra").exists()).toBe(true);
+    await router.push("/woorden");
+    await flushPromises();
+    expect(name(wrapper).classes()).not.toContain("max-md:sr-only");
   });
 });
 

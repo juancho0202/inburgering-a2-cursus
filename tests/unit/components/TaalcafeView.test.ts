@@ -4,6 +4,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import TaalcafeView from "../../../src/views/TaalcafeView.vue";
 import { TAALCAFE_MAX_TURNS } from "../../../shared/logic/taalcafe";
+import { DOMWrapper } from "@vue/test-utils";
 import { buttonWith, clickButton, deferred, fakeApi, flushPromises, mountApp } from "../../helpers/component";
 
 vi.mock("../../../src/api/client", async () => {
@@ -25,6 +26,11 @@ async function type(w: Awaited<ReturnType<typeof open>>, text: string) {
 }
 const learnerBubbles = (w: Awaited<ReturnType<typeof open>>) => w.findAll("[data-from=learner]");
 const partnerBubbles = (w: Awaited<ReturnType<typeof open>>) => w.findAll("[data-from=partner]");
+
+const page = () => new DOMWrapper(document.body);
+/** The app bar's strip (App.vue): the word mission goes there on a phone. */
+beforeEach(() => document.body.insertAdjacentHTML("afterbegin", '<div id="app-bar-extra"></div>'));
+afterEach(() => document.getElementById("app-bar-extra")?.remove());
 
 beforeEach(() => {
   fakeApi.reset();
@@ -280,8 +286,9 @@ describe("a conversation", () => {
   });
 
   describe("a topic with a word mission, in levels", () => {
-    const shownWords = (w: Awaited<ReturnType<typeof open>>) => w.findAll("[data-word]").map((x) => x.text());
-    const panel = (w: Awaited<ReturnType<typeof open>>) => w.find("[data-words]");
+    // The word mission is teleported out of the view (under the app bar, or into the sidebar): look in the page.
+    const shownWords = (_w: Awaited<ReturnType<typeof open>>) => page().findAll("[data-word]").map((x) => x.text());
+    const panel = (_w: Awaited<ReturnType<typeof open>>) => page().find("[data-words]");
     async function say(w: Awaited<ReturnType<typeof open>>, text: string) {
       await type(w, text);
       await clickButton(w, "Verstuur");
@@ -294,6 +301,63 @@ describe("a conversation", () => {
       await clickButton(w, "Het weekend");
       return w;
     }
+
+    it("on a phone the words sit in a strip under the app bar, not between the messages; the intro is only on the picker", async () => {
+      const w = await weekend();
+      expect(document.getElementById("app-bar-extra")!.querySelector("[data-words]")).not.toBeNull();
+      expect(w.find("[data-chat]").element.parentElement!.querySelector("[data-words]")).toBeNull();
+      expect(w.text()).not.toContain("Oefen echte gesprekken");
+      expect(w.text()).toContain("Onderwerp: Het weekend · Niveau 1 van 3");
+      await clickButton(w, "Nieuw gesprek");
+      expect(w.text()).toContain("Oefen echte gesprekken");
+      expect(panel(w).exists()).toBe(false);
+    });
+
+    it("on a phone ⌄ opens a card that explains the word mission; ⌄ again, Escape or a tap elsewhere closes it", async () => {
+      const w = await weekend();
+      const toggle = () => page().find("button[aria-label='Wat is de woordenmissie?']");
+      const info = () => page().find("[data-words-info]");
+      expect(info().exists()).toBe(false);
+      await toggle().trigger("click");
+      expect(toggle().attributes("aria-expanded")).toBe("true");
+      expect(info().text()).toContain("Een woord telt als je het goed schrijft.");
+      expect(info().text()).toContain("Heb je alle 6 woorden gebruikt?");
+      expect(info().text()).toContain("Niveau 1 van 3 · 0 van 6");
+      await toggle().trigger("click");
+      expect(info().exists()).toBe(false);
+
+      await toggle().trigger("click");
+      document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
+      await flushPromises();
+      expect(info().exists()).toBe(false);
+      expect(document.activeElement).toBe(toggle().element);
+
+      await toggle().trigger("click");
+      await info().trigger("click"); // inside the card: stays
+      expect(info().exists()).toBe(true);
+      w.find("textarea").element.click();
+      await flushPromises();
+      expect(info().exists()).toBe(false);
+    });
+
+    it("on a wide screen the mission is in the sidebar, and it moves there when the screen gets wide; the listener goes on unmount", async () => {
+      let listener: ((e: { matches: boolean }) => void) | null = null;
+      const query = { matches: false, addEventListener: vi.fn((_: string, f: typeof listener) => (listener = f)), removeEventListener: vi.fn() };
+      vi.stubGlobal("matchMedia", vi.fn(() => query));
+      try {
+        const w = await weekend();
+        expect(document.getElementById("app-bar-extra")!.querySelector("[data-words]")).not.toBeNull();
+        listener!({ matches: true });
+        await flushPromises();
+        expect(document.getElementById("taalcafe-side")!.querySelector("[data-words]")).not.toBeNull();
+        expect(document.getElementById("app-bar-extra")!.querySelector("[data-words]")).toBeNull();
+        expect(panel(w).text()).toContain("Een woord telt als je het goed schrijft.");
+        w.unmount();
+        expect(query.removeEventListener).toHaveBeenCalledWith("change", listener);
+      } finally {
+        vi.unstubAllGlobals();
+      }
+    });
 
     it("shows three words of level 1; a word used correctly makes room for the next one, and Sanne gets the words on screen", async () => {
       fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: [] });
@@ -442,6 +506,20 @@ describe("a conversation", () => {
       return w;
     }
     const goal = (w: Awaited<ReturnType<typeof open>>, id: string) => w.find(`[data-goal=${id}]`);
+
+    it("on a wide screen the situation and its mission are in the sidebar; on a phone above the chat", async () => {
+      vi.stubGlobal("matchMedia", vi.fn(() => ({ matches: true, addEventListener() {}, removeEventListener() {} })));
+      try {
+        const w = await apotheek();
+        expect(document.getElementById("taalcafe-side")!.querySelector("[data-mission]")).not.toBeNull();
+        w.unmount();
+      } finally {
+        vi.unstubAllGlobals();
+      }
+      const phone = await apotheek();
+      expect(phone.find("[data-mission]").exists()).toBe(true);
+      expect(document.getElementById("taalcafe-side")!.querySelector("[data-mission]")).toBeNull();
+    });
 
     it("shows where you are, who you talk to, and the mission with nothing reached yet", async () => {
       const w = await apotheek();

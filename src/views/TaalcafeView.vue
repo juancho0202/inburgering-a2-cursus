@@ -45,6 +45,16 @@ const wordsDone = ref(0);
 /** For a screen reader: which word just counted. */
 const wordNews = ref("");
 const saveError = ref(false);
+/** On a phone: the card under the app bar that explains the word mission. */
+const infoOpen = ref(false);
+const infoToggle = ref<HTMLElement | null>(null);
+
+/** A wider screen (Tailwind's md, where the app bar shows its links) has a sidebar for the mission; a phone gets the words under the app bar. */
+const wideQuery = typeof window.matchMedia === "function" ? window.matchMedia("(min-width: 768px)") : null;
+const wide = ref(wideQuery?.matches ?? false);
+const onWide = (e: MediaQueryListEvent) => (wide.value = e.matches);
+wideQuery?.addEventListener?.("change", onWide);
+onBeforeUnmount(() => wideQuery?.removeEventListener?.("change", onWide));
 /** The sentence deck at the end of a level: the sentences that got a correction, to put in the right order. */
 const deck = ref<DeckCard[]>([]);
 const deckOpen = ref(false);
@@ -143,9 +153,14 @@ function onBlur(e: FocusEvent, m: number, c: number) {
 }
 function closeOnOutside(e: Event) {
   if (tip.value && !(e.target as Element | null)?.closest?.("[data-fix], [data-tooltip]")) close();
+  if (infoOpen.value && !(e.target as Element | null)?.closest?.("[data-words]")) infoOpen.value = false;
 }
 function closeOnEscape(e: KeyboardEvent) {
   if (e.key === "Escape" && tip.value) close(true);
+  else if (e.key === "Escape" && infoOpen.value) {
+    infoOpen.value = false;
+    infoToggle.value?.focus();
+  }
 }
 onMounted(() => {
   document.addEventListener("click", closeOnOutside);
@@ -192,6 +207,7 @@ function begin(t: TaalcafeTalk | null) {
   wordsDone.value = 0;
   wordNews.value = "";
   saveError.value = false;
+  infoOpen.value = false;
   deck.value = [];
   deckOpen.value = false;
   close();
@@ -292,13 +308,14 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
 </script>
 
 <template>
-  <div class="mx-auto max-w-2xl">
+  <div class="mx-auto" :class="talk ? 'max-w-2xl md:max-w-5xl' : 'max-w-2xl'">
     <RouterLink to="/" class="text-muted hover:text-ink">← <UiLabel k="common.back" /></RouterLink>
     <div class="mb-4 mt-3 flex flex-wrap items-end justify-between gap-3">
       <h1 class="text-3xl font-extrabold tracking-tight">☕ <UiLabel variant="heading" k="taalcafe.title" /></h1>
       <AppButton v-if="talk" variant="secondary" @click="reset"><UiLabel k="taalcafe.newChat" /></AppButton>
     </div>
-    <p class="mb-6 text-muted">{{ lang.t("taalcafe.intro") }}</p>
+    <!-- What the taalcafé is: only while choosing. In a conversation the chat speaks for itself. -->
+    <p v-if="!talk" class="mb-6 text-muted">{{ lang.t("taalcafe.intro") }}</p>
 
     <div v-if="settings.settings && !settings.hasKey" class="card p-5">
       <p>
@@ -309,10 +326,18 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
 
     <TaalcafePicker v-else-if="!talk" :levels="levels" @choose="begin" />
 
-    <section v-else :aria-label="lang.t('taalcafe.title')">
-      <p v-if="talk.kind === 'topic'" class="mb-3 text-sm font-semibold text-muted"><UiLabel variant="inline" k="taalcafe.topic" />: <span lang="nl" translate="no">{{ talk.topic.title }}</span></p>
-      <!-- A situation: where you are, who you talk to, and the mission. The goals tick off as you reach them. -->
-      <div v-else class="mb-4 grid gap-3" lang="nl" translate="no">
+    <!-- A wide screen: the chat, and a sidebar with the mission. -->
+    <div v-else class="md:grid md:grid-cols-[minmax(0,1fr)_16rem] md:items-start md:gap-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-8">
+    <section :aria-label="lang.t('taalcafe.title')">
+      <p v-if="talk.kind === 'topic'" class="mb-3 text-sm font-semibold text-muted">
+        <UiLabel variant="inline" k="taalcafe.topic" />: <span lang="nl" translate="no">{{ talk.topic.title }}</span>
+        <template v-if="topicLevel"> · {{ lang.t("taalcafe.level", { n: talk.level + 1, total: levelCount }) }}</template>
+      </p>
+      <p v-if="anyCorrections" class="mb-3 text-sm text-muted">ⓘ {{ lang.t("taalcafe.tapHint") }}</p>
+      <!-- A situation: where you are, who you talk to, and the mission. The goals tick off as you reach them.
+           Above the chat on a phone, in the sidebar on a wide screen. -->
+      <Teleport v-if="talk.kind === 'situation'" defer to="#taalcafe-side" :disabled="!wide">
+      <div class="mb-4 grid gap-3" lang="nl" translate="no">
         <div class="card p-4">
           <p class="font-bold">{{ talk.situation.emoji }} {{ talk.situation.title }}</p>
           <p class="mt-1">{{ talk.situation.setting }}</p>
@@ -340,14 +365,15 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
           </ul>
         </section>
       </div>
+      </Teleport>
       <div ref="chatBox" class="relative" data-chat>
-      <ol class="grid gap-3" aria-live="polite" lang="nl" translate="no">
+      <ol class="grid gap-2" aria-live="polite" lang="nl" translate="no">
         <li v-for="(m, i) in messages" :key="i" class="flex" :class="m.from === 'learner' ? 'justify-end' : 'justify-start'">
-          <div v-if="m.from === 'partner'" class="card max-w-[85%] p-3" data-from="partner">
+          <div v-if="m.from === 'partner'" class="card max-w-[85%] px-3 py-2" data-from="partner">
             <p class="mb-1 flex items-center gap-2 text-sm font-bold text-muted">{{ partnerName }} <SpeakButton :text="m.text" /></p>
             <p class="whitespace-pre-line text-lg">{{ m.text }}</p>
           </div>
-          <div v-else class="relative max-w-[85%] rounded-2xl bg-brand-bg p-3" data-from="learner" :class="{ 'opacity-70': m.corrections === null }">
+          <div v-else class="relative max-w-[85%] rounded-2xl bg-brand-bg px-3 py-2" data-from="learner" :class="{ 'opacity-70': m.corrections === null }">
             <p class="whitespace-pre-line text-lg">
               <template v-for="(s, si) in segmentsOf(m)" :key="si">
                 <span v-if="s.kind === 'text'">{{ s.text }}</span>
@@ -411,33 +437,6 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
       </div>
       </div>
 
-      <p v-if="anyCorrections" class="mt-3 text-sm text-muted">ⓘ {{ lang.t("taalcafe.tapHint") }}</p>
-      <!-- The word mission, right above the box where the learner types: use each word in a message. A used word is struck through and slides away; the next one comes in. -->
-      <section v-if="topicLevel && !levelWon" class="mt-4 rounded-2xl border-2 border-brand/50 bg-brand-bg p-4" data-words :aria-label="lang.t('taalcafe.wordsMission')">
-        <div class="mb-1 flex flex-wrap items-center justify-between gap-2">
-          <h2 class="font-extrabold">🎯 {{ lang.t("taalcafe.wordsMission") }} · {{ lang.t("taalcafe.level", { n: (topicTalk?.level ?? 0) + 1, total: levelCount }) }}</h2>
-          <span class="text-sm font-bold" data-words-progress>{{ lang.t("taalcafe.missionProgress", { n: wordsDone, total: topicLevel.words.length }) }}</span>
-        </div>
-        <p class="mb-3 text-sm">{{ lang.t("taalcafe.wordsHint") }}</p>
-        <ul class="grid grid-cols-[repeat(auto-fit,minmax(8rem,1fr))] gap-2 overflow-hidden" lang="nl" translate="no">
-          <li v-for="(w, i) in places" :key="i" class="min-h-11">
-            <Transition name="word" mode="out-in">
-              <span
-                v-if="w"
-                :key="w.word"
-                class="nl-wrap block rounded-xl border-2 border-brand bg-surface px-3 py-2 text-center text-lg font-bold"
-                data-word
-                >{{ w.word }}</span
-              >
-            </Transition>
-          </li>
-        </ul>
-        <!-- One dot per word of the level -->
-        <div class="mt-3 flex gap-1.5" aria-hidden="true">
-          <span v-for="n in topicLevel.words.length" :key="n" class="h-2 flex-1 rounded-full transition-colors" :class="n <= wordsDone ? 'bg-good' : 'bg-line'" />
-        </div>
-        <p class="sr-only" aria-live="polite">{{ wordNews }}</p>
-      </section>
       <p v-if="error" class="mt-4 rounded-2xl bg-bad-bg p-4 text-bad" role="alert">✗ {{ error }}</p>
       <!-- The mission is reached: a small celebration, then another round or another situation -->
       <div v-if="missionDone" class="animate-pop mt-4 rounded-2xl border-2 border-good bg-good-bg p-5 text-center" role="status">
@@ -491,9 +490,80 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
           <AppButton :disabled="sending || !draft.trim()" @click="send"><UiLabel :k="error ? 'taalcafe.retry' : 'taalcafe.send'" /></AppButton>
         </div>
       </form>
+      <!-- The word mission. On a phone: pills in the app bar's own row, fading out behind a ⌄ that opens a card explaining
+           the mission, so the chat stays a chat. On a wider screen: in the sidebar. A used word is struck through and slides
+           away; the next one comes in. -->
+      <Teleport defer :to="wide ? '#taalcafe-side' : '#app-bar-extra'">
+        <section
+          v-if="topicLevel && !levelWon && topicTalk"
+          data-words
+          :aria-label="lang.t('taalcafe.wordsMission')"
+          :class="wide ? 'rounded-2xl border-2 border-brand/50 bg-brand-bg p-4' : 'flex min-w-0 items-center gap-1.5'"
+        >
+          <span class="sr-only">{{ lang.t("taalcafe.level", { n: topicTalk.level + 1, total: levelCount }) }} · {{ lang.t("taalcafe.missionProgress", { n: wordsDone, total: topicLevel.words.length }) }}</span>
+          <template v-if="wide">
+            <h2 class="font-extrabold" aria-hidden="true">🎯 {{ lang.t("taalcafe.wordsMission") }}</h2>
+            <p class="mb-1 text-sm font-bold" aria-hidden="true">
+              {{ lang.t("taalcafe.level", { n: topicTalk.level + 1, total: levelCount }) }} · {{ lang.t("taalcafe.missionProgress", { n: wordsDone, total: topicLevel.words.length }) }}
+            </p>
+            <p class="mb-3 text-sm">{{ lang.t("taalcafe.wordsExplain", { total: topicLevel.words.length }) }}</p>
+          </template>
+          <span v-else class="shrink-0 text-sm font-extrabold" aria-hidden="true">🎯 {{ wordsDone }}/{{ topicLevel.words.length }}</span>
+          <!-- On a phone one row; a word that does not fit fades out under the ⌄ -->
+          <div :class="wide ? '' : 'words-fade min-w-0 flex-1 overflow-hidden'">
+            <ul :class="wide ? 'grid gap-2' : 'flex flex-nowrap gap-1.5'" lang="nl" translate="no">
+              <li v-for="(w, i) in places" :key="i" :class="wide ? 'min-h-11' : 'shrink-0'">
+                <Transition name="word" mode="out-in">
+                  <span
+                    v-if="w"
+                    :key="w.word"
+                    :class="wide ? 'nl-wrap block rounded-xl border-2 border-brand bg-surface px-3 py-2 text-center text-lg' : 'block whitespace-nowrap rounded-full border border-brand bg-brand-bg px-2.5 py-0.5 text-sm'"
+                    class="font-bold"
+                    data-word
+                    >{{ w.word }}</span
+                  >
+                </Transition>
+              </li>
+            </ul>
+          </div>
+          <template v-if="!wide">
+            <button
+              ref="infoToggle"
+              type="button"
+              class="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-xl font-bold text-muted hover:bg-surface-2 hover:text-ink"
+              :aria-label="lang.t('taalcafe.wordsAbout')"
+              :aria-expanded="infoOpen"
+              aria-controls="taalcafe-words-info"
+              @click="infoOpen = !infoOpen"
+            >
+              <span class="-mt-2 transition-transform" :class="{ 'mt-1 rotate-180': infoOpen }" aria-hidden="true">⌄</span>
+            </button>
+            <!-- The progress as a thin line on the bottom edge of the bar -->
+            <span class="absolute inset-x-0 bottom-0 h-0.5 bg-line" aria-hidden="true"><span class="block h-full bg-good transition-all" :style="{ width: `${(wordsDone / topicLevel.words.length) * 100}%` }" /></span>
+            <!-- What the word mission is: a card under the bar -->
+            <div v-if="infoOpen" id="taalcafe-words-info" class="absolute inset-x-0 top-full px-4 pt-2">
+              <div class="card mx-auto max-w-5xl p-4 shadow-lg" data-words-info>
+                <h2 class="font-extrabold">🎯 {{ lang.t("taalcafe.wordsMission") }}</h2>
+                <p class="text-sm font-bold">{{ lang.t("taalcafe.level", { n: topicTalk.level + 1, total: levelCount }) }} · {{ lang.t("taalcafe.missionProgress", { n: wordsDone, total: topicLevel.words.length }) }}</p>
+                <p class="mt-2">{{ lang.t("taalcafe.wordsExplain", { total: topicLevel.words.length }) }}</p>
+                <ul class="mt-3 flex flex-wrap gap-1.5" lang="nl" translate="no">
+                  <li v-for="w in places.filter((x) => !!x)" :key="w!.word" class="rounded-full border border-brand bg-brand-bg px-2.5 py-0.5 text-sm font-bold">{{ w!.word }}</li>
+                </ul>
+              </div>
+            </div>
+          </template>
+          <div v-else class="mt-3 flex gap-1.5" aria-hidden="true">
+            <span v-for="n in topicLevel.words.length" :key="n" class="h-2 flex-1 rounded-full transition-colors" :class="n <= wordsDone ? 'bg-good' : 'bg-line'" />
+          </div>
+          <p class="sr-only" aria-live="polite">{{ wordNews }}</p>
+        </section>
+      </Teleport>
       <TaalcafeDeck v-if="deckOpen" :cards="deck" @done="deckDone" @close="deckOpen = false" />
       <!-- Scrolled to after each message: the newest answer, the word mission and the box (or the end card) stay in view -->
       <div ref="end" />
     </section>
+    <!-- Always there (a teleport needs its place); only shown on a wide screen -->
+    <aside id="taalcafe-side" class="hidden md:sticky md:top-24 md:grid md:gap-4" :aria-label="lang.t('taalcafe.mission')" />
+    </div>
   </div>
 </template>
