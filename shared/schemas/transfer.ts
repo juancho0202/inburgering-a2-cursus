@@ -9,6 +9,7 @@ import {
   NewTodaySchema,
   SettingsRecordSchema,
   SrsCardRecordSchema,
+  TaalcafeLevelsSchema,
   UnitRecordSchema,
   WritingRecordSchema,
 } from "./store.js";
@@ -26,6 +27,8 @@ export const ProgressDataSchema = z.object({
   settings: SettingsRecordSchema.nullable(),
   lastLocation: LastLocationSchema.nullable(),
   srsNewToday: NewTodaySchema.nullable(),
+  /** Not in files made before the taalcafé word levels: then there is nothing to merge. */
+  taalcafeLevels: TaalcafeLevelsSchema.nullable().default(null),
 });
 export type ProgressData = z.infer<typeof ProgressDataSchema>;
 
@@ -55,4 +58,5 @@ export const emptyProgressData = (): ProgressData => ({
   settings: null,
   lastLocation: null,
   srsNewToday: null,
+  taalcafeLevels: null,
 });

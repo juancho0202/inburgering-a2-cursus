@@ -5,6 +5,7 @@ import { dashboard } from "../../shared/services/dashboard";
 import { startExam, submitExam } from "../../shared/services/exams";
 import { generate } from "../../shared/services/claude";
 import { completeUnit, getProgress } from "../../shared/services/progress";
+import { updateSettings } from "../../shared/services/settings";
 import { dueCards } from "../../shared/services/srs";
 import { examQuestions } from "../../shared/logic/exam";
 import { fakeGateway, makeEnv } from "../helpers/fixtures";
@@ -16,10 +17,18 @@ beforeAll(async () => {
 });
 
 describe("services on the real course", () => {
-  it("shows all six modules and a dashboard on an empty store", async () => {
+  it("a learner who already put the modules in their own order finds the taalcafé last, and keeps their order", async () => {
     const { env } = makeEnv({ content });
-    expect(courseTree(env).modules.map((m) => m.id)).toEqual(["basis", "lezen", "luisteren", "knm", "schrijven", "exams"]);
+    const theirs = ["exams", "schrijven", "basis", "knm", "lezen", "luisteren"];
+    await updateSettings(env, { moduleOrder: theirs });
+    expect((await dashboard(env)).modules.map((m) => m.id)).toEqual([...theirs, "taalcafe"]);
+  });
+
+  it("shows all seven modules and a dashboard on an empty store; the taalcafé comes right after Basis", async () => {
+    const { env } = makeEnv({ content });
+    expect(courseTree(env).modules.map((m) => m.id)).toEqual(["basis", "taalcafe", "lezen", "luisteren", "knm", "schrijven", "exams"]);
     const d = await dashboard(env);
+    expect(d.modules.map((m) => m.id).slice(0, 2)).toEqual(["basis", "taalcafe"]);
     expect(d.modules.every((m) => m.completed === 0)).toBe(true);
     expect(d.nextExam).not.toBeNull();
   });

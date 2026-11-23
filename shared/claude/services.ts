@@ -12,8 +12,20 @@ import {
 import { ExerciseSchema } from "../schemas/content.js";
 import { countWords } from "../logic/answers.js";
 import { ClaudeRefusalError, type ClaudeGateway, type CompleteArgs } from "./gateway.js";
-import { EXPLAIN_SYSTEM, GENERATE_SYSTEM, TAALCAFE_SYSTEM, WRITING_FEEDBACK_SYSTEM, explainUser, generateUser, taalcafeUser, writingFeedbackUser } from "./prompts.js";
-import { explanationJsonSchema, generateJsonSchemas, taalcafeJsonSchema, writingFeedbackJsonSchema } from "./schemas.js";
+import {
+  EXPLAIN_SYSTEM,
+  GENERATE_SYSTEM,
+  TAALCAFE_SITUATION_SYSTEM,
+  TAALCAFE_SYSTEM,
+  WRITING_FEEDBACK_SYSTEM,
+  explainUser,
+  generateUser,
+  taalcafeSituationUser,
+  taalcafeUser,
+  writingFeedbackUser,
+} from "./prompts.js";
+import type { TaalcafeSituation } from "../logic/taalcafeSituations.js";
+import { explanationJsonSchema, generateJsonSchemas, taalcafeJsonSchema, taalcafeSituationJsonSchema, writingFeedbackJsonSchema } from "./schemas.js";
 
 export interface Usage {
   inputTokens: number;
@@ -75,19 +87,43 @@ function parseTaalcafeTurn(v: unknown): TaalcafeTurn {
 
 export async function taalcafeTurn(
   gateway: ClaudeGateway,
-  args: { topic: string; history: { from: "partner" | "learner"; text: string }[]; message: string },
+  args: { topic: string; words?: string[]; history: { from: "partner" | "learner"; text: string }[]; message: string },
 ): Promise<{ turn: TaalcafeTurn; usage: Usage }> {
   const { value, usage } = await completeJson(
     gateway,
     {
       system: TAALCAFE_SYSTEM,
-      user: taalcafeUser(args.topic, args.history, args.message),
+      user: taalcafeUser(args.topic, args.history, args.message, args.words ?? []),
       schema: taalcafeJsonSchema as unknown as Record<string, unknown>,
       maxTokens: 4000,
       // Small talk needs little thinking: a quick, steady answer.
       effort: "low",
     },
     parseTaalcafeTurn,
+  );
+  return { turn: value, usage };
+}
+
+/** One turn of a situation: Claude plays the role and says which of the learner's goals are reached so far. */
+export async function taalcafeSituationTurn(
+  gateway: ClaudeGateway,
+  args: { situation: TaalcafeSituation; reached: string[]; history: { from: "partner" | "learner"; text: string }[]; message: string },
+): Promise<{ turn: TaalcafeTurn & { goalsReached: string[] }; usage: Usage }> {
+  const goalIds = args.situation.goals.map((g) => g.id);
+  const { value, usage } = await completeJson(
+    gateway,
+    {
+      system: TAALCAFE_SITUATION_SYSTEM,
+      user: taalcafeSituationUser(args.situation, args.reached, args.history, args.message),
+      schema: taalcafeSituationJsonSchema(goalIds) as unknown as Record<string, unknown>,
+      maxTokens: 4000,
+      effort: "low",
+    },
+    (v) => {
+      const turn = parseTaalcafeTurn(v);
+      const reached = z.object({ goalsReached: z.array(z.unknown()).default([]) }).parse(v).goalsReached;
+      return { ...turn, goalsReached: reached.filter((g): g is string => typeof g === "string") };
+    },
   );
   return { turn: value, usage };
 }

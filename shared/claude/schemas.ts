@@ -51,6 +51,19 @@ export const taalcafeJsonSchema = {
   properties: { corrections: { type: "array", items: correctionItem }, reply: str },
 } as const;
 
+/** A situation turn: the same, plus the goals reached so far (only this situation's goal ids). */
+export const taalcafeSituationJsonSchema = (goalIds: string[]) =>
+  ({
+    type: "object",
+    additionalProperties: false,
+    required: ["corrections", "reply", "goalsReached"],
+    properties: {
+      corrections: { type: "array", items: correctionItem },
+      reply: str,
+      goalsReached: { type: "array", items: { type: "string", enum: goalIds } },
+    },
+  }) as const;
+
 export const explanationJsonSchema = {
   type: "object",
   additionalProperties: false,

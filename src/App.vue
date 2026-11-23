@@ -90,8 +90,11 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
       <div class="mx-auto flex max-w-5xl items-center gap-2 px-4 py-2.5">
         <RouterLink to="/" class="mr-2 flex items-center gap-2 text-xl font-extrabold tracking-tight">
           <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand text-lg text-white" aria-hidden="true">NL</span>
-          <span class="whitespace-nowrap">Inburgering A2</span>
+          <!-- On a phone the taalcafé needs the room for its word mission: the name stays for screen readers -->
+          <span class="whitespace-nowrap" :class="{ 'max-md:sr-only': route.path === '/taalcafe' }">Inburgering A2</span>
         </RouterLink>
+        <!-- A screen can put something of its own in the bar on a phone (the taalcafé's word mission) -->
+        <div id="app-bar-extra" class="min-w-0 flex-1 md:hidden"></div>
 
         <!-- Desktop: links in the top bar -->
         <nav class="hidden items-center gap-1 md:flex" :aria-label="lang.t('app.mainMenu')">

@@ -43,12 +43,6 @@ const recommended = computed(() => mod.value?.units.find((u) => statusOf(u.id)?.
       <span class="font-bold"><UiLabel k="module.myTexts" /></span>
       <span class="ml-auto text-muted">→</span>
     </RouterLink>
-    <!-- Small talk with Claude, corrected per message (needs a key; the page explains how to add one) -->
-    <RouterLink v-if="mod.id === 'schrijven'" to="/taalcafe" class="card mb-6 flex items-center gap-3 p-4 transition hover:-translate-y-0.5 hover:shadow-lg">
-      <span class="text-2xl" aria-hidden="true">☕</span>
-      <span class="font-bold"><UiLabel k="module.taalcafe" /></span>
-      <span class="ml-auto text-muted">→</span>
-    </RouterLink>
     <p v-if="!mod.units.length" class="card p-6 text-muted">{{ lang.t("module.empty") }}</p>
     <!-- minmax(0, 1fr): a card can shrink to the screen; by default a grid row is as wide as its longest word or picture.
          The timeline and the big number circle only fit from sm up; on a phone the text gets the width and the status is a small badge. -->

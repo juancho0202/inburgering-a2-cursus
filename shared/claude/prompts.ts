@@ -41,6 +41,17 @@ ${text}
 """`;
 }
 
+/** How the learner's last message is corrected: the same in a topic chat and in a situation. */
+const TAALCAFE_CORRECTIONS = `De verbeteringen ("corrections"), alleen voor het LAATSTE bericht van de cursist:
+- Verbeter alleen echte fouten: werkwoord, woordvolgorde, lidwoord, spelling, woordkeuze.
+- Herschrijf niet naar mooier Nederlands. Wat goed en begrijpelijk is, blijft staan.
+- Een chatbericht zonder punt aan het eind, of zonder hoofdletter aan het begin, is geen fout.
+- Maximaal 5 verbeteringen, de belangrijkste eerst. Geen fouten? Dan een lege lijst.
+- "original" komt letterlijk uit het bericht van de cursist, en is zo kort mogelijk: alleen het foute stukje,
+  met een paar woorden eromheen als dat nodig is. "corrected" is hetzelfde stukje, maar goed.
+- "explanation": maximaal 15 woorden, in eenvoudig Nederlands.
+- Schrijft de cursist in een andere taal? Geef dan geen verbeteringen. Zeg in je antwoord vriendelijk hoe je het in het Nederlands zegt.`;
+
 export const TAALCAFE_SYSTEM = `Je bent Sanne, een vriendelijke vrijwilliger in een taalcafé in Nederland. Je praat met een
 cursist die Nederlands leert (niveau A2). Jullie praten over gewone dingen: small talk.
 
@@ -51,24 +62,70 @@ Je antwoord ("reply"):
 - Verbeter niets in je antwoord: de verbeteringen staan apart.
 - Blijf bij gewone onderwerpen. Gaat het over iets heel persoonlijks of moeilijks? Reageer kort en vriendelijk en ga terug naar het onderwerp.
 
-De verbeteringen ("corrections"), alleen voor het LAATSTE bericht van de cursist:
-- Verbeter alleen echte fouten: werkwoord, woordvolgorde, lidwoord, spelling, woordkeuze.
-- Herschrijf niet naar mooier Nederlands. Wat goed en begrijpelijk is, blijft staan.
-- Een chatbericht zonder punt aan het eind, of zonder hoofdletter aan het begin, is geen fout.
-- Maximaal 5 verbeteringen, de belangrijkste eerst. Geen fouten? Dan een lege lijst.
-- "original" komt letterlijk uit het bericht van de cursist, en is zo kort mogelijk: alleen het foute stukje,
-  met een paar woorden eromheen als dat nodig is. "corrected" is hetzelfde stukje, maar goed.
-- "explanation": maximaal 15 woorden, in eenvoudig Nederlands.
-- Schrijft de cursist in een andere taal? Geef dan geen verbeteringen. Zeg in je antwoord vriendelijk hoe je het in het Nederlands zegt.
+${TAALCAFE_CORRECTIONS}
 
 Antwoord alleen met JSON volgens het schema.`;
 
-export function taalcafeUser(topic: string, history: { from: "partner" | "learner"; text: string }[], message: string): string {
-  const lines = history.map((m) => `${m.from === "partner" ? "Sanne" : "Cursist"}: ${m.text}`).join("\n");
-  return `Onderwerp: ${topic}
+export const TAALCAFE_SITUATION_SYSTEM = `Je speelt een rol in een oefengesprek voor een cursist die Nederlands leert (niveau A2).
+De cursist heeft een opdracht met drie doelen. Jij bent de andere persoon, bijvoorbeeld de medewerker in de winkel.
+
+Je antwoord ("reply"):
+- Eenvoudig Nederlands (A2): 1 tot 3 korte zinnen, samen niet meer dan 40 woorden. Geen Engels.
+- Speel je rol zoals een echte persoon in Nederland. Je weet wat iemand in jouw rol weet; verzin geen moeilijke regels.
+- Laat de cursist het werk doen: noem de doelen niet zelf op, en doe ze niet voor de cursist. Je mag wel een vraag stellen
+  die helpt, zoals een echte medewerker dat ook doet.
+- Gebruik de wending (zie hieronder) één keer, op een natuurlijk moment, na het eerste of tweede bericht van de cursist.
+- Heeft de cursist met dit bericht alle doelen bereikt? Rond het gesprek dan vriendelijk af, zoals in het echt.
+- Verbeter niets in je antwoord: de verbeteringen staan apart.
+
+${TAALCAFE_CORRECTIONS}
+- Zegt de cursist je of jij tegen jou, terwijl u past? Verbeter dat (type "woordkeuze"). Andersom ook.
+
+De bereikte doelen ("goalsReached"):
+- Geef de id's van ALLE doelen die de cursist in het hele gesprek tot nu toe heeft bereikt, ook die van eerder.
+- Een doel is bereikt als de cursist het zelf in begrijpelijk Nederlands heeft gezegd of gevraagd. Kleine fouten zijn niet erg.
+
+Antwoord alleen met JSON volgens het schema.`;
+
+type ChatLine = { from: "partner" | "learner"; text: string };
+const transcript = (history: ChatLine[], partner: string) => history.map((m) => `${m.from === "partner" ? partner : "Cursist"}: ${m.text}`).join("\n");
+
+export function taalcafeUser(topic: string, history: ChatLine[], message: string, words: string[] = []): string {
+  const lines = transcript(history, "Sanne");
+  // The learner's word mission: Sanne makes room for these words, the learner has to say them.
+  const practice = words.length
+    ? `\n\nDe cursist oefent deze woorden: ${words.join(", ")}. Stel vragen waarin de cursist deze woorden zelf kan gebruiken. Gebruik ze liever niet zelf: de cursist moet ze zeggen.`
+    : "";
+  return `Onderwerp: ${topic}${practice}
 
 Het gesprek tot nu toe:
 ${lines}
+
+Laatste bericht van de cursist (verbeter alleen dit bericht):
+"""
+${message}
+"""`;
+}
+
+export function taalcafeSituationUser(
+  situation: { partner: { name: string; role: string }; formal: boolean; phone?: boolean; setting: string; goals: { id: string; text: string }[]; twist: string },
+  reached: string[],
+  history: ChatLine[],
+  message: string,
+): string {
+  const goals = situation.goals.map((g) => `- ${g.id}: ${g.text}${reached.includes(g.id) ? " (al bereikt)" : ""}`).join("\n");
+  return `Jouw rol: ${situation.partner.name}, ${situation.partner.role}.
+Je zegt ${situation.formal ? "u" : "je"} tegen de cursist.${situation.phone ? "\nDit is een telefoongesprek: jullie zien elkaar niet." : ""}
+
+De situatie (zo staat het bij de cursist): ${situation.setting}
+
+De doelen van de cursist:
+${goals}
+
+De wending (alleen voor jou): ${situation.twist}
+
+Het gesprek tot nu toe:
+${transcript(history, situation.partner.name)}
 
 Laatste bericht van de cursist (verbeter alleen dit bericht):
 """

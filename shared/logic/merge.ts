@@ -29,6 +29,7 @@ export interface MergePlan {
   settings: ProgressData["settings"] | undefined;
   lastLocation: ProgressData["lastLocation"] | undefined;
   srsNewToday: ProgressData["srsNewToday"] | undefined;
+  taalcafeLevels: ProgressData["taalcafeLevels"] | undefined;
   counts: Record<keyof MergePlan["writes"], CollectionCounts>;
 }
 
@@ -136,6 +137,7 @@ export function planMerge(local: ProgressData, incoming: ProgressData): MergePla
       : incoming.srsNewToday && (!local.srsNewToday || incoming.srsNewToday.day > local.srsNewToday.day)
         ? incoming.srsNewToday
         : undefined;
+  const taalcafeLevels = mergeTaalcafeLevels(local.taalcafeLevels, incoming.taalcafeLevels);
 
   return {
     writes: {
@@ -151,6 +153,7 @@ export function planMerge(local: ProgressData, incoming: ProgressData): MergePla
     settings,
     lastLocation,
     srsNewToday,
+    taalcafeLevels,
     counts: {
       attempts: attempts.counts,
       units: { new: unitNew, updated: unitUpdated, total: incoming.units.length },
@@ -170,6 +173,17 @@ export function isNothingNew(plan: MergePlan): boolean {
     Object.values(plan.writes).every((list) => list.length === 0) &&
     plan.settings === undefined &&
     plan.lastLocation === undefined &&
-    plan.srsNewToday === undefined
+    plan.srsNewToday === undefined &&
+    plan.taalcafeLevels === undefined
   );
+}
+
+/** Taalcafé word levels: per topic the highest level won on either device. Undefined when the file adds nothing. */
+export function mergeTaalcafeLevels(local: ProgressData["taalcafeLevels"], incoming: ProgressData["taalcafeLevels"]): ProgressData["taalcafeLevels"] | undefined {
+  if (!incoming) return undefined;
+  const mine = local?.levels ?? {};
+  const higher = Object.entries(incoming.levels).filter(([topic, n]) => n > (mine[topic] ?? 0));
+  if (!higher.length) return undefined;
+  const updatedAt = local && local.updatedAt > incoming.updatedAt ? local.updatedAt : incoming.updatedAt;
+  return { levels: { ...mine, ...Object.fromEntries(higher) }, updatedAt };
 }

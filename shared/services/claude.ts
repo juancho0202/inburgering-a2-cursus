@@ -3,8 +3,10 @@ import { CORRECTION_TYPES, GenerateRequestSchema, type WritingFeedback } from ".
 import { describeAnswer, describeCorrect, optionsOf } from "../claude/describe.js";
 import { mapClaudeError } from "../claude/errors.js";
 import { ClaudeRefusalError, NoApiKeyError, type ClaudeGateway } from "../claude/gateway.js";
-import { explainMistake, generateExercises, taalcafeTurn, writingFeedback } from "../claude/services.js";
+import { explainMistake, generateExercises, taalcafeSituationTurn, taalcafeTurn, writingFeedback } from "../claude/services.js";
+import { taalcafeSituation } from "../logic/taalcafeSituations.js";
 import { TAALCAFE_HISTORY, TAALCAFE_MAX_LENGTH, TAALCAFE_MAX_TURNS, taalcafeTopic } from "../logic/taalcafe.js";
+import { topicLevels } from "../logic/taalcafeWords.js";
 import { normalizeAnswer } from "../logic/answers.js";
 import { writingTag } from "../logic/corrections.js";
 import type { GeneratedRecord } from "../schemas/store.js";
@@ -79,26 +81,47 @@ export async function feedbackWriting(env: Env, body: unknown) {
 
 // ---------- taalcafé: small talk with corrections (§10.5) ----------
 
-const TaalcafeBody = z.object({
-  topicId: z.string(),
-  history: z.array(z.object({ from: z.enum(["partner", "learner"]), text: z.string().max(2000) })).max(2 * TAALCAFE_MAX_TURNS + 1),
-  message: z.string().trim().min(1).max(TAALCAFE_MAX_LENGTH),
-});
+const TaalcafeBody = z
+  .object({
+    topicId: z.string().optional(),
+    situationId: z.string().optional(),
+    /** Situation goals reached in earlier turns: they stay reached. */
+    reached: z.array(z.string().max(100)).max(20).default([]),
+    /** Topic words the learner is trying to use now (only words of the topic's levels are passed on). */
+    words: z.array(z.string().max(60)).max(10).default([]),
+    history: z.array(z.object({ from: z.enum(["partner", "learner"]), text: z.string().max(2000) })).max(2 * TAALCAFE_MAX_TURNS + 1),
+    message: z.string().trim().min(1).max(TAALCAFE_MAX_LENGTH),
+  })
+  .refine((b) => !!b.topicId !== !!b.situationId);
 
 export async function taalcafe(env: Env, body: unknown) {
   const parsed = TaalcafeBody.safeParse(body);
   if (!parsed.success) throw invalid(`Schrijf een bericht van maximaal ${TAALCAFE_MAX_LENGTH} tekens.`);
-  const topic = taalcafeTopic(parsed.data.topicId);
-  if (!topic) throw notFound("Dit onderwerp bestaat niet.");
-  const { history, message } = parsed.data;
+  const { history, message, reached } = parsed.data;
+  const topic = parsed.data.topicId ? taalcafeTopic(parsed.data.topicId) : undefined;
+  const situation = parsed.data.situationId ? taalcafeSituation(parsed.data.situationId) : undefined;
+  if (parsed.data.situationId && !situation) throw notFound("Deze situatie bestaat niet.");
+  if (parsed.data.topicId && !topic) throw notFound("Dit onderwerp bestaat niet.");
   if (history.filter((m) => m.from === "learner").length >= TAALCAFE_MAX_TURNS) throw invalid("Dit gesprek is klaar. Begin een nieuw gesprek.");
+  // A correction must point at words the learner really wrote; anything else would be shown as their mistake.
+  const own = (cs: { original: string; corrected: string }[]) => cs.filter((c) => c.original.trim() && message.includes(c.original) && c.original !== c.corrected);
 
   try {
-    const { turn, usage } = await taalcafeTurn(gatewayOrThrow(env), { topic: topic.title, history: history.slice(-TAALCAFE_HISTORY), message });
+    const gateway = gatewayOrThrow(env);
+    const recent = history.slice(-TAALCAFE_HISTORY);
+    if (situation) {
+      const { turn, usage } = await taalcafeSituationTurn(gateway, { situation, reached, history: recent, message });
+      await recordUsage(env, usage);
+      // Once reached, a goal stays reached. Only this situation's goals, in the order of the mission.
+      const all = new Set([...reached, ...turn.goalsReached]);
+      return { reply: turn.reply, corrections: own(turn.corrections), goalsReached: situation.goals.map((g) => g.id).filter((g) => all.has(g)) };
+    }
+    // Only the topic's own words reach the prompt: the list is course content, not free text from the browser.
+    const known = new Set(topicLevels(topic!.id).flatMap((l) => l.words.map((w) => w.word)));
+    const words = parsed.data.words.filter((w) => known.has(w));
+    const { turn, usage } = await taalcafeTurn(gateway, { topic: topic!.title, words, history: recent, message });
     await recordUsage(env, usage);
-    // A correction must point at words the learner really wrote; anything else would be shown as their mistake.
-    const corrections = turn.corrections.filter((c) => c.original.trim() && message.includes(c.original) && c.original !== c.corrected);
-    return { reply: turn.reply, corrections };
+    return { reply: turn.reply, corrections: own(turn.corrections) };
   } catch (err) {
     throw claudeFailure(err);
   }

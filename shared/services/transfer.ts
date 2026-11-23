@@ -9,6 +9,7 @@ import {
   type LastLocation,
   type MetaRecord,
   type NewToday,
+  type TaalcafeLevels,
   type SettingsRecord,
   type SrsCardRecord,
   type UnitRecord,
@@ -32,7 +33,7 @@ const SNAPSHOT_KEY = "importSnapshot";
 /** Everything the learner saved, read from the store. The API key is not in the store, so it cannot be in here. */
 export async function readProgressData(env: Env): Promise<ProgressData> {
   const s = env.store;
-  const [attempts, units, srsCards, writing, examResults, explanations, generated, flags, settings, lastLocation, srsNewToday] = await Promise.all([
+  const [attempts, units, srsCards, writing, examResults, explanations, generated, flags, settings, lastLocation, srsNewToday, taalcafeLevels] = await Promise.all([
     s.attempts.all(),
     s.units.all(),
     s.srsCards.all(),
@@ -44,8 +45,9 @@ export async function readProgressData(env: Env): Promise<ProgressData> {
     s.kv.get<SettingsRecord>(KV.settings),
     s.kv.get<LastLocation>(KV.lastLocation),
     s.kv.get<NewToday>(KV.srsNewToday),
+    s.kv.get<TaalcafeLevels>(KV.taalcafeLevels),
   ]);
-  return { attempts, units, srsCards, writing, examResults, explanations, generated, flags, settings: settings ?? null, lastLocation: lastLocation ?? null, srsNewToday: srsNewToday ?? null };
+  return { attempts, units, srsCards, writing, examResults, explanations, generated, flags, settings: settings ?? null, lastLocation: lastLocation ?? null, srsNewToday: srsNewToday ?? null, taalcafeLevels: taalcafeLevels ?? null };
 }
 
 export async function buildProgressFile(env: Env): Promise<ProgressFile> {
@@ -280,6 +282,7 @@ export async function applyImport(env: Env, body: unknown): Promise<ImportPrevie
   if (merge.settings) await s.kv.set(KV.settings, merge.settings);
   if (merge.lastLocation) await s.kv.set(KV.lastLocation, merge.lastLocation);
   if (merge.srsNewToday) await s.kv.set(KV.srsNewToday, merge.srsNewToday);
+  if (merge.taalcafeLevels) await s.kv.set(KV.taalcafeLevels, merge.taalcafeLevels);
   await updateMeta(env, { lastImportAt: importedAt });
   return { ...preview, importedAt };
 }
@@ -307,7 +310,7 @@ export async function undoLastImport(env: Env): Promise<{ ok: true }> {
     s.generated.putMany(d.generated),
     s.flags.putMany(d.flags),
   ]);
-  for (const [key, value] of [[KV.settings, d.settings], [KV.lastLocation, d.lastLocation], [KV.srsNewToday, d.srsNewToday]] as const) {
+  for (const [key, value] of [[KV.settings, d.settings], [KV.lastLocation, d.lastLocation], [KV.srsNewToday, d.srsNewToday], [KV.taalcafeLevels, d.taalcafeLevels]] as const) {
     if (value) await s.kv.set(key, value);
     else await s.kv.delete(key);
   }

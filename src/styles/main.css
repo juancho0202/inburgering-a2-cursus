@@ -276,3 +276,61 @@
     transform: scaleY(1);
   }
 }
+
+/* A small "pop" when a mission goal is reached or the mission is done (taalcafé). Not for people who prefer less motion. */
+@keyframes pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  60% { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); }
+}
+@utility animate-pop {
+  animation: pop 0.35s ease-out both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+/* Taalcafé word mission: a used word is struck through, fades and slides out to the left; the next word slides in
+   from the right into the same place (a <Transition name="word" mode="out-in"> per place). */
+@keyframes word-out {
+  0% { text-decoration-color: transparent; }
+  35% { text-decoration-color: currentColor; opacity: 0.6; transform: none; }
+  100% { text-decoration-color: currentColor; opacity: 0; transform: translateX(-2.5rem); }
+}
+@keyframes word-in {
+  from { opacity: 0; transform: translateX(2.5rem); }
+  to { opacity: 1; transform: none; }
+}
+.word-leave-active {
+  text-decoration: line-through 2px;
+  animation: word-out 0.8s ease-in both;
+}
+.word-enter-active {
+  animation: word-in 0.35s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .word-leave-active, .word-enter-active { animation-duration: 0.01s; }
+}
+
+/* Taalcafé sentence deck: a finished card slides down and away, the next one comes up from the stack. */
+.deck-leave-active { transition: transform 0.35s ease-in, opacity 0.35s ease-in; }
+.deck-leave-to { transform: translateY(4rem) rotate(2deg); opacity: 0; }
+.deck-enter-active { transition: transform 0.25s ease-out, opacity 0.25s ease-out; }
+.deck-enter-from { transform: translateY(0.5rem) scale(0.96); opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .deck-leave-active, .deck-enter-active { transition-duration: 0.01s; }
+}
+
+/* Taalcafé word pills on a phone: one row; a word that does not fit fades out at the end. */
+.words-fade {
+  mask-image: linear-gradient(to right, black calc(100% - 1.5rem), transparent);
+}
+
+/* Taalcafé on a phone: the app bar unfolds into the word mission, and the screen behind it dims. */
+.sheet-enter-active, .sheet-leave-active { transition: transform 0.22s ease-out, opacity 0.22s ease-out; transform-origin: top; }
+.sheet-enter-from, .sheet-leave-to { transform: translateY(-0.75rem); opacity: 0; }
+.dim-enter-active, .dim-leave-active { transition: opacity 0.22s ease-out; }
+.dim-enter-from, .dim-leave-to { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .sheet-enter-active, .sheet-leave-active, .dim-enter-active, .dim-leave-active { transition-duration: 0.01s; }
+}

@@ -6,6 +6,7 @@ export const router = createRouter({
   routes: [
     { path: "/", name: "dashboard", component: () => import("./views/DashboardView.vue") },
     { path: "/module/exams", redirect: "/examens" },
+    { path: "/module/taalcafe", redirect: "/taalcafe" },
     { path: "/module/:id", name: "module", component: () => import("./views/ModuleView.vue") },
     { path: "/unit/:id", name: "unit", component: () => import("./views/UnitView.vue") },
     { path: "/oefenen", name: "practice", component: () => import("./views/PracticeView.vue") },

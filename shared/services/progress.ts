@@ -110,11 +110,12 @@ export async function completeUnit(env: Env, unitId: string, body: unknown): Pro
   return { ok: true, wordsIntroduced: unit ? await introduceCards(env, unit.vocabRefs) : 0 };
 }
 
-/** Wipes progress and word cards. Writing texts, Claude explanations and generated exercises stay. */
+/** Wipes progress, word cards and taalcafé levels. Writing texts, Claude explanations and generated exercises stay. */
 export async function resetProgress(env: Env, body: unknown): Promise<{ ok: true }> {
   if (!z.object({ confirm: z.literal("RESET") }).safeParse(body).success) throw invalid("Bevestig met RESET om door te gaan.");
   await Promise.all([env.store.attempts.clear(), env.store.units.clear(), env.store.srsCards.clear(), env.store.examResults.clear()]);
   await env.store.kv.delete(KV.lastLocation);
   await env.store.kv.delete(KV.srsNewToday);
+  await env.store.kv.delete(KV.taalcafeLevels);
   return { ok: true };
 }

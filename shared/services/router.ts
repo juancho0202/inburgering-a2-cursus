@@ -11,6 +11,7 @@ import { listWriting, saveWriting } from "./writing.js";
 import { getWelcome, markWelcomeSeen } from "./welcome.js";
 import { addFlag, flagTarget, listFlags, removeFlag } from "./flags.js";
 import { explain, feedbackWriting, flagGenerated, generate, taalcafe } from "./claude.js";
+import { getTaalcafeLevels, winTaalcafeLevel } from "./taalcafe.js";
 
 export type Method = "GET" | "POST" | "PUT";
 
@@ -73,6 +74,8 @@ const routes: [Method, string, Handler][] = [
   ["POST", "/claude/feedback-writing", (c) => feedbackWriting(c.env, c.body)],
   ["POST", "/claude/explain", (c) => explain(c.env, c.body)],
   ["POST", "/claude/taalcafe", (c) => taalcafe(c.env, c.body)],
+  ["GET", "/taalcafe/levels", (c) => getTaalcafeLevels(c.env)],
+  ["POST", "/taalcafe/levels", (c) => winTaalcafeLevel(c.env, c.body)],
   ["POST", "/claude/generate", (c) => generate(c.env, c.body)],
   ["POST", "/generated/:id/flag", (c) => flagGenerated(c.env, c.params.id)],
   ["GET", "/settings", settingsView],

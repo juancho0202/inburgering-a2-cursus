@@ -10,6 +10,7 @@ const styles: Record<string, ModuleStyle> = {
   luisteren: { emoji: "🎧", tile: "bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300", bar: "bg-indigo-500" },
   knm: { emoji: "🏛️", tile: "bg-violet-100 text-violet-700 dark:bg-violet-950 dark:text-violet-300", bar: "bg-violet-500" },
   schrijven: { emoji: "✍️", tile: "bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300", bar: "bg-rose-500" },
+  taalcafe: { emoji: "☕", tile: "bg-teal-100 text-teal-700 dark:bg-teal-950 dark:text-teal-300", bar: "bg-teal-500" },
   exams: { emoji: "⏱️", tile: "bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300", bar: "bg-amber-500" },
 };
 

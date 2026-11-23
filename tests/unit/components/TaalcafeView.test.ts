@@ -4,6 +4,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import TaalcafeView from "../../../src/views/TaalcafeView.vue";
 import { TAALCAFE_MAX_TURNS } from "../../../shared/logic/taalcafe";
+import { DOMWrapper } from "@vue/test-utils";
 import { buttonWith, clickButton, deferred, fakeApi, flushPromises, mountApp } from "../../helpers/component";
 
 vi.mock("../../../src/api/client", async () => {
@@ -26,7 +27,15 @@ async function type(w: Awaited<ReturnType<typeof open>>, text: string) {
 const learnerBubbles = (w: Awaited<ReturnType<typeof open>>) => w.findAll("[data-from=learner]");
 const partnerBubbles = (w: Awaited<ReturnType<typeof open>>) => w.findAll("[data-from=partner]");
 
-beforeEach(() => fakeApi.reset());
+const page = () => new DOMWrapper(document.body);
+/** The app bar's strip (App.vue): the word mission goes there on a phone. */
+beforeEach(() => document.body.insertAdjacentHTML("afterbegin", '<div id="app-bar-extra"></div>'));
+afterEach(() => document.getElementById("app-bar-extra")?.remove());
+
+beforeEach(() => {
+  fakeApi.reset();
+  localStorage.removeItem("taalcafeTab"); // the picker remembers its tab; every test starts on the topics
+});
 
 describe("without a Claude key", () => {
   it("says the taalcafé needs a key and links to Settings, without topics or any call to Claude", async () => {
@@ -54,7 +63,7 @@ describe("a conversation", () => {
     await clickButton(w, "Verstuur");
 
     expect(fakeApi.to("POST", "/claude/taalcafe").map((c) => c.body)).toEqual([
-      { topicId: "weekend", history: [{ from: "partner", text: WEEKEND_OPENER }], message: "Zaterdag ik heb gaan naar de bioscoop" },
+      { topicId: "weekend", words: ["zaterdag", "zondag", "slapen"], history: [{ from: "partner", text: WEEKEND_OPENER }], message: "Zaterdag ik heb gaan naar de bioscoop" },
     ]);
     const mine = learnerBubbles(w)[0];
     expect(mine.find("del").text()).toBe("ik heb gaan");
@@ -273,6 +282,314 @@ describe("a conversation", () => {
       await clickButton(w, "Verstuur");
       expect(chunks(w)).toHaveLength(1);
       expect(learnerBubbles(w)[0].find("ul").text()).toContain("Overlapt met de eerste.");
+    });
+  });
+
+  describe("a topic with a word mission, in levels", () => {
+    // The word mission is teleported out of the view (under the app bar, or into the sidebar): look in the page.
+    const shownWords = (_w: Awaited<ReturnType<typeof open>>) => page().findAll("[data-word]").map((x) => x.text());
+    const panel = (_w: Awaited<ReturnType<typeof open>>) => page().find("[data-words]");
+    async function say(w: Awaited<ReturnType<typeof open>>, text: string) {
+      await type(w, text);
+      await clickButton(w, "Verstuur");
+    }
+    async function weekend(levels: Record<string, number> = {}) {
+      fakeApi.on("GET", "/taalcafe/levels", { levels });
+      fakeApi.on("POST", "/taalcafe/levels", (b) => ({ levels: { weekend: (b as { level: number }).level } }));
+      const w = await open();
+      await flushPromises();
+      await clickButton(w, "Het weekend");
+      return w;
+    }
+
+    it("on a phone the words sit in a strip under the app bar, not between the messages; the intro is only on the picker", async () => {
+      const w = await weekend();
+      expect(document.getElementById("app-bar-extra")!.querySelector("[data-words]")).not.toBeNull();
+      expect(w.find("[data-chat]").element.parentElement!.querySelector("[data-words]")).toBeNull();
+      expect(w.text()).not.toContain("Oefen echte gesprekken");
+      expect(w.text()).toContain("Onderwerp: Het weekend · Niveau 1 van 3");
+      await clickButton(w, "Nieuw gesprek");
+      expect(w.text()).toContain("Oefen echte gesprekken");
+      expect(panel(w).exists()).toBe(false);
+    });
+
+    it("on a phone ⌄ unfolds the bar into the word mission and dims the screen; ⌄ again, Escape or a tap on the dimmed screen closes it", async () => {
+      const w = await weekend();
+      const toggle = () => page().find("button[aria-label='Wat is de woordenmissie?']");
+      const info = () => page().find("[data-words-info]");
+      expect(info().exists()).toBe(false);
+      await toggle().trigger("click");
+      expect(toggle().attributes("aria-expanded")).toBe("true");
+      expect(info().text()).toContain("Een woord telt als je het goed schrijft.");
+      expect(info().text()).toContain("Alle 6 woorden gebruikt? Zet je verbeterde zinnen in de goede volgorde.");
+      expect(info().text()).toContain("Niveau 1 van 3");
+      expect(info().text()).toContain("0 van 6");
+      expect(info().findAll("li[lang], ul[lang] li").map((l) => l.text())).toEqual(["zaterdag", "zondag", "slapen"]);
+      const overlay = () => document.querySelector("[data-words-overlay]") as HTMLElement | null;
+      expect(overlay()).not.toBeNull();
+      await toggle().trigger("click");
+      expect(info().exists()).toBe(false);
+
+      await toggle().trigger("click");
+      document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
+      await flushPromises();
+      expect(info().exists()).toBe(false);
+      expect(document.activeElement).toBe(toggle().element);
+
+      await toggle().trigger("click");
+      await info().trigger("click"); // inside the card: stays
+      expect(info().exists()).toBe(true);
+      overlay()!.click();
+      await flushPromises();
+      expect(info().exists()).toBe(false);
+      expect(overlay()).toBeNull();
+    });
+
+    it("the page behind the unfolded bar does not scroll; released when it closes, and when the learner leaves the page", async () => {
+      const w = await weekend();
+      const toggle = () => page().find("button[aria-label='Wat is de woordenmissie?']");
+      await toggle().trigger("click");
+      expect(document.body.style.overflow).toBe("hidden");
+      await toggle().trigger("click");
+      expect(document.body.style.overflow).toBe("");
+      await toggle().trigger("click");
+      w.unmount();
+      expect(document.body.style.overflow).toBe("");
+    });
+
+    it("on a wide screen the mission is in the sidebar, and it moves there when the screen gets wide; the listener goes on unmount", async () => {
+      let listener: ((e: { matches: boolean }) => void) | null = null;
+      const query = { matches: false, addEventListener: vi.fn((_: string, f: typeof listener) => (listener = f)), removeEventListener: vi.fn() };
+      vi.stubGlobal("matchMedia", vi.fn(() => query));
+      try {
+        const w = await weekend();
+        expect(document.getElementById("app-bar-extra")!.querySelector("[data-words]")).not.toBeNull();
+        listener!({ matches: true });
+        await flushPromises();
+        expect(document.getElementById("taalcafe-side")!.querySelector("[data-words]")).not.toBeNull();
+        expect(document.getElementById("app-bar-extra")!.querySelector("[data-words]")).toBeNull();
+        expect(panel(w).text()).toContain("Een woord telt als je het goed schrijft.");
+        w.unmount();
+        expect(query.removeEventListener).toHaveBeenCalledWith("change", listener);
+      } finally {
+        vi.unstubAllGlobals();
+      }
+    });
+
+    it("shows three words of level 1; a word used correctly makes room for the next one, and Sanne gets the words on screen", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: [] });
+      const w = await weekend();
+      expect(panel(w).text()).toContain("Niveau 1 van 3");
+      expect(panel(w).text()).toContain("0 van 6");
+      expect(shownWords(w)).toEqual(["zaterdag", "zondag", "slapen"]);
+
+      await say(w, "Zaterdag heb ik lang geslapen.");
+      expect(shownWords(w)).toEqual(["vrienden", "zondag", "film"]); // each new word in the place of the used one
+      expect(panel(w).text()).toContain("2 van 6");
+      expect(panel(w).find("[aria-live]").text()).toBe("Woord gebruikt: zaterdag, slapen");
+      await say(w, "En zondag?");
+      expect(fakeApi.to("POST", "/claude/taalcafe")[1].body).toMatchObject({ words: ["vrienden", "zondag", "film"] });
+      expect(shownWords(w)).toEqual(["vrienden", "markt", "film"]);
+    });
+
+    it("a word inside a corrected chunk does not count: only a word written right does", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "O ja?", corrections: [{ original: "ik heb slaap", corrected: "ik heb geslapen", type: "werkwoord", explanation: "Voltooid deelwoord." }] });
+      const w = await weekend();
+      await say(w, "Zondag ik heb slaap.");
+      expect(shownWords(w)).toEqual(["zaterdag", "vrienden", "slapen"]);
+      expect(panel(w).text()).toContain("1 van 6");
+    });
+
+    it("all six words win the level: it is saved, the chat stops, and 'Volgend niveau' starts level 2 with its own opener and words", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: [] });
+      const w = await weekend();
+      await say(w, "Zaterdag en zondag heb ik veel geslapen.");
+      expect(w.find("[data-level-won]").exists()).toBe(false);
+      await say(w, "Met vrienden naar de markt en een film.");
+      expect(fakeApi.to("POST", "/taalcafe/levels").map((c) => c.body)).toEqual([{ topicId: "weekend", level: 1 }]);
+      expect(w.find("[data-level-won]").text()).toContain("Niveau 1 gehaald!");
+      expect(w.find("textarea").exists()).toBe(false);
+      expect(panel(w).exists()).toBe(false); // the end card takes the place of the (now empty) word panel
+
+      await clickButton(w, "Volgend niveau");
+      expect(panel(w).text()).toContain("Niveau 2 van 3");
+      expect(panel(w).text()).toContain("0 van 6");
+      expect(shownWords(w)).toEqual(["boodschappen", "bezoeken", "wandelen"]);
+      expect(partnerBubbles(w).map((b) => b.text())).toEqual([expect.stringContaining("Ik ben zaterdag naar het strand gefietst.")]);
+      expect(w.find("textarea").exists()).toBe(true);
+    });
+
+    describe("the sentence deck before the level is finished", () => {
+      const wordOrder = { original: "ik heb", corrected: "heb ik", type: "woordvolgorde", explanation: "Na zondag: eerst het werkwoord." };
+      async function allWordsUsed() {
+        let n = 0;
+        fakeApi.on("POST", "/claude/taalcafe", () => (++n === 1 ? { reply: "Lekker!", corrections: [wordOrder] } : { reply: "Leuk!", corrections: [] }));
+        const w = await weekend();
+        await say(w, "Zaterdag en zondag ik heb geslapen.");
+        await say(w, "Met vrienden naar de markt en een film.");
+        return w;
+      }
+      const deckPool = (w: Awaited<ReturnType<typeof open>>) => w.find("[data-pool]").findAll("button");
+      async function solve(w: Awaited<ReturnType<typeof open>>, words: string[]) {
+        for (const word of words) await deckPool(w).find((b) => b.text() === word)!.trigger("click");
+        await clickButton(w, "Controleer");
+      }
+
+      it("all words used with corrections in the talk: the deck of corrected sentences opens; the level is not finished or saved yet", async () => {
+        const w = await allWordsUsed();
+        expect(w.find("[role=dialog]").text()).toContain("Zet je zinnen goed");
+        expect(w.find("[data-original]").text()).toBe("Zaterdag en zondag ik heb geslapen.");
+        expect(deckPool(w).map((b) => b.text()).sort()).toEqual(["Zaterdag", "en", "geslapen", "heb", "ik", "zondag"]);
+        expect(w.find("[data-level-won]").exists()).toBe(false);
+        expect(fakeApi.to("POST", "/taalcafe/levels")).toHaveLength(0);
+      });
+
+      it("the last card right: the deck closes, the level is saved and the summary shows", async () => {
+        const w = await allWordsUsed();
+        await solve(w, ["Zaterdag", "en", "zondag", "heb", "ik", "geslapen"]);
+        await clickButton(w, "Klaar");
+        expect(w.find("[role=dialog]").exists()).toBe(false);
+        expect(fakeApi.to("POST", "/taalcafe/levels").map((c) => c.body)).toEqual([{ topicId: "weekend", level: 1 }]);
+        expect(w.find("[data-level-won]").text()).toContain("Niveau 1 gehaald!");
+      });
+
+      it("closing the deck early leaves the level waiting for it, with a way back to the cards", async () => {
+        const w = await allWordsUsed();
+        await w.find("[role=dialog] button[aria-label=Sluiten]").trigger("click");
+        expect(w.find("[role=dialog]").exists()).toBe(false);
+        expect(w.find("[data-level-won]").exists()).toBe(false);
+        expect(w.find("textarea").exists()).toBe(false);
+        expect(w.find("[data-deck-waiting]").text()).toContain("Nog één stap");
+        expect(fakeApi.to("POST", "/taalcafe/levels")).toHaveLength(0);
+        await clickButton(w, "Naar de kaarten");
+        await solve(w, ["Zaterdag", "en", "zondag", "heb", "ik", "geslapen"]);
+        await clickButton(w, "Klaar");
+        expect(w.find("[data-level-won]").exists()).toBe(true);
+      });
+    });
+
+    it("'Stoppen' after a level goes back to the topics, where the topic has its star and goes on at the next level", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: [] });
+      const w = await weekend();
+      await say(w, "Zaterdag, zondag: slapen!");
+      await say(w, "Vrienden, film, markt.");
+      await clickButton(w, "Stoppen");
+      expect(w.find("[data-topic=weekend] [data-stars]").findAll(".text-amber-500")).toHaveLength(1);
+      await clickButton(w, "Het weekend");
+      expect(panel(w).text()).toContain("Niveau 2 van 3");
+    });
+
+    it("starts at the saved level; the last level won says so and offers to play it again, not a next level", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: [] });
+      const w = await weekend({ weekend: 2 });
+      expect(panel(w).text()).toContain("Niveau 3 van 3");
+      await say(w, "Mijn plannen: een afspraak, maar rustig.");
+      // Only the words on screen count: these three come in once the first three are used.
+      expect(shownWords(w)).toEqual(["druk", "museum", "volgende"]);
+      await say(w, "Niet druk: het museum, volgende week.");
+      expect(w.find("[data-level-won]").text()).toContain("Alle niveaus gehaald!");
+      expect(buttonWith(w, "Volgend niveau")).toBeUndefined();
+      await clickButton(w, "Nog een keer");
+      expect(panel(w).text()).toContain("Niveau 3 van 3");
+      expect(panel(w).text()).toContain("0 van 6");
+    });
+
+    it("when saving the level fails, the level is still won but the learner is told it was not kept", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "Leuk!", corrections: [] });
+      const w = await weekend();
+      fakeApi.fail("POST", "/taalcafe/levels", "Opslaan mislukt.");
+      await say(w, "Zaterdag, zondag: slapen!");
+      await say(w, "Vrienden, film, markt.");
+      await flushPromises();
+      expect(w.find("[data-level-won]").text()).toContain("Dit niveau is niet bewaard.");
+      expect(buttonWith(w, "Volgend niveau")).toBeDefined();
+    });
+
+    it("without saved levels (an error) every topic starts at level 1", async () => {
+      fakeApi.fail("GET", "/taalcafe/levels", "Kapot.");
+      const w = await open();
+      await flushPromises();
+      await clickButton(w, "Het weekend");
+      expect(panel(w).text()).toContain("Niveau 1 van 3");
+    });
+  });
+
+  describe("a situation with a mission", () => {
+    async function apotheek() {
+      const w = await open();
+      await w.findAll("[role=tab]")[1].trigger("click");
+      await w.find("[data-situation=apotheek]").trigger("click");
+      await flushPromises();
+      return w;
+    }
+    const goal = (w: Awaited<ReturnType<typeof open>>, id: string) => w.find(`[data-goal=${id}]`);
+
+    it("on a wide screen the situation and its mission are in the sidebar; on a phone above the chat", async () => {
+      vi.stubGlobal("matchMedia", vi.fn(() => ({ matches: true, addEventListener() {}, removeEventListener() {} })));
+      try {
+        const w = await apotheek();
+        expect(document.getElementById("taalcafe-side")!.querySelector("[data-mission]")).not.toBeNull();
+        w.unmount();
+      } finally {
+        vi.unstubAllGlobals();
+      }
+      const phone = await apotheek();
+      expect(phone.find("[data-mission]").exists()).toBe(true);
+      expect(document.getElementById("taalcafe-side")!.querySelector("[data-mission]")).toBeNull();
+    });
+
+    it("shows where you are, who you talk to, and the mission with nothing reached yet", async () => {
+      const w = await apotheek();
+      expect(w.text()).toContain("De huisarts heeft een recept naar de apotheek gestuurd.");
+      expect(w.text()).toContain("Ilse, assistent bij de apotheek");
+      expect(partnerBubbles(w)[0].text()).toContain("Ilse");
+      expect(partnerBubbles(w)[0].text()).toContain("Goedemorgen, waar kan ik u mee helpen?");
+      expect(w.find("[data-mission]").text()).toContain("0 van 3");
+      expect(w.findAll("[data-goal]").map((g) => g.attributes("data-reached"))).toEqual(["false", "false", "false"]);
+    });
+
+    it("sends the situation and the goals reached so far, and ticks off the goals that come back", async () => {
+      let n = 0;
+      fakeApi.on("POST", "/claude/taalcafe", () => (++n === 1 ? { reply: "Wat is uw geboortedatum?", corrections: [], goalsReached: ["ophalen"] } : { reply: "Dank u.", corrections: [], goalsReached: ["ophalen", "gegevens"] }));
+      const w = await apotheek();
+      await type(w, "Ik kom mijn medicijnen ophalen.");
+      await clickButton(w, "Verstuur");
+      expect(fakeApi.to("POST", "/claude/taalcafe")[0].body).toEqual({
+        situationId: "apotheek",
+        reached: [],
+        history: [{ from: "partner", text: "Goedemorgen, waar kan ik u mee helpen?" }],
+        message: "Ik kom mijn medicijnen ophalen.",
+      });
+      expect(goal(w, "ophalen").attributes("data-reached")).toBe("true");
+      expect(goal(w, "ophalen").text()).toContain("gelukt");
+      expect(w.find("[data-mission]").text()).toContain("1 van 3");
+
+      await type(w, "Mijn naam is Juan, 3 mei 1990.");
+      await clickButton(w, "Verstuur");
+      expect(fakeApi.to("POST", "/claude/taalcafe")[1].body).toMatchObject({ reached: ["ophalen"] });
+      expect(w.find("[data-mission]").text()).toContain("2 van 3");
+      expect(w.find("textarea").exists()).toBe(true); // not done yet
+    });
+
+    it("all three goals: 'Missie gelukt!', no more typing; 'Nog een keer' starts over, 'Nieuwe situatie' goes back to the situations", async () => {
+      fakeApi.on("POST", "/claude/taalcafe", { reply: "Twee keer per dag. Fijne dag!", corrections: [], goalsReached: ["ophalen", "gegevens", "hoe-vaak"] });
+      const w = await apotheek();
+      await type(w, "Hoe vaak moet ik het nemen?");
+      await clickButton(w, "Verstuur");
+      expect(w.find("[role=status]").text()).toContain("Missie gelukt!");
+      expect(partnerBubbles(w).at(-1)!.text()).toContain("Fijne dag!");
+      expect(w.find("textarea").exists()).toBe(false);
+
+      await clickButton(w, "Nog een keer");
+      expect(w.find("[data-mission]").text()).toContain("0 van 3");
+      expect(learnerBubbles(w)).toHaveLength(0);
+      expect(partnerBubbles(w)).toHaveLength(1);
+      expect(w.find("textarea").exists()).toBe(true);
+
+      await type(w, "Hoe vaak?");
+      await clickButton(w, "Verstuur");
+      await clickButton(w, "Nieuwe situatie");
+      expect(w.find("[data-situation=apotheek]").exists()).toBe(true); // the situations tab, as left
     });
   });
 

@@ -292,7 +292,7 @@ this (add fields only if needed and document them here).
 {
   "id": "inburgering-a2",
   "title": "Inburgering A2",
-  "modules": ["basis", "lezen", "knm", "schrijven", "exams"]
+  "modules": ["basis", "taalcafe", "lezen", "knm", "schrijven", "exams"]
 }
 
 // data/course/knm/module.json
@@ -654,7 +654,7 @@ Small talk with Sanne, a volunteer in a language café, on one of the topics in 
 (kennismaken, het weer, het weekend, werk, familie, eten, vrije tijd, de buurt, vakantie). Sanne opens with a fixed line;
 after that every learner message is one request:
 
-- Request: `{ topicId, history: [{ from: "partner" | "learner", text }], message }` (message 1–400 characters).
+- Request: `{ topicId, words?, history: [{ from: "partner" | "learner", text }], message }` (message 1–400 characters).
 - Claude returns `{ reply, corrections }` (structured output). `reply` is A2 Dutch, 1–3 sentences, usually ending in a question.
   `corrections` correct only the learner's last message, in the same shape as the writing feedback (§10.2), so the screen
   shows the same strikethrough and correct chunk. A missing full stop or capital in a chat message is not a mistake.
@@ -664,6 +664,41 @@ after that every learner message is one request:
 - Cost: only the last 16 messages are sent, and a conversation stops after 20 learner messages.
 - The conversation lives in the page only (nothing is stored); "Nieuw gesprek" starts over, and a late answer to the old
   conversation is ignored. When Claude fails, the message goes back into the box to send again.
+
+**A module of its own.** The taalcafé is a module without lessons (`data/course/taalcafe/module.json`, like Proefexamens):
+its dashboard card opens `/taalcafe`. In the course order it comes right after Basis; a learner who already put the
+modules in their own order finds it last (modules missing from `moduleOrder` follow in course order).
+
+**Two kinds of practice, as tabs** (the last one opened is remembered on the device):
+
+- *Onderwerpen*: the small talk above, with a **word mission in levels**. Per topic, `shared/logic/taalcafeWords.ts` holds
+  three levels of six words (from first words to richer ones), each level with its own opener; the lists are static, so
+  no Claude call decides what counts. Three words are on screen, outside the chat so it stays a chat: on a phone as small pills in the
+  app bar's own row (the app's name makes room there; pills that do not fit fade out behind a ⌄; the bar then unfolds as one surface into the
+  mission (level, progress, the words in full, three short steps) while the page behind it dims and stays put), from tablet width in a sidebar next to the chat (with a situation's mission). In a
+  conversation the taalcafé intro is gone; a word counts when one of its
+  forms is in the learner's message outside a corrected chunk (written right). A used word is struck through and slides
+  away, and the next word of the level comes in its place. The words on screen go along as `words` in the request (the
+  service keeps only the topic's own words) so Sanne asks questions that make room for them. All six used: "Niveau n
+  gehaald!" with "Volgend niveau" (a new conversation) or "Stoppen". Before that summary, when the conversation had
+  corrections, a **sentence deck** opens (a modal, `shared/logic/taalcafeDeck.ts`): one card per corrected sentence (at
+  most 6, longer ones cut to 12 words around the correction), showing the learner's sentence with the wrong part struck.
+  The learner taps the words of the corrected sentence into order; a wrong order keeps the right start and returns the
+  rest. Right: "Goed!" with Claude's explanation, then the card slides down and the next comes up. The level is only
+  finished (and saved) after the last card; closing the deck leaves the level waiting with a button back to the cards. Levels won are saved per topic
+  (`GET`/`POST /api/taalcafe/levels`, kv `taalcafeLevels`; a lower level never overwrites a higher one), shown as stars on
+  the topic cards, travel in the progress file (merge: per topic the highest level) and are wiped by a reset. A topic goes
+  on at the first level not won yet.
+- *Situaties*: role-play with a mission (`shared/logic/taalcafeSituations.ts`, 23 situations in 7 groups: winkels en geld,
+  onderweg, gezondheid, wonen, vrije tijd, werk en school, feestjes). Claude plays the other person (the pharmacy assistant,
+  the hoofdconducteur, the cashier …), with `u` where a stranger would say it, and corrects `je`/`u` too. The learner sees
+  the setting and a mission of three goals; Claude alone knows the twist (the plan changes, as in the exam), which it uses
+  once. Some situations are phone calls (📞). Request: `{ situationId, reached, history, message }`; Claude also returns
+  `goalsReached` (structured output limited to that situation's goal ids). The service keeps reached goals reached and
+  returns them in the mission's order. All three reached: "Missie gelukt!", then "Nog een keer" or "Nieuwe situatie".
+
+Planned next: a limited "Help me", level control and an end report with stars; then speaking (taalcafé only), and the
+modes Mijn moeilijke woorden, Plaatje beschrijven, Mening geven and Leg het uit (KNM).
 
 ---
 
@@ -680,7 +715,7 @@ after that every learner message is one request:
 | `/woorden/herhalen` | SRS review session. |
 | `/werkwoorden` | Verb table (search, filter separable/irregular) + "Oefen werkwoorden" session. |
 | `/schrijven/geschiedenis` | All writing submissions with feedback, filter by task type. |
-| `/taalcafe` | Taalcafé (needs a Claude key): small talk with Sanne on a chosen topic; every learner message comes back corrected (§10.5). Linked from the Schrijven module. |
+| `/taalcafe` | Taalcafé (needs a Claude key): tabs *Onderwerpen* (small talk with Sanne) and *Situaties* (role-play with a mission); every learner message comes back corrected (§10.5). Its own module card on the dashboard (`/module/taalcafe` redirects here). |
 | `/examens` | Mock exam list with past scores. |
 | `/examen/:id` | Exam mode (§13). |
 | `/samenvatting` | The learner's samenvatting (Appendix A) rendered as a reference page with anchor links. |
