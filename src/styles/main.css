@@ -325,3 +325,12 @@
 .words-fade {
   mask-image: linear-gradient(to right, black calc(100% - 1.5rem), transparent);
 }
+
+/* Taalcafé on a phone: the app bar unfolds into the word mission, and the screen behind it dims. */
+.sheet-enter-active, .sheet-leave-active { transition: transform 0.22s ease-out, opacity 0.22s ease-out; transform-origin: top; }
+.sheet-enter-from, .sheet-leave-to { transform: translateY(-0.75rem); opacity: 0; }
+.dim-enter-active, .dim-leave-active { transition: opacity 0.22s ease-out; }
+.dim-enter-from, .dim-leave-to { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .sheet-enter-active, .sheet-leave-active, .dim-enter-active, .dim-leave-active { transition-duration: 0.01s; }
+}

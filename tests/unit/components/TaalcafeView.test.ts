@@ -313,7 +313,7 @@ describe("a conversation", () => {
       expect(panel(w).exists()).toBe(false);
     });
 
-    it("on a phone ⌄ opens a card that explains the word mission; ⌄ again, Escape or a tap elsewhere closes it", async () => {
+    it("on a phone ⌄ unfolds the bar into the word mission and dims the screen; ⌄ again, Escape or a tap on the dimmed screen closes it", async () => {
       const w = await weekend();
       const toggle = () => page().find("button[aria-label='Wat is de woordenmissie?']");
       const info = () => page().find("[data-words-info]");
@@ -321,8 +321,12 @@ describe("a conversation", () => {
       await toggle().trigger("click");
       expect(toggle().attributes("aria-expanded")).toBe("true");
       expect(info().text()).toContain("Een woord telt als je het goed schrijft.");
-      expect(info().text()).toContain("Heb je alle 6 woorden gebruikt?");
-      expect(info().text()).toContain("Niveau 1 van 3 · 0 van 6");
+      expect(info().text()).toContain("Alle 6 woorden gebruikt? Zet je verbeterde zinnen in de goede volgorde.");
+      expect(info().text()).toContain("Niveau 1 van 3");
+      expect(info().text()).toContain("0 van 6");
+      expect(info().findAll("li[lang], ul[lang] li").map((l) => l.text())).toEqual(["zaterdag", "zondag", "slapen"]);
+      const overlay = () => document.querySelector("[data-words-overlay]") as HTMLElement | null;
+      expect(overlay()).not.toBeNull();
       await toggle().trigger("click");
       expect(info().exists()).toBe(false);
 
@@ -335,9 +339,22 @@ describe("a conversation", () => {
       await toggle().trigger("click");
       await info().trigger("click"); // inside the card: stays
       expect(info().exists()).toBe(true);
-      w.find("textarea").element.click();
+      overlay()!.click();
       await flushPromises();
       expect(info().exists()).toBe(false);
+      expect(overlay()).toBeNull();
+    });
+
+    it("the page behind the unfolded bar does not scroll; released when it closes, and when the learner leaves the page", async () => {
+      const w = await weekend();
+      const toggle = () => page().find("button[aria-label='Wat is de woordenmissie?']");
+      await toggle().trigger("click");
+      expect(document.body.style.overflow).toBe("hidden");
+      await toggle().trigger("click");
+      expect(document.body.style.overflow).toBe("");
+      await toggle().trigger("click");
+      w.unmount();
+      expect(document.body.style.overflow).toBe("");
     });
 
     it("on a wide screen the mission is in the sidebar, and it moves there when the screen gets wide; the listener goes on unmount", async () => {

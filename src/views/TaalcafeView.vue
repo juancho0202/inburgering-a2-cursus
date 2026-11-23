@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref } from "vue";
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { RouterLink } from "vue-router";
 import type { WritingFeedback } from "@shared/schemas/claude";
 import { buildSegments } from "@shared/logic/corrections";
@@ -48,6 +48,20 @@ const saveError = ref(false);
 /** On a phone: the card under the app bar that explains the word mission. */
 const infoOpen = ref(false);
 const infoToggle = ref<HTMLElement | null>(null);
+// While the bar is unfolded the page behind it stays put (like the app menu); released when it closes or the page goes.
+watch(infoOpen, (open) => (document.body.style.overflow = open ? "hidden" : ""));
+onBeforeUnmount(() => {
+  if (infoOpen.value) document.body.style.overflow = "";
+});
+/** How the word mission works, in three short steps (on the open bar and in the sidebar). */
+const wordSteps = computed(() => {
+  const total = topicLevel.value?.words.length ?? 0;
+  return [
+    { icon: "💬", text: lang.t("taalcafe.wordsStep1") },
+    { icon: "✓", text: lang.t("taalcafe.wordsStep2") },
+    { icon: "🧩", text: lang.t("taalcafe.wordsStep3", { total }) },
+  ];
+});
 
 /** A wider screen (Tailwind's md, where the app bar shows its links) has a sidebar for the mission; a phone gets the words under the app bar. */
 const wideQuery = typeof window.matchMedia === "function" ? window.matchMedia("(min-width: 768px)") : null;
@@ -506,7 +520,9 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
             <p class="mb-1 text-sm font-bold" aria-hidden="true">
               {{ lang.t("taalcafe.level", { n: topicTalk.level + 1, total: levelCount }) }} · {{ lang.t("taalcafe.missionProgress", { n: wordsDone, total: topicLevel.words.length }) }}
             </p>
-            <p class="mb-3 text-sm">{{ lang.t("taalcafe.wordsExplain", { total: topicLevel.words.length }) }}</p>
+            <ol class="mb-3 grid gap-1.5 text-sm">
+              <li v-for="(step, si) in wordSteps" :key="si" class="flex items-start gap-2"><span aria-hidden="true">{{ step.icon }}</span><span>{{ step.text }}</span></li>
+            </ol>
           </template>
           <span v-else class="shrink-0 text-sm font-extrabold" aria-hidden="true">🎯 {{ wordsDone }}/{{ topicLevel.words.length }}</span>
           <!-- On a phone one row; a word that does not fit fades out under the ⌄ -->
@@ -530,27 +546,55 @@ const anyCorrections = computed(() => messages.value.some((m) => m.from === "lea
             <button
               ref="infoToggle"
               type="button"
-              class="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-xl font-bold text-muted hover:bg-surface-2 hover:text-ink"
+              class="grid h-9 w-9 shrink-0 place-items-center rounded-full text-muted transition hover:bg-surface-2 hover:text-ink"
+              :class="{ 'bg-surface-2 text-ink': infoOpen }"
               :aria-label="lang.t('taalcafe.wordsAbout')"
               :aria-expanded="infoOpen"
               aria-controls="taalcafe-words-info"
               @click="infoOpen = !infoOpen"
             >
-              <span class="-mt-2 transition-transform" :class="{ 'mt-1 rotate-180': infoOpen }" aria-hidden="true">⌄</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200" :class="{ 'rotate-180': infoOpen }" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
             </button>
-            <!-- The progress as a thin line on the bottom edge of the bar -->
-            <span class="absolute inset-x-0 bottom-0 h-0.5 bg-line" aria-hidden="true"><span class="block h-full bg-good transition-all" :style="{ width: `${(wordsDone / topicLevel.words.length) * 100}%` }" /></span>
-            <!-- What the word mission is: a card under the bar -->
-            <div v-if="infoOpen" id="taalcafe-words-info" class="absolute inset-x-0 top-full px-4 pt-2">
-              <div class="card mx-auto max-w-5xl p-4 shadow-lg" data-words-info>
-                <h2 class="font-extrabold">🎯 {{ lang.t("taalcafe.wordsMission") }}</h2>
-                <p class="text-sm font-bold">{{ lang.t("taalcafe.level", { n: topicTalk.level + 1, total: levelCount }) }} · {{ lang.t("taalcafe.missionProgress", { n: wordsDone, total: topicLevel.words.length }) }}</p>
-                <p class="mt-2">{{ lang.t("taalcafe.wordsExplain", { total: topicLevel.words.length }) }}</p>
-                <ul class="mt-3 flex flex-wrap gap-1.5" lang="nl" translate="no">
-                  <li v-for="w in places.filter((x) => !!x)" :key="w!.word" class="rounded-full border border-brand bg-brand-bg px-2.5 py-0.5 text-sm font-bold">{{ w!.word }}</li>
-                </ul>
+            <!-- The progress as a thin line on the bottom edge of the bar (the open bar shows it in full) -->
+            <span v-if="!infoOpen" class="absolute inset-x-0 bottom-0 h-0.5 bg-line" aria-hidden="true"><span class="block h-full bg-good transition-all" :style="{ width: `${(wordsDone / topicLevel.words.length) * 100}%` }" /></span>
+            <!-- ⌄ unfolds the bar itself: the same surface grows down over the chat, which dims behind it -->
+            <Transition name="sheet">
+              <div
+                v-if="infoOpen"
+                id="taalcafe-words-info"
+                class="absolute inset-x-0 top-full -mt-px rounded-b-3xl border-b border-line bg-surface px-4 pb-5 pt-3 shadow-[0_16px_32px_-12px_rgb(0_0_0/0.35)]"
+                data-words-info
+              >
+                <div class="mx-auto max-w-5xl">
+                  <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+                    <h2 class="whitespace-nowrap font-extrabold">🎯 {{ lang.t("taalcafe.wordsMission") }}</h2>
+                    <p class="whitespace-nowrap text-sm font-bold text-muted">{{ lang.t("taalcafe.level", { n: topicTalk.level + 1, total: levelCount }) }}</p>
+                  </div>
+                  <!-- One segment per word of the level -->
+                  <div class="mt-3 flex items-center gap-1" aria-hidden="true">
+                    <span v-for="n in topicLevel.words.length" :key="n" class="h-1.5 flex-1 rounded-full transition-colors" :class="n <= wordsDone ? 'bg-good' : 'bg-line'" />
+                  </div>
+                  <p class="mt-1 text-right text-xs font-bold text-muted">{{ lang.t("taalcafe.missionProgress", { n: wordsDone, total: topicLevel.words.length }) }}</p>
+                  <ul class="mt-2 flex flex-wrap gap-2" lang="nl" translate="no">
+                    <li v-for="w in places.filter((x) => !!x)" :key="w!.word" class="nl-wrap rounded-full border-2 border-brand bg-brand-bg px-3 py-1 font-bold">{{ w!.word }}</li>
+                  </ul>
+                  <ol class="mt-4 grid gap-2.5 text-sm">
+                    <li v-for="(step, si) in wordSteps" :key="si" class="flex items-start gap-3">
+                      <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-surface-2 text-base" aria-hidden="true">{{ step.icon }}</span>
+                      <span class="pt-1">{{ step.text }}</span>
+                    </li>
+                  </ol>
+                </div>
               </div>
-            </div>
+            </Transition>
+            <!-- The rest of the screen dims; a tap on it closes the bar (the page's click listener) -->
+            <Teleport to="body">
+              <Transition name="dim">
+                <div v-if="infoOpen" class="fixed inset-0 z-20 bg-black/45" aria-hidden="true" data-words-overlay />
+              </Transition>
+            </Teleport>
           </template>
           <div v-else class="mt-3 flex gap-1.5" aria-hidden="true">
             <span v-for="n in topicLevel.words.length" :key="n" class="h-2 flex-1 rounded-full transition-colors" :class="n <= wordsDone ? 'bg-good' : 'bg-line'" />
