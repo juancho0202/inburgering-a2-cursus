@@ -235,6 +235,27 @@ describe("writing exercises", () => {
     expect(buttonWith(w, "Leg uit")).toBeUndefined();
   });
 
+  it("Escape on an open correction tooltip closes the tooltip, not the exercise; the next Escape leaves", async () => {
+    fakeApi.on("POST", "/writing", { id: "sub-1" });
+    fakeApi.on("POST", "/claude/feedback-writing", {
+      feedback: {
+        overall: "bijna", score: 6, criteria: [], missingPoints: [], strongPoints: [], nextTip: "t", correctedText: "ik ben gegaan",
+        corrections: [{ original: "ik heb gaan", corrected: "ik ben gegaan", type: "werkwoord", explanation: "Gaan krijgt zijn." }],
+      },
+    });
+    const w = await mountShell(writing, { hasKey: true });
+    await w.find("textarea").setValue("ik heb gaan");
+    await clickButton(w, "Controleer");
+    await w.find("[data-fix]").trigger("click");
+    expect(w.find("[data-tooltip]").exists()).toBe(true);
+
+    await pressKey("Escape", document);
+    expect(w.find("[data-tooltip]").exists()).toBe(false);
+    expect(w.emitted("exit")).toBeUndefined();
+    await pressKey("Escape", document);
+    expect(w.emitted("exit")).toHaveLength(1);
+  });
+
   it("are 'not scored': the learner is told to compare with the example, and can try again with the same text", async () => {
     fakeApi.on("POST", "/writing", { id: "sub-1" });
     const w = await mountShell(writing);

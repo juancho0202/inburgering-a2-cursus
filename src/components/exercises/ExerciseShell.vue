@@ -118,7 +118,11 @@ async function flag() {
 }
 
 function onKey(e: KeyboardEvent) {
-  if (e.key === "Escape") return emit("exit");
+  if (e.key === "Escape") {
+    // An open correction tooltip (writing feedback) takes this Escape: it closes, the exercise stays.
+    if (document.querySelector("[data-tooltip]")) return;
+    return emit("exit");
+  }
   if (e.key !== "Enter" || e.target instanceof HTMLTextAreaElement) return;
   e.preventDefault();
   if (checked.value) next();

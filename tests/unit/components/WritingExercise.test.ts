@@ -94,9 +94,12 @@ describe("handing in", () => {
 });
 
 describe("after checking, without an API key", () => {
-  it("points to the settings and still shows the example and the checklist", async () => {
+  it("says plainly that the app does not check the text, points to the settings, and shows the example and the checklist", async () => {
     const w = await mountWriting({ checked: true });
-    expect(w.text()).toContain("Geen feedback van Claude");
+    const note = w.find("[data-self-check]");
+    expect(note.text()).toContain("De app controleert je tekst niet");
+    expect(note.text()).toContain("de app kijkt niet of je tekst goed is");
+    expect(note.text()).toContain("vergelijk je tekst met het voorbeeld");
     expect(w.find("a[href='/instellingen']").exists()).toBe(true);
     expect(w.text()).toContain("Hoi buurman");
     expect(w.text()).toContain("Aanhef");
@@ -122,6 +125,16 @@ describe("after checking, with an API key", () => {
     expect(w.find("del").text()).toBe("ik heb gaan");
     expect(w.find("ins").text()).toBe("ik ben gegaan");
     expect(w.text()).toContain("Dit punt ontbreekt");
+  });
+
+  it("the explanation of a correction opens from the learner's own text, like in the Taalcafé", async () => {
+    fakeApi.on("POST", "/claude/feedback-writing", { feedback });
+    const w = await mountWriting({ hasKey: true });
+    await check(w, "ik heb gaan naar het feest");
+    expect(w.find("[data-self-check]").exists()).toBe(false);
+    expect(w.find("[data-tooltip]").exists()).toBe(false);
+    await w.find("[data-fix]").trigger("click");
+    expect(w.find("[data-tooltip]").text()).toContain("Voltooid deelwoord.");
   });
 
   it("waits for the save before asking, so the feedback is linked to the saved text", async () => {
