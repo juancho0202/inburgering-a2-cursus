@@ -138,7 +138,11 @@
         },
         {
           "kind": "text",
-          "md": "**Uitleg:** 1) **wat** is er: *ik ben ziek*; 2) **wanneer**: *vandaag*; 3) een **vraag**: *Kun jij mijn dienst overnemen?*; 4) iets terug: *Dan werk ik zaterdag voor jou*; 5) *Dank je!* Dat zijn **29 woorden**: kort, maar alles staat erin."
+          "md": "**Uitleg:** 1) **wat** is er: *ik ben ziek*; 2) **wanneer**: *vandaag*; 3) een **vraag**: *Kun jij mijn dienst overnemen?*; 4) iets terug: *Dan werk ik zaterdag voor jou*; 5) vraag om **antwoord**: *Laat je het even weten?*; 6) *Dank je!* Dat zijn **29 woorden**: kort, maar alles staat erin."
+        },
+        {
+          "kind": "text",
+          "md": "**Laat je het even weten?** *Iets laten weten* betekent: iets vertellen. Ahmed vraagt dus: *Vertel je mij je antwoord?* Zo weet Sanne: Ahmed wacht op een antwoord.\n\nAndere manieren om dit te vragen:\n\n- *Laat je het even weten?*\n- *Laat je iets weten?*\n- *Kun je even reageren?*"
         },
         {
           "kind": "tip",
@@ -249,6 +253,26 @@
     {
       "type": "exercise",
       "exercise": {
+        "id": "schrijven-appje-q-013",
+        "tags": [
+          "schrijven:appje"
+        ],
+        "explanation": "Iets laten weten betekent: iets vertellen. Ahmed vraagt Sanne om een antwoord.",
+        "difficulty": 1,
+        "type": "mc",
+        "prompt": "Ahmed appt aan het eind: \"Laat je het even weten?\" Wat vraagt hij?",
+        "options": [
+          "Vertel je mij je antwoord?",
+          "Weet jij het al?",
+          "Laat je het even liggen?",
+          "Kom je even langs?"
+        ],
+        "answer": 0
+      }
+    },
+    {
+      "type": "exercise",
+      "exercise": {
         "id": "schrijven-appje-q-009",
         "tags": [
           "schrijven:appje"
@@ -256,8 +280,8 @@
         "explanation": "Laat je het even weten? is een vriendelijke vraag om antwoord.",
         "difficulty": 1,
         "type": "gap-fill",
-        "prompt": "Vul het goede woord in.",
-        "text": "Laat je het even ___ ?",
+        "prompt": "Je vraagt je collega om antwoord. Vul het goede woord in.",
+        "text": "Kun jij mijn dienst overnemen? Laat je het even ___ ?",
         "answers": [
           [
             "weten"
