@@ -50,6 +50,8 @@ let clip: HTMLAudioElement | null = null;
 let finishLine: (() => void) | null = null;
 /** Bumped on every stop, so a clip lookup or reading that finishes late does not talk over the next step. */
 let generation = 0;
+/** Stops the read-along's wait for the reader (see `wait` in read). */
+let waiting: AbortController | null = null;
 
 /** The read-along: whether it is reading, and which segment (its id) is being read. */
 const reading = ref(false);
@@ -73,6 +75,8 @@ export function stopSpeech() {
   otherSound = null;
   other?.();
   generation++;
+  waiting?.abort();
+  waiting = null;
   if (pending) clearTimeout(pending);
   pending = null;
   clip?.pause();
@@ -141,9 +145,13 @@ export function useSpeech() {
 
   /**
    * Read segments one after another, from segment `from`, optionally after a delay (e.g. the lesson tune).
+   * `wait`, if given, holds each segment back until it resolves (the reader has scrolled to it); a stop ends it.
    * Resolves with the index it stopped at, or the number of segments when it read everything.
    */
-  async function read(segments: Segment[], opts: { from?: number; delayMs?: number } = {}): Promise<number> {
+  async function read(
+    segments: Segment[],
+    opts: { from?: number; delayMs?: number; wait?: (segment: Segment, signal: AbortSignal) => Promise<void> } = {},
+  ): Promise<number> {
     stopSpeech();
     const mine = generation;
     reading.value = true;
@@ -157,6 +165,13 @@ export function useSpeech() {
     }
     let i = opts.from ?? 0;
     for (; i < segments.length && mine === generation; i++) {
+      if (opts.wait) {
+        activeId.value = null;
+        waiting = new AbortController();
+        await opts.wait(segments[i], waiting.signal);
+        if (mine !== generation) return i;
+        waiting = null;
+      }
       activeId.value = segments[i].id;
       await sayLine(segments[i].text, mine);
       if (mine !== generation) return i;
