@@ -1,5 +1,5 @@
 import type { Exercise, LessonBlock, Unit } from "@shared/types";
-import { PRONUNCIATIONS } from "@shared/content/pronunciations";
+import { PAUSE, PRONUNCIATIONS } from "@shared/content/pronunciations";
 import { VOICES } from "@shared/content/voices";
 
 type Step = Unit["steps"][number];
@@ -89,7 +89,8 @@ function saySigns(text: string): string {
       .replace(/\s*=\s*/g, " is ")
       .replace(/\s*\+\s*/g, " plus ")
       .replace(/\s*→\s*/g, ", ")
-      .replace(/\s*·\s*/g, ". ")
+      // "·" separates examples: each is a sentence, with a pause after it in the recorded voice (see voiceInput)
+      .replace(/\s*·\s*/g, `. ${PAUSE} `)
       .replace(/(?<=\p{L})\s*\/\s*(?=\p{L})/gu, " of ")
       .replace(/\s*%/g, " procent")
       .replace(/\s*&\s*/g, " en ")
@@ -104,12 +105,19 @@ function saySigns(text: string): string {
       .replace(/([.!?:;…])\s*,/g, "$1")
       .replace(/([!?…:;])\s*\./g, "$1")
       .replace(/\.\s+\./g, ".")
+      .replace(/(?<!\.)\.\.(?!\.)/g, ".")
       .replace(/^\s*,\s*|\s*,\s*$/g, "")
+      .replace(/^\s*\.\s*/, "")
   );
 }
 
 /** Turn course text (markdown, gaps, lists, signs) into something that reads well aloud. */
 export function speakable(text: string): string {
+  return withPauses(text).replace(/\s*‖\s*/g, " ").trim();
+}
+
+/** speakable, with PAUSE where the text separated examples with "·" (the device's voice gets no such pause). */
+function withPauses(text: string): string {
   return saySigns(
     spellAbbreviations(text)
       .split(/\n+/)
@@ -144,7 +152,8 @@ const PRONOUNCED = new RegExp(
  * Piper's [[ ]] (see shared/content/pronunciations.ts). The device's own voice gets speakable() instead.
  */
 export function voiceInput(text: string): string {
-  const said = speakable(text);
+  // Piper barely pauses between sentences, so "Alvast bedankt! · Laat je het even weten?" ran on
+  const said = withPauses(text).replace(/\s*‖\s*/g, ` [[${PAUSE}]] `).trim();
   // with no pronunciations the pattern would be empty and match between every two letters
   return Object.keys(PRONUNCIATIONS).length ? said.replace(PRONOUNCED, (word) => `[[${PRONUNCIATIONS[word.toLowerCase()]}]]`) : said;
 }

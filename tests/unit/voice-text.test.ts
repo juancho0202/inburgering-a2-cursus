@@ -4,7 +4,7 @@
 import { describe, expect, it } from "vitest";
 import { spokenLines } from "../../scripts/tts/lines";
 import { speakable, voiceInput } from "../../src/lib/announce";
-import { DUTCH_PHONEMES, ESPEAK_IS_RIGHT, PAUSE, PRONUNCIATIONS } from "../../shared/content/pronunciations";
+import { DUTCH_PHONEMES, ESPEAK_IS_RIGHT, PAUSE, PRONUNCIATIONS, SHORT_PAUSE } from "../../shared/content/pronunciations";
 import { realContent } from "../helpers/realContent";
 
 /** Everything the course reads aloud: lesson lines and the lines of listening fragments. */
@@ -43,7 +43,7 @@ describe("what the recorded voice is given", () => {
       expect(input.replace(/\[\[[^\]]*\]\]/g, "").match(WORD_PART) ?? [], input).toEqual([]);
     }
     // the word parts in the grammar lessons are all said with their pronunciation
-    for (const part of ["-tje", "be-", "ver-", "-en"]) expect(used).toContain(PRONUNCIATIONS[part]);
+    for (const part of ["-je", "be-", "ver-", "-en", "ont-"]) expect(used).toContain(PRONUNCIATIONS[part]);
   });
 });
 
@@ -51,10 +51,10 @@ describe("the pronunciations", () => {
   it("are written in lower case, with only the phonemes the voices know and pauses", () => {
     for (const [word, ipa] of Object.entries(PRONUNCIATIONS)) {
       expect(word, word).toBe(word.toLowerCase());
-      expect([...ipa].filter((c) => !DUTCH_PHONEMES.includes(c) && c !== PAUSE), `${word}: ${ipa}`).toEqual([]);
-      expect(ipa, `${word}: a pause between two pauses says nothing`).not.toContain(PAUSE + PAUSE);
+      expect([...ipa].filter((c) => !DUTCH_PHONEMES.includes(c) && c !== PAUSE && c !== SHORT_PAUSE), `${word}: ${ipa}`).toEqual([]);
+      expect(ipa, `${word}: a pause between two pauses says nothing`).not.toMatch(/[‖|]{2}/);
       // one main stress per word; a stress mark goes before a syllable, never at the end
-      for (const w of ipa.split(/[ ‖]/).filter(Boolean)) {
+      for (const w of ipa.split(/[ ‖|]/).filter(Boolean)) {
         expect((w.match(/ˈ/g) ?? []).length, `${word}: ${ipa}`).toBeLessThanOrEqual(1);
         expect(w, word).not.toMatch(/[ˈˌ]$|^ː/);
       }

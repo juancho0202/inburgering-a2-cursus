@@ -86,10 +86,18 @@ amounts, ordinals) are turned into words for every voice, the device's too, by `
 
 **Saying a word apart.** When a lesson talks *about* a word or a word part ("woorden met ge-, be-, ver-", "de of het"),
 a teacher says it on its own: stressed, a little slower, with a pause before and after. espeak runs them together
-("dəɔfhət"), and the voices' comma pause is often under 0.1 s. In a pronunciation, `‖` (`PAUSE`) is a pause, and the
-sounds between pauses last 1.2 times as long: `"ge-": "‖ɣˈə‖"`, `"de of het": "‖dˈə‖ˈɔf‖hˈɛt‖"`. Every word part is
-written this way (a test checks it). The pause takes the text's own comma or colon where there is one, adds 0.3 s
-of silence to the voice's own short pause, and is left out at the start and end of a sentence (`pronunciation/phonemes.py`).
+("dəɔfhət"), and the voices' comma pause is often under 0.1 s. A pronunciation can have two kinds of pause, and the
+sounds between pauses are said a little slower (`PAUSES` and `APART` in `pronunciation/phonemes.py`):
+
+| sign | use | silence added | sounds |
+| --- | --- | --- | --- |
+| `‖` (`PAUSE`) | a word part in a list: `"ge-": "‖ɣˈə‖"`; every word part is written this way (a test checks it) | 0.3 s | 1.2 × as long |
+| `\|` (`SHORT_PAUSE`) | words kept apart: `"de of het": "dˈə\|ˈɔf\|hˈɛt"` (with ‖ the title dragged: 2.1 s against 0.7 s, now 1.5 s) | 0.05 s | 1.05 × as long |
+
+The silence is added to the voice's own short pause: on the text's comma or colon where there is one, or else on a
+comma put in. There is none at the start or end of a line. Where the text separates examples with "·" ("Alvast bedankt!
+· Laat je het even weten?"), `voiceInput` puts a `‖` after the sentence: the device's voice gets a full stop, Piper
+also a pause, because it barely pauses between sentences.
 
 Piper has no such control, so `pronunciation/seeded.py` adds it to the model in memory: two inputs, `pace` and `pause`,
 set each phoneme's length (`w_ceil = Ceil(w × pace) + pause`) before the sound is made, so the voice's melody and timing

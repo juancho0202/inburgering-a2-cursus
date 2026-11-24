@@ -16,10 +16,11 @@ export function spokenLines(content: Content) {
   const add = (t: string, voice: string) => {
     const text = speakable(t);
     if (!text) return;
-    const key = voiceKey(text, voice);
+    // From the course text, as the app does: speakable drops where "·" was, and voiceInput pauses there
+    const key = voiceKey(t, voice);
     const other = texts.get(key);
     if (other && (other.text !== text || other.voice !== voice)) throw new Error(`Two lines share the clip name ${key}: "${other.text}" / "${text}"`);
-    texts.set(key, { text, input: voiceInput(text), voice });
+    texts.set(key, { text, input: voiceInput(t), voice });
   };
 
   const fragments = new Map<string, FragmentRecording>();

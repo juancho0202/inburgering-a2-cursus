@@ -8,9 +8,10 @@ the ones Piper would use), but also keeps
   - [[phonemes]] blocks (words from PRONUNCIATIONS) with the punctuation and spaces around them. Piper 1.8 has
     [[ ]] too, but drops the comma or full stop after a block and glues the next word to it ("vər hət" becomes
     "vərhət"), so the voice runs on where it should pause;
-  - pauses: a ‖ in a block ("‖ɣˈə‖" for "ge-", "‖dˈə‖ˈɔf‖hˈɛt‖" for "de of het") is a pause, and the sounds between
-    pauses are said a little slower. That is how a teacher says a word part or a word they talk about, so the
-    learner hears each one. espeak and the voice know no such pause: a comma alone is often under 0.1 s.
+  - pauses: a ‖ or | in a block ("‖ɣˈə‖" for "ge-", "dˈə|ˈɔf|hˈɛt" for "de of het") is a pause, and the sounds
+    between pauses are said a little slower. That is how a teacher says a word part or a word they talk about, so
+    the learner hears each one. espeak and the voice know no such pause: a comma alone is often under 0.1 s. A block
+    that is only a pause ([[‖]], where the text had "·") can also fall between two sentences.
 """
 
 from __future__ import annotations
@@ -29,11 +30,12 @@ _TOKEN = re.compile(r"[\w'’]+(?:[.,:\-][\w'’]+)*", re.UNICODE)
 _PAUSES = ",:;"
 _ENDS = ".!?"
 STRESS = "ˈˌ"
-PAUSE = "‖"
-PAUSE_SECONDS = 0.3
-"""Silence added at a pause, after the voice's own (short) comma pause."""
-APART = 1.2
-"""How much slower the sounds of a block with pauses are said (Piper's length scale, on top of the line's pace)."""
+PAUSES = {"‖": 0.3, "|": 0.05}
+"""Seconds of silence a pause adds to the voice's own short comma or sentence pause: ‖ sets a word part in a list
+apart, or one example from the next; | (shorter) only keeps words apart ("de | of | het")."""
+APART = {"‖": 1.2, "|": 1.05}
+"""How much slower the sounds between pauses are said (Piper's length scale, on top of the line's pace)."""
+_PAUSE_SIGNS = re.compile(f"([{''.join(PAUSES)}])")
 
 _ready = False
 
@@ -128,28 +130,34 @@ class Planner:
             if part.strip():
                 self._espeak_part(part, out, i)
         out.close()
+        if out.sentences:
+            # a pause at the very end of the text ("… Tot zaterdag! ·"): nothing follows to pause for
+            last = out.sentences[-1]
+            last.pauses.pop(len(last.phonemes) - 1, None)
         return out.sentences
 
     @staticmethod
     def _block(block: str, name: str, out: "_Builder") -> None:
-        """A [[ ]] block: its phonemes as they are, with a pause at each ‖ and the sounds between pauses slower."""
-        pieces = block.split(PAUSE)
-        apart = len(pieces) > 1
-        said = [p.strip() for p in pieces if p.strip()]
+        """A [[ ]] block: its phonemes as they are, with a pause at each ‖ or | and the sounds between pauses slower."""
+        pieces = _PAUSE_SIGNS.split(block)  # sounds, pause sign, sounds, …
+        signs = pieces[1::2]
+        slower = max((APART[p] for p in signs), default=1.0)
+        said = [p.strip() for p in pieces[::2] if p.strip()]
         # "de of het" with three pieces: each its own word, so a finding names the word
-        names = name.split() if apart and len(name.split()) == len(said) else [name] * len(said)
+        names = name.split() if signs and len(name.split()) == len(said) else [name] * len(said)
         k = 0
         for j, piece in enumerate(pieces):
-            if j > 0:
-                out.pause()
+            if j % 2 == 1:
+                out.pause(PAUSES[piece])
+                continue
             piece = piece.strip()
             if not piece:
                 continue
             sentence = out.sentence
             start = len(sentence.phonemes)
             out.add(piece)
-            if apart:
-                sentence.slower.update((n, APART) for n in range(start, len(sentence.phonemes)))
+            if slower != 1.0:
+                sentence.slower.update((n, slower) for n in range(start, len(sentence.phonemes)))
             sentence.words.append(Word(names[k], start, len(sentence.phonemes), piece, "lexicon"))
             k += 1
 
@@ -215,15 +223,23 @@ class _Builder:
             p.pop()
         return p
 
-    def pause(self) -> None:
-        """A pause, on the comma, colon or semicolon just said, or else on a comma put in. None at a sentence's start."""
+    def pause(self, seconds: float) -> None:
+        """
+        A pause, on the comma, colon or semicolon just said, or else on a comma put in. Right after a sentence it is a
+        longer silence after that sentence; before the first sentence, none.
+        """
         p = self._trim()
         if not p:
+            if self.sentences:
+                before = self.sentences[-1]
+                at = len(before.phonemes) - 1
+                before.pauses[at] = max(seconds, before.pauses.get(at, 0.0))
             return
         if p[-1] not in _PAUSES:
             p.append(",")
             self._added = len(p) - 1
-        self.sentence.pauses[len(p) - 1] = PAUSE_SECONDS
+        at = len(p) - 1
+        self.sentence.pauses[at] = max(seconds, self.sentence.pauses.get(at, 0.0))
         p.append(" ")
 
     def sign(self, sign: str) -> None:

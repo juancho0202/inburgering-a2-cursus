@@ -184,10 +184,20 @@ describe("what the recorded voice is given", () => {
   });
 
   it("says the articles apart when the lesson talks about them, not when they are used", () => {
-    expect(voiceInput("De of het?")).toBe("[[‖dˈə‖ˈɔf‖hˈɛt‖]]?");
-    expect(voiceInput("Je kiest **de of het** met regels.")).toBe("Je kiest [[‖dˈə‖ˈɔf‖hˈɛt‖]] met regels.");
+    expect(voiceInput("De of het?")).toBe("[[dˈə|ˈɔf|hˈɛt]]?");
+    expect(voiceInput("Je kiest **de of het** met regels.")).toBe("Je kiest [[dˈə|ˈɔf|hˈɛt]] met regels.");
     expect(voiceInput("Bij het-woorden: ons huis.")).toBe(`Bij [[${PRONUNCIATIONS["het-woorden"]}]]: ons huis.`);
     for (const t of ["De man of het kind.", "Is het de bus of het huis?"]) expect(voiceInput(t)).toBe(speakable(t));
+  });
+
+  it("pauses after each example where the text separates them with ·, and only there", () => {
+    const md = "**Zinnen:** Alvast bedankt! · Laat je het even weten? · Ik wil een afspraak maken. · Tot zaterdag!";
+    expect(voiceInput(md)).toBe("Zinnen: Alvast bedankt! [[‖]] Laat je het even weten? [[‖]] Ik wil een afspraak maken. [[‖]] Tot zaterdag!");
+    // the device's voice: a sentence each, without a mark it would read, and one full stop after "maken"
+    expect(speakable(md)).toBe("Zinnen: Alvast bedankt! Laat je het even weten? Ik wil een afspraak maken. Tot zaterdag!");
+    expect(voiceInput("Eerst dit. Dan dat!")).toBe("Eerst dit. Dan dat!");
+    // the clip name comes from the course text, so a line with · is recorded with its pauses
+    expect(voiceKey(md, "alex")).not.toBe(voiceKey(speakable(md), "alex"));
   });
 
   it("does not touch the same letters inside a word", () => {

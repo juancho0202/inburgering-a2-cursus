@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 
 import pronunciation.seeded as seeded
-from pronunciation.phonemes import PAUSE_SECONDS
+from pronunciation.phonemes import PAUSES
 from pronunciation.seeded import Scales, seed_for
 
 from .helpers import needs_voice, voice
@@ -61,7 +61,7 @@ class SeededVoiceTest(unittest.TestCase):
         a, b = take.timings()[0][3]
         a0, b0 = plain.timings()[0][3]
         # the comma lasts the added frames longer, everything else is said as before
-        added = round(PAUSE_SECONDS * v.sample_rate / v.hop) * v.hop / v.sample_rate
+        added = round(PAUSES["‖"] * v.sample_rate / v.hop) * v.hop / v.sample_rate
         self.assertAlmostEqual((b - a) - (b0 - a0), added, places=3)
         # the added frames are silent, apart from the fades at their ends: the model alone would hold the f
         fade = 2 * int(seeded._FADE * v.sample_rate)

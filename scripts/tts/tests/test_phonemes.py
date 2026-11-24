@@ -2,7 +2,7 @@ import unittest
 
 from piper import PiperVoice
 
-from pronunciation.phonemes import APART, PAUSE_SECONDS, Planner, without_stress
+from pronunciation.phonemes import APART, PAUSES, Planner, without_stress
 
 from .helpers import VOICE, needs_voice
 
@@ -41,13 +41,31 @@ class PlanTest(unittest.TestCase):
         self.assertEqual(said, "jə kˈist, dˈə, ˈɔf, hˈɛt, mɛt rˈeːɣəls.")
         # a pause on each comma put in for it, none at the full stop
         self.assertEqual(sorted(s.pauses), [i for i, p in enumerate(s.phonemes) if p == ","])
-        self.assertEqual(set(s.pauses.values()), {PAUSE_SECONDS})
+        self.assertEqual(set(s.pauses.values()), {PAUSES["‖"]})
         # each article its own word, said slower; the words around them at the line's own pace
         words = {w.text: w for w in s.words}
         self.assertEqual([w.text for w in s.words], ["Je", "kiest", "de", "of", "het", "met", "regels"])
         for name in ["de", "of", "het"]:
-            self.assertEqual({s.slower.get(i) for i in range(words[name].start, words[name].end)}, {APART})
+            self.assertEqual({s.slower.get(i) for i in range(words[name].start, words[name].end)}, {APART["‖"]})
         self.assertNotIn(words["met"].start, s.slower)
+
+    def test_a_short_pause_only_keeps_words_apart(self):
+        [s] = self.planner.plan("Je kiest [[dˈə|ˈɔf|hˈɛt]] met regels.", "Je kiest de of het met regels.")
+        self.assertEqual("".join(s.phonemes), "jə kˈist dˈə, ˈɔf, hˈɛt mɛt rˈeːɣəls.")
+        self.assertEqual(sorted(s.pauses.values()), [PAUSES["|"]] * 2)
+        self.assertLess(PAUSES["|"], PAUSES["‖"])
+        self.assertEqual(set(s.slower.values()), {APART["|"]})
+
+    def test_a_pause_between_sentences_is_a_longer_silence_after_the_first(self):
+        # "Alvast bedankt! · Laat je het even weten? · Tot zaterdag! ·": the dots separate examples
+        first, second, third = self.planner.plan("Alvast bedankt! [[‖]] Laat je het even weten? [[‖]] Tot zaterdag! [[‖]]")
+        for sentence in (first, second):
+            self.assertEqual(sentence.pauses, {len(sentence.phonemes) - 1: PAUSES["‖"]})
+        self.assertEqual(third.pauses, {})
+        self.assertEqual([third.phonemes[0], third.phonemes[-1]], ["t", "!"])
+        # before the first sentence there is nothing to pause after
+        [only] = self.planner.plan("[[‖]] Tot zaterdag!")
+        self.assertEqual((only.pauses, only.phonemes[0]), ({}, "t"))
 
     def test_a_pause_takes_the_sign_of_the_text_and_none_at_the_edges_of_a_sentence(self):
         [s] = self.planner.plan("[[‖ɣˈə‖]], [[‖vˈər‖]]: het gesprek", "ge-, ver-: het gesprek")

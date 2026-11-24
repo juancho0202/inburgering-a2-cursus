@@ -8,8 +8,8 @@
  * grammar lessons write them. Values use only DUTCH_PHONEMES: the stress marks ˈ (main) and ˌ (secondary) go before
  * the stressed vowel's syllable, ː makes a vowel long. Write them the way espeak writes Dutch (ɵ for the u in "bus",
  * ʌʊ for ou, ɛɪ for ei/ij, œy for ui, ɪː for ee before r, tʲ for tj), not as a dictionary does: the voices only know
- * espeak's. PAUSE (‖) is a pause, and the sounds between pauses are said a little slower: that is how a word the
- * lesson talks about is said apart from the sentence around it.
+ * espeak's. PAUSE (‖) and SHORT_PAUSE (|) are pauses, and the sounds between pauses are said a little slower: that is
+ * how a word the lesson talks about is said apart from the sentence around it.
  */
 export const PRONUNCIATIONS: Record<string, string> = {
   // Word parts in the grammar lessons, said apart (between pauses) and stressed, so the learner hears each one.
@@ -19,6 +19,8 @@ export const PRONUNCIATIONS: Record<string, string> = {
   "ge-": "‖ɣˈə‖",
   "be-": "‖bˈə‖",
   "ver-": "‖vˈər‖",
+  "her-": "‖hˈɛr‖",
+  "ont-": "‖ˈɔnt‖",
   "aan-": "‖ˈaːn‖",
   "af-": "‖ˈɑf‖",
   "in-": "‖ˈɪn‖",
@@ -31,16 +33,23 @@ export const PRONUNCIATIONS: Record<string, string> = {
   "-el": "‖ˈəl‖",
   "-en": "‖ˈən‖",
   "-er": "‖ˈər‖",
+  "-em": "‖ˈəm‖",
+  "-um": "‖ˈɵm‖",
+  "-der": "‖dˈər‖",
+  "-r": "‖ˈɛr‖",
   "-st": "‖ˈɛs tˈeː‖",
   "-s": "‖ˈɛs‖",
   "-t": "‖tˈeː‖",
   "-d": "‖dˈeː‖",
+  "-te": "‖tˈə‖",
+  "-de": "‖dˈə‖",
   "-je": "‖jˈə‖",
   "-tje": "‖tʲˈə‖",
   "-pje": "‖pjˈə‖",
   "-etje": "‖ˈətʲə‖",
   "-ing": "‖ˈɪŋ‖",
   "-heid": "‖hˈɛɪt‖",
+  "-teit": "‖tˈɛɪt‖",
   "-tie": "‖tsˈi‖",
   "-ment": "‖mˈɛnt‖",
   "-isme": "‖ˈɪsmə‖",
@@ -48,9 +57,10 @@ export const PRONUNCIATIONS: Record<string, string> = {
   "-tig": "‖tˈəx‖",
 
   // The articles as words the lesson talks about. espeak says "de of het" as one quick unstressed "dəɔfhət", and
-  // "het-woord" with an unstressed "het".
-  "de of het": "‖dˈə‖ˈɔf‖hˈɛt‖",
-  "het of de": "‖hˈɛt‖ˈɔf‖dˈə‖",
+  // "het-woord" with an unstressed "het". Stressed, with a short pause between them (a long one, as for the word
+  // parts, made the title drag), and none around the phrase.
+  "de of het": "dˈə|ˈɔf|hˈɛt",
+  "het of de": "hˈɛt|ˈɔf|dˈə",
   "de-woord": "dˈəʋˌɔːrt",
   "de-woorden": "dˈəʋˌɔːrdən",
   "het-woord": "hˈɛtʋˌɔːrt",
@@ -122,5 +132,10 @@ export const HEARD_RIGHT: Record<string, string[]> = {};
 /** The phonemes espeak uses for Dutch, which are the ones the Piper voices know (the space separates words). */
 export const DUTCH_PHONEMES = "abdefhijklmnoprstuvwxyzøŋœɑɔəɛɡɣɪɲɵɾʃʊʋʌʒʲˈˌː ";
 
-/** A pause in a pronunciation (the IPA sign for a break between phrases); scripts/tts makes it about 0.4 s. */
+/**
+ * Pauses in a pronunciation, the IPA signs for a break between phrases. PAUSE (about 0.4 s in scripts/tts) sets a word
+ * part apart in a list; SHORT_PAUSE (about 0.1 s) only keeps words apart. voiceInput also puts a PAUSE where the text
+ * separates examples with "·".
+ */
 export const PAUSE = "‖";
+export const SHORT_PAUSE = "|";
