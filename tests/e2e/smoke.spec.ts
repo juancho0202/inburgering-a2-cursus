@@ -322,3 +322,32 @@ test("the language menu goes to the landing page in that language, and its start
   await expect(page.getByRole("radio", { name: "Español" })).toHaveAttribute("aria-checked", "true");
   expect(page.url()).not.toContain("lang=");
 });
+
+test("on a computer screen the app bar fits: the links never cover the logo, and a smaller window uses the menu", async ({ page }) => {
+  // jsdom has no layout, so this lives here. Spanish shows two-line labels (Dutch + Spanish), the widest bar.
+  for (const lang of ["nl", "es"]) {
+    for (const width of [800, 1100, 1279, 1280, 1400, 1536, 1920]) {
+      await page.setViewportSize({ width, height: 800 });
+      await page.goto(`/woorden?lang=${lang}`);
+      const bar = page.locator("#app header");
+      const where = `${lang} at ${width} px`;
+      await expect(bar.getByRole("link", { name: /Inburgering A2/ })).toBeVisible();
+      const m = await bar.evaluate((header) => {
+        const row = header.firstElementChild!;
+        const logo = header.querySelector("a[href='/'] [aria-hidden]")!.getBoundingClientRect();
+        const nav = header.querySelector("nav")!;
+        const shown = getComputedStyle(nav).display !== "none";
+        const rows = new Set([...nav.children].map((a) => Math.round(a.getBoundingClientRect().top))).size;
+        return { overflow: row.scrollWidth - row.clientWidth, logoWidth: logo.width, logoRight: logo.right, navLeft: nav.getBoundingClientRect().left, shown, rows };
+      });
+      expect(m.overflow, `${where}: the bar scrolls sideways`).toBeLessThanOrEqual(0);
+      expect(m.logoWidth, `${where}: the logo is squeezed`).toBeGreaterThan(30);
+      if (m.shown) {
+        expect(m.navLeft, `${where}: the links cover the logo`).toBeGreaterThanOrEqual(m.logoRight);
+        expect(m.rows, `${where}: the links wrap`).toBe(1);
+      } else {
+        await expect(page.getByRole("button", { name: /Menu openen|Abrir menú/ }), `${where}: no menu button`).toBeVisible();
+      }
+    }
+  }
+});

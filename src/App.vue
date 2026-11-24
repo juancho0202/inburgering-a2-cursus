@@ -87,19 +87,24 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
     <a href="#main" class="sr-only z-50 rounded-xl bg-surface px-4 py-2 font-bold focus:not-sr-only focus:fixed focus:left-4 focus:top-4">{{ lang.t("app.skip") }}</a>
 
     <header v-if="!route.meta.focus" class="sticky top-0 z-30 border-b border-line bg-surface/90 backdrop-blur">
-      <div class="mx-auto flex max-w-5xl items-center gap-2 px-4 py-2.5">
-        <!-- min-w-0 + truncate: on a narrow phone with a wide font the name gives way, not the menu button -->
-        <RouterLink to="/" class="mr-2 flex min-w-0 items-center gap-2 text-xl font-extrabold tracking-tight">
+      <!-- The links in the bar need about 1200 px (Dutch labels, 18 px font): they show from xl, in a wider bar.
+           Below that the menu button opens them in the side panel. -->
+      <div class="mx-auto flex max-w-5xl items-center gap-2 px-4 py-2.5 xl:max-w-7xl">
+        <!-- min-w-9 + truncate: on a narrow phone with a wide font the name gives way, not the menu button,
+             but the NL icon never shrinks away under the links -->
+        <RouterLink to="/" class="mr-2 flex min-w-9 items-center gap-2 text-xl font-extrabold tracking-tight">
           <span class="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand text-lg text-white" aria-hidden="true">NL</span>
           <!-- On a phone the taalcafé needs the room for its word mission: the name stays for screen readers -->
-          <span class="truncate" :class="{ 'max-md:sr-only': route.path === '/taalcafe' }">Inburgering A2</span>
+          <!-- Next to the links (xl) there is only room for the name on a very wide screen -->
+          <span class="truncate xl:max-2xl:sr-only" :class="{ 'max-md:sr-only': route.path === '/taalcafe' }">Inburgering A2</span>
         </RouterLink>
         <!-- A screen can put something of its own in the bar on a phone (the taalcafé's word mission).
              Hidden while empty: an empty flex item still takes a gap, and on a 320 px phone that is too much. -->
         <div id="app-bar-extra" class="min-w-0 flex-1 empty:hidden md:hidden"></div>
 
-        <!-- Desktop: links in the top bar -->
-        <nav class="hidden items-center gap-1 md:flex" :aria-label="lang.t('app.mainMenu')">
+        <!-- Desktop: links in the top bar. If they still do not fit (a wider language or label), they wrap
+             instead of covering the logo. -->
+        <nav class="hidden min-w-0 flex-wrap items-center justify-end gap-1 xl:flex" :aria-label="lang.t('app.mainMenu')">
           <RouterLink
             v-for="l in links"
             :key="l.to"
@@ -115,11 +120,11 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
           </a>
         </nav>
 
-        <button type="button" class="ml-auto hidden items-center gap-1.5 rounded-xl border-2 border-line px-3 py-1.5 font-semibold text-muted transition hover:bg-surface-2 hover:text-ink md:flex" :title="lang.t('app.finish')" :aria-label="lang.t('app.finish')" @click="session.openFinish()">
-          <span aria-hidden="true">🌙</span><span class="hidden whitespace-nowrap xl:inline"><UiLabel k="app.finish" /></span>
+        <button type="button" class="ml-auto hidden items-center gap-1.5 rounded-xl border-2 border-line px-3 py-1.5 font-semibold text-muted transition hover:bg-surface-2 hover:text-ink xl:flex" :title="lang.t('app.finish')" :aria-label="lang.t('app.finish')" @click="session.openFinish()">
+          <span aria-hidden="true">🌙</span>
         </button>
 
-        <div class="ml-auto flex items-center gap-2 md:hidden">
+        <div class="ml-auto flex items-center gap-2 xl:hidden">
           <!-- Mobile: the dashboard's "Woorden herhalen" button, as a small badge. Only on the start page, where the count is fresh. -->
           <RouterLink
             v-if="route.path === '/' && review.count"
@@ -134,7 +139,7 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
           <button
             ref="menuButton"
             type="button"
-            class="grid h-11 w-11 place-items-center rounded-xl border-2 border-line text-ink transition hover:bg-surface-2 md:hidden"
+            class="grid h-11 w-11 place-items-center rounded-xl border-2 border-line text-ink transition hover:bg-surface-2 xl:hidden"
             :aria-label="lang.t('app.openMenu')"
             aria-controls="mobile-menu"
             :aria-expanded="menuOpen"
@@ -150,7 +155,7 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
 
     <!-- Mobile: sidebar panel -->
     <Transition name="drawer">
-      <div v-if="menuOpen && !route.meta.focus" class="fixed inset-0 z-50 md:hidden">
+      <div v-if="menuOpen && !route.meta.focus" class="fixed inset-0 z-50 xl:hidden">
         <div class="drawer-overlay absolute inset-0 bg-black/50" @click="closeMenu()" />
         <nav id="mobile-menu" class="drawer-panel absolute inset-y-0 left-0 flex w-72 max-w-[85vw] flex-col border-r border-line bg-surface p-4 shadow-2xl" :aria-label="lang.t('app.mainMenu')">
           <div class="mb-4 flex items-center justify-between">
