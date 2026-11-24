@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import type { WritingFeedback } from "@shared/schemas/claude";
-import { buildSegments } from "@shared/logic/corrections";
+import { useCorrectionTip } from "../composables/useCorrectionTip";
+import CorrectedText from "./CorrectedText.vue";
+import CorrectionTooltip from "./CorrectionTooltip.vue";
 import ProgressBar from "./ui/ProgressBar.vue";
 import FeedbackLanguageToggle from "./FeedbackLanguageToggle.vue";
 import { useLanguageStore } from "../stores/language";
@@ -11,7 +13,9 @@ const props = defineProps<{ text: string; feedback: WritingFeedback }>();
 const lang = useLanguageStore();
 const f = (key: string, params?: Record<string, unknown>) => lang.feedback(key, params);
 
-const segments = computed(() => buildSegments(props.text, props.feedback.corrections));
+// Like the Taalcafé chat: each correction in the learner's own text explains itself in a tooltip.
+const textBox = ref<HTMLElement | null>(null);
+const tips = useCorrectionTip(textBox, (_m, c) => props.feedback.corrections[c] ?? null);
 const maxFor = (name: string) => (name === "Opdracht" || name === "Begrijpelijk" ? 3 : name === "Grammatica" || name === "Woorden en spelling" ? 2 : 3);
 const verdict = computed(
   () =>
@@ -52,15 +56,11 @@ const verdict = computed(
 
     <section class="card p-5">
       <h3 class="mb-2 font-bold">{{ f("writing.corrected") }}</h3>
-      <p class="whitespace-pre-line text-lg leading-relaxed">
-        <template v-for="(s, i) in segments" :key="i">
-          <span v-if="s.kind === 'text'">{{ s.text }}</span>
-          <span v-else>
-            <del class="rounded bg-bad-bg px-0.5 text-bad line-through">{{ s.original }}</del>
-            <ins class="ml-1 rounded bg-good-bg px-0.5 font-semibold text-good no-underline">{{ s.corrected }}</ins>
-          </span>
-        </template>
-      </p>
+      <p v-if="feedback.corrections.length" class="mb-2 text-sm text-muted" :lang="lang.feedbackOwn ? lang.locale : 'nl'">{{ f("writing.tapHint") }}</p>
+      <div ref="textBox" class="relative">
+        <p class="whitespace-pre-line text-lg leading-relaxed"><CorrectedText :text="text" :corrections="feedback.corrections" :tips="tips" /></p>
+        <CorrectionTooltip :tips="tips" />
+      </div>
       <p v-if="!feedback.corrections.length" class="mt-2 font-semibold text-good">✓ {{ f("writing.noMistakes") }}</p>
     </section>
 

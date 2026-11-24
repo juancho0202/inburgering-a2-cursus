@@ -25,7 +25,8 @@ const NOT_TESTED_DIRECTLY: Record<string, string> = {
   "src/components/exercises/OptionButton.vue": "Presentational; its states are checked through McExercise and TrueFalseExercise.",
   "src/components/exercises/ExerciseStem.vue": "Shows the prompt and context; nothing to decide.",
   "src/components/exercises/ExerciseRenderer.vue": "Picks the component for the exercise type; covered through ExerciseShell, which renders every type via it.",
-  "src/components/WritingFeedbackPanel.vue": "Display of Claude's feedback; covered through WritingExercise and ExamResultView. The correction segments are tested in logic.test.ts.",
+  "src/components/CorrectedText.vue": "The chunks of a corrected text; driven through TaalcafeView and WritingFeedbackPanel, which own the tooltip state.",
+  "src/components/CorrectionTooltip.vue": "The tooltip markup of useCorrectionTip; driven through TaalcafeView and WritingFeedbackPanel.",
   "src/components/KeyGuide.vue": "Static help text.",
   "src/views/AboutView.vue": "Static text.",
 };

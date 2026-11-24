@@ -88,13 +88,15 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
 
     <header v-if="!route.meta.focus" class="sticky top-0 z-30 border-b border-line bg-surface/90 backdrop-blur">
       <div class="mx-auto flex max-w-5xl items-center gap-2 px-4 py-2.5">
-        <RouterLink to="/" class="mr-2 flex items-center gap-2 text-xl font-extrabold tracking-tight">
-          <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand text-lg text-white" aria-hidden="true">NL</span>
+        <!-- min-w-0 + truncate: on a narrow phone with a wide font the name gives way, not the menu button -->
+        <RouterLink to="/" class="mr-2 flex min-w-0 items-center gap-2 text-xl font-extrabold tracking-tight">
+          <span class="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand text-lg text-white" aria-hidden="true">NL</span>
           <!-- On a phone the taalcafé needs the room for its word mission: the name stays for screen readers -->
-          <span class="whitespace-nowrap" :class="{ 'max-md:sr-only': route.path === '/taalcafe' }">Inburgering A2</span>
+          <span class="truncate" :class="{ 'max-md:sr-only': route.path === '/taalcafe' }">Inburgering A2</span>
         </RouterLink>
-        <!-- A screen can put something of its own in the bar on a phone (the taalcafé's word mission) -->
-        <div id="app-bar-extra" class="min-w-0 flex-1 md:hidden"></div>
+        <!-- A screen can put something of its own in the bar on a phone (the taalcafé's word mission).
+             Hidden while empty: an empty flex item still takes a gap, and on a 320 px phone that is too much. -->
+        <div id="app-bar-extra" class="min-w-0 flex-1 empty:hidden md:hidden"></div>
 
         <!-- Desktop: links in the top bar -->
         <nav class="hidden items-center gap-1 md:flex" :aria-label="lang.t('app.mainMenu')">

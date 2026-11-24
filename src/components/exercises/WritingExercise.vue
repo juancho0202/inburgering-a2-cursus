@@ -107,10 +107,12 @@ defineExpose({ ready, evaluate });
         </div>
         <WritingFeedbackPanel v-else-if="feedback" :text="text" :feedback="feedback" />
       </div>
-      <div v-else class="card p-5">
+      <!-- Without a key nothing reads the text: say so, so "Klaar!" is not taken as "correct" -->
+      <div v-else class="card p-5" data-self-check>
         <p class="font-bold">{{ lang.feedback("exercise.noFeedback") }}</p>
-        <p class="text-muted">
-          {{ lang.feedback("exercise.addKeyFor") }} <RouterLink to="/instellingen" class="font-semibold text-brand-strong underline"><UiLabel variant="inline" k="nav.settings" /></RouterLink>. {{ lang.feedback("exercise.savedCheckYourself") }}
+        <p class="mt-1">{{ lang.feedback("exercise.savedCheckYourself") }}</p>
+        <p class="mt-2 text-sm text-muted">
+          {{ lang.feedback("exercise.addKeyFor") }} <RouterLink to="/instellingen" class="font-semibold text-brand-strong underline"><UiLabel variant="inline" k="nav.settings" /></RouterLink>.
         </p>
       </div>
 
