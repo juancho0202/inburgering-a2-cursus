@@ -81,6 +81,7 @@ export const PRONUNCIATIONS: Record<string, string> = {
   fysiotherapeut: "fˌizijoːtˌeːraːpˈœyt",
   fysiotherapie: "fˌizijoːtˌeːraːpˈi",
   geografie: "ɣˌeːjoːɣraːfˈi",
+  meisje: "mˈɛɪʃə",
   inburgeren: "ˈɪnbɵrɣərən",
   plastic: "plˈɛstɪk",
   privacy: "prˈɑjvəsi",
@@ -120,6 +121,9 @@ export const PRONUNCIATIONS: Record<string, string> = {
 export const ESPEAK_IS_RIGHT: string[] = [
   // "'t kofschip: … op t, k, f, s, ch, p": the letters, said by their names
   "ch",
+  // "Dan schrijf je bij hij dt", "niet ff, maar even": the letters are meant (read as "even", ff gives the answer away)
+  "dt",
+  "ff",
 ];
 
 /**
