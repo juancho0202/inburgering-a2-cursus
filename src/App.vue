@@ -103,19 +103,20 @@ const linkClass = (to: string) => (isActive(to) ? "bg-brand-bg text-brand-strong
         <div id="app-bar-extra" class="min-w-0 flex-1 empty:hidden md:hidden"></div>
 
         <!-- Desktop: links in the top bar. If they still do not fit (a wider language or label), they wrap
-             instead of covering the logo. -->
-        <nav class="hidden min-w-0 flex-wrap items-center justify-end gap-1 xl:flex" :aria-label="lang.t('app.mainMenu')">
+             instead of covering the logo. Tight padding: with a wide fallback font (DejaVu Sans on Linux) they
+             need about 1120 px. On a very wide screen (2xl) the name next to them truncates first. -->
+        <nav class="hidden min-w-0 flex-wrap items-center justify-end gap-0.5 xl:flex 2xl:shrink-0" :aria-label="lang.t('app.mainMenu')">
           <RouterLink
             v-for="l in links"
             :key="l.to"
             :to="l.to"
-            class="flex items-center gap-1.5 rounded-xl px-3 py-1.5 font-semibold transition"
+            class="flex items-center gap-1.5 rounded-xl px-2 py-1.5 font-semibold transition"
             :class="linkClass(l.to)"
             :aria-current="isActive(l.to) ? 'page' : undefined"
           >
             <span aria-hidden="true">{{ l.icon }}</span><UiLabel :k="l.label" />
           </RouterLink>
-          <a :href="landingHref" class="flex items-center gap-1.5 rounded-xl px-3 py-1.5 font-semibold text-muted transition hover:bg-surface-2 hover:text-ink">
+          <a :href="landingHref" class="flex items-center gap-1.5 rounded-xl px-2 py-1.5 font-semibold text-muted transition hover:bg-surface-2 hover:text-ink">
             <span aria-hidden="true">🌐</span><UiLabel k="nav.landing" />
           </a>
         </nav>
