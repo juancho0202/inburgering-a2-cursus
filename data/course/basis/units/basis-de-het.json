@@ -447,30 +447,25 @@
           "kind": "table",
           "headers": [
             "",
-            "de-woord",
+            "de-woord en meervoud",
             "het-woord"
           ],
           "rows": [
             [
               "hier, dichtbij",
-              "**deze** jas",
+              "**deze** jas, **deze** jassen",
               "**dit** huis"
             ],
             [
               "daar, verder weg",
-              "**die** jas",
+              "**die** jas, **die** jassen",
               "**dat** huis"
-            ],
-            [
-              "meervoud",
-              "**deze / die** jassen",
-              "**deze / die** huizen"
             ]
           ]
         },
         {
           "kind": "tip",
-          "md": "**Meervoud is altijd een de-woord.** Dus: *deze huizen, die boeken*. Nooit *dit huizen*."
+          "md": "**Meervoud is altijd een de-woord**, ook bij een het-woord: *het huis*, maar *de huizen*. Dus: *deze huizen* (hier) en *die huizen* (daar). Nooit *dit huizen* of *dat huizen*."
         },
         {
           "kind": "example",
