@@ -17,6 +17,7 @@ import ExerciseShell from "../components/exercises/ExerciseShell.vue";
 import ReadAlongButton from "../components/ui/ReadAlongButton.vue";
 import ScenePicture from "../components/ScenePicture.vue";
 import { warmUnit } from "../lib/illustrations";
+import { whenReached } from "../lib/reached";
 import UiLabel from "../components/ui/UiLabel.vue";
 import UiText from "../components/ui/UiText.vue";
 import { useLanguageStore } from "../stores/language";
@@ -87,8 +88,21 @@ const activeBlock = computed(() => {
   return id?.startsWith("block-") ? Number(id.slice(6)) : null;
 });
 
+/** The lesson step on screen, and the bar fixed at the bottom (it covers the page under it). */
+const page = ref<HTMLElement | null>(null);
+const bar = ref<HTMLElement | null>(null);
+const visibleBottom = () => {
+  const box = bar.value?.getBoundingClientRect();
+  return box && box.height > 0 ? box.top : window.innerHeight;
+};
+/** A part of the lesson is read when the reader has scrolled to it, so what they hear is what they see. */
+function reachedBy(segment: Segment, signal: AbortSignal): Promise<void> {
+  const el = page.value?.querySelector(`[data-read="${segment.id}"]`);
+  return el ? whenReached(el, visibleBottom, signal) : Promise.resolve();
+}
+
 async function readFrom(from: number, delayMs = 0, list = segments.value) {
-  const at = await speech.read(list, { from, delayMs });
+  const at = await speech.read(list, { from, delayMs, wait: reachedBy });
   if (segments.value === list) resumeAt = at >= list.length ? 0 : at;
 }
 function toggleRead() {
@@ -216,8 +230,8 @@ const restart = async () => {
     </div>
 
     <template v-if="step.type === 'lesson'">
-      <div :key="stepIndex" class="slide-up pb-28" lang="nl" translate="no">
-        <h2 class="read-along mb-2 text-3xl font-extrabold tracking-tight nl-wrap" :class="{ 'is-reading': isRead('heading') }">{{ step.title }}</h2>
+      <div :key="stepIndex" ref="page" class="slide-up pb-28" lang="nl" translate="no">
+        <h2 class="read-along mb-2 text-3xl font-extrabold tracking-tight nl-wrap" :class="{ 'is-reading': isRead('heading') }" data-read="heading">{{ step.title }}</h2>
         <div class="mb-3 flex flex-wrap items-center gap-2">
           <ReadAlongButton :reading="reading" :label="lang.t('common.readAloud')" :stop-label="lang.t('common.stopReading')" @toggle="toggleRead" />
           <!-- Only after step 1: at the start there is nothing to start over -->
@@ -230,14 +244,14 @@ const restart = async () => {
             </template>
           </div>
         </div>
-        <p v-if="stepIndex === 0" class="read-along mb-5 text-muted" :class="{ 'is-reading': isRead('goal') }">{{ unit.goal }}</p>
+        <p v-if="stepIndex === 0" class="read-along mb-5 text-muted" :class="{ 'is-reading': isRead('goal') }" data-read="goal">{{ unit.goal }}</p>
         <div v-else class="mb-3" />
         <!-- The lesson opens with its picture, like a chapter in a language book -->
         <ScenePicture v-if="stepIndex === 0 && unit.scene" :id="unit.scene" class="mb-6 max-w-2xl" />
         <LessonBlocks :blocks="step.blocks" :active="activeBlock" />
         <div class="mt-10 flex justify-center"><ReportIssue :item-id="step.id" /></div>
       </div>
-      <div class="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface/95 backdrop-blur">
+      <div ref="bar" class="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface/95 backdrop-blur">
         <div class="mx-auto flex max-w-4xl items-center justify-between gap-3 px-4 py-3">
           <AppButton variant="ghost" @click="stepIndex === 0 ? exit() : goTo(stepIndex - 1)"><template v-if="stepIndex === 0"><UiLabel k="common.stop" /></template><template v-else>← <UiLabel k="common.previous" /></template></AppButton>
           <AppButton size="lg" @click="advance"><UiLabel v-if="isLast" k="common.finish" /><template v-else><UiLabel k="common.next" /> →</template></AppButton>

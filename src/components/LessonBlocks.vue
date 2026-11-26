@@ -28,7 +28,8 @@ const gloss = (id: string) => (APP_WORDS[id] && lang.proseLocale !== "nl" ? lang
 <template>
   <div class="grid gap-5">
     <!-- min-w-0: a wide table scrolls inside its own box instead of stretching the grid (and the page) on phones -->
-    <div v-for="(block, i) in blocks" :key="i" class="read-along min-w-0" :class="{ 'is-reading': active === i }">
+    <!-- data-read: the read-along waits until the reader has scrolled to the block (UnitView) -->
+    <div v-for="(block, i) in blocks" :key="i" class="read-along min-w-0" :class="{ 'is-reading': active === i }" :data-read="`block-${i}`">
       <div v-if="block.kind === 'text'" class="prose-nl text-lg" v-html="renderMd(block.md)" />
 
       <!-- Tables with 3+ columns do not fit a phone: there each row becomes a card (header as small label above every

@@ -490,6 +490,9 @@ All exercises share a base:
 - Every answer is POSTed to `/api/attempts` immediately (don't batch).
 - 🔊 button on any Dutch sentence/word: Web Speech API, `lang="nl-NL"`, prefer a Dutch voice,
   rate setting (default 0.95). Hide 🔊 if no Dutch voice is available, with a one-time note.
+- Read-along on a lesson step ("Lees voor", and by itself when a step opens): the heading, the goal and each block in
+  turn, the one being read highlighted. A block not yet on screen (below it, or under the bottom bar) waits until the
+  reader scrolls to it, so they hear what they see; a block they scrolled to or past is read at once.
 
 ---
 
